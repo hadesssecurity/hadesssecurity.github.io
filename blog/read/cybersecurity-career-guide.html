@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-guide#article","headline":"How to Start a Career in Cybersecurity — HADESS Magazine","description":"Learn how to start a career in cybersecurity with our 2026 guide covering career tracks, skills, certs, and actionable steps. Take the HADESS assessment today.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-guide"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-career-guide.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-guide#article","headline":"How to Start a Career in Cybersecurity — HADESS Magazine","description":"Learn how to start a career in cybersecurity with our 2026 guide covering career tracks, skills, certs, and actionable steps. Take the HADESS assessment today.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-guide"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-career-guide.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,76 +1549,224 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-cybersecurity-career-guide.png">
-      <h1>Malware Analyst</h1>
+      <h1>How to Start a Career in Cybersecurity</h1>
 <blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete guide series.</p>
+<p><strong>Part of the HADESS Career Resources</strong> — This is a full guide covering every major cybersecurity career track. Explore our deep-dives on <a href="/blog/read/soc-analyst-guide">becoming a SOC analyst</a>, <a href="/blog/read/penetration-tester-career">breaking into penetration testing</a>, or <a href="/blog/read/career-switch-cybersecurity">switching careers into cyber</a> below.</p>
 </blockquote>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 5 min read</em></p>
-<p>You take apart malicious software to understand what it does, how it works, and who might have built it. When a new piece of malware hits an organization, you are the one who reverse engineers it, extracts indicators, and provides the intelligence that incident responders and detection engineers need to contain the threat.</p>
-<h2>What You Will Do</h2>
-<p>Malware analysis is a mix of reverse engineering, programming, and detective work. You work with executables, scripts, documents, and other file types that have been weaponized.</p>
-<p>Your work includes:</p>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 22 min read</em></p>
+<p>If you are looking at how to start a career in cybersecurity, you have already made one good decision. The field is short on qualified people, the work is interesting, and the pay is above average across nearly every geography. But the path from &#8220;interested in security&#8221; to &#8220;employed in security&#8221; is not always obvious, and a lot of the advice out there either oversimplifies or tries to sell you a bootcamp. This guide covers what the field actually looks like, which tracks exist, what skills and certifications matter for each one, and what to do if you have zero experience right now.</p>
+<p>We wrote this based on what actually works. The HADESS team has hired SOC analysts, built red teams, run GRC programs, and coached hundreds of career switchers. This is the guide we wish existed when we started.</p>
+<h2>Table of Contents</h2>
 <ul>
-<li>Performing static analysis — examining file properties, strings, imports, and metadata without executing the sample</li>
-<li>Running dynamic analysis — executing malware in sandboxes and monitoring behavior (process creation, file changes, network connections, registry modifications)</li>
-<li>Reverse engineering binaries with disassemblers (IDA Pro, Ghidra) and debuggers (x64dbg, WinDbg)</li>
-<li>Analyzing obfuscated scripts — <a href="/blog/read/powershell-security" title="PowerShell for Security: AD Management, Log Analysis, and Blue Team Scripts">PowerShell</a>, JavaScript, VBA macros</li>
-<li>Identifying command-and-control communication protocols and infrastructure</li>
-<li>Extracting configuration data, encryption keys, and IOCs from malware samples</li>
-<li>Writing <a href="/blog/read/security-query-languages-kql-spl-yara" title="Security Query Languages: KQL, SPL, and YARA">YARA rules</a> to detect malware families across the environment</li>
-<li>Classifying malware into families and tracking evolution over time</li>
-<li>Producing technical analysis reports for <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a> and <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a> teams</li>
-<li>Analyzing exploit payloads and understanding vulnerability triggers</li>
-<li>Supporting incident response by answering &#8220;what did this malware do on our systems?&#8221;</li>
+<li><a href="#what-is-cybersecurity-and-why-it-matters">What Is Cybersecurity and Why It Matters</a></li>
+<li><a href="#why-choose-cybersecurity-in-2026">Why Choose Cybersecurity in 2026</a></li>
+<li><a href="#main-cybersecurity-career-tracks">Main Cybersecurity Career Tracks</a></li>
+<li><a href="#soc-analyst">SOC Analyst</a></li>
+<li><a href="#penetration-tester">Penetration Tester</a></li>
+<li><a href="#cloud-security-engineer">Cloud Security Engineer</a></li>
+<li><a href="#grc-analyst">GRC Analyst</a></li>
+<li><a href="#devsecops-engineer">DevSecOps Engineer</a></li>
+<li><a href="#incident-responder">Incident Responder</a></li>
+<li><a href="#threat-intelligence-analyst">Threat Intelligence Analyst</a></li>
+<li><a href="#security-management-and-ciso-track">Security Management and CISO Track</a></li>
+<li><a href="#required-skills-and-certifications-per-track">Required Skills and Certifications per Track</a></li>
+<li><a href="#getting-started-with-no-experience">Getting Started with No Experience</a></li>
+<li><a href="#how-hadess-structures-your-learning-path">How HADESS Structures Your Learning Path</a></li>
+<li><a href="#related-deep-dives">Related Deep-Dives</a></li>
+<li><a href="#start-your-journey">Start Your Journey</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<p>You may also contribute to threat intelligence by attributing malware to specific threat groups based on code similarities, infrastructure reuse, and operational patterns.</p>
-<h2>Skills You Need</h2>
-<p>Malware analysis requires deep low-level technical skills and a systematic analytical approach.</p>
-<p>Core skills:</p>
+<h2>What Is Cybersecurity and Why It Matters</h2>
+<p>Cybersecurity is the practice of protecting systems, networks, and data from unauthorized access, damage, or theft. That is the textbook definition. In practice, it means a lot of different things depending on where you sit. A SOC analyst spends their day triaging alerts and investigating suspicious activity. A penetration tester tries to break into systems before attackers do. A GRC analyst maps controls to compliance frameworks and makes sure an organization meets regulatory requirements.</p>
+<p>The field exists because every organization that uses technology (which is every organization) has attack surface. And that attack surface grows every year. More cloud services, more remote workers, more connected devices, more data. Every new piece of infrastructure is another thing to defend.</p>
+<p>What makes cybersecurity different from general IT is the adversarial element. You are not just building and maintaining systems. You are building and maintaining systems while someone else is actively trying to break them. That adversarial dynamic makes the work intellectually demanding and — for a lot of people — deeply engaging.</p>
+<p>The work also matters. Breaches cause real harm. Ransomware shuts down hospitals. Data theft ruins people&#8217;s financial lives. Nation-state actors compromise infrastructure. Working in cybersecurity means you are on the defense side of something that has genuine consequences.</p>
+<h2>Why Choose Cybersecurity in 2026</h2>
+<p>The numbers are straightforward. According to <a href="https://www.isc2.org/research">ISC2&#8217;s 2025 Cybersecurity Workforce Study</a>, the global cybersecurity workforce gap sits at roughly 4 million unfilled positions. That gap has not shrunk. If anything, it has grown as cloud adoption, AI integration, and regulatory pressure expand faster than the talent pipeline.</p>
+<p>Here is what the 2026 market actually looks like:</p>
+<p><strong>Demand exceeds supply across almost every role.</strong> Security operations centers are understaffed globally. Cloud security engineers are some of the hardest-to-fill positions in tech. Even entry-level roles see strong demand in markets like the US, UK, Germany, and Australia.</p>
+<p><strong>Salaries remain strong.</strong> Entry-level SOC analyst roles in the US start between $60,000 and $80,000. Mid-career security engineers earn $120,000-$160,000. Senior roles and management positions regularly exceed $200,000. Our <a href="/blog/read/cybersecurity-salary-guide">cybersecurity salary guide</a> breaks this down by role and region.</p>
+<p><strong>Remote work is widely available.</strong> Many cybersecurity roles can be performed remotely. SOC work, <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a>, GRC, and a large portion of engineering roles do not require physical presence. This is not universal (some incident response and physical security roles require on-site work), but remote options are far more common than in most fields.</p>
+<p><strong>The work does not get automated away easily.</strong> AI is changing how security teams operate, but it is augmenting analysts rather than replacing them. Attackers adapt. Defenses have to adapt in response. That cat-and-mouse dynamic means human judgment stays in the loop for the foreseeable future.</p>
+<p><strong>Career progression is fast if you are good.</strong> People who are competent and motivated can move from entry-level to senior roles in 3-5 years. The talent shortage means organizations promote faster than they might in a saturated field.</p>
+<h2>Main Cybersecurity Career Tracks</h2>
+<p>Cybersecurity is not a single job. It is a collection of specializations that share a common foundation but diverge significantly in day-to-day work. Understanding these tracks early helps you aim your learning in the right direction instead of accumulating random certifications and hoping something sticks.</p>
+<h3>SOC Analyst</h3>
+<p><strong>What you do:</strong> Monitor security alerts, investigate incidents, triage potential threats, and escalate confirmed incidents. You are the first line of defense for an organization&#8217;s detection and response capability.</p>
+<p><strong>Day-to-day reality:</strong> You sit in front of a SIEM (Security Information and Event Management) console. Alerts come in. Most are false positives. Your job is to figure out which ones are not. When something is real, you contain it, document it, and hand it off for deeper investigation or remediation.</p>
+<p><strong>Why people like it:</strong> It is the most accessible entry point into cybersecurity. You learn how real attacks work by seeing them daily. The feedback loop is fast — you investigate, you find something (or rule something out), and you move on.</p>
+<p><strong>Why people leave it:</strong> Alert fatigue is real. At lower tiers, the work can feel repetitive. Shift work is common. Most SOC analysts move up to Tier 2/3 roles, transition into incident response, or pivot to engineering within 2-3 years.</p>
+<p><strong>Starting salary range (US):</strong> $55,000-$80,000</p>
+<p>Read our full guide on <a href="/blog/read/soc-analyst-guide">how to become a SOC analyst</a> for a step-by-step breakdown.</p>
+<h3>Penetration Tester</h3>
+<p><strong>What you do:</strong> Simulate attacks against systems, applications, and networks to find vulnerabilities before real attackers do. You write reports that explain what you found and how to fix it.</p>
+<p><strong>Day-to-day reality:</strong> You scope engagements with clients, run enumeration and reconnaissance, attempt exploitation, document findings, and present results. Some days you are running automated scans. Other days you are manually testing a web application or trying to escalate privileges on a Windows domain.</p>
+<p><strong>Why people like it:</strong> You get to think like an attacker. The work is varied. Each engagement is different. There is a clear &#8220;puzzle&#8221; element that appeals to people who enjoy problem-solving.</p>
+<p><strong>Why people leave it:</strong> Report writing consumes a surprising amount of time. Client management can be frustrating. The pressure to find critical vulnerabilities on tight timelines gets old. Some people transition into red teaming, security research, or engineering.</p>
+<p><strong>Starting salary range (US):</strong> $75,000-$100,000</p>
+<p>Our <a href="/blog/read/penetration-tester-career">penetration tester career guide</a> covers the full path from beginner to senior pentester.</p>
+<h3>Cloud Security Engineer</h3>
+<p><strong>What you do:</strong> Design, implement, and maintain security controls for cloud infrastructure. You work with AWS, Azure, GCP, or multi-cloud environments to ensure workloads are configured securely, access is properly controlled, and compliance requirements are met.</p>
+<p><strong>Day-to-day reality:</strong> You write infrastructure-as-code with security guardrails, configure cloud-native security services (GuardDuty, Security Hub, Azure Defender), review architecture decisions for security implications, and respond to cloud-specific incidents like exposed S3 buckets or compromised IAM credentials.</p>
+<p><strong>Why people like it:</strong> Cloud security is where the industry is moving. The work is technical, the skills are in extreme demand, and the pay is excellent. You get to work with modern tooling and infrastructure patterns.</p>
+<p><strong>Why people leave it:</strong> The pace of change in cloud services is relentless. Keeping up with new services, new attack vectors, and evolving best practices requires constant learning. Some people find the breadth overwhelming.</p>
+<p><strong>Starting salary range (US):</strong> $100,000-$130,000</p>
+<p>Explore the full <a href="/blog/read/cloud-security-engineer">cloud security engineer career path</a> for detailed requirements and progression.</p>
+<h3>GRC Analyst</h3>
+<p><strong>What you do:</strong> Governance, Risk, and Compliance. You assess organizational risk, map security controls to regulatory frameworks (SOC 2, ISO 27001, GDPR, HIPAA, PCI-DSS), conduct audits, and help the organization understand and manage its security posture from a policy and compliance perspective.</p>
+<p><strong>Day-to-day reality:</strong> You review policies, conduct risk assessments, interview control owners, manage audit evidence, track remediation items, and produce reports for leadership and auditors. You spend a lot of time in spreadsheets, GRC platforms, and meetings.</p>
+<p><strong>Why people like it:</strong> It is one of the most accessible entry points for people coming from non-technical backgrounds (law, business, audit). The career ceiling is high — Chief Risk Officers and CISOs often come from GRC backgrounds. The work is structured and predictable.</p>
+<p><strong>Why people leave it:</strong> If you want to be hands-on-keyboard, GRC is not the place. The work is document-heavy. Some people find it too far removed from the technical reality of security operations.</p>
+<p><strong>Starting salary range (US):</strong> $60,000-$85,000</p>
+<p>Learn more in our <a href="/blog/read/grc-analyst-career">GRC analyst career guide</a>.</p>
+<h3>DevSecOps Engineer</h3>
+<p><strong>What you do:</strong> Integrate security into the software development lifecycle. You build security into CI/CD pipelines, implement automated security testing (SAST, DAST, SCA), manage <a href="/blog/read/docker-security-hardening-containers" title="Docker Security: Hardening Containers from Build to Runtime">container security</a>, and work with development teams to shift security left.</p>
+<p><strong>Day-to-day reality:</strong> You configure and maintain security scanning tools in build pipelines, triage findings, work with developers to remediate vulnerabilities, write security policies as code, and manage <a href="/blog/read/secret-management" title="Secret Management: Vault, Rotation, and Access Control">secrets management</a> and access controls in development environments.</p>
+<p><strong>Why people like it:</strong> It sits at the intersection of development, operations, and security. The work is highly technical, the tooling is modern, and you have direct impact on the security of what gets shipped. It is one of the fastest-growing specializations.</p>
+<p><strong>Why people leave it:</strong> You need to be comfortable with development practices, and some security professionals find the developer workflow unfamiliar. Organizational politics around who owns security in the pipeline can be frustrating.</p>
+<p><strong>Starting salary range (US):</strong> $95,000-$130,000</p>
+<h3>Incident Responder</h3>
+<p><strong>What you do:</strong> When a breach happens, you are the one who investigates it. You perform forensic analysis, contain active threats, determine root cause, and coordinate the response effort across technical and non-technical stakeholders.</p>
+<p><strong>Day-to-day reality:</strong> This varies dramatically. On quiet days, you prepare runbooks, tune detection rules, and run tabletop exercises. During an active incident, you might be doing memory forensics, analyzing malware, reviewing network packet captures, and coordinating with legal and communications teams — all at 2 AM.</p>
+<p><strong>Why people like it:</strong> The adrenaline of active incident response is genuinely exciting. You learn more about how attacks work in one real incident than in months of training. The work is deeply technical and highly impactful.</p>
+<p><strong>Why people leave it:</strong> Burnout. On-call rotations and the unpredictability of incidents take a toll. Some people transition into threat intelligence, security engineering, or consulting where the hours are more predictable.</p>
+<p><strong>Starting salary range (US):</strong> $80,000-$110,000</p>
+<h3>Threat Intelligence Analyst</h3>
+<p><strong>What you do:</strong> Collect, analyze, and disseminate information about threat actors, their tactics, techniques, and procedures (TTPs), and the threat landscape relevant to your organization. You turn raw data into actionable intelligence.</p>
+<p><strong>Day-to-day reality:</strong> You monitor threat feeds, analyze malware reports, track adversary campaigns, produce intelligence briefings, and work with detection teams to develop indicators of compromise (IOCs) and behavioral detections. Some roles are heavily technical (malware analysis, reverse engineering). Others are more analytical and strategic.</p>
+<p><strong>Why people like it:</strong> You get to study how the other side operates. The work combines technical analysis with strategic thinking. It appeals to people who enjoy research and pattern recognition.</p>
+<p><strong>Why people leave it:</strong> In some organizations, threat intelligence is treated as a nice-to-have rather than an operational function. If leadership does not act on your intelligence, the work can feel pointless.</p>
+<p><strong>Starting salary range (US):</strong> $75,000-$105,000</p>
+<h3>Security Management and CISO Track</h3>
+<p><strong>What you do:</strong> Lead security teams, set security strategy, manage budgets, communicate risk to the board, and ensure the organization&#8217;s security program meets business objectives and regulatory requirements.</p>
+<p><strong>Day-to-day reality:</strong> Meetings. A lot of meetings. You present to executives, manage team performance, make budget decisions, coordinate with other departments, and handle the political side of security in an organization. Technical depth matters less than the ability to translate risk into business terms.</p>
+<p><strong>Why people pursue it:</strong> It is the career ceiling for many security professionals. CISO compensation regularly exceeds $250,000, and in large organizations, it can reach $500,000+. You have strategic influence over the organization&#8217;s security direction.</p>
+<p><strong>Why people leave it:</strong> The role is high-stress with significant liability. CISOs are often the scapegoat when breaches occur. The political demands can overwhelm the security mission. Average CISO tenure is 18-26 months.</p>
+<p><strong>Starting salary range (US):</strong> $150,000-$250,000+ (Director/VP/CISO level)</p>
+<h2>Required Skills and Certifications per Track</h2>
+<p>Every track shares a common foundation, but the specific skills and certifications differ. Here is a practical mapping:</p>
+<p><strong>Shared Foundation (all tracks):</strong></p>
 <ul>
-<li><a href="https://career.hadess.io/skills">Reverse engineering</a> — IDA Pro, Ghidra, x64dbg for binary analysis</li>
-<li><a href="https://career.hadess.io/skills">Assembly language</a> — x86/x64 reading proficiency</li>
-<li><a href="https://career.hadess.io/skills">Programming</a> — Python for automation, C for understanding compiled code</li>
-<li><a href="https://career.hadess.io/skills">Windows internals</a> — API calls, process injection, registry, services</li>
-<li><a href="https://career.hadess.io/skills">Sandbox analysis</a> — Cuckoo, ANY.RUN, Joe Sandbox, custom sandboxes</li>
-<li><a href="https://career.hadess.io/skills">Network protocol analysis</a> — understanding C2 communication patterns</li>
-<li><a href="https://career.hadess.io/skills">Scripting deobfuscation</a> — unpacking and deobfuscating PowerShell, JS, VBA</li>
-<li><a href="https://career.hadess.io/skills">YARA rule development</a> — writing effective detection signatures</li>
+<li>Networking fundamentals (TCP/IP, DNS, HTTP, subnetting)</li>
+<li>Operating system basics (Windows and Linux)</li>
+<li>Security principles (CIA triad, least privilege, defense in depth)</li>
+<li>Basic scripting (Python or Bash)</li>
+<li>Understanding of common attack types</li>
 </ul>
-<p>Build these skills in the <a href="https://career.hadess.io/skills">skills library</a> and see how malware analysis connects to other career paths in the <a href="https://career.hadess.io/career-skills">career path explorer</a>.</p>
-<h2>Certifications</h2>
-<p>Malware analysis certifications are technical and respected:</p>
+<p><strong>SOC Analyst:</strong></p>
 <ul>
-<li><strong>GREM</strong> — GIAC Reverse Engineering Malware, the primary certification for this role</li>
-<li><strong>GCFA</strong> — forensic analysis skills that complement malware investigation</li>
-<li><strong>GCTI</strong> — threat intelligence context for malware attribution</li>
+<li>Skills: SIEM operation (Splunk, Sentinel, QRadar), log analysis, basic forensics, incident triage, EDR tools</li>
+<li>Certifications: CompTIA Security+, CySA+, Splunk Core Certified User, BTL1</li>
+<li>Build your skills with the HADESS skills catalog which covers SIEM, EDR, and log analysis in depth.</li>
 </ul>
-<p>Map your certification path with the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a>.</p>
-<h2>Salary Range</h2>
-<p>Malware analysts earn between <strong>$55K and $130K</strong>. Senior analysts at threat intelligence companies, government agencies, and large enterprises earn at the top. Analysts who can reverse engineer complex malware (rootkits, bootkits, firmware implants) and produce detailed technical reports are consistently in high demand.</p>
-<p>Check your market value with the <a href="https://career.hadess.io/salary-calculator">salary calculator</a>.</p>
-<h2>How to Get Started</h2>
-<p>1. <strong>Learn to program in Python and C</strong> — you need to understand compiled code at the source level 2. <strong>Study x86 assembly</strong> — you will read it every day on the job 3. <strong>Take the <a href="https://career.hadess.io/assessment">skills assessment</a></strong> to benchmark your reverse engineering skills 4. <strong>Practice with crackmes and malware analysis challenges</strong> in the <a href="https://career.hadess.io/workspace">labs</a> 5. <strong>Set up a malware analysis lab</strong> — isolated VM with REMnux, Flare-VM, and sandbox tools 6. <strong>Analyze real malware samples from MalwareBazaar</strong> — start with simpler samples and work up 7. <strong>Learn to write YARA rules</strong> — they are the detection output of your analysis 8. <strong>Work toward GREM</strong> — plan your certification path with the <a href="https://career.hadess.io/certificate-roadmap">certification planner</a> 9. <strong>Write analysis reports</strong> for your practice samples and add them to your <a href="https://career.hadess.io/resume">resume</a> 10. <strong>Search for malware analyst or reverse engineering roles</strong> on the <a href="https://career.hadess.io/jobs">job board</a></p>
-<p>If you are not sure whether malware analysis or incident response is the right path for you, talk to the <a href="https://career.hadess.io/coach">career coach</a> — both roles work with the same data from different angles.</p>
-<p><strong>Read the complete guide:</strong> <a href="/blog/read/cybersecurity-career-guide" title="How to Start a Career in Cybersecurity">How to Start a Career in Cybersecurity</a></p>
-<h2>Related Guides in This Series</h2>
+<p><strong>Penetration Tester:</strong></p>
 <ul>
-<li><a href="/blog/read/career-pathsthreat-intelligence/threat-hunter">Threat Hunter: Find What Automated Defenses Miss</a></li>
-<li><a href="/blog/read/career-pathsthreat-intelligence/threat-intelligence-analyst">Threat Intelligence Analyst: Know the Enemy Before They Strike</a></li>
+<li>Skills: <a href="/blog/read/application-penetration-tester" title="Application Penetration Tester: Go Beyond the Web Layer">Web application testing</a>, network enumeration, exploitation, privilege escalation, report writing</li>
+<li>Certifications: eJPT, OSCP, GPEN, PNPT, CPTS</li>
+<li>Our <a href="/blog/read/cybersecurity-skills-guide">cybersecurity skills guide</a> covers the technical skill stack in detail.</li>
 </ul>
-<h2>Take the Next Step</h2>
-<p><strong>Start your career assessment.</strong> Go to the <a href="https://career.hadess.io/assessment">start your career assessment</a> on HADESS.</p>
-<p><strong>Explore career paths.</strong> Check out the <a href="https://career.hadess.io/career-skills">explore career paths</a>.</p>
-<p><strong>Get started free</strong> — <a href="https://career.hadess.io/login">Create your HADESS account</a> and access all career tools.</p>
+<p><strong>Cloud Security Engineer:</strong></p>
+<ul>
+<li>Skills: Cloud architecture (AWS/Azure/GCP), IAM, infrastructure-as-code, container security, cloud-native security tools</li>
+<li>Certifications: AWS Security Specialty, CCSP, AZ-500, CKS</li>
+</ul>
+<p><strong>GRC Analyst:</strong></p>
+<ul>
+<li>Skills: Risk assessment, compliance frameworks (SOC 2, ISO 27001, NIST CSF), policy writing, audit preparation</li>
+<li>Certifications: CompTIA Security+, CISA, CRISC, CGRC</li>
+</ul>
+<p><strong>DevSecOps:</strong></p>
+<ul>
+<li>Skills: CI/CD pipelines, SAST/DAST tools, container security, secrets management, infrastructure-as-code security</li>
+<li>Certifications: AWS DevOps Professional, CKS, CSSLP</li>
+</ul>
+<p><strong>Incident Response:</strong></p>
+<ul>
+<li>Skills: Digital forensics, malware analysis, memory forensics, network forensics, log analysis</li>
+<li>Certifications: GCIH, GCFA, ECIH, CHFI</li>
+</ul>
+<p><strong>Threat Intelligence:</strong></p>
+<ul>
+<li>Skills: OSINT, malware analysis, adversary tracking, MITRE ATT&#038;CK, technical writing</li>
+<li>Certifications: GCTI, CTIA, GREM</li>
+</ul>
+<p><strong>Management:</strong></p>
+<ul>
+<li>Skills: Team leadership, budget management, risk communication, vendor management, security program development</li>
+<li>Certifications: CISSP, CISM, CCISO</li>
+</ul>
+<h2>Getting Started with No Experience</h2>
+<p>This is where most guides get vague. &#8220;Just get a cert and apply&#8221; is not a plan. Here is what actually works, based on what we have seen with hundreds of career switchers.</p>
+<p><strong>Step 1: Build the foundation (Month 1-3)</strong></p>
+<p>Start with networking and operating systems. You cannot do security work if you do not understand what you are securing. Learn TCP/IP, DNS, HTTP, subnetting, basic Windows administration, and basic Linux command-line usage. CompTIA Network+ level knowledge is the target, even if you do not sit the exam.</p>
+<p><strong>Step 2: Get your first certification (Month 2-4)</strong></p>
+<p>CompTIA Security+ is still the industry standard entry-level certification. It is recognized globally, it is a <a href="https://www.sans.org/cyber-security-courses/dod-directive-8570/">DoD 8570 requirement</a> for many roles, and it covers enough breadth to give you context for the entire field. Study actively — labs, practice exams, flashcards. Do not just read a book.</p>
+<p>If you need guidance on study plans, our <a href="/blog/read/cybersecurity-learning-path">cybersecurity learning path guide</a> walks through building a structured study schedule.</p>
+<p><strong>Step 3: Pick a direction (Month 3-4)</strong></p>
+<p>By this point, you should have enough context to know whether you are drawn to offense, defense, cloud, or governance. Pick one track and focus. Trying to learn everything at once is how people burn out and quit.</p>
+<p>If you have no idea yet, default to SOC analyst. It is the widest entry point, it exposes you to the broadest range of security work, and the transition paths from SOC to other specializations are well-established.</p>
+<p><strong>Step 4: Build practical skills (Month 3-6)</strong></p>
+<p>Set up a home lab. This does not have to be expensive. A laptop with VirtualBox, a Kali Linux VM, and some vulnerable practice targets (HackTheBox, TryHackMe, VulnHub) will get you started. Document what you do. Write it up on a blog or in a GitHub repo.</p>
+<p>For SOC-focused people: Set up a SIEM (Wazuh or Elastic Security are free), generate logs, write detection rules. For pen testing: Work through HackTheBox machines and TryHackMe paths systematically. For cloud security: Use AWS Free Tier and build secure architectures.</p>
+<p>If you want a structured approach, explore the HADESS career skills mapping to see exactly which skills map to which roles.</p>
+<p><strong>Step 5: Make yourself findable (Month 4-6)</strong></p>
+<p>Update your LinkedIn with specific security skills and projects. Write about what you are learning. Engage with the security community on Twitter/X, Discord, and LinkedIn. Attend local meetups and virtual conferences (BSides events are great for networking).</p>
+<p>Do not undersell transferable skills. If you worked in IT support, you understand troubleshooting and user interaction. If you were in finance, you understand risk. If you were a developer, you already know how software works from the inside.</p>
+<p><strong>Step 6: Apply strategically (Month 5-6+)</strong></p>
+<p>Target roles labeled &#8220;junior,&#8221; &#8220;associate,&#8221; or &#8220;entry-level.&#8221; SOC Analyst Tier 1, Junior Security Analyst, IT Security Analyst, and Security Operations Associate are common titles. MSSPs (Managed Security Service Providers) and large enterprises are the most common first employers because they have structured SOC operations.</p>
+<p>Apply broadly but customize each application. Use HADESS&#8217;s interview preparation tools to practice technical interview questions specific to your target role.</p>
+<p>Our complete guide on <a href="/blog/read/cybersecurity-no-experience">getting into cybersecurity with no experience</a> goes deeper into each of these steps.</p>
+<h2>How HADESS Structures Your Learning Path</h2>
+<p>HADESS exists because we have been on both sides of the hiring table and saw the same problem: smart people wanted to get into cybersecurity but had no clear way to map their current skills to their target role, identify their gaps, and build a focused study plan.</p>
+<p>Here is how the platform works:</p>
+<p><strong>Career Assessment:</strong> Take the HADESS career assessment to identify which cybersecurity roles match your background, interests, and aptitude. It is not a personality quiz — it maps your existing technical and professional experience to specific career tracks and tells you where the gaps are.</p>
+<p><strong>Skills Catalog:</strong> Browse 80+ cybersecurity skills organized by domain — offensive security, defensive security, cloud, networking, programming, DevOps, and more. Each skill page includes what it is, why it matters, where it fits in career progression, and linked resources.</p>
+<p><strong>Certification Roadmap:</strong> Use the certificate roadmap tool to see which certifications make sense for your target role, in what order, and at what career stage.</p>
+<p><strong>Career Skills Mapping:</strong> The career skills page maps specific skills to specific roles so you can see exactly what a SOC Analyst, Pen Tester, or <a href="/blog/read/cloud-security-engineer" title="Cloud Security Engineer: Role, Skills, Path">Cloud Security Engineer</a> needs to know.</p>
+<p><strong>1-on-1 Coaching:</strong> When you need human guidance, HADESS coaching connects you with practitioners who have hired for and worked in the roles you are targeting. Read more about <a href="/blog/read/cybersecurity-career-coaching">how cybersecurity coaching works</a>.</p>
+<h2>Related Deep-Dives</h2>
+<p>These cluster guides go deeper into specific topics covered in this pillar:</p>
+<ul>
+<li><a href="/blog/read/soc-analyst-guide">SOC Analyst Guide: Step-by-Step Career Breakdown</a> — Everything you need to know about becoming a SOC analyst, from Tier 1 through Tier 3.</li>
+<li><a href="/blog/read/penetration-tester-career">Penetration Tester Career: From Beginner to Senior</a> — The full <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">penetration testing</a> career path, including certifications, labs, and specializations.</li>
+<li><a href="/blog/read/cloud-security-engineer">Cloud Security Engineer Career Path</a> — How to break into cloud security, which platforms to learn, and what certifications matter.</li>
+<li><a href="/blog/read/grc-analyst-career">GRC Analyst Career: Governance, Risk, and Compliance</a> — The non-technical path into cybersecurity through governance and compliance.</li>
+<li><a href="/blog/read/cybersecurity-no-experience">Breaking into Cybersecurity with No Experience</a> — A tactical guide for people starting from scratch.</li>
+<li><a href="/blog/read/career-switch-cybersecurity">Career Switch to Cybersecurity: A Practical Guide</a> — How to translate your existing professional experience into a security career.</li>
+<li><a href="/blog/read/entry-level-cyber-jobs">Entry-Level Cybersecurity Jobs: What to Expect</a> — The most common first roles, what they pay, and how to get them.</li>
+<li><a href="/blog/read/cybersecurity-timeline">Cybersecurity Career Timeline: How Long Does It Take?</a> — Realistic timelines for reaching specific career milestones.</li>
+<li><a href="/blog/read/is-cybersecurity-hard">Is Cybersecurity Hard? An Honest Answer</a> — What is actually difficult about the field and what is not.</li>
+<li><a href="/blog/read/cyber-career-roadmap">Cyber Career Roadmap: Planning Your 5-Year Path</a> — Long-term career planning for security professionals.</li>
+</ul>
+<h2>Start Your Journey</h2>
+<p><strong>Take the HADESS Career Assessment</strong><br />
+Find out which cybersecurity career tracks match your background, skills, and interests. The assessment maps your experience to specific roles and identifies exactly where to focus your learning.</p>
+<p>Start your career assessment</p>
+<p><strong>Explore All Career Paths</strong><br />
+Browse detailed career path breakdowns for every major cybersecurity role — from SOC analyst to CISO.</p>
+<p>Explore career paths on HADESS</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What certifications do I need for this role?</h3>
-<p>Certification requirements vary by employer and seniority level. Use the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a> to build a sequence based on your target role and current qualifications.</p>
-<h3>What is the salary range for this role?</h3>
-<p>Salaries vary significantly by location, experience, and employer type. Use the <a href="https://career.hadess.io/salary-calculator">salary calculator</a> for your specific market rate.</p>
-<h3>How do I transition into this career path?</h3>
-<p>Take the <a href="https://career.hadess.io/assessment">skills assessment</a> to identify your current strengths and gaps relative to this role. The assessment generates a personalized learning plan to close the gap.</p>
-<p>&#8212;</p>
-<p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>Do I need a computer science degree to work in cybersecurity?</h3>
+<p>No. A CS degree helps, but it is neither required nor sufficient. Many successful security professionals come from IT support, system administration, networking, or completely non-technical backgrounds. What matters more is demonstrable skills, relevant certifications, and practical experience. Some of the best incident responders we have worked with started in help desk roles. Some of the best GRC analysts came from audit or legal backgrounds.</p>
+<h3>How long does it take to get an entry-level cybersecurity job?</h3>
+<p>For someone studying full-time with a technical background (IT, development, networking), 4-8 months is realistic. For career switchers from non-technical fields, 6-12 months is more typical. This assumes you are earning at least one certification, building practical skills through labs, and actively networking. Our <a href="/blog/read/cybersecurity-timeline">cybersecurity timeline guide</a> provides more detailed breakdowns based on your starting point.</p>
+<h3>What is the best first certification for cybersecurity?</h3>
+<p>CompTIA Security+ remains the most widely recognized entry-level certification. It is vendor-neutral, globally accepted, and meets DoD 8570 requirements. If you already have Security+ and want to specialize, the next step depends on your track: CySA+ for SOC/defense, eJPT or PNPT for penetration testing, or AWS Cloud Practitioner followed by AWS Security Specialty for cloud security. Check the HADESS certification roadmap for personalized recommendations.</p>
+<h3>Can I work in cybersecurity remotely?</h3>
+<p>Yes, many cybersecurity roles support remote work. SOC analysts, threat intelligence analysts, GRC analysts, DevSecOps engineers, and security consultants can often work fully remote. Some roles — particularly those involving physical security, classified environments, or on-premises incident response — require on-site presence. The trend since 2020 has strongly favored remote and hybrid options.</p>
+<h3>How much does a cybersecurity career pay?</h3>
+<p>Entry-level roles in the US typically start between $55,000 and $85,000. Mid-career professionals earn $100,000-$160,000. Senior engineers, architects, and managers regularly earn $150,000-$250,000+. CISOs at large organizations can earn $300,000-$500,000+. Salaries vary significantly by region, role, and experience. Our <a href="/blog/read/cybersecurity-salary-guide">cybersecurity salary guide</a> breaks this down in detail. You can also use the HADESS salary calculator to get role-specific estimates.</p>
+<h3>Is cybersecurity a good career for 2026 and beyond?</h3>
+<p>The workforce gap continues to grow. Regulatory requirements (DORA, NIS2, updated SEC rules) are increasing demand for security professionals. AI is changing the tools but not eliminating the roles. Cloud adoption keeps expanding the attack surface. Every trend points to sustained demand for the foreseeable future. The <a href="https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm">Bureau of Labor Statistics</a> projects 32% growth in <a href="/blog/read/information-security-analyst" title="Information Security Analyst: Protect Data and Manage Risk">information security analyst</a> roles through 2032, which is dramatically faster than average.</p>
+<h3>What cybersecurity role should I start with?</h3>
+<p>If you are not sure, start with SOC Analyst. It provides the broadest exposure to security operations, has the most entry-level openings, and creates clear pathways into specializations like incident response, threat intelligence, or security engineering. If you know you want to be hands-on-keyboard offensive, aim for penetration testing from the start. If you prefer governance and business-side work, GRC is a solid entry point. Take the HADESS career assessment if you want a data-driven recommendation.</p>
+<h3>Do I need to know programming to get into cybersecurity?</h3>
+<p>You do not need to be a software developer, but basic scripting ability is expected in most roles. Python is the most useful language across the field — it lets you automate tasks, write custom tools, and parse data. Bash scripting is equally useful for anyone working in Linux environments. For SOC and defense work, knowing enough Python to write a log parser is sufficient to start. For penetration testing and DevSecOps, deeper programming knowledge is a significant advantage.</p>
+<h3>What transferable skills help in cybersecurity?</h3>
+<p>More than you might think. Problem-solving ability from any technical or analytical field translates directly. IT support experience gives you troubleshooting methodology and understanding of enterprise environments. Development experience means you understand how software is built (and broken). Legal and audit backgrounds map well to GRC. Military and law enforcement experience provides structured analytical thinking. Even customer service experience helps — a huge part of security work involves explaining technical problems to non-technical people.</p>
+<h3>How do I stand out as a candidate with no professional security experience?</h3>
+<p>Three things separate candidates: documented projects, relevant certifications, and community engagement. Build a home lab and write about what you learn. Earn Security+ and at least one role-specific cert. Contribute to open-source security tools. Participate in CTF competitions. Write blog posts about vulnerabilities you have studied. Join BSides events and security meetups. Hiring managers want to see evidence that you are genuinely engaged with the field, not just looking for a high-paying job. Use the HADESS resume builder to present your security skills and projects effectively.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field. We write from experience, not theory.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1625,27 +1784,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1845,11 +2004,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1872,59 +2031,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

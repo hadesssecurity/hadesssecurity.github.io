@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1230,7 +1242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/what-is-application-security#article","headline":"What is Application Security? — HADESS Magazine","description":"What is Application Security?\n\n\n\nApplication security is an essential part of the software development lifecycle, and getting it right should be a top priority...","url":"https://hadesssecurity.github.io/blog/read/what-is-application-security","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/what-is-application-security"},"datePublished":"June 19, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/hans-peter-gauster-3y1zF4hIPCg-unsplash-scaled.jpg"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/what-is-application-security#article","headline":"What is Application Security? — HADESS Magazine","description":"What is Application Security?\n\n\n\nApplication security is an essential part of the software development lifecycle, and getting it right should be a top priority...","url":"https://hadesssecurity.github.io/blog/read/what-is-application-security","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/what-is-application-security"},"datePublished":"June 19, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/hans-peter-gauster-3y1zF4hIPCg-unsplash-scaled.jpg"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1283,14 +1295,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1308,16 +1319,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1334,8 +1345,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1547,11 +1558,207 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/06/hans-peter-gauster-3y1zF4hIPCg-unsplash-scaled.jpg">
       
-<p class="wp-block-paragraph">Organizations across various domains—ranging from traditional IT security to AI-driven initiatives—are turning to Key Performance Indicators (KPIs) to measure progress and ensure sustainable results. Through the SMART framework, each KPI is crafted to be Specific, Measurable, Achievable, Relevant, and Time-Bound, enabling teams to focus on precise outcomes like minimizing detection time, improving patch compliance, and raising awareness through targeted security training. Real-world examples—from ShieldCore’s SOC transformation to DevOps-driven improvements at BetaWorks and AI model security at AlphaVision—underscore how these metrics reduce risks, streamline incident response, and bolster regulatory adherence.</p>
+<h1 class="wp-block-heading" id="h-what-is-application-security">What is Application Security?</h1>
 
 
 
-<p class="wp-block-paragraph">Across all these cases, core KPIs consistently monitor early threat detection, timely response, comprehensive coverage of system defenses, and the recurrence of specific security incidents. By tracking these measurements in cloud-focused, DevOps, AI, or traditional environments, organizations uncover vulnerabilities, optimize resources, and adopt a proactive stance toward safeguarding data and infrastructure. This unified approach to KPI-driven improvements delivers tangible accountability and ongoing governance, ensuring that security initiatives remain aligned with strategic business goals.</p>
+<p class="wp-block-paragraph"><strong>Application security</strong> is an essential part of the software development lifecycle, and getting it right should be a top priority in today’s ever-evolving and expanding digital ecosystem. <strong>Application security</strong> is the practice of protecting your applications from malicious attacks by detecting and fixing security weaknesses in your applications’ code.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">AST started as a manual process. Today, due to the growing modularity of enterprise software, the huge number of open source components, and a large number of known vulnerabilities and threat vectors, AST must be automated. Most organizations use a combination of several application security tools.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-static-application-security-testing-sast">Static Application Security Testing (SAST)</h2>
+
+
+
+<p class="wp-block-paragraph">SAST tools use a <em>white box testing</em> approach, in which testers inspect the inner workings of an application. SAST inspects static source code and reports on security weaknesses.</p>
+
+
+
+<p class="wp-block-paragraph">Static testing tools can be applied to non-compiled code to find issues like syntax errors, math errors, input validation issues, and invalid or insecure references. They can also run on compiled code using binary and byte-code analyzers.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-dynamic-application-security-testing-dast">Dynamic Application Security Testing (DAST)</h2>
+
+
+
+<p class="wp-block-paragraph">DAST tools take a <em>black-box testing</em> approach. They execute code and inspect it in runtime, detecting issues that may represent <em>security vulnerabilities</em>. This can include issues with query strings, requests and responses, the use of scripts, memory leakage, cookie and session handling, authentication, execution of third-party components, data injection, and DOM injection.</p>
+
+
+
+<p class="wp-block-paragraph">DAST tools can be used to conduct large-scale scans simulating a large number of unexpected or malicious test cases and reporting on the application’s response.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-interactive-application-security-testing-iast">Interactive Application Security Testing (IAST)</h2>
+
+
+
+<p class="wp-block-paragraph">IAST tools are the evolution of SAST and DAST tools—combining the two approaches to detect a wider range of security weaknesses. Like DAST tools, IAST tools run dynamically and inspect software during runtime. However, they are run from within the application server, allowing them to inspect compiled source code like IAST tools do.</p>
+
+
+
+<p class="wp-block-paragraph">IAST tools can provide valuable information about the root cause of vulnerabilities and the specific lines of code that are affected, making remediation much easier. They can analyze source code, data flow, configuration and third-party libraries, and are suitable for API testing.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-mobile-application-security-testing-mast">Mobile Application Security Testing (MAST)</h2>
+
+
+
+<p class="wp-block-paragraph">MAST tools combine static analysis, dynamic analysis, and investigation of forensic data generated by mobile applications. They can test for security vulnerabilities like <em>SAST, DAST, and IAST</em>, and in addition address mobile-specific issues like jailbreaking, malicious wifi networks, and data leakage from mobile devices.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-software-composition-analysis-sca">Software Composition Analysis (SCA)</h2>
+
+
+
+<p class="wp-block-paragraph">SCA tools help organizations conduct an inventory of third-party commercial and open source components used within their software. Enterprise applications can use thousands of third-party components, which may contain security vulnerabilities. SCA helps understand which components and versions are actually being used, identify the most severe security vulnerabilities affecting those components, and understand the easiest way to remediate them.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-runtime-application-self-protection-rasp">Runtime Application Self-Protection (RASP)</h2>
+
+
+
+<p class="wp-block-paragraph">RASP tools evolved from SAST, DAST, and IAST. They are able to analyze application traffic and user behavior at runtime, to detect and prevent cyber threats.</p>
+
+
+
+<p class="wp-block-paragraph">Like the previous generation of tools, RASP has visibility into application source code and can analyze weaknesses and vulnerabilities. It goes one step further by identifying that security weaknesses have been exploited, and providing active protection by terminating the session or issuing an alert.</p>
+
+
+
+<p class="wp-block-paragraph">RASP tools integrate with applications and analyze traffic at runtime, and can not only detect and warn about vulnerabilities but actually prevent attacks. Having this type of in-depth inspection and protection at runtime makes SAST, DAST, and IAST much less important, making it possible to detect and prevent security issues without costly development work.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-applications-remain-the-weakest-security-link"><strong>Applications Remain The Weakest Security Link</strong></h2>
+
+
+
+<h2 class="wp-block-heading" id="h-findings-from-top-industry-research-reports-show-that-attacking-application-weaknesses-and-software-vulnerabilities-remains-the-most-common-external-attack-method-for-example-verizon-s-2020-data-breach-investigations-report-recently-found-that-web-applications-are-a-top-hacking-vector-in-breaches-the-verizon-report-asserts-that-this-trend-of-having-web-applications-as-the-vector-of-these-attacks-is-not-going-away" style="font-size:15px">Findings from top industry research reports show that attacking application weaknesses and software vulnerabilities remains the most common external attack method. For example, <em>Verizon’s 2020 Data Breach Investigations Report</em> recently found that web applications are a top hacking vector in breaches. The Verizon report asserts that “this trend of having web applications as the vector of these attacks is not going away.”</h2>
+
+
+
+<h2 class="wp-block-heading" id="h--1"><img fetchpriority="high" decoding="async" alt="Verizon’s 2020 Data Breach Investigations Report -- web applications are a top hacking vector in breaches." src="https://lh3.googleusercontent.com/GNAXXxZY7gtYWL-CCRop9-Y7iTJv849zju1aeNGSMzZX4XdmQALyLI4FRxFgqFnkCdXNHmWprLgEJMnbHesp0BwMHj83PaE0s1giSBeg5gpSR1EHFxzXtOw6j6cVWO483WtDH-0zzAgQLhAu3g" width="319" height="532"></h2>
+
+
+
+<h2 class="wp-block-heading" id="h-forrester-s-2020-state-of-application-security-report-also-predicted-that-application-vulnerabilities-will-continue-to-be-the-most-common-external-attack-method-and-found-that-most-external-attacks-target-either-software-vulnerabilities-or-web-applications" style="font-size:16px"><em>Forrester’s 2020 State of Application Security Report</em> also predicted that application vulnerabilities will continue to be the most common external attack method, and found that most external attacks target either software vulnerabilities or web applications.</h2>
+
+
+
+<h2 class="wp-block-heading" id="h--1"><img decoding="async" alt="Forrester’s 2020 State of Application Security Report --applications are still the weakest link" src="https://lh5.googleusercontent.com/3WYPLX8IWPvA2cQzMxhLtwMy7EoGZeMtvVEhILVtIn1lIIZzpOFRraaytfgHP0hxISvl3wXjCrkOOdT6zv2kBYfXT84OY06VhSse7RD0hEGNG9OlOoen6c-jtKhSOF6DJiEMyN5kNTRJxvl7WQ" width="597" height="729"></h2>
+
+
+
+<h3 class="wp-block-heading" id="h-based-on-forrester-s-the-state-of-application-security-2020">Based on Forrester’s The State Of Application Security 2020</h3>
+
+
+
+<h2 class="has-medium-font-size wp-block-heading" id="h-unfortunately-it-appears-that-most-organizations-continue-to-invest-in-the-protection-of-other-attack-vectors-currently-the-amount-of-investment-in-protecting-certain-areas-like-the-network-is-often-inconsistent-with-the-level-of-risk-associated-with-them-in-today-s-threat-landscape">Unfortunately, it appears that most organizations continue to invest in the protection of other attack vectors. Currently, the amount of investment in protecting certain areas like the network is often inconsistent with the level of risk associated with them in today’s threat landscape.</h2>
+
+
+
+<h2 class="has-medium-font-size wp-block-heading" id="h-according-to-the-ponemon-institute-s-research-report-the-increasing-risk-to-enterprise-applications-investment-in-application-security-is-not-commensurate-with-the-risk-the-research-report-shows-that-there-is-a-significant-gap-between-the-level-of-application-risk-and-what-companies-are-spending-to-protect-their-applications-while-the-level-of-risk-to-networks-is-much-lower-than-the-investment-in-network-security">According to the Ponemon Institute’s Research Report, The Increasing Risk to Enterprise Applications, “Investment in application security is not commensurate with the risk.” The research report shows that “There is a significant gap between the level of application risk and what companies are spending to protect their applications,” while “the level of risk to networks is much lower than the investment in network security.”</h2>
+
+
+
+<h2 class="wp-block-heading" id="h--1"><img decoding="async" alt=" Ponemon Institute -- The Increasing Risk to Enterprise Applications -- Investment in application security is not commensurate with the risk" src="https://lh3.googleusercontent.com/bzIhcxqEi2JawIEKkTcDCZOfFo9qN2FFhwB-5Vcf-NPNkCs5eJyImF41lhdtLLnX5JbkNyzpO39iVnlLivlYeZDPfeybOQ3WOAW3q56UDr-nTG4y10WB7lufrfnzmyqMskxEUILjSYsBLX_kaw" width="624" height="300"></h2>
+
+
+
+<h2 class="has-medium-font-size wp-block-heading" id="h-in-order-to-ensure-effective-application-security-organizations-need-to-make-sure-that-their-application-security-practices-evolve-beyond-the-old-methods-of-blocking-traffic-and-understand-that-investing-heavily-in-network-security-is-not-enough">In order to ensure effective application security, organizations need to make sure that their application security practices evolve beyond the old methods of blocking traffic, and understand that investing heavily in network security is not enough.</h2>
+
+
+
+<h2 class="wp-block-heading" id="h--1">&nbsp;</h2>
+
+
+
+<h2 class="wp-block-heading" id="h-application-security-testing-best-practices">Application Security Testing Best Practices</h2>
+
+
+
+<h3 class="wp-block-heading" id="h-shift-security-testing-left"><strong>Shift security testing left</strong></h3>
+
+
+
+<p class="wp-block-paragraph">New organizational practices like DevSecOps are emphasizing the need to integrate security into every stage of the software development lifecycle. AST tools can:</p>
+
+
+
+<ul class="wp-block-list"><li>Help developers understand security concerns and enforce security best practices at the development stage.</li><li>Help testers identify security issues early before software ships to production.</li><li>Advanced tools like RASP can identify and block vulnerabilities in source code in production.</li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-test-internal-interfaces-not-just-apis-and-uis">Test internal interfaces, not just APIs and UIs</h3>
+
+
+
+<p class="wp-block-paragraph">It is natural to focus application security testing on external threats, such as user inputs submitted via web forms or public API requests. However, it is even more common to see attackers exploit weak authentication or vulnerabilities on internal systems, once already inside the security perimeter. AST should be leveraged to test that inputs, connections, and integrations between internal systems are secure.</p>
+
+
+
+<h3 class="wp-block-heading" id="h-test-often"><strong>Test often</strong></h3>
+
+
+
+<p class="wp-block-paragraph">New vulnerabilities are discovered every day, and enterprise applications use thousands of components, any of which could go end of life (EOL) or require a security update. It is essential to test critical systems as often as possible, prioritize issues focusing on business-critical systems and high-impact threats, and allocate resources to remediate them fast.</p>
+
+
+
+<h3 class="wp-block-heading" id="h-third-party-code-security"><strong>Third-party code security</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Organizations should employ AST practices in any third-party code they use in their applications. Never “trust” that a component from a third party, whether commercial or open-source, is secure. Scan third-party code just like you scan your own. If you discover severe issues, apply patches, consult vendors, create your own fix or consider switching components.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-getting-it-right-the-application-security-maturity-model"><strong>Getting It Right: The Application Security Maturity Model</strong></h2>
+
+
+
+<p class="wp-block-paragraph">While getting the right tools for application security is important, it is just one step. Though most tools today focus on detection, a mature application security policy goes a few steps further to bridge the gap from detection to remediation.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Considering the continuous increase in known software vulnerabilities, focusing on detection will leave organizations with an incomplete application security model. Application security tools often provide security and development teams with exhausting laundry lists of security alerts. However, teams also need to have the means to quickly fix the issues that present the biggest security risks.</p>
+
+
+
+<p class="wp-block-paragraph">In order to address the most urgent application security threats, organizations need to adopt a mature application security model that includes <em>prioritization </em>and remediation on top of detection.</p>
+
+
+
+<p class="wp-block-paragraph">While detecting as many security issues in the application layer is extremely important, considering the current threat landscape and competitive release timelines, it has become unrealistic to attempt to fix them all. It’s important to remember Gartner analysts Neil MacDonald and Ian Head’s statement from <em>Gartner’s 10 Things to Get Right for Successful DevSecOps</em>: “Perfect security is impossible, Zero risk is impossible. We must bring continuous risk and trust-based assessment and prioritization of application vulnerabilities to DevSecOps.”</p>
+
+
+
+<p class="wp-block-paragraph">A mature application security model includes strategies and technologies that help teams prioritize — providing them the tools to zero-in on the security vulnerabilities that present the biggest risk to their systems so that they can address them as quickly as possible. Otherwise, teams end up spending a lot of valuable time sorting through alerts, debating what to fix first, and running the risk of leaving the most urgent issues unattended.</p>
+
+
+
+<p class="wp-block-paragraph">Next in the application security maturity model comes remediation — technologies that integrate seamlessly into the development cycle to help remediate issues when they are relatively easier and cheaper to fix, and update vulnerable versions automatically.&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading" id="h-application-security-at-the-speed-of-devsecops"><strong>Application Security at the Speed of DevSecOps</strong></h2>
+
+
+
+<p class="wp-block-paragraph">DevSecOps addresses the challenge of continuously increasing the pace of development and delivery without compromising on security. First came DevOps, which helped organizations create shorter release cycles so that they could meet the market demand of delivering innovative software products at a rapid pace. DevSecOps adds security to the mix,<em> integrating security throughout the software development lifecycle (SDLC)</em>, to make sure that security doesn’t slow down development and that application development is both agile and secure.</p>
+
+
+
+<p class="wp-block-paragraph">DevSecOps aims to seamlessly integrate application security in the earliest stages of the SDLC, by updating organizations’ application security practices, tools, and teamwork. It calls for shifting security testing left to help teams work together to address security issues early in development when remediation can be relatively simple.&nbsp;</p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1569,27 +1776,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1716,11 +1923,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1743,59 +1950,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

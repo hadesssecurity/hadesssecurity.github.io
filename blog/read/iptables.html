@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/iptables#article","headline":"IPTables: Linux Packet Filtering and NAT Configuration — HADESS Magazine","description":"IPTables: Linux Packet Filtering and NAT Configuration. Skills, career paths, and how to get started on the HADESS platform.","url":"https://hadesssecurity.github.io/blog/read/iptables","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/iptables"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-iptables.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/iptables#article","headline":"IPTables: Linux Packet Filtering and NAT Configuration — HADESS Magazine","description":"IPTables: Linux Packet Filtering and NAT Configuration. Skills, career paths, and how to get started on the HADESS platform.","url":"https://hadesssecurity.github.io/blog/read/iptables","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/iptables"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-iptables.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,266 +1549,77 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-iptables.png">
-      <blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-skills-guide">Cybersecurity Skills Guide</a></strong> — This article is one deep-dive in our complete skills and certifications series.</p>
+      <h1>IPTables: Linux Packet Filtering and NAT Configuration</h1>
+<blockquote>
+<p><strong>Part of the <a href="/blog/read/cybersecurity-skills-guide">Cybersecurity Skills Guide</a></strong> — This article is one deep-dive in our complete guide series.</p>
 </blockquote>
-<h1>CISSP Certification: Complete Requirements Guide</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
-<h2>Table of Contents</h2>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 5 min read</em></p>
+<p>IPTables is the userspace interface for the Linux kernel&#8217;s netfilter packet filtering framework. Even with nftables gaining adoption as the successor, IPTables remains the default on millions of production Linux systems. If you manage Linux infrastructure, you need to understand how IPTables processes packets, how to write effective rules, and how to avoid locking yourself out of your own servers.</p>
+<h2>Chain Architecture</h2>
+<p>IPTables organizes rules into tables, and each table contains chains. The three tables you will work with most:</p>
+<p><strong>Filter table</strong> (default): controls whether packets are accepted or dropped. Contains three built-in chains:</p>
 <ul>
-<li><a href="#what-is-cissp">What Is CISSP?</a></li>
-<li><a href="#cissp-requirements-in-2026">CISSP Requirements in 2026</a></li>
-<li><a href="#the-eight-cissp-domains">The Eight CISSP Domains</a></li>
-<li><a href="#exam-format-and-structure">Exam Format and Structure</a></li>
-<li><a href="#experience-requirements-explained">Experience Requirements Explained</a></li>
-<li><a href="#study-strategy-how-to-prepare">Study Strategy: How to Prepare</a></li>
-<li><a href="#domain-1-security-and-risk-management">Domain 1: Security and Risk Management</a></li>
-<li><a href="#domain-2-asset-security">Domain 2: Asset Security</a></li>
-<li><a href="#domain-3-security-architecture-and-engineering">Domain 3: Security Architecture and Engineering</a></li>
-<li><a href="#domain-4-communication-and-network-security">Domain 4: Communication and Network Security</a></li>
-<li><a href="#domain-5-identity-and-access-management">Domain 5: Identity and Access Management</a></li>
-<li><a href="#domain-6-security-assessment-and-testing">Domain 6: Security Assessment and Testing</a></li>
-<li><a href="#domain-7-security-operations">Domain 7: Security Operations</a></li>
-<li><a href="#domain-8-software-development-security">Domain 8: Software Development Security</a></li>
-<li><a href="#cissp-vs-other-senior-certifications">CISSP vs. Other Senior Certifications</a></li>
-<li><a href="#career-impact-and-salary-data">Career Impact and Salary Data</a></li>
-<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+<li><code>INPUT</code> &#8212; packets destined for the local system</li>
+<li><code>FORWARD</code> &#8212; packets being routed through the system</li>
+<li><code>OUTPUT</code> &#8212; packets originating from the local system</li>
 </ul>
-<h2>What Is CISSP?</h2>
-<p>The CISSP requirements 2026 remain the benchmark for senior cybersecurity professionals worldwide. The Certified Information Systems Security Professional (CISSP) certification, issued by <a href="https://www.isc2.org/certifications/cissp">ISC2</a>, validates deep knowledge across all domains of information security. It is not a hands-on technical certification — it is a management-level credential that demonstrates your ability to design, implement, and manage a security program.</p>
-<p>CISSP holders typically occupy roles like <a href="/blog/read/security-manager" title="Security Manager: Build and Lead Security Teams">Security Manager</a>, Security Director, Security Architect, CISO, and Senior Security Consultant. The certification signals to employers that you understand security at an organizational level, not just at the tool or technique level.</p>
-<p>With over 160,000 active holders globally, CISSP is the most widely recognized advanced security certification. It satisfies DoD Directive 8570/8140 requirements for Information Assurance Technical (IAT) Level III and Information Assurance Management (IAM) Level III positions.</p>
-<p>For an overview of how CISSP fits into the broader certification ecosystem, see our <a href="/blog/read/cybersecurity-skills-guide">cybersecurity skills guide</a>.</p>
-<h2>CISSP Requirements in 2026</h2>
-<p>To earn the full CISSP certification, you must satisfy three requirements:</p>
-<p><strong>1. Pass the exam</strong>: Score sufficiently on the CISSP Computerized Adaptive Test (CAT) or linear exam.</p>
-<p><strong>2. Professional experience</strong>: Demonstrate five years of cumulative, paid, full-time work experience in two or more of the eight CISSP domains. A four-year college degree or an approved credential (such as CompTIA Security+) substitutes for one year, reducing the requirement to four years.</p>
-<p><strong>3. Endorsement</strong>: After passing the exam, an active ISC2-certified professional must endorse your application, attesting that your experience claims are accurate. If you do not know an ISC2 member, ISC2 can act as your endorser.</p>
-<p><strong>The Associate path</strong>: If you pass the exam but lack the required experience, you become an Associate of ISC2. You have six years to accumulate the necessary experience and complete the endorsement process. Many professionals take this path — passing the exam while building experience.</p>
-<p><strong>Continuing Professional Education (CPE)</strong>: After certification, you must earn 40 CPE credits per year (120 over each three-year cycle) and pay an annual maintenance fee of $125.</p>
-<h2>The Eight CISSP Domains</h2>
-<p>The CISSP Common Body of Knowledge (CBK) covers eight domains. The 2024 exam outline (active through 2026) weights them as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Domain</th>
-<th>Weight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. Security and Risk Management</td>
-<td>16%</td>
-</tr>
-<tr>
-<td>2. Asset Security</td>
-<td>10%</td>
-</tr>
-<tr>
-<td>3. Security Architecture and Engineering</td>
-<td>13%</td>
-</tr>
-<tr>
-<td>4. Communication and Network Security</td>
-<td>13%</td>
-</tr>
-<tr>
-<td>5. <a href="/blog/read/identity-access-management" title="Identity and Access Management: RBAC, ABAC, and Federation">Identity and Access Management</a> (IAM)</td>
-<td>13%</td>
-</tr>
-<tr>
-<td>6. Security Assessment and Testing</td>
-<td>12%</td>
-</tr>
-<tr>
-<td>7. Security Operations</td>
-<td>13%</td>
-</tr>
-<tr>
-<td>8. Software Development Security</td>
-<td>10%</td>
-</tr>
-</tbody>
-</table>
-<p>Domain 1 carries the highest weight at 16%. The remaining domains are relatively evenly distributed. This means you cannot afford to neglect any single domain — the exam tests breadth across all eight areas.</p>
-<h2>Exam Format and Structure</h2>
-<p>The CISSP exam uses Computerized Adaptive Testing (CAT) for English-language exams:</p>
+<p><strong>NAT table</strong>: handles network address translation. Contains:</p>
 <ul>
-<li><strong>Question count</strong>: 125-175 questions (adaptive — the test ends when the algorithm has enough data to determine pass/fail)</li>
-<li><strong>Time limit</strong>: 4 hours</li>
-<li><strong>Question types</strong>: Multiple choice and advanced innovative items (drag-and-drop, hotspot, reorder)</li>
-<li><strong>Passing standard</strong>: 700 out of 1000 points</li>
-<li><strong>Languages</strong>: CAT available in English. Linear (250 questions, 6 hours) available in other languages</li>
+<li><code>PREROUTING</code> &#8212; modifies destination address before routing (DNAT)</li>
+<li><code>POSTROUTING</code> &#8212; modifies source address after routing (SNAT/MASQUERADE)</li>
+<li><code>OUTPUT</code> &#8212; NAT for locally generated packets</li>
 </ul>
-<p><strong>How the CAT works</strong>: The algorithm presents questions of varying difficulty. If you answer correctly, the next question is harder. If you answer incorrectly, the next question is easier. The test determines your proficiency level in each domain and ends when it has statistical confidence in its pass/fail determination. Most candidates finish between 100-150 questions.</p>
-<p><strong>What the exam tests</strong>: CISSP questions test your ability to apply security concepts to scenarios, not memorize facts. A typical question presents a situation and asks what you should do <em>first</em>, what is the <em>best</em> approach, or what <em>most effectively</em> addresses the requirement. The correct answer often depends on understanding security principles and organizational context, not technical specifics.</p>
-<p><strong>Exam cost</strong>: $749 USD. Scheduling through Pearson VUE.</p>
-<h2>Experience Requirements Explained</h2>
-<p>The five-year experience requirement is the most significant barrier to CISSP certification. Here is how it works in practice:</p>
-<p><strong>Qualifying experience</strong>: Full-time security work in at least two of the eight domains. This includes security analysis, architecture, consulting, engineering, management, and security-related research or instruction.</p>
-<p><strong>Adjacent roles that qualify</strong>: Systems administration with security responsibilities, network engineering with security architecture duties, software development with <a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">application security</a> focus, risk management, compliance and audit, and IT management with security oversight.</p>
-<p><strong>What does not qualify</strong>: General IT support without security responsibilities, pure software development without security focus, and project management without security domain involvement.</p>
-<p><strong>Education and credential substitutions</strong> (one year maximum):</p>
+<p><strong>Mangle table</strong>: modifies packet headers (TTL, TOS, marking packets for policy routing).</p>
+<p>Packets traverse chains from top to bottom. The first matching rule determines the packet&#8217;s fate. If no rule matches, the chain&#8217;s default policy applies. Set default policies to DROP for INPUT and FORWARD, ACCEPT for OUTPUT &#8212; this gives you a default-deny posture for incoming and forwarded traffic.</p>
+<h2>Practical Rule Examples</h2>
+<p>Allow established connections and related traffic (this should be your first rule): &#8220;<code> iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT </code>`<code></p>
+<p>Allow SSH from a specific management subnet: </code>`<code> iptables -A INPUT -p tcp -s 10.0.1.0/24 --dport 22 -j ACCEPT </code>`<code></p>
+<p>Allow HTTP and HTTPS from anywhere: </code>`<code> iptables -A INPUT -p tcp -m multiport --dports 80,443 -j ACCEPT </code>`<code></p>
+<p>Drop and log everything else: </code>`<code> iptables -A INPUT -j LOG --log-prefix "IPTables-Dropped: " iptables -A INPUT -j DROP </code>`<code></p>
+<h2>NAT Configuration</h2>
+<p>SNAT/Masquerade for outbound traffic (typical for a gateway/router): </code>`<code> iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE </code>`<code></p>
+<p>DNAT for port forwarding (forward external port 8080 to internal web server): </code>`<code> iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 8080 -j DNAT --to-destination 192.168.1.100:80 iptables -A FORWARD -p tcp -d 192.168.1.100 --dport 80 -j ACCEPT </code>`<code></p>
+<p>MASQUERADE is simpler than SNAT because it automatically uses the outgoing interface's current IP address, making it appropriate for dynamic IP assignments. Use SNAT with a fixed IP for static configurations -- it is slightly more efficient.</p>
+<h2>Rate Limiting</h2>
+<p>Protect services from brute force and DoS: </code>`<code> iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -m recent --set iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 4 -j DROP </code>`<code></p>
+<p>This limits new SSH connections to 3 per minute per source IP. The </code>recent<code> module tracks source addresses and timestamps.</p>
+<p>For broader rate limiting, the </code>hashlimit<code> module provides per-source-IP rate limiting without the connection tracking overhead: </code>`<code> iptables -A INPUT -p tcp --dport 80 -m hashlimit --hashlimit-above 50/sec --hashlimit-burst 100 --hashlimit-mode srcip --hashlimit-name http -j DROP </code>`<code></p>
+<h2>Stateful Filtering</h2>
+<p>The </code>conntrack<code> module is what makes IPTables a stateful firewall. It tracks connection states:</p>
 <ul>
-<li>Four-year college degree in any field (or regional equivalent)</li>
-<li>Master&#8217;s degree in information security</li>
-<li>CompTIA Security+, CCNA Security, Systems Security Certified Practitioner (SSCP), or other ISC2-approved credentials</li>
+<li><strong>NEW</strong> -- first packet of a connection</li>
+<li><strong>ESTABLISHED</strong> -- part of an already established connection</li>
+<li><strong>RELATED</strong> -- associated with an existing connection (like FTP data connections or ICMP error messages)</li>
+<li><strong>INVALID</strong> -- packet does not belong to any known connection</li>
 </ul>
-<p><strong>Documentation</strong>: You must describe your experience in detail on the endorsement form, mapping it to specific CISSP domains. Be prepared to explain your responsibilities, the security decisions you made, and the scope of your work. ISC2 audits a percentage of applications.</p>
-<h2>Study Strategy: How to Prepare</h2>
-<p>CISSP preparation differs from technical certifications. The exam tests judgment and decision-making more than technical recall.</p>
-<p><strong>Recommended study timeline</strong>: 3-<a href="/blog/read/cyber-job-6-months" title="How to Get a Cybersecurity Job in 6 Months">6 months</a> at 10-15 hours per week.</p>
-<p><strong>Study materials</strong>:</p>
+<p>Always drop INVALID state packets -- they are often the result of port scans, malformed packets, or network errors: </code>`<code> iptables -A INPUT -m conntrack --ctstate INVALID -j DROP </code>`<code></p>
+<p>Save your rules with </code>iptables-save > /etc/iptables/rules.v4<code> and ensure they load on boot. On Debian/Ubuntu, the </code>iptables-persistent` package handles this.</p>
+<h3>Next Steps</h3>
 <ul>
-<li><em>ISC2 CISSP Official Study Guide</em> (Sybex/Wiley) — the primary textbook</li>
-<li><em>ISC2 CISSP Official Practice Tests</em> — essential for exam readiness</li>
-<li><em>CISSP All-in-One Exam Guide</em> (Shon Harris/Fernando Maymi) — alternative full-coverage reference</li>
-<li><em>Destination CISSP</em> (Rob Witcher) — focused on exam strategy and understanding ISC2&#8217;s perspective</li>
-<li><em>Think Like a Manager</em> (Luke Ahmed) — specifically addresses the management mindset required</li>
+<li>Assess your Linux security skills with the skills assessment</li>
+<li>Browse network and infrastructure security topics in the skills library</li>
+<li>Check your market value with the salary calculator for <a href="/blog/read/network-security-guide" title="Network Security Fundamentals: Complete Guide">network security</a> roles</li>
 </ul>
-<p><strong>Study approach</strong>:</p>
-<p><strong>Phase 1 (Weeks 1-6)</strong>: Read through all eight domains systematically. Take notes on concepts you do not understand. Do not memorize — focus on understanding why each security control exists and when it applies.</p>
-<p><strong>Phase 2 (Weeks 7-10)</strong>: Practice questions. Complete 1,500-2,500 practice questions from multiple sources. Analyze every wrong answer — understand why the correct answer is correct and why your answer was wrong. Track your weakest domains.</p>
-<p><strong>Phase 3 (Weeks 11-12)</strong>: Focused review of weak domains. Take full-length practice exams under timed conditions. Score consistently above 80% before scheduling the real exam.</p>
-<p><strong>The ISC2 mindset</strong>: CISSP questions are written from the perspective of a security manager, not a technician. When choosing between a technical solution and a managerial/procedural solution, the procedural answer is often correct. When asked what to do &#8220;first,&#8221; think about life safety, then containment, then investigation. When two answers seem correct, choose the one that addresses the broadest risk.</p>
-<h2>Domain 1: Security and Risk Management</h2>
-<p>This is the largest domain (16%) and covers the governance, risk, and compliance foundation that the other seven domains build upon.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>Security governance principles and frameworks</li>
-<li>Compliance requirements (GDPR, HIPAA, PCI DSS, SOX)</li>
-<li>Legal and regulatory issues (privacy, intellectual property, import/export controls)</li>
-<li>Professional ethics (ISC2 Code of Ethics)</li>
-<li>Risk management concepts (identification, assessment, treatment, monitoring)</li>
-<li>Threat modeling methodologies (STRIDE, PASTA, DREAD)</li>
-<li>Business continuity planning and disaster recovery</li>
-<li>Personnel security (hiring practices, termination procedures, security awareness)</li>
-</ul>
-<p><strong>Study emphasis</strong>: Understand risk treatment options (accept, mitigate, transfer, avoid) and when each is appropriate. Know the difference between quantitative risk analysis (ALE, SLE, ARO) and qualitative risk analysis (risk matrices, Delphi technique). Be able to calculate ALE and explain what the result means to a business stakeholder.</p>
-<h2>Domain 2: Asset Security</h2>
-<p>This domain (10%) covers data classification, ownership, privacy, and retention.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>Data classification levels (government and commercial)</li>
-<li>Data ownership roles (owner, custodian, steward, processor, controller)</li>
-<li>Privacy principles and data protection</li>
-<li>Data retention, archival, and destruction policies</li>
-<li>Data states: at rest, in transit, in use</li>
-<li>Data handling requirements based on classification</li>
-<li>Data remanence and secure disposal methods</li>
-</ul>
-<h2>Domain 3: Security Architecture and Engineering</h2>
-<p>This domain (13%) covers security design principles and the engineering of secure systems.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>Security models (Bell-LaPadula, Biba, Clark-Wilson, Brewer-Nash)</li>
-<li>Security evaluation criteria (Common Criteria, TCSEC historical context)</li>
-<li>Secure design principles (defense in depth, least privilege, fail-safe defaults, separation of duties)</li>
-<li>Cryptography (symmetric, asymmetric, hashing, digital signatures, PKI, certificate management)</li>
-<li>Physical security controls</li>
-<li>Site and facility security design</li>
-</ul>
-<p><strong>Study emphasis</strong>: Cryptography is heavily tested. Understand the differences between AES, RSA, ECC, SHA-256, and when each is used. Know how PKI works end-to-end (certificate authorities, certificate lifecycle, revocation). Understand key management practices.</p>
-<p>For related technical depth, see our guide on <a href="/blog/read/network-security-guide">network security fundamentals</a>.</p>
-<h2>Domain 4: Communication and Network Security</h2>
-<p>This domain (13%) covers network architecture, protocols, and secure communication channels.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>OSI and TCP/IP models</li>
-<li>Network components (switches, routers, firewalls, proxies, load balancers)</li>
-<li>Secure communication protocols (TLS, IPsec, SSH)</li>
-<li>Network attacks (DDoS, spoofing, man-in-the-middle, session hijacking)</li>
-<li>Network segmentation and micro-segmentation</li>
-<li>Wireless security</li>
-<li>VPN technologies</li>
-<li>SDN and cloud networking</li>
-</ul>
-<h2>Domain 5: Identity and Access Management</h2>
-<p>This domain (13%) covers identification, authentication, authorization, and accountability.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>Authentication factors (knowledge, possession, inherence, location)</li>
-<li>Federated identity and SSO (SAML, OAuth, OIDC)</li>
-<li>Access control models (DAC, MAC, RBAC, ABAC)</li>
-<li><a href="/blog/read/privileged-access-management" title="Privileged Access Management: Securing High-Risk Accounts">Privileged access management</a></li>
-<li>Identity as a service (IDaaS)</li>
-<li>Session management</li>
-<li>Registration and identity proofing</li>
-</ul>
-<p>This domain connects directly to <a href="/blog/read/zero-trust-security">zero trust security</a> principles, which treat identity as the primary security boundary.</p>
-<h2>Domain 6: Security Assessment and Testing</h2>
-<p>This domain (12%) covers security testing methodologies, vulnerability assessment, and audit processes.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>Vulnerability assessment and management</li>
-<li>Penetration testing methodologies</li>
-<li>Log review and analysis</li>
-<li>Security audits (internal and external)</li>
-<li>SOC reports (SOC 1, SOC 2, SOC 3)</li>
-<li>Key Performance Indicators (KPIs) and Key Risk Indicators (KRIs)</li>
-<li>Code review and testing</li>
-<li>Disaster recovery testing</li>
-</ul>
-<p>For context on how offensive certifications complement CISSP, see our <a href="/blog/read/ceh-vs-oscp">CEH vs OSCP comparison</a>.</p>
-<h2>Domain 7: Security Operations</h2>
-<p>This domain (13%) covers incident management, forensics, business continuity, and physical security operations.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>Incident management lifecycle (detection, response, mitigation, reporting, recovery, remediation, lessons learned)</li>
-<li>Digital forensics procedures (evidence collection, chain of custody, analysis)</li>
-<li>Logging and monitoring requirements</li>
-<li>Change management and configuration management</li>
-<li>Patch and <a href="/blog/read/vulnerability-management" title="Vulnerability Management: Scanning, Prioritization, and Patching">vulnerability management</a></li>
-<li>Business continuity and disaster recovery operations</li>
-<li>Physical security operations</li>
-</ul>
-<h2>Domain 8: Software Development Security</h2>
-<p>This domain (10%) covers secure coding practices, development methodologies, and application security.</p>
-<p><strong>Key topics</strong>:</p>
-<ul>
-<li>Secure software development lifecycle (SSDLC)</li>
-<li>Development methodologies (Agile, DevOps, <a href="/blog/read/devsecops-engineer" title="DevSecOps Engineer: Build Security into Every Pipeline">DevSecOps</a>)</li>
-<li>Application security testing (SAST, DAST, IAST, SCA)</li>
-<li>Common software vulnerabilities (OWASP Top 10)</li>
-<li>Database security</li>
-<li>Secure coding guidelines</li>
-<li>Software supply chain security</li>
-</ul>
-<h2>CISSP vs. Other Senior Certifications</h2>
-<p><strong>CISSP vs. CISM (Certified Information Security Manager)</strong>: CISM is issued by ISACA and focuses specifically on security management and governance. CISSP covers broader technical ground across eight domains. CISM is preferred for roles focused on security program management. CISSP is preferred for roles requiring both technical breadth and management capability. Many senior professionals hold both.</p>
-<p><strong>CISSP vs. CCSP (Certified Cloud Security Professional)</strong>: CCSP is ISC2&#8217;s cloud-specific certification. CISSP covers cloud security at a high level within its domains, while CCSP goes deep into cloud architecture, security design, and operations. Consider CCSP as a complement to CISSP if you specialize in cloud security. See our <a href="/blog/read/cloud-security-skills">cloud security skills guide</a> for cloud certification details.</p>
-<p><strong>CISSP vs. CISA (Certified Information Systems Auditor)</strong>: CISA focuses on IT audit, risk assessment, and governance from an auditor&#8217;s perspective. CISSP covers security from a practitioner and manager&#8217;s perspective. CISA is the right choice if your career direction is IT audit or GRC. CISSP is the right choice if your career direction is security leadership.</p>
-<p><strong>CISSP vs. Security+ / CEH / OSCP</strong>: These are not equivalent comparisons — CISSP is a senior-level management certification, while the others are technical certifications at various levels. <a href="/blog/read/comptia-security-plus">CompTIA Security+</a> is an entry-level prerequisite. CEH and OSCP validate offensive security skills. CISSP comes later in a career, after you have accumulated experience across multiple security domains.</p>
-<h2>Career Impact and Salary Data</h2>
-<p>CISSP consistently appears in the top-paying cybersecurity certifications globally.</p>
-<p><strong>Salary data</strong> (U.S., 2026 estimates):</p>
-<ul>
-<li>CISSP holders (all levels): $120,000-$180,000</li>
-<li>Security Manager with CISSP: $130,000-$165,000</li>
-<li>Security Architect with CISSP: $150,000-$195,000</li>
-<li>CISO with CISSP: $180,000-$300,000+</li>
-</ul>
-<p><strong>Job market impact</strong>: CISSP appears in more cybersecurity job postings than any other certification. It is frequently listed as &#8220;required&#8221; or &#8220;preferred&#8221; for mid-senior roles. In government and defense contracting, it satisfies IAM Level III requirements.</p>
-<p><strong>When to earn CISSP</strong>: The optimal timing is after four to six years of security experience across multiple domains. Earning it too early means you pass the exam (possible with study) but lack the experience to use it effectively. Earning it at the right time confirms the expertise you have already developed and opens doors to senior positions.</p>
-<p>Use our <a href="https://career.hadess.io/certificate-roadmap">certificate roadmap tool</a> to map your path from current certifications to CISSP, including the intermediate credentials that build toward it.</p>
 <p><strong>Explore all cybersecurity skills:</strong> <a href="/blog/read/cybersecurity-skills-guide" title="Cybersecurity Skills for Beginners">Cybersecurity Skills for Beginners</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/comptia-security-plus">CompTIA Security+ Study Guide 2026</a></li>
-<li><a href="/blog/read/ceh-vs-oscp">CEH vs OSCP: Which Certification First?</a></li>
-<li><a href="/blog/read/top-cyber-skills">Top 10 Cybersecurity Skills Employers Want</a></li>
+<li>EDR: Endpoint Detection, Response, and Threat Hunting — HADESS | 2026</li>
+<li>Firewall Management: Rules, Zones, and Change Control — HADESS | 2026</li>
+<li>Hardware Security Modules: Key Management and Compliance — HADESS | 2026</li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Plan your CISSP path</strong> — Use our <a href="https://career.hadess.io/certificate-roadmap">Certificate Roadmap</a> to see the recommended progression from entry-level to CISSP based on your experience.<br />
-<strong>Identify your domain strengths</strong> — Take a <a href="https://career.hadess.io/assessment">skills assessment</a> to map your current knowledge across all eight CISSP domains.</p>
+<p><strong>Browse 80+ skills on HADESS.</strong> Go to the browse 80+ skills on hadess on HADESS.</p>
+<p><strong>See your certification roadmap.</strong> Check out the see your certification roadmap.</p>
+<p><strong>Get started free</strong> — Create your HADESS account and access all career tools.</p>
 <h2>Frequently Asked Questions</h2>
-<h3>How hard is the CISSP exam?</h3>
-<p>CISSP is widely considered one of the most challenging cybersecurity certifications. The difficulty is not in the technical complexity — it is in the breadth of knowledge required and the scenario-based question format. Many questions have two or more seemingly correct answers, and you must choose the <em>best</em> answer based on ISC2&#8217;s security management perspective. Candidates with strong technical backgrounds often struggle initially because the exam rewards thinking like a security manager, not a security engineer. A pass rate around 50-60% on the first attempt is commonly reported.</p>
-<h3>Can I pass CISSP without five years of experience?</h3>
-<p>Yes. You can pass the exam and become an Associate of ISC2 while accumulating the required experience. Many professionals pass the exam with two to three years of experience and complete the full certification requirement over the following years. The exam tests knowledge and judgment, which can be developed through study and adjacent experience. However, candidates with less experience typically find the scenario-based questions harder because they lack the real-world context that the questions assume.</p>
-<h3>How long should I study for CISSP?</h3>
-<p>Three to six months of dedicated preparation at 10-15 hours per week is the most common recommendation. Factors that affect study time include your current experience across the eight domains, your familiarity with governance and risk management (domains many technical professionals find most challenging), and your comfort with the ISC2 question format. Complete at least 2,000 practice questions before scheduling the exam. If you consistently score above 80% on full-length practice tests, you are ready.</p>
-<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>How long does it take to learn this skill?</h3>
+<p>Most practitioners build working proficiency in 4-8 weeks of dedicated study with hands-on practice. Mastery takes longer and comes primarily through on-the-job experience.</p>
+<h3>Do I need certifications for this skill?</h3>
+<p>Certifications validate your knowledge to employers but are not strictly required. Hands-on experience and <a href="/blog/read/cyber-portfolio" title="Building Your Cybersecurity Portfolio from Scratch">portfolio</a> projects often carry more weight in technical interviews. Check the certification roadmap for relevant options.</p>
+<h3>What career paths use this skill?</h3>
+<p>Explore the career path explorer to see which roles require this skill and how it fits into different cybersecurity specializations.</p>
+<p>&#8212;</p>
+<p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1815,27 +1637,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1975,11 +1797,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2002,59 +1824,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

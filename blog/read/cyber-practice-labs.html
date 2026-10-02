@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cyber-practice-labs#article","headline":"How to Use Practice Labs in Cybersecurity Training — HADESS Magazine","description":"Learn how to use cybersecurity practice labs effectively for skill-building, certification prep, and interview readiness in 2026.","url":"https://hadesssecurity.github.io/blog/read/cyber-practice-labs","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cyber-practice-labs"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cyber-practice-labs.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cyber-practice-labs#article","headline":"How to Use Practice Labs in Cybersecurity Training — HADESS Magazine","description":"Learn how to use cybersecurity practice labs effectively for skill-building, certification prep, and interview readiness in 2026.","url":"https://hadesssecurity.github.io/blog/read/cyber-practice-labs","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cyber-practice-labs"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cyber-practice-labs.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1541,251 +1552,306 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <blockquote>
 <p><strong>Part of the <a href="/blog/read/cybersecurity-learning-path">Cybersecurity Learning Path Guide</a></strong> — This article is one deep-dive in our complete learning paths series.</p>
 </blockquote>
-<h1>How to Self-Study for Security+ in 90 Days</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 13 min read</em></p>
+<h1>How to Use Practice Labs in Cybersecurity Training</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#is-90-days-realistic">Is 90 Days Realistic?</a></li>
-<li><a href="#what-you-need-before-starting">What You Need Before Starting</a></li>
-<li><a href="#understanding-the-sy0-701-exam">Understanding the SY0-701 Exam</a></li>
-<li><a href="#the-90-day-study-plan-week-by-week">The 90-Day Study Plan: Week by Week</a></li>
-<li><a href="#weeks-1-3-general-security-concepts-domain-1">Weeks 1-3: General Security Concepts (Domain 1)</a></li>
-<li><a href="#weeks-4-6-threats-vulnerabilities-and-mitigations-domain-2">Weeks 4-6: Threats, Vulnerabilities, and Mitigations (Domain 2)</a></li>
-<li><a href="#weeks-7-8-security-architecture-domain-3">Weeks 7-8: Security Architecture (Domain 3)</a></li>
-<li><a href="#weeks-9-10-security-operations-domain-4">Weeks 9-10: Security Operations (Domain 4)</a></li>
-<li><a href="#weeks-11-12-security-program-management-domain-5">Weeks 11-12: Security Program Management (Domain 5)</a></li>
-<li><a href="#week-13-final-review-and-exam-prep">Week 13: Final Review and Exam Prep</a></li>
-<li><a href="#study-methods-that-actually-work">Study Methods That Actually Work</a></li>
-<li><a href="#practice-exams-how-to-use-them">Practice Exams: How to Use Them</a></li>
-<li><a href="#exam-day-strategy">Exam Day Strategy</a></li>
-<li><a href="#what-to-do-if-you-fail">What to Do If You Fail</a></li>
+<li><a href="#why-labs-matter-more-than-lectures">Why Labs Matter More Than Lectures</a></li>
+<li><a href="#types-of-cybersecurity-labs">Types of Cybersecurity Labs</a></li>
+<li><a href="#building-your-own-home-lab">Building Your Own Home Lab</a></li>
+<li><a href="#cloud-based-lab-platforms">Cloud-Based Lab Platforms</a></li>
+<li><a href="#ctf-competitions-as-lab-practice">CTF Competitions as Lab Practice</a></li>
+<li><a href="#lab-exercises-by-career-track">Lab Exercises by Career Track</a></li>
+<li><a href="#getting-the-most-out-of-lab-time">Getting the Most Out of Lab Time</a></li>
+<li><a href="#documenting-lab-work-for-your-portfolio">Documenting Lab Work for Your Portfolio</a></li>
+<li><a href="#common-lab-mistakes-and-how-to-avoid-them">Common Lab Mistakes and How to Avoid Them</a></li>
+<li><a href="#labs-and-certification-preparation">Labs and Certification Preparation</a></li>
 <li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
 <li><a href="#take-the-next-step">Take the Next Step</a></li>
 <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<h2>Is 90 Days Realistic?</h2>
-<p>Studying for Security+ in 90 days is realistic if you meet two conditions: you have basic IT knowledge (what an IP address is, how operating systems work, what a network does) and you can commit 15-20 hours per week to study.</p>
-<p>If you have Network+ level knowledge or IT work experience, 90 days is comfortable. You could probably do it in 60. If you are starting from complete zero — no IT background at all — 90 days is tight. You would need to front-load networking and operating system fundamentals in the first few weeks, which compresses everything else.</p>
-<p>This plan assumes you have the equivalent of A+ and Network+ knowledge. If you do not, add 4-6 weeks at the beginning to build those foundations. There is no shortcut around this. People who try to memorize Security+ material without understanding the underlying technology fail at higher rates and retain less even if they pass.</p>
-<p>The 90-day timeline breaks down to roughly 13 weeks. Each week has specific objectives, study activities, and self-assessment checkpoints. Miss a week and you fall behind — the plan has no slack built in intentionally, because deadlines drive action.</p>
-<h2>What You Need Before Starting</h2>
-<p><strong>Exam voucher or scheduled exam date.</strong> Buy your voucher or schedule your exam before you start studying. This is the single most effective motivational tool. A date on the calendar turns &#8220;I should study&#8221; into &#8220;I have to study.&#8221; The <a href="https://www.comptia.org/certifications/security">CompTIA website</a> lists testing center options and online proctoring availability.</p>
-<p><strong>Primary study resource.</strong> Pick one structured course or textbook as your main guide. Do not use three different courses simultaneously — you will waste time on repeated material and confuse yourself with different explanations of the same concepts. Recommendations:</p>
+<h2>Why Labs Matter More Than Lectures</h2>
+<p>Cybersecurity practice labs are where theoretical knowledge becomes practical skill. You can watch 100 hours of video on <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a> and still freeze when you see a real alert. You can read every chapter on Wireshark and still not know how to filter for the traffic that matters in a packet capture. The gap between knowing about something and being able to do it is where labs live.</p>
+<p>Hiring managers know this. When they interview candidates for security roles, the questions are almost always scenario-based: &#8220;Walk me through how you would investigate this alert.&#8221; &#8220;You have a packet capture showing suspicious traffic — what do you look for?&#8221; &#8220;This endpoint is behaving strangely — take me through your analysis process.&#8221; The people who answer these questions well are the people who have done the work in a lab, not just read about it.</p>
+<p>The data supports this. Candidates with demonstrable hands-on experience — a home lab, completed CTF challenges, practice investigation write-ups — get called back for interviews at significantly higher rates than candidates with identical certifications but no practical portfolio. Lab work is the differentiator between people who studied cybersecurity and people who practiced it.</p>
+<p>This guide covers how to set up labs, which platforms to use, how to structure your practice, and how to turn lab work into portfolio pieces that impress hiring managers.</p>
+<h2>Types of Cybersecurity Labs</h2>
+<p>Labs fall into four categories, each with different strengths:</p>
+<p><strong>Home labs.</strong> Virtual machines running on your own hardware. You install the operating systems, configure the network, set up the tools, and create the scenarios. Maximum learning, maximum effort, maximum control.</p>
+<p>Pros: Free (beyond hardware costs), fully customizable, teaches infrastructure skills alongside security skills, available offline. Cons: Time-intensive to set up and maintain, limited scale, no one checks your work.</p>
+<p><strong>Cloud-based lab platforms.</strong> Services like TryHackMe, Hack The Box, and LetsDefend that provide pre-built environments accessible through your browser. You connect and start working immediately.</p>
+<p>Pros: No setup time, professional-quality scenarios, progressive difficulty, often include walkthroughs and hints, community for discussion. Cons: Monthly subscription cost ($10-50), require internet connection, less control over environment.</p>
+<p><strong>Capture the Flag (CTF) competitions.</strong> Challenges where you solve security puzzles, exploit vulnerable systems, or investigate simulated incidents to find hidden &#8220;flags.&#8221; Available as one-time competitions and permanent practice platforms.</p>
+<p>Pros: Gamification increases engagement, wide range of difficulty levels, community and competition elements, directly test skills. Cons: Can become puzzle-oriented rather than realistic, may not map to job responsibilities, can be frustrating without guidance.</p>
+<p><strong>Cyber ranges.</strong> Enterprise-grade training environments that simulate realistic networks with multiple hosts, <a href="/blog/read/active-directory-security" title="Active Directory Security: Attack Paths and Hardening">Active Directory</a>, web applications, and defensive tools. Typically used by corporate training programs, government agencies, and advanced certification courses.</p>
+<p>Pros: Most realistic simulation, multi-user collaboration, enterprise-scale scenarios. Cons: Expensive (usually $1,000+), typically not available to individuals, often time-limited access.</p>
+<p>For most learners, the optimal approach is a home lab for foundational skills combined with a cloud platform for structured practice.</p>
+<h2>Building Your Own Home Lab</h2>
+<p>A home lab teaches you two things at once: the security skills you are practicing and the infrastructure skills you need to set up the lab itself. Both are valuable.</p>
+<p><strong>Minimum hardware requirements:</strong></p>
 <ul>
-<li><strong>Video:</strong> Professor Messer&#8217;s free Security+ course (thorough, well-structured)</li>
-<li><strong>Textbook:</strong> Darril Gibson&#8217;s &#8220;Get Certified Get Ahead: SY0-701 Study Guide&#8221; or the official CompTIA study guide</li>
-<li><strong>Course:</strong> Jason Dion&#8217;s Udemy course (regularly on sale for under $15)</li>
+<li>Computer with 16GB RAM (32GB preferred)</li>
+<li>256GB SSD storage (500GB if you want multiple VMs running)</li>
+<li>Any modern CPU with virtualization support (Intel VT-x or AMD-V)</li>
 </ul>
-<p><strong>Practice exam platform.</strong> You need access to realistic practice questions. Boson ExSim, Jason Dion&#8217;s practice exams, or CompTIA CertMaster Practice. Budget $30-60 for this. Free practice questions online are generally lower quality and do not simulate the exam experience well.</p>
-<p><strong>Note-taking system.</strong> Physical notebook, digital notes, flashcards — whatever works for you. The key is active engagement with the material, not passive highlighting. Write concepts in your own words.</p>
-<p><strong>Lab environment.</strong> A virtual machine setup for hands-on practice. Security+ has performance-based questions that test practical skills — configuring firewalls, analyzing logs, setting up VPNs. You need to have touched these things, not just read about them.</p>
-<h2>Understanding the SY0-701 Exam</h2>
-<p>The SY0-701 exam covers five domains:</p>
+<p>You do not need a dedicated server. A regular laptop or desktop with sufficient RAM works fine.</p>
+<p><strong>Software stack:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Domain</th>
-<th>Weight</th>
-<th>Description</th>
+<th>Component</th>
+<th>Free Options</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1. General Security Concepts</td>
-<td>12%</td>
-<td>Security fundamentals, controls, concepts</td>
+<td>Hypervisor</td>
+<td>VirtualBox, VMware Player</td>
+<td>Run virtual machines</td>
 </tr>
 <tr>
-<td>2. Threats, Vulnerabilities, and Mitigations</td>
-<td>22%</td>
-<td>Attack types, indicators, mitigation techniques</td>
+<td>Attack machine</td>
+<td>Kali Linux, Parrot OS</td>
+<td>Offensive security tools</td>
 </tr>
 <tr>
-<td>3. Security Architecture</td>
-<td>18%</td>
-<td>Infrastructure design, security models</td>
+<td>Target machines</td>
+<td>Metasploitable 2/3, DVWA, Juice Shop</td>
+<td>Vulnerable systems to practice on</td>
 </tr>
 <tr>
-<td>4. Security Operations</td>
-<td>28%</td>
-<td>Monitoring, incident response, tools</td>
+<td>Windows target</td>
+<td>Microsoft evaluation images</td>
+<td>Realistic Windows environment</td>
 </tr>
 <tr>
-<td>5. Security Program Management</td>
-<td>20%</td>
-<td>GRC, risk management, compliance</td>
+<td>Linux target</td>
+<td>Ubuntu Server, CentOS</td>
+<td>Realistic Linux environment</td>
+</tr>
+<tr>
+<td>SIEM</td>
+<td>Splunk Free, Elastic Security</td>
+<td>Log collection and analysis</td>
+</tr>
+<tr>
+<td>Network tools</td>
+<td>Wireshark, tcpdump</td>
+<td>Traffic capture and analysis</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>Sysmon (Windows), auditd (Linux)</td>
+<td>Endpoint monitoring</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Exam format:</strong> 90 questions, 90 minutes. Mix of multiple choice, multiple select, and performance-based questions (PBQs). Passing score: 750 out of 900.</p>
-<p><strong>Performance-based questions</strong> appear first in the exam. They present simulated environments where you configure settings, analyze data, or match items. These are time-consuming — budget 5-7 minutes each and skip them initially if they are going to eat into your time for the rest of the exam. You can return to them.</p>
-<p>Study time should be allocated roughly proportional to domain weights. Domain 4 (Security Operations) at 28% deserves the most attention. Domain 1 (General Concepts) at 12% deserves the least, but do not neglect it — those are free points if you study them.</p>
-<h2>The 90-Day Study Plan: Week by Week</h2>
-<h3>Weeks 1-3: General Security Concepts (Domain 1)</h3>
-<p><strong>Week 1: Security Fundamentals</strong></p>
+<p><strong>Basic lab architecture:</strong></p>
+<p>Set up a virtual network with at least three VMs: an attack machine (Kali), a Windows target, and a Linux target. Configure them on the same virtual network segment so they can communicate. Install Sysmon on the Windows target and configure audit logging on Linux.</p>
+<p>Once this baseline is running, you can add components: a SIEM to collect logs, a web application for testing, a domain controller for Active Directory practice, and additional network segments for practice with routing and firewall rules.</p>
+<p><strong>Progressively complex labs:</strong></p>
+<p>Start simple and add complexity as your skills grow:</p>
+<p>1. <strong>Week 1-2:</strong> Two VMs, basic connectivity, port scanning 2. <strong>Week 3-4:</strong> Add SIEM, start ingesting logs, practice queries 3. <strong>Month 2:</strong> Add web application, practice OWASP Top 10 attacks, observe in SIEM 4. <strong>Month 3:</strong> Add Active Directory, practice enumeration and attacks 5. <strong>Month 4+:</strong> Add detection rules, build alerts, practice both attacking and detecting</p>
+<h2>Cloud-Based Lab Platforms</h2>
+<p>Each major platform serves a different audience:</p>
+<p><strong>TryHackMe</strong> — Best for beginners and intermediate learners. Structured learning paths guide you through topics step by step. Rooms include explanations, hints, and walkthroughs. The free tier has enough content for several weeks of practice. The premium tier ($10-14/month) unlocks everything.</p>
+<p>Best used for: Foundation building, Security+ and CySA+ preparation, learning new tools.</p>
+<p><strong>Hack The Box</strong> — Best for intermediate to advanced learners, especially pen testing aspirants. Active machines have no walkthroughs (you must figure them out yourself). Retired machines (VIP access) have community walkthroughs for learning. The difficulty ramp is steeper than TryHackMe.</p>
+<p>Best used for: OSCP preparation, pen testing skill development, technical <a href="/blog/read/cyber-interview-prep" title="How to Prepare for a Cybersecurity Job Interview">interview preparation</a>.</p>
+<p><strong>LetsDefend</strong> — Best for SOC analyst candidates. Provides simulated SOC environments with alerts to triage, incidents to investigate, and reports to write. The closest thing to on-the-job training for defensive security.</p>
+<p>Best used for: SOC analyst preparation, alert triage practice, investigation documentation skills.</p>
+<p><strong>CyberDefenders</strong> — Best for blue team and <a href="/blog/read/windows-forensics" title="Windows Forensics: Registry, Event Logs, and File System Artifacts">digital forensics</a> practice. Provides real-world investigation challenges with evidence files to analyze.</p>
+<p>Best used for: Incident response practice, forensics skill development, defensive security challenges.</p>
+<p><strong>Blue Team Labs Online</strong> — Focused on defensive security challenges with a mix of free and paid content.</p>
+<p>Best used for: SOC and incident response practice at various difficulty levels.</p>
+<h2>CTF Competitions as Lab Practice</h2>
+<p>Capture the Flag competitions are an excellent supplement to structured lab work. They test your ability to solve problems under constraints — a skill that transfers directly to real security work.</p>
+<p><strong>Permanent CTF platforms (practice anytime):</strong></p>
 <ul>
-<li>CIA triad (confidentiality, integrity, availability) and how each applies to real systems</li>
-<li>AAA framework (authentication, authorization, accounting)</li>
-<li>Security control categories: preventive, detective, corrective, deterrent, compensating</li>
-<li>Physical security controls: locks, cameras, biometrics, mantraps</li>
-<li>Zero trust architecture principles and implementation concepts</li>
+<li>PicoCTF — beginner-friendly, excellent starting point</li>
+<li>OverTheWire (Bandit, Natas, Narnia) — progressive difficulty, command line and web exploitation</li>
+<li>HackTheBox Challenges — categorized by topic (crypto, web, forensics, reverse engineering)</li>
+<li>CryptoHack — cryptography-focused challenges</li>
 </ul>
-<p>Study the exam objectives for Domain 1 line by line. Watch or read the corresponding material from your primary resource. Create flashcards for terms you do not know.</p>
-<p><strong>Week 2: Cryptography Concepts</strong></p>
+<p><strong>Live CTF competitions (scheduled events):</strong></p>
 <ul>
-<li>Symmetric vs asymmetric encryption (AES, RSA, ECC)</li>
-<li>Hashing algorithms (SHA-256, MD5) and their uses</li>
-<li>Digital certificates, certificate authorities, and PKI</li>
-<li>Key exchange mechanisms (Diffie-Hellman)</li>
-<li>TLS/SSL handshake process</li>
-<li>Blockchain concepts as they relate to security</li>
+<li><a href="https://ctftime.org/">CTFtime.org</a> lists upcoming competitions worldwide</li>
+<li>Most have team and individual categories</li>
+<li>Range from beginner-friendly to expert-level</li>
 </ul>
-<p>Cryptography trips up many self-study candidates. Do not just memorize algorithm names — understand why you would choose symmetric over asymmetric encryption in a given scenario.</p>
-<p><strong>Week 3: Identity and Access Management</strong></p>
+<p><strong>How to approach CTFs effectively:</strong></p>
+<p>Do not treat CTFs as random puzzle-solving. Use them strategically:</p>
+<p>1. Pick challenges in areas you are studying. If you are learning web security, do web challenges. 2. Set a time limit. Spend 30-60 minutes trying before looking at hints. 3. After solving (or failing), read the official write-up. Every CTF challenge teaches something. 4. Write your own write-up, even for challenges you did not solve. The writing process reinforces learning.</p>
+<p>CTFs can become addictive in a way that does not serve your career goals. If you are spending all your lab time on CTFs and none on realistic SOC simulations or pen testing methodology, rebalance.</p>
+<h2>Lab Exercises by Career Track</h2>
+<p><strong>SOC analyst track:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>What You Practice</th>
+<th>Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deploy SIEM and ingest logs</td>
+<td>Splunk/Elastic setup and configuration</td>
+<td>Home lab</td>
+</tr>
+<tr>
+<td>Analyze phishing emails</td>
+<td>Email header analysis, URL investigation</td>
+<td>LetsDefend</td>
+</tr>
+<tr>
+<td>Triage SIEM alerts</td>
+<td>Alert investigation, false positive identification</td>
+<td>LetsDefend, home lab</td>
+</tr>
+<tr>
+<td>Investigate brute force attack</td>
+<td>Log correlation, IP analysis, timeline building</td>
+<td>Home lab + SIEM</td>
+</tr>
+<tr>
+<td>Write incident report</td>
+<td>Documentation, communication, evidence collection</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>Build detection rule</td>
+<td>SIEM query writing, detection logic</td>
+<td>Home lab + SIEM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Penetration testing track:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>What You Practice</th>
+<th>Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scan and enumerate network</td>
+<td>Nmap, service identification, OSINT</td>
+<td>Home lab, HTB</td>
+</tr>
+<tr>
+<td>Exploit web application</td>
+<td>OWASP Top 10, Burp Suite, manual testing</td>
+<td>DVWA, Juice Shop, HTB</td>
+</tr>
+<tr>
+<td>Privilege escalation (Linux)</td>
+<td>SUID, cron, kernel exploits, sudo</td>
+<td>TryHackMe, HTB</td>
+</tr>
+<tr>
+<td>Privilege escalation (Windows)</td>
+<td>Services, DLL hijack, token impersonation</td>
+<td>TryHackMe, HTB</td>
+</tr>
+<tr>
+<td>Active Directory attack</td>
+<td>BloodHound, Kerberoasting, lateral movement</td>
+<td>Home lab AD</td>
+</tr>
+<tr>
+<td>Write pen test report</td>
+<td>Professional documentation, risk rating</td>
+<td>Any completed exercise</td>
+</tr>
+</tbody>
+</table>
+<p><strong>GRC / Compliance track:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Exercise</th>
+<th>What You Practice</th>
+<th>Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conduct risk assessment</td>
+<td>Risk identification, scoring, register creation</td>
+<td>Tabletop exercise</td>
+</tr>
+<tr>
+<td>Map controls to framework</td>
+<td>NIST CSF, CIS Controls mapping</td>
+<td>Documentation exercise</td>
+</tr>
+<tr>
+<td>Review security policy</td>
+<td>Policy analysis, gap identification</td>
+<td>Sample policies online</td>
+</tr>
+<tr>
+<td>Perform vendor assessment</td>
+<td>Third-party risk evaluation</td>
+<td>Questionnaire templates</td>
+</tr>
+</tbody>
+</table>
+<h2>Getting the Most Out of Lab Time</h2>
+<p><strong>Set objectives before you start.</strong> &#8220;I am going to practice in my lab&#8221; is a recipe for aimless tinkering. &#8220;I am going to deploy Sysmon, generate three types of suspicious activity, and write detection rules for each&#8221; is a plan that produces results.</p>
+<p><strong>Time-box your sessions.</strong> Two focused hours beat five distracted ones. Set a timer. Work with purpose. Take breaks.</p>
+<p><strong>Break things intentionally.</strong> The fear of breaking your lab environment prevents learning. VMs can be restored from snapshots. Break things, understand why they broke, fix them. This cycle is how operational knowledge develops.</p>
+<p><strong>Work both sides.</strong> If you are studying offense, also practice detecting what you just did. If you are studying defense, also practice generating the malicious activity you are trying to detect. Understanding both sides makes you better at whichever one you specialize in.</p>
+<p><strong>Recreate real incidents.</strong> Find incident reports from major breaches (Mandiant publishes detailed reports, so do many CERTs). Recreate the attack chain in your lab as closely as possible. This connects textbook knowledge to real-world scenarios.</p>
+<h2>Documenting Lab Work for Your Portfolio</h2>
+<p>Lab documentation serves two purposes: it reinforces your learning, and it provides evidence of your skills for job interviews.</p>
+<p><strong>What to document for each lab exercise:</strong></p>
+<p>1. <strong>Objective</strong> — What were you trying to accomplish? 2. <strong>Environment</strong> — What tools and systems did you use? 3. <strong>Process</strong> — Step-by-step what you did, including commands 4. <strong>Findings</strong> — What did you discover, exploit, or detect? 5. <strong>Screenshots</strong> — Evidence of your work 6. <strong>Lessons learned</strong> — What did you learn? What would you do differently?</p>
+<p><strong>Where to publish:</strong></p>
 <ul>
-<li>Authentication factors (something you know, have, are)</li>
-<li>Multi-factor authentication implementations</li>
-<li>SSO, SAML, OAuth, and OIDC</li>
-<li>Directory services and LDAP</li>
-<li>Access control models: DAC, MAC, RBAC, ABAC</li>
-<li><a href="/blog/read/privileged-access-management" title="Privileged Access Management: Securing High-Risk Accounts">Privileged access management</a></li>
+<li><strong>GitHub repository</strong> — Create a repo called &#8220;cybersecurity-labs&#8221; or similar. Add write-ups as markdown files.</li>
+<li><strong>Personal blog</strong> — A simple blog (Hugo, Jekyll, or even Medium) where you write up your lab exercises.</li>
+<li><strong>LinkedIn</strong> — Share summaries of interesting lab exercises as posts.</li>
 </ul>
-<p>Build a lab exercise: set up a local LDAP directory, create users and groups, and configure access policies. Even a simple setup teaches more than reading about it.</p>
-<h3>Weeks 4-6: Threats, Vulnerabilities, and Mitigations (Domain 2)</h3>
-<p><strong>Week 4: Threat Actors and Attack Types</strong></p>
-<ul>
-<li>Threat actor categories: nation-state, organized crime, hacktivist, insider, script kiddie</li>
-<li>Social engineering attacks: phishing, spear phishing, vishing, smishing, pretexting</li>
-<li>Malware types: ransomware, trojans, rootkits, fileless malware, logic bombs</li>
-<li>Application attacks: SQL injection, XSS, CSRF, buffer overflow</li>
-</ul>
-<p>This domain is the heaviest at 22%. Spend extra time here. For each attack type, understand how it works, what it looks like in logs, and how to mitigate it.</p>
-<p><strong>Week 5: Vulnerability Types and Indicators</strong></p>
-<ul>
-<li>Common vulnerability types: misconfigurations, default credentials, unpatched systems</li>
-<li>Application vulnerabilities: race conditions, improper input validation, API security issues</li>
-<li>Hardware vulnerabilities and supply chain risks</li>
-<li>Indicators of compromise vs indicators of attack</li>
-<li>Vulnerability scanning concepts and tools (Nessus, OpenVAS)</li>
-</ul>
-<p>Practice reading vulnerability scan output. Download Nessus Essentials (free for limited use) and scan your lab machines. Understanding what a scan report tells you is directly tested.</p>
-<p><strong>Week 6: Mitigation Techniques</strong></p>
-<ul>
-<li>Network segmentation and microsegmentation</li>
-<li>Hardening guides and benchmarks (CIS benchmarks)</li>
-<li>Patch management strategies</li>
-<li>Security baselines and configuration management</li>
-<li><a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">Application security</a> controls: input validation, parameterized queries, output encoding</li>
-</ul>
-<p>Create a hardening checklist for a Windows and Linux system. Apply the hardening steps to your lab VMs. This hands-on experience matters for PBQs.</p>
-<h3>Weeks 7-8: Security Architecture (Domain 3)</h3>
-<p><strong>Week 7: Network Security Architecture</strong></p>
-<ul>
-<li>Firewalls (stateful, stateless, NGFW, WAF)</li>
-<li>Network security appliances: IDS, IPS, proxy servers, load balancers</li>
-<li>VPN types (site-to-site, remote access, IPsec, SSL/TLS)</li>
-<li>Network access control (NAC) and 802.1X</li>
-<li>DNS security: DNSSEC, DNS sinkholing</li>
-</ul>
-<p>Configure a firewall in your lab. Set up iptables rules or Windows Defender Firewall with Advanced Security. Write rules that allow specific traffic and block everything else. Test that they work.</p>
-<p><strong>Week 8: Security Design and Cloud Concepts</strong></p>
-<ul>
-<li>Defense in depth and layered security models</li>
-<li>Cloud deployment models: IaaS, PaaS, SaaS</li>
-<li>Cloud security controls: CASB, CSPM, CWPP</li>
-<li>Containerization and virtualization security</li>
-<li>Embedded systems and IoT security considerations</li>
-<li>Resilience and redundancy: RAID, clustering, backups</li>
-</ul>
-<p>Cloud security questions have increased significantly in recent SY0-701 exams. Make sure you understand the shared responsibility model and can explain what the customer secures versus what the provider secures in each deployment model.</p>
-<h3>Weeks 9-10: Security Operations (Domain 4)</h3>
-<p>This is the largest domain at 28%. Give it proportional attention.</p>
-<p><strong>Week 9: Monitoring, Detection, and Response</strong></p>
-<ul>
-<li>SIEM concepts and log management</li>
-<li><a href="/blog/read/security-monitoring" title="Security Monitoring: Building Effective Detection Infrastructure">Security monitoring</a>: network, endpoint, email, DNS</li>
-<li>Alert triage and incident classification</li>
-<li>Incident response process: preparation, identification, containment, eradication, recovery, lessons learned</li>
-<li>Digital forensics basics: evidence handling, chain of custody, volatility order</li>
-</ul>
-<p>Set up a free Splunk instance, ingest some log data, and practice writing queries. Even basic familiarity with a SIEM interface helps with PBQs and scenario questions.</p>
-<p><strong>Week 10: Security Operations Continued</strong></p>
-<ul>
-<li>Automation and orchestration (SOAR concepts)</li>
-<li><a href="/blog/read/vulnerability-management" title="Vulnerability Management: Scanning, Prioritization, and Patching">Vulnerability management</a> lifecycle</li>
-<li><a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">Penetration testing</a> concepts: black box, white box, grey box</li>
-<li>Data protection: DLP, classification, retention policies</li>
-<li>Privacy concepts: GDPR basics, data sovereignty, right to be forgotten</li>
-</ul>
-<p>Security operations questions on the exam are often scenario-based. Practice reading a scenario, identifying the problem, and selecting the best response from the options. This is different from memorizing definitions.</p>
-<h3>Weeks 11-12: Security Program Management (Domain 5)</h3>
-<p><strong>Week 11: Risk Management</strong></p>
-<ul>
-<li>Risk assessment methodologies: qualitative vs quantitative</li>
-<li>Risk calculations: SLE, ALE, ARO</li>
-<li>Risk response strategies: accept, mitigate, transfer, avoid</li>
-<li>Risk register and risk matrix</li>
-<li>Business impact analysis: RTO, RPO, MTBF, MTTR</li>
-</ul>
-<p>Know the math. Quantitative risk analysis questions are straightforward if you can calculate ALE (Annual Loss Expectancy = SLE x ARO). They are easy points if you practice them.</p>
-<p><strong>Week 12: Governance and Compliance</strong></p>
-<ul>
-<li>Security frameworks: NIST CSF, ISO 27001, CIS Controls</li>
-<li><a href="/blog/read/compliance-management" title="Compliance Management: SOC 2, ISO 27001, PCI DSS, and HIPAA">Regulatory compliance</a>: PCI DSS, HIPAA, SOX, GDPR</li>
-<li>Security policies, standards, procedures, and guidelines</li>
-<li>Third-party risk management and vendor assessment</li>
-<li>Security awareness training programs</li>
-<li>Audit types: internal, external, regulatory</li>
-</ul>
-<p>This domain is theory-heavy. Focus on understanding the differences between frameworks and when each applies, rather than memorizing every detail of each one.</p>
-<h3>Week 13: Final Review and Exam Prep</h3>
-<p><strong>Day 1-2:</strong> Take a full-length practice exam under timed conditions. Score it. Identify your weakest domains.</p>
-<p><strong>Day 3-4:</strong> Intensive review of weak areas only. Do not re-study material you already know well. Time is limited — focus where it matters most.</p>
-<p><strong>Day 5:</strong> Take a second full-length practice exam. Your score should be 80%+ to feel confident.</p>
-<p><strong>Day 6:</strong> Light review. Skim your notes. Review flashcards. Do not cram — at this point, rest and confidence matter more than more information.</p>
-<p><strong>Day 7:</strong> Exam day. Get sleep the night before. Eat before the exam. Arrive early or set up your online proctoring environment early.</p>
-<h2>Study Methods That Actually Work</h2>
-<p><strong>Active recall.</strong> After reading a section, close the book and write down everything you remember. Check what you missed. This is uncomfortable and slow, but it is the most effective study technique research has identified.</p>
-<p><strong>Spaced repetition.</strong> Review material at increasing intervals — after 1 day, then 3 days, then 7 days, then 14 days. Anki (free flashcard app) automates this.</p>
-<p><strong>Practice questions after every section.</strong> Do not wait until the end to test yourself. Answer questions on each topic immediately after studying it. This reveals misunderstandings early.</p>
-<p><strong>Teach it to someone.</strong> Explain concepts out loud as if you are teaching a beginner. If you cannot explain it simply, you do not understand it well enough.</p>
-<p><strong>Hands-on labs.</strong> For every concept that involves a tool, configuration, or process — do it. Set up a VPN. Configure a firewall. Run a vulnerability scan. The PBQs on the exam reward people who have actually used these tools.</p>
-<h2>Practice Exams: How to Use Them</h2>
-<p>Do not use practice exams as a study tool until at least Week 10. Using them too early teaches you to recognize specific questions rather than understand the underlying concepts.</p>
-<p>When you do start practice exams:</p>
-<p>1. Take the first one cold, under timed conditions. This establishes your baseline. 2. Review every wrong answer. Understand why you got it wrong and why the correct answer is correct. 3. Review every question you guessed on correctly. Lucky guesses mask knowledge gaps. 4. Track your scores by domain. This tells you where to focus your remaining study time. 5. Target 85%+ on practice exams before sitting the real exam. Practice exams from good providers (Boson, Dion) are generally slightly harder than the real exam.</p>
-<h2>Exam Day Strategy</h2>
-<ul>
-<li>Skip PBQs on the first pass. Flag them and return at the end. They take the most time and can derail your pacing.</li>
-<li>Eliminate obviously wrong answers first on multiple choice. You can often narrow to two choices.</li>
-<li>Watch for key words: &#8220;BEST,&#8221; &#8220;MOST,&#8221; &#8220;FIRST,&#8221; &#8220;LEAST.&#8221; These change the correct answer entirely.</li>
-<li>Manage your time. With 90 questions in 90 minutes, you have 1 minute per question. PBQs take longer, so move quickly through standard questions.</li>
-<li>Do not change answers unless you have a clear reason. First instincts on well-studied material are usually correct.</li>
-</ul>
-<h2>What to Do If You Fail</h2>
-<p>Failing is not the end. CompTIA allows a retake after 14 days. Use those 14 days:</p>
-<p>1. Review your score report — it shows which domains you performed poorly in. 2. Focus exclusively on those domains. 3. Take additional practice exams targeting your weak areas. 4. Retake the exam.</p>
-<p>Most people who fail are within 50-100 points of passing. A focused two-week effort on weak domains is usually enough to close that gap.</p>
-<p><strong>View the complete learning path:</strong> <a href="/blog/read/cybersecurity-learning-path" title="Cybersecurity Learning Path 2026">Cybersecurity Learning Path 2026</a></p>
+<p>Hiring managers who see a candidate with a documented portfolio of lab exercises know that person has done the work. It separates you from candidates who list skills on their resume without evidence.</p>
+<p>The HADESS workspace provides an integrated environment for tracking your lab progress and connecting it to your skill development path.</p>
+<h2>Common Lab Mistakes and How to Avoid Them</h2>
+<p><strong>Following tutorials without understanding.</strong> Copying commands from a walkthrough and getting the flag teaches you nothing beyond how to copy commands. If you follow a walkthrough, go back and do the challenge again without it. If you cannot, you did not learn it.</p>
+<p><strong>Never leaving the comfort zone.</strong> Doing the same type of exercise repeatedly because it feels good is not growth. If you have done 50 easy HTB machines, it is time for medium ones — even though they are harder and more frustrating.</p>
+<p><strong>Ignoring documentation.</strong> The lab exercise ends when you write it up, not when you get the flag. Skipping documentation means losing the portfolio value of every exercise you complete.</p>
+<p><strong>Building a lab and never using it.</strong> Some people spend weeks building an elaborate home lab and then rarely use it. The lab is a means, not an end. A simple lab that you use daily teaches more than an elaborate lab that collects virtual dust.</p>
+<p><strong>Skipping fundamentals for flashy exercises.</strong> Running Metasploit autopwn is not <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">penetration testing</a>. Deploying a SIEM without understanding log formats is not <a href="/blog/read/security-monitoring" title="Security Monitoring: Building Effective Detection Infrastructure">security monitoring</a>. Make sure you understand the fundamentals before moving to advanced tools and techniques.</p>
+<h2>Labs and Certification Preparation</h2>
+<p>Labs directly support certification preparation in specific ways:</p>
+<p><strong>Security+:</strong> Set up a firewall, configure VPN access, run a vulnerability scan, analyze packet captures. The performance-based questions on the exam reward people who have done these things, not just read about them.</p>
+<p><strong>CySA+:</strong> Practice log analysis in a SIEM, triage simulated alerts, write investigation reports. CySA+ is one of the most lab-dependent certifications — pure study without hands-on practice correlates with higher failure rates.</p>
+<p><strong>OSCP:</strong> The entire OSCP is a lab-based certification. The exam is a 24-hour practical test. If you have not spent hundreds of hours in labs before attempting it, you will not pass.</p>
+<p><strong>Cloud certifications (AWS SAA, Azure AZ-500):</strong> Cloud labs require actual cloud environments. Use free tier accounts to practice, but be careful about costs. Set billing alerts and shut down resources when you are not using them.</p>
+<p>Check the HADESS pricing page for options that include lab environment access aligned with certification preparation paths.</p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/comptia-certification-pathway">CompTIA Certification Pathway: A+ to CASP+</a></li>
-<li><a href="/blog/read/cyber-study-plan-6-months">Cybersecurity Study Plan: 6-Month Schedule</a></li>
 <li><a href="/blog/read/free-vs-paid-cyber-courses">Free vs Paid Cybersecurity Courses: Full Comparison</a></li>
+<li><a href="/blog/read/pen-test-roadmap">Penetration Tester Roadmap 2026</a></li>
+<li><a href="/blog/read/hadess-skills-catalog">The HADESS Skills Catalog: What&#8217;s Inside?</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p>Find the right study path based on your current skills and target role with the <a href="https://career.hadess.io/roadmap-selector">HADESS Roadmap Selector</a>.</p>
+<p>Access structured lab environments integrated with your <a href="/blog/read/cybersecurity-learning-path" title="Cybersecurity Learning Path 2026">learning path</a> in the HADESS Workspace.</p>
+<p>See available plans and lab access options on the HADESS Pricing page.</p>
 <h2>Frequently Asked Questions</h2>
-<h3>Can I pass Security+ in 90 days with no IT experience?</h3>
-<p>A. It is possible but difficult. If you have zero IT background, you will need to spend the first 4-6 weeks on networking and operating system fundamentals before starting the Security+ material. This pushes the timeline to 120-150 days total. Starting with some IT knowledge makes 90 days much more realistic.</p>
-<h3>How many hours per week do I need to study?</h3>
-<p>A. Plan for 15-20 hours per week. This might be 2-3 hours on weekday evenings and 4-5 hours on each weekend day. Consistency matters more than volume — 2 hours every day beats 14 hours on Saturday. Your brain needs time to consolidate what you learn.</p>
-<h3>Are Professor Messer&#8217;s free videos enough to pass?</h3>
-<p>A. They cover the material well, but you need practice questions from a separate source. Messer&#8217;s videos plus a practice exam platform (Jason Dion&#8217;s or Boson) plus <a href="/blog/read/cyber-practice-labs" title="How to Use Practice Labs in Cybersecurity Training">hands-on labs</a> is a combination that works for most self-studiers.</p>
-<h3>What score should I aim for on practice exams before taking the real test?</h3>
-<p>A. Target 85% or higher on practice exams from reputable providers. Boson and Jason Dion&#8217;s exams are generally considered harder than the real exam, so an 80%+ on those correlates well with passing. If you are consistently scoring below 75%, you are not ready.</p>
-<h3>Should I study the SY0-701 or wait for the next version?</h3>
-<p>A. Study and take whatever version is currently available. Waiting for the next version means delaying your career progress. The content changes incrementally between versions — the fundamental security concepts remain the same.</p>
+<h3>Do I need expensive hardware for a cybersecurity home lab?</h3>
+<p>A. No. A computer with 16GB of RAM and an SSD is sufficient for most lab exercises. You can run two to three virtual machines simultaneously, which covers the majority of learning scenarios. If you want to run larger environments (Active Directory with multiple hosts, or multiple network segments), 32GB is recommended. You do not need a dedicated server, rack equipment, or enterprise hardware.</p>
+<h3>Which lab platform should I start with?</h3>
+<p>A. TryHackMe is the best starting point for most beginners. Its guided rooms walk you through concepts and tools step by step, and the free tier has enough content for several weeks. Once you are comfortable, add Hack The Box for pen testing practice or LetsDefend for SOC practice, depending on your career direction.</p>
+<h3>How many hours per week should I spend in labs?</h3>
+<p>A. Aim for at least 5-10 hours of hands-on lab time per week, in addition to your study time. Lab time is not the same as study time — it is the application of what you study. If you are spending 15 hours per week on cybersecurity, at least a third should be in a lab environment.</p>
+<h3>Should I build a home lab or use a cloud platform?</h3>
+<p>A. Both, but start with a cloud platform if you are a beginner. Cloud platforms provide immediate access to well-designed exercises without the setup overhead. Once you are comfortable with the tools and concepts, build a home lab to deepen your infrastructure understanding and create a more customizable practice environment.</p>
+<h3>How do I turn lab work into something useful for job interviews?</h3>
+<p>A. Document every lab exercise with objectives, steps, findings, and lessons learned. Store these write-ups in a GitHub repository or personal blog. During interviews, reference specific labs: &#8220;I built a SIEM lab where I ingested Windows Security logs and created detection rules for brute force attacks. Here is the write-up.&#8221; Specific, documented examples beat vague claims.</p>
 <p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
@@ -1804,27 +1870,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2000,11 +2066,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2027,59 +2093,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

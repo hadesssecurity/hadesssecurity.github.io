@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-skills-guide#article","headline":"Cybersecurity Skills for Beginners — HADESS Magazine","description":"Master cybersecurity skills for beginners with this 2026 guide covering technical, soft skills, certs, and study plans. Browse 80+ skills on HADESS today.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-skills-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-skills-guide"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-skills-guide.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-skills-guide#article","headline":"Cybersecurity Skills for Beginners — HADESS Magazine","description":"Master cybersecurity skills for beginners with this 2026 guide covering technical, soft skills, certs, and study plans. Browse 80+ skills on HADESS today.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-skills-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-skills-guide"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-skills-guide.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,254 +1549,336 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-cybersecurity-skills-guide.png">
-      <blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-skills-guide">Cybersecurity Skills Guide</a></strong> — This article is one deep-dive in our complete skills and certifications series.</p>
+      <h1>Cybersecurity Skills for Beginners: The Complete Skill-Building Guide</h1>
+<blockquote>
+<p><strong>Part of the HADESS Career Resources</strong> — This guide covers every skill area you need to build. Explore our deep-dives on <a href="/blog/read/comptia-security-plus">CompTIA Security+ preparation</a>, <a href="/blog/read/python-cybersecurity">Python for cybersecurity</a>, and <a href="/blog/read/siem-tools-guide">SIEM tools</a> below.</p>
 </blockquote>
-<h1>Cloud Security Skills: AWS, Azure, GCP</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 20 min read</em></p>
+<p>Cybersecurity skills for beginners can feel like an impossibly long list. Every job posting asks for a dozen tools you have never heard of, three certifications you do not have, and &#8220;3-5 years of experience&#8221; for an entry-level role. The reality is less overwhelming than it looks. There is a core set of skills that every security professional needs regardless of specialization, and beyond that, what you learn depends on where you want to go.</p>
+<p>This guide breaks down what those skills actually are, how they map to different career tracks, which certifications validate them, and how to build a study plan that gets you from zero to employable. We wrote it for people who are either starting from scratch or who have adjacent technical skills and want to transition into security specifically.</p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#why-cloud-security-skills-are-in-demand">Why Cloud Security Skills Are in Demand</a></li>
-<li><a href="#the-shared-responsibility-model">The Shared Responsibility Model</a></li>
-<li><a href="#aws-security-skills-and-certifications">AWS Security Skills and Certifications</a></li>
-<li><a href="#azure-security-skills-and-certifications">Azure Security Skills and Certifications</a></li>
-<li><a href="#gcp-security-skills-and-certifications">GCP Security Skills and Certifications</a></li>
-<li><a href="#multi-cloud-security-skills">Multi-Cloud Security Skills</a></li>
-<li><a href="#cloud-security-certifications-compared">Cloud Security Certifications Compared</a></li>
-<li><a href="#container-and-kubernetes-security">Container and Kubernetes Security</a></li>
-<li><a href="#infrastructure-as-code-security">Infrastructure as Code Security</a></li>
-<li><a href="#which-cloud-provider-to-learn-first">Which Cloud Provider to Learn First</a></li>
-<li><a href="#building-cloud-security-experience">Building Cloud Security Experience</a></li>
+<li><a href="#the-cybersecurity-skill-landscape-in-2026">The Cybersecurity Skill Landscape in 2026</a></li>
+<li><a href="#technical-skills-vs-soft-skills">Technical Skills vs Soft Skills</a></li>
+<li><a href="#core-skills-every-practitioner-needs">Core Skills Every Practitioner Needs</a></li>
+<li><a href="#offensive-security-skills">Offensive Security Skills</a></li>
+<li><a href="#defensive-security-skills">Defensive Security Skills</a></li>
+<li><a href="#cloud-and-container-security-skills">Cloud and Container Security Skills</a></li>
+<li><a href="#grc-and-compliance-skills">GRC and Compliance Skills</a></li>
+<li><a href="#certification-overview-which-ones-actually-matter">Certification Overview: Which Ones Actually Matter</a></li>
+<li><a href="#building-your-study-plan">Building Your Study Plan</a></li>
+<li><a href="#using-the-hadess-skills-catalog">Using the HADESS Skills Catalog</a></li>
+<li><a href="#related-deep-dives">Related Deep-Dives</a></li>
+<li><a href="#start-your-journey">Start Your Journey</a></li>
 <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<h2>Why Cloud Security Skills Are in Demand</h2>
-<p>Cloud security certifications and skills top the list of what hiring managers search for in 2026. The reason is straightforward: organizations have moved to the cloud faster than security teams have developed the expertise to protect cloud workloads. This gap between cloud adoption and cloud security maturity creates persistent demand for practitioners who understand both.</p>
-<p>According to <a href="https://www.isc2.org/research/workforce-study">ISC2&#8217;s Workforce Study</a>, cloud security is the most sought-after skill area within cybersecurity. Job postings mentioning cloud security have grown year over year since 2020, and the salary premium for cloud security specialists over general security practitioners ranges from 15-25%.</p>
-<p>The shift is not temporary. Organizations are not moving back to on-premises infrastructure. The demand for cloud security skills will continue growing as cloud environments become more complex — multi-cloud architectures, serverless computing, edge computing, and AI workloads all introduce security considerations that require specialized knowledge.</p>
-<p>For a complete view of how cloud security fits alongside other in-demand skills, see our <a href="/blog/read/cybersecurity-skills-guide">cybersecurity skills guide</a> and the <a href="/blog/read/top-cyber-skills">top cybersecurity skills employers want</a>.</p>
-<h2>The Shared Responsibility Model</h2>
-<p>Before diving into provider-specific skills, you must understand the shared responsibility model. Every cloud provider operates under this model, and misunderstanding it is the most common source of cloud security failures.</p>
-<p><strong>The model in brief</strong>: The cloud provider secures the infrastructure (physical data centers, hypervisors, network fabric). The customer secures everything they deploy on that infrastructure (data, access controls, configurations, applications).</p>
-<p><strong>How responsibility shifts by service model</strong>:</p>
-<p><em>Infrastructure as a Service (IaaS)</em>: The customer is responsible for the operating system, network configuration, firewall rules, data encryption, access controls, and <a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">application security</a>. The provider handles the physical infrastructure and virtualization layer. Example: EC2 instances, Azure VMs, Compute Engine.</p>
-<p><em>Platform as a Service (PaaS)</em>: The provider manages the operating system and runtime environment. The customer is responsible for the application, data, and access controls. Example: AWS Lambda, Azure App Service, Cloud Functions.</p>
-<p><em>Software as a Service (SaaS)</em>: The provider manages nearly everything. The customer is responsible for data, user access, and configuration. Example: Microsoft 365, Salesforce, Google Workspace.</p>
-<p><strong>Common shared responsibility mistakes</strong>:</p>
+<h2>The Cybersecurity Skill Landscape in 2026</h2>
+<p>The skill landscape has shifted over the past few years. <a href="/blog/read/cloud-security-skills" title="Cloud Security Skills: AWS, Azure, GCP">Cloud security skills</a> have moved from &#8220;nice to have&#8221; to &#8220;baseline requirement&#8221; for most roles. Automation skills — particularly Python scripting — have become expected rather than differentiating. AI and machine learning awareness is showing up in job postings with increasing frequency, not because everyone needs to build ML models, but because security tools increasingly incorporate AI and practitioners need to understand what those tools are doing under the hood.</p>
+<p>At the same time, fundamentals have not changed. Networking knowledge is still the bedrock. Understanding how operating systems work still matters more than knowing any specific tool. The ability to think methodically through a problem still separates effective practitioners from people who just run tools without understanding the output.</p>
+<p>What has changed is the path through these skills. Five years ago, you could spend two years working help desk, get a Security+ cert, and walk into a SOC analyst role. That path still works, but competition is stiffer. People who break in fastest are the ones who can demonstrate practical skills alongside theoretical knowledge. That means labs, projects, and documentation — not just exam scores.</p>
+<p>The HADESS career assessment can help you identify exactly where your current skill level sits relative to your target role, so you can focus on actual gaps instead of guessing.</p>
+<h2>Technical Skills vs Soft Skills</h2>
+<p>This is not a fluffy distinction. Both categories are real requirements that affect your ability to get hired and succeed in the role.</p>
+<h3>Technical Skills</h3>
+<p>These are the hard skills you can demonstrate in a lab or on an exam. They include:</p>
 <ul>
-<li>Assuming the cloud provider handles data encryption (it is the customer&#8217;s responsibility)</li>
-<li>Not configuring network security groups because &#8220;the cloud is secure&#8221;</li>
-<li>Failing to enable logging and monitoring on cloud resources</li>
-<li>Leaving storage buckets publicly accessible</li>
-<li>Not rotating access keys and credentials</li>
+<li>Networking protocols and architecture</li>
+<li>Operating system administration (Windows and Linux)</li>
+<li>Scripting and automation (Python, Bash, PowerShell)</li>
+<li>Security tool operation (SIEM, EDR, vulnerability scanners, firewalls)</li>
+<li>Cloud platform configuration and security</li>
+<li>Threat analysis and incident investigation</li>
+<li>Cryptographic concepts and implementation</li>
+<li>Web <a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">application security</a> testing</li>
 </ul>
-<p>Understanding where provider responsibility ends and customer responsibility begins is the foundation of all cloud security work.</p>
-<h2>AWS Security Skills and Certifications</h2>
-<p>AWS holds the largest cloud market share, making it the most frequently requested cloud platform in security job postings.</p>
-<p><strong>Core AWS security skills</strong>:</p>
-<p><em>IAM (<a href="/blog/read/identity-access-management" title="Identity and Access Management: RBAC, ABAC, and Federation">Identity and Access Management</a>)</em>: The most important AWS security service. Master IAM policies, roles, users, groups, and service-linked roles. Understand the policy evaluation logic, permission boundaries, and the principle of least privilege applied to AWS resources.</p>
-<p><em>VPC security</em>: Security groups, network ACLs, VPC flow logs, VPC endpoints, and PrivateLink. Know how to design a multi-tier VPC architecture with appropriate segmentation.</p>
-<p><em>CloudTrail and CloudWatch</em>: CloudTrail logs API activity across your AWS account. CloudWatch provides monitoring, alerting, and log management. Together they provide the visibility needed for <a href="/blog/read/security-monitoring" title="Security Monitoring: Building Effective Detection Infrastructure">security monitoring</a> and incident investigation.</p>
-<p><em>GuardDuty</em>: AWS&#8217;s managed threat detection service. Analyzes CloudTrail, VPC flow logs, and DNS logs to identify suspicious activity. Understanding GuardDuty findings and response procedures is expected for security roles.</p>
-<p><em>Security Hub</em>: Aggregates security findings from GuardDuty, Inspector, Macie, and third-party tools into a centralized dashboard. Maps findings to compliance frameworks.</p>
-<p><em>KMS and encryption</em>: Key Management Service for encryption key lifecycle management. Understand envelope encryption, key policies, and encryption at rest across S3, EBS, RDS, and other services.</p>
-<p><em>Config and compliance</em>: AWS Config tracks resource configurations and evaluates them against desired settings. Use Config rules to detect non-compliant resources automatically.</p>
-<p><strong>AWS security certifications</strong>:</p>
-<p><em>AWS Certified Security &#8211; Specialty</em>: The primary cloud security certification for AWS. Covers incident response, logging and monitoring, infrastructure security, identity and access management, and data protection. Requires passing one exam ($300). Recommended experience: five years of IT security plus two years of hands-on AWS security work.</p>
-<p><em>AWS Certified Solutions Architect &#8211; Associate</em>: Not security-specific, but covers VPC architecture, IAM, and security best practices. A good stepping stone before the Security Specialty.</p>
-<h2>Azure Security Skills and Certifications</h2>
-<p>Azure is the dominant cloud platform in enterprise and government environments, particularly organizations already invested in the Microsoft ecosystem.</p>
-<p><strong>Core Azure security skills</strong>:</p>
-<p><em>Entra ID (formerly Azure AD)</em>: Microsoft&#8217;s cloud identity service. Conditional access policies, MFA enforcement, Privileged Identity Management (PIM), and identity protection. Entra ID is the identity backbone for both Azure and Microsoft 365 security.</p>
-<p><em>Network security</em>: Network Security Groups (NSGs), Azure Firewall, Application Gateway with WAF, Azure Front Door, DDoS Protection, and Private Link. Understand how to design hub-and-spoke network architectures.</p>
-<p><em>Microsoft Defender for Cloud</em>: Cloud Security Posture Management (CSPM) that assesses Azure, AWS, and GCP resources against security benchmarks. Provides recommendations and secure score metrics.</p>
-<p><em>Sentinel</em>: Microsoft&#8217;s cloud-native SIEM (covered in our <a href="/blog/read/siem-tools-guide">SIEM tools guide</a>). Deep integration with Microsoft products makes it the natural SIEM choice for Microsoft-centric environments.</p>
-<p><em>Key Vault</em>: Manages encryption keys, certificates, and secrets. Integration with other Azure services enables transparent encryption and certificate management.</p>
-<p><em>Azure Policy and Blueprints</em>: Policy-as-code enforcement for compliance. Blueprints package policies, role assignments, and resource templates for repeatable, compliant deployments.</p>
-<p><strong>Azure security certifications</strong>:</p>
-<p><em>AZ-500: Microsoft Azure Security Technologies</em>: Covers identity and access, platform protection, security operations, and data and application security in Azure. The primary Azure security certification.</p>
-<p><em>SC-100: Microsoft Cybersecurity Architect Expert</em>: Advanced certification covering <a href="/blog/read/zero-trust-security">zero trust architecture</a>, security operations design, and security strategy. Requires AZ-500 or equivalent as a prerequisite.</p>
-<p><em>SC-200: Microsoft Security Operations Analyst</em>: Focuses on threat management using Microsoft Sentinel, Defender for Endpoint, and Defender for Cloud. Good for SOC analyst roles in Microsoft environments.</p>
-<h2>GCP Security Skills and Certifications</h2>
-<p>Google Cloud Platform has a smaller market share than AWS or Azure but is growing, particularly among data-intensive and AI/ML-focused organizations.</p>
-<p><strong>Core GCP security skills</strong>:</p>
-<p><em>Cloud IAM</em>: Resource hierarchy (organization, folders, projects), IAM roles (basic, predefined, custom), service accounts, and workforce identity federation. GCP&#8217;s IAM model differs from AWS and Azure — understanding the resource hierarchy is key.</p>
-<p><em>VPC Security</em>: Firewall rules, VPC Service Controls (perimeter-based security for GCP services), Private Google Access, and Cloud Armor (DDoS protection and WAF).</p>
-<p><em>Security Command Center</em>: GCP&#8217;s security management platform. Provides asset discovery, vulnerability detection, threat detection, and compliance monitoring.</p>
-<p><em>Chronicle</em>: Google&#8217;s security operations platform for threat detection and investigation. Uses Google&#8217;s infrastructure for large-scale data analysis.</p>
-<p><em>Cloud KMS</em>: Key management for encryption across GCP services. Supports customer-managed encryption keys (CMEK) and customer-supplied encryption keys (CSEK).</p>
-<p><em>Organization Policy Service</em>: Centralized constraint management across GCP resources. Restricts resource configurations at the organization level.</p>
-<p><strong>GCP security certifications</strong>:</p>
-<p><em>Google Professional <a href="/blog/read/cloud-security-engineer" title="Cloud Security Engineer: Role, Skills, Path">Cloud Security Engineer</a></em>: Covers configuring access, network security, data protection, security operations, and compliance in GCP. The primary GCP security certification.</p>
-<h2>Multi-Cloud Security Skills</h2>
-<p>Most enterprise environments run workloads across multiple cloud providers. Multi-cloud security requires provider-specific knowledge plus cross-cutting skills.</p>
-<p><strong>Cross-cloud skills to develop</strong>:</p>
-<p><em>Identity federation</em>: Federating a single identity provider across AWS, Azure, and GCP so that users authenticate once and access resources in any cloud. Understand SAML, OIDC, and cross-cloud trust relationships.</p>
-<p><em>Consistent policy enforcement</em>: Using cloud-agnostic tools (Open Policy Agent, HashiCorp Sentinel) to apply consistent security policies across providers. Reduces the risk of configuration drift between environments.</p>
-<p><em>Centralized logging and monitoring</em>: Aggregating security logs from multiple clouds into a single SIEM for unified detection and investigation. Understand the log formats and collection mechanisms for each provider.</p>
-<p><em>Infrastructure as Code</em>: Terraform is the primary multi-cloud IaC tool. Security teams need to review and secure Terraform configurations that deploy resources across providers.</p>
-<p><em>CSPM (Cloud Security Posture Management)</em>: Tools like Wiz, Orca, Prisma Cloud, and Lacework assess security posture across multiple cloud providers from a single platform.</p>
-<h2>Cloud Security Certifications Compared</h2>
-<table>
-<thead>
-<tr>
-<th>Certification</th>
-<th>Provider</th>
-<th>Difficulty</th>
-<th>Study Time</th>
-<th>Cost</th>
-<th>Job Market Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AWS Security Specialty</td>
-<td>AWS</td>
-<td>Hard</td>
-<td>3-4 months</td>
-<td>$300</td>
-<td>Highest</td>
-</tr>
-<tr>
-<td>AZ-500</td>
-<td>Microsoft</td>
-<td>Moderate</td>
-<td>2-3 months</td>
-<td>$165</td>
-<td>High (enterprise)</td>
-</tr>
-<tr>
-<td>SC-100</td>
-<td>Microsoft</td>
-<td>Hard</td>
-<td>3-4 months</td>
-<td>$165</td>
-<td>High (architect roles)</td>
-</tr>
-<tr>
-<td>GCP Security Engineer</td>
-<td>Google</td>
-<td>Moderate-Hard</td>
-<td>2-3 months</td>
-<td>$200</td>
-<td>Growing</td>
-</tr>
-<tr>
-<td>CCSP</td>
-<td>ISC2</td>
-<td>Hard</td>
-<td>3-6 months</td>
-<td>$599</td>
-<td>High (vendor-neutral)</td>
-</tr>
-<tr>
-<td>CCSK</td>
-<td>CSA</td>
-<td>Moderate</td>
-<td>1-2 months</td>
-<td>$395</td>
-<td>Moderate (foundational)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>ISC2 Certified Cloud Security Professional (CCSP)</strong>: Vendor-neutral cloud security certification. Covers cloud architecture, design, operations, and compliance. Requires five years of IT experience with three years in security and one year in cloud. Good for senior professionals and those working across multiple cloud providers. More information on how CCSP relates to other ISC2 certifications is in our <a href="/blog/read/cissp-guide">CISSP guide</a>.</p>
-<p><strong>Cloud Security Alliance CCSK</strong>: Certificate of Cloud Security Knowledge. Entry-level, vendor-neutral cloud security credential. A good starting point before pursuing provider-specific certifications.</p>
-<h2>Container and Kubernetes Security</h2>
-<p>Containers and Kubernetes have become standard deployment platforms, creating a specialized security domain.</p>
-<p><strong>Container security fundamentals</strong>:</p>
+<p>Technical skills are what most people focus on, and for good reason — they are the most measurable and the most directly applicable to the work.</p>
+<h3>Soft Skills</h3>
+<p>These are the skills that determine whether you can actually do the job effectively in an organization, as opposed to just in a lab:</p>
 <ul>
-<li>Image scanning for vulnerabilities (Trivy, Snyk Container, Prisma Cloud)</li>
-<li>Base image selection and hardening</li>
-<li>Runtime security monitoring (Falco, Sysdig)</li>
-<li>Registry security (access controls, image signing)</li>
-<li>Container network policies</li>
-<li>Secrets management for containers</li>
+<li><strong>Written communication:</strong> You will write reports, runbooks, policies, and incident documentation. If you cannot communicate findings clearly, your technical skills lose most of their value. This is especially true for penetration testers and GRC analysts, where deliverables are primarily written.</li>
 </ul>
-<p><strong>Kubernetes security</strong>:</p>
 <ul>
-<li>RBAC configuration for cluster access control</li>
-<li>Pod Security Standards (replacement for Pod Security Policies)</li>
-<li>Network policies for pod-to-pod communication control</li>
-<li>Admission controllers for policy enforcement (OPA Gatekeeper, Kyverno)</li>
-<li>Kubernetes audit logging</li>
-<li>Service mesh security (Istio, Linkerd) for mutual TLS and authorization</li>
+<li><strong>Verbal communication:</strong> You will present to managers, explain risks to non-technical stakeholders, and coordinate with other teams during incidents. The ability to translate technical findings into business impact is one of the most valuable skills in the field.</li>
 </ul>
-<p><strong>Certifications</strong>: The Certified <a href="/blog/read/kubernetes-security-specialist" title="Kubernetes Security Specialist: Secure Container Orchestration at Scale">Kubernetes Security Specialist</a>ernetes-security-rbac-network-policies-runtime/&#8221; title=&#8221;Kubernetes Security: RBAC, Network Policies, and Runtime Protection&#8221;>Kubernetes Security</a> Specialist (CKS) validates Kubernetes security skills. It requires the Certified Kubernetes Administrator (CKA) as a prerequisite.</p>
-<h2>Infrastructure as Code Security</h2>
-<p>Infrastructure as Code (IaC) defines cloud resources in configuration files instead of manual console operations. Securing these configurations prevents misconfigurations before resources are deployed.</p>
-<p><strong>Key IaC security skills</strong>:</p>
-<p><em>Terraform security</em>: Review Terraform configurations for security issues — public S3 buckets, overly permissive security groups, unencrypted databases, missing logging. Tools like tfsec, Checkov, and Terrascan automate this review.</p>
-<p><em>CloudFormation / ARM Templates / Deployment Manager</em>: Provider-specific IaC formats. Security reviews should be embedded in CI/CD pipelines to catch issues before deployment.</p>
-<p><em>Policy as Code</em>: Define security policies in code using Open Policy Agent (Rego language), HashiCorp Sentinel, or cloud-native policy services. Policies are version-controlled, testable, and auditable — unlike manual security configurations.</p>
-<p><em>CI/CD pipeline security</em>: Integrate security scanning into the deployment pipeline. Run IaC scans, container image scans, and SAST/DAST checks before deployment. Failed security checks should block deployment to production.</p>
-<p><em>GitOps security</em>: When infrastructure is managed through Git repositories, repository access controls become security controls. Protect IaC repositories with branch protection, code review requirements, and commit signing.</p>
-<h2>Which Cloud Provider to Learn First</h2>
-<p><strong>Choose AWS if</strong>:</p>
 <ul>
-<li>You are targeting the broadest job market</li>
-<li>You want the most widely recognized cloud security certification</li>
-<li>Your target employers have not standardized on a specific cloud</li>
-<li>You are interested in startups and technology companies</li>
+<li><strong>Analytical thinking:</strong> Security work is pattern recognition and hypothesis testing. Can you look at a set of logs and form a theory about what happened? Can you evaluate whether a security control actually addresses the risk it is supposed to?</li>
 </ul>
-<p><strong>Choose Azure if</strong>:</p>
 <ul>
-<li>Your target employers are enterprise or government organizations</li>
-<li>The organizations use Microsoft 365 and Active Directory</li>
-<li>You want to work in environments with strong Microsoft integration</li>
-<li>You are interested in identity-centric security (Entra ID)</li>
+<li><strong>Time management and prioritization:</strong> SOC analysts get dozens of alerts per shift. GRC analysts manage multiple audit timelines. Incident responders handle chaos. Knowing what to work on first and when to stop investigating a dead end is a practical skill that takes time to develop.</li>
 </ul>
-<p><strong>Choose GCP if</strong>:</p>
 <ul>
-<li>Your target employers are data-driven or AI/ML-focused organizations</li>
-<li>You want a less crowded certification market (fewer GCP-certified professionals)</li>
-<li>You are interested in Google&#8217;s security tooling (Chronicle, BeyondCorp)</li>
+<li><strong>Collaboration:</strong> Security is a team sport. You work with IT operations, development teams, legal, compliance, and executive leadership. People who cannot work cross-functionally will hit a ceiling quickly.</li>
 </ul>
-<p><strong>The practical approach</strong>: Start with one provider. Get hands-on through the free tier. Earn the provider-specific security certification. Then expand to a second provider. The concepts transfer — IAM, encryption, network security, and monitoring work similarly across all three providers. Provider-specific syntax and service names are what change.</p>
-<h2>Building Cloud Security Experience</h2>
-<p><strong>Free tier practice</strong>: All three major providers offer free tiers that allow meaningful security practice.</p>
-<p><em>AWS Free Tier exercises</em>:<br />
-1. Configure IAM policies using the principle of least privilege<br />
-2. Set up CloudTrail logging and create CloudWatch alarms for root account usage<br />
-3. Deploy a VPC with public and private subnets, security groups, and NACLs<br />
-4. Enable S3 bucket encryption and public access blocking<br />
-5. Deploy GuardDuty and investigate sample findings</p>
-<p><em>Azure Free Tier exercises</em>:<br />
-1. Configure Entra ID conditional access policies<br />
-2. Deploy a virtual network with NSGs and service endpoints<br />
-3. Enable Microsoft Defender for Cloud and review secure score<br />
-4. Set up a Sentinel workspace with free data connectors<br />
-5. Implement Key Vault for secrets management</p>
-<p><em>GCP Free Tier exercises</em>:<br />
-1. Configure Organization IAM with custom roles<br />
-2. Set up VPC firewall rules and VPC Service Controls<br />
-3. Enable Security Command Center and review findings<br />
-4. Configure audit logging and export to Cloud Storage<br />
-5. Implement Cloud KMS for encryption key management</p>
-<p><strong>Beyond free tiers</strong>:</p>
+<p>Do not skip soft skills because they feel less &#8220;technical.&#8221; Every hiring manager we know has stories of brilliant technical candidates who could not write a coherent report or explain their findings in an interview.</p>
+<h2>Core Skills Every Practitioner Needs</h2>
+<p>Regardless of which track you choose, you need these. Think of them as the foundation that everything else builds on.</p>
+<h3>Networking Fundamentals</h3>
+<p>You cannot secure what you do not understand. Networking is the substrate that everything runs on, and the majority of attacks traverse networks. You need to know:</p>
 <ul>
-<li>Contribute to open-source cloud security tools (Prowler, ScoutSuite, CloudSploit)</li>
-<li>Participate in cloud security CTFs and challenges</li>
-<li>Write about cloud security topics — document your lab work, analyze cloud security incidents, or review new cloud security features</li>
-<li>Join cloud security communities (fwd:cloudsec, Cloud Security Alliance chapters)</li>
+<li><strong>TCP/IP stack:</strong> How data moves from application layer down to physical layer and back. Understand TCP handshakes, UDP, ICMP, and how protocols interact.</li>
+<li><strong>DNS:</strong> How name resolution works, what DNS records exist (A, AAAA, MX, CNAME, TXT, NS), and why DNS is both foundational infrastructure and a common attack vector (DNS tunneling, domain hijacking, cache poisoning).</li>
+<li><strong>HTTP/HTTPS:</strong> Request and response structure, methods (GET, POST, PUT, DELETE), status codes, headers, cookies, TLS handshakes. Most applications run over HTTP, and most application attacks target HTTP.</li>
+<li><strong>Subnetting and routing:</strong> How networks are segmented, how traffic routes between segments, what NAT does, what VLANs are, and why network segmentation matters for security.</li>
+<li><strong>Common protocols:</strong> SSH, FTP/SFTP, SMTP, SNMP, RDP, SMB. Know what they do, what ports they use, and what security implications each has.</li>
 </ul>
-<p>Assess your current cloud security skills with our <a href="https://career.hadess.io/skills">Skills Assessment</a> to identify which provider and which skills to prioritize.</p>
-<p><strong>Explore all cybersecurity skills:</strong> <a href="/blog/read/cybersecurity-skills-guide" title="Cybersecurity Skills for Beginners">Cybersecurity Skills for Beginners</a></p>
-<h2>Related Guides in This Series</h2>
+<p>The <a href="/blog/read/network-security-guide">HADESS network security skills guide</a> covers this in full detail.</p>
+<h3>Linux Fundamentals</h3>
+<p>Most security tools run on Linux. Most servers run Linux. Most cloud infrastructure runs Linux. You need to be comfortable with:</p>
 <ul>
-<li><a href="/blog/read/zero-trust-security">Zero Trust Security: What It Is and Why It Matters</a></li>
-<li><a href="/blog/read/network-security-guide">Network Security Fundamentals: Complete Guide</a></li>
-<li><a href="/blog/read/cissp-guide">CISSP Certification: Complete Requirements Guide</a></li>
+<li>Command-line navigation and file management</li>
+<li>User and permission management (chmod, chown, sudo, /etc/passwd, /etc/shadow)</li>
+<li>Process management (ps, top, kill, systemctl)</li>
+<li>Log analysis (journalctl, /var/log/, grep, awk, sed)</li>
+<li>Package management (apt, yum/dnf)</li>
+<li>Basic shell scripting (Bash)</li>
+<li>Network utilities (netstat/ss, nmap, tcpdump, curl, wget)</li>
 </ul>
-<h2>Take the Next Step</h2>
-<p><strong>Assess your cloud skills</strong> — Use our <a href="https://career.hadess.io/skills">Skills Assessment</a> to benchmark your cloud security abilities across AWS, Azure, and GCP.<br />
-<strong>Plan your certification path</strong> — Visit the <a href="https://career.hadess.io/certificate-roadmap">Certificate Roadmap</a> to map out cloud security certifications that match your career goals.</p>
+<p>You do not need to be a Linux system administrator, but you need to be comfortable enough that a Linux terminal does not slow you down.</p>
+<h3>Python for Security</h3>
+<p>Python has become the de facto language for cybersecurity. Not because it is the best language (it is not for many tasks), but because it is readable, has massive library support, and lets you automate things quickly. You need enough Python to:</p>
+<ul>
+<li>Parse log files and CSVs</li>
+<li>Make API calls to security tools</li>
+<li>Write simple network scanners or port scanners</li>
+<li>Automate repetitive tasks (bulk DNS lookups, hash checking, IOC extraction)</li>
+<li>Modify existing open-source security tools</li>
+</ul>
+<p>You do not need to write production-quality software. You need to write scripts that work. Our <a href="/blog/read/python-cybersecurity">Python for cybersecurity deep-dive</a> covers exactly what to learn and in what order.</p>
+<h3>Cloud Basics</h3>
+<p>If you do not know the difference between IaaS, PaaS, and SaaS, or what an IAM policy does, fix that now. Cloud infrastructure is the default for most organizations, and cloud security is woven into nearly every role:</p>
+<ul>
+<li>Understand the shared responsibility model (what the cloud provider secures vs. what you secure)</li>
+<li>Know the major services in at least one platform (AWS EC2, S3, IAM, VPC, CloudTrail as a starting point)</li>
+<li>Understand <a href="/blog/read/identity-access-management" title="Identity and Access Management: RBAC, ABAC, and Federation">identity and access management</a> in cloud contexts</li>
+<li>Know basic cloud networking (VPCs, security groups, NACLs)</li>
+<li>Understand how logs and monitoring work in cloud environments</li>
+</ul>
+<p>For deeper cloud security skills, see our <a href="/blog/read/cloud-security-skills">cloud security skills guide</a>.</p>
+<h2>Offensive Security Skills</h2>
+<p>If you are aiming for penetration testing, red teaming, or vulnerability research, these are the skills that matter:</p>
+<h3>Reconnaissance and OSINT</h3>
+<p>Before you attack anything, you need to understand what you are looking at. Reconnaissance skills include:</p>
+<ul>
+<li>Passive information gathering (DNS records, WHOIS, certificate transparency logs, public code repositories)</li>
+<li>Active scanning (Nmap, service enumeration, version detection)</li>
+<li>Web application enumeration (directory brute-forcing, subdomain enumeration, technology fingerprinting)</li>
+<li>OSINT techniques for social engineering assessments</li>
+</ul>
+<h3>Web Application Testing</h3>
+<p>Most penetration tests include web applications, and web app bugs are among the most common findings. You need to understand:</p>
+<ul>
+<li>The <a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a> — not just the list, but how each vulnerability class works mechanically</li>
+<li>Manual testing techniques (Burp Suite, browser developer tools)</li>
+<li>Authentication and session management testing</li>
+<li>Server-side request forgery, injection attacks, cross-site scripting, insecure deserialization</li>
+<li>API security testing (REST, GraphQL)</li>
+</ul>
+<h3>Network Exploitation</h3>
+<p>For infrastructure penetration testing:</p>
+<ul>
+<li>Service exploitation (understanding CVEs and how to apply them)</li>
+<li>Password attacks (spraying, brute force, credential stuffing)</li>
+<li>Post-exploitation (privilege escalation on Windows and Linux)</li>
+<li>Lateral movement techniques</li>
+<li>Active Directory attacks (Kerberoasting, AS-REP roasting, Pass-the-Hash)</li>
+</ul>
+<h3>Report Writing</h3>
+<p>This gets overlooked, but it should not. A penetration test is only as useful as its report. You need to write findings that include clear descriptions of vulnerabilities, evidence of exploitation, risk ratings, and actionable remediation guidance. If the client cannot understand your report, the engagement failed.</p>
+<p>The difference between a junior and senior pen tester is often not technical skill — it is the quality of the written deliverable.</p>
+<h2>Defensive Security Skills</h2>
+<p>If you are aiming for SOC operations, incident response, or security engineering, these are your priorities:</p>
+<h3>SIEM and Log Analysis</h3>
+<p>Security Information and Event Management platforms are the central nervous system of a SOC. You need to know:</p>
+<ul>
+<li>How SIEMs work (log ingestion, normalization, correlation, alerting)</li>
+<li>At least one SIEM platform in depth (Splunk, Microsoft Sentinel, Elastic Security, or QRadar)</li>
+<li>Query languages for the platform you choose (SPL for Splunk, KQL for Sentinel)</li>
+<li>How to write detection rules and correlation rules</li>
+<li>How to tune alerts to reduce false positives</li>
+</ul>
+<p>Our <a href="/blog/read/siem-tools-guide">SIEM tools guide</a> covers the major platforms and how to build proficiency.</p>
+<h3>Endpoint Detection and Response (EDR)</h3>
+<p>EDR tools provide visibility into what is happening on individual endpoints. You need to understand:</p>
+<ul>
+<li>How EDR agents collect telemetry</li>
+<li>How to investigate alerts from EDR platforms (CrowdStrike Falcon, SentinelOne, Microsoft Defender for Endpoint)</li>
+<li>Behavioral detection vs. signature-based detection</li>
+<li>How to use EDR data for <a href="/blog/read/threat-hunter" title="Threat Hunter: Find What Automated Defenses Miss">threat hunting</a></li>
+</ul>
+<h3>Incident Response Procedures</h3>
+<p>When something bad happens, there is a process. You should understand:</p>
+<ul>
+<li>The incident response lifecycle (preparation, identification, containment, eradication, recovery, lessons learned), as defined by <a href="https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final">NIST SP 800-61</a></li>
+<li>Evidence preservation and chain of custody</li>
+<li>Communication protocols during incidents</li>
+<li>Basic forensic techniques (disk imaging, memory capture, timeline analysis)</li>
+</ul>
+<h3>Threat Intelligence Operations</h3>
+<p>Understanding the threat landscape makes every other defensive skill more effective:</p>
+<ul>
+<li>MITRE ATT&#038;CK framework — what it is, how to use it for detection mapping</li>
+<li>Indicator of compromise (IOC) management</li>
+<li>Threat feed integration and evaluation</li>
+<li>Adversary tracking and campaign analysis</li>
+</ul>
+<p>Read our <a href="/blog/read/threat-intelligence">threat intelligence skills deep-dive</a> for a full breakdown.</p>
+<h2>Cloud and Container Security Skills</h2>
+<p>Cloud and containers deserve their own section because they have become the default deployment model and carry unique security considerations.</p>
+<h3>Cloud Security Posture</h3>
+<ul>
+<li>Cloud security architecture (multi-account strategies, landing zones)</li>
+<li>IAM policy design and review (least privilege in practice, not just theory)</li>
+<li>Cloud security services (AWS GuardDuty, Security Hub, Azure Defender, GCP Security Command Center)</li>
+<li>Infrastructure-as-Code security (Terraform scanning, CloudFormation validation)</li>
+<li>Cloud incident response (how it differs from on-premises IR)</li>
+</ul>
+<h3>Container and Kubernetes Security</h3>
+<ul>
+<li>Container image security (scanning, minimal base images, multi-stage builds)</li>
+<li>Container runtime security (seccomp, AppArmor, read-only filesystems)</li>
+<li>Kubernetes security fundamentals (RBAC, network policies, Pod Security Standards)</li>
+<li><a href="/blog/read/supply-chain-security" title="Supply Chain Security: SBOMs, Dependency Analysis, and SLSA">Supply chain security</a> for containers (image signing, provenance)</li>
+<li>Service mesh security (mTLS with Istio or Linkerd)</li>
+</ul>
+<h3>Zero Trust Architecture</h3>
+<p>Zero trust is not a product you buy — it is a design philosophy. Understanding it means knowing:</p>
+<ul>
+<li>The principles: never trust, always verify; assume breach; least-privilege access</li>
+<li>Implementation patterns: micro-segmentation, continuous authentication, device posture assessment</li>
+<li>How zero trust maps to cloud-native architectures</li>
+<li>Real-world limitations and implementation challenges</li>
+</ul>
+<p>Our <a href="/blog/read/zero-trust-security">zero trust security guide</a> covers practical implementation patterns.</p>
+<h2>GRC and Compliance Skills</h2>
+<p>If you are pursuing governance, risk, and compliance, the skill set looks different from technical security roles but is equally demanding:</p>
+<h3>Risk Assessment and Management</h3>
+<ul>
+<li>Quantitative vs. qualitative risk assessment</li>
+<li>Risk frameworks (NIST RMF, ISO 31000, FAIR)</li>
+<li>Risk register management</li>
+<li>Third-party/vendor risk assessment</li>
+<li>Risk appetite and risk tolerance communication</li>
+</ul>
+<h3>Compliance Frameworks</h3>
+<p>You do not need to memorize every control, but you need working knowledge of the major frameworks:</p>
+<ul>
+<li><strong>SOC 2:</strong> Trust Service Criteria, Type I vs. Type II, evidence collection</li>
+<li><strong>ISO 27001:</strong> ISMS requirements, Annex A controls, certification process</li>
+<li><strong>NIST CSF:</strong> Framework core (Identify, Protect, Detect, Respond, Recover), implementation tiers</li>
+<li><strong>PCI-DSS:</strong> Requirements for handling payment card data</li>
+<li><strong>GDPR:</strong> Data protection principles, data subject rights, breach notification</li>
+<li><strong>HIPAA:</strong> PHI protection requirements, Security Rule, Breach Notification Rule</li>
+</ul>
+<p>The <a href="https://www.sans.org/white-papers/">SANS Reading Room</a> is an excellent free resource for deep-diving into specific compliance and security topics.</p>
+<h3>Policy and Documentation</h3>
+<p>GRC professionals produce a lot of written artifacts:</p>
+<ul>
+<li>Security policies (acceptable use, access control, incident response, data classification)</li>
+<li>Standards and procedures (how policies get implemented)</li>
+<li>Risk assessments and treatment plans</li>
+<li>Audit reports and gap analyses</li>
+<li>Board-level security reports</li>
+</ul>
+<p>Writing clearly and precisely is not optional in GRC — it is the core of the job.</p>
+<h2>Certification Overview: Which Ones Actually Matter</h2>
+<p>Certifications matter because they are a standardized signal. They tell employers you have demonstrated knowledge in a specific area. But not all certifications carry equal weight, and the order you pursue them matters.</p>
+<h3>Entry-Level (0-2 Years Experience)</h3>
+<p><strong>CompTIA Security+ (SY0-701)</strong><br />
+The industry standard starting point. It covers a broad range of security topics at a foundational level. Most entry-level job postings mention it. It is vendor-neutral and globally recognized. Budget 2-3 months of study time.</p>
+<p>Our <a href="/blog/read/comptia-security-plus">CompTIA Security+ preparation guide</a> covers study strategies, resources, and common mistakes.</p>
+<p><strong>CompTIA CySA+</strong><br />
+The logical next step for people going into SOC/defense roles. It covers security analytics, threat detection, and incident response at a deeper level than Security+.</p>
+<p><strong>eJPT (eLearnSecurity Junior Penetration Tester)</strong><br />
+The best entry-level practical penetration testing certification. It is exam-based but hands-on — you demonstrate skills in a live lab environment rather than just answering multiple-choice questions.</p>
+<h3>Mid-Level (2-5 Years Experience)</h3>
+<p><strong>CEH vs. OSCP</strong><br />
+CEH (Certified Ethical Hacker) is widely recognized but has lost some industry respect because its exam is multiple-choice and does not test practical skills. OSCP (Offensive Security Certified Professional) is a 24-hour hands-on exam that requires you to compromise machines in a live environment. Among practitioners, OSCP carries significantly more weight. Our <a href="/blog/read/ceh-vs-oscp">CEH vs OSCP comparison</a> breaks down the differences.</p>
+<p><strong>GCIH (GIAC Certified Incident Handler)</strong><br />
+Strong certification for incident response professionals. SANS certifications are expensive but well-regarded.</p>
+<p><strong>AWS Security Specialty / AZ-500</strong><br />
+Cloud-specific security certifications from the two largest cloud providers. If you work in cloud security, these demonstrate platform-specific expertise.</p>
+<h3>Senior-Level (5+ Years Experience)</h3>
+<p><strong>CISSP (Certified Information Systems Security Professional)</strong><br />
+The most widely recognized security management certification. It covers eight domains of security knowledge at a broad level. It is often a requirement for security leadership roles. It requires five years of professional experience in at least two domains, though an associate-level option exists for people who pass the exam without the experience requirement.</p>
+<p>Read our full <a href="/blog/read/cissp-guide">CISSP preparation guide</a> for study strategies and domain breakdowns.</p>
+<p><strong>CCSP (Certified Cloud Security Professional)</strong><br />
+The ISC2 cloud-focused certification. Less common than CISSP but increasingly requested for cloud security architecture and leadership roles.</p>
+<p><strong>CISM (Certified Information Security Manager)</strong><br />
+Focused on security management and governance. Popular among people pursuing CISO or security director roles.</p>
+<p><strong>OSCP / OSEP / OSED</strong><br />
+The Offensive Security certification chain for people deep in the penetration testing and red team track. OSEP covers advanced evasion techniques. OSED covers <a href="/blog/read/exploit-developer" title="Exploit Developer: Turn Vulnerabilities into Working Code">exploit development</a>.</p>
+<h3>Certification Strategy</h3>
+<p>Do not collect certifications randomly. Pick a track, earn the entry-level cert for that track, get a job, then earn the mid-level cert while working. Certifications are most valuable when combined with practical experience. Someone with Security+ and 18 months of SOC experience is more hirable than someone with five certifications and no work experience.</p>
+<p>Use the HADESS certificate roadmap to see the recommended certification order for your specific career track.</p>
+<h2>Building Your Study Plan</h2>
+<p>A study plan without structure is just a reading list. Here is how to build one that actually works:</p>
+<h3>Define Your Target Role</h3>
+<p>Be specific. &#8220;I want to work in cybersecurity&#8221; is not a target. &#8220;I want to be a SOC Analyst Tier 1 at an MSSP within 8 months&#8221; is a target. The specificity lets you work backward from the requirements.</p>
+<h3>Audit Your Current Skills</h3>
+<p>List what you already know. If you have IT experience, you probably have networking and operating system fundamentals partially covered. If you have development experience, scripting and web application knowledge are already in your toolkit. Do not start from zero if you are not at zero.</p>
+<h3>Map the Gap</h3>
+<p>Compare your current skills to the requirements of your target role. The gap is your study plan. Prioritize skills that appear in the most job postings for your target role.</p>
+<h3>Allocate Time Realistically</h3>
+<p>If you work full-time, 10-15 hours per week of focused study is realistic. At that pace, a certification takes 2-4 months depending on its scope. Build in rest weeks. Burnout ends more study plans than difficulty does.</p>
+<h3>Balance Theory and Practice</h3>
+<p>For every hour of reading or watching lectures, spend at least an hour in a lab. Hands-on practice cements knowledge in a way that passive learning cannot. Set up VMs, build a home lab, work through CTF challenges, and configure security tools.</p>
+<h3>Track Progress</h3>
+<p>Use a system. Spreadsheet, Notion page, paper notebook — whatever works. Track what you have studied, what you have practiced, and what still needs work. Review weekly and adjust.</p>
+<p>A six-month study plan structure might look like this:</p>
+<ul>
+<li><strong>Month 1-2:</strong> Networking fundamentals + Linux basics + start Security+ study</li>
+<li><strong>Month 3:</strong> Complete Security+ certification + begin hands-on labs</li>
+<li><strong>Month 4:</strong> Specialize — start learning your track-specific tools and skills</li>
+<li><strong>Month 5:</strong> Build projects + document them + begin track-specific cert study</li>
+<li><strong>Month 6:</strong> Complete track cert + polish portfolio + begin applying</li>
+</ul>
+<p>Our <a href="/blog/read/cybersecurity-learning-path">cybersecurity learning path guide</a> provides detailed study plan templates for each career track.</p>
+<h2>Using the HADESS Skills Catalog</h2>
+<p>The HADESS platform includes a catalog of 80+ cybersecurity skills organized by domain. Here is how to use it effectively:</p>
+<p><strong>Browse by Domain:</strong> Skills are organized into categories — offensive security, defensive security, cloud security, network security, programming, DevOps, and more. Start by browsing the domain that matches your target track.</p>
+<p><strong>Skill Pages:</strong> Each skill page explains what the skill is, why it matters, which career roles require it, and where to find learning resources. Use these pages to understand the breadth and depth expected for each skill.</p>
+<p><strong>Career Skills Mapping:</strong> The career skills page maps skills to specific roles. If you know your target role, this page tells you exactly which skills to prioritize.</p>
+<p><strong>Roadmap Tools:</strong> Use the roadmap selector to get a personalized learning path based on your current level and target role.</p>
+<p><strong>Track Your Progress:</strong> The HADESS workspace lets you mark skills as learned, in-progress, or not-started, giving you a clear view of where you stand relative to your goals.</p>
+<h2>Related Deep-Dives</h2>
+<p>These cluster guides go deeper into specific skills and certifications covered in this pillar:</p>
+<ul>
+<li><a href="/blog/read/comptia-security-plus">CompTIA Security+ Preparation Guide</a> — Study strategies, resources, and tips for passing Security+ on your first attempt.</li>
+<li><a href="/blog/read/ceh-vs-oscp">CEH vs OSCP: Which Certification Should You Choose?</a> — A detailed comparison of two major offensive security certifications.</li>
+<li><a href="/blog/read/top-cyber-skills">Top Cybersecurity Skills in Demand for 2026</a> — The most requested skills in job postings, updated for the current market.</li>
+<li><a href="/blog/read/python-cybersecurity">Python for Cybersecurity: What to Learn and How</a> — A practical Python curriculum for security professionals.</li>
+<li><a href="/blog/read/network-security-guide">Network Security Fundamentals Guide</a> — Deep-dive into networking knowledge for security practitioners.</li>
+<li><a href="/blog/read/siem-tools-guide">SIEM Tools Guide: Splunk, Sentinel, and Elastic</a> — Comparison and skill-building guide for major SIEM platforms.</li>
+<li><a href="/blog/read/zero-trust-security">Zero Trust Security: Principles and Practice</a> — What zero trust actually means and how to implement it.</li>
+<li><a href="/blog/read/threat-intelligence">Threat Intelligence Skills and Career Guide</a> — Building analytical and technical skills for threat intelligence roles.</li>
+<li><a href="/blog/read/cloud-security-skills">Cloud Security Skills for 2026</a> — The cloud security skill set employers are hiring for.</li>
+<li><a href="/blog/read/cissp-guide">CISSP Preparation Guide</a> — How to study for and pass the CISSP, with domain-by-domain strategies.</li>
+</ul>
+<h2>Start Your Journey</h2>
+<p><strong>Browse 80+ Skills on HADESS</strong><br />
+Explore the full cybersecurity <a href="/blog/read/hadess-skills-catalog" title="The HADESS Skills Catalog: What’s Inside?">skills catalog</a>. Each skill page includes descriptions, career mapping, and learning resources. Whether you are just starting or ready to specialize, the skills catalog shows you what to learn next.</p>
+<p>Browse the skills catalog</p>
+<p><strong>See Your Certification Roadmap</strong><br />
+Not sure which certifications to pursue, or in what order? The HADESS certificate roadmap tool maps certs to your career track and experience level, giving you a clear progression path.</p>
+<p>View your certification roadmap</p>
 <h2>Frequently Asked Questions</h2>
-<h3>Should I get AWS or Azure certification first?</h3>
-<p>Check job postings for your target roles and employers. If more postings mention AWS, start with AWS. If your target employers are Microsoft shops, start with Azure. If you are unsure, AWS has the broadest market applicability and the most recognized security certification (AWS Security Specialty). Either way, the concepts transfer across providers — learning one makes the second much easier.</p>
-<h3>How much cloud experience do I need for a cloud security role?</h3>
-<p>Entry-level cloud security roles typically expect one to two years of general cloud experience plus security knowledge. You can build this through a combination of certifications, home lab practice, and contributions to cloud security projects. Mid-level cloud security roles expect three to five years, usually including production cloud security responsibilities. Senior roles expect five-plus years with architecture-level decision-making experience.</p>
-<h3>Is the CCSP worth it without cloud experience?</h3>
-<p>The CCSP provides a strong theoretical foundation in cloud security but requires five years of IT experience (with one year in cloud) for full certification. If you lack the experience, ISC2 offers an Associate of (ISC2) designation while you accumulate the required years. The CCSK from the Cloud Security Alliance has <a href="/blog/read/cybersecurity-no-experience" title="How to Break Into Cybersecurity With No Experience">no experience</a> requirement and serves as a better starting point if you are early in your cloud security career.</p>
-<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>What are the most important cybersecurity skills for entry-level roles?</h3>
+<p>Networking fundamentals, basic Linux administration, security concepts (what Security+ covers), and one SIEM platform. If you know TCP/IP, can navigate a Linux terminal, understand common attack types, and can operate a SIEM at a basic level, you meet the technical bar for most SOC Analyst Tier 1 roles. Add basic Python scripting and you are ahead of most entry-level applicants.</p>
+<h3>Do I need to learn programming to work in cybersecurity?</h3>
+<p>For most roles, yes — at least basic scripting. Python and Bash are the most universally useful. You do not need to be a software engineer, but you need to automate repetitive tasks, parse data, and understand code well enough to read it. For penetration testing and DevSecOps, deeper programming skills give you a significant advantage. For GRC, programming is less directly required but still useful for data analysis.</p>
+<h3>How long does it take to learn cybersecurity skills from scratch?</h3>
+<p>If you are studying 10-15 hours per week, expect 4-6 months to build a solid foundation (networking, Linux, Security+ certification, basic lab work). Add another 2-4 months to develop track-specific skills to an employable level. Total timeline for a career switcher to land their first security role is typically 6-12 months of focused effort. Your starting point matters — IT professionals with existing technical skills can often compress this to 4-6 months.</p>
+<h3>Should I learn offensive or defensive skills first?</h3>
+<p>Start with defensive/foundational skills unless you are absolutely certain you want to be a penetration tester. Understanding how defense works gives you context for offense, and defensive roles (SOC analyst) have more entry-level openings than offensive roles (junior pen tester). Many successful pen testers started in SOC or sysadmin roles and pivoted to offense after building their foundational knowledge.</p>
+<h3>Which cybersecurity certification should I get first?</h3>
+<p>CompTIA Security+ for almost everyone. It is the most recognized entry-level cert, it covers broad foundational knowledge, and it meets DoD 8570 requirements. The one exception: if you are already working in IT and specifically want to do penetration testing, the eJPT provides a more directly relevant hands-on credential. But Security+ is still the safer general choice.</p>
+<h3>How do I stay current with cybersecurity skills?</h3>
+<p>Follow security news sources (Krebs on Security, The Record, Dark Reading). Read vulnerability disclosures and incident reports. Participate in CTF competitions. Take one new certification every 1-2 years. Attend conferences (DEF CON, BSides, Black Hat talks are freely available online). The field moves fast, but if you are genuinely interested in the work, keeping up does not feel like homework.</p>
+<h3>Are cloud security skills worth learning as a beginner?</h3>
+<p>Yes. Cloud infrastructure is the default deployment model for most organizations. Even entry-level roles increasingly require basic cloud awareness. You do not need deep cloud expertise to start, but understanding what AWS IAM does, what a VPC is, and how cloud logging works will make you a stronger candidate. Start with one platform (AWS is the most common), learn the security-relevant services, and build from there.</p>
+<h3>What tools should a beginner learn first?</h3>
+<p>For defensive roles: Wireshark (packet analysis), Nmap (network scanning), a SIEM platform (start with the free tier of Splunk or Elastic Security), and a virtualization platform (VirtualBox or VMware). For offensive roles: Nmap, Burp Suite Community Edition, Metasploit, and Kali Linux (which bundles most offensive tools). For both: Python, a terminal emulator you are comfortable with, and a good note-taking system.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field. We write from experience, not theory.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1803,27 +1896,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2011,11 +2104,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2038,59 +2131,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

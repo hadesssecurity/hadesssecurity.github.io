@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-salary-guide#article","headline":"Cybersecurity Salary Guide 2026 — HADESS Magazine","description":"2026 cybersecurity salary guide with pay data by role, region, experience, and certs. Use the HADESS salary calculator to estimate your earning potential.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-salary-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-salary-guide"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-salary-guide.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-salary-guide#article","headline":"Cybersecurity Salary Guide 2026 — HADESS Magazine","description":"2026 cybersecurity salary guide with pay data by role, region, experience, and certs. Use the HADESS salary calculator to estimate your earning potential.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-salary-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-salary-guide"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-salary-guide.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,233 +1549,351 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-cybersecurity-salary-guide.png">
-      <blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-salary-guide">Cybersecurity Salary Guide</a></strong> — This article is one deep-dive in our complete salary series.</p>
+      <h1>Cybersecurity Salary Guide: 2026 Pay Data by Role, Region, and Experience</h1>
+<blockquote>
+<p><strong>Part of the HADESS Career Resources</strong> — This guide covers salary ranges across every major cybersecurity role. Explore our deep-dives on <a href="/blog/read/soc-analyst-salary">SOC analyst salary expectations</a>, <a href="/blog/read/pen-tester-salary">penetration tester compensation</a>, and <a href="/blog/read/ciso-salary">CISO salary benchmarks</a> below.</p>
 </blockquote>
-<h1>Entry Level Cybersecurity Salary: What to Expect in 2026</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 10 min read</em></p>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 19 min read</em></p>
+<p>This cybersecurity salary guide exists because most salary data online is either outdated, sourced from unreliable self-reporting, or designed to sell you a bootcamp by inflating numbers. We have compiled data from job postings, industry surveys, recruiter conversations, and our own hiring experience to give you a realistic picture of what cybersecurity professionals actually earn in 2026.</p>
+<p>The short version: cybersecurity pays well. Better than most IT roles, competitive with software engineering at mid and senior levels, and significantly better than the national average across nearly every geography. But &#8220;cybersecurity&#8221; is not one salary. A SOC Analyst Tier 1 in the Midwest and a Principal Security Engineer in San Francisco are in the same field but not the same compensation bracket. This guide breaks down what you can actually expect based on your role, location, experience, and certifications.</p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#what-entry-level-cybersecurity-jobs-actually-pay">What Entry Level Cybersecurity Jobs Actually Pay</a></li>
-<li><a href="#us-entry-level-salary-by-role">US Entry Level Salary by Role</a></li>
-<li><a href="#uk-entry-level-cybersecurity-pay">UK Entry Level Cybersecurity Pay</a></li>
-<li><a href="#european-entry-level-ranges">European Entry Level Ranges</a></li>
-<li><a href="#does-your-background-affect-starting-salary">Does Your Background Affect Starting Salary</a></li>
-<li><a href="#certifications-that-increase-starting-pay">Certifications That Increase Starting Pay</a></li>
-<li><a href="#entry-level-salary-by-city">Entry Level Salary by City</a></li>
-<li><a href="#first-year-to-third-year-salary-growth">First Year to Third Year Salary Growth</a></li>
-<li><a href="#how-to-get-the-highest-starting-salary">How to Get the Highest Starting Salary</a></li>
-<li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
-<li><a href="#take-the-next-step">Take the Next Step</a></li>
+<li><a href="#cybersecurity-salary-landscape-2026">Cybersecurity Salary Landscape 2026</a></li>
+<li><a href="#salary-by-role">Salary by Role</a></li>
+<li><a href="#salary-by-region">Salary by Region</a></li>
+<li><a href="#experience-level-and-salary-progression">Experience Level and Salary Progression</a></li>
+<li><a href="#certifications-that-increase-pay">Certifications That Increase Pay</a></li>
+<li><a href="#how-to-negotiate-your-cybersecurity-salary">How to Negotiate Your Cybersecurity Salary</a></li>
+<li><a href="#uk-specific-salary-guide">UK-Specific Salary Guide</a></li>
+<li><a href="#remote-work-and-salary-adjustments">Remote Work and Salary Adjustments</a></li>
+<li><a href="#related-deep-dives">Related Deep-Dives</a></li>
+<li><a href="#start-your-journey">Start Your Journey</a></li>
 <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<h2>What Entry Level Cybersecurity Jobs Actually Pay</h2>
-<p><a href="/blog/read/entry-level-cyber-jobs" title="Best Entry-Level Cybersecurity Jobs in 2026">Entry level cybersecurity</a> salary is one of the most searched questions from people considering a career switch into security. The answer depends on your specific role, location, and background, but the short version is: the pay is good and it gets better fast.</p>
-<p>Cybersecurity entry-level positions pay more than entry-level roles in most other IT fields. The skills shortage means that employers compete for even junior talent, and starting salaries reflect that competition. In 2026, the US Bureau of Labor Statistics projects 32% job growth for information security analysts through 2032, which is roughly six times the average for all occupations.</p>
-<p>But &#8220;entry level&#8221; in cybersecurity covers a wide range. A Tier 1 SOC analyst at an MSSP earns differently from a junior GRC analyst at a bank, and both earn differently from a security support engineer at a tech company. This guide breaks down starting salaries by role, location, and background so you can set realistic expectations and negotiate effectively.</p>
-<h2>US Entry Level Salary by Role</h2>
-<p>Here are starting salaries for the most common entry-level cybersecurity positions in the US market.</p>
-<p><strong>Tier 1 SOC Analyst</strong></p>
-<ul>
-<li>Range: $50,000 &#8211; $72,000</li>
-<li>Average: $60,000</li>
-<li>This is the most common entry point into cybersecurity. You monitor SIEM alerts, triage incidents, and follow playbooks. Shift work is standard, and night/weekend differentials can add $3,000 &#8211; $8,000 annually. See the full <a href="/blog/read/soc-analyst-salary">SOC analyst salary guide</a> for progression details.</li>
-</ul>
-<p><strong>Junior Security Analyst</strong></p>
-<ul>
-<li>Range: $52,000 &#8211; $75,000</li>
-<li>Average: $62,000</li>
-<li>Broader than SOC-specific roles. You might work on <a href="/blog/read/vulnerability-management" title="Vulnerability Management: Scanning, Prioritization, and Patching">vulnerability management</a>, security awareness, or policy compliance depending on the team structure.</li>
-</ul>
-<p><strong>Junior Penetration Tester</strong></p>
-<ul>
-<li>Range: $65,000 &#8211; $85,000</li>
-<li>Average: $72,000</li>
-<li>Entry-level pen testing roles are competitive and harder to land without prior experience or certifications like OSCP. Many employers require 1-2 years in a security or IT role before hiring into pen testing.</li>
-</ul>
-<p><strong>Security Support / Help Desk (Security-Focused)</strong></p>
-<ul>
-<li>Range: $42,000 &#8211; $58,000</li>
-<li>Average: $48,000</li>
-<li>Some organizations have security-specific support teams that handle access management, endpoint security tools, and basic security incident triage. These pay less than analyst roles but provide a solid entry point.</li>
-</ul>
-<p><strong>Junior GRC Analyst</strong></p>
-<ul>
-<li>Range: $50,000 &#8211; $68,000</li>
-<li>Average: $58,000</li>
-<li>Governance, Risk, and Compliance roles involve policy documentation, audit support, and risk assessments. They suit people who prefer structured work over shift-based operations.</li>
-</ul>
-<p><strong>Junior Cloud Security Analyst</strong></p>
-<ul>
-<li>Range: $60,000 &#8211; $80,000</li>
-<li>Average: $68,000</li>
-<li>Cloud security positions are growing fast and pay above average even at the entry level. Knowledge of AWS or <a href="/blog/read/azure-security" title="Azure Security: Defender, Azure AD, and Cloud-Native Controls">Azure security</a> services is expected.</li>
-</ul>
-<p><strong>Cybersecurity Intern (paid)</strong></p>
-<ul>
-<li>Range: $20 &#8211; $35 per hour ($40,000 &#8211; $70,000 annualized)</li>
-<li>Tech companies and consulting firms offer the highest intern pay. Some internships convert directly to full-time offers, making them one of the best pathways into the field.</li>
-</ul>
-<h2>UK Entry Level Cybersecurity Pay</h2>
-<p>The UK market offers several entry paths with corresponding salary ranges.</p>
-<p><strong>Apprentice / Graduate Security Analyst</strong></p>
-<ul>
-<li>Range: 22,000 &#8211; 28,000 GBP</li>
-<li>UK cybersecurity apprenticeships (Level 4 and Level 6) combine paid work with structured training. GCHQ-certified degree apprenticeships are particularly well regarded.</li>
-</ul>
-<p><strong>Junior SOC Analyst</strong></p>
-<ul>
-<li>Range: 25,000 &#8211; 35,000 GBP (outside London)</li>
-<li>Range: 28,000 &#8211; 42,000 GBP (London)</li>
-</ul>
-<p><strong>Junior Pen Tester</strong></p>
-<ul>
-<li>Range: 28,000 &#8211; 40,000 GBP</li>
-</ul>
-<p><strong>Junior GRC / Compliance Analyst</strong></p>
-<ul>
-<li>Range: 26,000 &#8211; 36,000 GBP</li>
-</ul>
-<p>UK entry-level salaries appear lower than US figures, but when you factor in NHS access, employer pension contributions (5-10%), and longer paid leave (25+ days), the real gap is smaller than it looks. See the <a href="/blog/read/cybersecurity-salary-uk">cybersecurity salary UK guide</a> for the full picture.</p>
-<h2>European Entry Level Ranges</h2>
-<p><strong>Germany</strong></p>
-<ul>
-<li>Junior <a href="/blog/read/information-security-analyst" title="Information Security Analyst: Protect Data and Manage Risk">Security Analyst</a>: 38,000 &#8211; 48,000 EUR</li>
-<li>Junior Pen Tester: 42,000 &#8211; 52,000 EUR</li>
-</ul>
-<p><strong>Netherlands</strong></p>
-<ul>
-<li>Junior Security Analyst: 34,000 &#8211; 44,000 EUR</li>
-<li>Junior Pen Tester: 38,000 &#8211; 48,000 EUR</li>
-</ul>
-<p><strong>France</strong></p>
-<ul>
-<li>Junior Security Analyst: 30,000 &#8211; 38,000 EUR</li>
-<li>Junior Pen Tester: 32,000 &#8211; 42,000 EUR</li>
-</ul>
-<p><strong>Switzerland</strong></p>
-<ul>
-<li>Junior Security Analyst: 70,000 &#8211; 85,000 CHF</li>
-<li>Junior Pen Tester: 75,000 &#8211; 90,000 CHF</li>
-</ul>
-<p><strong>Poland</strong></p>
-<ul>
-<li>Junior Security Analyst: 12,000 &#8211; 20,000 EUR</li>
-<li>Junior Pen Tester: 14,000 &#8211; 24,000 EUR</li>
-</ul>
-<p>Eastern European markets pay less in absolute terms but offer strong purchasing power. Many professionals in Poland, Romania, and Czech Republic work remotely for Western European or US companies at higher rates while enjoying lower living costs.</p>
-<h2>Does Your Background Affect Starting Salary</h2>
-<p>Yes, and significantly. Cybersecurity draws people from various backgrounds, and your starting salary reflects what experience you bring.</p>
-<p><strong>Career switchers from IT (help desk, sysadmin, network admin):</strong> You start 5-15% higher than someone with no IT experience. Employers value your operational knowledge of systems, networking, and troubleshooting. A sysadmin who transitions into a SOC analyst role can often negotiate $60,000 &#8211; $70,000 immediately.</p>
-<p><strong>Career switchers from software development:</strong> You start 10-20% higher, especially for <a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">application security</a>, DevSecOps, or security engineering roles. Developers who move into security bring coding skills that most entry-level security candidates lack, and employers pay for that.</p>
-<p><strong>Military / intelligence background:</strong> US veterans with military cybersecurity experience (MOS 17C, 25D, or Navy CTN) often land $65,000 &#8211; $85,000 starting roles, especially with active security clearances. Clearances alone can add $10,000 &#8211; $20,000 to your starting pay.</p>
-<p><strong>Recent graduates (cybersecurity or CS degree):</strong> Starting salaries range from $50,000 &#8211; $68,000 depending on internship experience and location. A degree helps you get through HR filters but does not command a premium over candidates with equivalent practical skills.</p>
-<p><strong>Career switchers from non-technical fields:</strong> Starting at $45,000 &#8211; $58,000 is typical. You will likely enter through GRC, security awareness, or support roles rather than technical positions. The key is to get your foot in the door and build technical skills on the job.</p>
-<p><strong>Bootcamp graduates:</strong> Starting salaries vary widely ($48,000 &#8211; $65,000) depending on the bootcamp quality and your ability to demonstrate hands-on skills. Employers are increasingly comfortable with bootcamp graduates, but you need to show practical skills beyond what the bootcamp teaches. Assess your readiness with our <a href="https://career.hadess.io/assessment">skills assessment</a>.</p>
-<h2>Certifications That Increase Starting Pay</h2>
-<p>Certifications can meaningfully boost your entry-level salary, but not all certifications carry equal weight.</p>
-<p><strong>CompTIA Security+ ($5,000 &#8211; $10,000 increase):</strong> The most widely accepted entry-level certification. It is often a job requirement rather than a nice-to-have, especially for government and DoD positions. Getting Security+ before you start job hunting is one of the highest-ROI moves you can make.</p>
-<p><strong>CompTIA CySA+ ($5,000 &#8211; $8,000 increase):</strong> Directly relevant for SOC analyst roles. It signals that you understand threat detection and <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a> concepts. Pairing CySA+ with Security+ makes you a strong candidate for Tier 1 SOC positions.</p>
-<p><strong>AWS Solutions Architect Associate or AWS Security Specialty ($8,000 &#8211; $15,000 increase):</strong> Cloud certifications carry significant weight because <a href="/blog/read/cloud-security-skills" title="Cloud Security Skills: AWS, Azure, GCP">cloud security skills</a> are scarce. If you want to enter cybersecurity through cloud security, an AWS certification combined with Security+ positions you well.</p>
-<p><strong>OSCP ($10,000 &#8211; $15,000 increase):</strong> The gold standard for pen testing. Holding OSCP as an entry-level candidate is rare and makes you stand out immediately. The exam is hard, but passing it on your first attempt sends a strong signal to employers. Plan your path with our <a href="https://career.hadess.io/certificate-roadmap">certificate roadmap</a>.</p>
-<p><strong>Splunk Core Certified Power User ($3,000 &#8211; $7,000 increase):</strong> Directly applicable to SOC roles. If the employer uses Splunk (many do), this certification gives you immediate operational value on day one.</p>
-<h2>Entry Level Salary by City</h2>
-<p>Geography has a major impact on starting pay. Here are entry-level cybersecurity salaries in top US cities.</p>
+<h2>Cybersecurity Salary Landscape 2026</h2>
+<p>The cybersecurity job market in 2026 continues to favor candidates. According to <a href="https://www.isc2.org/research">ISC2&#8217;s workforce research</a>, the global talent gap remains above 3.5 million unfilled positions. This supply-demand imbalance keeps salaries elevated and gives job seekers meaningful negotiating power, particularly for experienced practitioners.</p>
+<p>Several trends shape 2026 compensation:</p>
+<p><strong>Cloud security commands a premium.</strong> Roles that require AWS, Azure, or <a href="/blog/read/google-cloud-security" title="Google Cloud Security: IAM, VPC Service Controls, and BeyondCorp">GCP security</a> expertise pay 15-25% more than equivalent on-premises-focused roles. The cloud skills shortage is particularly acute, and organizations pay accordingly.</p>
+<p><strong>Regulatory pressure drives GRC hiring.</strong> New regulations like DORA (Digital Operational Resilience Act) in the EU, updated <a href="https://www.sec.gov/rules/final/2023/33-11216.htm">SEC cybersecurity disclosure rules</a> in the US, and NIS2 directive implementation have created sustained demand for compliance and governance professionals. GRC salaries have risen faster than other specializations over the past two years.</p>
+<p><strong>AI security is a new premium category.</strong> Roles focused on securing AI/ML systems and applying AI to security operations are appearing with frequency. These roles often pay 10-20% above comparable non-AI positions because the talent pool is still very small.</p>
+<p><strong>Remote work has compressed geographic salary differences, but not eliminated them.</strong> A remote SOC analyst hired by a San Francisco company might earn less than an on-site employee, but more than the local market rate in their actual location. More on this in the remote work section below.</p>
+<p><strong>Total compensation matters more than base salary.</strong> Equity, bonuses, training budgets, and benefits packages vary dramatically. A $140,000 base at a startup with equity worth potentially $50,000+ is different from $150,000 base at a company with no equity component. When evaluating offers, look at the complete package.</p>
+<h2>Salary by Role</h2>
+<p>These ranges represent base salary for US-based professionals. Total compensation (base + bonus + equity) can add 10-40% at mid and senior levels. Ranges reflect the 25th to 75th percentile — outliers exist in both directions.</p>
+<h3>SOC Analyst</h3>
 <table>
 <thead>
 <tr>
-<th>City</th>
-<th>Entry Level Range</th>
-<th>Cost of Living Index</th>
+<th>Level</th>
+<th>Salary Range (US)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>San Francisco</td>
-<td>$70,000 &#8211; $95,000</td>
-<td>Very High</td>
+<td>Tier 1 (Entry)</td>
+<td>$55,000 &#8211; $75,000</td>
 </tr>
 <tr>
-<td>Washington, DC</td>
-<td>$65,000 &#8211; $90,000</td>
-<td>High</td>
+<td>Tier 2 (Mid)</td>
+<td>$75,000 &#8211; $100,000</td>
 </tr>
 <tr>
-<td>New York City</td>
-<td>$62,000 &#8211; $88,000</td>
-<td>Very High</td>
+<td>Tier 3 / Lead</td>
+<td>$100,000 &#8211; $130,000</td>
 </tr>
 <tr>
-<td>Seattle</td>
-<td>$62,000 &#8211; $85,000</td>
-<td>High</td>
-</tr>
-<tr>
-<td>Austin</td>
-<td>$58,000 &#8211; $78,000</td>
-<td>Moderate-High</td>
-</tr>
-<tr>
-<td>Denver</td>
-<td>$56,000 &#8211; $75,000</td>
-<td>Moderate-High</td>
-</tr>
-<tr>
-<td>Chicago</td>
-<td>$52,000 &#8211; $72,000</td>
-<td>Moderate</td>
-</tr>
-<tr>
-<td>Atlanta</td>
-<td>$50,000 &#8211; $70,000</td>
-<td>Moderate</td>
-</tr>
-<tr>
-<td>Remote (US-based)</td>
-<td>$50,000 &#8211; $72,000</td>
-<td>Varies</td>
+<td>SOC Manager</td>
+<td>$120,000 &#8211; $160,000</td>
 </tr>
 </tbody>
 </table>
-<p>Washington, DC stands out because government contractors and agencies concentrated in the DMV area create high demand for cleared cybersecurity professionals. Even entry-level positions at defense contractors in the DC metro regularly start at $65,000+.</p>
-<p>Remote entry-level roles exist but are less common than remote positions for experienced professionals. Many employers prefer to train new hires on-site. When you do find a remote entry-level position, the salary is usually benchmarked to the company&#8217;s headquarters location or a national average.</p>
-<h2>First Year to Third Year Salary Growth</h2>
-<p>One of the best things about cybersecurity compensation is how fast it grows in the early years. Here is what typical salary progression looks like for someone who starts as a Tier 1 SOC analyst.</p>
-<p><strong>Year 1:</strong> $55,000 &#8211; $65,000 (starting salary)<br />
-<strong>Year 2:</strong> $62,000 &#8211; $78,000 (after getting CySA+ and handling real incidents)<br />
-<strong>Year 3:</strong> $72,000 &#8211; $92,000 (promoted to Tier 2 or moved to a new employer)</p>
-<p>That is 30-45% growth in three years, which far exceeds most other fields. The fastest salary growth comes from combining skill development with strategic job changes. Internal promotions typically yield 5-10% raises, while switching employers yields 15-25%.</p>
-<p>The key inflection point is moving from Tier 1 to Tier 2 analyst or from junior to mid-level in any specialty. This usually happens between 18 and 30 months into your career, depending on how aggressively you pursue skill development.</p>
-<p>After three years, you should be earning mid-level salary regardless of your entry point. If you are still earning entry-level pay after three years, something is wrong with your development path or your employer is underpaying you. Use our <a href="https://career.hadess.io/salary-calculator">salary calculator</a> to check.</p>
-<h2>How to Get the Highest Starting Salary</h2>
-<p><strong>Negotiate your first offer.</strong> Many entry-level candidates accept the first number an employer offers. Do not do this. Research market rates, know your value, and ask for 10-15% above the initial offer. The worst that happens is they say no and you accept the original number.</p>
-<p><strong>Get Security+ before you apply.</strong> This certification removes one objection from the hiring manager&#8217;s list and often moves you into a higher salary band. The investment ($400 exam fee plus study time) pays for itself within the first month of employment.</p>
-<p><strong>Target high-paying industries.</strong> Financial services, defense contractors, and technology companies pay 15-25% more than managed security service providers or general IT companies for the same entry-level roles. Apply broadly and prioritize offers from higher-paying sectors.</p>
-<p><strong>Build a home lab and document it.</strong> Set up a SIEM, configure detection rules, investigate sample attacks, and write it up on a blog or GitHub repository. This demonstrates hands-on skill that separates you from candidates who only have certifications and classroom experience.</p>
-<p><strong>Apply to more jobs than you think you need to.</strong> The entry-level cybersecurity market is competitive. Apply to 50-100 positions, not 5-10. Cast a wide net geographically and be open to relocation or remote work. Each offer you receive gives you more negotiating power.</p>
-<p><strong>Develop your career skills</strong> using our <a href="https://career.hadess.io/career-skills">skills development resources</a> to identify and fill gaps that employers care about.</p>
-<p><strong>See the full salary guide:</strong> <a href="/blog/read/cybersecurity-salary-guide" title="Cybersecurity Salary Guide 2026">Cybersecurity Salary Guide 2026</a></p>
-<h2>Related Guides in This Series</h2>
+<p>SOC analyst is the most common entry point into cybersecurity. Tier 1 salaries vary significantly by geography and employer type. MSSPs tend to pay less than in-house SOC teams but provide faster skill development through volume. Progression from Tier 1 to Tier 2 typically takes 1-2 years and comes with a $15,000-$25,000 raise.</p>
+<p>Our full <a href="/blog/read/soc-analyst-salary">SOC analyst salary breakdown</a> covers geographic variations and progression timelines.</p>
+<h3>Penetration Tester</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Salary Range (US)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Junior / Associate</td>
+<td>$70,000 &#8211; $95,000</td>
+</tr>
+<tr>
+<td>Mid-Level</td>
+<td>$95,000 &#8211; $130,000</td>
+</tr>
+<tr>
+<td>Senior</td>
+<td>$130,000 &#8211; $175,000</td>
+</tr>
+<tr>
+<td>Principal / Lead</td>
+<td>$160,000 &#8211; $220,000</td>
+</tr>
+</tbody>
+</table>
+<p><a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">Penetration testing</a> compensation reflects the specialized skill set required. Junior pen tester roles are less common than junior SOC roles because most organizations want testers with at least some professional experience. OSCP holders command a noticeable premium over non-certified testers at the junior and mid levels. Independent consultants and boutique firm partners can earn significantly more but trade stability for that income.</p>
+<p>See the detailed <a href="/blog/read/pen-tester-salary">penetration tester salary guide</a> for more.</p>
+<h3>Security Engineer</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Salary Range (US)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Junior</td>
+<td>$80,000 &#8211; $110,000</td>
+</tr>
+<tr>
+<td>Mid-Level</td>
+<td>$110,000 &#8211; $150,000</td>
+</tr>
+<tr>
+<td>Senior</td>
+<td>$145,000 &#8211; $195,000</td>
+</tr>
+<tr>
+<td>Staff / Principal</td>
+<td>$180,000 &#8211; $260,000</td>
+</tr>
+</tbody>
+</table>
+<p>Security engineering covers a broad range of roles — from building detection infrastructure to designing secure architectures to implementing security tooling. At senior and staff levels, total compensation at large tech companies can significantly exceed these base ranges when equity is included. A Staff Security Engineer at a FAANG-adjacent company might earn $350,000-$500,000 in total compensation.</p>
+<h3>Cloud Security Engineer</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Salary Range (US)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Junior</td>
+<td>$90,000 &#8211; $120,000</td>
+</tr>
+<tr>
+<td>Mid-Level</td>
+<td>$120,000 &#8211; $160,000</td>
+</tr>
+<tr>
+<td>Senior</td>
+<td>$155,000 &#8211; $200,000</td>
+</tr>
+<tr>
+<td>Principal / Architect</td>
+<td>$190,000 &#8211; $270,000</td>
+</tr>
+</tbody>
+</table>
+<p><a href="/blog/read/cloud-security-skills" title="Cloud Security Skills: AWS, Azure, GCP">Cloud security</a> is one of the highest-paying specializations at every level. The combination of cloud platform expertise and security knowledge creates a narrow talent pool that employers pay generously to access. Multi-cloud experience (proficiency in two or more platforms) commands an additional premium.</p>
+<h3>GRC Analyst</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Salary Range (US)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Junior / Associate</td>
+<td>$55,000 &#8211; $80,000</td>
+</tr>
+<tr>
+<td>Mid-Level</td>
+<td>$80,000 &#8211; $115,000</td>
+</tr>
+<tr>
+<td>Senior</td>
+<td>$110,000 &#8211; $150,000</td>
+</tr>
+<tr>
+<td>GRC Manager / Director</td>
+<td>$140,000 &#8211; $200,000</td>
+</tr>
+</tbody>
+</table>
+<p>GRC salaries start lower than technical roles but have strong upward trajectories, especially for people who earn CISA, CRISC, or CISM certifications. GRC Directors and Chief Risk Officers can earn compensation comparable to CISOs at some organizations.</p>
+<h3>CISO and Security Leadership</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Salary Range (US)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/blog/read/security-manager" title="Security Manager: Build and Lead Security Teams">Security Manager</a></td>
+<td>$130,000 &#8211; $175,000</td>
+</tr>
+<tr>
+<td>Director of Security</td>
+<td>$160,000 &#8211; $220,000</td>
+</tr>
+<tr>
+<td>VP of Security</td>
+<td>$200,000 &#8211; $300,000</td>
+</tr>
+<tr>
+<td>CISO (Mid-Market)</td>
+<td>$220,000 &#8211; $350,000</td>
+</tr>
+<tr>
+<td>CISO (Enterprise/F500)</td>
+<td>$300,000 &#8211; $500,000+</td>
+</tr>
+</tbody>
+</table>
+<p>CISO compensation varies enormously by company size and industry. Financial services and tech CISOs earn significantly more than their counterparts at mid-market companies. Total compensation packages for enterprise CISOs often include substantial equity and bonus components.</p>
+<p>Read our full <a href="/blog/read/ciso-salary">CISO salary and career analysis</a> for more detailed data.</p>
+<h2>Salary by Region</h2>
+<p>Cybersecurity salaries are not uniform globally. Here is what the landscape looks like across major markets:</p>
+<h3>United States</h3>
+<p>The US remains the highest-paying market for cybersecurity professionals globally. Within the US, compensation varies by city and region:</p>
 <ul>
-<li><a href="/blog/read/soc-analyst-salary">SOC Analyst Salary: US, UK, Europe Breakdown</a></li>
-<li><a href="/blog/read/cybersecurity-salary-uk">Cybersecurity Salary UK: Complete Guide</a></li>
-<li><a href="/blog/read/cyber-vs-swe-salary">Cybersecurity vs Software Engineer Salary</a></li>
+<li><strong>San Francisco / Bay Area:</strong> 20-35% above national average. Entry-level SOC: $75,000-$95,000. Senior security engineer: $180,000-$250,000+.</li>
+<li><strong>New York / New Jersey:</strong> 15-25% above national average. Strong financial services presence drives security hiring.</li>
+<li><strong>Washington DC / Northern Virginia:</strong> 10-20% above average. Federal contractors and defense-adjacent companies are major employers. Security clearance adds $10,000-$25,000.</li>
+<li><strong>Austin / Denver / Seattle:</strong> 10-15% above average. Growing tech presence with slightly lower cost of living than SF or NYC.</li>
+<li><strong>Midwest / Southeast (excluding major metros):</strong> At or slightly below national average, but cost of living adjustments make these markets very comfortable.</li>
 </ul>
-<h2>Take the Next Step</h2>
-<p><strong>See what you should earn</strong> with our <a href="https://career.hadess.io/salary-calculator">Salary Calculator</a> to benchmark your first cybersecurity offer against real market data.</p>
-<p><strong>Not sure where to start?</strong> Our <a href="https://career.hadess.io/career-skills">Career Skills Assessment</a> identifies your strengths and recommends the fastest path to your first cybersecurity role.</p>
+<h3>United Kingdom</h3>
+<p>UK cybersecurity salaries in GBP (as of 2026):</p>
+<ul>
+<li><strong>Entry-Level SOC Analyst:</strong> GBP 25,000 &#8211; 35,000</li>
+<li><strong>Mid-Level Security Engineer:</strong> GBP 50,000 &#8211; 75,000</li>
+<li><strong>Senior Security Architect:</strong> GBP 80,000 &#8211; 110,000</li>
+<li><strong>CISO:</strong> GBP 120,000 &#8211; 200,000+</li>
+</ul>
+<p>London commands a 15-25% premium over the rest of the UK. The UK market has grown significantly due to increased regulation (UK GDPR, NIS2) and the government&#8217;s National Cyber Strategy investment.</p>
+<p>For professionals moving to the UK, visa sponsorship is available through the Skilled Worker visa route. Cybersecurity roles regularly appear on the Shortage Occupation List, which can make the immigration process smoother. Use the HADESS UK sponsor finder to identify companies that actively sponsor cybersecurity professionals.</p>
+<p>See our <a href="/blog/read/cybersecurity-salary-uk">cybersecurity salary UK guide</a> for detailed UK market analysis.</p>
+<h3>Europe</h3>
+<p>European salaries vary significantly by country:</p>
+<ul>
+<li><strong>Germany:</strong> EUR 45,000-65,000 (entry), EUR 75,000-110,000 (senior), EUR 130,000-200,000 (CISO)</li>
+<li><strong>Netherlands:</strong> EUR 40,000-60,000 (entry), EUR 70,000-100,000 (senior)</li>
+<li><strong>France:</strong> EUR 35,000-50,000 (entry), EUR 60,000-90,000 (senior)</li>
+<li><strong>Nordics (Sweden, Norway, Denmark):</strong> Among the highest in Europe. Senior roles: EUR 80,000-120,000</li>
+<li><strong>Ireland:</strong> Strong tech presence. EUR 45,000-65,000 (entry), EUR 80,000-120,000 (senior)</li>
+</ul>
+<p>European salaries look lower than US numbers in absolute terms, but many European countries offer benefits (healthcare, pension contributions, vacation time) that significantly affect total compensation when compared apples-to-apples.</p>
+<h3>Remote / Global</h3>
+<p>Remote roles hired by US companies but filled by non-US workers typically pay a location-adjusted rate. A company might offer a &#8220;US remote&#8221; rate for domestic employees and a &#8220;global remote&#8221; rate that is 20-40% lower for international workers. Some companies pay the same regardless of location, but they are the minority.</p>
+<h2>Experience Level and Salary Progression</h2>
+<p>One of the best things about cybersecurity compensation is how quickly it grows with experience. Here is a typical progression:</p>
+<h3>Year 0-1: Entry-Level</h3>
+<p>Base: $55,000-$80,000<br />
+You are learning on the job. Your value comes from being trainable and motivated. Certifications like Security+ validate foundational knowledge. Focus on absorbing everything and building practical skills.</p>
+<h3>Year 1-3: Junior to Mid-Level</h3>
+<p>Base: $75,000-$120,000<br />
+You can work independently on most tasks. You have specialized in a track. Additional certifications (CySA+, OSCP, AWS Security Specialty) drive salary increases. Job changes at this stage typically come with 15-25% raises.</p>
+<h3>Year 3-5: Mid-Level to Senior</h3>
+<p>Base: $110,000-$170,000<br />
+You are leading projects, mentoring junior team members, and contributing to architecture decisions. This is where specialization pays off — cloud security, <a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">application security</a>, and <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a> specialists earn premiums. CISSP or equivalent certification is common at this stage.</p>
+<h3>Year 5-8: Senior to Lead/Staff</h3>
+<p>Base: $150,000-$230,000<br />
+You are setting technical direction, designing security programs, and operating at a strategic level. At large tech companies, total compensation (with equity) can reach $300,000-$400,000. Management tracks and individual contributor tracks diverge here.</p>
+<h3>Year 8+: Principal/Director/CISO</h3>
+<p>Base: $190,000-$400,000+<br />
+At this level, compensation is highly variable and depends on company size, industry, and individual negotiation. Total compensation packages for security leaders at large companies regularly exceed $500,000.</p>
+<p>Our <a href="/blog/read/entry-level-cyber-salary">entry-level cybersecurity salary guide</a> breaks down what to expect in your first role and how to maximize your starting offer.</p>
+<h2>Certifications That Increase Pay</h2>
+<p>Not all certifications translate to higher pay. Here are the ones that consistently correlate with salary premiums, based on job posting data and industry surveys:</p>
+<p><strong>Security+ (+$5,000-$10,000 vs. uncertified)</strong><br />
+The baseline. Having it is expected for many roles. Not having it can cost you opportunities rather than the cert actively increasing pay.</p>
+<p><strong>OSCP (+$10,000-$20,000)</strong><br />
+The strongest salary signal in offensive security. It is hard to earn, and employers know that. OSCP holders at the junior and mid levels consistently earn more than peers without it.</p>
+<p><strong>CISSP (+$15,000-$25,000)</strong><br />
+The most significant salary cert at the senior level. CISSP is a common requirement for security leadership roles. It has the highest correlation with six-figure salaries among all security certifications.</p>
+<p><strong>AWS Security Specialty / CCSP (+$10,000-$20,000)</strong><br />
+Cloud security certifications carry salary premiums because cloud skills are in such high demand. Holding a cloud-specific security cert signals specialization that employers pay for.</p>
+<p><strong>CISM (+$15,000-$25,000)</strong><br />
+For management-track professionals. CISM holders pursuing director and CISO roles see meaningful salary advantages.</p>
+<p><strong>GIAC Certifications (GCIH, GCFA, GCTI) (+$10,000-$15,000 each)</strong><br />
+SANS/GIAC certifications are expensive and rigorous. Employers recognize the investment and the quality. They are particularly valued in government and defense-adjacent organizations.</p>
+<p>Important context: certifications increase salary most effectively when combined with relevant experience. A CISSP holder with five years of SOC experience earns more than a CISSP holder with no professional security experience. The certification validates the experience, not the other way around.</p>
+<p>For salary comparison between security careers and software engineering, see our <a href="/blog/read/cyber-vs-swe-salary">cybersecurity vs software engineering salary analysis</a>.</p>
+<h2>How to Negotiate Your Cybersecurity Salary</h2>
+<p>Most people leave money on the table because they do not negotiate, or they negotiate poorly. Here are the tactics that work:</p>
+<h3>Before the Negotiation</h3>
+<p><strong>Know your market value.</strong> Use the HADESS salary calculator to get role-specific salary estimates based on your location, experience, and certifications. Cross-reference with Levels.fyi, Glassdoor, and Blind for additional data points. Go into the conversation knowing what the market pays.</p>
+<p><strong>Understand the employer&#8217;s constraints.</strong> Startups have different compensation structures than enterprises. Government agencies have strict pay bands. Consulting firms have utilization-based bonus structures. Understanding how your target employer structures compensation lets you negotiate the right levers.</p>
+<p><strong>Get competing offers if possible.</strong> Nothing increases your negotiating power like a concrete alternative. Even if you prefer one company, having a second offer gives you a factual basis for requesting higher compensation.</p>
+<h3>During the Negotiation</h3>
+<p><strong>Let them make the first offer.</strong> If asked for salary expectations, deflect with &#8220;I would like to understand the full scope of the role first&#8221; or provide a range based on your research rather than a single number. Anchoring too low costs you money. Anchoring too high can end the conversation.</p>
+<p><strong>Negotiate total compensation, not just base salary.</strong> If base salary is constrained by a pay band, negotiate signing bonus, equity, training budget (especially for certifications like SANS courses which cost $7,000-$9,000), remote work flexibility, or PTO. Every component has monetary value.</p>
+<p><strong>Use data, not emotions.</strong> &#8220;Market data shows that OSCP-certified penetration testers in this region earn $X-$Y&#8221; is more effective than &#8220;I feel like I should earn more.&#8221; Reference specific data points from industry surveys and salary tools.</p>
+<p><strong>Do not accept on the spot.</strong> Always ask for 24-48 hours to consider an offer, even if you plan to accept. This creates space for a final counter-offer and prevents you from reacting emotionally.</p>
+<p>For our full negotiation playbook, see <a href="/blog/read/negotiate-cyber-salary">how to negotiate your cybersecurity salary</a>.</p>
+<h3>After the Negotiation</h3>
+<p><strong>Get it in writing.</strong> Verbal offers can change. Do not resign from your current position until you have a signed offer letter with compensation details.</p>
+<p><strong>Plan for your next raise.</strong> Start documenting your impact from day one. Quantified achievements (&#8220;reduced mean-time-to-detect by 40%,&#8221; &#8220;identified $2M in compliance risk,&#8221; &#8220;led incident response for 12 P1 incidents&#8221;) are the foundation for your next <a href="/blog/read/negotiate-cyber-salary" title="How to Negotiate Your Cybersecurity Salary">salary negotiation</a>, whether that is an internal raise or a new offer.</p>
+<h2>UK-Specific Salary Guide</h2>
+<p>The UK cybersecurity market deserves special attention because of its unique dynamics:</p>
+<p><strong>Visa Sponsorship and Salary Impact</strong></p>
+<p>The UK&#8217;s Skilled Worker visa route requires employers to meet minimum salary thresholds. For cybersecurity roles (SOC Code 2139), the going rate threshold means sponsored workers must earn at or above specific minimums, which effectively sets a salary floor for visa holders. This has an upward effect on entry-level salaries for sponsored roles.</p>
+<p>Companies that sponsor skilled worker visas for cybersecurity positions include major banks, consulting firms, and tech companies. Use the HADESS UK sponsor finder to identify current sponsors and their typical salary ranges.</p>
+<p>Our <a href="/blog/read/uk-cyber-visa-salary">UK cybersecurity visa salary guide</a> covers the specific intersection of visa sponsorship and compensation.</p>
+<p><strong>Tax Considerations</strong></p>
+<p>UK tax rates, National Insurance contributions, and pension auto-enrollment mean that take-home pay differs from gross salary more significantly than in some US states. Use the HADESS tax calculator to understand your actual take-home pay for any given salary.</p>
+<p><strong>Benefits Landscape</strong></p>
+<p>UK employers typically provide 25-30 days annual leave, employer pension contributions, private health insurance (for larger companies), and training budgets. These benefits have real monetary value and should be factored into compensation comparisons.</p>
+<p><strong>London vs. Rest of UK</strong></p>
+<p>London salaries are 15-25% higher than the rest of the UK, but the cost-of-living difference (particularly housing) often negates or exceeds the salary premium. Remote roles for London-based companies at London pay rates, based outside London, represent the best financial outcome for many professionals.</p>
+<h2>Remote Work and Salary Adjustments</h2>
+<p>Remote cybersecurity work is common, but compensation for remote roles is not uniform:</p>
+<p><strong>US-based companies, US employees:</strong> Most offer full pay regardless of location within the US. Some (notably GitLab, Basecamp model followers) adjust based on local cost of living. The trend is toward location-agnostic pay for US employees.</p>
+<p><strong>US-based companies, international employees:</strong> Typically pay 20-40% less than US rates, sometimes through employer-of-record (EOR) arrangements. The gap varies by country and company.</p>
+<p><strong>European companies, remote within Europe:</strong> Usually pay based on the company&#8217;s country, with minimal location adjustment within the same country. Cross-border arrangements are increasingly common under EOR models.</p>
+<p><strong>Contract and freelance:</strong> Remote security contractors often earn 20-40% more than equivalent employees in base salary, but without benefits, paid time off, or employer pension contributions. Net advantage depends heavily on individual circumstances.</p>
+<p><strong>The hybrid reality:</strong> Many organizations that went fully remote during 2020-2022 have moved to hybrid models requiring 2-3 days per week in office. Purely remote roles still exist in abundance, but some of the highest-paying positions now require at least occasional on-site presence.</p>
+<h2>Related Deep-Dives</h2>
+<p>These cluster guides go deeper into specific salary topics covered in this pillar:</p>
+<ul>
+<li><a href="/blog/read/soc-analyst-salary">SOC Analyst Salary: Entry-Level to Senior</a> — Detailed pay data for SOC analysts at every tier, by geography.</li>
+<li><a href="/blog/read/pen-tester-salary">Penetration Tester Salary: What Pen Testers Actually Earn</a> — Salary data for offensive security professionals, including consultant rates.</li>
+<li><a href="/blog/read/ciso-salary">CISO Salary: What Security Leaders Earn</a> — Compensation benchmarks for CISOs and security directors.</li>
+<li><a href="/blog/read/cybersecurity-salary-uk">Cybersecurity Salary UK: Complete Market Analysis</a> — UK-specific salary data, visa considerations, and market trends.</li>
+<li><a href="/blog/read/entry-level-cyber-salary">Entry-Level Cybersecurity Salary: What to Expect</a> — Realistic starting salary expectations for new security professionals.</li>
+<li><a href="/blog/read/cyber-vs-swe-salary">Cybersecurity vs Software Engineering Salary</a> — How security compensation compares to software engineering at each level.</li>
+<li><a href="/blog/read/negotiate-cyber-salary">How to Negotiate Your Cybersecurity Salary</a> — Tactics and scripts for salary negotiation in security roles.</li>
+<li><a href="/blog/read/uk-cyber-visa-salary">UK Cybersecurity Visa Salary Guide</a> — Salary expectations for visa-sponsored cybersecurity roles in the UK.</li>
+</ul>
+<h2>Start Your Journey</h2>
+<p><strong>Calculate Your Exact Salary</strong><br />
+Use the HADESS salary calculator to estimate cybersecurity salaries based on your target role, location, experience, and certifications. Get data-driven numbers, not guesswork.</p>
+<p>Calculate your salary</p>
+<p><strong>Upgrade for Full Salary Insights</strong><br />
+HADESS PRO members get access to detailed salary comparisons, negotiation coaching, and market trend data. See how your current or target compensation compares to the market.</p>
+<p>Compare plans on HADESS</p>
 <h2>Frequently Asked Questions</h2>
-<h3>Can you make $100K in cybersecurity with no experience?</h3>
-<p>Not typically in your first year. Entry-level cybersecurity salaries in the US range from $50,000 &#8211; $85,000 depending on role and location. However, reaching $100,000 within 2-4 years is realistic if you develop your skills aggressively, earn relevant certifications, and make strategic job moves. In high-cost cities like San Francisco or DC, some entry-level roles start near $90,000, and $100K is achievable within 12-18 months.</p>
-<h3>Is a cybersecurity degree worth it for salary purposes?</h3>
-<p>A degree helps you get past automated applicant filters and some HR requirements, but it does not guarantee a higher starting salary compared to candidates with equivalent practical skills and certifications. Bootcamps, self-study, and hands-on experience can be equally effective for entering the field. What matters most to hiring managers is whether you can do the work.</p>
-<h3>Which entry-level cybersecurity job pays the most?</h3>
-<p>Junior cloud security analyst and junior penetration tester roles pay the highest among entry-level positions, with starting ranges of $60,000 &#8211; $85,000 in the US. However, these roles are also the most competitive to land. Junior SOC analyst roles offer more openings and still provide strong starting pay ($50,000 &#8211; $72,000).</p>
-<h3>How much does cybersecurity pay compared to regular IT?</h3>
-<p>Entry-level cybersecurity positions typically pay 15-30% more than equivalent entry-level IT positions (help desk, desktop support, junior network admin). A Tier 1 SOC analyst starting at $60,000 compared to a help desk technician starting at $42,000 illustrates the difference. The gap grows at mid and senior levels because cybersecurity specialization commands a premium.</p>
-<h3>Should I accept a lower salary to get my first cybersecurity job?</h3>
-<p>Sometimes, yes. Your first security job is the hardest to get, and the long-term earning potential far outweighs a modest starting salary. If an offer is below market but gives you hands-on security experience, it may be worth accepting with a plan to move within 12-18 months once you have the experience to command higher pay. But do not accept dramatically below-market offers from employers who are just trying to get cheap labor.</p>
-<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>What is the average cybersecurity salary in 2026?</h3>
+<p>In the US, the median salary for cybersecurity professionals is approximately $115,000 according to industry surveys. However, &#8220;average&#8221; obscures a wide range. Entry-level SOC analysts start around $60,000-$75,000, while senior engineers and architects earn $150,000-$250,000+. The specific role, location, and experience level matter far more than any single average number. Use the HADESS salary calculator for role-specific estimates.</p>
+<h3>Do cybersecurity certifications really increase salary?</h3>
+<p>Yes, with caveats. Certifications like CISSP, OSCP, and AWS Security Specialty correlate with $10,000-$25,000 higher salaries compared to non-certified peers in equivalent roles. But the certification works best when it validates real skills and experience. A CISSP without professional experience is worth less than a CISSP backed by five years of security operations work. Certifications are a salary multiplier, not a standalone salary driver.</p>
+<h3>How does cybersecurity pay compare to software engineering?</h3>
+<p>At entry-level, software engineering often pays slightly more ($80,000-$110,000 vs. $55,000-$80,000 for security). At mid-career, they converge ($120,000-$160,000 for both). At senior levels, software engineering at top tech companies can exceed security due to larger equity packages, but security leadership (CISO, VP Security) can match or exceed senior engineering compensation. The gap has narrowed significantly over the past five years.</p>
+<h3>What is the highest-paying cybersecurity role?</h3>
+<p>CISO at a large enterprise or financial services company, where total compensation can reach $400,000-$600,000+. For individual contributors, Principal Security Engineer and Security Architect roles at major tech companies offer the highest compensation, often $300,000-$500,000 in total comp. For hourly rates, independent penetration testing consultants can charge $250-$500/hour, though utilization varies.</p>
+<h3>Is the cybersecurity salary premium sustainable?</h3>
+<p>All indicators suggest yes, at least through the medium term. The workforce gap is not shrinking, as the <a href="https://www.sans.org/white-papers/">SANS Institute</a> and other research bodies continue to document. Regulatory requirements are expanding. The attack surface continues to grow with cloud adoption, IoT, and AI. Until the talent supply catches up with demand — which requires years of pipeline development — the salary premium should hold. That said, certain entry-level roles may see downward pressure if AI tools reduce the need for Tier 1 SOC analysts performing basic triage.</p>
+<h3>How much more does a security clearance add to salary?</h3>
+<p>In the US, an active security clearance (Secret or Top Secret) adds approximately $10,000-$25,000 to base salary for cybersecurity roles. Top Secret/SCI clearances command the highest premiums. The premium exists because obtaining clearance is a lengthy process that not all candidates can complete, and many government and defense contractor roles require it. The premium is most significant in the Washington DC / Northern Virginia market.</p>
+<h3>Should I take a lower-paying job for better experience?</h3>
+<p>Sometimes, yes. A lower-paying role at an organization with a mature security program and strong mentorship can accelerate your career faster than a higher-paying role where you are the only security person and receive no guidance. The salary difference in your first role matters less than the trajectory. Someone who learns quickly in a well-structured SOC for two years and then moves to a senior role will out-earn someone who started higher but stagnated. That said, do not accept significantly below-market pay — know your worth even at entry-level.</p>
+<h3>How often should I change jobs to maximize salary?</h3>
+<p>The data suggests that changing jobs every 2-3 years during the first decade of your career maximizes salary growth. External moves typically come with 15-25% raises, while internal promotions average 5-10%. After you reach a senior or leadership position, longer tenures become more financially and professionally rational. However, job-hopping too frequently (every 12 months or less) can raise red flags for hiring managers. The sweet spot is 2-3 years at each position during your growth phase.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field. We write from experience, not theory.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1782,27 +1911,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1981,11 +2110,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2008,59 +2137,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

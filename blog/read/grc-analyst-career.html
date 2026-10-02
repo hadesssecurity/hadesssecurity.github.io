@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/grc-analyst-career#article","headline":"GRC Analyst Career Guide — HADESS Magazine","description":"GRC analyst career guide covering governance, risk, and compliance responsibilities, required skills, certifications, salary, and career path in 2026.","url":"https://hadesssecurity.github.io/blog/read/grc-analyst-career","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/grc-analyst-career"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-grc-analyst-career.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/grc-analyst-career#article","headline":"GRC Analyst Career Guide — HADESS Magazine","description":"GRC analyst career guide covering governance, risk, and compliance responsibilities, required skills, certifications, salary, and career path in 2026.","url":"https://hadesssecurity.github.io/blog/read/grc-analyst-career","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/grc-analyst-career"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-grc-analyst-career.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,77 +1549,145 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-grc-analyst-career.png">
-      <h1>Threat Hunter</h1>
-<blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete guide series.</p>
+      <blockquote>
+<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete career guide series.</p>
 </blockquote>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 5 min read</em></p>
-<p>You proactively search for threats that are already inside your network but have not triggered any alerts. While SOC analysts wait for detections to fire, you form hypotheses about attacker behavior and go looking for evidence. You find the adversaries that automated tools miss.</p>
-<h2>What You Will Do</h2>
-<p>Threat hunting is hypothesis-driven investigation. You take intelligence about adversary techniques, translate it into data queries, and search through massive datasets looking for signs of compromise that flew under the radar.</p>
-<p>Your typical work includes:</p>
+<h1>GRC Analyst Career: Governance, Risk, and Compliance in 2026</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 10 min read</em></p>
+<h2>Table of Contents</h2>
 <ul>
-<li>Developing threat hunting hypotheses based on <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a>, ATT&#038;CK TTPs, and environmental risk</li>
-<li>Querying large datasets — <a href="/blog/read/siem-operations" title="SIEM Operations: Detection Engineering and Log Management">SIEM</a> logs, <a href="/edr/" title="EDR: Endpoint Detection, Response, and Threat Hunting">EDR</a> telemetry, network metadata, DNS logs</li>
-<li>Analyzing endpoint behavior for signs of living-off-the-land attacks (LOLBins)</li>
-<li>Searching for persistence mechanisms — scheduled tasks, registry modifications, WMI subscriptions</li>
-<li>Identifying lateral movement patterns — unusual authentication events, RDP usage, SMB connections</li>
-<li>Hunting for data staging and exfiltration indicators</li>
-<li>Investigating anomalous <a href="/blog/read/powershell-security" title="PowerShell for Security: AD Management, Log Analysis, and Blue Team Scripts">PowerShell</a>, WMI, and command-line activity</li>
-<li>Using statistical analysis to identify outliers in normal behavior baselines</li>
-<li>Converting successful hunts into automated detection rules</li>
-<li>Documenting hunt methodologies and findings for knowledge sharing</li>
-<li>Collaborating with threat intelligence teams to prioritize hunting targets</li>
+<li><a href="#what-is-a-grc-analyst">What Is a GRC Analyst</a></li>
+<li><a href="#grc-analyst-responsibilities">GRC Analyst Responsibilities</a></li>
+<li><a href="#a-realistic-week-in-grc">A Realistic Week in GRC</a></li>
+<li><a href="#skills-that-grc-analysts-need">Skills That GRC Analysts Need</a></li>
+<li><a href="#certifications-for-grc-professionals">Certifications for GRC Professionals</a></li>
+<li><a href="#grc-analyst-salary-in-2026">GRC Analyst Salary in 2026</a></li>
+<li><a href="#how-to-get-into-grc">How to Get Into GRC</a></li>
+<li><a href="#frameworks-you-will-work-with">Frameworks You Will Work With</a></li>
+<li><a href="#grc-tools-and-platforms">GRC Tools and Platforms</a></li>
+<li><a href="#career-growth-and-advancement">Career Growth and Advancement</a></li>
+<li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
+<li><a href="#take-the-next-step">Take the Next Step</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<p>When you find something, you do not just report it — you build a detection so the SOC can catch it automatically next time. Every successful hunt should result in a new or improved detection rule.</p>
-<h2>Skills You Need</h2>
-<p>Threat hunting sits at the intersection of threat intelligence, detection engineering, and data analysis.</p>
-<p>Key skills to build:</p>
-<ul>
-<li><a href="https://career.hadess.io/skills">SIEM query languages</a> — SPL, <a href="/blog/read/security-query-languages-kql-spl-yara" title="Security Query Languages: KQL, SPL, and YARA">KQL</a>, Lucene for deep data exploration</li>
-<li><a href="https://career.hadess.io/skills">EDR investigation</a> — CrowdStrike, SentinelOne, Carbon Black for endpoint analysis</li>
-<li><a href="https://career.hadess.io/skills">MITRE ATT&#038;CK</a> — mapping techniques to data sources and hunt hypotheses</li>
-<li><a href="https://career.hadess.io/skills">Network traffic analysis</a> — Zeek logs, NetFlow, DNS analytics</li>
-<li><a href="https://career.hadess.io/skills">Data analytics and statistics</a> — identifying anomalies in large datasets</li>
-<li><a href="https://career.hadess.io/skills">Windows internals</a> — understanding process behavior, authentication, and persistence</li>
-<li><a href="https://career.hadess.io/skills">PowerShell and scripting</a> — automating hunt workflows and data processing</li>
-<li><a href="https://career.hadess.io/skills">Detection engineering</a> — turning findings into SIGMA rules and SIEM detections</li>
-</ul>
-<p>Build these in the <a href="https://career.hadess.io/skills">skills library</a> and see how threat hunting connects to other roles in the <a href="https://career.hadess.io/career-skills">career path explorer</a>.</p>
-<h2>Certifications</h2>
-<p>Threat hunter certifications blend detection, forensics, and intelligence skills:</p>
-<ul>
-<li><strong>GCIH</strong> — incident handling skills that form the foundation of hunting</li>
-<li><strong>CySA+</strong> — defensive analysis certification, good starting point</li>
-<li><strong>GCTI</strong> — threat intelligence expertise for hypothesis development</li>
-<li><strong>GNFA</strong> — GIAC Network <a href="/blog/read/digital-forensic-analyst" title="Digital Forensic Analyst: Uncover What Really Happened">Forensic Analyst</a>, for network-level hunting</li>
-</ul>
-<p>Plan your certification strategy with the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a>.</p>
-<h2>Salary Range</h2>
-<p>Threat hunters earn between <strong>$60K and $140K</strong>. This is a mid-to-senior role, and compensation reflects that. Hunters with strong data science skills, custom tooling ability, and a track record of finding real threats command the highest pay. Financial services and tech companies tend to pay at the top of the range.</p>
-<p>See where you stand using the <a href="https://career.hadess.io/salary-calculator">salary calculator</a>.</p>
-<h2>How to Get Started</h2>
-<p>1. <strong>Spend time in a SOC first</strong> — you need to understand alert workflows and detection gaps before you can hunt effectively 2. <strong>Master SIEM query languages</strong> — you will write hundreds of queries during every hunt 3. <strong>Take the <a href="https://career.hadess.io/assessment">skills assessment</a></strong> to measure your investigation and analysis capabilities 4. <strong>Practice hunting exercises</strong> in the <a href="https://career.hadess.io/workspace">labs</a> — scenario-based threat hunting challenges 5. <strong>Study ATT&#038;CK deeply</strong> — map each technique to the data sources available in your environment 6. <strong>Learn statistical analysis basics</strong> — frequency analysis, stacking, and outlier detection 7. <strong>Get GCIH and work toward GCTI</strong> — plan your path with the <a href="https://career.hadess.io/certificate-roadmap">certification planner</a> 8. <strong>Document your hunting methodology and findings</strong> for your <a href="https://career.hadess.io/resume">resume</a> 9. <strong>Search for threat hunter or detection engineer roles</strong> on the <a href="https://career.hadess.io/jobs">job board</a></p>
-<p>Threat hunting is not an entry-level position. If you are wondering how to build the right background, the <a href="https://career.hadess.io/coach">career coach</a> can help you plan a path from your current role.</p>
+<h2>What Is a GRC Analyst</h2>
+<p>A GRC analyst career focuses on the governance, risk, and compliance side of cybersecurity. While SOC analysts monitor for threats and pen testers find vulnerabilities, GRC analysts make sure the organization has the right policies, processes, and controls in place to manage risk and meet regulatory requirements.</p>
+<p>Think of it this way: the technical security team builds the walls, but the GRC team makes sure those walls meet building codes, that someone checks them periodically, and that there is a documented plan for what happens when one fails.</p>
+<p>This is not a purely paperwork role, despite its reputation. Effective GRC analysts understand the technical controls they are assessing, can read a <a href="/blog/read/firewall-management" title="Firewall Management: Rules, Zones, and Change Control">firewall</a> rule or review an IAM policy, and know when a control is actually working versus when someone just documented it on paper. The best GRC professionals bridge the gap between business leadership (who think in terms of risk and money) and technical teams (who think in terms of systems and configurations).</p>
+<p>The GRC analyst career path is growing because regulations are expanding, not shrinking. GDPR, CCPA/CPRA, NIS2, DORA, SEC cybersecurity disclosure rules, CMMC, PCI DSS 4.0 &#8212; the regulatory burden on organizations increases every year, and someone needs to manage it. The <a href="https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm">Bureau of Labor Statistics</a> does not break out GRC separately, but industry surveys consistently show GRC roles among the fastest-growing cybersecurity job categories.</p>
+<h2>GRC Analyst Responsibilities</h2>
+<p>The GRC analyst role spans three interconnected domains:</p>
+<h3>Governance</h3>
+<p>Setting the rules. GRC analysts help develop and maintain security policies, standards, and procedures. They work with leadership to define the organization&#8217;s risk appetite, establish security committees and reporting structures, and make sure there is accountability for security decisions. Governance also includes vendor management &#8212; evaluating the security posture of third-party vendors and managing risk from supply chain relationships.</p>
+<h3>Risk Management</h3>
+<p>Understanding what could go wrong and how bad it would be. GRC analysts conduct risk assessments, maintain risk registers, quantify potential losses, and help the business make informed decisions about which risks to mitigate, transfer, accept, or avoid. This requires translating technical vulnerabilities into business language &#8212; a critical SQL injection vulnerability matters to the <a href="/ciso/" title="CISO: Lead Security Strategy Across the Organization">CISO</a> because it could lead to a $5M data breach, not because it has a CVSS score of 9.8.</p>
+<h3>Compliance</h3>
+<p>Proving the organization meets its obligations. GRC analysts map controls to regulatory requirements, coordinate audits, manage remediation of audit findings, and maintain evidence of compliance. This involves working with internal audit teams, external auditors, and regulators. Different industries have different compliance requirements, and GRC analysts need to know which ones apply and how to satisfy them.</p>
+<h2>A Realistic Week in GRC</h2>
+<p>Here is what a typical week might look like for a GRC analyst:</p>
+<p><strong>Monday.</strong> Review the risk register and follow up on overdue risk treatment plans. A business unit accepted a high-risk finding three months ago with a promise to remediate by Q1 &#8212; you check whether they followed through. Prepare materials for Wednesday&#8217;s risk committee meeting.</p>
+<p><strong>Tuesday.</strong> Conduct a vendor security assessment for a new SaaS tool the marketing team wants to adopt. Review the vendor&#8217;s SOC 2 Type II report, identify control gaps, and draft a risk summary with recommendations. Work with the security architecture team to understand the technical integration points.</p>
+<p><strong>Wednesday.</strong> Present the quarterly risk report to the risk committee. Highlight new risks, status of existing remediation efforts, and any changes to the threat environment. After the meeting, update the risk register with committee decisions and action items.</p>
+<p><strong>Thursday.</strong> Coordinate with the IT team on evidence collection for an upcoming SOC 2 audit. Review system access lists, verify that terminated employees have been deprovisioned, and confirm that change management records are complete. Draft responses to auditor inquiries from the previous week.</p>
+<p><strong>Friday.</strong> Update security policies to reflect new regulatory requirements from PCI DSS 4.0. Meet with the development team to explain new secure coding policy requirements and how they will be enforced. Review and respond to a compliance questionnaire from a potential customer who wants to understand your organization&#8217;s security posture.</p>
+<h2>Skills That GRC Analysts Need</h2>
+<p>GRC requires a different skill set than technical security roles, but technical knowledge still matters:</p>
+<p><strong>Risk analysis and quantification.</strong> You need to assess threats, evaluate control effectiveness, and communicate risk in business terms. Methods like <a href="https://csrc.nist.gov/projects/risk-management/">NIST Risk Management Framework</a> (RMF), FAIR (Factor Analysis of Information Risk), and ISO 27005 provide structured approaches. Being able to put a dollar figure on risk makes your recommendations actionable.</p>
+<p><strong>Regulatory knowledge.</strong> You do not need to memorize every regulation, but you need to understand how to interpret regulatory requirements, map them to controls, and assess compliance. The specific regulations depend on your industry &#8212; PCI DSS for payment processing, HIPAA for healthcare, SOX for public companies, GDPR for organizations handling EU data.</p>
+<p><strong>Written communication.</strong> GRC analysts write constantly: policies, risk reports, audit responses, vendor assessments, and board-level summaries. Your ability to write clearly and concisely directly affects how seriously your recommendations are taken. A risk report that leadership cannot understand is a risk report that gets ignored.</p>
+<p><strong>Technical understanding.</strong> You do not need to exploit vulnerabilities or write code, but you need to understand security controls at a practical level. When reviewing a firewall rule set, you should understand what the rules allow and block. When assessing access controls, you should know the difference between RBAC and ABAC. When evaluating encryption, you should know why AES-256 is appropriate and DES is not.</p>
+<p><strong>Project management.</strong> Audit preparation, remediation tracking, policy rollouts, and vendor assessments all require project management skills. GRC work involves coordinating across many teams and managing deadlines that are often set by external parties (regulators, auditors, customers).</p>
+<p><strong>Stakeholder management.</strong> GRC analysts work with almost every department: IT, development, legal, HR, finance, and executive leadership. Translating between technical and business perspectives is a daily requirement. You are often delivering unwelcome news (your system failed the audit, your vendor is too risky, your process does not meet the new regulation) and you need to do it diplomatically while still being direct.</p>
+<h2>Certifications for GRC Professionals</h2>
+<p>GRC certifications validate both your knowledge and your commitment to the field:</p>
+<p><strong>CISA (Certified Information Systems Auditor).</strong> From ISACA, this is the gold standard for audit-focused GRC roles. It covers auditing processes, IT governance, information systems acquisition and development, and information systems operations. Highly valued by employers who need audit-capable GRC staff.</p>
+<p><strong>CRISC (Certified in Risk and Information Systems Control).</strong> Also from <a href="https://www.isaca.org/credentialing/crisc">ISACA</a>, this focuses specifically on risk management. It covers risk identification, assessment, response, and monitoring. Ideal for GRC analysts who want to specialize in risk management.</p>
+<p><strong>CISSP (Certified Information Systems Security Professional).</strong> The broadest security certification, covering eight domains. While not GRC-specific, CISSP demonstrates wide security knowledge and is often required for senior GRC roles. <a href="https://www.isc2.org/certifications/cissp">ISC2&#8217;s CISSP page</a> has current requirements.</p>
+<p><strong>CISM (Certified Information Security Manager).</strong> Focused on security program management &#8212; governance, risk management, incident management, and program development. Ideal for GRC analysts moving toward management roles.</p>
+<p><strong>CompTIA Security+.</strong> A solid foundation certification if you are entering GRC from a non-technical background. It gives you enough technical knowledge to have credible conversations with technical teams.</p>
+<p><strong>ISO 27001 Lead Auditor/Lead Implementer.</strong> If your organization uses ISO 27001 as its security framework (common in Europe and increasingly in the US), these certifications demonstrate your ability to audit or implement the standard.</p>
+<h2>GRC Analyst Salary in 2026</h2>
+<p>GRC compensation has risen steadily as regulatory requirements expand:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>US Salary Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Junior GRC Analyst (0-2 years)</td>
+<td>$60,000 &#8211; $85,000</td>
+</tr>
+<tr>
+<td>Mid-Level GRC Analyst (2-5 years)</td>
+<td>$85,000 &#8211; $120,000</td>
+</tr>
+<tr>
+<td>Senior GRC Analyst (5-8 years)</td>
+<td>$120,000 &#8211; $155,000</td>
+</tr>
+<tr>
+<td>GRC Manager/Director</td>
+<td>$150,000 &#8211; $210,000</td>
+</tr>
+<tr>
+<td>CISO (GRC-background)</td>
+<td>$200,000 &#8211; $350,000+</td>
+</tr>
+</tbody>
+</table>
+<p>Industries with heavy regulatory requirements pay premiums: financial services, healthcare, defense, and critical infrastructure organizations typically offer 10-20% above the general market. Consulting firms that specialize in compliance (Big Four, boutique advisory firms) also pay well, though the work can be repetitive if you are doing the same SOC 2 audit for different clients repeatedly.</p>
+<p>GRC roles are often more geographically flexible than technical roles, and remote GRC positions are common. The work is primarily document-based and meeting-based, so it translates well to remote environments.</p>
+<h2>How to Get Into GRC</h2>
+<p>There are multiple paths into GRC, making it one of the more accessible cybersecurity specializations:</p>
+<p><strong>From IT or help desk.</strong> If you have IT operations experience, you already understand how systems work. Add security and compliance knowledge through Security+ or CISA study, and you have a strong foundation. Your operational perspective helps you assess controls realistically rather than theoretically.</p>
+<p><strong>From audit or accounting.</strong> Internal auditors and accountants frequently transition into GRC because the analytical and documentation skills transfer directly. The gap is technical knowledge, which you can build through self-study and certifications.</p>
+<p><strong>From legal or regulatory roles.</strong> Professionals with regulatory backgrounds bring valuable knowledge about compliance requirements. Combining legal/regulatory expertise with technical understanding makes you highly effective in GRC.</p>
+<p><strong>From <a href="/blog/read/soc-analyst-guide">SOC operations</a>.</strong> SOC analysts who want to move away from shift work sometimes transition to GRC. Your understanding of security operations, detection, and <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a> gives you credibility when assessing whether controls are actually working.</p>
+<p><strong>From scratch.</strong> If you are starting fresh, begin with <a href="/blog/read/comptia-security-plus" title="CompTIA Security+ Study Guide 2026">CompTIA Security+</a> to build foundational knowledge, then pursue CISA or CRISC. Volunteer for compliance-related projects at your current job, even if your role is not security-focused. Look for entry-level titles like &#8220;IT Compliance Analyst,&#8221; &#8220;Risk Analyst,&#8221; or &#8220;Security Policy Analyst.&#8221; Use our career skills assessment to identify your readiness for GRC roles and map out your <a href="/blog/read/cybersecurity-learning-path" title="Cybersecurity Learning Path 2026">learning path</a>.</p>
+<h2>Frameworks You Will Work With</h2>
+<p>GRC analysts work with multiple frameworks depending on their industry:</p>
+<p><strong>NIST Cybersecurity Framework (CSF).</strong> The most widely adopted framework in the US. It organizes security controls into five functions: Identify, Protect, Detect, Respond, and Recover. NIST CSF 2.0, released in 2024, added &#8220;Govern&#8221; as a sixth function, reflecting the growing importance of governance.</p>
+<p><strong>ISO 27001/27002.</strong> The international standard for information security management systems (ISMS). Common in Europe and increasingly adopted globally. ISO 27001 defines the management system requirements, while ISO 27002 provides control guidance.</p>
+<p><strong>SOC 2 (Service Organization Control 2).</strong> Developed by the AICPA, SOC 2 is the standard for SaaS companies and service providers demonstrating their security controls to customers. SOC 2 audits are extremely common, and many GRC analysts spend significant time on SOC 2 readiness and audit coordination.</p>
+<p><strong>PCI DSS.</strong> If your organization processes payment card data, PCI DSS compliance is mandatory. Version 4.0 introduced significant changes, and organizations have until March 2025 for full compliance with new requirements.</p>
+<p><strong>HIPAA.</strong> Healthcare organizations and their business associates must comply with HIPAA&#8217;s security and privacy rules. GRC analysts in healthcare spend considerable time on HIPAA risk assessments and compliance documentation.</p>
+<p><strong>CIS Controls.</strong> The Center for Internet Security provides a prioritized set of security controls. CIS Controls are practical and implementation-focused, making them popular as a starting framework for organizations that are building their security program.</p>
+<h2>GRC Tools and Platforms</h2>
+<p>Modern GRC work relies on specialized platforms:</p>
+<p><strong>GRC platforms:</strong> ServiceNow GRC, OneTrust, Archer (RSA), LogicGate, Hyperproof, Vanta, Drata, and Secureframe. These platforms manage risk registers, track compliance evidence, coordinate audits, and automate reporting.</p>
+<p><strong>Vendor risk management:</strong> SecurityScorecard, BitSight, Prevalent, and OneTrust Third-Party Risk. These tools assess and monitor vendor security posture at scale.</p>
+<p><strong>Policy management:</strong> PowerDMS, ComplianceBridge, and ConvergePoint. These manage policy lifecycle: creation, review, approval, distribution, and attestation tracking.</p>
+<p><strong>Audit management:</strong> AuditBoard, TeamMate+, and Workiva. These coordinate audit workflows, manage evidence collection, and track remediation.</p>
+<p><strong>Spreadsheets.</strong> Despite all the specialized tools, a significant amount of GRC work still happens in Excel and Google Sheets. Risk registers, control matrices, and gap analyses frequently live in spreadsheets, especially at smaller organizations.</p>
+<h2>Career Growth and Advancement</h2>
+<p>GRC offers clear progression paths with multiple directions:</p>
+<p><strong>GRC Manager/Director.</strong> Lead a GRC team, set the compliance strategy, manage audit relationships, and report to the CISO. This is the natural progression for GRC analysts who want to stay in the domain.</p>
+<p><strong>CISO.</strong> Many CISOs come from GRC backgrounds because they understand risk management, regulatory requirements, and how to communicate with executives and boards. The GRC-to-CISO path typically runs through a Director of GRC or VP of Security role.</p>
+<p><strong>Privacy Officer.</strong> With data privacy regulations expanding globally, privacy-focused roles are growing fast. GRC analysts with privacy expertise (GDPR, CCPA, privacy engineering) can move into dedicated <a href="/blog/read/data-privacy-officer" title="Data Privacy Officer: Navigate Regulations and Protect Personal Data">Data Privacy Officer</a> or Chief Privacy Officer roles.</p>
+<p><strong>Risk consulting.</strong> Big Four firms (Deloitte, PwC, EY, KPMG) and boutique advisory firms hire experienced GRC professionals for consulting roles. The pay is good and the exposure to different organizations and industries accelerates your knowledge, but the travel and pace can be demanding.</p>
+<p><strong>Security program development.</strong> Some GRC analysts move into building security programs from the ground up, particularly for startups and growing companies that need to establish compliance capabilities for the first time.</p>
 <p><strong>Read the complete guide:</strong> <a href="/blog/read/cybersecurity-career-guide" title="How to Start a Career in Cybersecurity">How to Start a Career in Cybersecurity</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/career-pathsthreat-intelligence/malware-analyst">Malware Analyst: Reverse Engineer the Weapons Attackers Use — HADESS | 2026</a></li>
-<li><a href="/blog/read/career-pathsthreat-intelligence/threat-intelligence-analyst">Threat Intelligence Analyst: Know the Enemy Before They Strike</a></li>
+<li><a href="/blog/read/cloud-security-engineer">Cloud Security Engineer: Role, Skills, and Career Path</a></li>
+<li><a href="/blog/read/soc-analyst-guide">What Is a SOC Analyst? Complete 2026 Guide</a></li>
+<li><a href="/blog/read/entry-level-cyber-jobs">Best Entry-Level Cybersecurity Jobs in 2026</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Start your career assessment.</strong> Go to the <a href="https://career.hadess.io/assessment">start your career assessment</a> on HADESS.</p>
-<p><strong>Explore career paths.</strong> Check out the <a href="https://career.hadess.io/career-skills">explore career paths</a>.</p>
-<p><strong>Get started free</strong> — <a href="https://career.hadess.io/login">Create your HADESS account</a> and access all career tools.</p>
+<p><strong>Evaluate your GRC readiness</strong> &#8212; Use our career skills platform to assess your governance, risk, and compliance knowledge and find the right learning path. Start your career skills assessment</p>
+<p><strong>Explore the full career map</strong> &#8212; See how GRC fits within the broader cybersecurity career ecosystem. <a href="/blog/read/cybersecurity-career-guide">View the Cybersecurity Career Guide</a></p>
+<p>Create your free account to get started</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What certifications do I need for this role?</h3>
-<p>Certification requirements vary by employer and seniority level. Use the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a> to build a sequence based on your target role and current qualifications.</p>
-<h3>What is the salary range for this role?</h3>
-<p>Salaries vary significantly by location, experience, and employer type. Use the <a href="https://career.hadess.io/salary-calculator">salary calculator</a> for your specific market rate.</p>
-<h3>How do I transition into this career path?</h3>
-<p>Take the <a href="https://career.hadess.io/assessment">skills assessment</a> to identify your current strengths and gaps relative to this role. The assessment generates a personalized learning plan to close the gap.</p>
-<p>&#8212;</p>
-<p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>Is GRC a good career for non-technical people?</h3>
+<p>GRC is one of the most accessible cybersecurity career paths for people without deep technical backgrounds. It values analytical thinking, communication, and organizational skills more than coding or system administration ability. However, &#8220;non-technical&#8221; does not mean &#8220;no technical knowledge&#8221; &#8212; you still need to understand security concepts, how controls work, and enough about infrastructure to assess whether controls are effective. The best GRC analysts are technically curious even if they are not engineers.</p>
+<h3>Is GRC work boring?</h3>
+<p>It depends on what motivates you. If you enjoy investigation, puzzle-solving, and hands-on technical work, GRC will feel less exciting than SOC analysis or <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">pen testing</a>. If you enjoy analysis, strategy, stakeholder management, and seeing how security decisions affect the business, GRC is genuinely engaging. The variety helps too &#8212; in a single week you might review a vendor&#8217;s security program, prepare for a board presentation, update policies for a new regulation, and investigate whether a control failure was a one-time incident or a systemic problem.</p>
+<h3>What is the difference between GRC and internal audit?</h3>
+<p>Internal audit is one component of GRC. GRC encompasses governance (policy, strategy, oversight), risk management (identifying and treating risks), and compliance (meeting regulatory requirements). Internal audit specifically focuses on independently evaluating whether controls are designed and operating effectively. Many GRC analysts work closely with internal audit teams, and some move between the two disciplines. Internal audit tends to be more structured and methodical, while GRC roles often have broader scope and more strategic involvement.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1626,27 +1705,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1801,11 +1880,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1828,59 +1907,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

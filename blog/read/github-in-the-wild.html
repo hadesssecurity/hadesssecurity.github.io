@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1230,7 +1242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/github-in-the-wild#article","headline":"Github in the wild — HADESS Magazine","description":"Github is important\n\n\n\nOftentimes sensitive secrets stored in a target’s GitHub environment are overlooked and thus not reported in the tool output due to...","url":"https://hadesssecurity.github.io/blog/read/github-in-the-wild","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/github-in-the-wild"},"datePublished":"September 1, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/09/Github-in-the-wild.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/github-in-the-wild#article","headline":"Github in the wild — HADESS Magazine","description":"Github is important\n\n\n\nOftentimes sensitive secrets stored in a target’s GitHub environment are overlooked and thus not reported in the tool output due to...","url":"https://hadesssecurity.github.io/blog/read/github-in-the-wild","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/github-in-the-wild"},"datePublished":"September 1, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/09/Github-in-the-wild.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1283,14 +1295,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1308,16 +1319,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1334,8 +1345,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1547,11 +1558,431 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/09/Github-in-the-wild.png">
       
-<p class="wp-block-paragraph">Organizations across various domains—ranging from traditional IT security to AI-driven initiatives—are turning to Key Performance Indicators (KPIs) to measure progress and ensure sustainable results. Through the SMART framework, each KPI is crafted to be Specific, Measurable, Achievable, Relevant, and Time-Bound, enabling teams to focus on precise outcomes like minimizing detection time, improving patch compliance, and raising awareness through targeted security training. Real-world examples—from ShieldCore’s SOC transformation to DevOps-driven improvements at BetaWorks and AI model security at AlphaVision—underscore how these metrics reduce risks, streamline incident response, and bolster regulatory adherence.</p>
+<h1 class="wp-block-heading" id="h-github-is-important">Github is important</h1>
 
 
 
-<p class="wp-block-paragraph">Across all these cases, core KPIs consistently monitor early threat detection, timely response, comprehensive coverage of system defenses, and the recurrence of specific security incidents. By tracking these measurements in cloud-focused, DevOps, AI, or traditional environments, organizations uncover vulnerabilities, optimize resources, and adopt a proactive stance toward safeguarding data and infrastructure. This unified approach to KPI-driven improvements delivers tangible accountability and ongoing governance, ensuring that security initiatives remain aligned with strategic business goals.</p>
+<p class="wp-block-paragraph">Oftentimes sensitive secrets stored in a target’s GitHub environment are overlooked and thus not reported in the tool output due to the limitations of automated scanning (regex, entropy searches, etc.). On the flip slide, too much information can be outputted by automated tools, making it difficult to discern true secrets from a sea of false positives.</p>
+
+
+
+<p class="wp-block-paragraph">According to the State of Secrets Sprawl on GitHub report, 85% of the leaks occur on developers&#8217; personal repositories and only the remaining 15% within repositories owned by organizations.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/48y97IXm2p5hkkjRgSt7gvIQbfiXf82iUs5G0_mtB_I06_LgcyTwQX2ZXUNKQANyzHt5wbymbNyEKePlATT1HNwjk5Krqi5jTh1cWivAXItj-sq0SIrfoD62Mo432jLYYAFF-edm8kT4L8cL0M1dwiM" alt="" title="Points scored" /></figure>
+
+
+
+<p class="wp-block-paragraph">Most common types of secrets exposed on GitHub</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/rHWQup3vlx2l0zKoI3RmeghOMID81z0bR58Ni-BqQC4j-TCK-ydt5EvdEBeoiaZfBnvk7S1D3b5BaJ2jPMAwb6KSS1Yax0_2q5Ia5YjnAWieVrATxeD4vU_jFlzY4CLUAaHWP-65E3mgRE6tbd__D5M" alt="" title="Points scored" /></figure>
+
+
+
+<h1 class="wp-block-heading" id="h-most-common-types-of-files-found-exposed-on-github">Most common types of files found exposed on GitHub</h1>
+
+
+
+<h1 class="wp-block-heading" id="h-"><img fetchpriority="high" decoding="async" src="https://lh3.googleusercontent.com/Ffq3tFaKwaZvs7e-NQ5EKIEIZpsVcimETx7VOT6ugJXfyNc1wOIY3oWLF3AJbDQyCj8yygCrBteFDDgBl5ACDOw0SOAU5GFYRHLAJT9ojhDqPxUfuOKavMyTpHfJLlhDKD-am4H5QuaxswrgfTtTB-o" width="624" height="385"></h1>
+
+
+
+<p class="wp-block-paragraph">Keys for many popular APIs have distinct structures whose compromise would result in security risk</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/loVDB-5UQ3so8TX5wZ__QoH8ZF0F5PgZakJ0AX4Eqi8as5ftTo9NQpYMWPOszrJbg0pRQ9cfAWV6BiwDcaG4QUaoT8lybeAtlZvXNygPetM1K5OWbdDR2JAuZGsl9Kfz7_pwNegLXc6SVi8P5HEaD2Q" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Most detected secrets were found in cryptographic or source code files</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh3.googleusercontent.com/GHDqwmSTy1VfFqKxnnzMTPSTZyAAPPs2CdYkhreq01sP758p9oWdo1PMcuVq0M_L1Rm9DWwPMd4gkDsXxkZJUPdGy1iHsgR0EebwRlrZYmvCgoXbrobelZi1K3deXc84y_5XRVSvfv6AuQ9vMphqYXY" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Most of the regular expressions had high precision with minimal rejection by the filter</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/9fPFgaFsSpnhqGxXIb_JlUXRSP3EyaWJJvKpvqLjbrMNXsqg5HYoGfGSqcFX0B9Yk82fiK1NCEdMyMNKdtN4l5Joxpxd7m2RMHbnw_YKEylWRFjvdf2aGM0iJ_ZI6VE53654w_nY_laXVMgNQaZgs84" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Leakage Mindmap</strong></p>
+
+
+
+<p class="wp-block-paragraph">[mindmap]</p>
+
+
+
+<h1 class="wp-block-heading" id="h-some-example-of-offensive-used-github">Some example of offensive used github</h1>
+
+
+
+<h2 class="wp-block-heading" id="h-social-media">Social Media</h2>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Twitter</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Access Token</p>
+
+
+
+<p class="wp-block-paragraph">Regex: [1-9][0-9]+-[0-9a-zA-Z]{40}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Facebook</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Access Token</p>
+
+
+
+<p class="wp-block-paragraph">Regex: EAACEdEose0cBA[0-9A-Za-z]+</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Google YouTube</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: API Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: AIza[0-9A-Za-z\-_]{35}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Google YouTube</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: OAuth ID</p>
+
+
+
+<p class="wp-block-paragraph">Regex: [0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Picatic</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: OAuth ID</p>
+
+
+
+<p class="wp-block-paragraph">Regex: sk_live_[0-9a-z]{32}</p>
+
+
+
+<h2 class="wp-block-heading" id="h-finance">Finance</h2>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Stripe</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Standard API Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: sk_live_[0-9a-zA-Z]{24}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Stripe</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Restricted API Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: rk_live_[0-9a-zA-Z]{24}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Square</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Access Token</p>
+
+
+
+<p class="wp-block-paragraph">Regex: sq0atp-[0-9A-Za-z\-_]{22}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API:Square</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: OAuth Secret</p>
+
+
+
+<p class="wp-block-paragraph">Regex: sq0csp-[0-9A-Za-z\-_]{43}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: PayPal Braintree</p>
+
+
+
+<p class="wp-block-paragraph">Key Type:Access Token</p>
+
+
+
+<p class="wp-block-paragraph">Regex: access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Amazon MWS</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Auth Token</p>
+
+
+
+<p class="wp-block-paragraph">Regex: amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</p>
+
+
+
+<h2 class="wp-block-heading" id="h-communications">Communications</h2>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Twilio</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: API Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: SK[0-9a-fA-F]{32}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: MailGun</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: API Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: key-[0-9a-zA-Z]{32}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: MailChimp</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: API Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: [0-9a-f]{32}-us[0-9]{1,2}</p>
+
+
+
+<p class="wp-block-paragraph">Platform/API: Amazon AWS</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Access Key ID</p>
+
+
+
+<p class="wp-block-paragraph">Regex: AKIA[0-9A-Z]{16}</p>
+
+
+
+<h2 class="wp-block-heading" id="h-private-key">Private Key</h2>
+
+
+
+<p class="wp-block-paragraph">Key Type: RSA Private Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: &#8212;&#8211;BEGIN RSA PRIVATE KEY&#8212;&#8211; [\r\n]+(?:\w+:.+)*[\s]* (?:[0-9a-zA-Z+\/=]{64,76}[\r\n]+)+ [0-9a-zA-Z+\/=]+[\r\n]+ &#8212;&#8211;END RSA PRIVATE KEY&#8212;-</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: EC Private Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: &#8212;&#8211;BEGIN EC PRIVATE KEY&#8212;&#8211; [\r\n]+(?:\w+:.+)*[\s]* (?:[0-9a-zA-Z+\/=]{64,76}[\r\n]+)+ [0-9a-zA-Z+\/=]+[\r\n]+ &#8212;&#8211;END EC PRIVATE KEY&#8212;&#8211;</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: PGP Private Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: &#8212;&#8211;BEGIN PGP PRIVATE KEY BLOCK&#8212;&#8211; [\r\n]+(?:\w+:.+)*[\s]* (?:[0-9a-zA-Z+\/=]{64,76}[\r\n]+)+ [0-9a-zA-Z+\/=]+[\r\n]+= [0-9a-zA-Z+\/=]{4}[\r\n]+ &#8212;&#8211;END PGP PRIVATE KEY BLOCK&#8212;&#8211;</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: General Private Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex: &#8212;&#8211;BEGIN PRIVATE KEY&#8212;&#8211; [\r\n]+(?:\w+:.+)*[\s]* (?:[0-9a-zA-Z+\/=]{64,76}[\r\n]+)+ [0-9a-zA-Z+\/=]+[\r\n]+ &#8212;&#8211;END PRIVATE KEY&#8212;&#8211;</p>
+
+
+
+<p class="wp-block-paragraph">Key Type: Private API Key</p>
+
+
+
+<p class="wp-block-paragraph">Regex:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">/^[5KL][1-9A-HJ-NP-Za-km-z]{50,51}$/</p>
+
+
+
+<p class="wp-block-paragraph">5[HJK][1-9A-HJ-NP-Za-km-z]\{49\}\b&#8217;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">[KL][1-9A-HJ-NP-Za-km-z]\{51\}\b</p>
+
+
+
+<h1 class="wp-block-heading" id="h-methodology">Methodology</h1>
+
+
+
+<p class="wp-block-paragraph">Our secret collection methodology involves various phases to identify secrets with high confidence</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/TV76iMW4o_Sq40RVpM2-j4gmtIyO6lkl6wgswYlCyv0qPZqn4oilDiLp64RgJ1boQH3Kd79Q9J77KOQnSw7EAZABDbc4aLP-CZcvB9h11cqIcRm-JTqAi3CYybjDly_fAzHvJ7nZz897hAb7zv103QE" alt="" /></figure>
+
+
+
+<h2 class="wp-block-heading" id="h-gcloud">Gcloud</h2>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://cloud.google.com/blog/topics/public-datasets/github-on-bigquery-analyze-all-the-open-source-code
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">Gcloud search query:</p>
+
+
+
+<p class="wp-block-paragraph">SELECT * FROM `bigquery-public-data.github_repos.files`</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;WHERE REGEXP_CONTAINS(path,r'[Regex]&#8217;)</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;LIMIT 100</p>
+
+
+
+<h2 class="wp-block-heading" id="h-github-api">Github API</h2>
+
+
+
+<p class="wp-block-paragraph">As GitHub does not allow regular expression searches, these targeted queries identify candidate files which are then scanned offline for secrets</p>
+
+
+
+<p class="wp-block-paragraph">curl &#8211;location &#8211;request GET &#8216;https://api.github.com/search/code?q=addClass&#8217; \</p>
+
+
+
+<p class="wp-block-paragraph">&#8211;header &#8216;Authorization: Token&nbsp;</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>No.</td><td>Search Query</td></tr><tr><td>1</td><td>access_token</td></tr><tr><td>2</td><td>access_secret</td></tr><tr><td>3</td><td>api_key</td></tr><tr><td>4</td><td>client_secret</td></tr><tr><td>5</td><td>consumer_secret</td></tr><tr><td>6</td><td>customer_secret</td></tr><tr><td>7</td><td>user_secret</td></tr><tr><td>8</td><td>secret_key</td></tr><tr><td>9</td><td>&#8212;&#8211;BEGIN RSA PRIVATE KEY&#8212;&#8211;</td></tr><tr><td>10</td><td>&#8212;&#8211;BEGIN EC PRIVATE KEY&#8212;&#8211;</td></tr><tr><td>11</td><td>&#8212;&#8211;BEGIN PRIVATE KEY&#8212;&#8211;</td></tr><tr><td>12</td><td>&#8212;&#8211;BEGIN PGP PRIVATE KEY BLOCK&#8212;&#8211;</td></tr><tr><td>13</td><td>AKIA</td></tr><tr><td>14</td><td>EAA, EAACEd, EAACEdEose0cBA</td></tr><tr><td>15</td><td>AIza</td></tr><tr><td>16</td><td>.apps.googleusercontent.com</td></tr><tr><td>17</td><td>sq0atp</td></tr><tr><td>18</td><td>sq0csp</td></tr><tr><td>19</td><td>key-&nbsp;</td></tr><tr><td>20</td><td>sk_live_</td></tr><tr><td>21</td><td>rk_live_&nbsp;</td></tr></tbody></table></figure>
+
+
+
+<h1 class="wp-block-heading" id="h-scan-your-org">Scan Your Org</h1>
+
+
+
+<p class="wp-block-paragraph"><strong>GSIL</strong></p>
+
+
+
+<p class="wp-block-paragraph">Monitor Github sensitive information leaks in near real time and send alert notifications.</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://github.com/FeeiCN/GSIL
+</div></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Trufflehog</strong></p>
+
+
+
+<p class="wp-block-paragraph">Find credentials all over the place</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://github.com/trufflesecurity/trufflehog
+</div></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Git-Hound</strong></p>
+
+
+
+<p class="wp-block-paragraph">Reconnaissance tool for GitHub code search. Finds exposed API keys using pattern matching, commit history searching, and a unique result scoring system.</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://github.com/tillson/git-hound
+</div></figure>
+
+
+
+<h1 class="wp-block-heading" id="h-resources">Resources</h1>
+
+
+
+<ul class="wp-block-list"><li><a href="https://www.csoonline.com/">https://www.csoonline.com/</a></li><li><a href="https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_04B-3_Meli_paper.pdf">https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_04B-3_Meli_paper.pdf</a></li><li>https://book.hacktricks.xyz/generic-methodologies-and-resources/external-recon-methodology/github-leaked-secrets</li></ul>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1569,27 +2000,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1988,11 +2419,11 @@ function submitEmail(e) {
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2015,59 +2446,38 @@ function submitEmail(e) {
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

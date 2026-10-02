@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/40-days-in-deep-dark-web-about-crypto-scam#article","headline":"40 Days in Deep/Dark Web About Crypto Scam — HADESS Magazine","description":"ForwardAbout documentSummary of findingToolsFake Transaction GeneratorMarket drainerNocryi LogsBradMax LogsBaron Cloud LogsFate Cloud LogsLog CheckerMagnus...","url":"https://hadesssecurity.github.io/blog/read/40-days-in-deep-dark-web-about-crypto-scam","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/40-days-in-deep-dark-web-about-crypto-scam"},"datePublished":"July 8, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/07/40dyas-in-crypto-scam.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/40-days-in-deep-dark-web-about-crypto-scam#article","headline":"40 Days in Deep/Dark Web About Crypto Scam — HADESS Magazine","description":"ForwardAbout documentSummary of findingToolsFake Transaction GeneratorMarket drainerNocryi LogsBradMax LogsBaron Cloud LogsFate Cloud LogsLog CheckerMagnus...","url":"https://hadesssecurity.github.io/blog/read/40-days-in-deep-dark-web-about-crypto-scam","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/40-days-in-deep-dark-web-about-crypto-scam"},"datePublished":"July 8, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/07/40dyas-in-crypto-scam.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,11 +1550,497 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/07/40dyas-in-crypto-scam.png">
       
-<p class="wp-block-paragraph">Organizations across various domains—ranging from traditional IT security to AI-driven initiatives—are turning to Key Performance Indicators (KPIs) to measure progress and ensure sustainable results. Through the SMART framework, each KPI is crafted to be Specific, Measurable, Achievable, Relevant, and Time-Bound, enabling teams to focus on precise outcomes like minimizing detection time, improving patch compliance, and raising awareness through targeted security training. Real-world examples—from ShieldCore’s SOC transformation to DevOps-driven improvements at BetaWorks and AI model security at AlphaVision—underscore how these metrics reduce risks, streamline incident response, and bolster regulatory adherence.</p>
+<ul class="wp-block-list"><li>Forward<ul><li>About document</li></ul></li><li>Summary of finding</li><li>Tools<ul><li>Fake Transaction Generator</li><li>Market drainer</li><li>Nocryi Logs</li><li>BradMax Logs</li><li>Baron Cloud Logs</li><li>Fate Cloud Logs</li><li>Log Checker</li><li>Magnus Ransomware</li><li>Brute Force Seed Key</li><li>Log Checker</li><li>Wallet_dat_net</li><li>Venom rat</li><li>Redline&nbsp;</li></ul></li><li>Abbrv.</li></ul>
 
 
 
-<p class="wp-block-paragraph">Across all these cases, core KPIs consistently monitor early threat detection, timely response, comprehensive coverage of system defenses, and the recurrence of specific security incidents. By tracking these measurements in cloud-focused, DevOps, AI, or traditional environments, organizations uncover vulnerabilities, optimize resources, and adopt a proactive stance toward safeguarding data and infrastructure. This unified approach to KPI-driven improvements delivers tangible accountability and ongoing governance, ensuring that security initiatives remain aligned with strategic business goals.</p>
+<ul class="wp-block-list"><li>Market drainer</li><li>Auto transfer</li><li>Crypto base</li><li>Mixed log</li><li>Fake transaction</li><li>Seed key crack</li><li>RAMP</li><li>Auto-withdrawal</li></ul>
+
+
+
+<h1 class="wp-block-heading" id="h-forward">Forward</h1>
+
+
+
+<p class="wp-block-paragraph">Last year ransomware scammed more than 100 billion dollar from various organizations and users. We decide in this document research methods from seller to end client.</p>
+
+
+
+<p class="wp-block-paragraph">This report was made by the Hadess and data comes from various sources such as: Dark Web , Deep Web Forums, Sellers and Websites.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-summary-of-finding">Summary of finding</h1>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/JgEAqDmWM0JCsnHudchBaowCF-qK5UNy_XVlfPcjX5-hyJ0y2PxelBIHe2-kPsgGsw08huH9GKwjZUkrCGeX6eM5HuaBJrmLseyvaIoFBCygcwT-0Zq0vnKsVYVMnImG5j3QrQkvf04XenOZ90Q" alt="" /></figure>
+
+
+
+<h1 class="wp-block-heading" id="h-abbrev">Abbrev</h1>
+
+
+
+<p class="wp-block-paragraph"><strong>Wallet Drainer</strong></p>
+
+
+
+<p class="wp-block-paragraph">Methods of scam for earn crypto such as: Honney pot smart contract on bsc network, fake nft mint page, Metamask drainer page.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Auto transfer</strong></p>
+
+
+
+<p class="wp-block-paragraph">Phishing system can be transfer crypto from victim wallet to attacker wallets, for example Coinbase Auto Transfer System Phishing can be transfer your conibase crypto to other wallet</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Crypto base</strong></p>
+
+
+
+<p class="wp-block-paragraph">Mixed mail/pass of exchange account can be used in auto-transfer for withdrew without any limitation</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Mixed log</strong></p>
+
+
+
+<p class="wp-block-paragraph">Lot of log included personal information, files, wallet address, wallet private/seed key, …</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake transaction</strong></p>
+
+
+
+<p class="wp-block-paragraph">Scam transfer crypto that confirm in one of confirmation stages and rollback after 12h till 2 week</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Private/Seed Key Reverse</strong></p>
+
+
+
+<p class="wp-block-paragraph">Methods for reverse wallet address and auto-transfer with private key or seed key.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>RAMP</strong></p>
+
+
+
+<p class="wp-block-paragraph">Forums about ransomware as a service(raas).</p>
+
+
+
+<h1 class="wp-block-heading" id="h-tools">Tools</h1>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake Transaction Generator</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh3.googleusercontent.com/UW8NFNFxUS-Iw9drtoUKOCxUVH0UIxByj94V4Yc1jKhd31WsZT2toeGtumKcV5yGEwEvAYdzZ6EXvP-y3eY2X3xMcQAdXaGDJGhKTqaJ1PgWxw2VRQCdADLae-tF5T2WldN8Co5yBktsTQy1VcU" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">This tool generates fake bitcoin transactions and stays for 07-28 days depends on the blockchain network and license Type.</p>
+
+
+
+<p class="wp-block-paragraph">Price: £ 499.99 – £ 4,999.99</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Market drainer</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/7NTJIECXFrKXPRONAno0QE9zTeyOhu3IQgHhe4SwOZ7DXG8Ei_nTay-K387AB1yiXgjHGMy1MPQm3o9CrHhbOVvYA05Utffqwypf6hSz6cxiSFoFejh-k0UxBGIJvM_jbc708HAD-UBbz_ravMw" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Honney pot smart contract on bsc network &#8211; price: 500$</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/r-DcaKM9Ia1zOv0WaAkzEWmxXWuwYsk1F3ZeO1edLNOUlg6dyBoi5R7zd9TGvfFDQIPvtwVuxCkmDA0BO6cc3I_GwS-FFE3GHrHle-yJjZIruCvU82yRHy-iHYZoJl8LYE2sVLddqh5eSRoAZoU" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">fake nft mint page &#8211; price: 2000$</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/MTqjlu3oaG96uFeszCbihgvI0Jq5nKYPk0fjP4GKdEs0TaToct4mZbvvF6-EDztKmaZ6ZAqwXgYAQvC-PwR0eN5ppntFbb3XTt19Jhg5dw5hfUVt5qh9HeOZOvfGJEOen0zGvUYposLrTpxIeq0" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Metamask drainer page &#8211; price: 4000$</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Nocryi Logs</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/QeU_8VjdGYaP0dNt33mjDHLg75XceBpb1vVLla6hVxudcm_bK8YJFbiIz_lvZsoOcGQV-ZpOlkahk4xADKqGPVP6gIEk8cgQc-pVuhYhEiyklSf5k2zlmFANOMHy3eLXB52VvaJvV1KnZIRek_I" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Complete informative logs: cookies, authentications, sessions, victim information (hardware), Discord tokens, autocomplete and much more.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>BradMax Logs</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh3.googleusercontent.com/l4c8CE15tDKloGxS75k5A3JUvVPh73IGdjdY4a_7hRfQ0KXBqd_-gyScj_VS4Y8gIFlTMbHUvGAfsfEcWN0WtHeTmUITbtwG5YFTQHAJnHAkyssCgbC7spoNAZOutwBWgAcaIyxDcEQBhi-pN20" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Complete informative logs: cookies, authentications, sessions, victim information (hardware), Discord tokens, autocomplete and much more.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Baron Cloud Logs</strong></p>
+
+
+
+<p class="wp-block-paragraph">Complete informative logs: cookies, authentications, sessions, victim information (hardware), Discord tokens, autocomplete and much more.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fate Cloud Logs</strong></p>
+
+
+
+<p class="wp-block-paragraph">Complete informative logs: cookies, authentications, sessions, victim information (hardware), Discord tokens, autocomplete and much more.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Log Checker</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/AJkz_r-A11InhAniFXGXLsQ--l6Ix6KGx4kGllBlFDpb4oa8OkiqvqskvI5hu4U35FN6pKzqZzMAsKk2QDfUqjr2hQm6ys_NrIVG8nFg54lgrXLvGSxN4eFgIRbMEVnMZNaHzWO1u0ztgszcPTs" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">&nbsp;automatically search for keywords in mail access for yahoo / gmail!</p>
+
+
+
+<p class="wp-block-paragraph">Services Cookies Checker: Youtube , Netflix , Gmail , Instagram , Facebook , Yahoo , Steam , Coinbase , Amazon , Binance</p>
+
+
+
+<p class="wp-block-paragraph">All services come with capture like balance,items&#8230;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Wallet_dat_net</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/a87q_WFtTufmARs_G1cDLcy2cRoSpPvdkCjpTLzGPexIq62syNiN7YK6FT7oiBdlqS02qK8hCX4w-mxct_uYGoxpPLsj2IH4lHiKWTPRWEtQ2XfoOxCy48Cp6KT0HKz8NDU3awMIh-YbTLJHjgs" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">buy a Bitcoin core wallet.dat file with a lost or forgotten password</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Magnus Ransomware</strong></p>
+
+
+
+<p class="wp-block-paragraph">Magnus Ransomware its a sofisticated ransomware which can bypass any anti virus as malwarebites, avast, bitdefender&#8230; If it detect it doesnt even do anything because It disable any anti virus or program so its so dificult to dont get hacked.</p>
+
+
+
+<p class="wp-block-paragraph">Step 1- Disable AV</p>
+
+
+
+<p class="wp-block-paragraph">Step 2- Disable startup apps</p>
+
+
+
+<p class="wp-block-paragraph">Step 3- Encrypt all types of files as:</p>
+
+
+
+<p class="wp-block-paragraph">&#8220;.txt&#8221;,&#8221;.jar&#8221;,&#8221;.dat&#8221;,&#8221;.contact&#8221;,&#8221;.settings&#8221;,&#8221;.doc&#8221;,&#8221;.docx&#8221;,&#8221;.xls&#8221;,&#8221;.xlsx&#8221;,&#8221;.ppt&#8221;,&#8221;.pptx&#8221;,&#8221;.odt&#8221;,&#8221;.jpg&#8221;,&#8221;.mka&#8221;,&#8221;.mhtml&#8221;,&#8221;.oqy&#8221;,&#8221;&#8221;.txt&#8221;,&#8221;.jar&#8221;,&#8221;.dat&#8221;,&#8221;.contact&#8221;,&#8221;.settings&#8221;,&#8221;.doc&#8221;,&#8221;.docx&#8221;,&#8221;.xls&#8221;,&#8221;.xlsx&#8221;,&#8221;.ppt&#8221;,&#8221;.pptx&#8221;,&#8221;.odt&#8221;,&#8221;.jpg&#8221;,&#8221;.mka&#8221;,&#8221;.mhtml&#8221;,&#8221;.oqy&#8221;,&#8221;.png&#8221;,&#8221;.csv&#8221;,&#8221;.py&#8221;,&#8221;.sql&#8221;,&#8221;.mdb&#8221;,&#8221;.php&#8221;,&#8221;.asp&#8221;,&#8221;.aspx&#8221;,&#8221;.html&#8221;,&#8221;.htm&#8221;,&#8221;.xml&#8221;,&#8221;.psd&#8221;,&#8221;.pdf&#8221;,&#8221;.xla&#8221;,&#8221;.cub&#8221;,&#8221;.dae&#8221;,&#8221;.indd&#8221;,&#8221;.cs&#8221;,&#8221;.mp3&#8243;,&#8221;.mp4&#8243;,&#8221;.dwg&#8221;,&#8221;.zip&#8221;,&#8221;.rar&#8221;,&#8221;.mov&#8221;,&#8221;.rtf&#8221;,&#8221;.bmp&#8221;,&#8221;.mkv&#8221;,&#8221;.avi&#8221;,&#8221;.apk&#8221;,&#8221;.lnk&#8221;,&#8221;.dib&#8221;,&#8221;.dic&#8221;,&#8221;.dif&#8221;,&#8221;.divx&#8221;,&#8221;.iso&#8221;,&#8221;.7zip&#8221;,&#8221;.ace&#8221;,&#8221;.arj&#8221;,&#8221;.bz2&#8243;,&#8221;.cab&#8221;,&#8221;.gzip&#8221;,&#8221;.lzh&#8221;,&#8221;.tar&#8221;,&#8221;.jpeg&#8221;,&#8221;.xz&#8221;,&#8221;.mpeg&#8221;,&#8221;.torrent&#8221;,&#8221;.mpg&#8221;,&#8221;.core&#8221;,&#8221;.pdb&#8221;,&#8221;.ico&#8221;,&#8221;.pas&#8221;,&#8221;.db&#8221;,&#8221;.wmv&#8221;,&#8221;.swf&#8221;,&#8221;.cer&#8221;,&#8221;.bak&#8221;,&#8221;.backup&#8221;,&#8221;.accdb&#8221;,&#8221;.bay&#8221;,&#8221;.p7c&#8221;,&#8221;.exif&#8221;,&#8221;.vss&#8221;,&#8221;.raw&#8221;,&#8221;.m4a&#8221;,&#8221;.wma&#8221;,&#8221;.flv&#8221;,&#8221;.sie&#8221;,&#8221;.sum&#8221;,&#8221;.ibank&#8221;,&#8221;.wallet&#8221;,&#8221;.css&#8221;,&#8221;.js&#8221;,&#8221;.rb&#8221;,&#8221;.crt&#8221;,&#8221;.xlsm&#8221;,&#8221;.xlsb&#8221;,&#8221;.7z&#8221;,&#8221;.cpp&#8221;,&#8221;.java&#8221;,&#8221;.jpe&#8221;,&#8221;.ini&#8221;,&#8221;.blob&#8221;,&#8221;.wps&#8221;,&#8221;.docm&#8221;,&#8221;.wav&#8221;,&#8221;.3gp&#8221;,&#8221;.webm&#8221;,&#8221;.m4v&#8221;,&#8221;.amv&#8221;,&#8221;.m4p&#8221;,&#8221;.svg&#8221;,&#8221;.ods&#8221;,&#8221;.bk&#8221;,&#8221;.vdi&#8221;,&#8221;.vmdk&#8221;,&#8221;.onepkg&#8221;,&#8221;.accde&#8221;,&#8221;.jsp&#8221;,&#8221;.json&#8221;,&#8221;.gif&#8221;,&#8221;.log&#8221;,&#8221;.gz&#8221;,&#8221;.config&#8221;,&#8221;.vb&#8221;,&#8221;.m1v&#8221;,&#8221;.sln&#8221;,&#8221;.pst&#8221;,&#8221;.obj&#8221;,&#8221;.xlam&#8221;,&#8221;.djvu&#8221;,&#8221;.inc&#8221;,&#8221;.cvs&#8221;,&#8221;.dbf&#8221;,&#8221;.tbi&#8221;,&#8221;.wpd&#8221;,&#8221;.dot&#8221;,&#8221;.dotx&#8221;,&#8221;.xltx&#8221;,&#8221;.pptm&#8221;,&#8221;.potx&#8221;,&#8221;.potm&#8221;,&#8221;.pot&#8221;,&#8221;.xlw&#8221;,&#8221;.xps&#8221;,&#8221;.xsd&#8221;,&#8221;.xsf&#8221;,&#8221;.xsl&#8221;,&#8221;.kmz&#8221;,&#8221;.accdr&#8221;,&#8221;.stm&#8221;,&#8221;.accdt&#8221;,&#8221;.ppam&#8221;,&#8221;.pps&#8221;,&#8221;.ppsm&#8221;,&#8221;.1cd&#8221;,&#8221;.3ds&#8221;,&#8221;.3fr&#8221;,&#8221;.3g2&#8243;,&#8221;.accda&#8221;,&#8221;.accdc&#8221;,&#8221;.accdw&#8221;,&#8221;.adp&#8221;,&#8221;.ai&#8221;,&#8221;.ai3&#8243;,&#8221;.ai4&#8243;,&#8221;.ai5&#8243;,&#8221;.ai6&#8243;,&#8221;.ai7&#8243;,&#8221;.ai8&#8243;,&#8221;.arw&#8221;,&#8221;.ascx&#8221;,&#8221;.asm&#8221;,&#8221;.asmx&#8221;,&#8221;.avs&#8221;,&#8221;.bin&#8221;,&#8221;.cfm&#8221;,&#8221;.dbx&#8221;,&#8221;.dcm&#8221;,&#8221;.dcr&#8221;,&#8221;.pict&#8221;,&#8221;.rgbe&#8221;,&#8221;.dwt&#8221;,&#8221;.f4v&#8221;,&#8221;.exr&#8221;,&#8221;.kwm&#8221;,&#8221;.max&#8221;,&#8221;.mda&#8221;,&#8221;.mde&#8221;,&#8221;.mdf&#8221;,&#8221;.mdw&#8221;,&#8221;.mht&#8221;,&#8221;.mpv&#8221;,&#8221;.msg&#8221;,&#8221;.myi&#8221;,&#8221;.nef&#8221;,&#8221;.odc&#8221;,&#8221;.geo&#8221;,&#8221;.swift&#8221;,&#8221;.odm&#8221;,&#8221;.odp&#8221;,&#8221;.oft&#8221;,&#8221;.orf&#8221;,&#8221;.pfx&#8221;,&#8221;.p12&#8243;,&#8221;.pl&#8221;,&#8221;.pls&#8221;,&#8221;.safe&#8221;,&#8221;.tab&#8221;,&#8221;.vbs&#8221;,&#8221;.xlk&#8221;,&#8221;.xlm&#8221;,&#8221;.xlt&#8221;,&#8221;.xltm&#8221;,&#8221;.svgz&#8221;,&#8221;.slk&#8221;,&#8221;.tar.gz&#8221;,&#8221;.dmg&#8221;,&#8221;.ps&#8221;,&#8221;.psb&#8221;,&#8221;.tif&#8221;,&#8221;.rss&#8221;,&#8221;.key&#8221;,&#8221;.vob&#8221;,&#8221;.epsp&#8221;,&#8221;.dc3&#8243;,&#8221;.iff&#8221;,&#8221;.onepkg&#8221;,&#8221;.onetoc2&#8243;,&#8221;.opt&#8221;,&#8221;.p7b&#8221;,&#8221;.pam&#8221;,&#8221;.r3d&#8221;.png&#8221;,&#8221;.csv&#8221;,&#8221;.py&#8221;,&#8221;.sql&#8221;,&#8221;.mdb&#8221;,&#8221;.php&#8221;,&#8221;.asp&#8221;,&#8221;.aspx&#8221;,&#8221;.html&#8221;,&#8221;.htm&#8221;,&#8221;.xml&#8221;,&#8221;.psd&#8221;,&#8221;.pdf&#8221;,&#8221;.xla&#8221;,&#8221;.cub&#8221;,&#8221;.dae&#8221;,&#8221;.indd&#8221;,&#8221;.cs&#8221;,&#8221;.mp3&#8243;,&#8221;.mp4&#8243;,&#8221;.dwg&#8221;,&#8221;.zip&#8221;,&#8221;.rar&#8221;,&#8221;.mov&#8221;,&#8221;.rtf&#8221;,&#8221;.bmp&#8221;,&#8221;.mkv&#8221;,&#8221;.avi&#8221;,&#8221;.apk&#8221;,&#8221;.lnk&#8221;,&#8221;.dib&#8221;,&#8221;.dic&#8221;,&#8221;.dif&#8221;,&#8221;.divx&#8221;,&#8221;.iso&#8221;,&#8221;.7zip&#8221;,&#8221;.ace&#8221;,&#8221;.arj&#8221;,&#8221;.bz2&#8243;,&#8221;.cab&#8221;,&#8221;.gzip&#8221;,&#8221;.lzh&#8221;,&#8221;.tar&#8221;,&#8221;.jpeg&#8221;,&#8221;.xz&#8221;,&#8221;.mpeg&#8221;,&#8221;.torrent&#8221;,&#8221;.mpg&#8221;,&#8221;.core&#8221;,&#8221;.pdb&#8221;,&#8221;.ico&#8221;,&#8221;.pas&#8221;,&#8221;.db&#8221;,&#8221;.wmv&#8221;,&#8221;.swf&#8221;,&#8221;.cer&#8221;,&#8221;.bak&#8221;,&#8221;.backup&#8221;,&#8221;.accdb&#8221;,&#8221;.bay&#8221;,&#8221;.p7c&#8221;,&#8221;.exif&#8221;,&#8221;.vss&#8221;,&#8221;.raw&#8221;,&#8221;.m4a&#8221;,&#8221;.wma&#8221;,&#8221;.flv&#8221;,&#8221;.sie&#8221;,&#8221;.sum&#8221;,&#8221;.ibank&#8221;,&#8221;.wallet&#8221;,&#8221;.css&#8221;,&#8221;.js&#8221;,&#8221;.rb&#8221;,&#8221;.crt&#8221;,&#8221;.xlsm&#8221;,&#8221;.xlsb&#8221;,&#8221;.7z&#8221;,&#8221;.cpp&#8221;,&#8221;.java&#8221;,&#8221;.jpe&#8221;,&#8221;.ini&#8221;,&#8221;.blob&#8221;,&#8221;.wps&#8221;,&#8221;.docm&#8221;,&#8221;.wav&#8221;,&#8221;.3gp&#8221;,&#8221;.webm&#8221;,&#8221;.m4v&#8221;,&#8221;.amv&#8221;,&#8221;.m4p&#8221;,&#8221;.svg&#8221;,&#8221;.ods&#8221;,&#8221;.bk&#8221;,&#8221;.vdi&#8221;,&#8221;.vmdk&#8221;,&#8221;.onepkg&#8221;,&#8221;.accde&#8221;,&#8221;.jsp&#8221;,&#8221;.json&#8221;,&#8221;.gif&#8221;,&#8221;.log&#8221;,&#8221;.gz&#8221;,&#8221;.config&#8221;,&#8221;.vb&#8221;,&#8221;.m1v&#8221;,&#8221;.sln&#8221;,&#8221;.pst&#8221;,&#8221;.obj&#8221;,&#8221;.xlam&#8221;,&#8221;.djvu&#8221;,&#8221;.inc&#8221;,&#8221;.cvs&#8221;,&#8221;.dbf&#8221;,&#8221;.tbi&#8221;,&#8221;.wpd&#8221;,&#8221;.dot&#8221;,&#8221;.dotx&#8221;,&#8221;.xltx&#8221;,&#8221;.pptm&#8221;,&#8221;.potx&#8221;,&#8221;.potm&#8221;,&#8221;.pot&#8221;,&#8221;.xlw&#8221;,&#8221;.xps&#8221;,&#8221;.xsd&#8221;,&#8221;.xsf&#8221;,&#8221;.xsl&#8221;,&#8221;.kmz&#8221;,&#8221;.accdr&#8221;,&#8221;.stm&#8221;,&#8221;.accdt&#8221;,&#8221;.ppam&#8221;,&#8221;.pps&#8221;,&#8221;.ppsm&#8221;,&#8221;.1cd&#8221;,&#8221;.3ds&#8221;,&#8221;.3fr&#8221;,&#8221;.3g2&#8243;,&#8221;.accda&#8221;,&#8221;.accdc&#8221;,&#8221;.accdw&#8221;,&#8221;.adp&#8221;,&#8221;.ai&#8221;,&#8221;.ai3&#8243;,&#8221;.ai4&#8243;,&#8221;.ai5&#8243;,&#8221;.ai6&#8243;,&#8221;.ai7&#8243;,&#8221;.ai8&#8243;,&#8221;.arw&#8221;,&#8221;.ascx&#8221;,&#8221;.asm&#8221;,&#8221;.asmx&#8221;,&#8221;.avs&#8221;,&#8221;.bin&#8221;,&#8221;.cfm&#8221;,&#8221;.dbx&#8221;,&#8221;.dcm&#8221;,&#8221;.dcr&#8221;,&#8221;.pict&#8221;,&#8221;.rgbe&#8221;,&#8221;.dwt&#8221;,&#8221;.f4v&#8221;,&#8221;.exr&#8221;,&#8221;.kwm&#8221;,&#8221;.max&#8221;,&#8221;.mda&#8221;,&#8221;.mde&#8221;,&#8221;.mdf&#8221;,&#8221;.mdw&#8221;,&#8221;.mht&#8221;,&#8221;.mpv&#8221;,&#8221;.msg&#8221;,&#8221;.myi&#8221;,&#8221;.nef&#8221;,&#8221;.odc&#8221;,&#8221;.geo&#8221;,&#8221;.swift&#8221;,&#8221;.odm&#8221;,&#8221;.odp&#8221;,&#8221;.oft&#8221;,&#8221;.orf&#8221;,&#8221;.pfx&#8221;,&#8221;.p12&#8243;,&#8221;.pl&#8221;,&#8221;.pls&#8221;,&#8221;.safe&#8221;,&#8221;.tab&#8221;,&#8221;.vbs&#8221;,&#8221;.xlk&#8221;,&#8221;.xlm&#8221;,&#8221;.xlt&#8221;,&#8221;.xltm&#8221;,&#8221;.svgz&#8221;,&#8221;.slk&#8221;,&#8221;.tar.gz&#8221;,&#8221;.dmg&#8221;,&#8221;.ps&#8221;,&#8221;.psb&#8221;,&#8221;.tif&#8221;,&#8221;.rss&#8221;,&#8221;.key&#8221;,&#8221;.vob&#8221;,&#8221;.epsp&#8221;,&#8221;.dc3&#8243;,&#8221;.iff&#8221;,&#8221;.onepkg&#8221;,&#8221;.onetoc2&#8243;,&#8221;.opt&#8221;,&#8221;.p7b&#8221;,&#8221;.pam&#8221;,&#8221;.r3d&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">Step 4- Create a Readme.txt file which gives you all steps to unencrypt all files</p>
+
+
+
+<p class="wp-block-paragraph">Step 5- If the person paid then the attacker will send the desencryption software</p>
+
+
+
+<p class="wp-block-paragraph">Step 6- Enjoy the money 🙂</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Venom rat</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/ovXdKgwW0Kg2bh8ig8XvxGur6c4TF3Acp2jSYynX5IzFND2eIxHZ1uQsc19W4B85S5ng9UZO2yErMtW0cMUoGxigXYAenEXLjgCZcGjnDU3H72yLS8xp1cjPDAmCb_UwxYpPmy-c1nuw6opSCZs" alt="" /></figure>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/4MitskMvQyWJDamh_dPBhk7urLQ0OVF06nhzv8emMtZPkIlzyZ1XfXZ4BI5em0_Zqv_vNaaP9C4GDBPYpNfI7_7vI5BNWiPYJsBZcbBDPz_aVme6hIQEHTJkxXVWvs1dSvT5aClIFZfT3MLafPo" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Venom RAT + HVNC: Remote Desktop, Online/Offline logger, Password Recovery, Clone profile, Download Execute 3 methods(Memory, Disk, URL)</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Redline&nbsp;</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/ZiE6fJ9c3Wrl-iNXqxw9i9S-5JcTYLzjD3F_Shga2YI0-r-3scYbZeW8-Jdk0dbysqeuaw1s3v8f6ltMUE5DbGEg1Q7rEktip2gfSUF_pL_KAyhE_kaT0oiyK2ahFuQQNrTafZy7waBcADRVKAQ" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Collects from browsers(Login and passwords, Cookies, Autocomplete fields, Credit cards), Collection of data from FTP clients, IM clients, Customizable grabber file according to the criteria: Path, Extension, Search in subfolders (can be configured for the desired cold wallets, steam, etc.), Create/Edit tasks:</p>
+
+
+
+<p class="wp-block-paragraph">a) Download &#8211; download a file via a direct link to the specified path</p>
+
+
+
+<p class="wp-block-paragraph">b) RunPE &#8211; inject a 32-bit file downloaded from a direct link into another file that you specify</p>
+
+
+
+<p class="wp-block-paragraph">c) DownloadAndEx &#8211; downloading a file via a direct link to the specified path with subsequent launch</p>
+
+
+
+<p class="wp-block-paragraph">d) OpenLink &#8211; open link in default browser</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Raccoon&nbsp;</strong></p>
+
+
+
+<p class="wp-block-paragraph">Collection of Steam files, Collecting Telegram Desktop, passwords, cookies and autofill, File grabber with very fine tuning and support for shortcuts, The loader supports .EXE / .DLL / .BAT files as well as running commands (CMD) and Powershell, Almost all existing cryptocurrency desktop wallets, Recursive collection of Core wallets (.dat), Panel in *.onion zone</p>
+
+
+
+<h1 class="wp-block-heading" id="h-the-story-of-steal-wallet">The story of steal wallet</h1>
+
+
+
+<p class="wp-block-paragraph">Cryptocurrencies are a popular target for hackers because crypto transactions are pseudonymous and typically irreversible. This makes it challenging to associate stolen crypto with the real-world identity of the hacker and essentially impossible to reverse nefarious transactions.</p>
+
+
+
+<p class="wp-block-paragraph">We have multiple scenario when wallet is compromised for example</p>
+
+
+
+<p class="wp-block-paragraph">90% malware</p>
+
+
+
+<p class="wp-block-paragraph">20% other</p>
+
+
+
+<h2 class="wp-block-heading" id="h-malware-and-stealer">Malware and Stealer</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>Campaign Based</strong></p>
+
+
+
+<p class="wp-block-paragraph">In this method for any service or hot exploitation(CVE-2021-40444) run campign for comromise users and drop malware.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Spreader</strong></p>
+
+
+
+<p class="wp-block-paragraph">Broadcast malware to users with website(download for free anything), document(docx, xlsx, …)</p>
+
+
+
+<p class="wp-block-paragraph"></p>
+
+
+
+<p class="wp-block-paragraph"><strong>Stealer Cloud Log</strong></p>
+
+
+
+<p class="wp-block-paragraph">Lot of malware have leakage in server side and in dark/deep web seller sell it.</p>
+
+
+
+<p class="wp-block-paragraph">For example <strong>Nocryi Logs </strong>sell redline stealer such as below</p>
+
+
+
+<p class="wp-block-paragraph"></p>
+
+
+
+<h2 class="wp-block-heading" id="h-phishing">Phishing</h2>
+
+
+
+<p class="wp-block-paragraph">run campaign for compromise users and drop malware.</p>
+
+
+
+<p class="wp-block-paragraph">For example run binance method for binance breached ids document and drop malware to victims</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/3d10uJ_KB2_7iDwp-ecL09BxGe3h23ZclIGrAp2wPUARBxzqzQLQnImyw0adwkXJQUWk_EjMEOxr6CDGUfPJ2Ky98F_7dDrdcmKGdrb50w4VL5CtOTMHfyatgXbTfy7xeoeQk3GNBxW1Og69bB8" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake Airdrop</strong></p>
+
+
+
+<p class="wp-block-paragraph">Scammers will use free airdrop events with posters or links to promote in the community. If the user scans the code, enters the website and approves to receive airdrop tokens. After approval, the scammers obtain permission to transfer away user assets easily.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake QR Code</strong></p>
+
+
+
+<p class="wp-block-paragraph">Fake QR code scam refers to that fraudsters use fake QR codes to let users perform operations such as approval. Usually, the user will enter the transfer interface or phishing pages after scanning the code. Actually, this transfer operation is an approval process. If the user clicks &#8220;Approve&#8221;, the fraudster will obtain permission to transfer the asset, which leads to the loss of the asset.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Phishing App</strong></p>
+
+
+
+<p class="wp-block-paragraph">The scammer will develop Apps that are highly similar to the official App. When the user creates or imports a wallet, the data will be recorded and synchronized to the scammer’s specific server. As a result, users have a great risk of being stolen by scammers.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Phishing Website</strong></p>
+
+
+
+<p class="wp-block-paragraph">&#8220;Phishing website&#8221; refers to a fake website used to deceive users. Its page is basically the same as the real website. Scammers use fake sites to deceive and steal users&#8217; private keys or mnemonics. In general, Phishing websites have only one or a few pages, which are slightly different from real websites. They usually spread fake giveaways/airdrops, or impersonate official supports, or other means on communities to attract users to use their fake websites.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake Token</strong></p>
+
+
+
+<p class="wp-block-paragraph">Scammers counterfeit tokens by using similar token names and symbols, and then they will exchange for real tokens that are well-known tokens. The main victims are mostly new users since users who get familiar with the blockchain can judge a token by checking the contract address of the token, such as the common USDT, ETH, BTC, etc.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fake Customer Service</strong></p>
+
+
+
+<p class="wp-block-paragraph">Most people will contact customer service for help when there are some problems that need to be solved. At this time, scammers get the chance to impersonate official supports. Usually, they have the same name and logo (not ture) with the official supports and then hide in the various communities/groups. Once users send their issues on the group, these scammers will send messages to users privately attached unknown links/QR codes to fraud users&#8217; private key or mnemonic.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>DApp Approval</strong></p>
+
+
+
+<p class="wp-block-paragraph">When it comes to currency exchange in the DEX platform, the approval step will be used. Only after the first operation of “Approve“ can the swap be performed, and this is only one of the application scenarios.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Since the &#8220;Approve&#8221; operation essentially grants the exercise authority of part of your token to another address or smart contract address, scammers will use codes or links to maliciously let users perform &#8220;Approve&#8221; operations. For example, users may receive airdrop tokens attached memo and link, noted that the airdropped tokens can be exchanged for other tokens. If the user opens the link and executes the exchange, they will fall into the trap that maliciously approves Dapp. As a result, the user&#8217;s assets will be transferred by the Dapp easily.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-have-i-been-pwned">Have I Been Pwned</h1>
+
+
+
+<p class="wp-block-paragraph">find out if your account has been hacked may be recently your email or exchange account or wallet compromised.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-email">Email</h2>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/L6A7jjvLCmRSc2Hyb_8nlpgoVr1228KZ5TviDHCOa3p9ScToSEKwSbzxaZw4gPq7jxK_Ov_rBXlw5xwH-snwmFmOyVrvx0PMDOaRHICqp9_cXQNw8cSTDITAwh0tRE4rMo6ylQuRCjettTRl92I" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Please check your email in intelx like as this</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://intelx.io/?s=your@mail.tld
+</div></figure>
+
+
+
+<h2 class="wp-block-heading" id="h-wallet-address">Wallet Address</h2>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/nw4SSAVYUKL5nYhhRMXz7kML6FG_vnuaQFF8pQkmEokI6Kzqd-5c56_sLxvw2vPZYzkUjV2mo3ZvYPVuNyOULr-i39bV8pNxG1m0LDzualor3wbRZpkM_4CdewaunLI8ksLtgjm4OLC82fwhqSk" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Please search wallet address in intelx(BTC, ETH)</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://intelx.io/?s=3EKWP3ZviLXudcoAfzammYQKwaz2zJKwQW
+</div></figure>
+
+
+
+<h2 class="wp-block-heading" id="h-important-files">Important Files</h2>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/esm51TVKkfpbbGo57b1MpdxmsQv7olhHeJhnMJijsE41a5tVNPxcDWZoonT7x0qa1csEr5rOCFhejpbelu-q-zuUYTDMKLQytWhOM7cCcLN59RGvER4OwqLYwr_Dy0km7VGiw1P47w4UBwnSLv6SyU8" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Please calculate wallet.dat file checksum and search in intelx</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://intelx.io/?s=3B1A1E454F506CCB965738965D0A4A1C
+</div></figure>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1561,27 +2058,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1708,11 +2205,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1735,59 +2232,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

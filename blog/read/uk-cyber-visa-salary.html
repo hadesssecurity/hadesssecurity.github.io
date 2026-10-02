@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/uk-cyber-visa-salary#article","headline":"UK Cyber Jobs: Visa Sponsorship and Salary Guide — HADESS Magazine","description":"UK cybersecurity jobs with visa sponsorship. Salary ranges, sponsor employers, and how to navigate the Skilled Worker visa.","url":"https://hadesssecurity.github.io/blog/read/uk-cyber-visa-salary","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/uk-cyber-visa-salary"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-uk-cyber-visa-salary.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/uk-cyber-visa-salary#article","headline":"UK Cyber Jobs: Visa Sponsorship and Salary Guide — HADESS Magazine","description":"UK cybersecurity jobs with visa sponsorship. Salary ranges, sponsor employers, and how to navigate the Skilled Worker visa.","url":"https://hadesssecurity.github.io/blog/read/uk-cyber-visa-salary","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/uk-cyber-visa-salary"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-uk-cyber-visa-salary.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,265 +1550,192 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-uk-cyber-visa-salary.png">
       <blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-salary-guide">Cybersecurity Salary Guide</a></strong> — This article is one deep-dive in our complete salary series.</p>
+<p><strong>Part of the <a href="/blog/read/cybersecurity-salary-guide">Cybersecurity Salary Guide</a></strong> — This article is one deep-dive in our complete salary and compensation series.</p>
 </blockquote>
-<h1>Cybersecurity Salary UK: Complete Guide for 2026</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
+<h1>UK Cyber Jobs: Visa Sponsorship and Salary Guide</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 9 min read</em></p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#uk-cybersecurity-market-overview">UK Cybersecurity Market Overview</a></li>
-<li><a href="#salary-by-role">Salary by Role</a></li>
-<li><a href="#london-vs-rest-of-uk">London vs Rest of UK</a></li>
-<li><a href="#salary-by-industry-sector">Salary by Industry Sector</a></li>
-<li><a href="#contract-vs-permanent-rates">Contract vs Permanent Rates</a></li>
-<li><a href="#certifications-and-uk-salary-impact">Certifications and UK Salary Impact</a></li>
-<li><a href="#benefits-and-total-compensation">Benefits and Total Compensation</a></li>
-<li><a href="#uk-salary-vs-us-and-europe">UK Salary vs US and Europe</a></li>
-<li><a href="#how-to-maximize-your-uk-cyber-salary">How to Maximize Your UK Cyber Salary</a></li>
-<li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
-<li><a href="#take-the-next-step">Take the Next Step</a></li>
-<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+<li><a href="#the-uk-cybersecurity-job-market-in-2026">The UK Cybersecurity Job Market in 2026</a></li>
+<li><a href="#visa-sponsorship-for-cybersecurity-roles">Visa Sponsorship for Cybersecurity Roles</a></li>
+<li><a href="#salary-ranges-by-role-in-the-uk">Salary Ranges by Role in the UK</a></li>
+<li><a href="#employers-that-sponsor-cybersecurity-roles">Employers That Sponsor Cybersecurity Roles</a></li>
+<li><a href="#the-skilled-worker-visa-process">The Skilled Worker Visa Process</a></li>
+<li><a href="#uk-vs-us-salary-comparison">UK vs US Salary Comparison</a></li>
+<li><a href="#how-to-find-sponsored-cybersecurity-jobs">How to Find Sponsored Cybersecurity Jobs</a></li>
+<li><a href="#london-vs-outside-london">London vs Outside London</a></li>
 </ul>
-<h2>UK Cybersecurity Market Overview</h2>
-<p>The cybersecurity salary UK market has strengthened steadily since 2023. The combination of NIS2-adjacent regulations, UK GDPR enforcement by the <a href="https://ico.org.uk/">ICO</a>, and a persistent skills shortage has pushed salaries upward across every role and experience level.</p>
-<p>The UK government&#8217;s Cyber Security Breaches Survey consistently shows that the majority of UK businesses consider cybersecurity a high priority, yet struggle to find qualified staff. This supply-demand imbalance directly benefits practitioners, especially those with hands-on operational experience and relevant certifications.</p>
-<p>In 2026, the UK cybersecurity workforce gap stands at approximately 11,200 unfilled positions, according to the <a href="https://www.gov.uk/government/collections/cyber-security-breaches-survey">DCMS Cyber Security Skills in the UK Labour Market</a> reports. Financial services, government, healthcare (NHS), and critical national infrastructure are the largest hiring sectors.</p>
-<p>This guide covers every major cybersecurity role in the UK market with current salary data segmented by location, experience, and industry.</p>
-<h2>Salary by Role</h2>
-<p>Here is what each cybersecurity role pays in the UK in 2026. Figures represent base salary before benefits, bonuses, and pension contributions.</p>
-<p><strong>Security Analyst / SOC Analyst</strong></p>
+<h2>The UK Cybersecurity Job Market in 2026</h2>
+<p>UK cybersecurity jobs visa sponsorship is a growing search because the UK has a severe security talent shortage. The UK government&#8217;s own Cyber Security Skills in the UK Labour Market report estimates tens of thousands of unfilled positions. This shortage has pushed many employers to sponsor international candidates, especially for mid-level and senior roles.</p>
+<p>The UK places cybersecurity on the <a href="https://www.gov.uk/government/publications/skilled-worker-visa-shortage-occupations">Shortage Occupation List</a>, which makes visa sponsorship easier and cheaper for employers. This is a significant advantage for international candidates — the reduced visa fees and relaxed salary thresholds mean more companies are willing to sponsor.</p>
+<p>Key UK markets for cybersecurity: London (largest market by volume), Manchester, Edinburgh, Bristol, Leeds, and Birmingham. London dominates with roughly 60% of all UK security job postings.</p>
+<h2>Visa Sponsorship for Cybersecurity Roles</h2>
+<p>The primary route for international cybersecurity professionals entering the UK is the <strong>Skilled Worker Visa</strong>. Here is what you need to know:</p>
+<p><strong>Eligibility.</strong> You need a job offer from a UK employer with a valid sponsor license, the job must be at RQF Level 6 (graduate level) or above, and you must meet the salary threshold. Most cybersecurity roles meet the skills requirement.</p>
+<p><strong>Salary threshold.</strong> The general threshold is GBP 38,700 per year (as of 2025). However, cybersecurity roles on the Shortage Occupation List may qualify for reduced thresholds — typically 80% of the going rate for the specific occupation code.</p>
+<p><strong>Occupation codes for cybersecurity:</strong></p>
 <ul>
-<li>Junior (0-2 years): 25,000 &#8211; 38,000 GBP</li>
-<li>Mid-level (2-5 years): 38,000 &#8211; 55,000 GBP</li>
-<li>Senior (5+ years): 55,000 &#8211; 75,000 GBP</li>
+<li>SOC Code 2135 — IT Security Professionals (the most common code used)</li>
+<li>SOC Code 2134 — Information Technology Professionals (broader IT, sometimes used)</li>
+<li>SOC Code 2139 — Information Technology Professionals (not elsewhere classified)</li>
 </ul>
-<p>SOC analysts are the largest segment of the UK cybersecurity workforce. Financial services firms and managed security service providers (MSSPs) are the top employers. For detailed SOC salary breakdowns including tier-by-tier data, see the <a href="/blog/read/soc-analyst-salary">SOC analyst salary guide</a>.</p>
-<p><strong>Penetration Tester</strong></p>
-<ul>
-<li>Junior: 28,000 &#8211; 42,000 GBP</li>
-<li>Mid-level: 42,000 &#8211; 65,000 GBP</li>
-<li>Senior: 65,000 &#8211; 95,000 GBP</li>
-</ul>
-<p>UK <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">pen testing</a> pay has risen sharply as CREST-certified testers remain in short supply. Consulting firms like NCC Group, WithSecure, and Pentest People anchor the market. See the <a href="/blog/read/pen-tester-salary">penetration tester salary breakdown</a> for specialization premiums.</p>
-<p><strong>Security Engineer</strong></p>
-<ul>
-<li>Junior: 35,000 &#8211; 48,000 GBP</li>
-<li>Mid-level: 48,000 &#8211; 70,000 GBP</li>
-<li>Senior: 70,000 &#8211; 95,000 GBP</li>
-</ul>
-<p>Security engineers who work with cloud platforms (AWS, Azure) and <a href="/blog/read/devsecops-engineer" title="DevSecOps Engineer: Build Security into Every Pipeline">DevSecOps</a> tooling earn at the top end. Infrastructure-as-code and <a href="/blog/read/docker-security-hardening-containers" title="Docker Security: Hardening Containers from Build to Runtime">container security</a> skills are particularly valued.</p>
-<p><strong>Security Architect</strong></p>
-<ul>
-<li>Mid-level: 65,000 &#8211; 85,000 GBP</li>
-<li>Senior: 85,000 &#8211; 120,000 GBP</li>
-</ul>
-<p>Architecture roles require a minimum of 5-7 years experience. SABSA and TOGAF certifications are common requirements in UK job postings.</p>
-<p><strong>GRC / Compliance Specialist</strong></p>
-<ul>
-<li>Junior: 30,000 &#8211; 42,000 GBP</li>
-<li>Mid-level: 42,000 &#8211; 60,000 GBP</li>
-<li>Senior / Manager: 60,000 &#8211; 90,000 GBP</li>
-</ul>
-<p>UK GDPR, PCI DSS, ISO 27001, and sector-specific regulations (FCA, NHS DSPT) drive demand. GRC roles pay less than technical roles at the junior level but the gap narrows at senior levels.</p>
-<p><strong>Incident Responder / DFIR Specialist</strong></p>
-<ul>
-<li>Mid-level: 50,000 &#8211; 70,000 GBP</li>
-<li>Senior: 70,000 &#8211; 100,000 GBP</li>
-</ul>
-<p>DFIR specialists are scarce in the UK market. Consultancies and law enforcement agencies (NCA, NCSC) compete for the same talent pool.</p>
-<p><strong>CISO</strong></p>
-<ul>
-<li>Mid-market: 100,000 &#8211; 170,000 GBP</li>
-<li>Enterprise: 170,000 &#8211; 280,000 GBP</li>
-<li>FTSE 100: 250,000 &#8211; 400,000+ GBP</li>
-</ul>
-<p>Full <a href="/blog/read/ciso-salary" title="CISO Salary: What Does a CISO Earn?">CISO salary</a> analysis available in the <a href="/blog/read/ciso-salary">CISO salary guide</a>.</p>
-<h2>London vs Rest of UK</h2>
-<p>London dominates the UK cybersecurity market. About 40% of all UK cybersecurity jobs are based in London or the surrounding commuter belt. The London premium varies by role but typically adds 15-30% to salaries compared to equivalent positions outside the capital.</p>
-<p><strong>London premiums by role:</strong></p>
+<p><strong>Duration.</strong> Initially granted for up to 5 years. After 5 years of continuous residence, you can apply for Indefinite Leave to Remain (settlement).</p>
+<p><strong>Dependents.</strong> Your partner and children can join you on dependent visas. Partners can work in any occupation without restrictions.</p>
+<h2>Salary Ranges by Role in the UK</h2>
+<p>UK salaries are quoted annually in GBP. Here are current ranges:</p>
 <table>
 <thead>
 <tr>
 <th>Role</th>
-<th>London</th>
-<th>Outside London</th>
-<th>Premium</th>
+<th>Junior (0-2 years)</th>
+<th>Mid (3-5 years)</th>
+<th>Senior (5+ years)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="/blog/read/soc-analyst" title="SOC Analyst: Your Front Line in Cyber Defense">SOC Analyst</a> (mid)</td>
-<td>45,000 &#8211; 60,000</td>
-<td>35,000 &#8211; 48,000</td>
-<td>~25%</td>
-</tr>
-<tr>
-<td>Pen Tester (mid)</td>
-<td>50,000 &#8211; 72,000</td>
-<td>40,000 &#8211; 58,000</td>
-<td>~22%</td>
-</tr>
-<tr>
-<td>Security Engineer (mid)</td>
-<td>55,000 &#8211; 78,000</td>
-<td>45,000 &#8211; 62,000</td>
-<td>~22%</td>
-</tr>
-<tr>
-<td>CISO (mid-market)</td>
-<td>130,000 &#8211; 200,000</td>
-<td>100,000 &#8211; 150,000</td>
-<td>~30%</td>
-</tr>
-</tbody>
-</table>
-<p>However, London&#8217;s cost of living partially or fully offsets the premium. Rent alone in zones 1-3 can consume an extra 10,000 &#8211; 18,000 GBP annually compared to cities like Manchester, Bristol, or Edinburgh.</p>
-<p><strong>Growing tech hubs outside London:</strong></p>
-<ul>
-<li><strong>Manchester</strong> — Strong FinTech and MSSP presence. Growing rapidly.</li>
-<li><strong>Edinburgh</strong> — Financial services hub with established cybersecurity practices.</li>
-<li><strong>Bristol</strong> — Defense and aerospace sector. BAE Systems, Airbus, GCHQ presence nearby.</li>
-<li><strong>Leeds</strong> — Financial services and public sector. Lower cost of living.</li>
-<li><strong>Glasgow</strong> — Government and defense. NCSC has invested in Scottish cyber initiatives.</li>
-<li><strong>Belfast</strong> — Emerging tech hub with competitive salaries relative to cost of living.</li>
-</ul>
-<p>Remote work has flattened some of the geographic premium. Many London-based employers now offer hybrid or fully remote positions at London salary rates, which benefits candidates outside the capital. However, shift-based SOC roles and positions requiring security clearance often mandate on-site presence.</p>
-<h2>Salary by Industry Sector</h2>
-<p>UK cybersecurity salaries vary significantly by sector.</p>
-<p><strong>Financial Services (banks, insurance, asset management):</strong> 15-25% above average. FCA regulations, PCI DSS requirements, and the constant threat of financial cybercrime drive spending. The largest UK banks maintain SOCs of 50-200+ people each.</p>
-<p><strong>Government and Defense:</strong> Salaries are 10-15% below the private sector, but benefits (pension, job security, clearance pathway) partially compensate. GCHQ, NCSC, MoD, and intelligence agencies pay civil service rates with additional allowances for specialist skills.</p>
-<p><strong>Technology Companies:</strong> Pay at or above average, especially for roles at cloud providers, SaaS companies, and cybersecurity vendors. Equity compensation can add 10-30% for pre-IPO companies.</p>
-<p><strong>Professional Services / Consulting:</strong> Pay at the top end for experienced practitioners, with billable hour expectations to match. Big Four firms (Deloitte, PwC, EY, KPMG) and specialist consultancies (NCC Group, Mandiant) drive this segment.</p>
-<p><strong>Healthcare (NHS and private):</strong> 10-20% below average. NHS Agenda for Change banding limits cybersecurity salaries, though NHS Digital and specialist trusts have found ways to offer market-competitive rates for hard-to-fill positions.</p>
-<p><strong>Critical National Infrastructure (energy, telecoms, transport):</strong> Pays at or above average. NIS regulations require operators of essential services to maintain mature security capabilities, which drives hiring and pay.</p>
-<h2>Contract vs Permanent Rates</h2>
-<p>The UK contracting market for cybersecurity professionals is active, particularly inside IR35 reform boundaries.</p>
-<p><strong>Day rates for cybersecurity contractors:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th>Inside IR35</th>
-<th>Outside IR35</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SOC Analyst (mid)</td>
-<td>350 &#8211; 500 GBP/day</td>
-<td>400 &#8211; 550 GBP/day</td>
-</tr>
-<tr>
-<td>Pen Tester (mid)</td>
-<td>450 &#8211; 650 GBP/day</td>
-<td>500 &#8211; 750 GBP/day</td>
-</tr>
-<tr>
-<td>Security Engineer (senior)</td>
-<td>500 &#8211; 700 GBP/day</td>
-<td>550 &#8211; 800 GBP/day</td>
-</tr>
-<tr>
-<td>Security Architect</td>
-<td>600 &#8211; 850 GBP/day</td>
-<td>650 &#8211; 950 GBP/day</td>
-</tr>
-<tr>
-<td>CISO (interim)</td>
-<td>800 &#8211; 1,200 GBP/day</td>
-<td>900 &#8211; 1,500 GBP/day</td>
-</tr>
-</tbody>
-</table>
-<p>IR35 status significantly affects take-home pay. Many UK cybersecurity roles have been classified inside IR35 since the April 2021 reforms, especially in the public sector and at large private-sector organizations. Outside-IR35 roles are more common at smaller companies and for genuine project-based work.</p>
-<p>Contractors earn more per day than permanent employees, but forgo benefits including pension contributions (typically 5-10% employer match), private health insurance, training budgets, and paid leave. Over a full year with typical utilization (220-230 working days), a mid-level security engineer contractor inside IR35 would earn 77,000 &#8211; 154,000 GBP gross, compared to a permanent salary of 48,000 &#8211; 70,000 GBP plus benefits.</p>
-<h2>Certifications and UK Salary Impact</h2>
-<p>Certifications carry different weight in the UK market compared to the US.</p>
-<p><strong>CISSP:</strong> The most requested certification in UK cybersecurity job postings. Holding CISSP adds an estimated 8,000 &#8211; 15,000 GBP to your salary. It is almost mandatory for senior and management-level positions.</p>
-<p><strong>CREST CRT / CCT:</strong> Required for penetration testers working at CREST-accredited firms. Most UK pen testing consulting roles require at least the CRT. Holding CCT (the advanced credential) puts you in the top tier of UK pen testers.</p>
-<p><strong>CompTIA Security+ / CySA+:</strong> Good entry credentials for junior roles. The salary premium is modest (3,000 &#8211; 5,000 GBP) but they help you get through recruiter filters.</p>
-<p><strong>OSCP:</strong> Highly valued in UK pen testing roles, especially at technical consultancies. Adds 5,000 &#8211; 12,000 GBP to pen tester salaries.</p>
-<p><strong>SC-Cleared Certifications:</strong> Government and defense roles require Security Check (SC) or Developed Vetting (DV) clearance. These are not traditional certifications but holding active clearance adds 5,000 &#8211; 15,000 GBP to your market value. Plan your career using our <a href="https://career.hadess.io/certificate-roadmap">certificate roadmap</a>.</p>
-<h2>Benefits and Total Compensation</h2>
-<p>UK cybersecurity compensation includes several components beyond base salary.</p>
-<ul>
-<li><strong>Pension contributions:</strong> Employer contributions of 5-10% are standard. Some financial services firms contribute up to 15%.</li>
-<li><strong>Private health insurance:</strong> Offered by most mid-to-large employers. Family coverage adds 2,000 &#8211; 5,000 GBP in value.</li>
-<li><strong>Training budget:</strong> 1,000 &#8211; 5,000 GBP annually for certifications and conferences. Some employers cover SANS training (3,000 &#8211; 7,000 GBP per course).</li>
-<li><strong>Annual leave:</strong> Standard 25 days plus bank holidays. Some employers offer 28-30 days.</li>
-<li><strong>Bonus:</strong> 5-15% for technical roles, 15-30% for management and leadership.</li>
-<li><strong>Cycle to Work scheme, tech salary sacrifice:</strong> Common but modest in value.</li>
-</ul>
-<p>Total compensation for a UK cybersecurity professional is typically 20-35% above base salary when all benefits are factored in.</p>
-<h2>UK Salary vs US and Europe</h2>
-<p>How does UK cybersecurity pay compare internationally?</p>
-<table>
-<thead>
-<tr>
-<th>Role (Mid-Level)</th>
-<th>UK</th>
-<th>US</th>
-<th>Germany</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SOC Analyst</td>
-<td>42,000 GBP</td>
-<td>$85,000</td>
-<td>55,000 EUR</td>
-</tr>
-<tr>
-<td>Pen Tester</td>
-<td>55,000 GBP</td>
-<td>$110,000</td>
-<td>65,000 EUR</td>
+<td><a href="/blog/read/soc-analyst" title="SOC Analyst: Your Front Line in Cyber Defense">SOC Analyst</a></td>
+<td>GBP 30,000-42,000</td>
+<td>GBP 42,000-55,000</td>
+<td>GBP 55,000-70,000</td>
 </tr>
 <tr>
 <td>Security Engineer</td>
-<td>58,000 GBP</td>
-<td>$120,000</td>
-<td>65,000 EUR</td>
+<td>GBP 40,000-55,000</td>
+<td>GBP 55,000-75,000</td>
+<td>GBP 75,000-100,000</td>
+</tr>
+<tr>
+<td>Penetration Tester</td>
+<td>GBP 35,000-50,000</td>
+<td>GBP 50,000-70,000</td>
+<td>GBP 70,000-95,000</td>
+</tr>
+<tr>
+<td><a href="/blog/read/cloud-security-skills" title="Cloud Security Skills: AWS, Azure, GCP">Cloud Security</a>:/cloud-security-engineer/&#8221; title=&#8221;Cloud Security Engineer: Role, Skills, Path&#8221;>Cloud Security Engineer</a></td>
+<td>GBP 45,000-60,000</td>
+<td>GBP 60,000-80,000</td>
+<td>GBP 80,000-110,000</td>
+</tr>
+<tr>
+<td><a href="/blog/read/grc-analyst-career" title="GRC Analyst Career Guide">GRC Analyst</a></td>
+<td>GBP 35,000-45,000</td>
+<td>GBP 45,000-60,000</td>
+<td>GBP 60,000-80,000</td>
+</tr>
+<tr>
+<td>Security Architect</td>
+<td>N/A</td>
+<td>GBP 70,000-90,000</td>
+<td>GBP 90,000-130,000</td>
 </tr>
 <tr>
 <td>CISO</td>
-<td>160,000 GBP</td>
-<td>$300,000</td>
-<td>180,000 EUR</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>GBP 120,000-200,000+</td>
 </tr>
 </tbody>
 </table>
-<p>UK salaries are generally 30-40% lower than US equivalents in nominal terms. However, the gap narrows when you account for NHS access (no health insurance premiums), employer pension contributions, longer annual leave, and parental leave policies. The effective difference is closer to 15-25%.</p>
-<p>European salaries are broadly comparable to UK levels, with Switzerland being the notable exception at significantly higher pay across all roles.</p>
-<h2>How to Maximize Your UK Cyber Salary</h2>
-<p><strong>Target financial services.</strong> The FS sector pays the highest cybersecurity salaries in the UK, and London-based banks have the deepest budgets. Even if you do not want to stay in FS long-term, a few years at a bank significantly boosts your market value.</p>
-<p><strong>Get CREST certified if you are a pen tester.</strong> The UK pen testing market runs on CREST accreditation. Without it, your options are limited. With it, you can command premium rates.</p>
-<p><strong>Negotiate at the offer stage.</strong> UK employers expect negotiation. The first offer is rarely the final offer. Ask for data on internal salary bands and benchmark against market rates. Use our <a href="https://career.hadess.io/salary-calculator">salary calculator</a> to prepare.</p>
-<p><strong>Consider contracting.</strong> If you have 3+ years of experience and are comfortable with less job security, contracting can increase your income by 30-60% compared to permanent employment. The math works especially well outside London where cost of living is lower.</p>
-<p><strong>Develop cloud security skills.</strong> AWS and <a href="/blog/read/azure-security" title="Azure Security: Defender, Azure AD, and Cloud-Native Controls">Azure security</a> skills are the most in-demand specializations in the UK market right now. Engineers who can secure cloud-native architectures are consistently offered at the top of salary bands. Build these through our <a href="https://career.hadess.io/career-skills">skills development</a> resources.</p>
-<p><strong>Explore visa sponsorship employers.</strong> International candidates should review the <a href="/blog/read/uk-cyber-visa-salary">UK visa sponsorship and salary guide</a> — many UK employers actively sponsor skilled cybersecurity professionals.</p>
+<p>London salaries are typically 15-25% higher than the rest of the UK. Financial services companies pay 10-20% above market for equivalent roles. Calculate your specific rate with the HADESS salary calculator.</p>
+<p><strong>Important tax note:</strong> UK income tax is progressive — 20% up to GBP 50,270, then 40% up to GBP 125,140, then 45% above that. National Insurance adds roughly 12% on earnings between GBP 12,570 and GBP 50,270. Use the tax calculator to estimate your take-home pay.</p>
+<h2>Employers That Sponsor Cybersecurity Roles</h2>
+<p><strong>Financial services.</strong> Banks and financial institutions are the largest sponsors of security professionals in the UK. Major sponsors include Barclays, HSBC, NatWest Group, JP Morgan (London office), Goldman Sachs, and Lloyds Banking Group. Financial services firms often have dedicated security teams of 50-200+ people.</p>
+<p><strong>Technology companies.</strong> Amazon (AWS), Microsoft, Google (DeepMind in London), Meta, Apple, and Arm all have UK security teams that sponsor visas.</p>
+<p><strong>Consulting firms.</strong> Deloitte, PwC, EY, KPMG (the Big Four) hire cybersecurity consultants and typically sponsor visas. NCC Group, FTI Consulting, and Mandiant also hire internationally.</p>
+<p><strong>Government and defense.</strong> GCHQ, NCSC (National Cyber Security Centre), and BAE Systems hire security professionals but typically require UK/Commonwealth nationality or specific security clearances.</p>
+<p><strong>Specialist security firms.</strong> Rapid7, CrowdStrike, Palo Alto Networks, and other security vendors with UK offices sponsor experienced candidates.</p>
+<p>Use the HADESS UK sponsor finder to search the complete list of licensed sponsors and their specific cybersecurity openings.</p>
+<h2>The Skilled Worker Visa Process</h2>
+<p><strong>Step 1: Secure a job offer.</strong> The employer must have a valid sponsor license. Confirm sponsorship willingness before investing time in the interview process.</p>
+<p><strong>Step 2: Certificate of Sponsorship (CoS).</strong> The employer issues a CoS assigning your role to a specific SOC code and salary. This is the formal sponsorship document.</p>
+<p><strong>Step 3: Visa application.</strong> Apply online, pay the fee (GBP 719-1,420 depending on duration), pay the Immigration Health Surcharge (GBP 1,035/year), provide biometrics, and submit supporting documents (passport, English language proof, financial evidence).</p>
+<p><strong>Step 4: Processing.</strong> Standard processing takes 3-8 weeks from outside the UK. Priority processing (additional fee) reduces this to 5 working days.</p>
+<p><strong>Step 5: Travel and start work.</strong> You can enter the UK up to 14 days before your job start date. Report to your employer and begin work.</p>
+<p><strong>Total cost to the employee:</strong></p>
+<ul>
+<li>Visa fee: GBP 719-1,420</li>
+<li>Immigration Health Surcharge: GBP 1,035/year (GBP 5,175 for 5 years)</li>
+<li>English language test: GBP 150-200 (if required)</li>
+<li>Some employers reimburse these costs as part of the relocation package — always negotiate this.</li>
+</ul>
+<h2>UK vs US Salary Comparison</h2>
+<p>Raw numbers are lower in the UK, but cost-of-living adjustments narrow the gap more than most people expect:</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>UK</th>
+<th>US</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Average security engineer salary</td>
+<td>GBP 65,000 (~$82,000)</td>
+<td>$120,000</td>
+</tr>
+<tr>
+<td>Healthcare cost</td>
+<td>Included (NHS)</td>
+<td>$6,000-$15,000/year employee share</td>
+</tr>
+<tr>
+<td>Pension (employer contribution)</td>
+<td>3-8% mandatory</td>
+<td>Varies (0-6% match typical)</td>
+</tr>
+<tr>
+<td>Annual leave (statutory minimum)</td>
+<td>28 days</td>
+<td>10-15 days typical</td>
+</tr>
+<tr>
+<td>Income tax + NI (on GBP 65,000)</td>
+<td>~30% effective</td>
+<td>~25% effective (varies by state)</td>
+</tr>
+</tbody>
+</table>
+<p>When you add NHS healthcare (no premiums, no copays), mandatory pension contributions, and significantly more leave days, the real compensation gap is smaller than the base salary numbers suggest.</p>
+<p>Financial services roles in London are the exception — they often approach or match US salary levels, especially at VP and Director levels, while including UK benefits.</p>
+<h2>How to Find Sponsored Cybersecurity Jobs</h2>
+<p><strong>Filter for sponsorship explicitly.</strong> On LinkedIn, Indeed, and Glassdoor, search for &#8220;visa sponsorship&#8221; alongside &#8220;cybersecurity&#8221; or &#8220;information security.&#8221; Many job postings do not mention sponsorship in the listing even when the company sponsors, so apply anyway if the company has a sponsor license.</p>
+<p><strong>Check the sponsor register.</strong> The UK government publishes a <a href="https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers">register of licensed sponsors</a>. Search this register before applying to verify the company can legally sponsor you.</p>
+<p><strong>Use the HADESS tools.</strong> The UK sponsor finder cross-references the sponsor register with active cybersecurity job postings, saving you hours of manual research. The salary calculator shows UK-specific ranges.</p>
+<p><strong>Target large employers first.</strong> Companies with 500+ employees are more likely to have established visa sponsorship processes. Smaller companies may be willing but unfamiliar with the process, which slows things down.</p>
+<p><strong>Build UK-relevant credentials.</strong> UK employers value <a href="/blog/read/cissp-guide" title="CISSP Certification: Complete Requirements Guide">CISSP</a>, CISM, <a href="/blog/read/comptia-security-plus" title="CompTIA Security+ Study Guide 2026">CompTIA Security+</a>, and OSCP. Cloud certifications (AWS, Azure) are particularly valuable for UK cloud security roles. UK-specific certifications (CHECK, CREST) are valued for <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">penetration testing</a> but not typically required for initial sponsorship.</p>
+<p><strong>Engage UK-based recruiters.</strong> Specialist security recruiters like Client Server, Hays Technology, and Reed Technology place international candidates regularly. They know which companies sponsor and can advocate on your behalf.</p>
+<h2>London vs Outside London</h2>
+<p><strong>London.</strong> Highest salaries, most job volume, most sponsor-friendly employers. Also highest cost of living — average rent for a 1-bedroom flat in Zone 2 is GBP 1,500-2,000/month. The London salary premium (15-25% higher) roughly offsets the higher living costs.</p>
+<p><strong>Manchester and Edinburgh.</strong> Growing cybersecurity hubs with lower cost of living. Several financial services firms have security teams in Manchester. The Scottish tech scene, anchored by Edinburgh, offers good security opportunities with significantly lower rent.</p>
+<p><strong>Bristol.</strong> Aerospace and defense companies (BAE Systems, Airbus) have security teams here. Growing tech scene with reasonable cost of living.</p>
+<p><strong>Remote-first roles.</strong> Many UK security employers now offer remote or hybrid arrangements. A London-level salary with a Manchester or Bristol cost of living is the optimal outcome — actively negotiate for this.</p>
+<p>For career planning and UK-specific job search strategy, the HADESS coaching feature provides 1-on-1 sessions with practitioners who have navigated the UK cybersecurity market.</p>
 <p><strong>See the full salary guide:</strong> <a href="/blog/read/cybersecurity-salary-guide" title="Cybersecurity Salary Guide 2026">Cybersecurity Salary Guide 2026</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/uk-cyber-visa-salary">UK Cyber Jobs: Visa Sponsorship and Salary Guide</a></li>
+<li><a href="/blog/read/cybersecurity-salary-uk">Cybersecurity Salary UK: Complete Guide</a></li>
 <li><a href="/blog/read/soc-analyst-salary">SOC Analyst Salary: US, UK, Europe Breakdown</a></li>
 <li><a href="/blog/read/entry-level-cyber-salary">Entry Level Cybersecurity Salary: What to Expect</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Benchmark your UK salary</strong> with our <a href="https://career.hadess.io/salary-calculator">Salary Calculator</a> to compare your pay against the latest market data for your role, experience, and region.</p>
-<p><strong>Looking for UK employers that sponsor visas?</strong> Use our <a href="https://career.hadess.io/uk-sponsor-finder">UK Sponsor Finder</a> to identify organizations hiring cybersecurity professionals with Tier 2 visa sponsorship.</p>
+<p><strong>Find sponsoring employers.</strong> The HADESS UK sponsor finder shows companies with active sponsor licenses and cybersecurity openings.</p>
+<p><strong>Calculate your UK salary.</strong> Use the salary calculator and tax calculator to understand your take-home pay for any UK role.</p>
+<p><strong>Get started free</strong> — Create your HADESS account and access UK-specific career tools and job search resources.</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What is the average cybersecurity salary in the UK?</h3>
-<p>The average cybersecurity salary in the UK in 2026 is approximately 52,000 &#8211; 58,000 GBP across all roles and experience levels. This figure includes everything from entry-level analysts to senior architects. Mid-level practitioners with 3-5 years experience typically earn 45,000 &#8211; 70,000 GBP depending on role, location, and sector.</p>
-<h3>Is London worth it for cybersecurity salaries?</h3>
-<p>It depends on your personal situation. London offers 15-30% higher salaries and the widest range of opportunities, but housing costs can offset the premium. If you can secure a London-rate remote position while living outside the capital, you get the best of both worlds. Many employers now offer this arrangement.</p>
-<h3>Are cybersecurity salaries in the UK keeping up with inflation?</h3>
-<p>Yes, cybersecurity salaries have grown faster than UK inflation since 2022. Annual salary increases of 5-8% are common for practitioners who change roles or negotiate effectively. The skills shortage ensures that employers must offer competitive pay to attract and retain talent.</p>
-<h3>Do UK cybersecurity jobs require security clearance?</h3>
-<p>Only for government, defense, and certain critical national infrastructure roles. About 20-25% of UK cybersecurity positions require SC or DV clearance. The clearance process takes 2-<a href="/blog/read/cyber-job-6-months" title="How to Get a Cybersecurity Job in 6 Months">6 months</a> and requires UK residency history. Private sector roles rarely require clearance unless they involve government contract work.</p>
-<h3>Is it better to be a contractor or permanent employee in UK cybersecurity?</h3>
-<p>Contractors earn more per day but lose benefits. At the mid-level, a contractor working 230 days per year inside IR35 earns roughly 25-40% more gross than the equivalent permanent salary. However, after accounting for lost pension contributions, holiday pay, sick leave, and training budget, the real premium is closer to 15-25%. Contracting works best for experienced professionals who value flexibility and have enough financial buffer to handle gaps between contracts.</p>
-<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>Is it hard to get visa sponsorship for cybersecurity in the UK?</h3>
+<p>Easier than most other fields. Cybersecurity is on the Shortage Occupation List, which reduces sponsorship costs for employers. Large financial services companies and technology firms regularly sponsor security professionals.</p>
+<h3>What is the minimum salary for a Skilled Worker Visa in cybersecurity?</h3>
+<p>The general threshold is GBP 38,700. Shortage occupation roles may qualify for a reduced threshold (80% of the going rate). Most mid-level cybersecurity roles comfortably exceed both thresholds.</p>
+<h3>Can I switch employers on a Skilled Worker Visa?</h3>
+<p>Yes, but you need your new employer to issue a new Certificate of Sponsorship and you must apply to update your visa before starting the new job. The process takes 2-4 weeks.</p>
+<h3>Do I need UK security clearance for cybersecurity jobs?</h3>
+<p>Not for most private sector roles. Government and defense roles (GCHQ, NCSC, BAE Systems) require security clearance, which typically requires UK/Commonwealth nationality. Most commercial security roles have no clearance requirement.</p>
+<h3>Is the UK a good destination for cybersecurity careers compared to the US?</h3>
+<p>Different trade-offs. The US offers higher raw salaries. The UK offers better work-life balance (more leave, NHS healthcare, stronger worker protections), easier immigration pathways for many nationalities, and access to European markets. Financial services security roles in London offer some of the best combinations of compensation and benefits globally.</p>
+<p>&#8212;</p>
+<p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1815,27 +1753,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2014,11 +1952,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2041,59 +1979,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

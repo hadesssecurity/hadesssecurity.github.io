@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/windows-downdate-downgrade-attacks-using-windows-updates-and-beyond#article","headline":"Windows Downdate: Downgrade Attacks Using Windows Updates and Beyond — HADESS Magazine","description":"The “Windows Downdate” vulnerability, identified and demonstrated by researcher Anon Leviev, is a downgrade attack technique that leverages Windows Update...","url":"https://hadesssecurity.github.io/blog/read/windows-downdate-downgrade-attacks-using-windows-updates-and-beyond","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/windows-downdate-downgrade-attacks-using-windows-updates-and-beyond"},"datePublished":"October 31, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/10/win-down-cover.jpg"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/windows-downdate-downgrade-attacks-using-windows-updates-and-beyond#article","headline":"Windows Downdate: Downgrade Attacks Using Windows Updates and Beyond — HADESS Magazine","description":"The “Windows Downdate” vulnerability, identified and demonstrated by researcher Anon Leviev, is a downgrade attack technique that leverages Windows Update...","url":"https://hadesssecurity.github.io/blog/read/windows-downdate-downgrade-attacks-using-windows-updates-and-beyond","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/windows-downdate-downgrade-attacks-using-windows-updates-and-beyond"},"datePublished":"October 31, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/10/win-down-cover.jpg"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,611 +1550,664 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2024/10/win-down-cover.jpg">
       
-<h2 class="wp-block-heading">Overview</h2>
+<p class="wp-block-paragraph">The “Windows Downdate” vulnerability, identified and demonstrated by researcher Anon Leviev, is a downgrade attack technique that leverages Windows Update mechanisms to reintroduce older, vulnerable versions of system files. By circumventing normal update verification checks, this attack allows malicious actors to downgrade essential system components like the Windows kernel, Hyper-V hypervisor, and other critical drivers, effectively undoing applied security patches without detection. This type of exploit bypasses endpoint detection and response (EDR) systems and misleads the OS into thinking it’s up-to-date, making it a powerful tool for attackers aiming to exploit known vulnerabilities that have been patched previously.</p>
 
 
 
-<p class="wp-block-paragraph">System Binary Proxy Execution leverages legitimate Windows binaries (e.g., rundll32.exe, mshta.exe) to execute malicious code. These binaries are trusted by the OS, allowing attackers to bypass security controls like antivirus and application whitelisting by using these tools to proxy malicious actions.</p>
+<p class="wp-block-paragraph">The attack exploits two key vulnerabilities, CVE-2024-21302 and CVE-2024-38202, targeting the Windows Update stack and allowing privilege escalation by modifying system restore points to execute downgrades. Microsoft has been informed and has issued partial mitigations, but a full patch is still pending. This discovery, presented at Black Hat 2024, underscores a critical challenge in OS security—ensuring that update mechanisms themselves are robust against tampering. As security teams work toward more resilient update infrastructures, they recommend auditing access control, limiting update permissions, and monitoring for downgrade activities to mitigate such risks until a comprehensive fix is available.</p>
 
 
 
-<h2 class="wp-block-heading">Historical Context</h2>
+<h2 class="wp-block-heading">Windows Downdate: A Novel Downgrade Attack on Windows</h2>
 
 
 
-<p class="wp-block-paragraph">This technique gained prominence as security defenses improved. Traditional malware detection focused on identifying unauthorized executables. As a result, attackers shifted to using system binaries, which are inherently trusted, making their activities blend seamlessly into legitimate system operations.</p>
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="590" src="/wp-content/uploads/2024/10/image-1024x590.png" alt="" class="wp-image-8852" srcset="/wp-content/uploads/2024/10/image-1024x590.png 1024w, /wp-content/uploads/2024/10/image-300x173.png 300w, /wp-content/uploads/2024/10/image-768x442.png 768w, /wp-content/uploads/2024/10/image.png 1037w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<h2 class="wp-block-heading">Role in Bypassing Security</h2>
+<p class="wp-block-paragraph">Windows Downdate is a novel attack method that exploits the Windows Update process to downgrade critical operating system components. This attack allows malicious actors to revert fully patched systems to older, vulnerable versions, effectively turning fixed vulnerabilities into zero-days. The attack leverages a flaw in the Windows Update process that grants an attacker full control, bypassing integrity verifications and Trusted Installer enforcement. This control allows the attacker to craft a custom, downgrading action list that replaces target components with older versions. The attack is particularly insidious because it leaves the system appearing fully updated while remaining persistent and irreversible.</p>
 
 
 
-<p class="wp-block-paragraph">System binaries, being part of the OS, are often overlooked by security tools. By using these binaries to execute code, attackers can evade detection, maintain persistence, and escalate privileges. This makes System Binary Proxy Execution a critical tactic for sophisticated attacks, particularly in environments with stringent security controls.</p>
+<p class="wp-block-paragraph">The impact of Windows Downdate extends beyond simply re-exposing known vulnerabilities. The researcher demonstrated the ability to bypass security features like Credential Guard, Hypervisor-Protected Code Integrity (HVCI), and even the UEFI lock protecting Virtualization-Based Security (VBS). By downgrading components in the virtualization stack, the attack undermines the security boundaries designed to isolate sensitive operations and protect the kernel. This research highlights the need for increased awareness and mitigation against OS-based downgrade attacks, urging a critical review of design features and assumptions about file immutability. It underscores the importance of thorough examination of in-the-wild attacks like the BlackLotus UEFI Bootkit to understand their broader implications and potential for exploitation in other areas.</p>
 
 
 
-<p class="wp-block-paragraph">System binaries are executable files that are integral to an operating system’s functionality. These binaries, such as <code>cmd.exe</code>, <code>powershell.exe</code>, and <code>rundll32.exe</code>, are inherently trusted and often run with high privileges. Due to their critical role, they are less scrutinized by security mechanisms, making them attractive targets for attackers looking to execute malicious code stealthily.</p>
+<p class="wp-block-paragraph">This attack, which includes steps like registry manipulation and hijacking of update configuration files, makes detection difficult because Windows Update will continue to report the system as fully patched even when it is not.</p>
 
 
 
-<h4 class="wp-block-heading">Common System Binaries</h4>
+<h3 class="wp-block-heading">1. <strong>Setting Up the Downgrade Environment</strong></h3>
+
+
+
+<p class="wp-block-paragraph">The attack begins by configuring Windows Update to accept downgraded components. This requires modifying the <strong>Pending.xml</strong> file, which contains the action list for system updates. The attacker can introduce malicious commands within Pending.xml by setting up a &#8220;hardlink&#8221; that points from an older, vulnerable version of a component to the target system directory.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Code Example</strong>:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;HardlinkFile source="C:\UpdateDir\VulnerableFile.exe" destination="C:\Windows\System32\TargetFile.exe"/&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">This command replaces <code>TargetFile.exe</code> with the older, vulnerable <code>VulnerableFile.exe</code>.</p>
+
+
+
+<h3 class="wp-block-heading">2. <strong>Registry Manipulation for Trusted Installer Override</strong></h3>
+
+
+
+<p class="wp-block-paragraph">By manipulating registry keys, the attacker ensures that the Windows Update process will automatically start and execute the modified Pending.xml file without requiring Trusted Installer privileges. Setting <code>HKLM\COMPONENTS\PendingXmlIdentifier</code> enables the update execution, while <code>HKLM\SYSTEM\CurrentControlSet\Services\TrustedInstaller</code> enforces auto-start for the Trusted Installer service​</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Registry Commands</strong>:</p>
+
+
+
+<pre class="wp-block-code"><code>reg add "HKLM\COMPONENTS\PendingXmlIdentifier" /t REG_SZ /d C:\Windows\WinSxS\Pending.xml
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\TrustedInstaller" /t REG_DWORD /v Start /d 2</code></pre>
+
+
+
+<p class="wp-block-paragraph">then <strong>Create Action List</strong></p>
+
+
+
+<pre class="wp-block-code"><code>&lt;POQ postAction="reboot"&gt;
+    &lt;HardlinkFile 
+        source="C:\UpdateDir\VulnerableVersion.dll" 
+        destination="C:\Windows\System32\Target.dll"/&gt;
+&lt;/POQ&gt;</code></pre>
+
+
+
+<h3 class="wp-block-heading">2.1 <strong>Virtualization-Based Security (VBS) Attacks</strong></h3>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="949" height="526" src="/wp-content/uploads/2024/10/image-1.png" alt="" class="wp-image-8853" srcset="/wp-content/uploads/2024/10/image-1.png 949w, /wp-content/uploads/2024/10/image-1-300x166.png 300w, /wp-content/uploads/2024/10/image-1-768x426.png 768w" sizes="(max-width: 949px) 100vw, 949px" /></figure>
+
+
+
+<p class="wp-block-paragraph">VBS creates a secure and isolated virtual environment powered by the Hyper-V hypervisor. In the VBS architecture, Windows runs in two separate modes:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Normal Mode (VTL0): Contains the regular Windows kernel and user processes</li>
+
+
+
+<li>Secure Mode (VTL1): Contains the secure kernel and secure processes</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">The key security boundaries are:</p>
+
+
+
+<ul class="wp-block-list">
+<li>VTL0 → VTL1 transition</li>
+
+
+
+<li>Ring3/Ring0 → Ring-1 (hypervisor) transition</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Credential Guard Attacks</h3>
+
+
+
+<p class="wp-block-paragraph">One critical VBS component is Credential Guard, implemented as an Isolated User Mode process (LsaIso.exe) running in Ring3-VTL1. By exploiting vulnerabilities in shared components like KerbClientShared.dll, attackers can cross the VTL0 to VTL1 boundary.</p>
+
+
+
+<p class="wp-block-paragraph">Example attack using downgraded vulnerable version:</p>
+
+
+
+<pre class="wp-block-code"><code># Downgrade KerbClientShared.dll to version 10.0.22000.856
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\KerbClientShared" -Name "ImagePath" -Value "C:\Windows\System32\KerbClientShared.dll.old"</code></pre>
+
+
+
+<h3 class="wp-block-heading">Secure Kernel Exploitation</h3>
+
+
+
+<p class="wp-block-paragraph">The Secure Kernel (SecureKernel.exe) runs in Ring0-VTL1 and implements critical security features like HVCI and HyperGuard. Attackers can target vulnerabilities in SecureKernel.exe and its dependencies (SKCI.dll, CI.dll) to gain Ring0-VTL1 access.</p>
+
+
+
+<p class="wp-block-paragraph">Example SecureKernel downgrade:</p>
+
+
+
+<pre class="wp-block-code"><code># Backup current SecureKernel
+Copy-Item "C:\Windows\System32\SecureKernel.exe" "C:\Windows\System32\SecureKernel.exe.bak"
+
+# Replace with vulnerable version (10.0.19041.207)
+Copy-Item "C:\vulnerable\SecureKernel.exe" "C:\Windows\System32\SecureKernel.exe"</code></pre>
+
+
+
+<h3 class="wp-block-heading">Hypervisor Attacks</h3>
+
+
+
+<p class="wp-block-paragraph">The Hyper-V hypervisor (Hvix64.exe/Hvax64.exe) runs in Ring-1 and provides the foundation for VBS isolation. Targeting the hypervisor can completely compromise VBS security boundaries.</p>
+
+
+
+<p class="wp-block-paragraph">Example hypervisor manipulation:</p>
+
+
+
+<pre class="wp-block-code"><code># Disable hypervisor launch
+bcdedit /set hypervisorlaunchtype off
+
+# Replace hypervisor binary
+Move-Item "C:\Windows\System32\Hvix64.exe" "C:\Windows\System32\Hvix64.exe.bak"
+Copy-Item "C:\vulnerable\Hvix64.exe" "C:\Windows\System32\Hvix64.exe"
+
+# Re-enable hypervisor
+bcdedit /set hypervisorlaunchtype auto</code></pre>
+
+
+
+<h3 class="wp-block-heading">VBS Remote Disablement</h3>
+
+
+
+<p class="wp-block-paragraph">VBS uses UEFI variables for configuration protection. However, this can be bypassed by:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong><em>cmd.exe</em></strong>: A command-line interpreter used to execute system commands, batch files, and scripts. It provides a direct interface to the operating system&#8217;s core functions.</li>
+<li>Invalidating critical VBS files</li>
 
 
 
-<li><strong><em>powershell.exe</em></strong>: A powerful scripting environment and command-line shell that offers deep integration with Windows OS, allowing for complex scripting and automation tasks.</li>
+<li>Manipulating the VbsPolicy UEFI variable</li>
 
 
 
-<li><strong><em>rundll32.exe</em></strong>: A utility used to load and execute functions from DLLs (Dynamic Link Libraries). It is designed to run DLL-based code that doesn&#8217;t have its own executable.</li>
+<li>Exploiting boot configuration</li>
 </ol>
 
 
 
-<h3 class="wp-block-heading">Proxy Execution with System Binary</h3>
+<p class="wp-block-paragraph">Example VBS disable commands:</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Proxy Execution</em></strong> refers to the technique where attackers execute malicious code indirectly by using trusted system binaries. The primary goal of proxy execution is to bypass security controls by hiding the execution of malicious code under the guise of a legitimate, trusted process. This technique leverages the trust inherently placed in system binaries by security solutions, allowing attackers to blend malicious activities with normal system operations.</p>
+<pre class="wp-block-code"><code># Disable VBS in registry
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 0 /f
+
+# Clear LSA configuration
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v "LsaCfgFlags" /t REG_DWORD /d 0 /f
+
+# Disable Credential Guard
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard" /v "Enabled" /t REG_DWORD /d 0 /f</code></pre>
 
 
 
-<h4 class="wp-block-heading">Common Techniques for Proxy Execution Using System Binaries</h4>
+<h4 class="wp-block-heading">Protection Recommendations</h4>
+
+
+
+<p class="wp-block-paragraph">To better secure VBS implementations:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong><em>Living Off the Land Binaries (LOLBins)</em></strong>:</li>
+<li>Enable VBS with UEFI lock:</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Description</strong>: Attackers use native, pre-installed system binaries to carry out malicious activities. Since these binaries are already present and trusted by the system, they can be used to proxy the execution of malicious code.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Examples</strong>: Using <code>rundll32.exe</code> to execute DLLs, or <code>mshta.exe</code> to run HTML applications that contain malicious scripts.</p>
+<pre class="wp-block-code"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Locked" /t REG_DWORD /d 1 /f</code></pre>
 
 
 
 <ol start="2" class="wp-block-list">
-<li><strong><em>Indirect Command Execution</em></strong>:</li>
+<li>Add Mandatory flag:</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Description</strong>: This technique involves using system binaries like <code>cmd.exe</code> or <code>powershell.exe</code> to execute commands that ultimately run the attacker’s code. The malicious payload is executed indirectly, often by scripting or command chaining.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example Technique</strong>: Attackers might chain commands using <code>cmd.exe</code> to invoke PowerShell, which then executes a downloaded script or payload.</p>
+<pre class="wp-block-code"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Mandatory" /t REG_DWORD /d 1 /f</code></pre>
 
 
 
 <ol start="3" class="wp-block-list">
-<li><strong><em>Reflective DLL Injection via rundll32.exe</em></strong>:</li>
+<li>Monitor for VBS configuration changes and file integrity</li>
+
+
+
+<li>Implement secure boot with proper revocation lists</li>
+
+
+
+<li>Regular security updates for VBS components</li>
+
+
+
+<li>Network isolation for critical VBS processes</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Description</strong>: <code>rundll32.exe</code> is used to execute functions within a DLL that the attacker controls. This technique is particularly useful for executing code in memory without writing to disk, which helps evade detection.</p>
+<h3 class="wp-block-heading">3. <strong>Persisting the Downgrade and Disabling Detection</strong></h3>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example Technique</strong>: Reflective DLL injection where <code>rundll32.exe</code> loads a DLL that is specifically crafted to run in the context of a legitimate process, thereby hiding malicious activities.</p>
+<p class="wp-block-paragraph">The downgrade persists by altering <strong>poqexec.exe</strong>, a non-digitally signed utility that processes the Pending.xml file. By replacing <code>poqexec.exe</code> with a patched version, attackers can loop empty updates, which means Windows will continue to mark the system as &#8220;updated.&#8221; Additionally, system utilities like <strong>SFC.exe</strong> (System File Checker) and <strong>DISM.exe</strong> (Deployment Image Servicing and Management) are also targeted to prevent repair checks from detecting the modifications​.</p>
 
 
 
-<ol start="4" class="wp-block-list">
-<li><strong><em>Script-Based Execution with powershell.exe</em></strong>:</li>
-</ol>
+<p class="wp-block-paragraph"><strong>File Replacement Example</strong>:</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Description</strong>: PowerShell scripts are used to execute malicious code directly from memory, avoiding detection by traditional file-based security measures. PowerShell’s deep integration with Windows makes it a powerful tool for proxy execution.</p>
+<pre class="wp-block-code"><code>copy C:\MaliciousTools\poqexec.exe C:\Windows\System32\poqexec.exe</code></pre>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example Technique</strong>: Fileless malware attacks where PowerShell downloads and runs code directly in memory, avoiding any footprint on the disk.</p>
+<h3 class="wp-block-heading">4. <strong>Downgrade Example: Reverting to a Vulnerable Kernel</strong></h3>
 
 
 
-<ol start="5" class="wp-block-list">
-<li><strong><em>Abusing Trusted Service Processes</em></strong>:</li>
-</ol>
+<p class="wp-block-paragraph">To demonstrate the effectiveness of the downgrade attack, Leviev showcased reverting a kernel component (<code>AFD.sys</code>) to an older, exploitable version. By using similar hardlink techniques and ensuring the downgraded kernel runs on boot, the attack enables privilege escalation through exposed vulnerabilities​.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Description</strong>: System binaries associated with trusted services are manipulated to execute malicious payloads. These binaries can act as a proxy for the attacker’s code, often by loading malicious scripts or DLLs.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example Technique</strong>: Using <code>svchost.exe</code>, a service host process, to load and execute malicious service DLLs, hiding the attack under the context of a legitimate service.</p>
-
-
-
-<h3 class="wp-block-heading">Techniques and Methods</h3>
-
-
-
-<p class="wp-block-paragraph">There are many techniques and methods available using land binaries.</p>
-
-
-
-<p class="wp-block-paragraph">Cmd.exe</p>
-
-
-
-<ul class="wp-block-list">
-<li>Command execution: cmd.exe can be used to execute arbitrary commands using /c switch.</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfoHbx3vk-9GIUSJnYefhfc6Kqlr0nTxI5KLaEupNcIKv81yMi7l721XIhFJa6ysfUfQ4gcSdnmRdOiy1QdkfrAFawmSn6frM7sek_Yjdf4sRMOb0HkoOXRJvm6XoxJYuzRoTrqTl5N09Yty0XlQcu_Ryo?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<ul class="wp-block-list">
-<li>Alternative stream: cmd.exe can be used to insert content into alternate data streams and execute them afterwards.</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc4THCeUfmc2oWHdKAPbJqrQo8ADtrfc5sTS29AKyJzGw52L9eC5SdgZws3LJGkG6wMqnNrSFQp6v9jHiWNm4lgcKAe7BxlndOslMKMrC3EKdw_LJzK1i4V0UOB4hYK613v666tc-ERqcjzxSu7pZB8pIg?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<p class="wp-block-paragraph">Powershell.exe</p>
-
-
-
-<ul class="wp-block-list">
-<li>Command execution: powershell.exe switch ‘/c’ can be used to execute commands. Note that while it is used in cmd itself, the command executed will not be logged in the powershell history file.</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfaMQ-Kp4O_bhsH8_TYEcRUo527mbM24QXIKfBTS-ItzNp3BaPT_92ex2uE-Q5j9xeIT1d_0EexB4S8jKBZRxAc6ZreUHytlZYrWWMUNgL9tZXR0abCs3Pl6Sx2zvwhgx3eBoSOnTEkJ0JdFew6qcc8twXR?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<p class="wp-block-paragraph">Rundll32.exe</p>
-
-
-
-<ul class="wp-block-list">
-<li>DLL execution: rundll32.exe can be used to execute DLL exported functions.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Others</p>
-
-
-
-<ul class="wp-block-list">
-<li>SSH: SSH utility can be used to execute commands:</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdokpw6Z1yTRgBk58v9C3H282ITElYikSeJVkF5ohcCkNscOlz_wu-l_ctLCBoYCttY7dewiBI64mfm3qGTjkF1PfJyc4Tc_AGgd-6FK1XEpRij3x4gutEsRja2lASGDT67P3H22fzUYy68tqibUaC7fRVR?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<ul class="wp-block-list">
-<li>FTP</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcDEqHmBy62Q7FawnxlPGUbGna_KHp62g2nHVylMZvQY1aQ39WxQtor00a4YLeY6el_c2fs2TFM6Stj_DzsVcpKTR8vF6WkqMY_ZKtFv2EDmXWGZD7zW684HLVdTNQRtKODhSwBiLnuSR7Bz2CZjd5rlE3S?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<ul class="wp-block-list">
-<li>WorkFolders: executes control.exe in the current working directory</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf7mkBxHbOjnkjHXMkKJk6r7ASn1un4l_8znCPQLYN8Cb_XMLoL-R_07HMRKPHzgcI6ko2B_y_T4-wbBMfQd4yP1qrvk8lyQLH_OYZOEYp8P4I90X2vZme8cwe7DH4ctUs2fS3-QrVdUDL4dNU34VlO3hw?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<ul class="wp-block-list">
-<li>Pcwrun.exe</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfz2MrDpteaJlGtjCh7mzF-Kwb8wYKpbgRXM7YL8pIqzSviXR8fvib2RoSEdW-yS4_wEKxSArSh2j6lM-4Iv1c7UL-6RCdHH5ZCVnR52V4fp6GGDY6-_SLRjdNnFwZbTp0JRApr0w_ZrZ5C1YHjQcOkUFI?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<ul class="wp-block-list">
-<li>Stordiag.exe: if stordiag.exe is copied to a folder, it’ll execute schtasks.exe, systeminfo.exe, and fitmc.exe if they exists in the same folder.</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXegp3O9RoflOb15xmE5eMTMnv1WO2qBnkSdAQb7WX9oxaNDF-Qn9TY5r02v2IVFfu6we4s37ylxuOu1fyWlYR4mEKwx7RQf1425AV8vt8Z8xj3f4u_pNVD7lszj_oxBA9oFvOsYtMOjKc29Y0KYHqR175y_?key=_YIi90_cnQhWpn8wLZdazg" alt=""/></figure>
-
-
-
-<h3 class="wp-block-heading">Anti-Virus Evasion with&nbsp; Proxy Execution</h3>
+<p class="wp-block-paragraph"><strong>All Step like this</strong>:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong><em>Methods to Evade Anti-Virus Detection</em></strong>:</li>
+<li><strong>Update Process Flow</strong>: Shows the stages of Windows Update, from request to execution.
+<ol class="wp-block-list">
+<li>The Windows Update process relies on an update client and an update server, communicating via COM. ● The client operates with Administrator privileges, while the server utilizes Trusted Installer, restricting direct system file modifications, even by Administrators.</li>
+
+
+
+<li>The client initiates an update by providing an update folder to the server. The server verifies the integrity of the folder, finalizes update files, and creates an action list (Pending.xml) containing update actions to be performed on reboot. The client only has control over the initial update folder.</li>
+
+
+
+<li>The update folder contains update components, each including MUM, manifest, differential, and catalog files. MUM files hold metadata, manifest files contain installation details, differential files act as deltas for base files, and catalog files provide digital signatures.</li>
+</ol>
+</li>
+
+
+
+<li><strong>Registry and Hardlink Configuration</strong>: Illustrates how registry keys and Pending.xml configurations interact.
+<ol class="wp-block-list">
+<li>The action list&#8217;s path (Pending.xml) is stored in the registry key <code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Configuration\PoqexecCmdline</code> and is not Trusted Installer enforced. This allows an attacker to modify the actions performed during the update, including creating, deleting, moving, and hard-linking files, as well as manipulating registry keys and values.</li>
+
+
+
+<li>A malicious Pending.xml file is created, utilizing the HardlinkFile action to replace target files with older, vulnerable versions. The action list also includes actions to ensure persistence, such as patching the action list parser (PoqExec.exe) to install empty updates, and patching the system integrity check utility (SFC.exe) to prevent detection.</li>
+</ol>
+</li>
+
+
+
+<li><strong>Persistency Setup</strong>: Details the replacement of poqexec.exe and prevention of system checks.
+<ol class="wp-block-list">
+<li>The attacker sets the Trusted Installer service to Auto-Start, adds the Pending.xml path and its identifier to the registry. The system then executes the malicious action list during the next reboot, downgrading the target components.</li>
+
+
+
+<li>By successfully hijacking the Windows Update process, the attack achieves a persistent, invisible, and undetectable downgrade. The system falsely reports as fully updated, making the downgraded components appear legitimate. The patched PoqExec.exe and SFC.exe prevent future updates and corruption detection, ensuring persistence and irreversibility.</li>
+</ol>
+</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Proxy Execution</strong>: Use trusted system binaries to execute malicious payloads, bypassing signature-based defenses.</p>
+<p class="wp-block-paragraph">With this attack, an attacker can continually keep the system in a downgraded state, bypassing updates and effectively rendering the term &#8220;fully patched&#8221; meaningless on affected machines​.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &#8211; <strong>Examples</strong>: <code>powershell.exe</code>, <code>cmd.exe</code>, <code>rundll32.exe</code>, and <code>mshta.exe</code> can execute scripts or payloads while evading detection.</p>
+<h2 class="wp-block-heading">Prevention &amp; Mitigation</h2>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Techniques</strong>: Obfuscate payloads, use in-memory execution, and leverage trusted binaries to avoid file-based scans.</p>
+<p class="wp-block-paragraph">Enable VBS with UEFI Lock:</p>
+
+
+
+<pre class="wp-block-code"><code># Enable VBS with UEFI lock
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Locked" /t REG_DWORD /d 1 /f
+
+# Enable Mandatory flag
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Mandatory" /t REG_DWORD /d 1 /f</code></pre>
+
+
+
+<h3 class="wp-block-heading">Long-term Mitigations:</h3>
+
+
+
+<ol class="wp-block-list">
+<li>Monitor System File Integrity:</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code># Run System File Checker
+sfc /scannow
+
+# Monitor WinSxS directory
+Get-ItemProperty -Path "C:\Windows\WinSxS" -Filter "*.xml" | Watch-Path</code></pre>
 
 
 
 <ol start="2" class="wp-block-list">
-<li><strong><em>Real-World Examples and Case Studies</em></strong>:</li>
+<li>Implement Security Controls:</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example</strong>: An attacker uses <code>mshta.exe</code> (T1218.005) to execute a malicious HTA file, which bypasses traditional anti-virus checks because <code>mshta.exe</code> is a trusted system binary.</p>
+<ul class="wp-block-list">
+<li>Enable Secure Boot</li>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Case Study</strong>: In 2017, a campaign used <code>rundll32.exe</code> (T1218.011) to load a malicious DLL, evading detection by utilizing a trusted Windows binary to execute payloads.</p>
+<li>Configure UEFI Lock protection</li>
 
 
 
-<h3 class="wp-block-heading">Application Whitelisting Bypass with Proxy Execution</h3>
+<li>Monitor update-related registry keys</li>
 
 
 
-<ol class="wp-block-list">
-<li><strong><em>Techniques to Bypass Application Whitelisting Controls</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Exploitation of Trusted Binaries</strong>: Utilize signed system binaries to execute malicious commands or payloads that bypass whitelisting controls.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &#8211; <strong>Examples</strong>: <code>regsvr32.exe</code> (T1218.010) and <code>msiexec.exe</code> (T1218.007) are commonly used to execute payloads while appearing as trusted operations.</p>
+<li>Deploy endpoint detection and response (EDR) solutions</li>
+</ul>
 
 
 
 <ol start="2" class="wp-block-list">
-<li><strong><em>Strategies</em></strong>:</li>
+<li>Regular Security Assessments:</li>
 </ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Leverage Signed Binaries</strong>: Run payloads or scripts using trusted binaries to circumvent application whitelisting.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &#8211; <strong>Example</strong>: Use <code>msiexec.exe</code> to execute a malicious MSI package that bypasses whitelisting controls due to the trust in <code>msiexec.exe</code>.</p>
-
-
-
-<h3 class="wp-block-heading">Logging and Monitoring Evasion with Proxy Exectution</h3>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>Tactics to Evade Logging and Monitoring</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Process Injection</strong>: Inject malicious code into trusted processes to avoid detection.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; &#8211; <strong>Examples</strong>: Use <code>rundll32.exe</code> (T1218.011) or <code>regsvr32.exe</code> (T1218.010) to load malicious DLLs without creating new, suspicious processes.</p>
-
-
-
-<ol start="2" class="wp-block-list">
-<li><strong><em>Examples of Blending Malicious Activities</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example</strong>: An attacker uses <code>regsvr32.exe</code> to execute a payload in memory, which avoids logging by not creating new files or processes that would trigger monitoring alerts.</p>
-
-
-
-<h3 class="wp-block-heading">Tooling and Frameworks for System Binary Proxy Execution</h3>
-
-
-
-<h4 class="wp-block-heading">Popular Tools</h4>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>Metasploit Framework</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview</strong>: A penetration testing framework with modules for exploiting vulnerabilities using system binaries.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Use</strong>: Delivers payloads via trusted binaries like <code>rundll32.exe</code> or PowerShell.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example</strong>: Uses the <code>persistence</code> module to set up a backdoor through <code>rundll32.exe</code>.</p>
-
-
-
-<ol start="2" class="wp-block-list">
-<li><strong><em>Cobalt Strike</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview</strong>: Advanced threat emulation tool known for its stealth and evasion.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Use</strong>: Executes payloads using beacons through trusted binaries like <code>powershell.exe</code>.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example</strong>: Injects beacons into processes like <code>explorer.exe</code> for stealthy lateral movement.</p>
-
-
-
-<ol start="3" class="wp-block-list">
-<li><strong><em>Custom Scripts and Payloads</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview</strong>: Tailored scripts designed to evade detection by leveraging system binaries.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Use</strong>: Executes payloads through binaries like <code>cmd.exe</code> or <code>mshta.exe</code>.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Example</strong>: Uses <code>rundll32.exe</code> to load a DLL directly from memory.</p>
-
-
-
-<h4 class="wp-block-heading">Development of Custom Tools</h4>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>Understand the Environment</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Approach</strong>: Identify available system binaries and security controls through reconnaissance.</p>
-
-
-
-<ol start="2" class="wp-block-list">
-<li><strong><em>Leverage Trusted System Binaries</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Approach</strong>: Develop scripts using trusted binaries like <code>powershell.exe</code> or <code>cmd.exe</code>, ensuring they are obfuscated and encrypted.</p>
-
-
-
-<ol start="3" class="wp-block-list">
-<li><strong><em>In-Memory Execution</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Approach</strong>: Utilize reflective DLL injection or shellcode to execute directly in memory, avoiding file-based detection.</p>
-
-
-
-<ol start="4" class="wp-block-list">
-<li><strong><em>Obfuscation and Encryption</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Approach</strong>: Apply obfuscation and encryption to evade static analysis by security software.</p>
-
-
-
-<ol start="5" class="wp-block-list">
-<li><strong><em>Testing and Iteration</em></strong>:</li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Approach</strong>: Test tools in virtual environments mimicking the target system’s security setup to refine evasion techniques.</p>
-
-
-
-<h3 class="wp-block-heading">Advanced Techniques</h3>
-
-
-
-<p class="wp-block-paragraph">Attackers and red teamers may chain together living off the land binaries to perform sophisticated attacks.</p>
-
-
-
-<p class="wp-block-paragraph">Initial Access &amp; Execution</p>
 
 
 
 <ul class="wp-block-list">
-<li>LoLBins: mshta.exe, powershell.exe, rundll32.exe</li>
+<li>Verify system component versions</li>
 
 
 
-<li>Tactic: Phishing email triggers mshta.exe to run a remote script, invoking powershell.exe to download and execute a payload or rundll32.exe to run a malicious DLL.</li>
+<li>Check for unauthorized modifications</li>
+
+
+
+<li>Audit update processes</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">Privilege Escalation</p>
+<h3 class="wp-block-heading">Security Boundaries Affected</h3>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="829" height="447" src="/wp-content/uploads/2024/10/image-2.png" alt="" class="wp-image-8854" srcset="/wp-content/uploads/2024/10/image-2.png 829w, /wp-content/uploads/2024/10/image-2-300x162.png 300w, /wp-content/uploads/2024/10/image-2-768x414.png 768w" sizes="(max-width: 829px) 100vw, 829px" /></figure>
+
+
+
+<h3 class="wp-block-heading">Risk Assessment Matrix</h3>
 
 
 
 <ul class="wp-block-list">
-<li>LoLBins: schtasks.exe, cmd.exe, regsvr32.exe</li>
+<li>Severity: Critical</li>
 
 
 
-<li>Tactic: Use schtasks.exe to create high-privilege tasks, cmd.exe to run commands, and regsvr32.exe to execute malicious scripts via COM objects.</li>
+<li>Complexity: High</li>
+
+
+
+<li>Privileges Required: Administrator</li>
+
+
+
+<li>User Interaction: None</li>
+
+
+
+<li>Impact: Complete system compromise</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">Defense Evasion</p>
+<h3 class="wp-block-heading">CVE Information</h3>
 
 
 
 <ul class="wp-block-list">
-<li>LoLBins: sdbinst.exe, reg.exe, certutil.exe</li>
+<li>CVE-2024-21302: Virtualization stack vulnerability</li>
 
 
 
-<li>Tactic: Use sdbinst.exe to bypass UAC, reg.exe to disable security, and certutil.exe to download payloads undetected.</li>
+<li>CVE-2024-38202: Windows Update manipulation</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">Persistence</p>
+<p class="wp-block-paragraph">Let&#8217;s go to demonstrating other methods that have exploited rollback vulnerabilities to reinstate old vulnerabilities on patched systems.</p>
+
+
+
+<h3 class="wp-block-heading">1. <strong>BlackLotus UEFI Bootkit Downgrade Attack</strong></h3>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="340" height="1024" src="/wp-content/uploads/2024/10/414124-340x1024.png" alt="" class="wp-image-8855" srcset="/wp-content/uploads/2024/10/414124-340x1024.png 340w, /wp-content/uploads/2024/10/414124-100x300.png 100w, /wp-content/uploads/2024/10/414124-510x1536.png 510w, /wp-content/uploads/2024/10/414124.png 547w" sizes="(max-width: 340px) 100vw, 340px" /></figure>
+
+
+
+<p class="wp-block-paragraph">The BlackLotus UEFI bootkit takes advantage of a downgrade attack on the Secure Boot process. By downgrading the Windows boot manager to an older, vulnerable version, attackers can bypass Secure Boot and disable other OS-level security measures. This attack utilizes a similar principle to Windows Downdate by exploiting rollback functionality to re-enable vulnerabilities.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Commands</strong>:</p>
 
 
 
 <ul class="wp-block-list">
-<li>LoLBins: wscript.exe, wmic.exe, msiexec.exe</li>
-
-
-
-<li>Tactic: Use wscript.exe for startup scripts, wmic.exe for system manipulation, and msiexec.exe to install persistent malicious packages.</li>
+<li>Use <code>bcdedit</code> to modify the Boot Configuration Data (BCD) to load an outdated boot manager:</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">Lateral Movement</p>
+<pre class="wp-block-code"><code>bcdedit /set {bootmgr} path \EFI\Microsoft\Boot\bootmgfw.efi</code></pre>
 
 
 
 <ul class="wp-block-list">
-<li>LoLBins: psexec.exe, netsh.exe, dllhost.exe</li>
-
-
-
-<li>Tactic: Use psexec.exe for remote execution, netsh.exe for network configuration, and dllhost.exe to run COM objects across systems.</li>
+<li>Downgrade boot files by copying a vulnerable <code>bootmgfw.efi</code> to the boot directory:</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">Data Exfiltration</p>
+<pre class="wp-block-code"><code>copy C:\VulnerableFiles\bootmgfw.efi C:\EFI\Microsoft\Boot\bootmgfw.efi</code></pre>
+
+
+
+<h3 class="wp-block-heading">2. <strong>Driver Signature Enforcement (DSE) Bypass Downgrade</strong></h3>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="715" height="1024" src="/wp-content/uploads/2024/10/78978789-715x1024.png" alt="" class="wp-image-8856" srcset="/wp-content/uploads/2024/10/78978789-715x1024.png 715w, /wp-content/uploads/2024/10/78978789-209x300.png 209w, /wp-content/uploads/2024/10/78978789-768x1100.png 768w, /wp-content/uploads/2024/10/78978789.png 821w" sizes="(max-width: 715px) 100vw, 715px" /></figure>
+
+
+
+<p class="wp-block-paragraph">The &#8220;ItsNotASecurityBoundary&#8221; DSE bypass uses a False File Immutability (FFI) vulnerability to exploit the fact that the system’s Driver Signature Enforcement feature can be reverted. By downgrading the DSE patch and loading unsigned drivers, attackers can execute malicious rootkits. This attack is relevant to Windows Downdate because it reverts specific components to bypass a security boundary.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Commands</strong>:</p>
 
 
 
 <ul class="wp-block-list">
-<li>LoLBins: bitsadmin.exe, ftp.exe, robocopy.exe</li>
-
-
-
-<li>Tactic: Use bitsadmin.exe for covert data transfer, ftp.exe for FTP uploads, and robocopy.exe to move data to attacker-controlled shares.</li>
+<li>Disable DSE by modifying the <code>ci.dll</code> file:</li>
 </ul>
 
 
 
-<h3 class="wp-block-heading">Real-World Scenario: SolarWinds Attack by APT29 (2020)</h3>
-
-
-
-<p class="wp-block-paragraph">Attack Chain:</p>
+<pre class="wp-block-code"><code>copy C:\OldVersions\ci.dll C:\Windows\System32\ci.dll</code></pre>
 
 
 
 <ul class="wp-block-list">
-<li>LoLBins: powershell.exe, mshta.exe, certutil.exe</li>
-
-
-
-<li>Tactic: APT29 (Cozy Bear) used mshta.exe and powershell.exe for initial compromise via infected software updates in the SolarWinds attack. They used certutil.exe to download malicious payloads, avoiding detection.</li>
+<li>Restart the system to enforce changes:</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">Impact:</p>
+<pre class="wp-block-code"><code>shutdown /r /t 0</code></pre>
+
+
+
+<h3 class="wp-block-heading">3. <strong>Kernel Driver Downgrade (AFD.sys)</strong></h3>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="590" src="/wp-content/uploads/2024/10/image-3-1024x590.png" alt="" class="wp-image-8857" srcset="/wp-content/uploads/2024/10/image-3-1024x590.png 1024w, /wp-content/uploads/2024/10/image-3-300x173.png 300w, /wp-content/uploads/2024/10/image-3-768x443.png 768w, /wp-content/uploads/2024/10/image-3.png 1036w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="wp-block-paragraph">Similar to the Windows Downdate, downgrading kernel drivers like <code>AFD.sys</code> (Ancillary Function Driver) reintroduces past vulnerabilities that allow for privilege escalation. The attacker can replace the driver with an older version, enabling kernel-mode exploitation.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Hardlink Command Example</strong>:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;HardlinkFile source="C:\VulnerableDrivers\AFD.sys" destination="C:\Windows\System32\drivers\AFD.sys"/&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">This would be executed within the action list file (Pending.xml) on reboot to apply the vulnerable driver​(REVISED_US24-Leviev-Win…).</p>
+
+
+
+<h3 class="wp-block-heading">4. <strong>Virtualization-Based Security (VBS) Disablement</strong></h3>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1021" height="655" src="/wp-content/uploads/2024/10/image-4.png" alt="" class="wp-image-8858" srcset="/wp-content/uploads/2024/10/image-4.png 1021w, /wp-content/uploads/2024/10/image-4-300x192.png 300w, /wp-content/uploads/2024/10/image-4-768x493.png 768w" sizes="(max-width: 1021px) 100vw, 1021px" /></figure>
+
+
+
+<p class="wp-block-paragraph">Attackers targeting Virtualization-Based Security (VBS) often aim to downgrade or disable its components (e.g., <code>SecureKernel.exe</code> and <code>Hvix64.exe</code>) by replacing them with unprotected versions. This attack is particularly dangerous on Windows systems that use Credential Guard, as downgrading VBS can expose the system to privilege escalation.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Registry Manipulation</strong>:</p>
+
+
+
+<pre class="wp-block-code"><code>reg delete HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard /v EnableVirtualizationBasedSecurity</code></pre>
 
 
 
 <ul class="wp-block-list">
-<li>Massive Breach: Over 18,000 organizations, including U.S. government agencies, were compromised. Attackers remained undetected for months, showcasing LoLBins&#8217; effectiveness in evading security measures.</li>
+<li>Replace <code>SecureKernel.exe</code> with a vulnerable version to disable VBS protections.</li>
 </ul>
 
 
 
-<h3 class="wp-block-heading">Defensive Measures Against Proxy Execution Attacks</h3>
+<pre class="wp-block-code"><code>copy C:\VulnerableFiles\SecureKernel.exe C:\Windows\System32\SecureKernel.exe</code></pre>
 
 
 
-<ol class="wp-block-list">
-<li><strong><em>Disable/Remove Unnecessary Features (M1042)</em></strong>: Remove or disable non-essential binaries to reduce the attack surface.</li>
+<h3 class="wp-block-heading">5. <strong>Credential Guard Downgrade via Isolated User Mode</strong></h3>
 
 
 
-<li><strong><em>Execution Prevention (M1038)</em></strong>: Use application whitelisting to block execution of vulnerable binaries.</li>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1019" height="681" src="/wp-content/uploads/2024/10/image-5.png" alt="" class="wp-image-8859" srcset="/wp-content/uploads/2024/10/image-5.png 1019w, /wp-content/uploads/2024/10/image-5-300x200.png 300w, /wp-content/uploads/2024/10/image-5-768x513.png 768w" sizes="(max-width: 1019px) 100vw, 1019px" /></figure>
 
 
 
-<li><strong><em>Exploit Protection (M1050)</em></strong>: Apply EMET/ASR to block methods that exploit trusted binaries.</li>
+<p class="wp-block-paragraph">Downgrading <code>LsaIso.exe</code> used in Credential Guard disables protections against memory attacks on <code>LSASS</code>. Attackers replace <code>LsaIso.exe</code> with an older version, undermining the isolated user mode and exposing stored credentials.</p>
 
 
 
-<li><strong><em>Filter Network Traffic (M1037)</em></strong>: Implement network filtering to block suspicious traffic from binaries like <code>powershell.exe</code>.</li>
+<p class="wp-block-paragraph"><strong>Code Example</strong>:</p>
 
 
 
-<li><strong><em>Privileged Account Management (M1026)</em></strong>: Restrict binary execution to privileged users only.</li>
+<ul class="wp-block-list">
+<li>Registry command to modify Credential Guard configurations:</li>
+</ul>
 
 
 
-<li><strong><em>Restrict Web-Based Content (M1021)</em></strong>: Block access to harmful web content to prevent exploitation via web-based scripts.</li>
-</ol>
+<pre class="wp-block-code"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard" /v Enabled /t REG_DWORD /d 0</code></pre>
 
 
 
-<h2 class="wp-block-heading">Security Research</h2>
+<p class="wp-block-paragraph">Replace <code>LsaIso.exe</code> with an older, vulnerable version:</p>
 
 
 
-<p class="wp-block-paragraph"><a href="https://www.linkedin.com/in/ACoAACMUPk8BjjkCwMk2KYJZ3WNyiTYgjXAzmgk">Amirhossein Gholizadeh</a>,&nbsp;<a href="https://www.linkedin.com/in/ACoAADZqFYEBRzUOWIJMQWUgqHHfNHf0tydlb4U">Surya Dev Singh</a></p>
+<pre class="wp-block-code"><code>copy C:\OldVersions\LsaIso.exe C:\Windows\System32\LsaIso.exe</code></pre>
+
+
+
+<h2 class="wp-block-heading">Downgrade Attack Perspective</h2>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th>Component</th><th>Attack Surface</th><th>Commands/Code</th><th>Notes</th></tr></thead><tbody><tr><td>Windows Boot Manager</td><td>Downgrade Secure Boot by replacing Boot Manager</td><td>1. Replace bootmgfw.efi with an older version:<br>&nbsp;<code>copy C:\OldFiles\bootmgfw.efi C:\EFI\Microsoft\Boot\bootmgfw.efi</code></td><td>Attack downgrades bootmgfw.efi to bypass Secure Boot; commonly used in BlackLotus attacks</td></tr><tr><td>Driver Signature Enforcement (DSE)</td><td>Re-enable unsigned drivers using old ci.dll</td><td>1. Copy vulnerable ci.dll:<br>&nbsp;<code>copy C:\OldVersions\ci.dll C:\Windows\System32\ci.dll</code><br>2. Restart system:<br>&nbsp;<code>shutdown /r /t 0</code></td><td>Attack bypasses DSE to load unsigned drivers, often utilized in the “ItsNotASecurityBoundary” DSE bypass attacks</td></tr><tr><td>Kernel Driver (AFD.sys)</td><td>Downgrade kernel driver for privilege escalation</td><td>Use Hardlink in Pending.xml to downgrade AFD.sys:<br>&nbsp;<code>&lt;HardlinkFile source="C:\OldDrivers\AFD.sys" destination="C:\Windows\System32\drivers\AFD.sys"/&gt;</code></td><td>Replacing AFD.sys with an old version allows kernel-mode exploits and privilege escalation attacks</td></tr><tr><td>Virtualization-Based Security (VBS)</td><td>Disable VBS features by downgrading SecureKernel.exe</td><td>1. Disable VBS in registry:<br>&nbsp;<code>reg delete "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity</code><br>2. Copy old SecureKernel.exe:<br>&nbsp;<code>copy C:\OldFiles\SecureKernel.exe C:\Windows\System32\SecureKernel.exe</code></td><td>Attack can disable VBS protections, exposing the system to unauthorized access and elevated privileges</td></tr><tr><td>Credential Guard (LsaIso.exe)</td><td>Downgrade Credential Guard’s isolated user mode process</td><td>1. Set registry to disable Credential Guard:<br>&nbsp;<code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard" /v Enabled /t REG_DWORD /d 0</code><br>2. Replace LsaIso.exe:<br>&nbsp;<code>copy C:\OldFiles\LsaIso.exe C:\Windows\System32\LsaIso.exe</code></td><td>Downgrading LsaIso.exe compromises Credential Guard, allowing attackers to read sensitive information from LSASS</td></tr><tr><td>Windows Update (Pending.xml)</td><td>Modify Pending.xml to control updates and insert downgrades</td><td>Modify Pending.xml using HardlinkFile action:<br>&nbsp;<code>&lt;HardlinkFile source="C:\DowngradeFiles\VulnerableFile.exe" destination="C:\Windows\System32\UpdatedFile.exe"/&gt;</code></td><td>Editing Pending.xml enables downgrades of various system files by replacing them with older, vulnerable versions, used extensively in Windows Downdate attacks</td></tr><tr><td>Secure Kernel Code Integrity (SKCI.dll)</td><td>Downgrade SKCI for code integrity attacks</td><td>Replace SKCI.dll to disable code integrity checks:<br>&nbsp;<code>copy C:\OldFiles\SKCI.dll C:\Windows\System32\SKCI.dll</code></td><td>Downgrading SKCI.dll bypasses code integrity checks under VBS, allowing malicious code to run without detection</td></tr><tr><td>Hyper-V Hypervisor</td><td>Downgrade Hyper-V to exploit kernel-mode code execution</td><td>Downgrade Hyper-V Hypervisor using hardlink:<br>&nbsp;<code>&lt;HardlinkFile source="C:\OldFiles\Hvix64.exe" destination="C:\Windows\System32\Hvix64.exe"/&gt;</code></td><td>Replacing Hvix64.exe or Hvax64.exe with older versions allows attacker-controlled code execution within the hypervisor</td></tr><tr><td>Windows Kernel (NTOSKRNL.exe)</td><td>Downgrade NT kernel to expose privilege escalation vulnerabilities</td><td>Replace NT Kernel with vulnerable version:<br>&nbsp;<code>copy C:\OldVersions\ntoskrnl.exe C:\Windows\System32\ntoskrnl.exe</code></td><td>Downgrading the Windows Kernel re-introduces old vulnerabilities that facilitate privilege escalation</td></tr><tr><td>LSASS Memory Protection</td><td>Disable LSASS protections for credential dumping</td><td>Downgrade LSASS protections via registry:<br>&nbsp;<code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v RunAsPPL /t REG_DWORD /d 0</code></td><td></td></tr></tbody></table></figure>
+
+
+
+<h2 class="wp-block-heading">Conclusion</h2>
+
+
+
+<p class="wp-block-paragraph">The Windows Downdate attack constitutes a significant threat to Windows systems by demonstrating that a &#8220;fully patched&#8221; system may not provide adequate security. Through manipulating the Windows Update process, the attacker is able to downgrade critical system files, including those responsible for security features like Driver Signature Enforcement and Virtualization-Based Security, despite the presence of digital signatures, integrity checks, and even UEFI locks. The attack exploits the lack of downgrade protection within the Windows Update architecture, thereby making systems susceptible to previously patched vulnerabilities and potentially granting attackers a wide range of privileges, from kernel code execution to control over the hypervisor. This research underscores the necessity for a critical reevaluation of security assumptions related to patching and the need for proactive measures, such as enhanced downgrade protection mechanisms within operating systems, to effectively defend against this class of attacks.</p>
+
+
+
+<h2 class="wp-block-heading">Resources</h2>
+
+
+
+<ul class="wp-block-list">
+<li>https://www.safebreach.com/blog/downgrade-attacks-using-windows-updates/</li>
+
+
+
+<li>https://www.safebreach.com/blog/update-on-windows-downdate-downgrade-attacks/</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Security Researcher</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Jill Chiu</li>
+</ul>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -2161,27 +2225,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2308,11 +2372,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2335,59 +2399,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

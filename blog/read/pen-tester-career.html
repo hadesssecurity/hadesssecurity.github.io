@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-career#article","headline":"What Is a Penetration Tester? Skills and Salary — HADESS Magazine","description":"Explore the penetration tester career path including required skills, certifications, salary data, and how to break into offensive security in 2026.","url":"https://hadesssecurity.github.io/blog/read/pen-tester-career","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-career"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-pen-tester-career.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-career#article","headline":"What Is a Penetration Tester? Skills and Salary — HADESS Magazine","description":"Explore the penetration tester career path including required skills, certifications, salary data, and how to break into offensive security in 2026.","url":"https://hadesssecurity.github.io/blog/read/pen-tester-career","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-career"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-pen-tester-career.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,77 +1549,147 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-pen-tester-career.png">
-      <h1>Threat Hunter</h1>
-<blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete guide series.</p>
+      <blockquote>
+<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete career guide series.</p>
 </blockquote>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 5 min read</em></p>
-<p>You proactively search for threats that are already inside your network but have not triggered any alerts. While SOC analysts wait for detections to fire, you form hypotheses about attacker behavior and go looking for evidence. You find the adversaries that automated tools miss.</p>
-<h2>What You Will Do</h2>
-<p>Threat hunting is hypothesis-driven investigation. You take intelligence about adversary techniques, translate it into data queries, and search through massive datasets looking for signs of compromise that flew under the radar.</p>
-<p>Your typical work includes:</p>
+<h1>Penetration Tester Career: Skills, Salary, and How to Get Started</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 11 min read</em></p>
+<h2>Table of Contents</h2>
 <ul>
-<li>Developing threat hunting hypotheses based on <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a>, ATT&#038;CK TTPs, and environmental risk</li>
-<li>Querying large datasets — <a href="/blog/read/siem-operations" title="SIEM Operations: Detection Engineering and Log Management">SIEM</a> logs, <a href="/edr/" title="EDR: Endpoint Detection, Response, and Threat Hunting">EDR</a> telemetry, network metadata, DNS logs</li>
-<li>Analyzing endpoint behavior for signs of living-off-the-land attacks (LOLBins)</li>
-<li>Searching for persistence mechanisms — scheduled tasks, registry modifications, WMI subscriptions</li>
-<li>Identifying lateral movement patterns — unusual authentication events, RDP usage, SMB connections</li>
-<li>Hunting for data staging and exfiltration indicators</li>
-<li>Investigating anomalous <a href="/blog/read/powershell-security" title="PowerShell for Security: AD Management, Log Analysis, and Blue Team Scripts">PowerShell</a>, WMI, and command-line activity</li>
-<li>Using statistical analysis to identify outliers in normal behavior baselines</li>
-<li>Converting successful hunts into automated detection rules</li>
-<li>Documenting hunt methodologies and findings for knowledge sharing</li>
-<li>Collaborating with threat intelligence teams to prioritize hunting targets</li>
+<li><a href="#what-does-a-penetration-tester-do">What Does a Penetration Tester Do</a></li>
+<li><a href="#types-of-penetration-testing">Types of Penetration Testing</a></li>
+<li><a href="#a-realistic-day-in-the-life">A Realistic Day in the Life</a></li>
+<li><a href="#technical-skills-you-actually-need">Technical Skills You Actually Need</a></li>
+<li><a href="#certifications-worth-pursuing">Certifications Worth Pursuing</a></li>
+<li><a href="#penetration-tester-salary-in-2026">Penetration Tester Salary in 2026</a></li>
+<li><a href="#how-to-start-a-penetration-tester-career">How to Start a Penetration Tester Career</a></li>
+<li><a href="#tools-of-the-trade">Tools of the Trade</a></li>
+<li><a href="#career-progression">Career Progression</a></li>
+<li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
+<li><a href="#take-the-next-step">Take the Next Step</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<p>When you find something, you do not just report it — you build a detection so the SOC can catch it automatically next time. Every successful hunt should result in a new or improved detection rule.</p>
-<h2>Skills You Need</h2>
-<p>Threat hunting sits at the intersection of threat intelligence, detection engineering, and data analysis.</p>
-<p>Key skills to build:</p>
-<ul>
-<li><a href="https://career.hadess.io/skills">SIEM query languages</a> — SPL, <a href="/blog/read/security-query-languages-kql-spl-yara" title="Security Query Languages: KQL, SPL, and YARA">KQL</a>, Lucene for deep data exploration</li>
-<li><a href="https://career.hadess.io/skills">EDR investigation</a> — CrowdStrike, SentinelOne, Carbon Black for endpoint analysis</li>
-<li><a href="https://career.hadess.io/skills">MITRE ATT&#038;CK</a> — mapping techniques to data sources and hunt hypotheses</li>
-<li><a href="https://career.hadess.io/skills">Network traffic analysis</a> — Zeek logs, NetFlow, DNS analytics</li>
-<li><a href="https://career.hadess.io/skills">Data analytics and statistics</a> — identifying anomalies in large datasets</li>
-<li><a href="https://career.hadess.io/skills">Windows internals</a> — understanding process behavior, authentication, and persistence</li>
-<li><a href="https://career.hadess.io/skills">PowerShell and scripting</a> — automating hunt workflows and data processing</li>
-<li><a href="https://career.hadess.io/skills">Detection engineering</a> — turning findings into SIGMA rules and SIEM detections</li>
-</ul>
-<p>Build these in the <a href="https://career.hadess.io/skills">skills library</a> and see how threat hunting connects to other roles in the <a href="https://career.hadess.io/career-skills">career path explorer</a>.</p>
-<h2>Certifications</h2>
-<p>Threat hunter certifications blend detection, forensics, and intelligence skills:</p>
-<ul>
-<li><strong>GCIH</strong> — incident handling skills that form the foundation of hunting</li>
-<li><strong>CySA+</strong> — defensive analysis certification, good starting point</li>
-<li><strong>GCTI</strong> — threat intelligence expertise for hypothesis development</li>
-<li><strong>GNFA</strong> — GIAC Network <a href="/blog/read/digital-forensic-analyst" title="Digital Forensic Analyst: Uncover What Really Happened">Forensic Analyst</a>, for network-level hunting</li>
-</ul>
-<p>Plan your certification strategy with the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a>.</p>
-<h2>Salary Range</h2>
-<p>Threat hunters earn between <strong>$60K and $140K</strong>. This is a mid-to-senior role, and compensation reflects that. Hunters with strong data science skills, custom tooling ability, and a track record of finding real threats command the highest pay. Financial services and tech companies tend to pay at the top of the range.</p>
-<p>See where you stand using the <a href="https://career.hadess.io/salary-calculator">salary calculator</a>.</p>
-<h2>How to Get Started</h2>
-<p>1. <strong>Spend time in a SOC first</strong> — you need to understand alert workflows and detection gaps before you can hunt effectively 2. <strong>Master SIEM query languages</strong> — you will write hundreds of queries during every hunt 3. <strong>Take the <a href="https://career.hadess.io/assessment">skills assessment</a></strong> to measure your investigation and analysis capabilities 4. <strong>Practice hunting exercises</strong> in the <a href="https://career.hadess.io/workspace">labs</a> — scenario-based threat hunting challenges 5. <strong>Study ATT&#038;CK deeply</strong> — map each technique to the data sources available in your environment 6. <strong>Learn statistical analysis basics</strong> — frequency analysis, stacking, and outlier detection 7. <strong>Get GCIH and work toward GCTI</strong> — plan your path with the <a href="https://career.hadess.io/certificate-roadmap">certification planner</a> 8. <strong>Document your hunting methodology and findings</strong> for your <a href="https://career.hadess.io/resume">resume</a> 9. <strong>Search for threat hunter or detection engineer roles</strong> on the <a href="https://career.hadess.io/jobs">job board</a></p>
-<p>Threat hunting is not an entry-level position. If you are wondering how to build the right background, the <a href="https://career.hadess.io/coach">career coach</a> can help you plan a path from your current role.</p>
+<h2>What Does a Penetration Tester Do</h2>
+<p>A penetration tester career centers on one goal: finding security weaknesses before real attackers do. Penetration testers &#8212; also called pen testers or ethical hackers &#8212; are hired by organizations to simulate real-world attacks against their systems, applications, and networks. They use the same techniques that malicious actors employ, but with explicit authorization and a structured methodology.</p>
+<p>The job goes well beyond running automated scanners. While vulnerability scanners identify potential weaknesses, a pen tester validates whether those weaknesses are actually exploitable, chains multiple vulnerabilities together to demonstrate real business impact, and provides actionable guidance on how to fix what they find.</p>
+<p>Organizations hire pen testers for several reasons: <a href="/blog/read/compliance-management" title="Compliance Management: SOC 2, ISO 27001, PCI DSS, and HIPAA">regulatory compliance</a> (PCI DSS requires annual penetration tests), due diligence before product launches, validation of security controls after major infrastructure changes, and increasingly, as part of continuous security testing programs.</p>
+<p>The penetration tester career is one of the most in-demand specializations in cybersecurity. According to the <a href="https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm">Bureau of Labor Statistics</a>, <a href="/blog/read/information-security-analyst" title="Information Security Analyst: Protect Data and Manage Risk">information security analyst</a> roles (which include pen testers) are growing 33% through 2033. Offensive security specialists command premium salaries because the skill set is difficult to develop and organizations face persistent threats.</p>
+<h2>Types of Penetration Testing</h2>
+<p>Pen testers typically specialize in one or more of these areas:</p>
+<h3>Network Penetration Testing</h3>
+<p>Testing internal and external network infrastructure for vulnerabilities. This includes <a href="/blog/read/active-directory-security" title="Active Directory Security: Attack Paths and Hardening">Active Directory</a> attacks, network segmentation testing, and attacking services exposed to the internet. Network <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">pen testing</a> is the most traditional form and remains the most commonly requested service.</p>
+<h3>Web Application Penetration Testing</h3>
+<p>Finding vulnerabilities in web applications &#8212; SQL injection, cross-site scripting, authentication bypasses, business logic flaws, and API security issues. With everything moving to web-based services, this is the fastest-growing specialty. The <a href="https://owasp.org/www-project-web-security-testing-guide/">OWASP Testing Guide</a> is the standard reference for web app pen testing methodology.</p>
+<h3>Mobile Application Testing</h3>
+<p>Analyzing iOS and Android applications for security issues, including insecure data storage, improper certificate validation, and reverse engineering of client-side protections.</p>
+<h3>Cloud Penetration Testing</h3>
+<p>Assessing cloud environments (AWS, Azure, GCP) for misconfigurations, excessive permissions, and attack paths that could lead to account takeover or data exposure. This specialty is growing fast as organizations migrate to cloud infrastructure.</p>
+<h3>Red Teaming</h3>
+<p>Full-scope adversary simulation that tests not just technical controls but also people and processes. Red team engagements are longer (weeks to months), more realistic, and focus on achieving specific objectives rather than finding every vulnerability. Red teaming is the most advanced form of offensive security work.</p>
+<h3>Social Engineering</h3>
+<p>Testing the human element through phishing campaigns, vishing (voice phishing), physical access attempts, and pretexting. Some pen testers specialize in this area, though most incorporate social engineering as one component of broader engagements.</p>
+<h2>A Realistic Day in the Life</h2>
+<p>Forget the Hollywood image of hooded figures typing furiously in dark rooms. Here is what pen testing actually looks like:</p>
+<p><strong>Engagement scoping (before the test starts).</strong> You meet with the client to define what is in scope, what is off-limits, and what the rules of engagement are. You agree on testing windows, emergency contacts, and how to handle critical findings. This meeting prevents misunderstandings that could turn a pen test into an incident.</p>
+<p><strong>Reconnaissance.</strong> The first phase of active testing. You gather information about the target through OSINT (open-source intelligence), DNS enumeration, subdomain discovery, and port scanning. You are building a map of the attack surface before you start testing.</p>
+<p><strong>Vulnerability identification.</strong> You combine automated scanning with manual testing to find weaknesses. This is where experience matters &#8212; an experienced pen tester notices the misconfigured CORS policy that a scanner missed, or recognizes that a seemingly low-severity information disclosure can be chained with another finding to achieve remote code execution.</p>
+<p><strong>Exploitation.</strong> You attempt to exploit identified vulnerabilities to demonstrate real impact. This might mean gaining a shell on a server, extracting sensitive data, escalating privileges to domain admin, or pivoting from one system to another. You document every step carefully because you will need to reproduce it for the report.</p>
+<p><strong>Report writing.</strong> This is the part nobody talks about, but it is where pen testers spend 30-40% of their time. You write a detailed report that includes an executive summary for leadership, technical findings with evidence (screenshots, command output, packet captures), risk ratings, and specific remediation guidance. A well-written report is the deliverable your client pays for.</p>
+<p><strong>Debrief.</strong> You present your findings to the client, walk them through the most critical issues, answer technical questions, and help prioritize remediation efforts.</p>
+<h2>Technical Skills You Actually Need</h2>
+<p>Here is what separates a working pen tester from someone who completed an online course:</p>
+<p><strong>Networking.</strong> Deep understanding of TCP/IP, routing, switching, VLANs, firewalls, and common protocols. You need to understand networks at the packet level, not just conceptually. If you cannot read a Wireshark capture and immediately understand what is happening, you are not ready.</p>
+<p><strong>Operating systems.</strong> Thorough knowledge of both Windows and Linux internals. On the Windows side, this means Active Directory, Group Policy, Windows authentication (NTLM, Kerberos), and service configurations. On Linux, you need to understand file permissions, process management, privilege escalation vectors, and common service misconfigurations.</p>
+<p><strong>Web technologies.</strong> HTTP/HTTPS, REST APIs, JavaScript, SQL, authentication mechanisms (OAuth, JWT, session management), and web server configurations. Most pen testing engagements include <a href="/blog/read/application-penetration-tester" title="Application Penetration Tester: Go Beyond the Web Layer">web application testing</a>, so this is not optional.</p>
+<p><strong>Programming and scripting.</strong> Python is the primary language for tool development and automation. You should also be comfortable reading and modifying code in Bash, PowerShell, JavaScript, and ideally one compiled language (Go or C are most useful). You will frequently need to modify exploits, write custom tools, and automate repetitive tasks.</p>
+<p><strong>Active Directory attacks.</strong> AD is present in almost every enterprise environment and is the most common attack path to full domain compromise. You need to understand Kerberoasting, AS-REP roasting, delegation attacks, NTLM relay, DCSync, and the many other AD-specific attack techniques.</p>
+<p><strong>Vulnerability chaining.</strong> Individual findings often appear low-severity in isolation. The skill that defines senior pen testers is the ability to chain vulnerabilities together &#8212; combining an SSRF with a metadata endpoint to steal cloud credentials, or using a low-privilege SQL injection to dump credentials that work on the internal network.</p>
+<h2>Certifications Worth Pursuing</h2>
+<p>Certifications matter more in pen testing than in many other security roles because clients often require them:</p>
+<p><strong>OSCP (Offensive Security Certified Professional).</strong> The gold standard for pen testers. The 24-hour practical exam proves you can actually find and exploit vulnerabilities, not just answer multiple-choice questions. Most pen testing job postings list OSCP as preferred or required. <a href="https://www.offsec.com/courses/pen-200/">Offensive Security&#8217;s certification page</a> has current details.</p>
+<p><strong>OSWE (Offensive Security Web Expert).</strong> For web application pen testers, this certification demonstrates advanced web app exploitation skills including source code review and custom <a href="/blog/read/exploit-developer" title="Exploit Developer: Turn Vulnerabilities into Working Code">exploit development</a>.</p>
+<p><strong>GPEN (GIAC Penetration Tester).</strong> A <a href="https://www.sans.org/cyber-security-certifications/">SANS certification</a> that covers pen testing methodology and is well-recognized, particularly in government and defense contracting.</p>
+<p><strong>CRTP/CRTE (Certified Red Team Professional/Expert).</strong> Focused specifically on Active Directory attacks, these certifications from Altered Security fill a gap that OSCP does not fully cover.</p>
+<p><strong>eJPT and eCPPT.</strong> From INE Security, these are good stepping-stone certifications if you are not ready for OSCP. The eJPT is a practical entry-level cert, and the eCPPT is an intermediate option.</p>
+<p><strong>CompTIA PenTest+.</strong> A vendor-neutral certification that covers pen testing methodology. It is less respected than OSCP but more accessible and sufficient for some entry-level positions.</p>
+<h2>Penetration Tester Salary in 2026</h2>
+<p>Pen testing is one of the higher-paying cybersecurity specializations. Here are realistic 2026 ranges:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>US Salary Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Junior Pen Tester (0-2 years)</td>
+<td>$70,000 &#8211; $95,000</td>
+</tr>
+<tr>
+<td>Mid-Level Pen Tester (2-5 years)</td>
+<td>$95,000 &#8211; $140,000</td>
+</tr>
+<tr>
+<td>Senior Pen Tester (5+ years)</td>
+<td>$140,000 &#8211; $190,000</td>
+</tr>
+<tr>
+<td>Principal/Lead</td>
+<td>$175,000 &#8211; $220,000+</td>
+</tr>
+<tr>
+<td>Independent Consultant</td>
+<td>$150 &#8211; $300+/hour</td>
+</tr>
+</tbody>
+</table>
+<p>Specialization affects pay significantly. Cloud pen testers, red teamers, and those with exploit development skills command premiums over generalists. Bug bounty income can supplement or even replace a full-time salary for top researchers &#8212; some earn six figures annually from platforms like HackerOne and Bugcrowd.</p>
+<p>Consulting firms and boutique pen testing shops typically pay more than internal security teams because billable hours directly drive revenue. The trade-off is more travel (though remote testing is increasingly common) and less stability than an in-house role.</p>
+<h2>How to Start a Penetration Tester Career</h2>
+<p>Most pen testers do not start in pen testing. Here is the realistic path:</p>
+<p><strong>Build a security foundation first.</strong> Spend 1-3 years in a defensive role like <a href="/blog/read/soc-analyst-guide">SOC analyst</a> or systems administration. Understanding how defenders work, how networks are built, and how security controls function makes you a better attacker. It also makes you more credible with clients who need to trust your judgment.</p>
+<p><strong>Practice on legal targets.</strong> Start with platforms like HackTheBox, TryHackMe, and PortSwigger Web Security Academy. These provide legal, realistic targets to develop your skills. Progress from guided labs to unguided challenges. Document everything you do &#8212; these writeups become your portfolio.</p>
+<p><strong>Earn the OSCP.</strong> This certification is the single most impactful thing you can do for your pen testing career. Budget 3-6 months of dedicated preparation. The exam is hard, and many people fail on their first attempt. That is normal. The preparation process itself builds real skills.</p>
+<p><strong>Build a portfolio.</strong> Write blog posts about vulnerabilities you find in CTF challenges (never about client engagements). Contribute to open-source security tools. Participate in bug bounties. Create tools that solve real problems. Hiring managers want to see evidence of curiosity and technical depth.</p>
+<p><strong>Apply to consulting firms.</strong> Pen testing consultancies are the most common employers and often the best place to start. They expose you to a variety of environments, technologies, and attack scenarios that internal roles cannot match. Use our career skills mapping tool to identify gaps in your skill set before applying.</p>
+<p><strong>Consider the <a href="/blog/read/cybersecurity-no-experience">no-experience path</a>.</strong> If you are starting from scratch, check our guide on entering cybersecurity without prior experience for additional strategies.</p>
+<h2>Tools of the Trade</h2>
+<p>Every pen tester has a toolkit. Here are the categories and standouts:</p>
+<p><strong>Operating system:</strong> Kali Linux is the standard pen testing distribution, pre-loaded with hundreds of security tools.</p>
+<p><strong>Network scanning:</strong> Nmap for port scanning and service discovery. Masscan for large-scale network scanning. Nessus or OpenVAS for <a href="/blog/read/vulnerability-management" title="Vulnerability Management: Scanning, Prioritization, and Patching">vulnerability scanning</a>.</p>
+<p><strong>Web application testing:</strong> Burp Suite Professional is the industry standard. ZAP (from OWASP) is a free alternative. Nuclei for automated template-based scanning.</p>
+<p><strong>Exploitation frameworks:</strong> Metasploit for exploit development and delivery. Cobalt Strike and Sliver for red team command-and-control. Impacket for AD-related attacks.</p>
+<p><strong>Post-exploitation:</strong> BloodHound for AD attack path visualization. Mimikatz for credential extraction. Rubeus for Kerberos attacks. LinPEAS/WinPEAS for privilege escalation enumeration.</p>
+<p><strong>Password attacks:</strong> Hashcat and John the Ripper for hash cracking. Hydra for online brute-forcing.</p>
+<p><strong>Reporting:</strong> Many teams use custom templates in Word or LaTeX. Some use platforms like PlexTrac or AttackForge for pen test management.</p>
+<h2>Career Progression</h2>
+<p>The pen tester career path offers several growth directions:</p>
+<p><strong>Specialization.</strong> Focus on a specific domain &#8212; web applications, cloud environments, mobile, IoT, or embedded systems. Specialists command higher rates and work on more interesting engagements.</p>
+<p><strong>Red team lead.</strong> Move from individual pen tests to leading full-scope adversary simulations. This requires strong technical skills plus project management and team coordination abilities.</p>
+<p><strong>Security research.</strong> Shift toward finding zero-day vulnerabilities, developing exploits, and publishing original research. This path leads to roles at security research firms, vendor security teams, or independent consulting.</p>
+<p><strong><a href="/blog/read/cloud-security-engineer">Cloud security engineering</a>.</strong> Many pen testers transition into building secure cloud architectures, bringing their offensive perspective to defensive design.</p>
+<p><strong>Management.</strong> Lead a pen testing practice, manage a team of consultants, and handle client relationships. This reduces hands-on technical work but increases earning potential and strategic influence.</p>
+<p><strong>Independent consulting.</strong> After building a reputation, many senior pen testers go independent. Day rates of $2,000-$4,000+ are achievable for experienced consultants with strong networks.</p>
 <p><strong>Read the complete guide:</strong> <a href="/blog/read/cybersecurity-career-guide" title="How to Start a Career in Cybersecurity">How to Start a Career in Cybersecurity</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/career-pathsthreat-intelligence/malware-analyst">Malware Analyst: Reverse Engineer the Weapons Attackers Use — HADESS | 2026</a></li>
-<li><a href="/blog/read/career-pathsthreat-intelligence/threat-intelligence-analyst">Threat Intelligence Analyst: Know the Enemy Before They Strike</a></li>
+<li><a href="/blog/read/soc-analyst-guide">What Is a SOC Analyst? Complete 2026 Guide</a></li>
+<li><a href="/blog/read/cloud-security-engineer">Cloud Security Engineer: Role, Skills, and Career Path</a></li>
+<li><a href="/blog/read/cybersecurity-no-experience">How to Break Into Cybersecurity With No Experience</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Start your career assessment.</strong> Go to the <a href="https://career.hadess.io/assessment">start your career assessment</a> on HADESS.</p>
-<p><strong>Explore career paths.</strong> Check out the <a href="https://career.hadess.io/career-skills">explore career paths</a>.</p>
-<p><strong>Get started free</strong> — <a href="https://career.hadess.io/login">Create your HADESS account</a> and access all career tools.</p>
+<p><strong>Assess your pen testing readiness</strong> &#8212; Use our career skills platform to see where your offensive security skills stand and what you need to work on next. Start your career skills assessment</p>
+<p><strong>Plan your full career path</strong> &#8212; See how pen testing connects to other security roles and specializations. <a href="/blog/read/cybersecurity-career-guide">View the Cybersecurity Career Guide</a></p>
+<p>Create your free account to get started</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What certifications do I need for this role?</h3>
-<p>Certification requirements vary by employer and seniority level. Use the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a> to build a sequence based on your target role and current qualifications.</p>
-<h3>What is the salary range for this role?</h3>
-<p>Salaries vary significantly by location, experience, and employer type. Use the <a href="https://career.hadess.io/salary-calculator">salary calculator</a> for your specific market rate.</p>
-<h3>How do I transition into this career path?</h3>
-<p>Take the <a href="https://career.hadess.io/assessment">skills assessment</a> to identify your current strengths and gaps relative to this role. The assessment generates a personalized learning plan to close the gap.</p>
-<p>&#8212;</p>
-<p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>Can I become a pen tester without a college degree?</h3>
+<p>Yes, and many successful pen testers do not have one. The pen testing field is more skills-focused than credential-focused. What matters is demonstrable ability: OSCP certification, a portfolio of writeups and tools, and ideally some professional security experience (even if it is defensive). That said, a degree in computer science or cybersecurity can accelerate your early career and is sometimes required for government or defense contracting positions.</p>
+<h3>Is pen testing stressful?</h3>
+<p>It depends on the setting. Consulting pen testers face deadline pressure because engagements have fixed timelines &#8212; you need to find meaningful vulnerabilities within a set number of days. Report writing under time pressure is the most commonly cited stressor. The work itself, however, is intellectually stimulating, and most pen testers report high job satisfaction. Red team engagements that span weeks or months tend to be less stressful than rapid-fire one-week pen tests.</p>
+<h3>How important are bug bounties for getting hired?</h3>
+<p>Bug bounties are strong resume builders because they demonstrate you can find real vulnerabilities in production systems, not just lab environments. A few meaningful bug bounty findings (especially on well-known programs) carry more weight than dozens of CTF completions. However, bug bounties alone are not enough &#8212; employers also want to see that you can work methodically, write clear reports, and communicate effectively with non-technical stakeholders.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1626,27 +1707,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1813,11 +1894,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1840,59 +1921,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

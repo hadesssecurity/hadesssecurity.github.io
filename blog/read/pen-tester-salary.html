@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-salary#article","headline":"Penetration Tester Salary 2026: Full Breakdown — HADESS Magazine","description":"Penetration tester salary data for 2026 with US, UK, and global figures. See real pay ranges by experience, certs, and specialization.","url":"https://hadesssecurity.github.io/blog/read/pen-tester-salary","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-salary"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-pen-tester-salary.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-salary#article","headline":"Penetration Tester Salary 2026: Full Breakdown — HADESS Magazine","description":"Penetration tester salary data for 2026 with US, UK, and global figures. See real pay ranges by experience, certs, and specialization.","url":"https://hadesssecurity.github.io/blog/read/pen-tester-salary","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/pen-tester-salary"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-pen-tester-salary.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1541,262 +1552,179 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <blockquote>
 <p><strong>Part of the <a href="/blog/read/cybersecurity-salary-guide">Cybersecurity Salary Guide</a></strong> — This article is one deep-dive in our complete salary series.</p>
 </blockquote>
-<h1>Cybersecurity Salary UK: Complete Guide for 2026</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
+<h1>Penetration Tester Salary 2026: Full Breakdown</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 11 min read</em></p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#uk-cybersecurity-market-overview">UK Cybersecurity Market Overview</a></li>
-<li><a href="#salary-by-role">Salary by Role</a></li>
-<li><a href="#london-vs-rest-of-uk">London vs Rest of UK</a></li>
-<li><a href="#salary-by-industry-sector">Salary by Industry Sector</a></li>
-<li><a href="#contract-vs-permanent-rates">Contract vs Permanent Rates</a></li>
-<li><a href="#certifications-and-uk-salary-impact">Certifications and UK Salary Impact</a></li>
-<li><a href="#benefits-and-total-compensation">Benefits and Total Compensation</a></li>
-<li><a href="#uk-salary-vs-us-and-europe">UK Salary vs US and Europe</a></li>
-<li><a href="#how-to-maximize-your-uk-cyber-salary">How to Maximize Your UK Cyber Salary</a></li>
+<li><a href="#how-much-do-penetration-testers-earn">How Much Do Penetration Testers Earn</a></li>
+<li><a href="#us-penetration-tester-salary-by-experience">US Penetration Tester Salary by Experience</a></li>
+<li><a href="#uk-and-european-penetration-tester-pay">UK and European Penetration Tester Pay</a></li>
+<li><a href="#salary-by-specialization">Salary by Specialization</a></li>
+<li><a href="#consulting-vs-in-house-pay">Consulting vs In-House Pay</a></li>
+<li><a href="#bug-bounty-income-vs-full-time-salary">Bug Bounty Income vs Full-Time Salary</a></li>
+<li><a href="#certifications-that-boost-pen-tester-pay">Certifications That Boost Pen Tester Pay</a></li>
+<li><a href="#pen-tester-salary-vs-other-cyber-roles">Pen Tester Salary vs Other Cyber Roles</a></li>
+<li><a href="#how-to-maximize-your-pen-testing-income">How to Maximize Your Pen Testing Income</a></li>
 <li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
 <li><a href="#take-the-next-step">Take the Next Step</a></li>
 <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<h2>UK Cybersecurity Market Overview</h2>
-<p>The cybersecurity salary UK market has strengthened steadily since 2023. The combination of NIS2-adjacent regulations, UK GDPR enforcement by the <a href="https://ico.org.uk/">ICO</a>, and a persistent skills shortage has pushed salaries upward across every role and experience level.</p>
-<p>The UK government&#8217;s Cyber Security Breaches Survey consistently shows that the majority of UK businesses consider cybersecurity a high priority, yet struggle to find qualified staff. This supply-demand imbalance directly benefits practitioners, especially those with hands-on operational experience and relevant certifications.</p>
-<p>In 2026, the UK cybersecurity workforce gap stands at approximately 11,200 unfilled positions, according to the <a href="https://www.gov.uk/government/collections/cyber-security-breaches-survey">DCMS Cyber Security Skills in the UK Labour Market</a> reports. Financial services, government, healthcare (NHS), and critical national infrastructure are the largest hiring sectors.</p>
-<p>This guide covers every major cybersecurity role in the UK market with current salary data segmented by location, experience, and industry.</p>
-<h2>Salary by Role</h2>
-<p>Here is what each cybersecurity role pays in the UK in 2026. Figures represent base salary before benefits, bonuses, and pension contributions.</p>
-<p><strong>Security Analyst / SOC Analyst</strong></p>
+<h2>How Much Do Penetration Testers Earn</h2>
+<p>Penetration tester salary numbers consistently rank among the highest in cybersecurity. The role demands a unique combination of technical depth, creative thinking, and the ability to communicate findings to non-technical stakeholders. Organizations pay well because a good pen tester can find the vulnerability that prevents a breach costing millions.</p>
+<p>In 2026, demand for penetration testers continues to outpace supply. Regulatory requirements like PCI DSS mandate annual <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">penetration testing</a> for organizations handling payment card data. ISO 27001 audits frequently require evidence of third-party testing. Financial regulators in the US, UK, and EU have all tightened their expectations around offensive security assessments.</p>
+<p>The result is that pen testers with strong skills and relevant experience can command premium compensation. But the range is wide. A junior tester running automated scans earns far less than a senior consultant leading red team engagements for Fortune 500 clients.</p>
+<h2>US Penetration Tester Salary by Experience</h2>
+<p>The US market offers the highest penetration tester salaries globally, driven by demand from financial services, technology companies, defense contractors, and consulting firms.</p>
+<p><strong>Junior Penetration Tester (0-2 years)</strong></p>
 <ul>
-<li>Junior (0-2 years): 25,000 &#8211; 38,000 GBP</li>
-<li>Mid-level (2-5 years): 38,000 &#8211; 55,000 GBP</li>
-<li>Senior (5+ years): 55,000 &#8211; 75,000 GBP</li>
+<li>National average: $70,000 &#8211; $90,000</li>
+<li>Metro areas (NYC, DC, SF): $80,000 &#8211; $105,000</li>
+<li>Remote: $65,000 &#8211; $85,000</li>
 </ul>
-<p>SOC analysts are the largest segment of the UK cybersecurity workforce. Financial services firms and managed security service providers (MSSPs) are the top employers. For detailed SOC salary breakdowns including tier-by-tier data, see the <a href="/blog/read/soc-analyst-salary">SOC analyst salary guide</a>.</p>
-<p><strong>Penetration Tester</strong></p>
+<p>At this level, you are running vulnerability scans, performing basic <a href="/blog/read/application-penetration-tester" title="Application Penetration Tester: Go Beyond the Web Layer">web application testing</a>, and writing sections of penetration test reports. Most juniors work under the supervision of a senior tester and learn the methodology on the job. You are expected to know tools like Burp Suite, Nmap, and Metasploit, but deep manual exploitation skills come with time.</p>
+<p><strong>Mid-Level Penetration Tester (2-5 years)</strong></p>
 <ul>
-<li>Junior: 28,000 &#8211; 42,000 GBP</li>
-<li>Mid-level: 42,000 &#8211; 65,000 GBP</li>
-<li>Senior: 65,000 &#8211; 95,000 GBP</li>
+<li>National average: $95,000 &#8211; $130,000</li>
+<li>Metro areas: $110,000 &#8211; $150,000</li>
+<li>Remote: $90,000 &#8211; $125,000</li>
 </ul>
-<p>UK <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">pen testing</a> pay has risen sharply as CREST-certified testers remain in short supply. Consulting firms like NCC Group, WithSecure, and Pentest People anchor the market. See the <a href="/blog/read/pen-tester-salary">penetration tester salary breakdown</a> for specialization premiums.</p>
-<p><strong>Security Engineer</strong></p>
+<p>Mid-level testers lead engagements independently. You scope assessments, execute testing plans, write full reports, and present findings to clients or internal stakeholders. You have moved beyond automated scanning into manual testing, and you can identify vulnerabilities that tools miss. <a href="/blog/read/active-directory-security" title="Active Directory Security: Attack Paths and Hardening">Active Directory</a> exploitation, API testing, and mobile application testing are typical focus areas.</p>
+<p><strong>Senior Penetration Tester (5+ years)</strong></p>
 <ul>
-<li>Junior: 35,000 &#8211; 48,000 GBP</li>
-<li>Mid-level: 48,000 &#8211; 70,000 GBP</li>
-<li>Senior: 70,000 &#8211; 95,000 GBP</li>
+<li>National average: $130,000 &#8211; $180,000</li>
+<li>Metro areas: $145,000 &#8211; $200,000+</li>
+<li>Remote: $120,000 &#8211; $170,000</li>
 </ul>
-<p>Security engineers who work with cloud platforms (AWS, Azure) and <a href="/blog/read/devsecops-engineer" title="DevSecOps Engineer: Build Security into Every Pipeline">DevSecOps</a> tooling earn at the top end. Infrastructure-as-code and <a href="/blog/read/docker-security-hardening-containers" title="Docker Security: Hardening Containers from Build to Runtime">container security</a> skills are particularly valued.</p>
-<p><strong>Security Architect</strong></p>
+<p>Senior pen testers lead <a href="/blog/read/red-team-operations" title="Red Team Operations: Adversary Emulation and C2 Frameworks">red team operations</a>, develop custom exploits, and advise organizations on their security architecture. Many senior testers publish research, speak at conferences like DEF CON or Black Hat, and contribute to open-source security tools. At this level, you are as much a consultant as a technical operator, and your ability to translate findings into business risk drives your value.</p>
+<p><strong>Principal / Lead Penetration Tester (8+ years)</strong></p>
 <ul>
-<li>Mid-level: 65,000 &#8211; 85,000 GBP</li>
-<li>Senior: 85,000 &#8211; 120,000 GBP</li>
+<li>National average: $170,000 &#8211; $250,000+</li>
+<li>This tier includes practice leads at consulting firms, offensive security directors, and independent consultants with established reputations.</li>
 </ul>
-<p>Architecture roles require a minimum of 5-7 years experience. SABSA and TOGAF certifications are common requirements in UK job postings.</p>
-<p><strong>GRC / Compliance Specialist</strong></p>
+<h2>UK and European Penetration Tester Pay</h2>
+<p><strong>United Kingdom</strong></p>
 <ul>
-<li>Junior: 30,000 &#8211; 42,000 GBP</li>
-<li>Mid-level: 42,000 &#8211; 60,000 GBP</li>
-<li>Senior / Manager: 60,000 &#8211; 90,000 GBP</li>
-</ul>
-<p>UK GDPR, PCI DSS, ISO 27001, and sector-specific regulations (FCA, NHS DSPT) drive demand. GRC roles pay less than technical roles at the junior level but the gap narrows at senior levels.</p>
-<p><strong>Incident Responder / DFIR Specialist</strong></p>
-<ul>
-<li>Mid-level: 50,000 &#8211; 70,000 GBP</li>
+<li>Junior: 30,000 &#8211; 45,000 GBP</li>
+<li>Mid-level: 45,000 &#8211; 70,000 GBP</li>
 <li>Senior: 70,000 &#8211; 100,000 GBP</li>
+<li>Lead / Principal: 100,000 &#8211; 130,000+ GBP</li>
 </ul>
-<p>DFIR specialists are scarce in the UK market. Consultancies and law enforcement agencies (NCA, NCSC) compete for the same talent pool.</p>
-<p><strong>CISO</strong></p>
+<p>London consulting firms like NCC Group, WithSecure, and Context Information Security anchor the high end of the UK market. Boutique firms specializing in red team operations and financial services testing often pay even more for proven talent. Check the <a href="/blog/read/cybersecurity-salary-uk">UK cybersecurity salary guide</a> for broader market context.</p>
+<p><strong>Germany</strong></p>
 <ul>
-<li>Mid-market: 100,000 &#8211; 170,000 GBP</li>
-<li>Enterprise: 170,000 &#8211; 280,000 GBP</li>
-<li>FTSE 100: 250,000 &#8211; 400,000+ GBP</li>
+<li>Junior: 45,000 &#8211; 55,000 EUR</li>
+<li>Mid-level: 55,000 &#8211; 80,000 EUR</li>
+<li>Senior: 80,000 &#8211; 110,000 EUR</li>
 </ul>
-<p>Full <a href="/blog/read/ciso-salary" title="CISO Salary: What Does a CISO Earn?">CISO salary</a> analysis available in the <a href="/blog/read/ciso-salary">CISO salary guide</a>.</p>
-<h2>London vs Rest of UK</h2>
-<p>London dominates the UK cybersecurity market. About 40% of all UK cybersecurity jobs are based in London or the surrounding commuter belt. The London premium varies by role but typically adds 15-30% to salaries compared to equivalent positions outside the capital.</p>
-<p><strong>London premiums by role:</strong></p>
+<p><strong>Netherlands</strong></p>
+<ul>
+<li>Junior: 40,000 &#8211; 50,000 EUR</li>
+<li>Mid-level: 50,000 &#8211; 72,000 EUR</li>
+<li>Senior: 72,000 &#8211; 100,000 EUR</li>
+</ul>
+<p><strong>Switzerland</strong></p>
+<ul>
+<li>Junior: 80,000 &#8211; 100,000 CHF</li>
+<li>Mid-level: 100,000 &#8211; 135,000 CHF</li>
+<li>Senior: 135,000 &#8211; 175,000 CHF</li>
+</ul>
+<h2>Salary by Specialization</h2>
+<p>Not all penetration testing work pays the same. Certain specializations command premiums because they require deeper expertise or serve high-risk industries.</p>
+<p><strong>Web Application Testing:</strong> The most common specialization. Pay aligns with general pen tester ranges. Strong knowledge of OWASP Top 10 and manual testing methodology is the baseline.</p>
+<p><strong>Network / Infrastructure Testing:</strong> Traditional network penetration testing pays slightly above web app testing because it requires broader knowledge of protocols, operating systems, and post-exploitation techniques. Active Directory environments are a major focus area.</p>
+<p><strong>Cloud Penetration Testing:</strong> Testing AWS, Azure, and GCP environments is a growing specialty that pays 10-20% above standard pen testing rates. Cloud misconfigurations are a top attack vector, and testers who understand cloud-native architectures are in high demand.</p>
+<p><strong>Red Team Operations:</strong> Red team specialists who conduct full-scope adversary simulations earn 15-25% more than standard pen testers. This work includes social engineering, physical security testing, and long-duration campaigns designed to test an organization&#8217;s detection and response capabilities.</p>
+<p><strong>Mobile Application Testing:</strong> iOS and Android application testing is a niche that pays well, especially for testers who can reverse-engineer native applications and identify vulnerabilities in mobile APIs.</p>
+<p><strong>IoT / OT / Embedded Systems:</strong> Testing industrial control systems, medical devices, and IoT hardware is the highest-paid penetration testing specialty. Testers need electronics knowledge, firmware reverse engineering skills, and an understanding of safety-critical systems. Expect 20-30% premiums over standard pen testing pay.</p>
+<h2>Consulting vs In-House Pay</h2>
+<p>The pen testing industry splits between consulting firms and in-house security teams. The pay dynamics differ significantly.</p>
+<p><strong>Consulting firms</strong> typically offer:</p>
+<ul>
+<li>Higher base salaries for experienced testers</li>
+<li>Utilization-based bonuses (billing targets)</li>
+<li>Exposure to diverse environments and technologies</li>
+<li>Travel requirements (30-50% for some firms)</li>
+<li>Higher burnout rates due to engagement pacing</li>
+</ul>
+<p><strong>In-house positions</strong> typically offer:</p>
+<ul>
+<li>Slightly lower base salaries (5-15% less than consulting)</li>
+<li>Better work-life balance</li>
+<li>Deeper knowledge of one environment</li>
+<li>Stock options and equity (at tech companies)</li>
+<li>More predictable schedules</li>
+</ul>
+<p>A senior pen tester at a Big Four consulting firm in the US might earn $150,000 &#8211; $180,000 in base salary plus a $20,000 &#8211; $40,000 bonus. The same tester at a technology company might earn $140,000 &#8211; $160,000 in base but receive $30,000 &#8211; $80,000 in stock compensation annually.</p>
+<h2>Bug Bounty Income vs Full-Time Salary</h2>
+<p>Bug bounty platforms like <a href="https://www.hackerone.com/">HackerOne</a> and <a href="https://www.bugcrowd.com/">Bugcrowd</a> offer an alternative income path. Top bug bounty hunters earn six figures annually, with a small number earning $500,000+. But the income distribution is extremely skewed.</p>
+<p>The median <a href="/blog/read/bug-bounty-hunter" title="Bug Bounty Hunter: Get Paid to Find Real Vulnerabilities">bug bounty hunter</a> earns far less than a full-time pen tester. Most participants earn under $10,000 per year from bounties. The top 1% of hunters capture the majority of payouts.</p>
+<p>Bug bounties work best as a supplement to full-time employment. Many employed pen testers hunt bounties on the side, earning an extra $10,000 &#8211; $50,000 annually. The skills transfer directly: what you learn finding bugs in bounty programs makes you a better consultant, and vice versa.</p>
+<p>If you are trying to decide between bug bounties and a full-time role, start with full-time employment. The steady income, mentorship, and structured learning environment will make you a better researcher. Once you have a few years of experience, you can decide whether to pursue bounties part-time or transition to full-time independent work.</p>
+<h2>Certifications That Boost Pen Tester Pay</h2>
+<p>Certifications matter in penetration testing because clients and employers use them as proof of competence. The right certification can unlock higher-paying engagements and clear compliance hurdles.</p>
+<p><strong>OSCP (Offensive Security Certified Professional):</strong> The industry standard. Holding an OSCP adds $10,000 &#8211; $20,000 to your market value. It proves you can actually exploit systems, not just run scanners. Almost every pen testing job posting lists OSCP as preferred or required.</p>
+<p><strong>OSWE (Offensive Security Web Expert):</strong> The web application equivalent of OSCP. Less common, which makes it more valuable for web app testing specialists. Adds $8,000 &#8211; $15,000 to your value.</p>
+<p><strong>GPEN (GIAC Penetration Tester):</strong> Widely recognized, especially in government and defense. Adds $5,000 &#8211; $12,000. Often required for DoD contracts.</p>
+<p><strong>CREST CRT / CCT:</strong> The UK and parts of Asia and the Middle East require <a href="https://www.crest-approved.org/">CREST certification</a> for penetration testing firms. If you plan to work in the UK consulting market, CREST certifications are non-negotiable.</p>
+<p><strong>OSEP (Offensive Security Experienced Pentester):</strong> An advanced credential focused on evasion and custom <a href="/blog/read/exploit-developer" title="Exploit Developer: Turn Vulnerabilities into Working Code">exploit development</a>. Holding OSEP signals that you can bypass security controls, which is valuable for red team roles. Use our certificate roadmap to plan your path.</p>
+<h2>Pen Tester Salary vs Other Cyber Roles</h2>
 <table>
 <thead>
 <tr>
 <th>Role</th>
-<th>London</th>
-<th>Outside London</th>
-<th>Premium</th>
+<th>Mid-Career Salary (US)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="/blog/read/soc-analyst" title="SOC Analyst: Your Front Line in Cyber Defense">SOC Analyst</a> (mid)</td>
-<td>45,000 &#8211; 60,000</td>
-<td>35,000 &#8211; 48,000</td>
-<td>~25%</td>
+<td><a href="/blog/read/soc-analyst-salary">SOC Analyst</a> (Tier 2)</td>
+<td>$75,000 &#8211; $100,000</td>
 </tr>
 <tr>
-<td>Pen Tester (mid)</td>
-<td>50,000 &#8211; 72,000</td>
-<td>40,000 &#8211; 58,000</td>
-<td>~22%</td>
-</tr>
-<tr>
-<td>Security Engineer (mid)</td>
-<td>55,000 &#8211; 78,000</td>
-<td>45,000 &#8211; 62,000</td>
-<td>~22%</td>
-</tr>
-<tr>
-<td>CISO (mid-market)</td>
-<td>130,000 &#8211; 200,000</td>
-<td>100,000 &#8211; 150,000</td>
-<td>~30%</td>
-</tr>
-</tbody>
-</table>
-<p>However, London&#8217;s cost of living partially or fully offsets the premium. Rent alone in zones 1-3 can consume an extra 10,000 &#8211; 18,000 GBP annually compared to cities like Manchester, Bristol, or Edinburgh.</p>
-<p><strong>Growing tech hubs outside London:</strong></p>
-<ul>
-<li><strong>Manchester</strong> — Strong FinTech and MSSP presence. Growing rapidly.</li>
-<li><strong>Edinburgh</strong> — Financial services hub with established cybersecurity practices.</li>
-<li><strong>Bristol</strong> — Defense and aerospace sector. BAE Systems, Airbus, GCHQ presence nearby.</li>
-<li><strong>Leeds</strong> — Financial services and public sector. Lower cost of living.</li>
-<li><strong>Glasgow</strong> — Government and defense. NCSC has invested in Scottish cyber initiatives.</li>
-<li><strong>Belfast</strong> — Emerging tech hub with competitive salaries relative to cost of living.</li>
-</ul>
-<p>Remote work has flattened some of the geographic premium. Many London-based employers now offer hybrid or fully remote positions at London salary rates, which benefits candidates outside the capital. However, shift-based SOC roles and positions requiring security clearance often mandate on-site presence.</p>
-<h2>Salary by Industry Sector</h2>
-<p>UK cybersecurity salaries vary significantly by sector.</p>
-<p><strong>Financial Services (banks, insurance, asset management):</strong> 15-25% above average. FCA regulations, PCI DSS requirements, and the constant threat of financial cybercrime drive spending. The largest UK banks maintain SOCs of 50-200+ people each.</p>
-<p><strong>Government and Defense:</strong> Salaries are 10-15% below the private sector, but benefits (pension, job security, clearance pathway) partially compensate. GCHQ, NCSC, MoD, and intelligence agencies pay civil service rates with additional allowances for specialist skills.</p>
-<p><strong>Technology Companies:</strong> Pay at or above average, especially for roles at cloud providers, SaaS companies, and cybersecurity vendors. Equity compensation can add 10-30% for pre-IPO companies.</p>
-<p><strong>Professional Services / Consulting:</strong> Pay at the top end for experienced practitioners, with billable hour expectations to match. Big Four firms (Deloitte, PwC, EY, KPMG) and specialist consultancies (NCC Group, Mandiant) drive this segment.</p>
-<p><strong>Healthcare (NHS and private):</strong> 10-20% below average. NHS Agenda for Change banding limits cybersecurity salaries, though NHS Digital and specialist trusts have found ways to offer market-competitive rates for hard-to-fill positions.</p>
-<p><strong>Critical National Infrastructure (energy, telecoms, transport):</strong> Pays at or above average. NIS regulations require operators of essential services to maintain mature security capabilities, which drives hiring and pay.</p>
-<h2>Contract vs Permanent Rates</h2>
-<p>The UK contracting market for cybersecurity professionals is active, particularly inside IR35 reform boundaries.</p>
-<p><strong>Day rates for cybersecurity contractors:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th>Inside IR35</th>
-<th>Outside IR35</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SOC Analyst (mid)</td>
-<td>350 &#8211; 500 GBP/day</td>
-<td>400 &#8211; 550 GBP/day</td>
-</tr>
-<tr>
-<td>Pen Tester (mid)</td>
-<td>450 &#8211; 650 GBP/day</td>
-<td>500 &#8211; 750 GBP/day</td>
-</tr>
-<tr>
-<td>Security Engineer (senior)</td>
-<td>500 &#8211; 700 GBP/day</td>
-<td>550 &#8211; 800 GBP/day</td>
-</tr>
-<tr>
-<td>Security Architect</td>
-<td>600 &#8211; 850 GBP/day</td>
-<td>650 &#8211; 950 GBP/day</td>
-</tr>
-<tr>
-<td>CISO (interim)</td>
-<td>800 &#8211; 1,200 GBP/day</td>
-<td>900 &#8211; 1,500 GBP/day</td>
-</tr>
-</tbody>
-</table>
-<p>IR35 status significantly affects take-home pay. Many UK cybersecurity roles have been classified inside IR35 since the April 2021 reforms, especially in the public sector and at large private-sector organizations. Outside-IR35 roles are more common at smaller companies and for genuine project-based work.</p>
-<p>Contractors earn more per day than permanent employees, but forgo benefits including pension contributions (typically 5-10% employer match), private health insurance, training budgets, and paid leave. Over a full year with typical utilization (220-230 working days), a mid-level security engineer contractor inside IR35 would earn 77,000 &#8211; 154,000 GBP gross, compared to a permanent salary of 48,000 &#8211; 70,000 GBP plus benefits.</p>
-<h2>Certifications and UK Salary Impact</h2>
-<p>Certifications carry different weight in the UK market compared to the US.</p>
-<p><strong>CISSP:</strong> The most requested certification in UK cybersecurity job postings. Holding CISSP adds an estimated 8,000 &#8211; 15,000 GBP to your salary. It is almost mandatory for senior and management-level positions.</p>
-<p><strong>CREST CRT / CCT:</strong> Required for penetration testers working at CREST-accredited firms. Most UK pen testing consulting roles require at least the CRT. Holding CCT (the advanced credential) puts you in the top tier of UK pen testers.</p>
-<p><strong>CompTIA Security+ / CySA+:</strong> Good entry credentials for junior roles. The salary premium is modest (3,000 &#8211; 5,000 GBP) but they help you get through recruiter filters.</p>
-<p><strong>OSCP:</strong> Highly valued in UK pen testing roles, especially at technical consultancies. Adds 5,000 &#8211; 12,000 GBP to pen tester salaries.</p>
-<p><strong>SC-Cleared Certifications:</strong> Government and defense roles require Security Check (SC) or Developed Vetting (DV) clearance. These are not traditional certifications but holding active clearance adds 5,000 &#8211; 15,000 GBP to your market value. Plan your career using our <a href="https://career.hadess.io/certificate-roadmap">certificate roadmap</a>.</p>
-<h2>Benefits and Total Compensation</h2>
-<p>UK cybersecurity compensation includes several components beyond base salary.</p>
-<ul>
-<li><strong>Pension contributions:</strong> Employer contributions of 5-10% are standard. Some financial services firms contribute up to 15%.</li>
-<li><strong>Private health insurance:</strong> Offered by most mid-to-large employers. Family coverage adds 2,000 &#8211; 5,000 GBP in value.</li>
-<li><strong>Training budget:</strong> 1,000 &#8211; 5,000 GBP annually for certifications and conferences. Some employers cover SANS training (3,000 &#8211; 7,000 GBP per course).</li>
-<li><strong>Annual leave:</strong> Standard 25 days plus bank holidays. Some employers offer 28-30 days.</li>
-<li><strong>Bonus:</strong> 5-15% for technical roles, 15-30% for management and leadership.</li>
-<li><strong>Cycle to Work scheme, tech salary sacrifice:</strong> Common but modest in value.</li>
-</ul>
-<p>Total compensation for a UK cybersecurity professional is typically 20-35% above base salary when all benefits are factored in.</p>
-<h2>UK Salary vs US and Europe</h2>
-<p>How does UK cybersecurity pay compare internationally?</p>
-<table>
-<thead>
-<tr>
-<th>Role (Mid-Level)</th>
-<th>UK</th>
-<th>US</th>
-<th>Germany</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SOC Analyst</td>
-<td>42,000 GBP</td>
-<td>$85,000</td>
-<td>55,000 EUR</td>
-</tr>
-<tr>
-<td>Pen Tester</td>
-<td>55,000 GBP</td>
-<td>$110,000</td>
-<td>65,000 EUR</td>
+<td>Penetration Tester (Mid)</td>
+<td>$95,000 &#8211; $130,000</td>
 </tr>
 <tr>
 <td>Security Engineer</td>
-<td>58,000 GBP</td>
-<td>$120,000</td>
-<td>65,000 EUR</td>
+<td>$100,000 &#8211; $145,000</td>
 </tr>
 <tr>
-<td>CISO</td>
-<td>160,000 GBP</td>
-<td>$300,000</td>
-<td>180,000 EUR</td>
+<td><a href="/blog/read/cloud-security-skills" title="Cloud Security Skills: AWS, Azure, GCP">Cloud Security</a> Architect</td>
+<td>$140,000 &#8211; $190,000</td>
+</tr>
+<tr>
+<td><a href="/blog/read/ciso-salary">CISO</a></td>
+<td>$180,000 &#8211; $350,000</td>
 </tr>
 </tbody>
 </table>
-<p>UK salaries are generally 30-40% lower than US equivalents in nominal terms. However, the gap narrows when you account for NHS access (no health insurance premiums), employer pension contributions, longer annual leave, and parental leave policies. The effective difference is closer to 15-25%.</p>
-<p>European salaries are broadly comparable to UK levels, with Switzerland being the notable exception at significantly higher pay across all roles.</p>
-<h2>How to Maximize Your UK Cyber Salary</h2>
-<p><strong>Target financial services.</strong> The FS sector pays the highest cybersecurity salaries in the UK, and London-based banks have the deepest budgets. Even if you do not want to stay in FS long-term, a few years at a bank significantly boosts your market value.</p>
-<p><strong>Get CREST certified if you are a pen tester.</strong> The UK pen testing market runs on CREST accreditation. Without it, your options are limited. With it, you can command premium rates.</p>
-<p><strong>Negotiate at the offer stage.</strong> UK employers expect negotiation. The first offer is rarely the final offer. Ask for data on internal salary bands and benchmark against market rates. Use our <a href="https://career.hadess.io/salary-calculator">salary calculator</a> to prepare.</p>
-<p><strong>Consider contracting.</strong> If you have 3+ years of experience and are comfortable with less job security, contracting can increase your income by 30-60% compared to permanent employment. The math works especially well outside London where cost of living is lower.</p>
-<p><strong>Develop cloud security skills.</strong> AWS and <a href="/blog/read/azure-security" title="Azure Security: Defender, Azure AD, and Cloud-Native Controls">Azure security</a> skills are the most in-demand specializations in the UK market right now. Engineers who can secure cloud-native architectures are consistently offered at the top of salary bands. Build these through our <a href="https://career.hadess.io/career-skills">skills development</a> resources.</p>
-<p><strong>Explore visa sponsorship employers.</strong> International candidates should review the <a href="/blog/read/uk-cyber-visa-salary">UK visa sponsorship and salary guide</a> — many UK employers actively sponsor skilled cybersecurity professionals.</p>
+<p>Penetration testing pays well relative to most cybersecurity roles, but it is not the highest-paying path. Security engineers and cloud architects often earn comparable or higher salaries with more predictable work patterns. The trade-off is that pen testing is more technically exciting for people who enjoy offensive work.</p>
+<h2>How to Maximize Your Pen Testing Income</h2>
+<p><strong>Specialize early and go deep.</strong> Generalist pen testers are replaceable. A tester who is the go-to person for cloud penetration testing or embedded device security is not. Pick a direction within your first three years and build a reputation around it.</p>
+<p><strong>Publish and speak.</strong> Conference talks, blog posts, and open-source tool releases build your professional brand. Senior pen testers with public profiles command 20-30% more than equally skilled testers who are invisible to the market.</p>
+<p><strong>Get comfortable with sales.</strong> At consulting firms, the testers who help sell new engagements get promoted faster and earn bigger bonuses. Learn to scope work, write proposals, and present to clients. This is the difference between staying at the senior tester level and moving into practice leadership.</p>
+<p><strong>Consider independent consulting.</strong> Experienced pen testers who go independent can charge $200 &#8211; $350 per hour for specialized work. A full-time independent consultant billing 1,500 hours per year at $250/hour earns $375,000 before expenses. This path requires a strong network and reputation, so plan for 5-7 years of full-time employment first.</p>
+<p><strong>Build your skills continuously.</strong> Use our skills assessment to identify gaps in your offensive security toolkit and close them systematically.</p>
 <p><strong>See the full salary guide:</strong> <a href="/blog/read/cybersecurity-salary-guide" title="Cybersecurity Salary Guide 2026">Cybersecurity Salary Guide 2026</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/uk-cyber-visa-salary">UK Cyber Jobs: Visa Sponsorship and Salary Guide</a></li>
 <li><a href="/blog/read/soc-analyst-salary">SOC Analyst Salary: US, UK, Europe Breakdown</a></li>
-<li><a href="/blog/read/entry-level-cyber-salary">Entry Level Cybersecurity Salary: What to Expect</a></li>
+<li><a href="/blog/read/ciso-salary">CISO Salary: What Does a CISO Earn?</a></li>
+<li><a href="/blog/read/cyber-vs-swe-salary">Cybersecurity vs Software Engineer Salary</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Benchmark your UK salary</strong> with our <a href="https://career.hadess.io/salary-calculator">Salary Calculator</a> to compare your pay against the latest market data for your role, experience, and region.</p>
-<p><strong>Looking for UK employers that sponsor visas?</strong> Use our <a href="https://career.hadess.io/uk-sponsor-finder">UK Sponsor Finder</a> to identify organizations hiring cybersecurity professionals with Tier 2 visa sponsorship.</p>
+<p><strong>Benchmark your pen testing salary</strong> with our Salary Calculator to see how your current compensation compares to 2026 market rates for your specialization, experience level, and location.</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What is the average cybersecurity salary in the UK?</h3>
-<p>The average cybersecurity salary in the UK in 2026 is approximately 52,000 &#8211; 58,000 GBP across all roles and experience levels. This figure includes everything from entry-level analysts to senior architects. Mid-level practitioners with 3-5 years experience typically earn 45,000 &#8211; 70,000 GBP depending on role, location, and sector.</p>
-<h3>Is London worth it for cybersecurity salaries?</h3>
-<p>It depends on your personal situation. London offers 15-30% higher salaries and the widest range of opportunities, but housing costs can offset the premium. If you can secure a London-rate remote position while living outside the capital, you get the best of both worlds. Many employers now offer this arrangement.</p>
-<h3>Are cybersecurity salaries in the UK keeping up with inflation?</h3>
-<p>Yes, cybersecurity salaries have grown faster than UK inflation since 2022. Annual salary increases of 5-8% are common for practitioners who change roles or negotiate effectively. The skills shortage ensures that employers must offer competitive pay to attract and retain talent.</p>
-<h3>Do UK cybersecurity jobs require security clearance?</h3>
-<p>Only for government, defense, and certain critical national infrastructure roles. About 20-25% of UK cybersecurity positions require SC or DV clearance. The clearance process takes 2-<a href="/blog/read/cyber-job-6-months" title="How to Get a Cybersecurity Job in 6 Months">6 months</a> and requires UK residency history. Private sector roles rarely require clearance unless they involve government contract work.</p>
-<h3>Is it better to be a contractor or permanent employee in UK cybersecurity?</h3>
-<p>Contractors earn more per day but lose benefits. At the mid-level, a contractor working 230 days per year inside IR35 earns roughly 25-40% more gross than the equivalent permanent salary. However, after accounting for lost pension contributions, holiday pay, sick leave, and training budget, the real premium is closer to 15-25%. Contracting works best for experienced professionals who value flexibility and have enough financial buffer to handle gaps between contracts.</p>
+<h3>Do penetration testers earn more than software engineers?</h3>
+<p>At comparable experience levels, penetration testers and software engineers earn similar salaries. Senior pen testers in the US earn $130,000 &#8211; $180,000, while senior software engineers earn $130,000 &#8211; $200,000+. However, top-tier software engineers at FAANG companies can earn significantly more through stock compensation. See our full <a href="/blog/read/cyber-vs-swe-salary">cybersecurity vs software engineer salary</a> comparison.</p>
+<h3>Is OSCP required to get a pen testing job?</h3>
+<p>Not strictly required, but strongly preferred. About 70% of US pen testing job postings mention OSCP as a desired certification. Without it, you need to demonstrate equivalent hands-on skills through CTF rankings, published research, or a strong portfolio of bug bounty findings.</p>
+<h3>Can penetration testers work remotely?</h3>
+<p>Yes. Remote penetration testing is now standard for most web application and cloud assessments. Network penetration testing sometimes requires on-site presence, especially for tests that target internal networks or include physical security assessments. About 60% of pen testing jobs in 2026 offer fully remote or hybrid arrangements.</p>
+<h3>How much do freelance penetration testers charge?</h3>
+<p>Independent pen testing consultants in the US typically charge $150 &#8211; $350 per hour or $1,500 &#8211; $3,500 per day. Rates vary by specialization, reputation, and client industry. Government contracts tend to pay fixed daily rates, while private-sector clients negotiate project-based pricing.</p>
+<h3>What is the fastest way to increase my pen testing salary?</h3>
+<p>Get your OSCP if you do not have it. Specialize in cloud or IoT testing. Switch employers every 2-3 years. These three actions combined can increase your salary by 30-50% within two years.</p>
 <p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
@@ -1815,27 +1743,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1999,11 +1927,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2026,59 +1954,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

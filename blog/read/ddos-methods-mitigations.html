@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/ddos-methods-mitigations#article","headline":"DDos Methods &amp; Mitigations  — HADESS Magazine","description":"Distributed denial of service (DDoS) attacks are a subclass of denial of service (DoS) attacks. A DDoS attack involves multiple connected online devices,...","url":"https://hadesssecurity.github.io/blog/read/ddos-methods-mitigations","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/ddos-methods-mitigations"},"datePublished":"July 15, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/07/pawel-latkowski-aos.jpg"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/ddos-methods-mitigations#article","headline":"DDos Methods &amp; Mitigations  — HADESS Magazine","description":"Distributed denial of service (DDoS) attacks are a subclass of denial of service (DoS) attacks. A DDoS attack involves multiple connected online devices,...","url":"https://hadesssecurity.github.io/blog/read/ddos-methods-mitigations","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/ddos-methods-mitigations"},"datePublished":"July 15, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/07/pawel-latkowski-aos.jpg"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,11 +1550,331 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/07/pawel-latkowski-aos.jpg">
       
-<p class="wp-block-paragraph">Organizations across various domains—ranging from traditional IT security to AI-driven initiatives—are turning to Key Performance Indicators (KPIs) to measure progress and ensure sustainable results. Through the SMART framework, each KPI is crafted to be Specific, Measurable, Achievable, Relevant, and Time-Bound, enabling teams to focus on precise outcomes like minimizing detection time, improving patch compliance, and raising awareness through targeted security training. Real-world examples—from ShieldCore’s SOC transformation to DevOps-driven improvements at BetaWorks and AI model security at AlphaVision—underscore how these metrics reduce risks, streamline incident response, and bolster regulatory adherence.</p>
+<p class="wp-block-paragraph">Distributed denial of service (DDoS) attacks are a subclass of denial of service (DoS) attacks. A DDoS attack involves multiple connected online devices, collectively known as a botnet, which are used to overwhelm a target website with fake traffic.</p>
 
 
 
-<p class="wp-block-paragraph">Across all these cases, core KPIs consistently monitor early threat detection, timely response, comprehensive coverage of system defenses, and the recurrence of specific security incidents. By tracking these measurements in cloud-focused, DevOps, AI, or traditional environments, organizations uncover vulnerabilities, optimize resources, and adopt a proactive stance toward safeguarding data and infrastructure. This unified approach to KPI-driven improvements delivers tangible accountability and ongoing governance, ensuring that security initiatives remain aligned with strategic business goals.</p>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="566" height="631" src="/wp-content/uploads/2022/07/ddos_table.png" alt="" class="wp-image-5159" srcset="/wp-content/uploads/2022/07/ddos_table.png 566w, /wp-content/uploads/2022/07/ddos_table-269x300.png 269w" sizes="(max-width: 566px) 100vw, 566px" /></figure>
+
+
+
+<h1 class="wp-block-heading" id="h-history-of-ddos">History of DDos&nbsp;</h1>
+
+
+
+<p class="wp-block-paragraph">Check out our timeline to see the progression of the largest and most famous distributed denial of service attacks that have occurred within the past several years (both traffic-based and packet-based attacks)</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/9QVOmBoAhBUdHt_dIIDEvWBjiJwLJ9x7SGG8zkbhAvNYXWmylau0H_zo-bDdzqFWR8KCEg4AlOcPfoOi3JUYW53ucMx8KK4wMaQCjN8ZBaE1S0Bm1FWK9IcG6f9blNPT7Vtd5n0Tzsby-I6CIg" alt="" title="Points scored" /></figure>
+
+
+
+<p class="wp-block-paragraph">2022</p>
+
+
+
+<p class="wp-block-paragraph">June — Cloudflare reported detecting and mitigating a 26 million RPS DDoS attack on an unnamed client’s website.</p>
+
+
+
+<p class="wp-block-paragraph">April — Cloudflare reported the detection and mitigation of a 15.3 million RPS DDoS attack on a customer operating a crypto launchpad. The attack utilized a botnet consisting of an estimated 6,000 unique devices from 112 countries. Unlike many other DDoS attacks, this one was carried out via HTTPS, which is uncommon because it’s more expensive for threat actors to use secure, encrypted connections.&nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">2021</p>
+
+
+
+<p class="wp-block-paragraph">December — Microsoft reported two additional attacks against customers in Asia. The first was a 3.25 Tbps UDP attack that lasted more than 15 minutes; the second was a 2.55 Tbps UDP flood that lasted more than five minutes. While the latter might not sound like a long time, it’s five minutes longer of unrelenting attack time than any organization wants to sustain.</p>
+
+
+
+<p class="wp-block-paragraph">November — Microsoft previously reported detecting and mitigating a whopping 3.45 Tbps DDoS attack against an Azure customer in Asia. This security incident had a packet rate of 340 million packets per second.</p>
+
+
+
+<p class="wp-block-paragraph">July — Cloudflare reported a DDoS attack that topped out at 17.2 million traffic requests per second against financial websites.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">2020</p>
+
+
+
+<p class="wp-block-paragraph">February — Amazon Web Services (AWS) reported in their TLR for Q1 2020 that they observed and mitigated a 2.3 Tbps UDP reflection vector DDoS attack. Not only is this the largest DDoS attack that AWS reported ever facing, but it was also thought to be the largest DDoS attack in history on record at the time in terms of bit rate.</p>
+
+
+
+<p class="wp-block-paragraph">2019</p>
+
+
+
+<p class="wp-block-paragraph">April — Imperva reports one of their clients was able to thwart a DDoS attack that peaked at 580 million packets per second. To date, this is considered the largest DDoS attack by packet volume to date.</p>
+
+
+
+<p class="wp-block-paragraph">January — Another Imperva client sustained a 500 million packets per second DDoS attack.</p>
+
+
+
+<p class="wp-block-paragraph">2018</p>
+
+
+
+<p class="wp-block-paragraph">March — NETSCOUT reported that its Arbor ATLAS global traffic and DDoS threat detection system confirmed a 1.7 Tbps memcached reflection/amplification attack on an unnamed U.S.-based service provider.</p>
+
+
+
+<p class="wp-block-paragraph">February — The GitHub DDoS attack inundated the company with 1.35 Tbps of data (129.6 million PPS) — the largest DDoS attack on record as of that time — via memcaching. This means that the attackers spoofed GitHub’s IP address to send small inquiries to several Memcached servers to trigger a major response in the form of a 50x data response.</p>
+
+
+
+<p class="wp-block-paragraph">2017</p>
+
+
+
+<p class="wp-block-paragraph">October — The Czech statistical office websites relating to the Czech Republic’s parliamentary elections — volby.cz and volbyhned.cz — failed temporarily due to DDoS attacks during the vote count.</p>
+
+
+
+<p class="wp-block-paragraph">August — Web host company DreamHost, which was said to host the Nazi-advocate website Daily Stormer under its new name Punished Stormer, suffered a DDoS attack of unannounced proportion. This attack followed a Department of Justice request for visitor data relating to the stormer site.</p>
+
+
+
+<p class="wp-block-paragraph">June — Throughout the second half of the year, video game software developer Square Enix’s Final Fantasy XIV online role-playing game (RPG) sustained intermittent DDoS attacks via botnets. The attacks spanned the summer and another set of attacks occurred during the fall.</p>
+
+
+
+<p class="wp-block-paragraph">2016</p>
+
+
+
+<p class="wp-block-paragraph">October — The Dyn DDoS attack, which measured in at 1.2 Tbps and was considered the largest DDoS attack at the time, brought down much of the internet across the U.S. and Europe. Using the Mirai botnet, the attack targeted Dyn, a company that controls much of the domain name system (DNS) infrastructure of the internet.</p>
+
+
+
+<p class="wp-block-paragraph">September — French web host OVH experienced a DDoS attack measuring in at nearly 1 Tbps. The attackers used a botnet of hacked IoT devices (CCTV cameras and personal video recorders) to launch their attack.</p>
+
+
+
+<p class="wp-block-paragraph">2015</p>
+
+
+
+<p class="wp-block-paragraph">March — GitHub sustained a DDoS attack that was thought to be politically motivated because it focused on two GitHub projects that aimed to provide Chinese citizens with a way to circumvent Chinese state web censorship.</p>
+
+
+
+<p class="wp-block-paragraph">2014</p>
+
+
+
+<p class="wp-block-paragraph">November —The website for Occupy Central in Hong Kong, which was campaigning for a more democratic voting system, experienced a 500 Gbps DDoS attack that was executed via five botnets. Also targeted were the online news site Apple Daily and PopVote, a mock election site, both of which supported OC’s message.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-methods">Methods</h1>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="631" height="242" src="/wp-content/uploads/2022/07/HTTP-floods.png" alt="" class="wp-image-5161" srcset="/wp-content/uploads/2022/07/HTTP-floods.png 631w, /wp-content/uploads/2022/07/HTTP-floods-300x115.png 300w" sizes="(max-width: 631px) 100vw, 631px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>HTTP floods:</strong> Attacker exploits seemingly-legitimate HTTP GET or POST requests to attack a web server or application.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigation:</strong> The most highly-effective mitigation mechanism rely on a combination of traffic profiling methods, including identifying IP reputation, keeping track abnormal activity and employing progressive security challenges (e.g., asking to parse JavaScript).</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="707" height="229" src="/wp-content/uploads/2022/07/low_slow.png" alt="" class="wp-image-5163" srcset="/wp-content/uploads/2022/07/low_slow.png 707w, /wp-content/uploads/2022/07/low_slow-300x97.png 300w" sizes="(max-width: 707px) 100vw, 707px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Low and Slow</strong>: opening multiple connections to the targeted web server and keeping them open as long as possible. It does this by continuously sending partial HTTP requests, none of which are ever completed. The attacked servers open more and connections open, waiting for each of the attack requests to be completed.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigation:</strong> Enable reverse proxy technology, used for inspection of all incoming requests on their way to the clients’ servers and do not forward any partial connection requests.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="716" height="301" src="/wp-content/uploads/2022/07/UDP-Flood.png" alt="" class="wp-image-5164" srcset="/wp-content/uploads/2022/07/UDP-Flood.png 716w, /wp-content/uploads/2022/07/UDP-Flood-300x126.png 300w" sizes="(max-width: 716px) 100vw, 716px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>UDP flood</strong>: Attacker overwhelms random ports on the targeted host with IP packets containing UDP datagrams.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigation:</strong> Limiting the rate of ICMP responses.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="695" height="242" src="/wp-content/uploads/2022/07/SYN-Flood.png" alt="" class="wp-image-5165" srcset="/wp-content/uploads/2022/07/SYN-Flood.png 695w, /wp-content/uploads/2022/07/SYN-Flood-300x104.png 300w" sizes="(max-width: 695px) 100vw, 695px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>SYN flood</strong>: Attack that exploits part of the normal TCP three-way handshake to consume resources on the targeted server and render it unresponsive.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigation:</strong> Using cryptographic hashing, the server sends its SYN-ACK response with a sequence number (seqno) that is constructed from the client IP address, port number, and possibly other unique identifying information. When the client responds, this hash is included in the ACK packet. The server verifies the ACK, and only then allocates memory for the connection.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="707" height="383" src="/wp-content/uploads/2022/07/NTP-amplification.png" alt="" class="wp-image-5166" srcset="/wp-content/uploads/2022/07/NTP-amplification.png 707w, /wp-content/uploads/2022/07/NTP-amplification-300x163.png 300w" sizes="(max-width: 707px) 100vw, 707px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>NTP amplification</strong>: Attack in which the attacker exploits publically-accessible Network Time Protocol (NTP) servers to overwhelm the targeted with User Datagram Protocol (UDP) traffic.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigation:</strong> Reduce the number of NTP servers that support the monlist command</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="704" height="355" src="/wp-content/uploads/2022/07/DNS-amplification.png" alt="" class="wp-image-5167" srcset="/wp-content/uploads/2022/07/DNS-amplification.png 704w, /wp-content/uploads/2022/07/DNS-amplification-300x151.png 300w" sizes="(max-width: 704px) 100vw, 704px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>DNS amplification</strong>: Attack in which the attacker exploits vulnerabilities in domain name system (DNS) servers to turn initially small queries into much larger payloads, which are used to bring down the victim’s servers.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigation:</strong> Blocking specific DNS servers or all open recursive relay servers, and rate limiting.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-tools">Tools</h1>
+
+
+
+<h3 class="wp-block-heading" id="h-ziyaettin-botnet-services">Ziyaettin Botnet Services</h3>
+
+
+
+<p class="wp-block-paragraph">Its a botnet with +27K devices all over the world with a power of +300 GB TCP/UDP:</p>
+
+
+
+<ul class="wp-block-list"><li>Big raw Layer 4 service</li><li>TCP/UDP attack support</li><li>Layer 7 service</li><li>Cloudfare bypass 100K + RQS</li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-cryptostresser">Cryptostresser</h3>
+
+
+
+<p class="wp-block-paragraph">TLS v3 and floods HTTPS requests in a secure tunnel through HTTP proxies</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;node tls.js GET https://target.com 120 64</p>
+
+
+
+<h3 class="wp-block-heading" id="h-karma-ddos">KARMA DDoS</h3>
+
+
+
+<p class="wp-block-paragraph">DDoS Script (DDoS Panel) with Multiple Bypass ( Cloudflare UAM,CAPTCHA,BFM,NOSEC / DDoS Guard / Google Shield / V Shield / Amazon / etc.. )</p>
+
+
+
+<ul class="wp-block-list"><li>&nbsp;&nbsp;[Layer 7]<ul><li>&nbsp;&#8211; cfb &nbsp; &nbsp; | Bypass CF attack</li><li>&nbsp;&#8211; pxcfb &nbsp; | Bypass CF attack with proxy</li><li>&nbsp;&#8211; cfreq &nbsp; | Bypass CF UAM, CAPTCHA, BFM, etc,, with request</li><li>&nbsp;&#8211; cfsoc &nbsp; | Bypass CF UAM, CAPTCHA, BFM, etc,, with socket</li><li>&nbsp;&#8211; pxsky &nbsp; | Bypass Google Project Shield, Vshield, DDoS Guard Free, CF NoSec With Proxy</li><li>&nbsp;&#8211; sky &nbsp; &nbsp; | Sky method without proxy</li><li>&nbsp;&#8211; http2 &nbsp; | HTTP 2.0 Request Attack&nbsp;</li><li>&nbsp;= pxhttp2 | HTTP 2.0 Request Attack With Proxy</li><li>&nbsp;&#8211; spoof &nbsp; | Spoof Attasck</li><li>&nbsp;&#8211; pxspoof | Spoof Attack with Proxy</li><li>&nbsp;&#8211; get &nbsp; &nbsp; | Get&nbsp; Request Attack</li><li>&nbsp;&#8211; post&nbsp; &nbsp; | Post Request Attack</li><li>&nbsp;&#8211; head&nbsp; &nbsp; | Head Request Attack</li><li>&nbsp;&#8211; soc &nbsp; &nbsp; | Socket Attack</li><li>&nbsp;&#8211; pxraw &nbsp; | Proxy Request Attack</li><li>&nbsp;&#8211; pxsoc &nbsp; | Proxy Socket Attack</li></ul></li></ul>
+
+
+
+<ul class="wp-block-list"><li>&nbsp;&nbsp;[Layer 4]<ul><li>&nbsp;&nbsp;-udp &nbsp; &nbsp; | UDP Attack</li><li>&nbsp;&nbsp;-tcp &nbsp; &nbsp; | TCP Attack</li></ul></li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-mhddos">MHDDoS</h3>
+
+
+
+<ul class="wp-block-list"><li>Layer7</li></ul>
+
+
+
+<ul class="wp-block-list"><li>get GET | GET Flood</li><li>post POST | POST Flood</li><li>ovh OVH | Bypass OVH</li><li>ovh RHEX | Random HEX</li><li>ovh STOMP | Bypass chk_captcha</li><li>stress STRESS | Send HTTP Packet With High Byte</li><li>dyn DYN | A New Method With Random SubDomain</li><li>downloader DOWNLOADER | A New Method of Reading data slowly</li><li>slow SLOW | Slowloris Old Method of DDoS</li><li>head HEAD | https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD</li><li>null NULL | Null UserAgent and &#8230;</li><li>cookie COOKIE | Random Cookie PHP &#8216;if (isset($_COOKIE))&#8217;</li><li>pps PPS | Only &#8216;GET / HTTP/1.1\r\n\r\n&#8217;</li><li>even EVEN | GET Method with more header</li><li>googleshield GSB | Google Project Shield Bypass</li><li>DDoSGuard DGB | DDoS Guard Bypass</li><li>ArvanCloud AVB | Arvan Cloud Bypass</li><li>Google bot BOT | Like Google bot</li><li>Apache Webserver APACHE | Apache Expliot</li><li>wordpress expliot XMLRPC | WP XMLRPC expliot (add /xmlrpc.php)</li><li>CloudFlare CFB | CloudFlare Bypass</li><li>CloudFlare UnderAttack Mode CFBUAM | CloudFlare Under Attack Mode Bypass</li><li>bypass BYPASS | Bypass Normal AntiDDoS</li><li>bypass BOMB | Bypass with codesenberg/bombardier</li><li>? KILLER | run many threads to kill a target</li><li>? TOR | Bypass onion website</li></ul>
+
+
+
+<ul class="wp-block-list"><li>Layer4:</li></ul>
+
+
+
+<ul class="wp-block-list"><li>tcp TCP | TCP Flood Bypass</li><li>udp UDP | UDP Flood Bypass</li><li>syn SYN | SYN Flood</li><li>cps CPS | Open and close connections with proxy</li><li>icmp ICMP | Icmp echo request flood (Layer3)</li><li>connection CONNECTION | Open connection alive with proxy</li><li>vse VSE | Send Valve Source Engine Protocol</li><li>teamspeak 3 TS3 | Send Teamspeak 3 Status Ping Protocol</li><li>fivem FIVEM | Send Fivem Status Ping Protocol</li><li>mem MEM | Memcached Amplification</li><li>ntp NTP | NTP Amplification</li><li>mcbot MCBOT | Minecraft Bot Attack</li><li>minecraft MINECRAFT | Minecraft Status Ping Protocol</li><li>minecraft pe MCPE | Minecraft PE Status Ping Protocol</li><li>dns DNS | DNS Amplification</li><li>chargen CHAR | Chargen Amplification</li><li>cldap CLDAP | Cldap Amplification</li><li>ard ARD | Apple Remote Desktop Amplification</li><li>rdp RDP | Remote Desktop Protocol Amplification</li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-fuxi-botnet">Fuxi Botnet&nbsp;</h3>
+
+
+
+<ul class="wp-block-list"><li>700GB UDP Flood</li><li>400GB TCP/ACk Flood</li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-hirestresser">Hirestresser</h3>
+
+
+
+<p class="wp-block-paragraph">We guarantee a minimum of 500k-1m+ pps per concurrent for Layer 4 (the Gbps will depend on the method) and minimum 300Gbps of valid.</p>
+
+
+
+<ul class="wp-block-list"><li>HTTPS-BEAST</li><li>Bypass Security Protection Like:<ul><li>Cloudflare (free-enterprise) Cloudflare Bot-Fight mode, and javascript detection,</li><li>Cloudflare UAM (js challenge), Cloudflare Captcha (hcaptcha &amp; recaptcha)</li><li>DDoS-Guard (JS challenge)</li><li>Sucuri</li><li>Stormwall(recaptcha v2 &amp; v3)</li><li>Amazon CDN Cloudfront</li><li>Imperva Incapsula</li><li>Akamai</li><li>Fastly</li><li>Blazingfast</li><li>Nooder(recaptcha v3)</li><li>React.su</li><li>Qrator</li><li>Arvan Cloud</li><li>…</li></ul></li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-ddos-rootsec">DDOS-RootSec</h3>
+
+
+
+<p class="wp-block-paragraph">DDOS Archive by RootSec (Scanners, BotNets (Mirai and QBot Premium &amp; Normal and more), Exploits, Methods, Sniffers)</p>
+
+
+
+<h3 class="wp-block-heading" id="h-saddam">Saddam</h3>
+
+
+
+<p class="wp-block-paragraph">DDoS Tool that supports:</p>
+
+
+
+<ul class="wp-block-list"><li>DNS Amplification (Domain Name System)</li><li>NTP Amplification (Network Time Protocol)</li><li>SNMP Amplification (Simple Network Management Protocol)</li><li>SSDP Amplification (Simple Service Discovery Protocol)</li></ul>
+
+
+
+<h3 class="wp-block-heading" id="h-slowloris">Slowloris</h3>
+
+
+
+<p class="wp-block-paragraph">Slowloris is a type of denial of service attack tool invented by Robert &#8220;RSnake&#8221; Hansen which allows a single machine to take down another machine&#8217;s web server with minimal bandwidth and side effects on unrelated services and ports.</p>
+
+
+
+<h3 class="wp-block-heading" id="h-r-u-d-y">R.U.D.Y.</h3>
+
+
+
+<p class="wp-block-paragraph">R.U.D.Y. is a denial-of-service attack tool that aims to keep a web server tied up by submitting form data at an absurdly slow pace. A R.U.D.Y. exploit is categorized as a low-and-slow attack, since it focuses on creating a few drawn-out requests rather than overwhelming a server with a high volume of quick requests. A successful R.U.D.Y. attack will result in the victim’s web server becoming unavailable to legitimate traffic.</p>
+
+
+
+<h1 class="wp-block-heading" id="h-resources">Resources</h1>
+
+
+
+<ul class="wp-block-list"><li><a href="https://www.imperva.com/">https://www.imperva.com/</a></li><li>https://www.thesslstore.com/</li></ul>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1561,27 +1892,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1708,11 +2039,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1735,59 +2066,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

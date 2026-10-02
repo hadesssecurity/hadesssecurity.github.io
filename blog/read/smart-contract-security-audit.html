@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -148,7 +160,7 @@ img{display:block;max-width:100%}
 	<meta property="og:site_name" content="HADESS" />
 	<meta property="article:published_time" content="2025-02-14T15:03:43+00:00" />
 	<meta property="article:modified_time" content="2025-02-14T15:06:04+00:00" />
-	<meta property="og:image" content="https://career.hadess.io/logo-white.png" />
+	<meta property="og:image" content="https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg" />
 	<meta property="og:image:width" content="597" />
 	<meta property="og:image:height" content="850" />
 	<meta property="og:image:type" content="image/png" />
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/smart-contract-security-audit#article","headline":"Smart Contract Security Audit — HADESS Magazine","description":"A smart contract is an automated transaction protocol that executes the terms of a contract. They are one of the most exciting areas of blockchain technology...","url":"https://hadesssecurity.github.io/blog/read/smart-contract-security-audit","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/smart-contract-security-audit"},"datePublished":"July 29, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/smart-contract-security-audit#article","headline":"Smart Contract Security Audit — HADESS Magazine","description":"A smart contract is an automated transaction protocol that executes the terms of a contract. They are one of the most exciting areas of blockchain technology...","url":"https://hadesssecurity.github.io/blog/read/smart-contract-security-audit","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/smart-contract-security-audit"},"datePublished":"July 29, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1536,13 +1547,609 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <!-- ═══ ARTICLE BODY ═══ -->
 <div class="article-wrap">
   <div class="article-content-col">
-    <div class="article-content" data-pagefind-body data-pagefind-meta="image:https://career.hadess.io/logo-white.png">
+    <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg">
       
-<p class="wp-block-paragraph">Organizations across various domains—ranging from traditional IT security to AI-driven initiatives—are turning to Key Performance Indicators (KPIs) to measure progress and ensure sustainable results. Through the SMART framework, each KPI is crafted to be Specific, Measurable, Achievable, Relevant, and Time-Bound, enabling teams to focus on precise outcomes like minimizing detection time, improving patch compliance, and raising awareness through targeted security training. Real-world examples—from ShieldCore’s SOC transformation to DevOps-driven improvements at BetaWorks and AI model security at AlphaVision—underscore how these metrics reduce risks, streamline incident response, and bolster regulatory adherence.</p>
+<p class="wp-block-paragraph">A smart contract is an automated transaction protocol that executes the terms of a contract. They are one of the most exciting areas of blockchain technology implementation.&nbsp;</p>
 
 
 
-<p class="wp-block-paragraph">Across all these cases, core KPIs consistently monitor early threat detection, timely response, comprehensive coverage of system defenses, and the recurrence of specific security incidents. By tracking these measurements in cloud-focused, DevOps, AI, or traditional environments, organizations uncover vulnerabilities, optimize resources, and adopt a proactive stance toward safeguarding data and infrastructure. This unified approach to KPI-driven improvements delivers tangible accountability and ongoing governance, ensuring that security initiatives remain aligned with strategic business goals.</p>
+<p class="wp-block-paragraph">The audit of a Smart Contract is technically the same as auditing a regular code. It entails meticulously investigating code to find security flaws and vulnerabilities before publicly deploying the code. In addition, it involves developers scrutinizing the code that is used to underwrite the terms of the smart contract.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">An effective Smart Contract audit should focus on the following areas;</p>
+
+
+
+<ul class="wp-block-list"><li>Common errors such as stack problems, compilation, and reentrance mistakes.</li><li>Any known errors or security flaws of the Smart contract’s host platform.</li><li>Simulating attacks on the Smart Contract.&nbsp;</li></ul>
+
+
+
+<p class="wp-block-paragraph">Bad randomness</p>
+
+
+
+<p class="wp-block-paragraph">Pseudorandom number generation on the blockchain is generally unsafe. There are a number of reasons for this, including:</p>
+
+
+
+<ul class="wp-block-list"><li>The blockchain does not provide any cryptographically secure source of randomness. Block hashes in isolation are cryptographically random, however, a malicious miner can modify block headers, introduce additional transactions, and choose not to publish blocks in order to influence the resulting hashes. Therefore, miner-influenced values like block hashes and timestamps should never be used as a source of randomness.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>A lottery where people bet on whether the hash of the current block is even or odd. A miner that bets on even can throw out blocks whose hash are even.</li><li>A commit-reveal scheme where users don&#8217;t necessarily have to reveal their secret (to prevent DoS). A user has money riding on the outcome of the PRG and submits a large number of commits, allowing them to choose the one they want to reveal at the end.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<p class="wp-block-paragraph">There are currently not any recommended mitigations for this issue. Do not build applications that require on-chain randomness. In the future, however, these approaches show promise</p>
+
+
+
+<ul class="wp-block-list"><li>Verifiable delay functions: functions which produce a pseudorandom number and take a fixed amount of sequential time to evaluate</li><li>Randao: A commit reveal scheme where users must stake wei to participate</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<p class="wp-block-paragraph">The random function in theRun was vulnerable to this attack. It used the blockhash, timestamp and block number to generate numbers in a range to determine winners of the lottery. To exploit this, an attacker could set up a smart contract that generates numbers in the same way and submits entries when it would win. As well, the miner of the block has some control over the blockhash and timestamp and would also be able to influence the lottery in their favor.</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>&nbsp; function random(uint Max) constant private returns (uint256 result){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//get the best seed for randomness&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint256 x = salt * 100 / Max;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint256 y = salt * block.number / (salt % 5) ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint256 seed = block.number/3 + (salt % 300) + Last_Payout +y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint256 h = uint256(block.blockhash(seed));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return uint256((h / x)) % Max + 1; //random number between 1 and Max&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Denial of Service</p>
+
+
+
+<p class="wp-block-paragraph">A malicious contract can permanently stall another contract by failing in a strategic way. In particular, contracts that bulk perform transactions or updates using a for loop can be DoS&#8217;d if a call to another contract or transfer fails during the loop.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Auction contract where frontrunner must be reimbursed when they are outbid. If the call refunding the frontrunner continuously fails, the auction is stalled and they become the de facto winner.</li><li></li><li>Contract iterates through an array to pay back its users. If one transfer fails in the middle of a for loop all reimbursements fail.</li><li></li><li>Attacker spams contract, causing some array to become large. Then for loops iterating through the array might run out of gas and revert.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Favor pull over push for external calls</li><li>If iterating over a dynamically sized data structure, be able to handle the case where the function takes multiple blocks to execute. One strategy for this is storing iterator in a private variable and using while loop that exists when gas drops below certain threshold.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<p class="wp-block-paragraph">Bulk refund functionality that is suceptible to DoS</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>address[] private refundAddresses;&nbsp;&nbsp;mapping(address =&gt; uint) public refundAmount;<br>&nbsp;&nbsp;function refundDos() public {&nbsp;&nbsp;&nbsp;&nbsp;for(uint i; i &lt; refundAddresses.length; i++) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require(refundAddresses[i].transfer(refundAmount[refundAddresses[i]]));&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;}}<br>contract CrowdFundPull {&nbsp;&nbsp;address[] private refundAddresses;&nbsp;&nbsp;mapping(address =&gt; uint) public refundAmount;<br>&nbsp;&nbsp;function withdraw() external {&nbsp;&nbsp;&nbsp;&nbsp;uint refund = refundAmount[msg.sender];&nbsp;&nbsp;&nbsp;&nbsp;refundAmount[msg.sender] = 0;&nbsp;&nbsp;&nbsp;&nbsp;msg.sender.transfer(refund);&nbsp;&nbsp;}}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Contracts can be forced to receive ether</p>
+
+
+
+<p class="wp-block-paragraph">In certain circunstances, contracts can be forced to receive ether without triggering any code. This should be considered by the contract developers in order to avoid breaking important invariants in their code.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>An attacker can use a specially crafted contract to forceful send ether using suicide / selfdestruct:</li></ul>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>contract Sender {&nbsp;&nbsp;function receive_and_suicide(address target) payable {&nbsp;&nbsp;&nbsp;&nbsp;suicide(target);&nbsp;&nbsp;}}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>There is no way to block the reception of ether. The only mitigation is to avoid assuming how the balance of the contract increases and implement checks to handle this type of edge cases.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<p class="wp-block-paragraph">The MyAdvancedToken contract is vulnerable to this attack. It will stop the owner to perform the migration of the contract.</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>mapping (address =&gt; bool) public frozenAccount;<br>&nbsp;&nbsp;&nbsp;&nbsp;/* This generates a public event on the blockchain that will notify clients */&nbsp;&nbsp;&nbsp;&nbsp;event FrozenFunds(address target, bool frozen);<br>&nbsp;&nbsp;&nbsp;&nbsp;/* Initializes contract with initial supply tokens to the creator of the contract */&nbsp;&nbsp;&nbsp;&nbsp;function MyAdvancedToken(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string tokenName,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string tokenSymbol&nbsp;&nbsp;&nbsp;&nbsp;) TokenERC20(tokenName, tokenSymbol) public {}<br>&nbsp;&nbsp;&nbsp;&nbsp;/* Internal transfer, only can be called by this contract */&nbsp;&nbsp;&nbsp;&nbsp;function _transfer(address _from, address _to, uint _value) internal {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require (_to != 0x0); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Prevent transfer to 0x0 address.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require (balanceOf[_from] &gt;= _value); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Check if the sender has enough&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require (balanceOf[_to] + _value &gt;= balanceOf[_to]); // Check for overflows&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require(!frozenAccount[_from]); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Check if sender is frozen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require(!frozenAccount[_to]); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Check if recipient is frozen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;balanceOf[_from] -= _value; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Subtract from the sender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;balanceOf[_to] += _value; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Add the same to the recipient&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emit Transfer(_from, _to, _value);&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;/// @notice Buy tokens from contract by sending ether&nbsp;&nbsp;&nbsp;&nbsp;function buy() payable public {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint amount = msg.value;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // calculates the amount balanceOf[msg.sender] += amount;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // updates the balance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totalSupply += amount;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // updates the total supply&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_transfer(address(0x0), msg.sender, amount);&nbsp; &nbsp; &nbsp; // makes the transfer&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;/* Migration function */&nbsp;&nbsp;&nbsp;&nbsp;function migrate_and_destroy() onlyOwner { assert(this.balance == totalSupply); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // consistency check&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; suicide(owner);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // transfer the ether to the owner and kill the contract&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Incorrect interface</p>
+
+
+
+<p class="wp-block-paragraph">A contract interface defines functions with a different type signature than the implementation, causing two different method id&#8217;s to be created. As a result, when the interface is called, the fallback method will be executed.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>The interface is incorrectly defined. Alice.set(uint) takes an uint in Bob.sol but Alice.set(int) a int in Alice.sol. The two interfaces will produce two differents method IDs. As a result, Bob will call the fallback function of Alice rather than of set.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Verify that type signatures are identical between interfaces and implementations.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>// Wait to mine the block containing the transaction<br>var alice = contractAlice.at(contractPartialInstanceAlice.address);<br>var contractBob = eth.contract(abiBob);&nbsp;var txDeployBob = {from:eth.coinbase, data: bytecodeBob, gas: 1000000};&nbsp;var contractPartialInstanceBob = contractBob.new(txDeployBob);&nbsp;<br>// Wait to mine the block containing the transaction<br>var bob = contractBob.at(contractPartialInstanceBob.address);<br>// From now, wait for each transaction to be mined before calling// the others transactions<br>// print the default value of val: 0alice.val()&nbsp;<br>// call bob.set, as the interface is wrong, it will call// the fallback function of alicebob.set(alice.address, {from: eth.accounts[0]} )// print val: 1alice.val()<br>// call the fixed version of the interfacebob.set_fixed(alice.address, {from: eth.accounts[0]} )// print val: 42alice.val()</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Integer Overflow</p>
+
+
+
+<p class="wp-block-paragraph">It is possible to cause add and sub to overflow (or underflow) on any type of integer in Solidity.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Attacker has 5 of some ERC20 token. They spend 6, but because the token doesn&#8217;t check for underflows, they wind up with 2^256 tokens.</li><li>A contract contains a dynamic array and an unsafe pop method. An attacker can underflow the length of the array and alter other variables in the contract.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Use openZeppelin&#8217;s safeMath library</li><li>Validate all arithmetic</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>// SPDX-License-Identifier: GPL-3.0pragma solidity 0.8.0;<br>contract RolloverExample2 {&nbsp;&nbsp;&nbsp;&nbsp;uint8 public myUint8;<br>&nbsp;&nbsp;&nbsp;&nbsp;function decrement() public {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myUint8&#8211;;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;function increment() public {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myUint8++;&nbsp;&nbsp;&nbsp;&nbsp;}}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Race Condition</p>
+
+
+
+<p class="wp-block-paragraph">There is a gap between the creation of a transaction and the moment it is accepted in the blockchain. Therefore, an attacker can take advantage of this gap to put a contract in a state that advantages them.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Bob creates RaceCondition(100, token). Alice trusts RaceCondition with all its tokens. Alice calls buy(150) Bob sees the transaction, and calls changePrice(300). The transaction of Bob is mined before the one of Alice and as a result, Bob received 300 tokens.</li></ul>
+
+
+
+<ul class="wp-block-list"><li>The ERC20 standard&#8217;s approve and transferFrom functions are vulnerable to a race condition. Suppose Alice has approved Bob to spend 100 tokens on her behalf. She then decides to only approve him for 50 tokens and sends a second approve transaction. However, Bob sees that he&#8217;s about to be downgraded and quickly submits a transferFrom for the original 100 tokens he was approved for. If this transaction gets mined before Alice&#8217;s second approve, Bob will be able to spend 150 of Alice&#8217;s tokens.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>For the ERC20 bug, insist that Alice only be able to approve Bob when he is approved for 0 tokens.</li><li>Keep in mind that all transactions may be front-run</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>// If the owner sees someone calls buy&nbsp;&nbsp;&nbsp;&nbsp;// he can call changePrice to set a new price&nbsp;&nbsp;&nbsp;&nbsp;// If his transaction is mined first, he can&nbsp;&nbsp;&nbsp;&nbsp;// receive more tokens than excepted by the new buyer&nbsp;&nbsp;&nbsp;&nbsp;function buy(uint new_price) payable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require(msg.value &gt;= price);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// we assume that the RaceCondition contract&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// has enough allowance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token.transferFrom(msg.sender, owner, price);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;price = new_price;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owner = msg.sender;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;function changePrice(uint new_price){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require(msg.sender == owner);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;price = new_price;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Re-entrancy</p>
+
+
+
+<p class="wp-block-paragraph">A state variable is changed after a contract uses call.value. The attacker uses a fallback function—which is automatically executed after Ether is transferred from the targeted contract—to execute the vulnerable function again, before the state variable is changed.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>A contract that holds a map of account balances allows users to call a withdraw function. However, withdraw calls send which transfers control to the calling contract, but doesn&#8217;t decrease their balance until after send has finished executing. The attacker can then repeatedly withdraw money that they do not have.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Avoid use of call.value</li><li>Update all bookkeeping state variables before transferring execution to an external contract.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>function withdrawRewardFor(address _account) noEther internal returns (bool _success) {&nbsp;&nbsp;if ((balanceOf(_account) * rewardAccount.accumulatedInput()) / totalSupply &lt; paidOut[_account])&nbsp;&nbsp;&nbsp;&nbsp;throw;<br>&nbsp;&nbsp;uint reward =&nbsp;&nbsp;&nbsp;&nbsp;(balanceOf(_account) * rewardAccount.accumulatedInput()) / totalSupply &#8211; paidOut[_account];<br>&nbsp;&nbsp;reward = rewardAccount.balance &lt; reward ? rewardAccount.balance : reward;<br>&nbsp;&nbsp;paidOut[_account] += reward; // XXXXX&nbsp;&nbsp;if (!rewardAccount.payOut(_account, reward)) // XXXXX&nbsp;&nbsp;&nbsp;&nbsp;throw;<br>&nbsp;&nbsp;return true;}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Unchecked External Call</p>
+
+
+
+<p class="wp-block-paragraph">Certain Solidity operations known as &#8220;external calls&#8221;, require the developer to manually ensure that the operation succeeded. This is in contrast to operations which throw an exception on failure. If an external call fails, but is not checked, the contract will continue execution as if the call succeeded. This will likely result in buggy and potentially exploitable behavior from the contract.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>A contract uses an unchecked address.send() external call to transfer Ether.</li><li>If it transfers Ether to an attacker contract, the attacker contract can reliably cause the external call to fail, for example, with a fallback function which intentionally runs out of gas.</li><li>The consequences of this external call failing will be contract specific.<ul><li>In the case of the King of the Ether contract, this resulted in accidental loss of Ether for some contract users, due to refunds not being sent.</li></ul></li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Manually perform validation when making external calls</li><li>Use address.transfer()</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>&nbsp; &nbsp; &nbsp; // If they paid too little, reject claim and refund their money.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (valuePaid &lt; currentClaimPrice) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.sender.send(valuePaid);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// If they paid too much, continue with claim but refund the excess.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (valuePaid &gt; currentClaimPrice) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uint excessPaid = valuePaid &#8211; currentClaimPrice;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg.sender.send(excessPaid);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valuePaid = valuePaid &#8211; excessPaid;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Unprotected function</p>
+
+
+
+<p class="wp-block-paragraph">Missing (or incorrectly used) modifier on a function allows an attacker to use sensitive functionality in the contract.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>A contract with a changeOwner function does not label it as private and therefore allows anyone to become the contract owner.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Always specify a modifier for functions.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<p class="wp-block-paragraph">An onlyOwner modifier is defined but not used, allowing anyone to become the owner</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>&nbsp; &nbsp; &nbsp; pragma solidity ^0.4.15;<br>contract Unprotected{&nbsp;&nbsp;&nbsp;&nbsp;address private owner;<br>&nbsp;&nbsp;&nbsp;&nbsp;modifier onlyowner {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require(msg.sender==owner);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;function Unprotected()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owner = msg.sender;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;// This function should be protected&nbsp;&nbsp;&nbsp;&nbsp;function changeOwner(address _newOwner)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owner = _newOwner;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;function changeOwner_fixed(address _newOwner)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onlyowner&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owner = _newOwner;&nbsp;&nbsp;&nbsp;&nbsp;}}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Variable Shadowing</p>
+
+
+
+<p class="wp-block-paragraph">Variable shadowing occurs when a variable declared within a certain scope (decision block, method, or inner class) has the same name as a variable declared in an outer scope.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>This depends a lot on the code of the contract itself.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>The solidity compiler has some checks to emit warnings when it detects this kind of issue.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<p class="wp-block-paragraph">variable shadowing prevents the owner of contract C from performing self destruct</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>contract Suicidal {&nbsp;&nbsp;address owner;&nbsp;&nbsp;function suicide() public returns (address) {&nbsp;&nbsp;&nbsp;&nbsp;require(owner == msg.sender);&nbsp;&nbsp;&nbsp;&nbsp;selfdestruct(owner);&nbsp;&nbsp;}}contract C is Suicidal {&nbsp;&nbsp;address owner;&nbsp;&nbsp;function C() {&nbsp;&nbsp;&nbsp;&nbsp;owner = msg.sender;&nbsp;&nbsp;}}<br>&nbsp;&nbsp;&nbsp;&nbsp;function changeOwner_fixed(address _newOwner)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onlyowner&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owner = _newOwner;&nbsp;&nbsp;&nbsp;&nbsp;}}</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">Wrong Constructor Name</p>
+
+
+
+<p class="wp-block-paragraph">A function intended to be a constructor is named incorrectly, which causes it to end up in the runtime bytecode instead of being a constructor.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Attack Scenarios</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Anyone can call the function that was supposed to be the constructor. As a result anyone can change the state variables initialized in this function.</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Mitigations</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Use constructor instead of a named constructor</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerable Code</strong></p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>pragma solidity ^0.4.15;<br>contract Missing{&nbsp;&nbsp;&nbsp;&nbsp;address private owner;<br>&nbsp;&nbsp;&nbsp;&nbsp;modifier onlyowner {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require(msg.sender==owner);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;// The name of the constructor should be Missing&nbsp;&nbsp;&nbsp;&nbsp;// Anyone can call the IamMissing once the contract is deployed&nbsp;&nbsp;&nbsp;&nbsp;function IamMissing()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owner = msg.sender;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;function withdraw()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onlyowner&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;owner.transfer(this.balance);&nbsp;&nbsp;&nbsp;&nbsp;}}</td></tr></tbody></table></figure>
+
+
+
+<h1 class="wp-block-heading" id="h-top-8-smart-contract-security-tools">Top 8 Smart Contract Security Tools</h1>
+
+
+
+<p class="wp-block-paragraph"><strong>Mythril</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/1Jp5mQoQA4pzQcyu7bFA9cQJTmhnxMPLCEog1bPw54WZMPJyQAPun4jMTcCGKoIMX36rbFXxHUqTgSpzTu2rq-5maHcxFf5z0SOrrxQmCcHORViNN7YtsLUMgW0vgd7-pPR9FosiB256QMfkRiZdcVk" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Security analysis tool for EVM bytecode. Supports smart contracts built for Ethereum, Hedera, Quorum, Vechain, Roostock, Tron and other EVM-compatible blockchains.</p>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">myth a killbilly.sol -t 3</p>
+
+
+
+<p class="wp-block-paragraph"><strong>sabre</strong></p>
+
+
+
+<p class="wp-block-paragraph">Security analyzer for Solidity smart contracts. Uses the MythX smart contract security service.</p>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">sabre check &lt;solidity-file&gt; [contract-name]</p>
+
+
+
+<p class="wp-block-paragraph"><strong>smartbugs</strong></p>
+
+
+
+<p class="wp-block-paragraph">SmartBugs is an execution framework aiming at simplifying the execution of analysis tools on datasets of smart contracts.</p>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">python3 smartBugs.py &#8211;tool all &#8211;file dataset/reentrancy/simple_dao.sol</p>
+
+
+
+<p class="wp-block-paragraph"><strong>truffle</strong></p>
+
+
+
+<p class="wp-block-paragraph">Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. With Truffle, you get:</p>
+
+
+
+<ul class="wp-block-list"><li>Built-in smart contract compilation, linking, deployment and binary management.</li><li>Automated contract testing with Mocha and Chai.</li><li>Configurable build pipeline with support for custom build processes.</li><li>Scriptable deployment &amp; migrations framework.</li><li>Network management for deploying to many public &amp; private networks.</li><li>Interactive console for direct contract communication.</li><li>Instant rebuilding of assets during development.</li><li>External script runner that executes scripts within a Truffle environment.</li></ul>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">truffle test ./test/TestMetaCoin.sol</p>
+
+
+
+<p class="wp-block-paragraph"><strong>solhint</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/83f6qjXZlGlW01ACBWFcKEDeMu_HOvDITiwHBUexalg2vma7PBal6vva2gVVNoB_kCkxvCW0V7-OBV9POR6DadvOX-YEo9b2NWd9ryiz_6xhasZsDMwZ9pa1CyOtPBJ8JfvP2rl6F3QkvTdzRAwMqzg" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Solhint is an open source project created by https://protofire.io. Its goal is to provide a linting utility for Solidity code.</p>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">solhint contracts/MyToken.sol</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Ethlint</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh6.googleusercontent.com/_utJEix8JcKbWYCZLVvbjBT0yr-YxmLYBLbOe1WFRsLZaJRtvEQ8hCEuQCFq0u6bpqRaQ-00QaYq0dWZ8c4VFkhCHhWv0810Um2ExZ0gSfo7jjdw15B66dcs-4DI1Za63gHKRJ1zctqrVF6LFIL5fgw" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Ethlint (Formerly Solium) analyzes your Solidity code for style &amp; security issues and fixes them.</p>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">solium -f foobar.sol</p>
+
+
+
+<p class="wp-block-paragraph"><strong>echidna</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh5.googleusercontent.com/DoCzkvQs_liNt9N5JCKVw6y7lAfId9yzxKlMfTBbFS31WZZ-IGsti_-RHMZxbWaRoguiUW0mbzFZzid7ass-nFZE8eJE31RHEilfbqqOI-AQ_tPJ1j-85-wEsVZDCu5nnsCn9p84B7gkphWacNTBUl0" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Ethereum smart contract fuzzer</p>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">echidna-test myContract.sol<br></p>
+
+
+
+<p class="wp-block-paragraph"><strong>securify</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh3.googleusercontent.com/HFTOibQRPlJf3FObRGxz5zkR_oqeeQesRBtl43ilt3HSVPhrZZl8KdzLzVaMwil9Z4jUG-zNmZWO6FiEM26hOC2pLm3z4nFqpcvGlt2sZ0OCqHJg7UK_xetQjmNK8JSZHgkliDI5VnVwK_qak8pnOhU" alt="" /></figure>
+
+
+
+<p class="wp-block-paragraph">Security Scanner for Ethereum Smart Contracts</p>
+
+
+
+<p class="wp-block-paragraph">For example:</p>
+
+
+
+<p class="wp-block-paragraph">java -jar build/libs/securify.jar -fs src/test/resources/solidity/transaction-reordering.sol<br></p>
+
+
+
+<p class="wp-block-paragraph">Top Resource for Learning</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Fundamentals of Smart Contract Security</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh4.googleusercontent.com/kuZiax24ufvmBPWEmIG0-5q6TzHrizLkWcfumVB5wMKW9AfzHwIago9zO1bHZGF4v9WMAJyt33hlZbh_4EF8VQ6SSAfYr5rm1QAjpRuBdq5cJm_uFTL2dqnDCSzYqgWBtnj566VFQHZU3c7KoeV-Ivs" alt="" /></figure>
+
+
+
+<ul class="wp-block-list"><li>Explore smart contract fundamentals, including the Ethereum protocol, Solidity programming language, and the Ethereum Virtual Machine</li><li>Dive into smart contract development using Solidity and gain experience with Truffle framework tools for deploying and testing your contracts</li><li>Use Web3 to connect your smart contracts to an applicationso users can easily interact with the blockchain</li><li>Examine smart contract security along with free online resources for smart contract security auditing</li></ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Truffle Quick Start Guide</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh3.googleusercontent.com/1iaQ4loqEGddvX8rC9TZs2ds4vkScBu_GrO0HlYaWBS1dlkWLLidproDIHT4jaSzlfRijbJwRud0VjsMNgsJpUefDJRDvnGAe8sCZqcGDQ-DI6nncXMbquCvhc1C6JxyMrb4XgF2zRhmazOF_-XpbG0" alt="" /></figure>
+
+
+
+<ul class="wp-block-list"><li>Build your first Ethereum Dapp with Truffle: the most popular Ethereum development framework</li><li>Build, compile, and deploy smart contracts in your development environment</li><li>Embrace Blockchains and utilize it to create new generation of secured and scalable apps</li></ul>
+
+
+
+<p class="wp-block-paragraph">Security Checklist</p>
+
+
+
+<p class="wp-block-paragraph">Security Checklist</p>
+
+
+
+<h1 class="wp-block-heading" id="h-resources">Resources</h1>
+
+
+
+<ul class="wp-block-list"><li>https://blog.csdn.net/ityouknow/article/details/121896509</li><li>https://blog.csdn.net/smellycat000/article/details/120213401</li><li>https://blog.csdn.net/smellycat000/article/details/119814296</li><li>https://github.com/nomi-sec/PoC-in-GitHub</li></ul>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1560,27 +2167,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1707,11 +2314,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1734,59 +2341,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

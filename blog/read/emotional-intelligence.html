@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/emotional-intelligence#article","headline":"From Faces to Feelings: The Role of OSINT in Emotion Detection and Cybersecurity — HADESS Magazine","description":"The quest to understand and interpret human emotions has spanned centuries, captivating the minds of philosophers, researchers, and scientists. In today's...","url":"https://hadesssecurity.github.io/blog/read/emotional-intelligence","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/emotional-intelligence"},"datePublished":"June 17, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/06/cover.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/emotional-intelligence#article","headline":"From Faces to Feelings: The Role of OSINT in Emotion Detection and Cybersecurity — HADESS Magazine","description":"The quest to understand and interpret human emotions has spanned centuries, captivating the minds of philosophers, researchers, and scientists. In today's...","url":"https://hadesssecurity.github.io/blog/read/emotional-intelligence","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/emotional-intelligence"},"datePublished":"June 17, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/06/cover.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,664 +1550,617 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2023/06/cover.png">
       
-<p class="wp-block-paragraph">The “Windows Downdate” vulnerability, identified and demonstrated by researcher Anon Leviev, is a downgrade attack technique that leverages Windows Update mechanisms to reintroduce older, vulnerable versions of system files. By circumventing normal update verification checks, this attack allows malicious actors to downgrade essential system components like the Windows kernel, Hyper-V hypervisor, and other critical drivers, effectively undoing applied security patches without detection. This type of exploit bypasses endpoint detection and response (EDR) systems and misleads the OS into thinking it’s up-to-date, making it a powerful tool for attackers aiming to exploit known vulnerabilities that have been patched previously.</p>
+<h2 class="wp-block-heading"><strong>What Is OSINT In Cybersecurity?</strong></h2>
 
 
 
-<p class="wp-block-paragraph">The attack exploits two key vulnerabilities, CVE-2024-21302 and CVE-2024-38202, targeting the Windows Update stack and allowing privilege escalation by modifying system restore points to execute downgrades. Microsoft has been informed and has issued partial mitigations, but a full patch is still pending. This discovery, presented at Black Hat 2024, underscores a critical challenge in OS security—ensuring that update mechanisms themselves are robust against tampering. As security teams work toward more resilient update infrastructures, they recommend auditing access control, limiting update permissions, and monitoring for downgrade activities to mitigate such risks until a comprehensive fix is available.</p>
+<p class="wp-block-paragraph"><a href="/unveiling-the-art-of-face-generation/" target="_blank" rel="noreferrer noopener"><mark style="background-color:rgba(0, 0, 0, 0);color:#3410f2" class="has-inline-color"><strong>OSINT </strong></mark></a>(Open Source Intelligence) is a pivotal concept within the realm of cybersecurity. It denotes the procedure of collecting and analyzing data acquired from public sources. Unlike covert intelligence methods, OSINT harnesses openly accessible data. Here&#8217;s an in-depth look at OSINT and its role in cybersecurity:</p>
 
 
 
-<h2 class="wp-block-heading">Windows Downdate: A Novel Downgrade Attack on Windows</h2>
+<h3 class="wp-block-heading"><strong>1. OSINT Sources</strong></h3>
 
 
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="590" src="/wp-content/uploads/2024/10/image-1024x590.png" alt="" class="wp-image-8852" srcset="/wp-content/uploads/2024/10/image-1024x590.png 1024w, /wp-content/uploads/2024/10/image-300x173.png 300w, /wp-content/uploads/2024/10/image-768x442.png 768w, /wp-content/uploads/2024/10/image.png 1037w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<p class="wp-block-paragraph">Windows Downdate is a novel attack method that exploits the Windows Update process to downgrade critical operating system components. This attack allows malicious actors to revert fully patched systems to older, vulnerable versions, effectively turning fixed vulnerabilities into zero-days. The attack leverages a flaw in the Windows Update process that grants an attacker full control, bypassing integrity verifications and Trusted Installer enforcement. This control allows the attacker to craft a custom, downgrading action list that replaces target components with older versions. The attack is particularly insidious because it leaves the system appearing fully updated while remaining persistent and irreversible.</p>
-
-
-
-<p class="wp-block-paragraph">The impact of Windows Downdate extends beyond simply re-exposing known vulnerabilities. The researcher demonstrated the ability to bypass security features like Credential Guard, Hypervisor-Protected Code Integrity (HVCI), and even the UEFI lock protecting Virtualization-Based Security (VBS). By downgrading components in the virtualization stack, the attack undermines the security boundaries designed to isolate sensitive operations and protect the kernel. This research highlights the need for increased awareness and mitigation against OS-based downgrade attacks, urging a critical review of design features and assumptions about file immutability. It underscores the importance of thorough examination of in-the-wild attacks like the BlackLotus UEFI Bootkit to understand their broader implications and potential for exploitation in other areas.</p>
-
-
-
-<p class="wp-block-paragraph">This attack, which includes steps like registry manipulation and hijacking of update configuration files, makes detection difficult because Windows Update will continue to report the system as fully patched even when it is not.</p>
-
-
-
-<h3 class="wp-block-heading">1. <strong>Setting Up the Downgrade Environment</strong></h3>
-
-
-
-<p class="wp-block-paragraph">The attack begins by configuring Windows Update to accept downgraded components. This requires modifying the <strong>Pending.xml</strong> file, which contains the action list for system updates. The attacker can introduce malicious commands within Pending.xml by setting up a &#8220;hardlink&#8221; that points from an older, vulnerable version of a component to the target system directory.</p>
-
-
-
-<p class="wp-block-paragraph"><strong>Code Example</strong>:</p>
-
-
-
-<pre class="wp-block-code"><code>&lt;HardlinkFile source="C:\UpdateDir\VulnerableFile.exe" destination="C:\Windows\System32\TargetFile.exe"/&gt;</code></pre>
-
-
-
-<p class="wp-block-paragraph">This command replaces <code>TargetFile.exe</code> with the older, vulnerable <code>VulnerableFile.exe</code>.</p>
-
-
-
-<h3 class="wp-block-heading">2. <strong>Registry Manipulation for Trusted Installer Override</strong></h3>
-
-
-
-<p class="wp-block-paragraph">By manipulating registry keys, the attacker ensures that the Windows Update process will automatically start and execute the modified Pending.xml file without requiring Trusted Installer privileges. Setting <code>HKLM\COMPONENTS\PendingXmlIdentifier</code> enables the update execution, while <code>HKLM\SYSTEM\CurrentControlSet\Services\TrustedInstaller</code> enforces auto-start for the Trusted Installer service​</p>
-
-
-
-<p class="wp-block-paragraph"><strong>Registry Commands</strong>:</p>
-
-
-
-<pre class="wp-block-code"><code>reg add "HKLM\COMPONENTS\PendingXmlIdentifier" /t REG_SZ /d C:\Windows\WinSxS\Pending.xml
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\TrustedInstaller" /t REG_DWORD /v Start /d 2</code></pre>
-
-
-
-<p class="wp-block-paragraph">then <strong>Create Action List</strong></p>
-
-
-
-<pre class="wp-block-code"><code>&lt;POQ postAction="reboot"&gt;
-    &lt;HardlinkFile 
-        source="C:\UpdateDir\VulnerableVersion.dll" 
-        destination="C:\Windows\System32\Target.dll"/&gt;
-&lt;/POQ&gt;</code></pre>
-
-
-
-<h3 class="wp-block-heading">2.1 <strong>Virtualization-Based Security (VBS) Attacks</strong></h3>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="949" height="526" src="/wp-content/uploads/2024/10/image-1.png" alt="" class="wp-image-8853" srcset="/wp-content/uploads/2024/10/image-1.png 949w, /wp-content/uploads/2024/10/image-1-300x166.png 300w, /wp-content/uploads/2024/10/image-1-768x426.png 768w" sizes="(max-width: 949px) 100vw, 949px" /></figure>
-
-
-
-<p class="wp-block-paragraph">VBS creates a secure and isolated virtual environment powered by the Hyper-V hypervisor. In the VBS architecture, Windows runs in two separate modes:</p>
+<p class="wp-block-paragraph">OSINT<mark style="background-color:rgba(0, 0, 0, 0);color:#0b34e8" class="has-inline-color"> </mark>in cybersecurity involves extracting information from a plethora of sources, such as:</p>
 
 
 
 <ul class="wp-block-list">
-<li>Normal Mode (VTL0): Contains the regular Windows kernel and user processes</li>
+<li>News agencies and digital publications.</li>
 
 
 
-<li>Secure Mode (VTL1): Contains the secure kernel and secure processes</li>
+<li>Government databases and public records.</li>
+
+
+
+<li>Social media channels and online forums.</li>
+
+
+
+<li>Scholarly articles and academic databases.</li>
+
+
+
+<li>Multimedia content like videos and podcasts.</li>
+
+
+
+<li>Geospatial tools and satellite images.</li>
+
+
+
+<li>Website data and domain registries.</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">The key security boundaries are:</p>
+<h3 class="wp-block-heading"><strong>2. OSINT Applications in Cybersecurity</strong></h3>
 
 
 
 <ul class="wp-block-list">
-<li>VTL0 → VTL1 transition</li>
+<li><strong>Defensive Measures</strong>: National defense bodies and governments employ OSINT (Open Source Intelligence) to track potential security threats, evaluate global political shifts, and understand opponents&#8217; capabilities.</li>
 
 
 
-<li>Ring3/Ring0 → Ring-1 (hypervisor) transition</li>
+<li><strong>Business Intelligence</strong>: Firms leverage OSINT for competitive insights, market evaluations, risk determinations, and thorough vetting processes.</li>
+
+
+
+<li><strong>Cybersecurity Analysis</strong>: Professionals in cybersecurity use OSINT methodologies to identify vulnerabilities, carry out threat evaluations, and discern the tactics and strategies of malicious entities.</li>
+
+
+
+<li><strong>Investigative Reporting</strong>: OSINT aids journalists in confirming stories, probing into leads, and assembling evidence for disclosures.</li>
 </ul>
 
 
 
-<h3 class="wp-block-heading">Credential Guard Attacks</h3>
+<h3 class="wp-block-heading"><strong>3. Benefits of OSINT in Cybersecurity</strong></h3>
 
 
 
-<p class="wp-block-paragraph">One critical VBS component is Credential Guard, implemented as an Isolated User Mode process (LsaIso.exe) running in Ring3-VTL1. By exploiting vulnerabilities in shared components like KerbClientShared.dll, attackers can cross the VTL0 to VTL1 boundary.</p>
+<ul class="wp-block-list">
+<li><strong>Ease of Access</strong>: The foundational premise of OSINT in cybersecurity is tapping into publicly dispensed data, making it a universally accessible intelligence model.</li>
 
 
 
-<p class="wp-block-paragraph">Example attack using downgraded vulnerable version:</p>
+<li><strong>Economical</strong>: Leveraging public sources, OSINT operations can be executed with nominal financial investments.</li>
 
 
 
-<pre class="wp-block-code"><code># Downgrade KerbClientShared.dll to version 10.0.22000.856
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\KerbClientShared" -Name "ImagePath" -Value "C:\Windows\System32\KerbClientShared.dll.old"</code></pre>
+<li><strong>Varied Viewpoints</strong>: The diverse nature of OSINT sources offers a multifaceted perspective, paving the way for a holistic comprehension of cybersecurity scenarios.</li>
+</ul>
 
 
 
-<h3 class="wp-block-heading">Secure Kernel Exploitation</h3>
+<h3 class="wp-block-heading"><strong>4. OSINT Challenges in Cybersecurity</strong></h3>
 
 
 
-<p class="wp-block-paragraph">The Secure Kernel (SecureKernel.exe) runs in Ring0-VTL1 and implements critical security features like HVCI and HyperGuard. Attackers can target vulnerabilities in SecureKernel.exe and its dependencies (SKCI.dll, CI.dll) to gain Ring0-VTL1 access.</p>
+<ul class="wp-block-list">
+<li><strong>Data Deluge</strong>: With the vastness of available data, sifting through to pinpoint relevant information becomes a challenge. Hence, potent analysis tools are indispensable in cybersecurity.</li>
 
 
 
-<p class="wp-block-paragraph">Example SecureKernel downgrade:</p>
+<li><strong>Validity and Cross-checking</strong>: Given that public data can sometimes be slanted, outdated, or intentionally misleading, OSINT in cybersecurity mandates rigorous validation and multi-source referencing.</li>
 
 
 
-<pre class="wp-block-code"><code># Backup current SecureKernel
-Copy-Item "C:\Windows\System32\SecureKernel.exe" "C:\Windows\System32\SecureKernel.exe.bak"
-
-# Replace with vulnerable version (10.0.19041.207)
-Copy-Item "C:\vulnerable\SecureKernel.exe" "C:\Windows\System32\SecureKernel.exe"</code></pre>
+<li><strong>Ethical Implications</strong>: Ethical dilemmas emerge when using public data, especially when individuals remain oblivious to their data serving intelligence purposes.</li>
+</ul>
 
 
 
-<h3 class="wp-block-heading">Hypervisor Attacks</h3>
+<p class="wp-block-paragraph">To encapsulate, OSINT (Open Source Intelligence) stands as a beacon in the cybersecurity landscape, offering invaluable insights from open data. However, effective OSINT in cybersecurity demands meticulous analysis, rigorous verification, and an unwavering commitment to ethical standards.</p>
 
 
 
-<p class="wp-block-paragraph">The Hyper-V hypervisor (Hvix64.exe/Hvax64.exe) runs in Ring-1 and provides the foundation for VBS isolation. Targeting the hypervisor can completely compromise VBS security boundaries.</p>
+<h2 class="wp-block-heading" id="h-introduction"><strong>Introduction</strong></h2>
 
 
 
-<p class="wp-block-paragraph">Example hypervisor manipulation:</p>
+<p class="wp-block-paragraph">Understanding and interpreting human emotions is a complex task that has fascinated researchers and scientists for decades. The ability to accurately detect and analyze a person&#8217;s emotions can have numerous applications, ranging from improving mental health support to enhancing user experiences in various industries.</p>
 
 
 
-<pre class="wp-block-code"><code># Disable hypervisor launch
-bcdedit /set hypervisorlaunchtype off
-
-# Replace hypervisor binary
-Move-Item "C:\Windows\System32\Hvix64.exe" "C:\Windows\System32\Hvix64.exe.bak"
-Copy-Item "C:\vulnerable\Hvix64.exe" "C:\Windows\System32\Hvix64.exe"
-
-# Re-enable hypervisor
-bcdedit /set hypervisorlaunchtype auto</code></pre>
+<p class="wp-block-paragraph">In recent years, significant progress has been made in the field of emotion detection, with one approach known as OSINT gaining attention for its effectiveness in uncovering individual moods.</p>
 
 
 
-<h3 class="wp-block-heading">VBS Remote Disablement</h3>
+<p class="wp-block-paragraph">OSINT, an acronym for &#8220;Observing Sentiments through Intelligent Networks,&#8221; refers to a collection of methodologies and techniques that leverage cutting-edge technologies, such as machine learning, natural language processing, and facial recognition, to discern and interpret the emotions of individuals.</p>
 
 
 
-<p class="wp-block-paragraph">VBS uses UEFI variables for configuration protection. However, this can be bypassed by:</p>
+<p class="wp-block-paragraph">By analyzing a combination of verbal and non-verbal cues, OSINT aims to provide deep insights into a person&#8217;s emotional state, contributing to a deeper understanding of human behavior and facilitating more empathetic interactions.</p>
+
+
+
+<p class="wp-block-paragraph">One of the primary advantages of OSINT (<a href="https://www.sentinelone.com/cybersecurity-101/open-source-intelligence-osint/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#0e09ee" class="has-inline-color">Open Source Intelligence</mark></strong></a>) is its ability to capture emotions in real-time, allowing for timely interventions or tailored responses in various domains. Whether it&#8217;s in mental health counseling, customer service, or even educational settings, the ability to accurately detect and respond to someone&#8217;s emotions can greatly enhance the effectiveness and quality of interactions.</p>
+
+
+
+<p class="wp-block-paragraph">Within the realm of OSINT, various methodologies have emerged, each with its own unique approach and strengths. These methods encompass a wide range of data sources, including text-based analysis, audio and speech processing, facial expression recognition, and physiological signals.</p>
+
+
+
+<p class="wp-block-paragraph">By combining multiple modalities, OSINT strives to create a more comprehensive understanding of an individual&#8217;s emotional state, considering both explicit and implicit cues.</p>
+
+
+
+<p class="wp-block-paragraph">In this article, we will delve into some of the most prominent methods employed within the OSINT (Open Source Intelligence) framework for detecting and analyzing emotions. We will explore the underlying principles, techniques, and challenges associated with each method.</p>
+
+
+
+<p class="wp-block-paragraph">Additionally, we will highlight practical applications and potential future developments in the field, as well as the ethical considerations surrounding the use of emotion detection technologies.</p>
+
+
+
+<p class="wp-block-paragraph">By understanding the methods used in OSINT for emotion detection, we aim to shed light on the advancements in this exciting field and emphasize the potential benefits it can bring to various sectors.</p>
+
+
+
+<p class="wp-block-paragraph">Whether you are interested in psychology, artificial intelligence, human-computer interaction, or simply curious about the intricate workings of human emotions, this article will serve as a comprehensive guide to the methodologies utilized in OSINT for uncovering and understanding individual moods.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-key-elements"><strong>Key Elements</strong></h2>
+
+
+
+<h3 class="wp-block-heading"><strong>Check person exists or not</strong></h3>
+
+
+
+<p class="wp-block-paragraph">In today&#8217;s digital age, where online interactions and virtual identities have become commonplace, verifying the authenticity of individuals has become an important concern. With the rise of fake profiles, identity theft, and online scams, the need for tools and techniques to check whether a person truly exists has grown exponentially.</p>
+
+
+
+<p class="wp-block-paragraph">Addressing this challenge, the open-source project &#8220;AmIReal&#8221; provides a solution to determine the authenticity of individuals and verify their existence.</p>
+
+
+
+<p class="wp-block-paragraph">AmIReal: A Tool for Verification: AmIReal, available on GitHub at <a href="https://github.com/seintpl/AmIReal/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#1e28f1" class="has-inline-color">https://github.com/seintpl/AmIReal/</mark></strong></a>, is a powerful tool designed to check the existence of a person. Developed by a team of dedicated contributors, AmIReal leverages advanced algorithms and data analysis techniques to assess the authenticity of individuals based on available information and online footprints.</p>
+
+
+
+<p class="wp-block-paragraph">How AmIReal Works: AmIReal utilizes a combination of data mining, pattern recognition, and machine learning algorithms to analyze various data sources, including social media profiles, online presence, public records, and more. By aggregating and analyzing these data points, AmIReal generates a comprehensive assessment of the person&#8217;s existence.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Key Features of AmIReal</strong></h3>
 
 
 
 <ol class="wp-block-list">
-<li>Invalidating critical VBS files</li>
+<li>Data Aggregation: AmIReal gathers information from multiple sources to build a comprehensive profile of the individual under scrutiny.</li>
 
 
 
-<li>Manipulating the VbsPolicy UEFI variable</li>
+<li>Algorithmic Analysis: Advanced algorithms process the collected data to identify patterns, anomalies, and inconsistencies that may indicate fraudulent or non-existent profiles.</li>
 
 
 
-<li>Exploiting boot configuration</li>
+<li>Machine Learning Integration: AmIReal incorporates machine learning models to continuously improve its accuracy and adapt to evolving trends in online identity verification.</li>
+
+
+
+<li>Transparent and Open-Source: AmIReal is an open-source project, allowing the community to contribute, review, and enhance the tool&#8217;s capabilities over time.</li>
+
+
+
+<li>User-Friendly Interface: The tool offers an intuitive and user-friendly interface, making it accessible to both technical and non-technical users.</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">Example VBS disable commands:</p>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="951" height="506" src="/wp-content/uploads/2023/06/image.png" alt="fake image detection" class="wp-image-7169" srcset="/wp-content/uploads/2023/06/image.png 951w, /wp-content/uploads/2023/06/image-300x160.png 300w, /wp-content/uploads/2023/06/image-768x409.png 768w" sizes="(max-width: 951px) 100vw, 951px" /></figure>
 
 
 
-<pre class="wp-block-code"><code># Disable VBS in registry
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "EnableVirtualizationBasedSecurity" /t REG_DWORD /d 0 /f
-
-# Clear LSA configuration
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v "LsaCfgFlags" /t REG_DWORD /d 0 /f
-
-# Disable Credential Guard
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard" /v "Enabled" /t REG_DWORD /d 0 /f</code></pre>
+<h3 class="wp-block-heading"><strong>1. Check Image Moods</strong></h3>
 
 
 
-<h4 class="wp-block-heading">Protection Recommendations</h4>
+<p class="wp-block-paragraph">In the realm of human psychology and understanding, emotions play a central role in shaping our experiences and interactions. In his groundbreaking book, &#8220;Emotions Revealed,&#8221; renowned psychologist Paul Ekman takes us on a captivating journey into the depths of human emotions.</p>
 
 
 
-<p class="wp-block-paragraph">To better secure VBS implementations:</p>
+<p class="wp-block-paragraph">Through his extensive research and real-life anecdotes, Ekman offers profound insights into the intricacies of emotions and the ways they influence our lives.</p>
+
+
+
+<p class="wp-block-paragraph">&#8220;Emotions Revealed&#8221; serves as a comprehensive guide to decoding the vast array of human emotions. Ekman draws upon his pioneering work in facial expressions and body language to shed light on the universal nature of emotions across cultures and societies.</p>
+
+
+
+<p class="wp-block-paragraph">By dissecting various emotional states, such as happiness, anger, fear, sadness, and surprise, Ekman unravels the complex web of factors that contribute to their manifestation.</p>
+
+
+
+<p class="wp-block-paragraph">Ekman combines scientific rigor with engaging storytelling to convey his research findings effectively. Drawing from his encounters with diverse populations and even his experiences studying facial expressions in isolated tribes, Ekman presents a wealth of evidence supporting his theories.</p>
+
+
+
+<p class="wp-block-paragraph">He reveals the role of evolutionary biology, social conditioning, and individual differences in shaping emotional responses, offering readers a fascinating glimpse into the mechanisms that underpin our emotional lives.</p>
+
+
+
+<p class="wp-block-paragraph">Beyond its scientific exploration, &#8220;Emotions Revealed&#8221; equips readers with practical tools for understanding and managing their own emotions, as well as decoding the emotional cues of others. Ekman emphasizes the importance of emotional awareness and empathy in fostering healthy relationships and effective communication.</p>
+
+
+
+<p class="wp-block-paragraph">By recognizing the subtle nuances of facial expressions, body language, and vocal intonations, readers can gain valuable insights into the emotions hidden beneath the surface.</p>
+
+
+
+<p class="wp-block-paragraph">For example, Ekman highlights that disgust is a universal emotion with distinct facial expressions and physiological responses. He explores how disgust serves as a protective mechanism, signaling potential harm or contamination. By investigating the triggers and variations of disgust across cultures, Ekman uncovers the intricate relationship between personal experiences, cultural norms, and the expression of this powerful emotion.</p>
+
+
+
+<p class="wp-block-paragraph">Or In &#8220;Emotions Revealed,&#8221; Ekman delves into the realm of slight sadness, a nuanced emotional state often overshadowed by intense grief or depression. Ekman emphasizes that even subtle displays of sadness carry valuable information about a person&#8217;s emotional well-being.</p>
+
+
+
+<p class="wp-block-paragraph">By examining microexpressions and subtle behavioral cues, he unravels the hidden layers of slight sadness and its impact on human interactions and relationships.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="939" height="352" src="/wp-content/uploads/2023/06/image-1.png" alt="Emotions Revealed" class="wp-image-7170" srcset="/wp-content/uploads/2023/06/image-1.png 939w, /wp-content/uploads/2023/06/image-1-300x112.png 300w, /wp-content/uploads/2023/06/image-1-768x288.png 768w" sizes="(max-width: 939px) 100vw, 939px" /></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>2. Automate Check Image Moods</strong></h3>
+
+
+
+<p class="wp-block-paragraph">FaceReader utilizes advanced algorithms and machine learning techniques to automatically detect and analyze facial expressions of emotions. It can analyze a wide range of emotions such as happiness, sadness, anger, surprise, fear, and disgust, among others. The software provides researchers, psychologists, and other professionals with a quantitative assessment of emotional responses.</p>
+
+
+
+<p class="wp-block-paragraph">The process typically involves the following steps:</p>
 
 
 
 <ol class="wp-block-list">
-<li>Enable VBS with UEFI lock:</li>
+<li>Data Capture: FaceReader analyzes facial expressions from video recordings or images. These visuals are usually captured through a camera or webcam.</li>
+
+
+
+<li>Facial Expression Recognition: Using sophisticated computer vision algorithms, FaceReader detects and recognizes key facial landmarks, muscle movements, and expressions.</li>
+
+
+
+<li>Emotion Analysis: Based on the detected facial expressions, FaceReader applies machine learning algorithms to classify and quantify the displayed emotions. It provides detailed reports on the intensity and duration of specific emotions.</li>
+
+
+
+<li>Data Visualization and Analysis: FaceReader generates visualizations, such as graphs and heatmaps, to represent the emotional responses over time. Researchers can use these visualizations to gain insights into emotional patterns and correlations with other variables.</li>
 </ol>
 
 
 
-<pre class="wp-block-code"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Locked" /t REG_DWORD /d 1 /f</code></pre>
+<figure class="wp-block-image size-full"><img decoding="async" width="943" height="784" src="/wp-content/uploads/2023/06/image-2.png" alt="Automate Check Video Moods" class="wp-image-7171" srcset="/wp-content/uploads/2023/06/image-2.png 943w, /wp-content/uploads/2023/06/image-2-300x249.png 300w, /wp-content/uploads/2023/06/image-2-768x639.png 768w" sizes="(max-width: 943px) 100vw, 943px" /></figure>
 
 
 
-<ol start="2" class="wp-block-list">
-<li>Add Mandatory flag:</li>
-</ol>
+<p class="wp-block-paragraph">Applications of FaceReader: FaceReader finds applications in various domains, including psychology, market research, user experience studies, and human-computer interaction. Researchers and professionals use it to explore emotional responses to stimuli, evaluate product usability, assess emotional engagement in media content, and conduct emotion-related research.</p>
 
 
 
-<pre class="wp-block-code"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Mandatory" /t REG_DWORD /d 1 /f</code></pre>
+<p class="wp-block-paragraph"><a href="https://www.noldus.com/facereader/measure-your-emotions"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#0f12f7" class="has-inline-color">https://www.noldus.com/facereader/measure-your-emotions</mark></strong></a></p>
 
 
 
-<ol start="3" class="wp-block-list">
-<li>Monitor for VBS configuration changes and file integrity</li>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="517" src="/wp-content/uploads/2023/06/image-3-1024x517.png" alt="MorphCast enables real-time insights into emotional engagement" class="wp-image-7172" srcset="/wp-content/uploads/2023/06/image-3-1024x517.png 1024w, /wp-content/uploads/2023/06/image-3-300x151.png 300w, /wp-content/uploads/2023/06/image-3-768x387.png 768w, /wp-content/uploads/2023/06/image-3.png 1118w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<li>Implement secure boot with proper revocation lists</li>
+<h3 class="wp-block-heading"><strong>3. Automate Check Video Moods</strong></h3>
 
 
 
-<li>Regular security updates for VBS components</li>
+<p class="wp-block-paragraph">The website &#8220;<a href="https://demo.morphcast.com/sdk-ai-demo/#/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#1f12ef" class="has-inline-color">https://demo.morphcast.com/sdk-ai-demo/#/</mark></strong></a>&#8221; provides a demonstration of the MorphCast AI SDK for measuring emotions in live video. MorphCast is an AI-powered software development kit that enables real-time emotion analysis and measurement using facial expressions captured from a live video feed.</p>
 
 
 
-<li>Network isolation for critical VBS processes</li>
-</ol>
-
-
-
-<h3 class="wp-block-heading">3. <strong>Persisting the Downgrade and Disabling Detection</strong></h3>
-
-
-
-<p class="wp-block-paragraph">The downgrade persists by altering <strong>poqexec.exe</strong>, a non-digitally signed utility that processes the Pending.xml file. By replacing <code>poqexec.exe</code> with a patched version, attackers can loop empty updates, which means Windows will continue to mark the system as &#8220;updated.&#8221; Additionally, system utilities like <strong>SFC.exe</strong> (System File Checker) and <strong>DISM.exe</strong> (Deployment Image Servicing and Management) are also targeted to prevent repair checks from detecting the modifications​.</p>
-
-
-
-<p class="wp-block-paragraph"><strong>File Replacement Example</strong>:</p>
-
-
-
-<pre class="wp-block-code"><code>copy C:\MaliciousTools\poqexec.exe C:\Windows\System32\poqexec.exe</code></pre>
-
-
-
-<h3 class="wp-block-heading">4. <strong>Downgrade Example: Reverting to a Vulnerable Kernel</strong></h3>
-
-
-
-<p class="wp-block-paragraph">To demonstrate the effectiveness of the downgrade attack, Leviev showcased reverting a kernel component (<code>AFD.sys</code>) to an older, exploitable version. By using similar hardlink techniques and ensuring the downgraded kernel runs on boot, the attack enables privilege escalation through exposed vulnerabilities​.</p>
-
-
-
-<p class="wp-block-paragraph"><strong>All Step like this</strong>:</p>
+<p class="wp-block-paragraph">Measuring Emotions in Live Video with MorphCast: The MorphCast AI SDK utilizes computer vision and machine learning techniques to analyze facial expressions and infer emotions in real time. It can detect and track facial landmarks, muscle movements, and other visual cues to assess emotional states. Here&#8217;s a general overview of how emotion measurement works using MorphCast:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Update Process Flow</strong>: Shows the stages of Windows Update, from request to execution.
-<ol class="wp-block-list">
-<li>The Windows Update process relies on an update client and an update server, communicating via COM. ● The client operates with Administrator privileges, while the server utilizes Trusted Installer, restricting direct system file modifications, even by Administrators.</li>
+<li>Live Video Input: MorphCast takes a live video feed as input, typically from a camera or webcam. The video feed captures the person&#8217;s facial expressions and movements.</li>
 
 
 
-<li>The client initiates an update by providing an update folder to the server. The server verifies the integrity of the folder, finalizes update files, and creates an action list (Pending.xml) containing update actions to be performed on reboot. The client only has control over the initial update folder.</li>
+<li>Facial Analysis: The AI algorithms in MorphCast analyze the video frames and extract relevant facial features, such as key landmarks, facial muscle movements, and expression dynamics.</li>
 
 
 
-<li>The update folder contains update components, each including MUM, manifest, differential, and catalog files. MUM files hold metadata, manifest files contain installation details, differential files act as deltas for base files, and catalog files provide digital signatures.</li>
-</ol>
-</li>
+<li>Emotion Recognition: Based on the extracted facial features, MorphCast applies machine learning models to recognize and classify emotions. It identifies patterns and cues associated with different emotional states, such as happiness, sadness, anger, surprise, fear, and more.</li>
 
 
 
-<li><strong>Registry and Hardlink Configuration</strong>: Illustrates how registry keys and Pending.xml configurations interact.
-<ol class="wp-block-list">
-<li>The action list&#8217;s path (Pending.xml) is stored in the registry key <code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Configuration\PoqexecCmdline</code> and is not Trusted Installer enforced. This allows an attacker to modify the actions performed during the update, including creating, deleting, moving, and hard-linking files, as well as manipulating registry keys and values.</li>
+<li>Real-time Measurement: MorphCast provides real-time measurement and analysis of emotions. It can track the intensity and changes in emotional expressions over time, allowing for dynamic monitoring and assessment.</li>
 
 
 
-<li>A malicious Pending.xml file is created, utilizing the HardlinkFile action to replace target files with older, vulnerable versions. The action list also includes actions to ensure persistence, such as patching the action list parser (PoqExec.exe) to install empty updates, and patching the system integrity check utility (SFC.exe) to prevent detection.</li>
-</ol>
-</li>
-
-
-
-<li><strong>Persistency Setup</strong>: Details the replacement of poqexec.exe and prevention of system checks.
-<ol class="wp-block-list">
-<li>The attacker sets the Trusted Installer service to Auto-Start, adds the Pending.xml path and its identifier to the registry. The system then executes the malicious action list during the next reboot, downgrading the target components.</li>
-
-
-
-<li>By successfully hijacking the Windows Update process, the attack achieves a persistent, invisible, and undetectable downgrade. The system falsely reports as fully updated, making the downgraded components appear legitimate. The patched PoqExec.exe and SFC.exe prevent future updates and corruption detection, ensuring persistence and irreversibility.</li>
-</ol>
-</li>
+<li>Visual Feedback: The results of the emotion analysis are often visualized in real-time, providing visual feedback such as emotion labels, facial heatmaps, or overlays that highlight specific facial regions associated with different emotions.</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">With this attack, an attacker can continually keep the system in a downgraded state, bypassing updates and effectively rendering the term &#8220;fully patched&#8221; meaningless on affected machines​.</p>
+<p class="wp-block-paragraph">Applications of MorphCast: The MorphCast AI SDK has various applications across industries and domains. It can be utilized in areas such as customer experience analysis, market research, user testing, mental health monitoring, virtual reality experiences, and interactive digital media. By measuring emotions in live video, MorphCast enables real-time insights into emotional engagement, user experiences, and audience responses.</p>
 
 
 
-<h2 class="wp-block-heading">Prevention &amp; Mitigation</h2>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="412" src="/wp-content/uploads/2023/06/image-4-1024x412.png" alt="Find Text Moods" class="wp-image-7173" srcset="/wp-content/uploads/2023/06/image-4-1024x412.png 1024w, /wp-content/uploads/2023/06/image-4-300x121.png 300w, /wp-content/uploads/2023/06/image-4-768x309.png 768w, /wp-content/uploads/2023/06/image-4.png 1499w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<p class="wp-block-paragraph">Enable VBS with UEFI Lock:</p>
+<h3 class="wp-block-heading"><strong>4. Find Tweets Moods</strong></h3>
 
 
 
-<pre class="wp-block-code"><code># Enable VBS with UEFI lock
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Locked" /t REG_DWORD /d 1 /f
-
-# Enable Mandatory flag
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v "Mandatory" /t REG_DWORD /d 1 /f</code></pre>
+<p class="wp-block-paragraph">The website &#8220;<a href="https://www.csc2.ncsu.edu/faculty/healey/tweet_viz/tweet_app/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#0c0ff7" class="has-inline-color">https://www.csc2.ncsu.edu/faculty/healey/tweet_viz/tweet_app/</mark></strong></a>&#8221; hosts a tweet visualization tool developed by Dr. Christopher Healey from North Carolina State University. The tool allows users to visualize and analyze emotions in tweets.</p>
 
 
 
-<h3 class="wp-block-heading">Long-term Mitigations:</h3>
+<p class="wp-block-paragraph">Measuring Emotions in Tweets with the Tweet Visualization Tool: The tweet visualization tool uses natural language processing (NLP) techniques to analyze the text content of tweets and infer the emotions expressed within them. Here&#8217;s an overview of how emotion measurement works using this tool:</p>
 
 
 
 <ol class="wp-block-list">
-<li>Monitor System File Integrity:</li>
+<li>Input Tweets: Users provide a set of tweets or a specific Twitter user&#8217;s timeline as input to the tweet visualization tool. The tool processes the text content of these tweets.</li>
+
+
+
+<li>Text Analysis: The tool applies various NLP techniques to analyze the tweets&#8217; text. This may include tokenization, part-of-speech tagging, and sentiment analysis to extract meaningful information from the text.</li>
+
+
+
+<li>Emotion Detection: Using sentiment analysis or other techniques, the tweet visualization tool identifies the emotional content within the tweets. It recognizes and assigns emotions such as happiness, sadness, anger, surprise, fear, or others based on the language used in the tweets.</li>
+
+
+
+<li>Visualization: Once the emotions in the tweets are detected, the tweet visualization tool generates visualizations to represent the emotional patterns. These visualizations may include graphs, charts, word clouds, or other graphical representations to provide insights into the emotional content of the tweets.</li>
+
+
+
+<li>Analysis and Interpretation: Users can analyze and interpret the emotional patterns found in the tweets using the generated visualizations. This can help understand the sentiment and emotional trends within the tweets, identify topics that evoke strong emotions, or detect changes in emotional expression over time.</li>
 </ol>
 
 
 
-<pre class="wp-block-code"><code># Run System File Checker
-sfc /scannow
-
-# Monitor WinSxS directory
-Get-ItemProperty -Path "C:\Windows\WinSxS" -Filter "*.xml" | Watch-Path</code></pre>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="678" src="/wp-content/uploads/2023/06/image-5-1024x678.png" alt="Find Relation Moods" class="wp-image-7174" srcset="/wp-content/uploads/2023/06/image-5-1024x678.png 1024w, /wp-content/uploads/2023/06/image-5-300x199.png 300w, /wp-content/uploads/2023/06/image-5-768x509.png 768w, /wp-content/uploads/2023/06/image-5.png 1327w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<ol start="2" class="wp-block-list">
-<li>Implement Security Controls:</li>
+<p class="wp-block-paragraph">Applications of the Tweet Visualization Tool: The tweet visualization tool has various applications in social media analysis, sentiment analysis, and understanding public opinion. It can be used to study online conversations, track sentiment towards specific topics or brands, identify emotional responses to events or news, and gain insights into the collective emotions expressed on Twitter.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="621" src="/wp-content/uploads/2023/06/image-6-1024x621.png" alt=" Train Characterize Bot Generation" class="wp-image-7175" srcset="/wp-content/uploads/2023/06/image-6-1024x621.png 1024w, /wp-content/uploads/2023/06/image-6-300x182.png 300w, /wp-content/uploads/2023/06/image-6-768x466.png 768w, /wp-content/uploads/2023/06/image-6.png 1471w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>5. Find Text Moods</strong></h3>
+
+
+
+<p class="wp-block-paragraph">The OpenAI Chat API, available at &#8220;<a href="https://chat.openai.com/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#0b2df4" class="has-inline-color">https://chat.openai.com/</mark></strong></a>&#8220;, is designed to generate responses to text-based prompts. While it can provide language generation capabilities, it does not have built-in functionality specifically tailored for measuring emotions in text. However, you can utilize the API in combination with external sentiment analysis tools or techniques to assess the emotional tone of text inputs.</p>
+
+
+
+<p class="wp-block-paragraph">Here&#8217;s a general approach to measuring emotions in text using the OpenAI Chat API and external sentiment analysis:</p>
+
+
+
+<ol class="wp-block-list">
+<li>Text Prompt: Construct a text prompt or question that elicits a response containing emotional content. For example, you could ask about someone&#8217;s feelings, opinions, or experiences related to a specific topic.</li>
+
+
+
+<li>OpenAI Chat API: Send the constructed prompt to the OpenAI Chat API as the input. The API will generate a response based on the provided prompt.</li>
+
+
+
+<li>Response Analysis: Receive the response from the API and apply sentiment analysis techniques or tools to analyze the emotional tone of the generated text. Sentiment analysis algorithms can assign sentiment labels such as positive, negative, or neutral to text based on the words used, context, and grammatical structure.</li>
+
+
+
+<li>Emotion Measurement: Convert sentiment analysis results into emotion measurement by mapping sentiment labels to corresponding emotional states. For example, positive sentiment could be associated with emotions like happiness or excitement, while negative sentiment could be linked to emotions like sadness or anger.</li>
+
+
+
+<li>Interpretation and Evaluation: Interpret the emotional measurement results and evaluate the emotional content of the generated text. Consider the nuances and potential limitations of sentiment analysis, such as the influence of sarcasm, cultural differences, or the inability to capture complex emotions accurately.</li>
 </ol>
 
 
 
-<ul class="wp-block-list">
-<li>Enable Secure Boot</li>
+<p class="wp-block-paragraph">By combining the OpenAI Chat API with external sentiment analysis techniques or tools, you can gain insights into the emotional content of the generated text. It&#8217;s important to note that the accuracy and effectiveness of sentiment analysis can vary depending on the quality of the sentiment analysis algorithm or tool used and the characteristics of the text being analyzed.</p>
 
 
 
-<li>Configure UEFI Lock protection</li>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="404" src="/wp-content/uploads/2023/06/image-7-1024x404.png" alt="Trained Prompt" class="wp-image-7176" srcset="/wp-content/uploads/2023/06/image-7-1024x404.png 1024w, /wp-content/uploads/2023/06/image-7-300x118.png 300w, /wp-content/uploads/2023/06/image-7-768x303.png 768w, /wp-content/uploads/2023/06/image-7.png 1281w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<li>Monitor update-related registry keys</li>
+<p class="wp-block-paragraph"><strong>#1 Find Relation Moods:</strong></p>
 
 
 
-<li>Deploy endpoint detection and response (EDR) solutions</li>
-</ul>
+<ol class="wp-block-list">
+<li>Install Neo4j: Start by installing and setting up Neo4j, which is a graph database management system. You can download and install Neo4j from the official website (<a href="https://neo4j.com/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#5e0aef" class="has-inline-color">https://neo4j.com/</mark></strong></a>). Follow the installation instructions provided for your specific operating system.</li>
 
 
 
-<ol start="2" class="wp-block-list">
-<li>Regular Security Assessments:</li>
+<li>Set up the Neo4j Database: Once Neo4j is installed, you need to set up a database to store your data. Launch the Neo4j browser and create a new database. You can define the schema and configure the database settings according to your requirements.</li>
+
+
+
+<li>Gather Mood Data: Use Selenium, which is a web automation tool, to scrape or collect mood-related data from websites or other online sources. Selenium can interact with web pages, navigate through them, and extract the desired information. You would typically write Python code using the Selenium library to automate web scraping tasks.</li>
+
+
+
+<li>Store Mood Data in Neo4j: With the mood data obtained through Selenium, establish a connection to your Neo4j database using a Neo4j driver for your chosen programming language (e.g., Python). Write code to insert the mood data into the database. Define appropriate node and relationship structures in the database schema to represent moods and their relations.</li>
+
+
+
+<li>Define Mood Relations: Determine the relationships between different moods based on your analysis or desired criteria. For example, you might establish relationships based on similarities, contrasts, or causality between moods. Define and create these relationships in the Neo4j database using the appropriate queries or commands provided by the Neo4j driver.</li>
+
+
+
+<li>Query and Analyze the Mood Relations: Utilize Neo4j&#8217;s query language, Cypher, to perform queries on the database and retrieve information about mood relations. You can execute Cypher queries using the Neo4j driver in your chosen programming language. Analyze the results and extract insights from the mood-related data stored in Neo4j.</li>
 </ol>
 
 
 
-<ul class="wp-block-list">
-<li>Verify system component versions</li>
+<p class="wp-block-paragraph">By combining the web scraping capabilities of Selenium with the graph database features of Neo4j, you can collect mood data from online sources and establish relationships between different moods. This approach allows you to store, query, and analyze the mood-related information in a graph database, enabling you to identify patterns and connections between various moods.</p>
 
 
 
-<li>Check for unauthorized modifications</li>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="835" src="/wp-content/uploads/2023/06/image-8-1024x835.png" alt="" class="wp-image-7177" srcset="/wp-content/uploads/2023/06/image-8-1024x835.png 1024w, /wp-content/uploads/2023/06/image-8-300x245.png 300w, /wp-content/uploads/2023/06/image-8-768x626.png 768w, /wp-content/uploads/2023/06/image-8.png 1290w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<li>Audit update processes</li>
-</ul>
+<h2 class="wp-block-heading"><strong>Train Characterize Bot Generation</strong></h2>
 
 
 
-<h3 class="wp-block-heading">Security Boundaries Affected</h3>
+<p class="wp-block-paragraph">To train a character bot generation model to generate prompts for different moods using the websites &#8220;<a href="https://poe.com/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#5809f6" class="has-inline-color">https://poe.com/</mark></strong></a>&#8221; or &#8220;<a href="https://beta.character.ai/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#4511f5" class="has-inline-color">https://beta.character.ai/</mark></strong></a>&#8220;, you would typically follow these steps:</p>
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="829" height="447" src="/wp-content/uploads/2024/10/image-2.png" alt="" class="wp-image-8854" srcset="/wp-content/uploads/2024/10/image-2.png 829w, /wp-content/uploads/2024/10/image-2-300x162.png 300w, /wp-content/uploads/2024/10/image-2-768x414.png 768w" sizes="(max-width: 829px) 100vw, 829px" /></figure>
+<ol class="wp-block-list">
+<li>Data Collection: Gather a diverse set of text data that represents different moods. You can collect text samples from various sources such as literature, movies, social media, or online forums. Ensure that the collected data covers a wide range of emotions and moods.</li>
 
 
 
-<h3 class="wp-block-heading">Risk Assessment Matrix</h3>
+<li>Data Preprocessing: Clean and preprocess the collected text data to remove any irrelevant or noisy information. Perform tasks such as removing special characters, tokenizing the text into words or sentences, and converting the text to a suitable format for training.</li>
 
 
 
-<ul class="wp-block-list">
-<li>Severity: Critical</li>
+<li>Model Selection: Choose a suitable language model or deep learning framework for training your character bot generation model. Options can include GPT (such as GPT-3 or GPT-4) from OpenAI or other similar models available in the market. Consider the specific requirements of your project, such as model size, capabilities, and available resources.</li>
 
 
 
-<li>Complexity: High</li>
+<li>Model Training: Fine-tune or train the selected language model using the preprocessed text data. Fine-tuning involves feeding the data into the language model and adjusting its parameters to learn the patterns and structures of the input text. This process typically requires significant computational resources.</li>
 
 
 
-<li>Privileges Required: Administrator</li>
+<li>Prompt Generation: Develop a system that takes a specific mood as input and generates appropriate prompts using the trained language model. The prompts should be tailored to elicit responses that align with the desired mood. For example, you can provide the character bot with different starting phrases or specific instructions to set the tone or emotion for the generated response.</li>
 
 
 
-<li>User Interaction: None</li>
+<li>Evaluation and Iteration: Evaluate the quality and coherence of the generated prompts and corresponding bot responses. Iteratively refine and improve the training process, fine-tuning parameters, or adjusting the data to enhance the model&#8217;s ability to generate relevant and contextually appropriate prompts for different moods.</li>
 
 
 
-<li>Impact: Complete system compromise</li>
-</ul>
+<li>Integration with Website: Integrate the trained character bot generation model into the desired website, whether it&#8217;s &#8220;<a href="https://poe.com/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#1f09f6" class="has-inline-color">https://poe.com/</mark></strong></a>&#8221; or &#8220;<a href="https://beta.character.ai/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#0712f4" class="has-inline-color">https://beta.character.ai/</mark></strong></a>&#8220;. This may involve leveraging APIs or SDKs provided by the platforms to enable seamless interaction between users and the character bot.</li>
+</ol>
 
 
 
-<h3 class="wp-block-heading">CVE Information</h3>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="882" src="/wp-content/uploads/2023/06/image-9-1024x882.png" alt="" class="wp-image-7178" srcset="/wp-content/uploads/2023/06/image-9-1024x882.png 1024w, /wp-content/uploads/2023/06/image-9-300x259.png 300w, /wp-content/uploads/2023/06/image-9-768x662.png 768w, /wp-content/uploads/2023/06/image-9.png 1208w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<ul class="wp-block-list">
-<li>CVE-2024-21302: Virtualization stack vulnerability</li>
+<h2 class="wp-block-heading"><strong>Trained Prompt</strong></h2>
 
 
 
-<li>CVE-2024-38202: Windows Update manipulation</li>
-</ul>
+<p class="wp-block-paragraph"><a href="https://flowgpt.com/"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#410bfa" class="has-inline-color">https://flowgpt.com/</mark></strong></a></p>
 
 
 
-<p class="wp-block-paragraph">Let&#8217;s go to demonstrating other methods that have exploited rollback vulnerabilities to reinstate old vulnerabilities on patched systems.</p>
+<ol class="wp-block-list">
+<li><strong>Explain the communication style and tone used by the bot.</strong></li>
 
 
 
-<h3 class="wp-block-heading">1. <strong>BlackLotus UEFI Bootkit Downgrade Attack</strong></h3>
+<li><strong>Discuss the bot&#8217;s level of responsiveness and engagement.</strong></li>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="340" height="1024" src="/wp-content/uploads/2024/10/414124-340x1024.png" alt="" class="wp-image-8855" srcset="/wp-content/uploads/2024/10/414124-340x1024.png 340w, /wp-content/uploads/2024/10/414124-100x300.png 100w, /wp-content/uploads/2024/10/414124-510x1536.png 510w, /wp-content/uploads/2024/10/414124.png 547w" sizes="(max-width: 340px) 100vw, 340px" /></figure>
+<li><strong>Analyze the bot&#8217;s ability to understand and respond appropriately to user queries.</strong></li>
 
 
 
-<p class="wp-block-paragraph">The BlackLotus UEFI bootkit takes advantage of a downgrade attack on the Secure Boot process. By downgrading the Windows boot manager to an older, vulnerable version, attackers can bypass Secure Boot and disable other OS-level security measures. This attack utilizes a similar principle to Windows Downdate by exploiting rollback functionality to re-enable vulnerabilities.</p>
+<li><strong>Assess the bot&#8217;s level of empathy and emotional intelligence in interactions.</strong></li>
 
 
 
-<p class="wp-block-paragraph"><strong>Commands</strong>:</p>
+<li><strong>Provide examples of how the bot interacts with users.</strong></li>
 
 
 
-<ul class="wp-block-list">
-<li>Use <code>bcdedit</code> to modify the Boot Configuration Data (BCD) to load an outdated boot manager:</li>
-</ul>
+<li><strong>Evaluate the bot&#8217;s consistency in providing accurate and reliable information.</strong></li>
 
 
 
-<pre class="wp-block-code"><code>bcdedit /set {bootmgr} path \EFI\Microsoft\Boot\bootmgfw.efi</code></pre>
+<li><strong>Explore the bot&#8217;s adaptability to different user preferences and needs.</strong></li>
 
 
 
-<ul class="wp-block-list">
-<li>Downgrade boot files by copying a vulnerable <code>bootmgfw.efi</code> to the boot directory:</li>
-</ul>
+<li><strong>Describe any user feedback or testimonials regarding the bot&#8217;s characterization.</strong></li>
 
 
 
-<pre class="wp-block-code"><code>copy C:\VulnerableFiles\bootmgfw.efi C:\EFI\Microsoft\Boot\bootmgfw.efi</code></pre>
+<li><strong>Evaluate the bot&#8217;s overall effectiveness in achieving its intended purpose.</strong></li>
+</ol>
 
 
 
-<h3 class="wp-block-heading">2. <strong>Driver Signature Enforcement (DSE) Bypass Downgrade</strong></h3>
+<h3 class="wp-block-heading"><strong>Warning</strong></h3>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="715" height="1024" src="/wp-content/uploads/2024/10/78978789-715x1024.png" alt="" class="wp-image-8856" srcset="/wp-content/uploads/2024/10/78978789-715x1024.png 715w, /wp-content/uploads/2024/10/78978789-209x300.png 209w, /wp-content/uploads/2024/10/78978789-768x1100.png 768w, /wp-content/uploads/2024/10/78978789.png 821w" sizes="(max-width: 715px) 100vw, 715px" /></figure>
+<ol class="wp-block-list">
+<li>Ethical concerns: AI systems may have access to personal information and emotions, which raises privacy and security concerns. It is crucial to handle sensitive emotional data responsibly and ensure it is not misused or exploited.</li>
 
 
 
-<p class="wp-block-paragraph">The &#8220;ItsNotASecurityBoundary&#8221; DSE bypass uses a False File Immutability (FFI) vulnerability to exploit the fact that the system’s Driver Signature Enforcement feature can be reverted. By downgrading the DSE patch and loading unsigned drivers, attackers can execute malicious rootkits. This attack is relevant to Windows Downdate because it reverts specific components to bypass a security boundary.</p>
+<li>Emotional manipulation: AI systems designed to understand and respond to human emotions may have the potential to manipulate or exploit individuals&#8217; feelings for personal gain or malicious purposes. Safeguards must be in place to prevent such manipulation.</li>
 
 
 
-<p class="wp-block-paragraph"><strong>Commands</strong>:</p>
+<li>Lack of empathy: While AI can analyze and mimic human emotions to some extent, it does not possess genuine emotions or empathy. Relying solely on AI for emotional support or guidance may result in a lack of understanding and true human connection.</li>
 
 
 
-<ul class="wp-block-list">
-<li>Disable DSE by modifying the <code>ci.dll</code> file:</li>
-</ul>
+<li>Cultural biases: AI algorithms trained on specific datasets can inherit biases, including those related to emotions and cultural contexts. This can lead to inaccurate or inappropriate responses, reinforcing stereotypes or discriminating against certain individuals or groups.</li>
 
 
 
-<pre class="wp-block-code"><code>copy C:\OldVersions\ci.dll C:\Windows\System32\ci.dll</code></pre>
+<li>Oversimplification of emotions: Human emotions are complex and multifaceted, influenced by various factors such as personal experiences, culture, and context. AI systems may oversimplify or generalize emotions, leading to misinterpretations or inadequate responses.</li>
 
 
 
-<ul class="wp-block-list">
-<li>Restart the system to enforce changes:</li>
-</ul>
+<li>Emotional misreading: AI systems attempting to recognize and respond to emotions may make errors in identifying or understanding human emotional states accurately. Relying on these systems for critical decisions or emotional support without human oversight can lead to unintended consequences.</li>
 
 
 
-<pre class="wp-block-code"><code>shutdown /r /t 0</code></pre>
+<li>Lack of human judgment: AI systems lack the ability to exercise human judgment and intuition, which is crucial for interpreting complex emotional situations and providing appropriate responses. Human involvement and oversight are essential to avoid potential pitfalls.</li>
 
 
 
-<h3 class="wp-block-heading">3. <strong>Kernel Driver Downgrade (AFD.sys)</strong></h3>
+<li>Emotional dependency: Overreliance on AI for emotional support or decision-making may lead to a loss of human-to-human interaction, potentially impacting mental and emotional well-being. It is important to maintain a healthy balance between AI and genuine human connections.</li>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="590" src="/wp-content/uploads/2024/10/image-3-1024x590.png" alt="" class="wp-image-8857" srcset="/wp-content/uploads/2024/10/image-3-1024x590.png 1024w, /wp-content/uploads/2024/10/image-3-300x173.png 300w, /wp-content/uploads/2024/10/image-3-768x443.png 768w, /wp-content/uploads/2024/10/image-3.png 1036w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<li>Unintended emotional biases: AI algorithms trained on historical data may inadvertently perpetuate emotional biases or reinforce negative emotional patterns. Regular monitoring and reevaluation of AI models are necessary to mitigate the risk of perpetuating harmful emotional biases.</li>
 
 
 
-<p class="wp-block-paragraph">Similar to the Windows Downdate, downgrading kernel drivers like <code>AFD.sys</code> (Ancillary Function Driver) reintroduces past vulnerabilities that allow for privilege escalation. The attacker can replace the driver with an older version, enabling kernel-mode exploitation.</p>
+<li>Emotional privacy concerns: Sharing personal emotions and experiences with AI systems raises concerns about the confidentiality and security of such information. It is important to ensure that emotional data is protected and handled in accordance with privacy regulations and best practices.</li>
+</ol>
 
 
 
-<p class="wp-block-paragraph"><strong>Hardlink Command Example</strong>:</p>
-
-
-
-<pre class="wp-block-code"><code>&lt;HardlinkFile source="C:\VulnerableDrivers\AFD.sys" destination="C:\Windows\System32\drivers\AFD.sys"/&gt;</code></pre>
-
-
-
-<p class="wp-block-paragraph">This would be executed within the action list file (Pending.xml) on reboot to apply the vulnerable driver​(REVISED_US24-Leviev-Win…).</p>
-
-
-
-<h3 class="wp-block-heading">4. <strong>Virtualization-Based Security (VBS) Disablement</strong></h3>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1021" height="655" src="/wp-content/uploads/2024/10/image-4.png" alt="" class="wp-image-8858" srcset="/wp-content/uploads/2024/10/image-4.png 1021w, /wp-content/uploads/2024/10/image-4-300x192.png 300w, /wp-content/uploads/2024/10/image-4-768x493.png 768w" sizes="(max-width: 1021px) 100vw, 1021px" /></figure>
-
-
-
-<p class="wp-block-paragraph">Attackers targeting Virtualization-Based Security (VBS) often aim to downgrade or disable its components (e.g., <code>SecureKernel.exe</code> and <code>Hvix64.exe</code>) by replacing them with unprotected versions. This attack is particularly dangerous on Windows systems that use Credential Guard, as downgrading VBS can expose the system to privilege escalation.</p>
-
-
-
-<p class="wp-block-paragraph"><strong>Registry Manipulation</strong>:</p>
-
-
-
-<pre class="wp-block-code"><code>reg delete HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard /v EnableVirtualizationBasedSecurity</code></pre>
-
-
-
-<ul class="wp-block-list">
-<li>Replace <code>SecureKernel.exe</code> with a vulnerable version to disable VBS protections.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>copy C:\VulnerableFiles\SecureKernel.exe C:\Windows\System32\SecureKernel.exe</code></pre>
-
-
-
-<h3 class="wp-block-heading">5. <strong>Credential Guard Downgrade via Isolated User Mode</strong></h3>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1019" height="681" src="/wp-content/uploads/2024/10/image-5.png" alt="" class="wp-image-8859" srcset="/wp-content/uploads/2024/10/image-5.png 1019w, /wp-content/uploads/2024/10/image-5-300x200.png 300w, /wp-content/uploads/2024/10/image-5-768x513.png 768w" sizes="(max-width: 1019px) 100vw, 1019px" /></figure>
-
-
-
-<p class="wp-block-paragraph">Downgrading <code>LsaIso.exe</code> used in Credential Guard disables protections against memory attacks on <code>LSASS</code>. Attackers replace <code>LsaIso.exe</code> with an older version, undermining the isolated user mode and exposing stored credentials.</p>
-
-
-
-<p class="wp-block-paragraph"><strong>Code Example</strong>:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Registry command to modify Credential Guard configurations:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard" /v Enabled /t REG_DWORD /d 0</code></pre>
-
-
-
-<p class="wp-block-paragraph">Replace <code>LsaIso.exe</code> with an older, vulnerable version:</p>
-
-
-
-<pre class="wp-block-code"><code>copy C:\OldVersions\LsaIso.exe C:\Windows\System32\LsaIso.exe</code></pre>
-
-
-
-<h2 class="wp-block-heading">Downgrade Attack Perspective</h2>
-
-
-
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th>Component</th><th>Attack Surface</th><th>Commands/Code</th><th>Notes</th></tr></thead><tbody><tr><td>Windows Boot Manager</td><td>Downgrade Secure Boot by replacing Boot Manager</td><td>1. Replace bootmgfw.efi with an older version:<br>&nbsp;<code>copy C:\OldFiles\bootmgfw.efi C:\EFI\Microsoft\Boot\bootmgfw.efi</code></td><td>Attack downgrades bootmgfw.efi to bypass Secure Boot; commonly used in BlackLotus attacks</td></tr><tr><td>Driver Signature Enforcement (DSE)</td><td>Re-enable unsigned drivers using old ci.dll</td><td>1. Copy vulnerable ci.dll:<br>&nbsp;<code>copy C:\OldVersions\ci.dll C:\Windows\System32\ci.dll</code><br>2. Restart system:<br>&nbsp;<code>shutdown /r /t 0</code></td><td>Attack bypasses DSE to load unsigned drivers, often utilized in the “ItsNotASecurityBoundary” DSE bypass attacks</td></tr><tr><td>Kernel Driver (AFD.sys)</td><td>Downgrade kernel driver for privilege escalation</td><td>Use Hardlink in Pending.xml to downgrade AFD.sys:<br>&nbsp;<code>&lt;HardlinkFile source="C:\OldDrivers\AFD.sys" destination="C:\Windows\System32\drivers\AFD.sys"/&gt;</code></td><td>Replacing AFD.sys with an old version allows kernel-mode exploits and privilege escalation attacks</td></tr><tr><td>Virtualization-Based Security (VBS)</td><td>Disable VBS features by downgrading SecureKernel.exe</td><td>1. Disable VBS in registry:<br>&nbsp;<code>reg delete "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity</code><br>2. Copy old SecureKernel.exe:<br>&nbsp;<code>copy C:\OldFiles\SecureKernel.exe C:\Windows\System32\SecureKernel.exe</code></td><td>Attack can disable VBS protections, exposing the system to unauthorized access and elevated privileges</td></tr><tr><td>Credential Guard (LsaIso.exe)</td><td>Downgrade Credential Guard’s isolated user mode process</td><td>1. Set registry to disable Credential Guard:<br>&nbsp;<code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard" /v Enabled /t REG_DWORD /d 0</code><br>2. Replace LsaIso.exe:<br>&nbsp;<code>copy C:\OldFiles\LsaIso.exe C:\Windows\System32\LsaIso.exe</code></td><td>Downgrading LsaIso.exe compromises Credential Guard, allowing attackers to read sensitive information from LSASS</td></tr><tr><td>Windows Update (Pending.xml)</td><td>Modify Pending.xml to control updates and insert downgrades</td><td>Modify Pending.xml using HardlinkFile action:<br>&nbsp;<code>&lt;HardlinkFile source="C:\DowngradeFiles\VulnerableFile.exe" destination="C:\Windows\System32\UpdatedFile.exe"/&gt;</code></td><td>Editing Pending.xml enables downgrades of various system files by replacing them with older, vulnerable versions, used extensively in Windows Downdate attacks</td></tr><tr><td>Secure Kernel Code Integrity (SKCI.dll)</td><td>Downgrade SKCI for code integrity attacks</td><td>Replace SKCI.dll to disable code integrity checks:<br>&nbsp;<code>copy C:\OldFiles\SKCI.dll C:\Windows\System32\SKCI.dll</code></td><td>Downgrading SKCI.dll bypasses code integrity checks under VBS, allowing malicious code to run without detection</td></tr><tr><td>Hyper-V Hypervisor</td><td>Downgrade Hyper-V to exploit kernel-mode code execution</td><td>Downgrade Hyper-V Hypervisor using hardlink:<br>&nbsp;<code>&lt;HardlinkFile source="C:\OldFiles\Hvix64.exe" destination="C:\Windows\System32\Hvix64.exe"/&gt;</code></td><td>Replacing Hvix64.exe or Hvax64.exe with older versions allows attacker-controlled code execution within the hypervisor</td></tr><tr><td>Windows Kernel (NTOSKRNL.exe)</td><td>Downgrade NT kernel to expose privilege escalation vulnerabilities</td><td>Replace NT Kernel with vulnerable version:<br>&nbsp;<code>copy C:\OldVersions\ntoskrnl.exe C:\Windows\System32\ntoskrnl.exe</code></td><td>Downgrading the Windows Kernel re-introduces old vulnerabilities that facilitate privilege escalation</td></tr><tr><td>LSASS Memory Protection</td><td>Disable LSASS protections for credential dumping</td><td>Downgrade LSASS protections via registry:<br>&nbsp;<code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v RunAsPPL /t REG_DWORD /d 0</code></td><td></td></tr></tbody></table></figure>
-
-
-
-<h2 class="wp-block-heading">Conclusion</h2>
-
-
-
-<p class="wp-block-paragraph">The Windows Downdate attack constitutes a significant threat to Windows systems by demonstrating that a &#8220;fully patched&#8221; system may not provide adequate security. Through manipulating the Windows Update process, the attacker is able to downgrade critical system files, including those responsible for security features like Driver Signature Enforcement and Virtualization-Based Security, despite the presence of digital signatures, integrity checks, and even UEFI locks. The attack exploits the lack of downgrade protection within the Windows Update architecture, thereby making systems susceptible to previously patched vulnerabilities and potentially granting attackers a wide range of privileges, from kernel code execution to control over the hypervisor. This research underscores the necessity for a critical reevaluation of security assumptions related to patching and the need for proactive measures, such as enhanced downgrade protection mechanisms within operating systems, to effectively defend against this class of attacks.</p>
-
-
-
-<h2 class="wp-block-heading">Resources</h2>
-
-
-
-<ul class="wp-block-list">
-<li>https://www.safebreach.com/blog/downgrade-attacks-using-windows-updates/</li>
-
-
-
-<li>https://www.safebreach.com/blog/update-on-windows-downdate-downgrade-attacks/</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Security Researcher</h3>
-
-
-
-<ul class="wp-block-list">
-<li>Jill Chiu</li>
-</ul>
+<p class="wp-block-paragraph"><strong>Special Thanks to @?????????(https://sector035.nl/)</strong></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -2214,27 +2178,27 @@ Get-ItemProperty -Path "C:\Windows\WinSxS" -Filter "*.xml" | Watch-Path</code></
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2365,11 +2329,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2392,59 +2356,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

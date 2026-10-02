@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/career-switch-cybersecurity#article","headline":"Cybersecurity Career Switch: From IT to Security — HADESS Magazine","description":"Switch from IT to cybersecurity with a clear plan. Map your existing skills, fill gaps fast, and land your first security role.","url":"https://hadesssecurity.github.io/blog/read/career-switch-cybersecurity","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/career-switch-cybersecurity"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-career-switch-cybersecurity.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/career-switch-cybersecurity#article","headline":"Cybersecurity Career Switch: From IT to Security — HADESS Magazine","description":"Switch from IT to cybersecurity with a clear plan. Map your existing skills, fill gaps fast, and land your first security role.","url":"https://hadesssecurity.github.io/blog/read/career-switch-cybersecurity","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/career-switch-cybersecurity"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-career-switch-cybersecurity.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,75 +1549,125 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-career-switch-cybersecurity.png">
-      <h1>Threat Hunter</h1>
-<blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete guide series.</p>
+      <blockquote>
+<p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete career guide series.</p>
 </blockquote>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 5 min read</em></p>
-<p>You proactively search for threats that are already inside your network but have not triggered any alerts. While SOC analysts wait for detections to fire, you form hypotheses about attacker behavior and go looking for evidence. You find the adversaries that automated tools miss.</p>
-<h2>What You Will Do</h2>
-<p>Threat hunting is hypothesis-driven investigation. You take intelligence about adversary techniques, translate it into data queries, and search through massive datasets looking for signs of compromise that flew under the radar.</p>
-<p>Your typical work includes:</p>
+<h1>Cybersecurity Career Switch: From IT to Security</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 10 min read</em></p>
+<h2>Table of Contents</h2>
 <ul>
-<li>Developing threat hunting hypotheses based on <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a>, ATT&#038;CK TTPs, and environmental risk</li>
-<li>Querying large datasets — <a href="/blog/read/siem-operations" title="SIEM Operations: Detection Engineering and Log Management">SIEM</a> logs, <a href="/edr/" title="EDR: Endpoint Detection, Response, and Threat Hunting">EDR</a> telemetry, network metadata, DNS logs</li>
-<li>Analyzing endpoint behavior for signs of living-off-the-land attacks (LOLBins)</li>
-<li>Searching for persistence mechanisms — scheduled tasks, registry modifications, WMI subscriptions</li>
-<li>Identifying lateral movement patterns — unusual authentication events, RDP usage, SMB connections</li>
-<li>Hunting for data staging and exfiltration indicators</li>
-<li>Investigating anomalous <a href="/blog/read/powershell-security" title="PowerShell for Security: AD Management, Log Analysis, and Blue Team Scripts">PowerShell</a>, WMI, and command-line activity</li>
-<li>Using statistical analysis to identify outliers in normal behavior baselines</li>
-<li>Converting successful hunts into automated detection rules</li>
-<li>Documenting hunt methodologies and findings for knowledge sharing</li>
-<li>Collaborating with threat intelligence teams to prioritize hunting targets</li>
+<li><a href="#why-it-professionals-have-an-advantage">Why IT Professionals Have an Advantage</a></li>
+<li><a href="#skills-that-transfer-directly">Skills That Transfer Directly</a></li>
+<li><a href="#skills-you-need-to-build">Skills You Need to Build</a></li>
+<li><a href="#the-fastest-transition-paths">The Fastest Transition Paths</a></li>
+<li><a href="#building-your-security-resume-from-it-experience">Building Your Security Resume From IT Experience</a></li>
+<li><a href="#certifications-that-accelerate-the-switch">Certifications That Accelerate the Switch</a></li>
+<li><a href="#common-mistakes-career-switchers-make">Common Mistakes Career Switchers Make</a></li>
+<li><a href="#a-6-month-transition-plan">A 6-Month Transition Plan</a></li>
 </ul>
-<p>When you find something, you do not just report it — you build a detection so the SOC can catch it automatically next time. Every successful hunt should result in a new or improved detection rule.</p>
-<h2>Skills You Need</h2>
-<p>Threat hunting sits at the intersection of threat intelligence, detection engineering, and data analysis.</p>
-<p>Key skills to build:</p>
+<h2>Why IT Professionals Have an Advantage</h2>
+<p>A career switch to cybersecurity from IT is one of the most natural transitions in tech. You already understand networks, systems, and how organizations actually operate. That operational knowledge is something bootcamp graduates and career changers from non-tech fields spend months trying to acquire.</p>
+<p>Hiring managers know this. When they see a candidate with three years of help desk, sysadmin, or network admin experience applying for a <a href="/blog/read/soc-analyst" title="SOC Analyst: Your Front Line in Cyber Defense">SOC analyst</a> role, they see someone who already knows what normal looks like in an enterprise environment. That context makes you better at spotting what is abnormal, which is the entire foundation of security operations.</p>
+<p>The cybersecurity talent gap, documented by <a href="https://www.isc2.org/research">ISC2&#8217;s Workforce Study</a>, includes hundreds of thousands of unfilled positions globally. Many of those openings specifically prefer candidates with IT backgrounds over those with only academic credentials.</p>
+<h2>Skills That Transfer Directly</h2>
+<p>You already have more security-relevant skills than you think. Here is what maps over:</p>
+<p><strong>Networking fundamentals.</strong> If you have configured switches, troubleshot DNS issues, managed VLANs, or set up VPNs, you understand the infrastructure that security teams protect. Network security roles build directly on this.</p>
+<p><strong>Operating system administration.</strong> Windows Server, Active Directory, Group Policy, Linux administration — these are daily tools for SOC analysts and security engineers. AD management alone is relevant to identity and access management work.</p>
+<p><strong>Troubleshooting methodology.</strong> The systematic approach you use to diagnose IT issues (isolate, test, verify) is the same methodology used in incident response. You already think in cause-and-effect chains.</p>
+<p><strong>Scripting and automation.</strong> PowerShell scripts for user provisioning, Bash scripts for backups, Python scripts for monitoring — these all translate to <a href="/blog/read/automation-engineer" title="Security Automation Engineer: Make Security Operations Scale">security automation</a>. Every SOC wants analysts who can script.</p>
+<p><strong>Vendor and tool management.</strong> You have worked with ticketing systems, monitoring dashboards, and managed vendor relationships. SOCs use similar workflows, just with security-focused tools.</p>
+<p><strong>Documentation habits.</strong> Writing change management tickets, runbooks, and knowledge base articles maps directly to security documentation — incident reports, playbooks, and policy documents.</p>
+<h2>Skills You Need to Build</h2>
+<p>The gap between IT and security is real, but it is narrower than most people think. Here is what you need to add:</p>
+<p><strong>Security fundamentals.</strong> You need a structured understanding of threats, vulnerabilities, risk management, and security controls. CompTIA Security+ covers this at the right level. Use the certification roadmap planner to sequence your study.</p>
+<p><strong>Threat detection and analysis.</strong> You need to learn how to read security alerts, analyze log data for indicators of compromise, and triage events. This is the core skill for SOC work.</p>
+<p><strong>SIEM tools.</strong> Splunk, Microsoft Sentinel, or QRadar. Pick one and learn to write queries, build dashboards, and correlate events. Most SOCs will train you on their specific tool, but understanding the concepts transfers across platforms.</p>
+<p><strong>Vulnerability management.</strong> Understanding CVEs, scanning tools (Nessus, Qualys), and remediation prioritization. Your IT patching experience is the foundation; now you need the security assessment layer.</p>
+<p><strong>Security frameworks.</strong> NIST Cybersecurity Framework, ISO 27001, CIS Controls. You do not need to memorize them, but you need to understand how they structure security programs. <a href="https://www.nist.gov/cyberframework">NIST&#8217;s CSF documentation</a> is the best starting point.</p>
+<p><strong>Attack and defense concepts.</strong> You need to understand how attacks work — phishing, privilege escalation, lateral movement, data exfiltration. Without this, you cannot effectively defend against them.</p>
+<h2>The Fastest Transition Paths</h2>
+<p>Not all security roles are equally accessible from IT. Here are the transitions with the highest success rate:</p>
+<h3>IT Support to SOC Analyst</h3>
+<p>This is the most common and fastest path. Your troubleshooting skills, familiarity with enterprise tools, and understanding of normal operations directly apply. Most SOC Tier 1 roles list &#8220;IT experience preferred&#8221; in their requirements. Read our full <a href="/blog/read/soc-analyst-guide">SOC analyst career guide</a> for the detailed path.</p>
+<h3>Sysadmin to Security Engineer</h3>
+<p>If you manage Windows or Linux servers, you already do half of what a security engineer does. Add hardening standards (CIS benchmarks), security monitoring, and <a href="/blog/read/vulnerability-management" title="Vulnerability Management: Scanning, Prioritization, and Patching">vulnerability management</a>, and you are qualified for junior security engineering roles.</p>
+<h3>Network Admin to Network Security Engineer</h3>
+<p>This transition is almost a lateral move. You already manage firewalls, switches, and routing. Add IDS/IPS configuration, network segmentation strategies, and ZTNA concepts, and you are there. Explore the full network security engineer career path on the platform.</p>
+<h3>Help Desk to GRC Analyst</h3>
+<p>If you enjoy process, documentation, and compliance more than hands-on technical work, GRC is a strong path. Your experience with IT policies, change management, and audit support transfers directly to governance, risk, and compliance roles.</p>
+<h2>Building Your Security Resume From IT Experience</h2>
+<p>Your IT resume already contains security experience — you just need to reframe it.</p>
+<p><strong>Before:</strong> &#8220;Managed Active Directory for 500 users, including account creation, group policy management, and password resets.&#8221;</p>
+<p><strong>After:</strong> &#8220;Administered <a href="/blog/read/identity-access-management" title="Identity and Access Management: RBAC, ABAC, and Federation">identity and access management</a> for 500-user Active Directory environment, implementing least-privilege group policies and managing the full identity lifecycle including provisioning, deprovisioning, and access reviews.&#8221;</p>
+<p>Same work, security language. Here is how to reframe common IT tasks:</p>
 <ul>
-<li><a href="https://career.hadess.io/skills">SIEM query languages</a> — SPL, <a href="/blog/read/security-query-languages-kql-spl-yara" title="Security Query Languages: KQL, SPL, and YARA">KQL</a>, Lucene for deep data exploration</li>
-<li><a href="https://career.hadess.io/skills">EDR investigation</a> — CrowdStrike, SentinelOne, Carbon Black for endpoint analysis</li>
-<li><a href="https://career.hadess.io/skills">MITRE ATT&#038;CK</a> — mapping techniques to data sources and hunt hypotheses</li>
-<li><a href="https://career.hadess.io/skills">Network traffic analysis</a> — Zeek logs, NetFlow, DNS analytics</li>
-<li><a href="https://career.hadess.io/skills">Data analytics and statistics</a> — identifying anomalies in large datasets</li>
-<li><a href="https://career.hadess.io/skills">Windows internals</a> — understanding process behavior, authentication, and persistence</li>
-<li><a href="https://career.hadess.io/skills">PowerShell and scripting</a> — automating hunt workflows and data processing</li>
-<li><a href="https://career.hadess.io/skills">Detection engineering</a> — turning findings into SIGMA rules and SIEM detections</li>
+<li>Firewall rule management → network security policy implementation</li>
+<li>Patch management → vulnerability remediation</li>
+<li>Backup administration → disaster recovery and <a href="/blog/read/disaster-recovery" title="Disaster Recovery: RPO/RTO, Backup Testing, and Failover Strategies">business continuity</a></li>
+<li>Phishing email handling → initial incident triage and response</li>
+<li>Access provisioning → IAM lifecycle management</li>
+<li>Monitoring and alerting → security event detection and correlation</li>
 </ul>
-<p>Build these in the <a href="https://career.hadess.io/skills">skills library</a> and see how threat hunting connects to other roles in the <a href="https://career.hadess.io/career-skills">career path explorer</a>.</p>
-<h2>Certifications</h2>
-<p>Threat hunter certifications blend detection, forensics, and intelligence skills:</p>
+<p>Use the resume builder to structure your security resume with the right keywords and framing.</p>
+<p>Take the skills assessment to map your existing IT skills to specific security competencies. It identifies exactly where your gaps are, so you can focus your study time on what actually matters for the roles you want.</p>
+<h2>Certifications That Accelerate the Switch</h2>
+<p>Certifications validate your security knowledge to hiring managers who may not understand how your IT experience applies.</p>
+<p><strong>CompTIA Security+ (SY0-701).</strong> The standard entry-level security certification. If you already have Network+ or A+, Security+ builds on that foundation. Most SOC analyst job postings list it as required or preferred.</p>
+<p><strong>CompTIA CySA+.</strong> If you are targeting SOC analyst or <a href="/blog/read/information-security-analyst" title="Information Security Analyst: Protect Data and Manage Risk">security analyst</a> roles specifically. CySA+ covers threat detection, analysis, and response — exactly what SOC teams do.</p>
+<p><strong>AWS Security Specialty or AZ-500.</strong> If you are a cloud admin switching to cloud security. These certifications map your existing cloud skills to security-specific workflows.</p>
+<p><strong>SSCP (Systems Security Certified Practitioner).</strong> From ISC2, designed specifically for IT practitioners transitioning to security. It validates operational security knowledge.</p>
+<p>Plan your certification sequence based on your current skills and target role.</p>
+<h2>Common Mistakes Career Switchers Make</h2>
+<p><strong>Pursuing OSCP or CISSP too early.</strong> These are advanced certifications. OSCP requires hands-on <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">penetration testing</a> skills. CISSP requires five years of experience. Start with Security+ and CySA+.</p>
+<p><strong>Ignoring their IT experience on applications.</strong> Some switchers strip their IT experience from their resume and only list security projects. This is a mistake. Hiring managers value operational experience. Frame it as security-relevant, do not hide it.</p>
+<p><strong>Only studying theory without hands-on practice.</strong> Reading about SIEM tools is not the same as using them. Set up a home lab, use the HADESS workspace for guided practice, or contribute to open-source security tools.</p>
+<p><strong>Applying only to senior roles.</strong> If you were a senior sysadmin, you might resist applying for a junior SOC analyst position. But your first security role is a bridge role. The seniority comes quickly once you have security-specific experience on your resume.</p>
+<p><strong>Skipping networking.</strong> Join local security meetups (BSides, OWASP chapters, ISACA). Many security jobs come through referrals, especially for career switchers who do not have security job titles yet.</p>
+<h2>A 6-Month Transition Plan</h2>
+<p><strong>Month 1-2: Foundation</strong></p>
 <ul>
-<li><strong>GCIH</strong> — incident handling skills that form the foundation of hunting</li>
-<li><strong>CySA+</strong> — defensive analysis certification, good starting point</li>
-<li><strong>GCTI</strong> — threat intelligence expertise for hypothesis development</li>
-<li><strong>GNFA</strong> — GIAC Network <a href="/blog/read/digital-forensic-analyst" title="Digital Forensic Analyst: Uncover What Really Happened">Forensic Analyst</a>, for network-level hunting</li>
+<li>Start Security+ study (Professor Messer videos + practice exams)</li>
+<li>Set up a home lab (Windows Server, Kali Linux, Security Onion)</li>
+<li>Begin skills assessment to identify specific gaps</li>
+<li>Join one security community (local BSides, OWASP chapter, or online Discord)</li>
 </ul>
-<p>Plan your certification strategy with the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a>.</p>
-<h2>Salary Range</h2>
-<p>Threat hunters earn between <strong>$60K and $140K</strong>. This is a mid-to-senior role, and compensation reflects that. Hunters with strong data science skills, custom tooling ability, and a track record of finding real threats command the highest pay. Financial services and tech companies tend to pay at the top of the range.</p>
-<p>See where you stand using the <a href="https://career.hadess.io/salary-calculator">salary calculator</a>.</p>
-<h2>How to Get Started</h2>
-<p>1. <strong>Spend time in a SOC first</strong> — you need to understand alert workflows and detection gaps before you can hunt effectively 2. <strong>Master SIEM query languages</strong> — you will write hundreds of queries during every hunt 3. <strong>Take the <a href="https://career.hadess.io/assessment">skills assessment</a></strong> to measure your investigation and analysis capabilities 4. <strong>Practice hunting exercises</strong> in the <a href="https://career.hadess.io/workspace">labs</a> — scenario-based threat hunting challenges 5. <strong>Study ATT&#038;CK deeply</strong> — map each technique to the data sources available in your environment 6. <strong>Learn statistical analysis basics</strong> — frequency analysis, stacking, and outlier detection 7. <strong>Get GCIH and work toward GCTI</strong> — plan your path with the <a href="https://career.hadess.io/certificate-roadmap">certification planner</a> 8. <strong>Document your hunting methodology and findings</strong> for your <a href="https://career.hadess.io/resume">resume</a> 9. <strong>Search for threat hunter or detection engineer roles</strong> on the <a href="https://career.hadess.io/jobs">job board</a></p>
-<p>Threat hunting is not an entry-level position. If you are wondering how to build the right background, the <a href="https://career.hadess.io/coach">career coach</a> can help you plan a path from your current role.</p>
+<p><strong>Month 3-4: Hands-On Skills</strong></p>
+<ul>
+<li>Pass Security+ exam</li>
+<li>Complete hands-on labs in SIEM, log analysis, and incident response</li>
+<li>Practice with the HADESS skills catalog for structured learning</li>
+<li>Start applying your security learning at your current IT job (volunteer for security tasks)</li>
+</ul>
+<p><strong>Month 5-6: Job Search</strong></p>
+<ul>
+<li>Update resume with security framing using the resume builder</li>
+<li>Start applying to SOC analyst and junior security roles</li>
+<li>Prepare for interviews with the interview management tool</li>
+<li>Consider coaching sessions for targeted job search strategy</li>
+</ul>
+<p>This timeline assumes 10-15 hours per week of study alongside your current role. Some people do it faster; some need more time. The key variable is how much of your IT experience already overlaps with security work.</p>
 <p><strong>Read the complete guide:</strong> <a href="/blog/read/cybersecurity-career-guide" title="How to Start a Career in Cybersecurity">How to Start a Career in Cybersecurity</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/career-pathsthreat-intelligence/malware-analyst">Malware Analyst: Reverse Engineer the Weapons Attackers Use — HADESS | 2026</a></li>
-<li><a href="/blog/read/career-pathsthreat-intelligence/threat-intelligence-analyst">Threat Intelligence Analyst: Know the Enemy Before They Strike</a></li>
+<li><a href="/blog/read/cybersecurity-no-experience">How to Break Into Cybersecurity With No Experience</a></li>
+<li><a href="/blog/read/entry-level-cyber-jobs">Best Entry-Level Cybersecurity Jobs in 2026</a></li>
+<li><a href="/blog/read/cyber-career-roadmap">Cybersecurity Career Roadmap: Step-by-Step</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Start your career assessment.</strong> Go to the <a href="https://career.hadess.io/assessment">start your career assessment</a> on HADESS.</p>
-<p><strong>Explore career paths.</strong> Check out the <a href="https://career.hadess.io/career-skills">explore career paths</a>.</p>
-<p><strong>Get started free</strong> — <a href="https://career.hadess.io/login">Create your HADESS account</a> and access all career tools.</p>
+<p><strong>Map your existing skills to security roles.</strong> The HADESS skills assessment analyzes your background and identifies the fastest path from your current IT experience to your target security role.</p>
+<p><strong>Explore all cybersecurity career paths</strong> on the career path explorer to find the role that best matches your skills and interests.</p>
+<p><strong>Get started free</strong> — Create your HADESS account and access the skills catalog, career tools, and assessment.</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What certifications do I need for this role?</h3>
-<p>Certification requirements vary by employer and seniority level. Use the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a> to build a sequence based on your target role and current qualifications.</p>
-<h3>What is the salary range for this role?</h3>
-<p>Salaries vary significantly by location, experience, and employer type. Use the <a href="https://career.hadess.io/salary-calculator">salary calculator</a> for your specific market rate.</p>
-<h3>How do I transition into this career path?</h3>
-<p>Take the <a href="https://career.hadess.io/assessment">skills assessment</a> to identify your current strengths and gaps relative to this role. The assessment generates a personalized learning plan to close the gap.</p>
+<h3>Do I need a degree to switch from IT to cybersecurity?</h3>
+<p>No. Most security hiring managers prioritize certifications and hands-on experience over degrees. Your IT work experience already demonstrates technical ability. A Security+ certification and a home lab portfolio are typically more valuable than a cybersecurity degree for career switchers.</p>
+<h3>Will I take a pay cut switching from IT to security?</h3>
+<p>It depends on your current IT role and your target security role. Senior sysadmins switching to junior SOC analyst positions may see a temporary decrease. However, security salaries tend to grow faster than general IT salaries, so you usually recover within 12-18 months.</p>
+<h3>How long does the transition typically take?</h3>
+<p>Most IT professionals with 2+ years of experience can make the switch in 3-9 months. The timeline depends on how much overlap your current role has with security and how many hours per week you can dedicate to study.</p>
+<h3>Should I stay at my current company or switch employers?</h3>
+<p>If your current company has a security team, explore internal transfers first. Internal moves are easier because your IT knowledge of the company&#8217;s environment is valuable. If there is no security team, look externally.</p>
+<h3>What is the single best first step?</h3>
+<p>Take a structured skills assessment to understand exactly where your IT experience maps to security and where your gaps are. This prevents wasting time studying things you already know.</p>
 <p>&#8212;</p>
 <p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
@@ -1626,27 +1687,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1819,11 +1880,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1846,59 +1907,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

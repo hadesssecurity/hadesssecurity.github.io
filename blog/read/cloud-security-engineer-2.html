@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer-2#article","headline":"Cloud Security Engineer: Protect Infrastructure at Scale — HADESS Magazine","description":"Cloud Security Engineer: Protect Infrastructure at Scale. Skills, career paths, and how to get started on the HADESS platform.","url":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer-2","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer-2"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cloud-security-engineer-2.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer-2#article","headline":"Cloud Security Engineer: Protect Infrastructure at Scale — HADESS Magazine","description":"Cloud Security Engineer: Protect Infrastructure at Scale. Skills, career paths, and how to get started on the HADESS platform.","url":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer-2","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cloud-security-engineer-2"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cloud-security-engineer-2.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,75 +1549,74 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-cloud-security-engineer-2.png">
-      <h1>Threat Hunter</h1>
+      <h1>Cloud Security Engineer</h1>
 <blockquote>
 <p><strong>Part of the <a href="/blog/read/cybersecurity-career-guide">Cybersecurity Career Guide</a></strong> — This article is one deep-dive in our complete guide series.</p>
 </blockquote>
 <p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 5 min read</em></p>
-<p>You proactively search for threats that are already inside your network but have not triggered any alerts. While SOC analysts wait for detections to fire, you form hypotheses about attacker behavior and go looking for evidence. You find the adversaries that automated tools miss.</p>
+<p>You design and implement security controls for cloud environments. Whether your organization runs on AWS, Azure, GCP, or a hybrid setup, you are the one making sure IAM policies are right, data is encrypted, networks are segmented, and misconfigurations do not turn into breaches.</p>
 <h2>What You Will Do</h2>
-<p>Threat hunting is hypothesis-driven investigation. You take intelligence about adversary techniques, translate it into data queries, and search through massive datasets looking for signs of compromise that flew under the radar.</p>
-<p>Your typical work includes:</p>
+<p><a href="/blog/read/cloud-security-skills" title="Cloud Security Skills: AWS, Azure, GCP">Cloud security</a> engineering is hands-on work with infrastructure-as-code, cloud-native security services, and the constant challenge of securing environments that change faster than traditional data centers ever did.</p>
+<p>Your responsibilities include:</p>
 <ul>
-<li>Developing threat hunting hypotheses based on <a href="/blog/read/threat-intelligence" title="Threat Intelligence: Skills, Tools, Career">threat intelligence</a>, ATT&#038;CK TTPs, and environmental risk</li>
-<li>Querying large datasets — <a href="/blog/read/siem-operations" title="SIEM Operations: Detection Engineering and Log Management">SIEM</a> logs, <a href="/edr/" title="EDR: Endpoint Detection, Response, and Threat Hunting">EDR</a> telemetry, network metadata, DNS logs</li>
-<li>Analyzing endpoint behavior for signs of living-off-the-land attacks (LOLBins)</li>
-<li>Searching for persistence mechanisms — scheduled tasks, registry modifications, WMI subscriptions</li>
-<li>Identifying lateral movement patterns — unusual authentication events, RDP usage, SMB connections</li>
-<li>Hunting for data staging and exfiltration indicators</li>
-<li>Investigating anomalous <a href="/blog/read/powershell-security" title="PowerShell for Security: AD Management, Log Analysis, and Blue Team Scripts">PowerShell</a>, WMI, and command-line activity</li>
-<li>Using statistical analysis to identify outliers in normal behavior baselines</li>
-<li>Converting successful hunts into automated detection rules</li>
-<li>Documenting hunt methodologies and findings for knowledge sharing</li>
-<li>Collaborating with threat intelligence teams to prioritize hunting targets</li>
+<li>Designing and implementing IAM policies, roles, and permission boundaries</li>
+<li>Configuring and maintaining cloud-native security services (<a href="/blog/read/aws-guardduty-threat-detection" title="AWS GuardDuty: Threat Detection and Response">GuardDuty</a>, <a href="/blog/read/aws-security-hub" title="AWS Security Hub: Compliance Monitoring and Finding Aggregation">Security Hub</a>, Azure Defender, Cloud SCC)</li>
+<li>Building security into IaC templates — Terraform, CloudFormation, Bicep</li>
+<li>Implementing <a href="/blog/read/network-security-guide" title="Network Security Fundamentals: Complete Guide">network security</a> — VPCs, security groups, NACLs, private endpoints</li>
+<li>Managing encryption for data at rest and in transit — KMS, certificate management</li>
+<li>Setting up cloud logging and monitoring — <a href="/blog/read/aws-cloudtrail-security" title="AWS CloudTrail: Log Analysis and Security Monitoring">CloudTrail</a>, Azure Activity Log, VPC Flow Logs</li>
+<li>Running cloud security posture management (CSPM) tools — Prowler, ScoutSuite, Prisma Cloud</li>
+<li>Automating security remediation with Lambda functions, Azure Functions, or Cloud Functions</li>
+<li>Reviewing architecture designs for security before deployment</li>
+<li>Responding to cloud-specific incidents — credential leaks, S3 bucket exposures, privilege escalation</li>
+<li>Maintaining compliance controls for SOC 2, PCI DSS, HIPAA in cloud environments</li>
 </ul>
-<p>When you find something, you do not just report it — you build a detection so the SOC can catch it automatically next time. Every successful hunt should result in a new or improved detection rule.</p>
+<p>You work closely with DevOps, platform, and development teams. If you cannot explain why a security control matters in terms they understand, it will not get implemented.</p>
 <h2>Skills You Need</h2>
-<p>Threat hunting sits at the intersection of threat intelligence, detection engineering, and data analysis.</p>
-<p>Key skills to build:</p>
+<p>Cloud security engineering requires deep cloud platform knowledge combined with security expertise.</p>
+<p>Build these:</p>
 <ul>
-<li><a href="https://career.hadess.io/skills">SIEM query languages</a> — SPL, <a href="/blog/read/security-query-languages-kql-spl-yara" title="Security Query Languages: KQL, SPL, and YARA">KQL</a>, Lucene for deep data exploration</li>
-<li><a href="https://career.hadess.io/skills">EDR investigation</a> — CrowdStrike, SentinelOne, Carbon Black for endpoint analysis</li>
-<li><a href="https://career.hadess.io/skills">MITRE ATT&#038;CK</a> — mapping techniques to data sources and hunt hypotheses</li>
-<li><a href="https://career.hadess.io/skills">Network traffic analysis</a> — Zeek logs, NetFlow, DNS analytics</li>
-<li><a href="https://career.hadess.io/skills">Data analytics and statistics</a> — identifying anomalies in large datasets</li>
-<li><a href="https://career.hadess.io/skills">Windows internals</a> — understanding process behavior, authentication, and persistence</li>
-<li><a href="https://career.hadess.io/skills">PowerShell and scripting</a> — automating hunt workflows and data processing</li>
-<li><a href="https://career.hadess.io/skills">Detection engineering</a> — turning findings into SIGMA rules and SIEM detections</li>
+<li>AWS/Azure/GCP security services — native security tooling for at least one major platform</li>
+<li>Identity and access management — IAM policies, federation, service accounts, least privilege</li>
+<li>Infrastructure as code — Terraform, CloudFormation for secure deployments</li>
+<li>Container security — Docker, <a href="/blog/read/kubernetes-security-rbac-network-policies-runtime" title="Kubernetes Security: RBAC, Network Policies, and Runtime Protection">Kubernetes security</a>, image scanning</li>
+<li>Cloud networking — VPCs, peering, transit gateways, DNS security</li>
+<li>Encryption and key management — KMS, HSM, certificate lifecycle</li>
+<li>Cloud logging and monitoring — centralized logging, alerting, SIEM integration</li>
+<li>Compliance automation — mapping controls to cloud services</li>
 </ul>
-<p>Build these in the <a href="https://career.hadess.io/skills">skills library</a> and see how threat hunting connects to other roles in the <a href="https://career.hadess.io/career-skills">career path explorer</a>.</p>
+<p>Explore these in the skills library and trace your progression in the career path explorer.</p>
 <h2>Certifications</h2>
-<p>Threat hunter certifications blend detection, forensics, and intelligence skills:</p>
+<p>Cloud security certifications are platform-specific and highly valued:</p>
 <ul>
-<li><strong>GCIH</strong> — incident handling skills that form the foundation of hunting</li>
-<li><strong>CySA+</strong> — defensive analysis certification, good starting point</li>
-<li><strong>GCTI</strong> — threat intelligence expertise for hypothesis development</li>
-<li><strong>GNFA</strong> — GIAC Network <a href="/blog/read/digital-forensic-analyst" title="Digital Forensic Analyst: Uncover What Really Happened">Forensic Analyst</a>, for network-level hunting</li>
+<li><strong>AWS Security Specialty</strong> — thorough coverage of AWS security services and architecture</li>
+<li><strong>Azure Security Engineer Associate (AZ-500)</strong> — Microsoft cloud security</li>
+<li><strong>CCSP</strong> — Certified Cloud Security Professional, vendor-neutral</li>
+<li><strong>CKS</strong> — Certified <a href="/blog/read/kubernetes-security-specialist" title="Kubernetes Security Specialist: Secure Container Orchestration at Scale">Kubernetes Security Specialist</a>, for container-heavy environments</li>
 </ul>
-<p>Plan your certification strategy with the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a>.</p>
+<p>Plan your certification sequence with the certification roadmap planner.</p>
 <h2>Salary Range</h2>
-<p>Threat hunters earn between <strong>$60K and $140K</strong>. This is a mid-to-senior role, and compensation reflects that. Hunters with strong data science skills, custom tooling ability, and a track record of finding real threats command the highest pay. Financial services and tech companies tend to pay at the top of the range.</p>
-<p>See where you stand using the <a href="https://career.hadess.io/salary-calculator">salary calculator</a>.</p>
+<p>Cloud security engineers earn between <strong>$70K and $150K</strong>. Multi-cloud expertise and infrastructure-as-code skills push compensation higher. Engineers at tech companies and financial institutions regularly exceed this range. This is one of the fastest-growing roles in cybersecurity.</p>
+<p>Benchmark your compensation with the salary calculator.</p>
 <h2>How to Get Started</h2>
-<p>1. <strong>Spend time in a SOC first</strong> — you need to understand alert workflows and detection gaps before you can hunt effectively 2. <strong>Master SIEM query languages</strong> — you will write hundreds of queries during every hunt 3. <strong>Take the <a href="https://career.hadess.io/assessment">skills assessment</a></strong> to measure your investigation and analysis capabilities 4. <strong>Practice hunting exercises</strong> in the <a href="https://career.hadess.io/workspace">labs</a> — scenario-based threat hunting challenges 5. <strong>Study ATT&#038;CK deeply</strong> — map each technique to the data sources available in your environment 6. <strong>Learn statistical analysis basics</strong> — frequency analysis, stacking, and outlier detection 7. <strong>Get GCIH and work toward GCTI</strong> — plan your path with the <a href="https://career.hadess.io/certificate-roadmap">certification planner</a> 8. <strong>Document your hunting methodology and findings</strong> for your <a href="https://career.hadess.io/resume">resume</a> 9. <strong>Search for threat hunter or detection engineer roles</strong> on the <a href="https://career.hadess.io/jobs">job board</a></p>
-<p>Threat hunting is not an entry-level position. If you are wondering how to build the right background, the <a href="https://career.hadess.io/coach">career coach</a> can help you plan a path from your current role.</p>
+<p>1. <strong>Learn a cloud platform deeply</strong> — pick AWS, Azure, or GCP and get certified at the associate level first 2. <strong>Learn Terraform</strong> — infrastructure as code is the foundation of modern cloud security 3. <strong>Take the skills assessment</strong> to identify your cloud security gaps 4. <strong>Build cloud security labs</strong> in the workspace — deploy and secure real infrastructure 5. <strong>Study IAM thoroughly</strong> — it is the most common source of cloud security failures 6. <strong>Get AWS Security Specialty or AZ-500</strong> — plan your path with the certification planner 7. <strong>Contribute to open-source cloud security tools</strong> — Prowler, ScoutSuite, Cartography 8. <strong>Build your resume</strong> with specific cloud security projects and achievements 9. <strong>Search for cloud security engineer roles</strong> on the job board</p>
+<p>If you are coming from traditional infrastructure security and want to transition to cloud, the career coach can help you identify the fastest path based on your existing skills.</p>
 <p><strong>Read the complete guide:</strong> <a href="/blog/read/cybersecurity-career-guide" title="How to Start a Career in Cybersecurity">How to Start a Career in Cybersecurity</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/career-pathsthreat-intelligence/malware-analyst">Malware Analyst: Reverse Engineer the Weapons Attackers Use — HADESS | 2026</a></li>
-<li><a href="/blog/read/career-pathsthreat-intelligence/threat-intelligence-analyst">Threat Intelligence Analyst: Know the Enemy Before They Strike</a></li>
+<li>Data Security Engineer: Protect Information at Every Stage</li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Start your career assessment.</strong> Go to the <a href="https://career.hadess.io/assessment">start your career assessment</a> on HADESS.</p>
-<p><strong>Explore career paths.</strong> Check out the <a href="https://career.hadess.io/career-skills">explore career paths</a>.</p>
-<p><strong>Get started free</strong> — <a href="https://career.hadess.io/login">Create your HADESS account</a> and access all career tools.</p>
+<p><strong>Start your career assessment.</strong> Go to the start your career assessment on HADESS.</p>
+<p><strong>Explore career paths.</strong> Check out the explore career paths.</p>
+<p><strong>Get started free</strong> — Create your HADESS account and access all career tools.</p>
 <h2>Frequently Asked Questions</h2>
 <h3>What certifications do I need for this role?</h3>
-<p>Certification requirements vary by employer and seniority level. Use the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap planner</a> to build a sequence based on your target role and current qualifications.</p>
+<p>Certification requirements vary by employer and seniority level. Use the certification roadmap planner to build a sequence based on your target role and current qualifications.</p>
 <h3>What is the salary range for this role?</h3>
-<p>Salaries vary significantly by location, experience, and employer type. Use the <a href="https://career.hadess.io/salary-calculator">salary calculator</a> for your specific market rate.</p>
+<p>Salaries vary significantly by location, experience, and employer type. Use the salary calculator for your specific market rate.</p>
 <h3>How do I transition into this career path?</h3>
-<p>Take the <a href="https://career.hadess.io/assessment">skills assessment</a> to identify your current strengths and gaps relative to this role. The assessment generates a personalized learning plan to close the gap.</p>
+<p>Take the skills assessment to identify your current strengths and gaps relative to this role. The assessment generates a personalized learning plan to close the gap.</p>
 <p>&#8212;</p>
 <p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
@@ -1626,27 +1636,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1813,11 +1823,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1840,59 +1850,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

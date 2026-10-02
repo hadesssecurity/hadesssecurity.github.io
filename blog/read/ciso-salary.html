@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/ciso-salary#article","headline":"CISO Salary: What Does a CISO Earn? — HADESS Magazine","description":"CISO salary data for 2026 including base pay, bonuses, equity, and total compensation across the US, UK, and Europe by company size.","url":"https://hadesssecurity.github.io/blog/read/ciso-salary","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/ciso-salary"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-ciso-salary.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/ciso-salary#article","headline":"CISO Salary: What Does a CISO Earn? — HADESS Magazine","description":"CISO salary data for 2026 including base pay, bonuses, equity, and total compensation across the US, UK, and Europe by company size.","url":"https://hadesssecurity.github.io/blog/read/ciso-salary","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/ciso-salary"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-ciso-salary.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1541,262 +1552,162 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <blockquote>
 <p><strong>Part of the <a href="/blog/read/cybersecurity-salary-guide">Cybersecurity Salary Guide</a></strong> — This article is one deep-dive in our complete salary series.</p>
 </blockquote>
-<h1>Cybersecurity Salary UK: Complete Guide for 2026</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
+<h1>CISO Salary: What Does a CISO Earn?</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 11 min read</em></p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#uk-cybersecurity-market-overview">UK Cybersecurity Market Overview</a></li>
-<li><a href="#salary-by-role">Salary by Role</a></li>
-<li><a href="#london-vs-rest-of-uk">London vs Rest of UK</a></li>
-<li><a href="#salary-by-industry-sector">Salary by Industry Sector</a></li>
-<li><a href="#contract-vs-permanent-rates">Contract vs Permanent Rates</a></li>
-<li><a href="#certifications-and-uk-salary-impact">Certifications and UK Salary Impact</a></li>
-<li><a href="#benefits-and-total-compensation">Benefits and Total Compensation</a></li>
-<li><a href="#uk-salary-vs-us-and-europe">UK Salary vs US and Europe</a></li>
-<li><a href="#how-to-maximize-your-uk-cyber-salary">How to Maximize Your UK Cyber Salary</a></li>
+<li><a href="#ciso-compensation-overview">CISO Compensation Overview</a></li>
+<li><a href="#us-ciso-salary-by-company-size">US CISO Salary by Company Size</a></li>
+<li><a href="#uk-ciso-salary">UK CISO Salary</a></li>
+<li><a href="#european-ciso-salary">European CISO Salary</a></li>
+<li><a href="#total-compensation-beyond-base-salary">Total Compensation Beyond Base Salary</a></li>
+<li><a href="#what-determines-ciso-pay">What Determines CISO Pay</a></li>
+<li><a href="#virtual-ciso-and-fractional-ciso-rates">Virtual CISO and Fractional CISO Rates</a></li>
+<li><a href="#path-to-ciso-and-expected-timeline">Path to CISO and Expected Timeline</a></li>
+<li><a href="#ciso-salary-trends-for-2026">CISO Salary Trends for 2026</a></li>
 <li><a href="#related-guides-in-this-series">Related Guides in This Series</a></li>
 <li><a href="#take-the-next-step">Take the Next Step</a></li>
 <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<h2>UK Cybersecurity Market Overview</h2>
-<p>The cybersecurity salary UK market has strengthened steadily since 2023. The combination of NIS2-adjacent regulations, UK GDPR enforcement by the <a href="https://ico.org.uk/">ICO</a>, and a persistent skills shortage has pushed salaries upward across every role and experience level.</p>
-<p>The UK government&#8217;s Cyber Security Breaches Survey consistently shows that the majority of UK businesses consider cybersecurity a high priority, yet struggle to find qualified staff. This supply-demand imbalance directly benefits practitioners, especially those with hands-on operational experience and relevant certifications.</p>
-<p>In 2026, the UK cybersecurity workforce gap stands at approximately 11,200 unfilled positions, according to the <a href="https://www.gov.uk/government/collections/cyber-security-breaches-survey">DCMS Cyber Security Skills in the UK Labour Market</a> reports. Financial services, government, healthcare (NHS), and critical national infrastructure are the largest hiring sectors.</p>
-<p>This guide covers every major cybersecurity role in the UK market with current salary data segmented by location, experience, and industry.</p>
-<h2>Salary by Role</h2>
-<p>Here is what each cybersecurity role pays in the UK in 2026. Figures represent base salary before benefits, bonuses, and pension contributions.</p>
-<p><strong>Security Analyst / SOC Analyst</strong></p>
+<h2>CISO Compensation Overview</h2>
+<p>CISO salary figures reflect the weight of the role. The <a href="/ciso/" title="CISO: Lead Security Strategy Across the Organization">Chief Information Security Officer</a> is responsible for an organization&#8217;s entire security posture: strategy, risk management, compliance, <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">incident response</a>, and the people who execute all of it. When a breach hits the news, the CISO is the person in the boardroom explaining what happened and what changes are coming.</p>
+<p>In 2026, CISO compensation has reached new highs. The combination of increasing regulatory pressure, board-level attention to cyber risk, and a thin pipeline of qualified candidates has pushed salaries and total compensation packages upward across every market. SEC cybersecurity disclosure rules in the US have made the CISO role more visible and more accountable, which translates directly into higher pay.</p>
+<p>But CISO salary is not just base pay. Total compensation includes bonuses, stock grants, long-term incentive plans, and increasingly, cyber insurance provisions. This guide breaks down all of those components.</p>
+<h2>US CISO Salary by Company Size</h2>
+<p>Company size is the single biggest driver of CISO compensation in the US. A CISO at a 200-person startup and a CISO at a Fortune 100 bank are doing fundamentally different jobs.</p>
+<p><strong>Small Companies (under 500 employees)</strong></p>
 <ul>
-<li>Junior (0-2 years): 25,000 &#8211; 38,000 GBP</li>
-<li>Mid-level (2-5 years): 38,000 &#8211; 55,000 GBP</li>
-<li>Senior (5+ years): 55,000 &#8211; 75,000 GBP</li>
+<li>Base salary: $150,000 &#8211; $220,000</li>
+<li>Total compensation: $170,000 &#8211; $280,000</li>
+<li>These CISOs often operate as player-coaches, managing a small team while doing hands-on security work. Many small companies hire their first CISO when they hit a compliance requirement or after an incident.</li>
 </ul>
-<p>SOC analysts are the largest segment of the UK cybersecurity workforce. Financial services firms and managed security service providers (MSSPs) are the top employers. For detailed SOC salary breakdowns including tier-by-tier data, see the <a href="/blog/read/soc-analyst-salary">SOC analyst salary guide</a>.</p>
-<p><strong>Penetration Tester</strong></p>
+<p><strong>Mid-Market Companies (500 &#8211; 5,000 employees)</strong></p>
 <ul>
-<li>Junior: 28,000 &#8211; 42,000 GBP</li>
-<li>Mid-level: 42,000 &#8211; 65,000 GBP</li>
-<li>Senior: 65,000 &#8211; 95,000 GBP</li>
+<li>Base salary: $220,000 &#8211; $320,000</li>
+<li>Total compensation: $260,000 &#8211; $420,000</li>
+<li>Mid-market CISOs manage teams of 5-25 people and balance operational security with strategic planning. Board presentations, vendor management, and compliance programs consume much of their time.</li>
 </ul>
-<p>UK <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">pen testing</a> pay has risen sharply as CREST-certified testers remain in short supply. Consulting firms like NCC Group, WithSecure, and Pentest People anchor the market. See the <a href="/blog/read/pen-tester-salary">penetration tester salary breakdown</a> for specialization premiums.</p>
-<p><strong>Security Engineer</strong></p>
+<p><strong>Large Enterprises (5,000 &#8211; 50,000 employees)</strong></p>
 <ul>
-<li>Junior: 35,000 &#8211; 48,000 GBP</li>
-<li>Mid-level: 48,000 &#8211; 70,000 GBP</li>
-<li>Senior: 70,000 &#8211; 95,000 GBP</li>
+<li>Base salary: $300,000 &#8211; $420,000</li>
+<li>Total compensation: $400,000 &#8211; $650,000</li>
+<li>Enterprise CISOs lead organizations of 50-200+ security professionals across multiple functions. They report to the CIO, CTO, or increasingly, directly to the CEO. Strategic vision and executive communication matter more than technical depth at this level.</li>
 </ul>
-<p>Security engineers who work with cloud platforms (AWS, Azure) and <a href="/blog/read/devsecops-engineer" title="DevSecOps Engineer: Build Security into Every Pipeline">DevSecOps</a> tooling earn at the top end. Infrastructure-as-code and <a href="/blog/read/docker-security-hardening-containers" title="Docker Security: Hardening Containers from Build to Runtime">container security</a> skills are particularly valued.</p>
-<p><strong>Security Architect</strong></p>
+<p><strong>Fortune 500 / Global Enterprises</strong></p>
 <ul>
-<li>Mid-level: 65,000 &#8211; 85,000 GBP</li>
-<li>Senior: 85,000 &#8211; 120,000 GBP</li>
+<li>Base salary: $400,000 &#8211; $600,000+</li>
+<li>Total compensation: $600,000 &#8211; $1,500,000+</li>
+<li>At the largest companies, CISO compensation includes significant equity grants and performance bonuses tied to risk metrics. These CISOs operate as true C-suite executives with direct board access and global teams spanning multiple continents.</li>
 </ul>
-<p>Architecture roles require a minimum of 5-7 years experience. SABSA and TOGAF certifications are common requirements in UK job postings.</p>
-<p><strong>GRC / Compliance Specialist</strong></p>
+<h2>UK CISO Salary</h2>
+<p>The UK CISO market has matured significantly, driven by the <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/">UK GDPR</a>, FCA requirements for financial services, and a growing recognition that cybersecurity is a board-level concern.</p>
+<p><strong>Small to Mid-Market</strong></p>
 <ul>
-<li>Junior: 30,000 &#8211; 42,000 GBP</li>
-<li>Mid-level: 42,000 &#8211; 60,000 GBP</li>
-<li>Senior / Manager: 60,000 &#8211; 90,000 GBP</li>
+<li>Base salary: 100,000 &#8211; 160,000 GBP</li>
+<li>Total compensation: 120,000 &#8211; 200,000 GBP</li>
 </ul>
-<p>UK GDPR, PCI DSS, ISO 27001, and sector-specific regulations (FCA, NHS DSPT) drive demand. GRC roles pay less than technical roles at the junior level but the gap narrows at senior levels.</p>
-<p><strong>Incident Responder / DFIR Specialist</strong></p>
+<p><strong>Large Enterprises</strong></p>
 <ul>
-<li>Mid-level: 50,000 &#8211; 70,000 GBP</li>
-<li>Senior: 70,000 &#8211; 100,000 GBP</li>
+<li>Base salary: 160,000 &#8211; 250,000 GBP</li>
+<li>Total compensation: 200,000 &#8211; 380,000 GBP</li>
 </ul>
-<p>DFIR specialists are scarce in the UK market. Consultancies and law enforcement agencies (NCA, NCSC) compete for the same talent pool.</p>
-<p><strong>CISO</strong></p>
+<p><strong>FTSE 100 / Global Companies</strong></p>
 <ul>
-<li>Mid-market: 100,000 &#8211; 170,000 GBP</li>
-<li>Enterprise: 170,000 &#8211; 280,000 GBP</li>
-<li>FTSE 100: 250,000 &#8211; 400,000+ GBP</li>
+<li>Base salary: 250,000 &#8211; 400,000 GBP</li>
+<li>Total compensation: 350,000 &#8211; 700,000+ GBP</li>
 </ul>
-<p>Full <a href="/blog/read/ciso-salary" title="CISO Salary: What Does a CISO Earn?">CISO salary</a> analysis available in the <a href="/blog/read/ciso-salary">CISO salary guide</a>.</p>
-<h2>London vs Rest of UK</h2>
-<p>London dominates the UK cybersecurity market. About 40% of all UK cybersecurity jobs are based in London or the surrounding commuter belt. The London premium varies by role but typically adds 15-30% to salaries compared to equivalent positions outside the capital.</p>
-<p><strong>London premiums by role:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th>London</th>
-<th>Outside London</th>
-<th>Premium</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="/blog/read/soc-analyst" title="SOC Analyst: Your Front Line in Cyber Defense">SOC Analyst</a> (mid)</td>
-<td>45,000 &#8211; 60,000</td>
-<td>35,000 &#8211; 48,000</td>
-<td>~25%</td>
-</tr>
-<tr>
-<td>Pen Tester (mid)</td>
-<td>50,000 &#8211; 72,000</td>
-<td>40,000 &#8211; 58,000</td>
-<td>~22%</td>
-</tr>
-<tr>
-<td>Security Engineer (mid)</td>
-<td>55,000 &#8211; 78,000</td>
-<td>45,000 &#8211; 62,000</td>
-<td>~22%</td>
-</tr>
-<tr>
-<td>CISO (mid-market)</td>
-<td>130,000 &#8211; 200,000</td>
-<td>100,000 &#8211; 150,000</td>
-<td>~30%</td>
-</tr>
-</tbody>
-</table>
-<p>However, London&#8217;s cost of living partially or fully offsets the premium. Rent alone in zones 1-3 can consume an extra 10,000 &#8211; 18,000 GBP annually compared to cities like Manchester, Bristol, or Edinburgh.</p>
-<p><strong>Growing tech hubs outside London:</strong></p>
+<p>London-based financial services CISOs earn the highest pay in the UK market. Banks, insurance companies, and asset managers face intense regulatory scrutiny from the FCA, PRA, and Bank of England, and the CISO bears direct responsibility for meeting those requirements. For more UK-specific salary data across all roles, see the <a href="/blog/read/cybersecurity-salary-uk">cybersecurity salary UK guide</a>.</p>
+<h2>European CISO Salary</h2>
+<p><strong>Germany</strong></p>
 <ul>
-<li><strong>Manchester</strong> — Strong FinTech and MSSP presence. Growing rapidly.</li>
-<li><strong>Edinburgh</strong> — Financial services hub with established cybersecurity practices.</li>
-<li><strong>Bristol</strong> — Defense and aerospace sector. BAE Systems, Airbus, GCHQ presence nearby.</li>
-<li><strong>Leeds</strong> — Financial services and public sector. Lower cost of living.</li>
-<li><strong>Glasgow</strong> — Government and defense. NCSC has invested in Scottish cyber initiatives.</li>
-<li><strong>Belfast</strong> — Emerging tech hub with competitive salaries relative to cost of living.</li>
+<li>Base: 130,000 &#8211; 220,000 EUR (mid-market)</li>
+<li>Base: 220,000 &#8211; 350,000 EUR (large enterprise / DAX 40)</li>
+<li>German CISOs benefit from strong labor protections and predictable compensation structures. The automotive and manufacturing sectors are the largest employers.</li>
 </ul>
-<p>Remote work has flattened some of the geographic premium. Many London-based employers now offer hybrid or fully remote positions at London salary rates, which benefits candidates outside the capital. However, shift-based SOC roles and positions requiring security clearance often mandate on-site presence.</p>
-<h2>Salary by Industry Sector</h2>
-<p>UK cybersecurity salaries vary significantly by sector.</p>
-<p><strong>Financial Services (banks, insurance, asset management):</strong> 15-25% above average. FCA regulations, PCI DSS requirements, and the constant threat of financial cybercrime drive spending. The largest UK banks maintain SOCs of 50-200+ people each.</p>
-<p><strong>Government and Defense:</strong> Salaries are 10-15% below the private sector, but benefits (pension, job security, clearance pathway) partially compensate. GCHQ, NCSC, MoD, and intelligence agencies pay civil service rates with additional allowances for specialist skills.</p>
-<p><strong>Technology Companies:</strong> Pay at or above average, especially for roles at cloud providers, SaaS companies, and cybersecurity vendors. Equity compensation can add 10-30% for pre-IPO companies.</p>
-<p><strong>Professional Services / Consulting:</strong> Pay at the top end for experienced practitioners, with billable hour expectations to match. Big Four firms (Deloitte, PwC, EY, KPMG) and specialist consultancies (NCC Group, Mandiant) drive this segment.</p>
-<p><strong>Healthcare (NHS and private):</strong> 10-20% below average. NHS Agenda for Change banding limits cybersecurity salaries, though NHS Digital and specialist trusts have found ways to offer market-competitive rates for hard-to-fill positions.</p>
-<p><strong>Critical National Infrastructure (energy, telecoms, transport):</strong> Pays at or above average. NIS regulations require operators of essential services to maintain mature security capabilities, which drives hiring and pay.</p>
-<h2>Contract vs Permanent Rates</h2>
-<p>The UK contracting market for cybersecurity professionals is active, particularly inside IR35 reform boundaries.</p>
-<p><strong>Day rates for cybersecurity contractors:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th>Inside IR35</th>
-<th>Outside IR35</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SOC Analyst (mid)</td>
-<td>350 &#8211; 500 GBP/day</td>
-<td>400 &#8211; 550 GBP/day</td>
-</tr>
-<tr>
-<td>Pen Tester (mid)</td>
-<td>450 &#8211; 650 GBP/day</td>
-<td>500 &#8211; 750 GBP/day</td>
-</tr>
-<tr>
-<td>Security Engineer (senior)</td>
-<td>500 &#8211; 700 GBP/day</td>
-<td>550 &#8211; 800 GBP/day</td>
-</tr>
-<tr>
-<td>Security Architect</td>
-<td>600 &#8211; 850 GBP/day</td>
-<td>650 &#8211; 950 GBP/day</td>
-</tr>
-<tr>
-<td>CISO (interim)</td>
-<td>800 &#8211; 1,200 GBP/day</td>
-<td>900 &#8211; 1,500 GBP/day</td>
-</tr>
-</tbody>
-</table>
-<p>IR35 status significantly affects take-home pay. Many UK cybersecurity roles have been classified inside IR35 since the April 2021 reforms, especially in the public sector and at large private-sector organizations. Outside-IR35 roles are more common at smaller companies and for genuine project-based work.</p>
-<p>Contractors earn more per day than permanent employees, but forgo benefits including pension contributions (typically 5-10% employer match), private health insurance, training budgets, and paid leave. Over a full year with typical utilization (220-230 working days), a mid-level security engineer contractor inside IR35 would earn 77,000 &#8211; 154,000 GBP gross, compared to a permanent salary of 48,000 &#8211; 70,000 GBP plus benefits.</p>
-<h2>Certifications and UK Salary Impact</h2>
-<p>Certifications carry different weight in the UK market compared to the US.</p>
-<p><strong>CISSP:</strong> The most requested certification in UK cybersecurity job postings. Holding CISSP adds an estimated 8,000 &#8211; 15,000 GBP to your salary. It is almost mandatory for senior and management-level positions.</p>
-<p><strong>CREST CRT / CCT:</strong> Required for penetration testers working at CREST-accredited firms. Most UK pen testing consulting roles require at least the CRT. Holding CCT (the advanced credential) puts you in the top tier of UK pen testers.</p>
-<p><strong>CompTIA Security+ / CySA+:</strong> Good entry credentials for junior roles. The salary premium is modest (3,000 &#8211; 5,000 GBP) but they help you get through recruiter filters.</p>
-<p><strong>OSCP:</strong> Highly valued in UK pen testing roles, especially at technical consultancies. Adds 5,000 &#8211; 12,000 GBP to pen tester salaries.</p>
-<p><strong>SC-Cleared Certifications:</strong> Government and defense roles require Security Check (SC) or Developed Vetting (DV) clearance. These are not traditional certifications but holding active clearance adds 5,000 &#8211; 15,000 GBP to your market value. Plan your career using our <a href="https://career.hadess.io/certificate-roadmap">certificate roadmap</a>.</p>
-<h2>Benefits and Total Compensation</h2>
-<p>UK cybersecurity compensation includes several components beyond base salary.</p>
+<p><strong>Switzerland</strong></p>
 <ul>
-<li><strong>Pension contributions:</strong> Employer contributions of 5-10% are standard. Some financial services firms contribute up to 15%.</li>
-<li><strong>Private health insurance:</strong> Offered by most mid-to-large employers. Family coverage adds 2,000 &#8211; 5,000 GBP in value.</li>
-<li><strong>Training budget:</strong> 1,000 &#8211; 5,000 GBP annually for certifications and conferences. Some employers cover SANS training (3,000 &#8211; 7,000 GBP per course).</li>
-<li><strong>Annual leave:</strong> Standard 25 days plus bank holidays. Some employers offer 28-30 days.</li>
-<li><strong>Bonus:</strong> 5-15% for technical roles, 15-30% for management and leadership.</li>
-<li><strong>Cycle to Work scheme, tech salary sacrifice:</strong> Common but modest in value.</li>
+<li>Base: 180,000 &#8211; 280,000 CHF (mid-market)</li>
+<li>Base: 280,000 &#8211; 450,000 CHF (large enterprise)</li>
+<li>Swiss CISO salaries are the highest in Europe in absolute terms. Banks in Zurich and Geneva pay at the top of these ranges.</li>
 </ul>
-<p>Total compensation for a UK cybersecurity professional is typically 20-35% above base salary when all benefits are factored in.</p>
-<h2>UK Salary vs US and Europe</h2>
-<p>How does UK cybersecurity pay compare internationally?</p>
-<table>
-<thead>
-<tr>
-<th>Role (Mid-Level)</th>
-<th>UK</th>
-<th>US</th>
-<th>Germany</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SOC Analyst</td>
-<td>42,000 GBP</td>
-<td>$85,000</td>
-<td>55,000 EUR</td>
-</tr>
-<tr>
-<td>Pen Tester</td>
-<td>55,000 GBP</td>
-<td>$110,000</td>
-<td>65,000 EUR</td>
-</tr>
-<tr>
-<td>Security Engineer</td>
-<td>58,000 GBP</td>
-<td>$120,000</td>
-<td>65,000 EUR</td>
-</tr>
-<tr>
-<td>CISO</td>
-<td>160,000 GBP</td>
-<td>$300,000</td>
-<td>180,000 EUR</td>
-</tr>
-</tbody>
-</table>
-<p>UK salaries are generally 30-40% lower than US equivalents in nominal terms. However, the gap narrows when you account for NHS access (no health insurance premiums), employer pension contributions, longer annual leave, and parental leave policies. The effective difference is closer to 15-25%.</p>
-<p>European salaries are broadly comparable to UK levels, with Switzerland being the notable exception at significantly higher pay across all roles.</p>
-<h2>How to Maximize Your UK Cyber Salary</h2>
-<p><strong>Target financial services.</strong> The FS sector pays the highest cybersecurity salaries in the UK, and London-based banks have the deepest budgets. Even if you do not want to stay in FS long-term, a few years at a bank significantly boosts your market value.</p>
-<p><strong>Get CREST certified if you are a pen tester.</strong> The UK pen testing market runs on CREST accreditation. Without it, your options are limited. With it, you can command premium rates.</p>
-<p><strong>Negotiate at the offer stage.</strong> UK employers expect negotiation. The first offer is rarely the final offer. Ask for data on internal salary bands and benchmark against market rates. Use our <a href="https://career.hadess.io/salary-calculator">salary calculator</a> to prepare.</p>
-<p><strong>Consider contracting.</strong> If you have 3+ years of experience and are comfortable with less job security, contracting can increase your income by 30-60% compared to permanent employment. The math works especially well outside London where cost of living is lower.</p>
-<p><strong>Develop cloud security skills.</strong> AWS and <a href="/blog/read/azure-security" title="Azure Security: Defender, Azure AD, and Cloud-Native Controls">Azure security</a> skills are the most in-demand specializations in the UK market right now. Engineers who can secure cloud-native architectures are consistently offered at the top of salary bands. Build these through our <a href="https://career.hadess.io/career-skills">skills development</a> resources.</p>
-<p><strong>Explore visa sponsorship employers.</strong> International candidates should review the <a href="/blog/read/uk-cyber-visa-salary">UK visa sponsorship and salary guide</a> — many UK employers actively sponsor skilled cybersecurity professionals.</p>
+<p><strong>France</strong></p>
+<ul>
+<li>Base: 100,000 &#8211; 170,000 EUR (mid-market)</li>
+<li>Base: 170,000 &#8211; 280,000 EUR (large enterprise / CAC 40)</li>
+</ul>
+<p><strong>Netherlands</strong></p>
+<ul>
+<li>Base: 110,000 &#8211; 180,000 EUR (mid-market)</li>
+<li>Base: 180,000 &#8211; 280,000 EUR (large enterprise)</li>
+</ul>
+<p><strong>Nordics (Sweden, Norway, Denmark)</strong></p>
+<ul>
+<li>Base: 120,000 &#8211; 200,000 EUR equivalent (mid-market)</li>
+<li>Base: 200,000 &#8211; 300,000 EUR equivalent (large enterprise)</li>
+</ul>
+<p>European CISO pay trails the US by 20-35% on average, but the gap narrows when you factor in social benefits, vacation time, pension contributions, and healthcare that are standard in European employment contracts. Work-life balance for European CISOs is generally better than for their US counterparts.</p>
+<h2>Total Compensation Beyond Base Salary</h2>
+<p>For CISOs, base salary is often only 50-70% of total compensation. Understanding the full package is essential for evaluating offers.</p>
+<p><strong>Annual Bonuses:</strong> Most CISOs receive performance bonuses of 15-30% of base salary. Bonus metrics vary: some organizations tie bonuses to incident metrics (MTTR, number of breaches), while others use broader business KPIs. Be cautious about bonus structures tied to &#8220;zero breaches&#8221; — this incentivizes underreporting.</p>
+<p><strong>Equity and Stock Grants:</strong> Public company CISOs typically receive annual stock grants worth $50,000 &#8211; $300,000+. These grants vest over 3-4 years and represent a significant portion of long-term wealth building. Pre-IPO companies offer stock options that could be worth substantially more if the company goes public.</p>
+<p><strong>Signing Bonuses:</strong> Due to the competitive market, signing bonuses of $25,000 &#8211; $100,000 are common for CISO hires. These compensate for unvested equity left at the previous employer and reduce the financial friction of changing jobs.</p>
+<p><strong>Retention Bonuses:</strong> Some organizations offer two- or three-year retention bonuses to keep CISOs in place. These typically range from $50,000 &#8211; $200,000 and vest over the retention period.</p>
+<p><strong>Cyber Insurance:</strong> A growing number of CISOs negotiate personal liability coverage into their employment agreements. D&#038;O (Directors and Officers) insurance that specifically covers the CISO&#8217;s role is becoming a standard ask, especially after regulatory actions targeting individual CISOs.</p>
+<h2>What Determines CISO Pay</h2>
+<p>Several factors create wide variation in CISO compensation.</p>
+<p><strong>Industry vertical.</strong> Financial services, healthcare, and critical infrastructure CISOs earn 20-30% more than CISOs in retail, education, or non-profits. The regulatory burden and potential impact of a breach directly correlate with pay.</p>
+<p><strong>Reporting structure.</strong> CISOs who report to the CEO or the board earn more than those who report to the CIO. Direct board access signals organizational commitment to security and comes with higher compensation to match the visibility and accountability.</p>
+<p><strong>Scope of responsibility.</strong> A CISO who owns security, privacy, compliance, and physical security earns more than one who only manages information security. Converged security roles carry broader accountability and justify higher pay.</p>
+<p><strong>Public company vs private.</strong> Public companies pay higher total compensation because of equity grants, but they also impose more personal liability (SEC reporting, SOX compliance). Private company CISOs may have lower total comp but face less regulatory exposure.</p>
+<p><strong>Breach history.</strong> Organizations that have experienced a significant breach often pay a premium for their next CISO. The incoming CISO inherits a recovery situation and the board&#8217;s heightened attention, which justifies higher compensation.</p>
+<h2>Virtual CISO and Fractional CISO Rates</h2>
+<p>Not every organization can afford or needs a full-time CISO. The virtual CISO (vCISO) and fractional CISO models have grown significantly.</p>
+<p><strong>Virtual CISO (vCISO) rates:</strong></p>
+<ul>
+<li>Retainer model: $5,000 &#8211; $15,000 per month</li>
+<li>Hourly model: $200 &#8211; $400 per hour</li>
+<li>Annual contract value: $60,000 &#8211; $180,000</li>
+</ul>
+<p><strong>Fractional CISO rates:</strong></p>
+<ul>
+<li>1-2 days per week: $8,000 &#8211; $20,000 per month</li>
+<li>Annual contract value: $96,000 &#8211; $240,000</li>
+</ul>
+<p>Experienced CISOs who serve multiple clients as vCISOs can earn $300,000 &#8211; $500,000+ annually by managing 3-5 concurrent retainers. This model offers flexibility and higher total earnings but requires strong self-management and business development skills.</p>
+<p>The vCISO market is strongest among companies with 50-500 employees that face compliance requirements (SOC 2, HIPAA, PCI DSS) but cannot justify a full-time executive. <a href="https://www.iansresearch.com/">IANS Research</a> publishes annual benchmarks for vCISO rates that are worth tracking if you are considering this path.</p>
+<h2>Path to CISO and Expected Timeline</h2>
+<p>Most CISOs reach the role after 12-20 years in cybersecurity or adjacent fields. There is no single path, but common trajectories include:</p>
+<p><strong>Technical Track:</strong> <a href="/blog/read/soc-analyst" title="SOC Analyst: Your Front Line in Cyber Defense">SOC Analyst</a> -> Security Engineer -> Senior Engineer -> Security Architect -> Director of Security -> CISO. Timeline: 12-18 years.</p>
+<p><strong>GRC Track:</strong> <a href="/blog/read/information-security-analyst" title="Information Security Analyst: Protect Data and Manage Risk">Security Analyst</a> -> Compliance Manager -> Director of GRC -> VP of Security -> CISO. Timeline: 12-16 years.</p>
+<p><strong>Consulting Track:</strong> Pen Tester -> Senior Consultant -> Manager -> Partner -> CISO (exit to industry). Timeline: 10-15 years.</p>
+<p>The fastest path to CISO is through a small or mid-market company where you can take the title earlier and build your executive experience. Many CISOs start at a 200-person company, establish a program from scratch, and then move to progressively larger organizations.</p>
+<p>Key skills that separate CISO candidates from senior technical leaders: board communication, budget management, vendor negotiation, risk quantification, and the ability to hire and retain talent. Build these deliberately. Our career skills assessment can help you identify leadership gaps.</p>
+<h2>CISO Salary Trends for 2026</h2>
+<p>Several trends are shaping CISO compensation in 2026.</p>
+<p><strong>Regulatory accountability is rising.</strong> The SEC&#8217;s cybersecurity disclosure rules and enforcement actions have increased personal accountability for CISOs. This is driving compensation upward as the role carries more risk.</p>
+<p><strong>AI governance is expanding the CISO scope.</strong> Many organizations have added AI risk management to the CISO&#8217;s <a href="/blog/read/cyber-portfolio" title="Building Your Cybersecurity Portfolio from Scratch">portfolio</a>. This expanded scope justifies higher pay but also creates new challenges around model security, data privacy, and algorithmic bias.</p>
+<p><strong>CISO tenure remains short.</strong> The average CISO tenure is 2.5-3.5 years. Frequent turnover means CISOs can negotiate strong packages when changing roles, but it also contributes to burnout in the profession.</p>
+<p><strong>Board seat CISOs are emerging.</strong> A small but growing number of CISOs are being appointed to corporate boards as cybersecurity-focused directors. Board compensation ($150,000 &#8211; $300,000 in annual retainer plus equity) adds a new dimension to CISO career earnings.</p>
 <p><strong>See the full salary guide:</strong> <a href="/blog/read/cybersecurity-salary-guide" title="Cybersecurity Salary Guide 2026">Cybersecurity Salary Guide 2026</a></p>
 <h2>Related Guides in This Series</h2>
 <ul>
-<li><a href="/blog/read/uk-cyber-visa-salary">UK Cyber Jobs: Visa Sponsorship and Salary Guide</a></li>
+<li><a href="/blog/read/pen-tester-salary">Penetration Tester Salary 2026: Full Breakdown</a></li>
 <li><a href="/blog/read/soc-analyst-salary">SOC Analyst Salary: US, UK, Europe Breakdown</a></li>
-<li><a href="/blog/read/entry-level-cyber-salary">Entry Level Cybersecurity Salary: What to Expect</a></li>
+<li><a href="/blog/read/negotiate-cyber-salary">How to Negotiate Your Cybersecurity Salary</a></li>
 </ul>
 <h2>Take the Next Step</h2>
-<p><strong>Benchmark your UK salary</strong> with our <a href="https://career.hadess.io/salary-calculator">Salary Calculator</a> to compare your pay against the latest market data for your role, experience, and region.</p>
-<p><strong>Looking for UK employers that sponsor visas?</strong> Use our <a href="https://career.hadess.io/uk-sponsor-finder">UK Sponsor Finder</a> to identify organizations hiring cybersecurity professionals with Tier 2 visa sponsorship.</p>
+<p><strong>Model your path to CISO</strong> with our Salary Calculator to see how compensation grows as you advance through security leadership roles.</p>
 <h2>Frequently Asked Questions</h2>
-<h3>What is the average cybersecurity salary in the UK?</h3>
-<p>The average cybersecurity salary in the UK in 2026 is approximately 52,000 &#8211; 58,000 GBP across all roles and experience levels. This figure includes everything from entry-level analysts to senior architects. Mid-level practitioners with 3-5 years experience typically earn 45,000 &#8211; 70,000 GBP depending on role, location, and sector.</p>
-<h3>Is London worth it for cybersecurity salaries?</h3>
-<p>It depends on your personal situation. London offers 15-30% higher salaries and the widest range of opportunities, but housing costs can offset the premium. If you can secure a London-rate remote position while living outside the capital, you get the best of both worlds. Many employers now offer this arrangement.</p>
-<h3>Are cybersecurity salaries in the UK keeping up with inflation?</h3>
-<p>Yes, cybersecurity salaries have grown faster than UK inflation since 2022. Annual salary increases of 5-8% are common for practitioners who change roles or negotiate effectively. The skills shortage ensures that employers must offer competitive pay to attract and retain talent.</p>
-<h3>Do UK cybersecurity jobs require security clearance?</h3>
-<p>Only for government, defense, and certain critical national infrastructure roles. About 20-25% of UK cybersecurity positions require SC or DV clearance. The clearance process takes 2-<a href="/blog/read/cyber-job-6-months" title="How to Get a Cybersecurity Job in 6 Months">6 months</a> and requires UK residency history. Private sector roles rarely require clearance unless they involve government contract work.</p>
-<h3>Is it better to be a contractor or permanent employee in UK cybersecurity?</h3>
-<p>Contractors earn more per day but lose benefits. At the mid-level, a contractor working 230 days per year inside IR35 earns roughly 25-40% more gross than the equivalent permanent salary. However, after accounting for lost pension contributions, holiday pay, sick leave, and training budget, the real premium is closer to 15-25%. Contracting works best for experienced professionals who value flexibility and have enough financial buffer to handle gaps between contracts.</p>
+<h3>Is CISO the highest-paying role in cybersecurity?</h3>
+<p>Yes, in most organizations. The CISO is the most senior security-specific role and carries the highest compensation. However, some specialized individual contributor roles at large technology companies (principal security engineers, staff security researchers) can earn comparable or higher total compensation through stock grants, without the management burden.</p>
+<h3>Do CISOs need a technical background?</h3>
+<p>Most CISOs have a technical background, but it is not strictly required. About 70% of current CISOs come from technical roles (security engineering, <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">pen testing</a>, incident response). The remaining 30% come from risk management, audit, legal, or general IT management backgrounds. Technical credibility helps, especially when managing technical teams and evaluating vendor claims.</p>
+<h3>What is the average CISO tenure?</h3>
+<p>Between 2.5 and 3.5 years, depending on the survey. CISO turnover is high due to burnout, organizational politics, and the practice of replacing CISOs after significant breaches. The short tenure works in your favor financially: each move typically comes with a 15-25% compensation increase.</p>
+<h3>Can you become a CISO without an MBA?</h3>
+<p>Absolutely. An MBA is not required and most CISOs do not hold one. Industry certifications (<a href="/blog/read/cissp-guide" title="CISSP Certification: Complete Requirements Guide">CISSP</a>, CISM), executive education programs, and demonstrated business acumen matter more. If you want to develop your business skills, focused executive courses are more efficient than a full MBA program.</p>
+<h3>How much do vCISOs earn compared to full-time CISOs?</h3>
+<p>A well-established vCISO with 3-5 concurrent clients can earn $300,000 &#8211; $500,000+ annually, which exceeds many full-time mid-market CISO salaries. However, vCISOs lack benefits, equity, and employment stability. The model works best for experienced CISOs who value flexibility and have strong professional networks.</p>
 <p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
     </div>
 
@@ -1815,27 +1726,27 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1990,11 +1901,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2017,59 +1928,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

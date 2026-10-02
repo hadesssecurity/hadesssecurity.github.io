@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-coaching#article","headline":"Cybersecurity Career Coach Online — HADESS Magazine","description":"Find a cybersecurity career coach online who has done the work. HADESS connects you with practitioners for 1-on-1 coaching. Book your session today.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-coaching","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-coaching"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-career-coaching.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-coaching#article","headline":"Cybersecurity Career Coach Online — HADESS Magazine","description":"Find a cybersecurity career coach online who has done the work. HADESS connects you with practitioners for 1-on-1 coaching. Book your session today.","url":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-coaching","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/cybersecurity-career-coaching"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-cybersecurity-career-coaching.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1538,152 +1549,267 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
 <div class="article-wrap">
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-cybersecurity-career-coaching.png">
-      <blockquote>
-<p><strong>Part of the <a href="/blog/read/cybersecurity-career-coaching">Cybersecurity Career Coaching Guide</a></strong> — This article is one deep-dive in our complete coaching series.</p>
+      <h1>Cybersecurity Career Coach Online: What Coaching Actually Does and When You Need It</h1>
+<blockquote>
+<p><strong>Part of the HADESS Career Resources</strong> — This guide explains how cybersecurity coaching works and when it makes sense. Explore our deep-dives on <a href="/blog/read/what-is-cyber-coach">what a cybersecurity coach does</a>, <a href="/blog/read/cyber-portfolio">building a cybersecurity portfolio</a>, and <a href="/blog/read/cyber-interview-prep">interview preparation</a> below.</p>
 </blockquote>
-<h1>LinkedIn Profile for Cybersecurity Professionals</h1>
-<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 7 min read</em></p>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 18 min read</em></p>
+<p>A cybersecurity career coach online is someone who has actually worked in the field — hired people, built teams, gotten promoted, changed specializations — and can help you do the same. That is the version worth paying for. The version not worth paying for is a generic career coach who read a blog post about cybersecurity last week and charges you $200 an hour to tell you to &#8220;update your LinkedIn.&#8221;</p>
+<p>This guide covers what real cybersecurity career coaching looks like, when it makes a measurable difference, what a good session includes, and how the HADESS coaching model works. We built coaching into HADESS because we kept seeing smart, motivated people stall out at predictable points in their career development — and the fix was almost always a conversation with someone who had been through it before.</p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#why-linkedin-matters-for-security-careers">Why LinkedIn Matters for Security Careers</a></li>
-<li><a href="#headline-optimization">Headline Optimization</a></li>
-<li><a href="#summary-that-converts">Summary That Converts</a></li>
-<li><a href="#experience-section-strategy">Experience Section Strategy</a></li>
-<li><a href="#skills-certifications-and-featured-section">Skills, Certifications, and Featured Section</a></li>
-<li><a href="#networking-strategy-on-linkedin">Networking Strategy on LinkedIn</a></li>
-<li><a href="#common-linkedin-mistakes-in-cybersecurity">Common LinkedIn Mistakes in Cybersecurity</a></li>
+<li><a href="#what-cybersecurity-career-coaching-actually-is">What Cybersecurity Career Coaching Actually Is</a></li>
+<li><a href="#when-coaching-makes-the-difference">When Coaching Makes the Difference</a></li>
+<li><a href="#what-a-coaching-session-covers">What a Coaching Session Covers</a></li>
+<li><a href="#one-on-one-coaching-vs-self-study">One-on-One Coaching vs Self-Study</a></li>
+<li><a href="#building-your-cybersecurity-portfolio">Building Your Cybersecurity Portfolio</a></li>
+<li><a href="#interview-preparation-strategies">Interview Preparation Strategies</a></li>
+<li><a href="#linkedin-and-professional-presence">LinkedIn and Professional Presence</a></li>
+<li><a href="#how-hadess-coaching-works">How HADESS Coaching Works</a></li>
+<li><a href="#related-deep-dives">Related Deep-Dives</a></li>
+<li><a href="#start-your-journey">Start Your Journey</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
 </ul>
-<h2>Why LinkedIn Matters for Security Careers</h2>
-<p>Your cybersecurity LinkedIn profile is the most visible component of your professional presence. Recruiters, hiring managers, and security peers will look at it before, during, and after the hiring process. In cybersecurity, LinkedIn is where most recruiter outreach happens — security recruiters spend hours on the platform daily, searching for candidates using specific keywords.</p>
-<p>A well-optimized profile does three things: it gets found in searches, it makes a strong first impression, and it gives recruiters a reason to reach out. Most security professionals treat LinkedIn as a resume dump. The ones who get consistent recruiter attention treat it as a marketing asset.</p>
-<p>This guide covers how to optimize every section of your profile for cybersecurity career opportunities.</p>
-<h2>Headline Optimization</h2>
-<p>Your headline appears everywhere — in search results, comments, messages, and connection requests. It is the most important text on your profile.</p>
-<p><strong>Bad headlines:</strong></p>
+<h2>What Cybersecurity Career Coaching Actually Is</h2>
+<p>Career coaching in cybersecurity is not mentorship, though the two overlap. Mentorship is typically informal, long-term, and unstructured. Coaching is structured, outcome-focused, and time-bound. A mentor might tell you about their career over coffee. A coach will assess where you are, define where you want to go, identify the specific gaps, and build a plan to close them.</p>
+<p>Good cybersecurity career coaching does three things:</p>
+<p><strong>1. It gives you an outside perspective from someone who knows the field.</strong></p>
+<p>When you are inside your own career, you cannot always see what is obvious to someone with broader context. A coach who has hired SOC analysts can tell you why your resume is not generating interviews. A coach who has transitioned from <a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">pen testing</a> to management can tell you what that move actually requires. A coach who has worked with dozens of career switchers can tell you which paths are realistic and which are fantasy.</p>
+<p><strong>2. It accelerates decisions.</strong></p>
+<p>The biggest time-wasters in career development are not skill gaps — they are decisions. Should I learn AWS or Azure? Should I pursue OSCP or CySA+? Should I stay at this company or move? Should I specialize in cloud or stay broad? People spend months agonizing over these questions. A good coach helps you make these decisions in one session because they have seen how different choices play out for hundreds of people.</p>
+<p><strong>3. It holds you accountable.</strong></p>
+<p>Knowing what to do and actually doing it are different problems. A study plan that sits in a Google Doc does not help you. A coach who checks in on your progress and adjusts the plan when life gets in the way keeps you moving forward.</p>
+<p>What coaching is NOT:</p>
 <ul>
-<li>&#8220;Looking for opportunities in cybersecurity&#8221;</li>
-<li>&#8220;Student | Cybersecurity Enthusiast&#8221;</li>
-<li>&#8220;Aspiring SOC Analyst&#8221;</li>
+<li>It is not training. A coach does not teach you how to use Burp Suite. They help you decide whether learning Burp Suite is the right investment of your time right now.</li>
+<li>It is not therapy. Career stress is real, and a good coach is empathetic, but they are focused on professional outcomes, not emotional processing.</li>
+<li>It is not a shortcut. Coaching accelerates the journey; it does not eliminate the work. You still have to study, practice, build projects, and apply for jobs.</li>
 </ul>
-<p><strong>Good headlines:</strong></p>
+<p>For a more detailed breakdown, read our guide on <a href="/blog/read/what-is-cyber-coach">what a cybersecurity career coach actually does</a>.</p>
+<h2>When Coaching Makes the Difference</h2>
+<p>Coaching is not always necessary. If you know exactly what you want to do, have a clear plan, and are making steady progress, you do not need a coach. Here are the specific situations where coaching consistently makes a measurable difference:</p>
+<h3>Career Switches into Cybersecurity</h3>
+<p>This is the single highest-impact use case for coaching. People switching from IT support, software development, networking, military service, or non-technical fields into cybersecurity face a translation problem. They have skills that are relevant, but they do not know how to frame those skills in security terms, or which security specialization best fits their background.</p>
+<p>A coach who has helped dozens of career switchers can shortcut months of fumbling by immediately mapping your existing skills to the right target roles and identifying the minimum viable additions needed to be competitive.</p>
+<p>We see this pattern repeatedly: someone spends 8 months trying to figure out their path on their own, then spends one session with a coach and has a clear 90-day plan. The coaching did not add skills — it eliminated wasted effort.</p>
+<h3>Career Plateaus</h3>
+<p>You have been a SOC Analyst Tier 2 for three years. Or you have been a mid-level pen tester for four years. You are competent at your job, but you are not advancing. What is the problem?</p>
+<p>Sometimes it is skills — you need a certification or a specific technical capability. Sometimes it is visibility — your work is good but nobody outside your immediate team knows it. Sometimes it is organizational — the company does not have room for you to advance. And sometimes it is positioning — you are pigeonholed and need to deliberately change how people perceive your capabilities.</p>
+<p>A coach can diagnose which of these is the actual blocker and recommend specific actions. The right answer is different for every person, and generic career advice (&#8220;get a CISSP&#8221;) does not address the real issue.</p>
+<h3>Active Job Hunting</h3>
+<p>When you are applying for jobs, coaching delivers immediate ROI:</p>
 <ul>
-<li>&#8220;SOC Analyst | Security+ | SIEM Operations | Threat Detection&#8221;</li>
-<li>&#8220;Security Engineer | AWS Security | Terraform | Cloud Infrastructure Security&#8221;</li>
-<li>&#8220;Penetration Tester | OSCP | Web <a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">Application Security</a> | Red Team&#8221;</li>
-<li>&#8220;GRC Analyst | SOC 2 | ISO 27001 | Risk Management&#8221;</li>
+<li><strong>Resume review</strong> from someone who has read hundreds of security resumes and knows what hiring managers actually look for. Not what resume-writing websites say, but what actually works. Use the HADESS resume builder alongside coaching for best results.</li>
+<li><strong>Interview preparation</strong> that covers real technical interview questions, not generic behavioral questions. What does a SOC analyst interview actually ask? What does a pen testing practical assessment look like? How do you handle the &#8220;tell me about a time you handled an incident&#8221; question when you have not handled an incident?</li>
+<li><strong>Offer evaluation</strong> from someone who knows market rates. Is this offer good? Am I being lowballed? What can I negotiate? Our <a href="/blog/read/cybersecurity-salary-guide">cybersecurity salary guide</a> provides data, and coaching provides personalized interpretation.</li>
 </ul>
-<p><strong>The formula:</strong> [Current/Target Role] | [Top Certification] | [2-3 Key Skills]</p>
-<p>Keywords in your headline are heavily weighted by LinkedIn search. Include the exact role title recruiters search for, your most valuable certification, and your primary skill areas.</p>
-<p>If you are transitioning, lead with your target role. A sysadmin transitioning to security should use &#8220;Security Analyst | <a href="/blog/read/comptia-security-plus" title="CompTIA Security+ Study Guide 2026">CompTIA Security+</a> | SIEM | <a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">Incident Response</a>&#8221; — not &#8220;System Administrator Looking for Security Roles.&#8221;</p>
-<h2>Summary That Converts</h2>
-<p>The summary (About section) should be 3-5 short paragraphs. No wall of text.</p>
-<p><strong>Paragraph 1: What you do and what you bring.</strong><br />
-State your security focus, years of relevant experience, and primary value. Be specific.</p>
-<p><strong>Paragraph 2: Key skills and tools.</strong><br />
-List your technical competencies — SIEM platforms, programming languages, frameworks, and tools. Use the exact terms recruiters search for.</p>
-<p><strong>Paragraph 3: Certifications and education.</strong><br />
-List your security certifications. These are searchable keywords.</p>
-<p><strong>Paragraph 4: What you are looking for (optional).</strong><br />
-If you are actively searching, state the type of role, work arrangement (remote/hybrid/onsite), and location preferences. Be direct.</p>
-<p><strong>Example summary:</strong><br />
-&#8220;I focus on threat detection and incident response in enterprise environments. Three years of SOC experience investigating security alerts, building detection rules, and improving response workflows. Formerly in IT infrastructure — the systems knowledge gives me context that pure-security analysts often lack.</p>
-<p>Technical focus: Splunk, Microsoft Sentinel, CrowdStrike EDR, Python automation, MITRE ATT&#038;CK framework, incident response, log analysis, threat hunting.</p>
-<p>Certifications: CompTIA Security+, CompTIA CySA+, Splunk Core Certified User.</p>
-<p>Currently exploring senior SOC analyst and threat hunting roles (remote or hybrid US).&#8221;</p>
-<p>Build and track your skills with the <a href="https://career.hadess.io/skills">HADESS skills catalog</a> to identify which competencies to highlight on your profile.</p>
-<h2>Experience Section Strategy</h2>
-<p>Each experience entry should demonstrate security value, not just list duties.</p>
-<p><strong>For current/previous security roles:</strong></p>
+<h3>Pre-Certification Planning</h3>
+<p>Certifications cost money and time. The wrong certification at the wrong time is a waste of both. A coach can evaluate your current position and target role and tell you which certification delivers the most value right now — not in general, but for your specific situation.</p>
+<p>This is especially valuable for expensive certifications. If you are considering a <a href="https://www.sans.org/cyber-security-courses/">SANS course</a> ($7,000-$9,000), you want to be confident it is the right one. A coaching session costs a fraction of a misspent certification investment.</p>
+<h2>What a Coaching Session Covers</h2>
+<p>A well-run cybersecurity coaching session follows a structure, though the content varies based on your needs:</p>
+<h3>Assessment Phase (15-20 minutes)</h3>
+<p>The coach reviews your background: current role (or lack of one), skills, certifications, experience, education, and career goals. If you are using HADESS, the coach has access to your career assessment results, skills profile, and any previous session notes.</p>
+<p>The goal here is to understand where you are with enough specificity to give useful advice. &#8220;I want to work in cybersecurity&#8221; becomes &#8220;You have two years of IT support experience, a CompTIA Network+ certification, you have built a home lab with Wazuh, and you want to be a SOC analyst within six months.&#8221;</p>
+<h3>Gap Analysis (10-15 minutes)</h3>
+<p>The coach compares where you are to where you want to be and identifies the specific gaps. These might be:</p>
 <ul>
-<li>Lead each bullet with an action verb and a quantified result</li>
-<li>&#8220;Investigated 50+ security incidents monthly, achieving 95% first-contact resolution rate for Tier 1 alerts&#8221;</li>
-<li>&#8220;Built 15 custom Splunk detection rules that identified 3 previously undetected attack patterns&#8221;</li>
-<li>&#8220;Reduced mean time to detect (MTTD) by 35% through automation of initial triage workflows&#8221;</li>
+<li>Technical skills (you need SIEM experience)</li>
+<li>Certifications (Security+ would open doors)</li>
+<li>Portfolio items (you need documented projects to show employers)</li>
+<li>Resume issues (your resume does not communicate your security skills)</li>
+<li>Interview readiness (you have not practiced technical questions)</li>
+<li>Networking gaps (you are not connected to the security community)</li>
+<li>Strategic decisions (you are aiming at the wrong role for your background)</li>
 </ul>
-<p><strong>For IT roles being reframed for security:</strong></p>
+<h3>Action Plan (15-20 minutes)</h3>
+<p>The coach builds a concrete, time-bound action plan. Not &#8220;learn more about networking&#8221; — &#8220;Complete TryHackMe&#8217;s Network Fundamentals path by March 15, then set up a Wireshark lab and capture traffic from your home network by March 22.&#8221;</p>
+<p>Good action plans are specific, measurable, and realistic given your available time and resources. They prioritize high-impact actions first.</p>
+<h3>Q&#038;A and Adjustments (10-15 minutes)</h3>
+<p>You ask questions, push back on recommendations, and refine the plan. Good coaching is collaborative, not directive. If a recommendation does not fit your life, it needs to change.</p>
+<h2>One-on-One Coaching vs Self-Study</h2>
+<p>Let us be honest about when coaching is and is not worth the investment.</p>
+<h3>When Self-Study Works</h3>
+<p>Self-study works well when:</p>
 <ul>
-<li>&#8220;Managed Active Directory environment for 800 users, implementing least-privilege access policies and conducting quarterly access reviews&#8221; (IAM experience)</li>
-<li>&#8220;Configured and maintained Palo Alto firewall rules for 12 network segments, reducing unauthorized access attempts by 40%&#8221; (<a href="/blog/read/network-security-guide" title="Network Security Fundamentals: Complete Guide">Network security</a>)</li>
-<li>&#8220;Led incident response for ransomware event affecting 50 endpoints, coordinating containment and recovery within 8 hours&#8221; (IR experience)</li>
+<li>You have a clear goal and know which skills you need</li>
+<li>You are self-disciplined and can follow a study plan without external accountability</li>
+<li>Your questions are technical and can be answered by documentation, courses, or forums</li>
+<li>You are early in your career and the investment in coaching does not make financial sense yet</li>
+<li>You have a mentor in your network who can provide informal guidance</li>
 </ul>
-<p><strong>For career changers with no IT/security experience:</strong></p>
+<p>There are excellent free and low-cost resources. TryHackMe, HackTheBox Academy, Professor Messer&#8217;s Security+ videos, and TCM Security courses provide structured learning at a fraction of coaching costs. HADESS provides 80+ skill guides and a certificate roadmap that function as self-directed learning paths.</p>
+<h3>When Coaching Outperforms Self-Study</h3>
+<p>Coaching delivers outsized value when:</p>
 <ul>
-<li>Focus on transferable skills: analytical thinking, process documentation, risk assessment, communication</li>
-<li>Add a &#8220;Projects&#8221; or &#8220;Volunteer&#8221; section for lab work, CTFs, and security community contributions</li>
-<li>Use the <a href="https://career.hadess.io/resume">resume builder</a> alongside LinkedIn for consistent framing</li>
+<li>You do not know what you do not know — self-study requires knowing what to study</li>
+<li>You are making a career transition and need to translate your existing experience</li>
+<li>You are stuck and cannot diagnose why</li>
+<li>You are actively job hunting and need interview prep and resume feedback</li>
+<li>The opportunity cost of spending another month figuring things out exceeds the cost of coaching</li>
+<li>You have specific, time-sensitive career decisions to make</li>
 </ul>
-<h2>Skills, Certifications, and Featured Section</h2>
-<p><strong>Skills section:</strong><br />
-Add all relevant security skills. LinkedIn allows 50 skills — use them. The most searched <a href="/blog/read/top-cyber-skills" title="Top 10 Cybersecurity Skills Employers Want">cybersecurity skills</a> on LinkedIn:</p>
+<h3>The Hybrid Approach</h3>
+<p>The most effective model for most people is a combination. Use self-study for skill building (the daily work of learning technical content) and coaching for strategic decisions, accountability checkpoints, and specific career milestones (resume review, interview prep, job offer evaluation).</p>
+<p>A typical coaching engagement might look like: one initial session to build your plan, then a check-in session every 4-6 weeks to assess progress, adjust the plan, and address new questions. Total investment of 4-6 sessions over six months, with self-study filling the time between.</p>
+<p>For a more detailed comparison, see <a href="/blog/read/coaching-vs-courses">coaching vs courses for cybersecurity careers</a>.</p>
+<h2>Building Your Cybersecurity Portfolio</h2>
+<p>A portfolio is proof that you can do the work. Certifications prove you passed a test. A portfolio proves you can apply knowledge to real problems. Here is what makes a strong <a href="/blog/read/cyber-portfolio" title="Building Your Cybersecurity Portfolio from Scratch">cybersecurity portfolio</a>:</p>
+<h3>Home Lab Documentation</h3>
+<p>Set up a security lab and document it. This could be:</p>
 <ul>
-<li>Information Security, Cybersecurity, Network Security</li>
-<li>SIEM, Splunk, Microsoft Sentinel</li>
-<li>Incident Response, Threat Detection, <a href="/blog/read/vulnerability-management" title="Vulnerability Management: Scanning, Prioritization, and Patching">Vulnerability Management</a></li>
-<li><a href="/blog/read/penetration-testing-methodology" title="Penetration Testing Methodology: Scoping Through Reporting">Penetration Testing</a>, Ethical Hacking</li>
-<li>Cloud Security, AWS, Azure</li>
-<li>Python, Bash, PowerShell</li>
-<li>Risk Management, Compliance, SOC 2, ISO 27001</li>
-<li>MITRE ATT&#038;CK, OWASP</li>
+<li>A Wazuh SIEM deployment with custom detection rules and documented alert investigations</li>
+<li>A vulnerable network that you attack and defend, documenting both sides</li>
+<li>A <a href="/blog/read/cloud-security-skills" title="Cloud Security Skills: AWS, Azure, GCP">cloud security</a> architecture in AWS Free Tier with proper IAM, logging, and monitoring</li>
+<li>A <a href="/blog/read/docker-security-hardening-containers" title="Docker Security: Hardening Containers from Build to Runtime">container security</a> setup with Kubernetes, network policies, and image scanning</li>
 </ul>
-<p>Pin your top 3 most relevant skills. Ask colleagues to endorse your key skills.</p>
-<p><strong>Certifications section:</strong><br />
-Add every security certification with the issuing organization and credential ID. Certifications are searchable — many recruiters filter by specific certs. Plan your certifications with the <a href="https://career.hadess.io/certificate-roadmap">certification roadmap</a>.</p>
-<p><strong>Featured section:</strong><br />
-Pin your best work:</p>
+<p>The documentation matters as much as the lab itself. Write it up in a way that demonstrates your thinking process, not just the commands you ran.</p>
+<h3>Write-Ups and Blog Posts</h3>
+<p>Writing about security topics demonstrates knowledge, communication skill, and engagement with the field. Topics that work well:</p>
 <ul>
-<li>Blog posts or technical write-ups</li>
-<li>GitHub repositories with security tools</li>
-<li>CTF achievement badges</li>
-<li>Conference presentation slides</li>
-<li>Podcast appearances or interviews</li>
+<li>CTF challenge write-ups (especially from HackTheBox or TryHackMe)</li>
+<li>Vulnerability analysis (pick a CVE, research it, explain how it works and how to detect/mitigate it)</li>
+<li>Tool comparisons (you tested three SIEM platforms — what did you find?)</li>
+<li><a href="/blog/read/incident-response-methodology" title="Incident Response Methodology: From Detection to Recovery">Incident response</a> scenarios (walk through a hypothetical incident using your lab)</li>
 </ul>
-<h2>Networking Strategy on LinkedIn</h2>
-<p><strong>Connect strategically:</strong></p>
+<h3>Open-Source Contributions</h3>
+<p>Contributing to security-related open-source projects shows you can work with existing codebases and collaborate with other practitioners. The <a href="https://owasp.org/">OWASP Foundation</a> maintains dozens of security projects that welcome contributions from all skill levels. Even small contributions — documentation fixes, bug reports, minor features — demonstrate engagement.</p>
+<h3>CTF Participation</h3>
+<p>Capture the Flag competitions develop and demonstrate practical skills. Keep a record of competitions you have participated in and your results. Write up interesting challenges you solved.</p>
+<p>Our guide on <a href="/blog/read/cyber-portfolio">building a cybersecurity portfolio</a> goes deeper into each of these areas with specific examples.</p>
+<h2>Interview Preparation Strategies</h2>
+<p>Cybersecurity interviews test different things depending on the role, but there are common patterns:</p>
+<h3>Technical Interview Questions</h3>
+<p><strong>SOC Analyst interviews</strong> typically ask:</p>
 <ul>
-<li>Security professionals at your target companies</li>
-<li>Recruiters who specialize in cybersecurity</li>
-<li>Speakers at conferences you attend</li>
-<li>Authors of security content you read</li>
-<li>HADESS community members and coaches</li>
+<li>Describe how you would investigate a phishing alert</li>
+<li>What is the difference between an IDS and an IPS?</li>
+<li>Walk through the steps of a malware infection from initial compromise to data exfiltration</li>
+<li>How would you determine if a DNS query is malicious?</li>
+<li>Explain the difference between symmetric and asymmetric encryption</li>
 </ul>
-<p><strong>Engage with content:</strong></p>
+<p><strong>Penetration testing interviews</strong> often include:</p>
 <ul>
-<li>Comment substantively on security posts (not &#8220;great post!&#8221; — add value)</li>
-<li>Share articles with your analysis or perspective</li>
-<li>Post about your learning journey, lab work, or CTF achievements</li>
-<li>Write original posts about security topics you are studying</li>
+<li>Describe your methodology for testing a web application</li>
+<li>How would you escalate privileges on a Linux machine?</li>
+<li>What is Kerberoasting and how does it work?</li>
+<li>Walk through an SSRF attack scenario</li>
+<li>You find an SQL injection — what next?</li>
 </ul>
-<p><strong>Reach out to recruiters:</strong><br />
-&#8220;Hi [Name], I am a [role/background] transitioning into cybersecurity with [certification] and [specific skills]. I noticed you recruit for security roles at [company/region]. I would appreciate the opportunity to connect and learn about upcoming opportunities.&#8221;</p>
-<p>Short, specific, and professional. Recruiters receive hundreds of messages — make yours easy to act on.</p>
-<h2>Common LinkedIn Mistakes in Cybersecurity</h2>
-<p><strong>Using &#8220;cybersecurity enthusiast&#8221; or &#8220;aspiring&#8221; in your headline.</strong> These signal inexperience and get filtered out of recruiter searches. Even if you are new, describe what you do, not what you hope to do.</p>
-<p><strong>Listing every technology you have ever touched.</strong> Curate your skills to match your target role. A SOC analyst profile should emphasize SIEM, incident response, and detection — not every tool from a previous IT career.</p>
-<p><strong>Empty or generic summary.</strong> &#8220;Passionate about cybersecurity&#8221; tells a recruiter nothing. Specifics win.</p>
-<p><strong>No activity.</strong> A profile with zero posts, comments, or shares looks inactive. Recruiters prefer candidates who show engagement with the field.</p>
-<p><strong>Connecting without a message.</strong> Always include a brief note explaining why you are connecting. Blind connection requests get ignored.</p>
-<p><strong>Sharing sensitive work information.</strong> Do not post details about your organization&#8217;s security tools, vulnerabilities, or incidents. Security professionals who overshare on LinkedIn create trust concerns.</p>
-<p>Get targeted feedback on your LinkedIn presence through <a href="https://career.hadess.io/coach">HADESS coaching</a> — coaches review your profile and suggest specific improvements.</p>
-<p><strong>Learn about career coaching:</strong> <a href="/blog/read/cybersecurity-career-coaching" title="Cybersecurity Career Coach Online">Cybersecurity Career Coach Online</a></p>
-<h2>Related Guides in This Series</h2>
+<p><strong>Cloud security interviews</strong> commonly ask:</p>
 <ul>
-<li><a href="/blog/read/cyber-portfolio">Building Your Cybersecurity Portfolio from Scratch</a></li>
-<li><a href="/blog/read/cyber-interview-prep">How to Prepare for a Cybersecurity Job Interview</a></li>
-<li><a href="/blog/read/what-is-cyber-coach">What Does a Cybersecurity Career Coach Do?</a></li>
+<li>How does the shared responsibility model work?</li>
+<li>Describe a secure multi-account AWS architecture</li>
+<li>How would you detect an exposed S3 bucket?</li>
+<li>What is the difference between a security group and a NACL?</li>
+<li>How would you implement least-privilege IAM in a growing organization?</li>
 </ul>
-<h2>Take the Next Step</h2>
-<p><strong>Identify your key skills.</strong> Take the <a href="https://career.hadess.io/assessment">HADESS skills assessment</a> to know which competencies to highlight on your profile.</p>
-<p><strong>Get profile feedback from a coach.</strong> <a href="https://career.hadess.io/coach">HADESS coaching</a> includes LinkedIn review as part of career development.</p>
-<p><strong>Get started free</strong> — <a href="https://career.hadess.io/login">Create your HADESS account</a> and build your cybersecurity professional presence.</p>
+<h3>Behavioral Questions</h3>
+<p>Even technical roles include behavioral questions. The <a href="https://www.isc2.org/research">ISC2 Cybersecurity Workforce Study</a> consistently shows that communication skills rank among the top attributes hiring managers evaluate. Prepare stories using the STAR format (Situation, Task, Action, Result) for:</p>
+<ul>
+<li>A time you identified a security issue</li>
+<li>How you handled a high-pressure situation</li>
+<li>A project where you had to learn something new quickly</li>
+<li>How you communicated a technical risk to a non-technical audience</li>
+<li>A mistake you made and what you learned from it</li>
+</ul>
+<h3>Practical Assessments</h3>
+<p>Some interviews include hands-on components: </p>
+<ul>
+<li>Live CTF-style challenges</li>
+<li>Log analysis exercises</li>
+<li>Architecture design sessions</li>
+<li>Code review exercises</li>
+<li>Incident response tabletop scenarios</li>
+</ul>
+<p>Preparation means practice. Use the HADESS interview management tool to track your interview pipeline and prepare for specific companies.</p>
+<p>Our <a href="/blog/read/cyber-interview-prep">cybersecurity interview preparation guide</a> covers each role&#8217;s interview format with practice questions and answer frameworks.</p>
+<h2>LinkedIn and Professional Presence</h2>
+<p>Your online presence is part of your professional profile whether you manage it or not. Recruiters and hiring managers will look at your LinkedIn. Making it work for you takes deliberate effort:</p>
+<h3>LinkedIn Profile Optimization</h3>
+<p><strong>Headline:</strong> Do not just put your current title. Include what you do and what you are targeting. &#8220;SOC Analyst | Threat Detection &#038; Incident Response | CySA+ | Building toward Security Engineering&#8221; tells recruiters what you do AND where you are going.</p>
+<p><strong>About Section:</strong> Write in first person. Describe your experience, specialization, and what you are looking for. Include specific tools and technologies you work with. This section is searchable — keywords matter.</p>
+<p><strong>Experience:</strong> Describe your work in terms of impact, not just duties. &#8220;Investigated and resolved 200+ security incidents per quarter, reducing mean time to response by 35%&#8221; beats &#8220;Responsible for monitoring security alerts.&#8221;</p>
+<p><strong>Skills Section:</strong> List specific technical skills that match job postings in your target roles. Recruiters search by skill keywords. If your profile does not include &#8220;SIEM,&#8221; &#8220;incident response,&#8221; or &#8220;cloud security,&#8221; you are invisible to recruiters looking for those skills.</p>
+<p><strong>Certifications:</strong> List every relevant certification with the date earned. This section is prominently displayed and frequently reviewed.</p>
+<h3>Engagement Strategy</h3>
+<p>Having a good profile is necessary but not sufficient. Active engagement increases your visibility:</p>
+<ul>
+<li>Comment on posts from security practitioners and thought leaders with substantive contributions (not just &#8220;Great post!&#8221;)</li>
+<li>Share your own content — lab write-ups, certification study notes, tool reviews, conference takeaways</li>
+<li>Engage with hiring managers and recruiters who post about cybersecurity roles</li>
+<li>Join and participate in relevant LinkedIn groups</li>
+</ul>
+<h3>Beyond LinkedIn</h3>
+<p>Other platforms matter for specific purposes:</p>
+<ul>
+<li><strong>GitHub:</strong> For code, scripts, tools, and technical portfolio items</li>
+<li><strong>Twitter/X:</strong> For real-time security news, community engagement, and connecting with practitioners</li>
+<li><strong>Personal blog or website:</strong> For long-form write-ups and establishing subject matter authority</li>
+<li><strong>BSides / conference talks:</strong> Even lightning talks at local meetups demonstrate expertise and build your network</li>
+</ul>
+<p>For the full playbook, see our <a href="/blog/read/cyber-linkedin-profile">cybersecurity LinkedIn profile optimization guide</a>.</p>
+<h2>How HADESS Coaching Works</h2>
+<p>HADESS coaching is built differently from generic career coaching services because our coaches are working security practitioners, not career counselors who happen to cover the security industry.</p>
+<h3>Who Coaches on HADESS</h3>
+<p>HADESS coaches include:</p>
+<ul>
+<li>Active security hiring managers who are currently reviewing resumes and conducting interviews for the roles you are targeting</li>
+<li>Senior practitioners (security engineers, pen testers, SOC leads) who have the technical depth to evaluate your skills and recommend specific development areas</li>
+<li>Career transitioners who successfully moved into cybersecurity from other fields and understand the translation challenges firsthand</li>
+</ul>
+<p>Every coach has a minimum of five years in the cybersecurity field and active, current industry involvement.</p>
+<h3>Session Structure</h3>
+<p>HADESS coaching sessions are delivered online via video call. Sessions run 45-60 minutes. Before your session, the coach reviews your HADESS profile — including your career assessment results, skills inventory, and any previous coaching notes.</p>
+<p>This pre-session preparation means you do not spend the first 20 minutes explaining your background. The coach arrives with context and spends the session solving problems, not gathering information.</p>
+<h3>Pricing and Access</h3>
+<p>Coaching is available as part of the HADESS PRO subscription. PRO members get access to coaching sessions along with the full suite of career tools — salary calculator, resume builder, interview management, workspace, and certification roadmap.</p>
+<p>Compare FREE vs PRO plans to see the complete feature breakdown.</p>
+<h3>Integration with HADESS Tools</h3>
+<p>What makes HADESS coaching different from standalone coaching is the integration with the platform&#8217;s career tools:</p>
+<ul>
+<li>Your coach can assign skills and learning objectives that populate in your HADESS workspace</li>
+<li>Progress on skills and certifications is visible to your coach in follow-up sessions</li>
+<li>Resume iterations are tracked in the resume builder</li>
+<li><a href="/blog/read/cyber-interview-prep" title="How to Prepare for a Cybersecurity Job Interview">Interview preparation</a> is tied to specific companies tracked in interview management</li>
+</ul>
+<p>This integration means coaching sessions build on each other rather than starting fresh every time.</p>
+<p>For people exploring whether AI tools can substitute for human coaching, read our analysis of <a href="/blog/read/ai-cyber-coaching">AI-powered cybersecurity coaching</a>.</p>
+<p>And for a realistic timeline of what to expect, see our guide on <a href="/blog/read/cyber-job-6-months">landing a cybersecurity job in 6 months</a>.</p>
+<h2>Related Deep-Dives</h2>
+<p>These cluster guides go deeper into specific coaching and career development topics covered in this pillar:</p>
+<ul>
+<li><a href="/blog/read/what-is-cyber-coach">What Is a Cybersecurity Career Coach?</a> — A detailed look at what coaching involves, who it helps, and how to evaluate coaching services.</li>
+<li><a href="/blog/read/coaching-vs-courses">Coaching vs Courses: What Works Better for Cybersecurity Careers?</a> — When to invest in coaching versus self-paced learning.</li>
+<li><a href="/blog/read/cyber-interview-prep">Cybersecurity Interview Preparation Guide</a> — Role-specific interview questions, answer frameworks, and practical assessment preparation.</li>
+<li><a href="/blog/read/cyber-portfolio">Building a Cybersecurity Portfolio That Gets Hired</a> — What to include in your portfolio and how to document your projects effectively.</li>
+<li><a href="/blog/read/cyber-job-6-months">Landing a Cybersecurity Job in 6 Months</a> — A realistic timeline and action plan for career changers.</li>
+<li><a href="/blog/read/cyber-linkedin-profile">Cybersecurity LinkedIn Profile Optimization</a> — How to make your <a href="/blog/read/cyber-linkedin-profile" title="LinkedIn Profile for Cybersecurity Professionals">LinkedIn profile</a> work as a recruiting tool.</li>
+<li><a href="/blog/read/ai-cyber-coaching">AI-Powered Cybersecurity Career Coaching</a> — Where AI coaching tools excel and where human coaching is still necessary.</li>
+</ul>
+<h2>Start Your Journey</h2>
+<p><strong>Book a 1-on-1 Coaching Session</strong><br />
+Talk to a cybersecurity practitioner who has been where you want to go. HADESS coaches review your profile before the session so you get actionable advice from minute one — not generic platitudes.</p>
+<p>Book a coaching session</p>
+<p><strong>Compare FREE vs PRO</strong><br />
+See the full feature breakdown. Coaching is available as part of HADESS PRO, alongside the salary calculator, resume builder, interview tools, and more.</p>
+<p>Compare plans</p>
 <h2>Frequently Asked Questions</h2>
-<h3>Should I set my LinkedIn to &#8220;Open to Work&#8221;?</h3>
-<p>If you are comfortable with your current employer potentially seeing it, yes. Use the &#8220;recruiters only&#8221; setting to limit visibility. The green &#8220;Open to Work&#8221; banner increases recruiter outreach by 40% according to LinkedIn data.</p>
-<h3>How often should I post on LinkedIn?</h3>
-<p>1-2 times per week is enough to maintain visibility. Quality matters more than frequency. One thoughtful post about a security concept you learned beats five reshares of news articles.</p>
-<h3>Should I connect with people I do not know?</h3>
-<p>Yes, if they are relevant to your career goals. Security is a community-driven field. Most professionals accept connections from other security practitioners, especially with a personalized note.</p>
-<p>&#8212;</p>
-<p><em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+<h3>How much does cybersecurity career coaching cost?</h3>
+<p>Standalone cybersecurity coaching typically costs $100-$300 per session, depending on the coach&#8217;s experience and specialization. HADESS includes coaching as part of the PRO subscription, which bundles coaching with career tools (resume builder, salary calculator, interview management, and more). This model makes coaching significantly more affordable than standalone services because the session is integrated with tools that do much of the information-gathering work beforehand.</p>
+<h3>Do I need a coach if I am just starting out?</h3>
+<p>Not necessarily. If you are at the very beginning — learning networking fundamentals, studying for Security+ — self-study resources are usually sufficient. Coaching delivers the most value at decision points: choosing a specialization, preparing for your first job search, evaluating job offers, or diagnosing why you are not getting interviews. Many people start with HADESS&#8217;s free tools (career assessment, skills catalog) and add coaching when they reach a decision point.</p>
+<h3>How do I know if a cybersecurity coach is legitimate?</h3>
+<p>Ask three questions: What is their cybersecurity experience? (Not coaching experience — security experience.) Have they worked in or hired for the roles you are targeting? Can they provide references from past coaching clients? A good coach should have at least 5 years in the industry, specific experience relevant to your goals, and verifiable credentials. Be wary of coaches whose only qualification is a coaching certification with no security background.</p>
+<h3>Can coaching help if I have no technical background?</h3>
+<p>Yes. This is one of the highest-impact use cases. A coach can evaluate your existing skills — communication, analysis, project management, compliance, legal, finance — and map them to security roles where those skills transfer directly. Many GRC, security awareness, and policy roles value non-technical backgrounds. A coach can also tell you the minimum technical skills you need to develop and how to acquire them efficiently.</p>
+<h3>How many coaching sessions do I need?</h3>
+<p>For most people, 3-6 sessions over 3-6 months covers a full career transition or advancement cycle. One initial strategy session, 2-4 follow-ups for accountability and plan adjustments, and one pre-interview preparation session is a typical pattern. Some people need only a single session to get unstuck. Others benefit from ongoing monthly check-ins. The right number depends on the complexity of your situation and how much changes between sessions.</p>
+<h3>Is online coaching as effective as in-person?</h3>
+<p>For career coaching, yes. Online coaching via video call offers all the interaction benefits of in-person meetings with added scheduling flexibility. You can connect with coaches anywhere in the world, which means you can work with someone who has specific expertise in your target role and geography rather than settling for whoever is locally available. Every HADESS coaching session is delivered online.</p>
+<h3>What should I prepare before a coaching session?</h3>
+<p>At minimum: your current resume, a clear description of your career goal (even if vague), and a list of questions or decisions you are struggling with. If you are using HADESS, complete the career assessment and update your skills profile before the session. The more context you provide upfront, the more time the coach spends solving your problems rather than gathering information. If you are job hunting, bring specific job postings you are targeting so the coach can give role-specific advice.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field. We write from experience, not theory.</em></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -1701,27 +1827,27 @@ Pin your best work:</p>
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -1906,11 +2032,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -1933,59 +2059,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

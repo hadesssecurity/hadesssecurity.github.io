@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1230,7 +1242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/memory-forensic-a-comprehensive-technical-guide#article","headline":"Memory Forensic: A Comprehensive Technical Guide — HADESS Magazine","description":"Introduction to Memory Forensics\n\n\n\nMemory forensics is a specialized field within digital forensics that involves the analysis of a computer's volatile memory...","url":"https://hadesssecurity.github.io/blog/read/memory-forensic-a-comprehensive-technical-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/memory-forensic-a-comprehensive-technical-guide"},"datePublished":"December 25, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/12/memory-forensic-cover.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/memory-forensic-a-comprehensive-technical-guide#article","headline":"Memory Forensic: A Comprehensive Technical Guide — HADESS Magazine","description":"Introduction to Memory Forensics\n\n\n\nMemory forensics is a specialized field within digital forensics that involves the analysis of a computer's volatile memory...","url":"https://hadesssecurity.github.io/blog/read/memory-forensic-a-comprehensive-technical-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/memory-forensic-a-comprehensive-technical-guide"},"datePublished":"December 25, 2024","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2024/12/memory-forensic-cover.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1283,14 +1295,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1308,16 +1319,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1334,8 +1345,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1547,673 +1558,1310 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2024/12/memory-forensic-cover.png">
       
-<p class="wp-block-paragraph"></p>
+<h1 class="wp-block-heading">Introduction to Memory Forensics</h1>
 
 
 
-<figure class="wp-block-image"><img decoding="async" src="https://i.ytimg.com/vi/txNpSOO497w/maxresdefault.jpg" alt="https://i.ytimg.com/vi/txNpSOO497w/maxresdefault.jpg"/></figure>
+<p class="wp-block-paragraph">Memory forensics is a specialized field within digital forensics that involves the analysis of a computer&#8217;s volatile memory (RAM) to extract evidence of system activity, running processes, network connections, and other crucial information that is lost when a system is powered down. Unlike traditional disk forensics, which focuses on analyzing static data stored on hard drives, memory forensics targets dynamic data that exists temporarily in a computer&#8217;s memory.</p>
 
 
 
-<h2 class="wp-block-heading"><strong>Introduction</strong></h2>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
 
 
 
-<p class="wp-block-paragraph">from raidforum to intelxbroker</p>
+<h2 class="wp-block-heading">Memory Structure</h2>
 
 
 
-<p class="wp-block-paragraph">Threat intelligence and OSINT (Open Source Intelligence) are powerful tools in identifying individuals behind online aliases or nicknames, especially within hacker forums like BreachForums. OSINT relies on the analysis of publicly available data, such as social media profiles, posts, and online interactions, to uncover hidden identities. In the case of BreachForums, investigators could track the activities of key figures, such as &#8220;pompompurin&#8221; and &#8220;IntelBroker,&#8221; using a combination of technical and social intelligence. Cross-referencing data leaks, social engineering, and monitoring online behaviors can provide valuable clues that lead to identifying the real-world individuals behind these pseudonyms.</p>
+<h3 class="wp-block-heading">Process Structures</h3>
 
 
 
-<p class="wp-block-paragraph">When law enforcement targets forums like BreachForums, they often employ advanced threat intelligence techniques to trace users&#8217; footprints, both on the surface web and the dark web. For instance, identifying &#8220;pompompurin&#8221; involved a blend of digital forensics, tracking patterns of communication, and analyzing compromised systems. The use of VPNs, encrypted chats, and aliases presents challenges, but with the right intelligence frameworks and OSINT strategies, investigators are often able to piece together enough information to pursue legal action against cybercriminals, as seen with the arrest and sentencing of Fitzpatrick.</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Structure Type</strong></th><th><strong>Description</strong></th><th><strong>Location</strong></th><th><strong>Forensic Value</strong></th><th><strong>Analysis Commands</strong></th></tr></thead><tbody><tr><td>_EPROCESS</td><td>Process Environment Block</td><td>Kernel Space</td><td>Process details, threads, handles</td><td><code>vol.py -f mem.raw windows.pslist</code></td></tr><tr><td>_PEB</td><td>Process Environment Block</td><td>User Space</td><td>DLLs, env variables, cmdline</td><td><code>vol.py -f mem.raw windows.dlllist</code></td></tr><tr><td>VAD</td><td>Virtual Address Descriptor</td><td>Process Space</td><td>Memory mappings, injected code</td><td><code>vol.py -f mem.raw windows.vadinfo</code></td></tr></tbody></table></figure>
 
 
 
-<h3 class="wp-block-heading"><strong>Osint &#8211; Scope of Osint</strong></h3>
+<h3 class="wp-block-heading">Kernel Structures</h3>
 
 
 
-<p class="wp-block-paragraph">Open Source Intelligence (OSINT) refers to the collection and analysis of information that is publicly available. It encompasses data found in public records, social media platforms, websites, news articles, and other publicly accessible sources. OSINT has become an invaluable asset in various fields, including national security, law enforcement, corporate security, and journalism.</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Structure Type</strong></th><th><strong>Description</strong></th><th><strong>Location</strong></th><th><strong>Forensic Value</strong></th><th><strong>Analysis Commands</strong></th></tr></thead><tbody><tr><td>SSDT</td><td>System Service Descriptor Table</td><td>Kernel Space</td><td>Hooks, rootkit detection</td><td><code>vol.py -f mem.raw windows.ssdt</code></td></tr><tr><td>IDT</td><td>Interrupt Descriptor Table</td><td>Kernel Space</td><td>Interrupt handlers, hooks</td><td><code>vol.py -f mem.raw windows.idt</code></td></tr><tr><td>KPCR</td><td>Processor Control Region</td><td>Per CPU</td><td>CPU state, thread info</td><td><code>vol.py -f mem.raw windows.kpcr</code></td></tr></tbody></table></figure>
 
 
 
-<p class="wp-block-paragraph">OSINT is distinct from other intelligence-gathering methods because it relies solely on open sources of information. These sources can be broadly categorized into:</p>
+<h3 class="wp-block-heading">Memory Regions</h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Structure Type</strong></th><th><strong>Description</strong></th><th><strong>Location</strong></th><th><strong>Forensic Value</strong></th><th><strong>Analysis Commands</strong></th></tr></thead><tbody><tr><td>Pool Memory</td><td>Kernel pool allocations</td><td>System Space</td><td>Drivers, objects</td><td><code>vol.py -f mem.raw windows.poolscanner</code></td></tr><tr><td>Heap</td><td>Process heap allocations</td><td>User Space</td><td>Runtime data, strings</td><td><code>vol.py -f mem.raw windows.heaps</code></td></tr><tr><td>Stack</td><td>Thread stacks</td><td>Thread Space</td><td>Call traces, local vars</td><td><code>vol.py -f mem.raw windows.threads</code></td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading">File Structures</h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Structure Type</strong></th><th><strong>Description</strong></th><th><strong>Location</strong></th><th><strong>Forensic Value</strong></th><th><strong>Analysis Commands</strong></th></tr></thead><tbody><tr><td>_FILE_OBJECT</td><td>File handle information</td><td>Kernel Space</td><td>Open files, handles</td><td><code>vol.py -f mem.raw windows.handles</code></td></tr><tr><td>_VACB</td><td>Cache management</td><td>System Space</td><td>Cached file data</td><td><code>vol.py -f mem.raw windows.cachedump</code></td></tr><tr><td>MFT</td><td>Master File Table</td><td>File System</td><td>File metadata</td><td><code>vol.py -f mem.raw windows.mftparser</code></td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading">Network Structures</h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Structure Type</strong></th><th><strong>Description</strong></th><th><strong>Location</strong></th><th><strong>Forensic Value</strong></th><th><strong>Analysis Commands</strong></th></tr></thead><tbody><tr><td>_TCPT_OBJECT</td><td>TCP connections</td><td>Kernel Space</td><td>Network connections</td><td><code>vol.py -f mem.raw windows.netscan</code></td></tr><tr><td>_UDP_ENDPOINT</td><td>UDP endpoints</td><td>Kernel Space</td><td>Network listeners</td><td><code>vol.py -f mem.raw windows.netscan</code></td></tr><tr><td>_ETHREAD</td><td>Network threads</td><td>Process Space</td><td>Connection handlers</td><td><code>vol.py -f mem.raw windows.handles</code></td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading">Registry Structures</h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Structure Type</strong></th><th><strong>Description</strong></th><th><strong>Location</strong></th><th><strong>Forensic Value</strong></th><th><strong>Analysis Commands</strong></th></tr></thead><tbody><tr><td>_CM_KEY_BODY</td><td>Registry keys</td><td>Registry Space</td><td>System config, autorun</td><td><code>vol.py -f mem.raw windows.registry.printkey</code></td></tr><tr><td>_CM_KEY_VALUE</td><td>Registry values</td><td>Registry Space</td><td>Settings, data</td><td><code>vol.py -f mem.raw windows.registry.dumpkey</code></td></tr><tr><td>Hive</td><td>Registry hive</td><td>File System</td><td>Complete registry</td><td><code>vol.py -f mem.raw windows.hivelist</code></td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading">Common Memory Ranges</h3>
 
 
 
 <ul class="wp-block-list">
-<li>Media :
-<ul class="wp-block-list">
-<li>Newspapers, magazines</li>
+<li><strong>User Space</strong>: 0x00000000 &#8211; 0x7FFFFFFF</li>
 
 
 
-<li>radio, and television broadcasts.</li>
-</ul>
-</li>
+<li><strong>Kernel Space</strong>: 0x80000000 &#8211; 0xFFFFFFFF</li>
 
 
 
-<li>Internet :
-<ul class="wp-block-list">
-<li>Websites, blogs, social media, and online forums.</li>
-</ul>
-</li>
-
-
-
-<li>Public Records :
-<ul class="wp-block-list">
-<li>Government reports, financial disclosures</li>
-
-
-
-<li>court records, and other official documents</li>
-</ul>
-</li>
-
-
-
-<li>Professional and Academic Publications :
-<ul class="wp-block-list">
-<li>Journals, conference papers, and research studies.</li>
-</ul>
-</li>
+<li><strong>System Space</strong>: 0xC0000000 &#8211; 0xFFFFFFFF</li>
 </ul>
 
 
 
-<h3 class="wp-block-heading">Significance of OSINT in Investigations</h3>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
 
 
 
-<p class="wp-block-paragraph">In a bustling city, a detective named Ana was tasked with uncovering a network of cyber criminals. Without the resources for extensive undercover operations, she turned to Open Source Intelligence (OSINT). By analyzing public social media profiles, news articles, and online forums, she pieced together the digital footprints of the suspects. This cost-effective approach not only saved time and resources but also provided real-time insights, allowing her to track the criminals&#8217; activities and anticipate their next moves.</p>
+<h2 class="wp-block-heading">Definition and Importance of Memory Forensics</h2>
 
 
 
-<p class="wp-block-paragraph">One day, Ana discovered a crucial lead through a seemingly innocuous blog post. Cross-referencing this with public records and other online data, she pinpointed the location of a hidden server used by the cyber criminals. This breakthrough was pivotal in dismantling the network and showcased how OSINT, with its ability to access and analyze vast amounts of public information, can be a powerful tool in modern investigations.</p>
+<h3 class="wp-block-heading">Definition</h3>
 
 
 
-<h3 class="wp-block-heading">Role of Threat Intelligence in Investigations</h3>
+<p class="wp-block-paragraph">Memory forensics refers to the process of capturing and analyzing the contents of a system&#8217;s volatile memory (RAM) to uncover evidence of cybercrimes, attacks, and other system activities. It allows investigators to view processes, network connections, encryption keys, login credentials, malware, and other hidden evidence that may not be stored on a hard disk.</p>
 
 
 
-<p class="wp-block-paragraph">Threat intelligence involves the collection, analysis, and interpretation of data about potential or current threats to an organization&#8217;s security. This information is used to understand and mitigate threats, providing a proactive defense against cyber attacks.</p>
-
-
-
-<p class="wp-block-paragraph">In investigations, threat intelligence plays a pivotal role in uncovering critical aspects of cyber threats. By analyzing threat intelligence, investigators can effectively identify and attribute cyber attacks to specific threat actors. This involves understanding their motives, methodologies, and the tools they employ. Furthermore, threat intelligence serves as a vital source of evidence, providing crucial data that supports legal and law enforcement proceedings. Beyond attribution, it offers a comprehensive view of the threat landscape, allowing investigators to connect disparate incidents and gain a deeper understanding of the broader context in which cyber threats operate. This contextual understanding enhances the effectiveness of investigations, ensuring thorough and informed responses to cyber incidents.</p>
-
-
-
-<p class="wp-block-paragraph">When investigating the notorious Pompompurin hacker, threat intelligence proved invaluable. By meticulously analyzing threat data, investigators could piece together Pompompurin’s identity, motives, and methods. This analysis revealed unique patterns and tools used by the hacker, enabling the attribution of multiple cyber attacks directly to Pompompurin. The intelligence gathered provided critical evidence, forming a solid foundation for legal action and law enforcement involvement.</p>
-
-
-
-<p class="wp-block-paragraph">Moreover, threat intelligence offered a comprehensive understanding of the broader threat landscape. It allowed investigators to connect seemingly unrelated incidents, uncovering the intricate web of activities linked to Pompompurin. This contextual awareness was crucial in mapping out the hacker&#8217;s network, ensuring that no stone was left unturned in the quest to bring Pompompurin to justice.</p>
-
-
-
-<h3 class="wp-block-heading">Background of Breachforum</h3>
-
-
-
-<p class="wp-block-paragraph">RaidForums, one of the most prominent underground forums for trading stolen data, was founded by a cybercriminal known as “Omnipotent.” The platform gained popularity for hosting leaked databases, hacking tools, and illicit services. However, in early 2022, after years of investigation, law enforcement agencies, including the FBI, successfully seized RaidForums. Omnipotent was arrested and sentenced to jail, marking a significant victory for cybersecurity professionals and law enforcement. The operation that led to the forum’s takedown was a major example of collaboration between global authorities using Open Source Intelligence (OSINT) and Threat Intelligence to track the activities and individuals involved in such platforms.</p>
-
-
-
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="842" height="1024" src="/wp-content/uploads/2024/09/image-842x1024.png" alt="" class="wp-image-8811" srcset="/wp-content/uploads/2024/09/image-842x1024.png 842w, /wp-content/uploads/2024/09/image-247x300.png 247w, /wp-content/uploads/2024/09/image-768x935.png 768w, /wp-content/uploads/2024/09/image.png 927w" sizes="(max-width: 842px) 100vw, 842px" /></figure>
-
-
-
-<p class="wp-block-paragraph"></p>
-
-
-
-<p class="wp-block-paragraph">After the RaidForums takedown, another infamous cybercriminal, known as Pompompurin, quickly responded to the void in the dark web by creating BreachForums. In a tweet, Pompompurin invited hackers and former RaidForums users to join BreachForums, positioning it as the successor to the now-defunct platform. BreachForums quickly gained traction as the new go-to hub for cybercriminals to trade stolen data and engage in illicit activities. However, in early 2023, the FBI once again intervened, seizing BreachForums as part of an ongoing crackdown on dark web marketplaces. This action led to the arrest of Pompompurin, halting the forum’s operations temporarily.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="770" height="838" src="/wp-content/uploads/2024/09/image-1.png" alt="" class="wp-image-8812" srcset="/wp-content/uploads/2024/09/image-1.png 770w, /wp-content/uploads/2024/09/image-1-276x300.png 276w, /wp-content/uploads/2024/09/image-1-768x836.png 768w" sizes="(max-width: 770px) 100vw, 770px" /></figure>
-
-
-
-<figure class="wp-block-image size-large"><img decoding="async" width="706" height="1024" src="/wp-content/uploads/2024/09/image-2-706x1024.png" alt="" class="wp-image-8813" srcset="/wp-content/uploads/2024/09/image-2-706x1024.png 706w, /wp-content/uploads/2024/09/image-2-207x300.png 207w, /wp-content/uploads/2024/09/image-2-768x1114.png 768w, /wp-content/uploads/2024/09/image-2.png 938w" sizes="(max-width: 706px) 100vw, 706px" /></figure>
-
-
-
-<p class="wp-block-paragraph">Following Pompompurin’s arrest, another user known as &#8220;Baphomet&#8221; resumed the activity of BreachForums under a new domain. Baphomet&#8217;s efforts helped maintain the forum’s operations for a short period, but the forum was eventually terminated under its old top-level domain (TLD) after facing increasing pressure from law enforcement.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="906" height="376" src="/wp-content/uploads/2024/09/image-3.png" alt="" class="wp-image-8814" srcset="/wp-content/uploads/2024/09/image-3.png 906w, /wp-content/uploads/2024/09/image-3-300x125.png 300w, /wp-content/uploads/2024/09/image-3-768x319.png 768w" sizes="(max-width: 906px) 100vw, 906px" /></figure>
-
-
-
-<p class="wp-block-paragraph">Despite the forum’s termination, the user “IntelBroker” began boasting about the activity and continuity of BreachForums, hinting that the cybercriminal community would continue operating despite the disruptions. This series of events highlights the constant evolution of cybercriminal forums and the ongoing struggle between law enforcement and dark web actors.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="569" height="358" src="/wp-content/uploads/2024/09/image-4.png" alt="" class="wp-image-8816" srcset="/wp-content/uploads/2024/09/image-4.png 569w, /wp-content/uploads/2024/09/image-4-300x189.png 300w" sizes="(max-width: 569px) 100vw, 569px" /></figure>
-
-
-
-<h2 class="wp-block-heading">Investigation of Pompompurin</h2>
-
-
-
-<p class="wp-block-paragraph">Pompompurin, whose real name is Conor Brian Fitzpatrick, was the administrator of BreachForums, a prominent dark web forum where cyber criminals bought and sold stolen data. The investigation into Pompompurin was a major undertaking by law enforcement agencies worldwide to dismantle this illicit marketplace and protect victims of data breaches.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Disrupting a Cybercrime Hub:</strong> The goal was to shut down BreachForums, which served as a hub for sharing stolen data, hacking techniques, and planning attacks.</li>
-
-
-
-<li><strong>Bringing a Major Player to Justice:</strong> Pompompurin was a key figure in the dark web criminal ecosystem, responsible for numerous data breaches and the exploitation of vulnerable individuals and businesses.</li>
-
-
-
-<li><strong>International Cooperation:</strong> The investigation required collaboration between the FBI and international law enforcement agencies due to the global nature of cybercrime.International Cooperation:</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Data Collection Techniques</h2>
+<h3 class="wp-block-heading">Importance</h3>
 
 
 
 <ol class="wp-block-list">
-<li>Web Scraping
-<ul class="wp-block-list">
-<li>Methods and tools used for gathering data from websites and social media</li>
-</ul>
-</li>
+<li><strong>Volatile Data Retrieval</strong>: RAM stores temporary information, such as active processes, credentials, and data in use, that is lost once the machine is powered off. Memory forensics allows investigators to capture this data before it vanishes, which is critical for incident response and forensics.</li>
 
 
 
-<li>Public Records Analysis
-<ul class="wp-block-list">
-<li>Leveraging publicly available documents and records for information</li>
-</ul>
-</li>
+<li><strong>Malware and Rootkit Detection</strong>: Memory forensics is especially useful for identifying sophisticated malware and rootkits that may hide themselves in memory to evade traditional disk-based detection methods.</li>
 
 
 
-<li>Tracking social media platforms for relevant conversations and trends</li>
+<li><strong>Network Traffic Analysis</strong>: It can help uncover network connections, open ports, and even malicious network communication happening in real-time.</li>
+
+
+
+<li><strong>Encryption Key Recovery</strong>: Sometimes, critical encryption keys or passwords are stored in memory, and memory forensics can help recover them.</li>
+
+
+
+<li><strong>Live Evidence</strong>: Memory forensics often allows investigators to acquire evidence while the system is still running, preventing the loss of crucial information that might be overwritten during normal system operations.</li>
 </ol>
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="916" height="888" src="/wp-content/uploads/2024/09/image-5.png" alt="" class="wp-image-8817" srcset="/wp-content/uploads/2024/09/image-5.png 916w, /wp-content/uploads/2024/09/image-5-300x291.png 300w, /wp-content/uploads/2024/09/image-5-768x745.png 768w" sizes="(max-width: 916px) 100vw, 916px" /></figure>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
 
 
 
-<p class="wp-block-paragraph">Leak intelligence plays a pivotal role in modern threat investigations, particularly when it comes to identifying and tracking cybercriminals. Tools like <strong>OSIVE</strong> (Open Source Intelligence Visualization Engine) and platforms such as <strong>OSINTLeak</strong> provide investigators with critical insights by analyzing data leaks and compromised databases. OSIVE, available through <a href="https://osintleak.com/dashboard">OSINTLeak</a>, helps investigators aggregate and visualize leaked intelligence, such as email addresses, passwords, and other personal information found in dark web forums or underground marketplaces. Using these tools, threat intelligence analysts can map relationships, track digital identities, and correlate data across multiple leaks to gain a better understanding of threat actors&#8217; behaviors and networks.</p>
+<h2 class="wp-block-heading">Key Differences Between Disk Forensics and Memory Forensics</h2>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="809" height="1024" src="/wp-content/uploads/2024/09/image-6-809x1024.png" alt="" class="wp-image-8818" srcset="/wp-content/uploads/2024/09/image-6-809x1024.png 809w, /wp-content/uploads/2024/09/image-6-237x300.png 237w, /wp-content/uploads/2024/09/image-6-768x972.png 768w, /wp-content/uploads/2024/09/image-6.png 945w" sizes="(max-width: 809px) 100vw, 809px" /></figure>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Aspect</strong></th><th><strong>Disk Forensics</strong></th><th><strong>Memory Forensics</strong></th></tr></thead><tbody><tr><td><strong>Focus of Analysis</strong></td><td>Examines data stored on physical or logical disk drives (e.g., hard drives, SSDs, USB drives).</td><td>Analyzes volatile data stored in the system’s RAM.</td></tr><tr><td><strong>Data Volatility</strong></td><td>Non-volatile; data persists after power-off.</td><td>Volatile; data is lost when the system is powered down.</td></tr><tr><td><strong>Type of Information Retrieved</strong></td><td>Accesses files, deleted data, partitions, metadata, and logs.</td><td>Retrieves active processes, open network connections, running applications, encryption keys, and malicious code.</td></tr><tr><td><strong>Investigation Objectives</strong></td><td>Recovers files, determines file access times, and traces historical user activity.</td><td>Identifies malicious activities, system state during breaches, and live malware evidence.</td></tr><tr><td><strong>Tools and Techniques</strong></td><td>Tools include EnCase, FTK, Autopsy, and Sleuth Kit for static analysis.</td><td>Tools like Volatility, Rekall, and Memdump analyze memory images and system states.</td></tr><tr><td><strong>Challenges</strong></td><td>Issues with encryption and large data volumes.</td><td>Requires timely memory capture and advanced obfuscation techniques.</td></tr><tr><td><strong>Use Cases</strong></td><td>Intellectual property theft, fraud investigations, and historical evidence recovery.</td><td>Incident response, malware analysis, and live intrusion detection.</td></tr></tbody></table></figure>
 
 
 
-<p class="wp-block-paragraph">One of the key databases used to find information about Pompompurin is the <strong>BreachForums database</strong>, which is accessible through platforms like <a href="https://breach.vip/">Breach.vip</a>. When Pompompurin became a target of law enforcement, his involvement in BreachForums, where hackers traded massive amounts of stolen data, made him vulnerable to leak intelligence investigations. By cross-referencing user activity, leaked credentials, and other metadata from BreachForums&#8217; archives, OSINT investigators are able to trace patterns that lead back to Pompompurin. Even after the initial takedown of BreachForums, the availability of its database provides a wealth of information for continued investigations. The integration of OSINT tools like OSIVE and access to databases like BreachForums offers crucial capabilities for mapping out the networks of cybercriminals and revealing their identities, as investigators attempt to unmask high-profile figures like Pompompurin.</p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
 
 
 
-<h3 class="wp-block-heading">conflict between <strong>RaidForums</strong> and <strong>BreachForums</strong> with <strong>Peter Kleissner</strong></h3>
+<h2 class="wp-block-heading">Volatility Essentials</h2>
 
 
 
-<p class="wp-block-paragraph">The conflict between <strong>BreachForum</strong>, <strong>RaidForum</strong>, and the owner of <strong>IntelX</strong>, <strong>Peter Kleissner</strong>, is emblematic of the growing tension between dark web communities and open-source intelligence (OSINT) platforms. Kleissner, an Austrian cybersecurity expert and founder of IntelX, offers services that provide deep searches into leaked databases, exposing sensitive information from data breaches. This has put him at odds with members of underground forums like BreachForum and RaidForum, who viewed his work as a direct threat to their anonymity and operations.</p>
+<h3 class="wp-block-heading">Framework Architecture</h3>
 
 
 
-<p class="wp-block-paragraph">BreachForum, led by <strong>Pompompurin</strong>, and RaidForum, previously run by <strong>Omnipotent</strong>, became notorious for facilitating the exchange of hacked data, personal information, and illicit services. As IntelX allowed users to search historical data breaches, it became a powerful tool for OSINT investigations, aiding law enforcement and private sector investigators in tracking cybercriminals. This led to significant hostility from dark web forum users, who saw Kleissner’s platform as a gateway for authorities to trace their digital footprints.</p>
+<p class="wp-block-paragraph">The Volatility Framework is a powerful memory forensics tool designed to analyze memory dumps. Its modular design allows extensibility through plugins, enabling users to investigate a wide range of memory artifacts.</p>
 
 
 
-<p class="wp-block-paragraph">Members of these forums retaliated by doxxing Peter Kleissner, leaking his personal information, such as addresses, phone numbers, and family details, across their platforms. These actions were intended to intimidate and discredit him, positioning him as a target within the cybercriminal community. The doxxing was part of a broader effort to resist OSINT platforms like IntelX, which undermined the anonymity that dark web users relied on to evade detection.</p>
+<h3 class="wp-block-heading">Installation and Configuration</h3>
 
 
 
-<p class="wp-block-paragraph">The conflict highlights the fundamental divide between platforms like IntelX, which aim to shed light on illegal activities, and dark web forums that thrive on secrecy and data exploitation. As law enforcement continues to crack down on these underground marketplaces, the role of OSINT providers like IntelX becomes increasingly critical, further escalating tensions between cybercriminals and intelligence professionals.</p>
+<p class="wp-block-paragraph">Volatility can be installed on Windows, Linux, and macOS. It requires dependencies like Python and memory profiles for effective analysis.</p>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="822" height="1024" src="/wp-content/uploads/2024/09/image-7-822x1024.png" alt="" class="wp-image-8819" srcset="/wp-content/uploads/2024/09/image-7-822x1024.png 822w, /wp-content/uploads/2024/09/image-7-241x300.png 241w, /wp-content/uploads/2024/09/image-7-768x956.png 768w, /wp-content/uploads/2024/09/image-7.png 832w" sizes="(max-width: 822px) 100vw, 822px" /></figure>
+<h3 class="wp-block-heading">Cross-Platform Support</h3>
 
 
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://doxbin.net/upload/PeterKleissnerIntelx
-</div></figure>
+<p class="wp-block-paragraph">The framework supports memory dumps from various operating systems, including Windows, Linux, and macOS, offering versatility in cross-platform investigations.</p>
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="930" height="1022" src="/wp-content/uploads/2024/09/image-8.png" alt="" class="wp-image-8820" srcset="/wp-content/uploads/2024/09/image-8.png 930w, /wp-content/uploads/2024/09/image-8-273x300.png 273w, /wp-content/uploads/2024/09/image-8-768x844.png 768w" sizes="(max-width: 930px) 100vw, 930px" /></figure>
+<h3 class="wp-block-heading">Plugin Ecosystem</h3>
 
 
 
-<p class="wp-block-paragraph">https://t.me/intelxio/238<br>https://t.me/intelxio/260</p>
+<p class="wp-block-paragraph">Volatility&#8217;s functionality is greatly enhanced by its ecosystem of plugins, which specialize in tasks such as:</p>
 
 
 
-<h2 class="wp-block-heading">Analysis Methods</h2>
+<ul class="wp-block-list">
+<li><strong>Process Enumeration</strong></li>
+
+
+
+<li><strong>Registry Analysis</strong></li>
+
+
+
+<li><strong>Malware Detection</strong></li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Memory Profile Selection</h3>
+
+
+
+<p class="wp-block-paragraph">Accurate memory profile selection ensures the framework can correctly interpret the memory dump, matching it to the target system&#8217;s kernel and configurations.</p>
+
+
+
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem imageinfo</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="376" src="/wp-content/uploads/2024/12/pro-mem-1024x376.png" alt="" class="wp-image-8869" srcset="/wp-content/uploads/2024/12/pro-mem-1024x376.png 1024w, /wp-content/uploads/2024/12/pro-mem-300x110.png 300w, /wp-content/uploads/2024/12/pro-mem-768x282.png 768w, /wp-content/uploads/2024/12/pro-mem.png 1263w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 class="wp-block-heading">Core Investigation Plugins</h2>
+
+
+
+<p class="wp-block-paragraph">Plugins such as <strong><code>pslist</code></strong>, <strong><code>psscan</code></strong>, and <strong><code>dlllist</code></strong> form the backbone of forensic investigations. These tools provide detailed insights into:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Active and hidden processes.</li>
+
+
+
+<li>Loaded libraries.</li>
+
+
+
+<li>Critical system components.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Key Benefits:</h3>
 
 
 
 <ol class="wp-block-list">
-<li>Data correlation
-<ul class="wp-block-list">
-<li>Techniques for correlating collected data to identify patterns and connections</li>
-</ul>
-</li>
+<li><strong>Tracing Program Execution</strong>: Enables analysts to map the lifecycle of processes and identify anomalies.</li>
 
 
 
-<li>Sentiment Analysis
-<ul class="wp-block-list">
-<li>Using natural language processing (NLP) to gauge public sentiment and reactions</li>
-</ul>
-</li>
+<li><strong>Uncovering Suspicious Activity</strong>: Helps detect hidden or malicious processes.</li>
 
 
 
-<li>Network Analysis
-<ul class="wp-block-list">
-<li>Mapping relationships and interactions within the data to uncover networks</li>
-</ul>
-</li>
+<li><strong>Operational State Mapping</strong>: Provides a snapshot of the system&#8217;s active state for a comprehensive forensic analysis.</li>
 </ol>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="525" src="/wp-content/uploads/2024/09/image-9-1024x525.png" alt="" class="wp-image-8821" srcset="/wp-content/uploads/2024/09/image-9-1024x525.png 1024w, /wp-content/uploads/2024/09/image-9-300x154.png 300w, /wp-content/uploads/2024/09/image-9-768x394.png 768w, /wp-content/uploads/2024/09/image-9.png 1036w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<h3 class="wp-block-heading">Example Command:</h3>
 
 
 
-<h3 class="wp-block-heading"><strong>Step 1: Identity Verification and Background Check</strong></h3>
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 pslist</code></pre>
 
 
 
-<p class="wp-block-paragraph"><strong>Key Data Points:</strong></p>
+<p class="wp-block-paragraph">This command uses Volatility to analyze the memory dump (<code>cridex.vmem</code>) for a system with the specified profile (<code>WinXPSP3x86</code>) and lists active processes using the <code>pslist</code> plugin.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="530" src="/wp-content/uploads/2024/12/plist-mem-1024x530.png" alt="" class="wp-image-8870" srcset="/wp-content/uploads/2024/12/plist-mem-1024x530.png 1024w, /wp-content/uploads/2024/12/plist-mem-300x155.png 300w, /wp-content/uploads/2024/12/plist-mem-768x397.png 768w, /wp-content/uploads/2024/12/plist-mem.png 1268w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 class="wp-block-heading">Advanced Memory Analysis Workflows</h2>
+
+
+
+<p class="wp-block-paragraph">Advanced memory analysis workflows employ specialized techniques to uncover hidden anomalies and stealthy threats. These workflows are designed to:</p>
 
 
 
 <ul class="wp-block-list">
-<li><strong>Name</strong>: Conor Brian Fitzpatrick</li>
+<li><strong>Identify Suspicious Process Injections</strong>: Detect malicious code injected into legitimate processes.</li>
 
 
 
-<li><strong>DOB</strong>: 26th September 2002</li>
+<li><strong>Trace Memory-Resident Malware</strong>: Locate malware that resides only in memory, avoiding disk-based detection methods.</li>
 
 
 
-<li><strong>SSN</strong>: 081-92-4399</li>
-
-
-
-<li><strong>Driver&#8217;s License</strong>: 507274801</li>
-
-
-
-<li><strong>Address</strong>: 531 Union Ave, Peekskill, NY 10566</li>
-
-
-
-<li><strong>Phone Numbers</strong>: +1 9146423144, +1 9144025399, +1 9146999668</li>
+<li><strong>Detect Anomalously Mapped Memory Sections</strong>: Identify misaligned or unusual memory mappings that could indicate malicious activities.</li>
 </ul>
 
 
 
-<h4 class="wp-block-heading"><strong>Tools &amp; Methods</strong>:</h4>
+<p class="wp-block-paragraph">By systematically analyzing memory structures and behaviors, investigators can reconstruct malicious activities and enhance their threat detection capabilities.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h2 class="wp-block-heading">Custom Plugin Development</h2>
+
+
+
+<p class="wp-block-paragraph">Volatility&#8217;s open and flexible architecture enables investigators to develop tailored plugins to address specific forensic needs, such as:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Targeting specialized memory structures.</li>
+
+
+
+<li>Analyzing proprietary malware behaviors.</li>
+
+
+
+<li>Investigating unconventional data artifacts.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Benefits of Custom Plugin Development:</h3>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Public Records Search</strong>:
-<ul class="wp-block-list">
-<li>Use public records search engines like <strong>Whitepages</strong>, <strong>Spokeo</strong>, or <strong>Pipl</strong> to verify the identity and cross-check details like the address, SSN, and DOB.</li>
+<li>Extend Volatility’s core functionality.</li>
 
 
 
-<li><strong>Driver&#8217;s License Lookup</strong> (depending on local regulations, some websites offer vehicle registration or license checks).</li>
-</ul>
-</li>
+<li>Adapt to evolving investigative challenges.</li>
 
 
 
-<li><strong>Address Verification</strong>:
-<ul class="wp-block-list">
-<li>Use <strong>Google Maps</strong> with the provided link to confirm the physical location at 531 Union Ave, Peekskill, NY. Street view and address information will help identify the residence visually.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Phone Number Lookup</strong>:
-<ul class="wp-block-list">
-<li>Use reverse phone lookup services such as <strong>TrueCaller</strong>, <strong>NumLookup</strong>, or <strong>SpyDialer</strong> to determine if the provided phone numbers are valid and registered to the person. Cross-check the service providers like <strong>Verizon Wireless</strong> and <strong>Cablevision Lightpath</strong>.</li>
-</ul>
-</li>
+<li>Focus on unique and specialized forensic requirements.</li>
 </ol>
 
 
 
-<h3 class="wp-block-heading"><strong>Step 2: Social Media and Online Footprint Analysis</strong></h3>
+<h3 class="wp-block-heading">Resource for Plugin Development:</h3>
 
 
 
-<h4 class="wp-block-heading"><strong>Key Data Points</strong>:</h4>
+<p class="wp-block-paragraph">Refer to the official documentation for guidance on creating custom plugins:<br><a href="https://volatility3.readthedocs.io/en/latest/development.html"><strong>Volatility Plugin Development</strong></a></p>
 
 
 
-<ul class="wp-block-list">
-<li><strong>Emails</strong>: pom@pompur.in</li>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
 
 
 
-<li><strong>Twitter</strong>: <a href="https://twitter.com/xml">https://twitter.com/xml</a></li>
+<h2 class="wp-block-heading">Practical Memory Analysis Workflows</h2>
 
 
 
-<li><strong>Telegram</strong>: <a href="https://t.me/paste">https://t.me/paste</a></li>
-</ul>
+<h3 class="wp-block-heading">Identifying Malicious Processes</h3>
 
 
 
-<h4 class="wp-block-heading"><strong>Tools &amp; Methods</strong>:</h4>
+<p class="wp-block-paragraph">Using tools like <strong><code>pslist</code></strong> and <strong><code>pstree</code></strong>, investigators can:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Email Tracing</strong>:
+<li>Enumerate and analyze processes running in memory.</li>
+
+
+
+<li>Examine process hierarchies to identify anomalies.</li>
+
+
+
+<li>Detect discrepancies such as:
 <ul class="wp-block-list">
-<li>Use email lookup tools such as <strong>Hunter.io</strong>, <strong>EmailRep</strong>, or <strong>HaveIBeenPwned</strong> to identify whether the email pom@pompur.in is linked to any public data breaches or other online services. You can also determine which services this email is registered on.</li>
-</ul>
-</li>
+<li>Unusual parent-child relationships.</li>
 
 
 
-<li><strong>Twitter Analysis</strong>:
-<ul class="wp-block-list">
-<li>Perform a <strong>Twitter handle analysis</strong> using tools like <strong>Twitonomy</strong> or <strong>TweetBeaver</strong>. This helps map out tweet patterns, connections, followers, and any tweet history that could reveal personal or illegal activities.</li>
-</ul>
-</li>
+<li>Processes hiding under legitimate-looking names.</li>
 
 
 
-<li><strong>Telegram Group Scraping</strong>:
-<ul class="wp-block-list">
-<li>Use <strong>Telegago</strong> or <strong>Telegram OSINT Tool</strong> to investigate the user’s Telegram activity. Look for group memberships, shared files, or possible links to dark web forums or criminal communities.</li>
+<li>Unknown or suspicious processes exhibiting abnormal behavior.</li>
 </ul>
 </li>
 </ol>
 
 
 
-<h3 class="wp-block-heading"><strong>Step 3: Relatives and Family Connections</strong></h3>
-
-
-
-<h4 class="wp-block-heading"><strong>Key Data Points</strong>:</h4>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Mother</strong>: Mary McCarra Fitzpatrick (DOB: 1967)</li>
-
-
-
-<li><strong>Father</strong>: Mark E. Fitzpatrick (DOB: 1961)</li>
-
-
-
-<li><strong>Younger Brother</strong>: Brendan Fitzpatrick</li>
-
-
-
-<li><strong>Severely Autistic Brother</strong>: Aiden Fitzpatrick</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading"><strong>Tools &amp; Methods</strong>:</h4>
+<h3 class="wp-block-heading">Example Workflow:</h3>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Family Search Tools</strong>:
-<ul class="wp-block-list">
-<li>Use genealogy websites like <strong>FamilyTreeNow</strong> or <strong>Ancestry.com</strong> to trace family history and validate the relationships provided. This helps confirm personal connections and may reveal additional relatives.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Social Media Search</strong>:
-<ul class="wp-block-list">
-<li>Search for family members on <strong>Facebook</strong>, <strong>LinkedIn</strong>, or <strong>Instagram</strong> using their full names and dates of birth. This can help you map out the family’s social connections, habits, and any visible ties to the target’s activities.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Public Record Verification</strong>:
-<ul class="wp-block-list">
-<li>Use services like <strong>MyHeritage</strong> or <strong>PeopleFinders</strong> to search for addresses, phone numbers, or any previous criminal records linked to family members.</li>
-</ul>
-</li>
+<li><strong>Run <code>pslist</code></strong>:</li>
 </ol>
 
 
 
-<h3 class="wp-block-heading"><strong>Step 4: Legal Documents and Court Records</strong></h3>
+<pre class="wp-block-code"><code>vol.exe -f memory_dump.vmem --profile=Win7SP1x64 pslist</code></pre>
 
 
 
-<h4 class="wp-block-heading"><strong>Key Data Points</strong>:</h4>
+<p class="wp-block-paragraph">Lists active processes for analysis.</p>
+
+
+
+<ol start="2" class="wp-block-list">
+<li><strong>Run <code>pstree</code></strong>:</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>vol.exe -f memory_dump.vmem --profile=Win7SP1x64 pstree</code></pre>
+
+
+
+<p class="wp-block-paragraph">Displays hierarchical relationships among processes, helping to spot malicious activity.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="382" src="/wp-content/uploads/2024/12/pstree-mem-1024x382.png" alt="" class="wp-image-8871" srcset="/wp-content/uploads/2024/12/pstree-mem-1024x382.png 1024w, /wp-content/uploads/2024/12/pstree-mem-300x112.png 300w, /wp-content/uploads/2024/12/pstree-mem-768x286.png 768w, /wp-content/uploads/2024/12/pstree-mem.png 1263w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 class="wp-block-heading">Investigation of Running Processes</h2>
+
+
+
+<p class="wp-block-paragraph">Investigating running processes is a crucial step in memory forensics, particularly when analyzing for potential malware, such as <strong>Cridex</strong>. This section outlines the approach to identifying suspicious processes using <strong>Volatility</strong>.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Steps for Investigating Running Processes</strong></h3>
+
+
+
+<h4 class="wp-block-heading"><strong>1. Checking for Suspicious Process Names</strong></h4>
+
+
+
+<p class="wp-block-paragraph">Malware often disguises itself under legitimate-sounding process names. A detailed inspection of the process list can help uncover anomalies.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>2. Checking for Processes with Different Parent Process IDs (PPID)</strong></h4>
+
+
+
+<p class="wp-block-paragraph">Processes with unexpected or unusual parent process IDs can indicate tampering or injection by malicious actors. Analyzing the PPID relationships provides critical clues.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Case Example: Identifying <code>reader_sl.exe</code></strong></h3>
+
+
+
+<p class="wp-block-paragraph">In this investigation, the malware is disguised under the process name <code>reader_sl.exe</code>.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Command for Analysis</strong></h3>
+
+
+
+<p class="wp-block-paragraph">To inspect the running processes and identify suspicious entries like <code>reader_sl.exe</code>, use the following Volatility command:</p>
+
+
+
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 pslist</code></pre>
 
 
 
 <ul class="wp-block-list">
-<li><strong>Name</strong>: Conor Brian Fitzpatrick</li>
+<li><strong><code>-f cridex.vmem</code></strong>: Specifies the memory dump file to analyze.</li>
 
 
 
-<li><strong>FBI Arrest</strong>: Related to computer crimes, likely due to BreachForums operation.</li>
+<li><strong><code>--profile=WinXPSP3x86</code></strong>: Defines the memory profile matching the target system (Windows XP SP3 x86).</li>
+
+
+
+<li><strong><code>pslist</code></strong>: Lists all running processes and their parent-child relationships.</li>
 </ul>
 
 
 
-<h4 class="wp-block-heading"><strong>Tools &amp; Methods</strong>:</h4>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="530" src="/wp-content/uploads/2024/12/plist-mem2-1024x530.png" alt="" class="wp-image-8872" srcset="/wp-content/uploads/2024/12/plist-mem2-1024x530.png 1024w, /wp-content/uploads/2024/12/plist-mem2-300x155.png 300w, /wp-content/uploads/2024/12/plist-mem2-768x398.png 768w, /wp-content/uploads/2024/12/plist-mem2.png 1278w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="wp-block-paragraph">While selecting the suspicious process name we will have to know what is the process functionality in addition what is the purpose of this suspicious process .</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="244" src="/wp-content/uploads/2024/12/reader-sl-1024x244.png" alt="" class="wp-image-8873" srcset="/wp-content/uploads/2024/12/reader-sl-1024x244.png 1024w, /wp-content/uploads/2024/12/reader-sl-300x72.png 300w, /wp-content/uploads/2024/12/reader-sl-768x183.png 768w, /wp-content/uploads/2024/12/reader-sl.png 1266w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>Based on the search, it is suspected that the infected host machine may have been compromised by malicious documents, such as <code>.pdf</code> or <code>.docx</code>.</strong></p>
+
+
+
+<h3 class="wp-block-heading"><strong>Tracing the Creator of <code>reader_sl.exe</code></strong></h3>
+
+
+
+<p class="wp-block-paragraph">Another plugin from Volatility, <strong><code>pstree</code></strong>, can be used to identify which process or program created <code>reader_sl.exe</code>. This analysis can provide additional indicators for investigation.</p>
+
+
+
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 pstree</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="380" src="/wp-content/uploads/2024/12/vol-pstree-1024x380.png" alt="" class="wp-image-8874" srcset="/wp-content/uploads/2024/12/vol-pstree-1024x380.png 1024w, /wp-content/uploads/2024/12/vol-pstree-300x111.png 300w, /wp-content/uploads/2024/12/vol-pstree-768x285.png 768w, /wp-content/uploads/2024/12/vol-pstree.png 1276w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>Analysis Using <code>pstree</code> Plugin</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Based on the details provided by the <strong><code>pstree</code></strong> plugin, we have a clue that <code>explorer.exe</code> is creating <code>reader_sl.exe</code>. This potentially indicates that the infected host machine opened malicious documents, such as those received from an attacker.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Investigating a Process&#8217;s Internet Connection</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Investigating a process&#8217;s internet connection in memory forensics is crucial for identifying potential malicious activities, such as communication with Command and Control (C&amp;C) servers.</p>
+
+
+
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 connscan</code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="219" src="/wp-content/uploads/2024/12/volvol-1024x219.png" alt="" class="wp-image-8875" srcset="/wp-content/uploads/2024/12/volvol-1024x219.png 1024w, /wp-content/uploads/2024/12/volvol-300x64.png 300w, /wp-content/uploads/2024/12/volvol-768x164.png 768w, /wp-content/uploads/2024/12/volvol.png 1264w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>Processes with Remote Connections</strong></h3>
+
+
+
+<p class="wp-block-paragraph">During the analysis, two processes were identified as having made a connection to remote addresses:</p>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Court Document Search</strong>:
-<ul class="wp-block-list">
-<li>Search public court documents using <strong>CourtListener</strong>, <strong>PACER</strong> (Public Access to Court Electronic Records), or <strong>Justia Dockets</strong>. These platforms can provide access to legal filings, indictments, and related case materials.</li>
+<li><strong>explorer.exe</strong></li>
 
 
 
-<li>Example: Searching for records related to the FBI arrest might reveal the exact charges, court proceedings, and sentencing.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Media Reports</strong>:
-<ul class="wp-block-list">
-<li>Use tools like <strong>Google News</strong> and <strong>Factiva</strong> to gather media reports related to Conor Brian Fitzpatrick’s arrest. Articles from reputable sources like <strong>Krebs on Security</strong> or <strong>Bloomberg</strong> (as linked earlier) offer detailed insights into criminal activities and investigations.</li>
-</ul>
-</li>
+<li><strong>Suspected process: reader_sl.exe</strong></li>
 </ol>
 
 
 
-<h3 class="wp-block-heading"><strong>Step 5: Dark Web and Underground Forums Search</strong></h3>
+<h3 class="wp-block-heading"><strong>Logical Analysis</strong></h3>
 
 
 
-<h4 class="wp-block-heading"><strong>Key Data Points</strong>:</h4>
+<p class="wp-block-paragraph">A logical question arises: <strong>Why should <code>reader_sl.exe</code> establish an internet connection?</strong></p>
+
+
+
+<p class="wp-block-paragraph">To further investigate, it is essential to check the remote IP address associated with this connection on <strong>VirusTotal</strong> or similar threat intelligence platforms for potential malicious activity.</p>
 
 
 
 <ul class="wp-block-list">
-<li><strong>Aliases/Username</strong>: Pompompurin</li>
-
-
-
-<li><strong>Online Presence</strong>: Admin of BreachForums, Skidbin, and other dark web communities.</li>
+<li><strong>Parent Process ID (PPID):</strong> <code>1484</code> (This is the PPID for <code>reader_sl.exe</code>.)</li>
 </ul>
 
 
 
-<h4 class="wp-block-heading"><strong>Tools &amp; Methods</strong>:</h4>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="261" src="/wp-content/uploads/2024/12/ppid-1024x261.png" alt="" class="wp-image-8876" srcset="/wp-content/uploads/2024/12/ppid-1024x261.png 1024w, /wp-content/uploads/2024/12/ppid-300x77.png 300w, /wp-content/uploads/2024/12/ppid-768x196.png 768w, /wp-content/uploads/2024/12/ppid.png 1270w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 class="wp-block-heading">Advanced Memory Forensics Techniques</h2>
+
+
+
+<h3 class="wp-block-heading"><strong>A. Process and Thread Analysis</strong></h3>
 
 
 
 <ol class="wp-block-list">
-<li><strong>Dark Web Monitoring</strong>:
+<li><strong>Process Tree Reconstruction</strong>
 <ul class="wp-block-list">
-<li>Use OSINT tools like <strong>DarkOwl</strong>, <strong>IntelX</strong>, or <strong>Recorded Future</strong> to monitor dark web forums and marketplaces for mentions of “Pompompurin” or other linked aliases. These platforms often index dark web activity and can provide a wealth of information.</li>
+<li>This technique involves mapping the parent-child relationships between processes in memory to detect anomalies in the process hierarchy.</li>
+
+
+
+<li>By reconstructing the full process tree, investigators can identify abnormal or unexpected relationships, such as hidden processes masquerading under legitimate ones, which could indicate the presence of malware.</li>
 </ul>
 </li>
 
 
 
-<li><strong>Forum Analysis</strong>:
+<li><strong>Hidden and Injected Process Detection</strong>
 <ul class="wp-block-list">
-<li>Investigate <strong>BreachForums</strong> and any remaining Skidbin archives to locate posts made by <strong>Pompompurin</strong>. Use forum scraping techniques or custom queries to extract data related to illegal activities.</li>
+<li>Tools such as <code>psscan</code> and <code>malfind</code> are essential for identifying stealthy processes or those injected into legitimate ones.</li>
 
 
 
-<li>Pay attention to underground connections and potential ties to other cybercriminals.</li>
+<li>These processes may not appear in standard process enumeration tools but can be detected by scanning memory for:
+<ul class="wp-block-list">
+<li>Suspicious code patterns</li>
+
+
+
+<li>Altered process structures</li>
+
+
+
+<li>Injected payloads</li>
+</ul>
+</li>
+
+
+
+<li>Such findings often point to malicious activities.</li>
+</ul>
+</li>
+
+
+
+<li><strong>Thread State Examination</strong>
+<ul class="wp-block-list">
+<li>Analyzing thread activity is critical for uncovering potential malicious actions. Investigators should focus on:
+<ul class="wp-block-list">
+<li>Threads with unusual priorities</li>
+
+
+
+<li>Abnormal execution states</li>
+
+
+
+<li>Suspicious starting addresses</li>
+</ul>
+</li>
+
+
+
+<li>Malicious threads may attempt to hijack legitimate processes or exploit system resources for nefarious purposes.</li>
+</ul>
+</li>
+
+
+
+<li><strong>Kernel-mode Thread Analysis</strong>
+<ul class="wp-block-list">
+<li>Investigating threads running in kernel mode is crucial, as they may signal the presence of rootkits or OS-level compromises.</li>
+
+
+
+<li>Rootkits often:
+<ul class="wp-block-list">
+<li>Operate at the kernel level to conceal activities.</li>
+
+
+
+<li>Exhibit suspicious characteristics, such as hiding from user-mode monitoring tools.</li>
+
+
+
+<li>Interact directly with the OS kernel to evade detection.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
 
 
 
-<h3 class="wp-block-heading"><strong>Step 6: Data Breach Search and Financial Information</strong></h3>
-
-
-
-<h4 class="wp-block-heading"><strong>Key Data Points</strong>:</h4>
+<h3 class="wp-block-heading"><strong>B. Investigating Timeline</strong></h3>
 
 
 
 <ul class="wp-block-list">
-<li><strong>SSN</strong>: 081-92-4399</li>
+<li>The <code>timeliner</code> plugin in Volatility is used to create a timeline of events based on timestamps extracted from various artifacts in the memory image.</li>
 
 
 
-<li><strong>Emails and Other Accounts</strong></li>
+<li>This timeline is invaluable for understanding the sequence of actions on a system, particularly during:
+<ul class="wp-block-list">
+<li>Incident response</li>
+
+
+
+<li>Forensic investigations</li>
 </ul>
-
-
-
-<h4 class="wp-block-heading"><strong>Tools &amp; Methods</strong>:</h4>
+</li>
+</ul>
 
 
 
 <ol class="wp-block-list">
-<li><strong>HaveIBeenPwned</strong>:
-<ul class="wp-block-list">
-<li>Use this tool to see if the SSN, email, or any related accounts have been leaked in past data breaches. This helps determine if the person’s data is compromised.</li>
-</ul>
-</li>
-
-
-
-<li><strong>Financial Tracking</strong>:
-<ul class="wp-block-list">
-<li>You can use services like <strong>BeenVerified</strong> or <strong>LexisNexis</strong> to conduct background checks that include financial history, potential bankruptcy records, and asset ownership related to the target.</li>
-</ul>
-</li>
+<li>Normal Use:</li>
 </ol>
 
 
 
-<h2 class="wp-block-heading">Findings &amp; Threat Intelligence</h2>
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 timeliner  </code></pre>
 
 
 
-<p class="wp-block-paragraph">In a recent turn of events, the cybersecurity landscape has been shaken by the FBI’s decisive raids on Breach Forum, a notorious hub for illicit activities on the dark web. The aftermath revealed a complex web of exploits, compromised credentials, and unexpected vulnerabilities, shedding light on the inner workings of cyber criminal networks.</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://www.docdroid.net/t1iseI5/govuscourtsvaed53554220-pdf#page=2">gov.uscourts.vaed.535542.2.0.pdf</a></p>
-
-
-
-<ol start="4" class="wp-block-list">
-<li>Findings and Threat Intelligence &#8211; Carie</li>
+<ol start="2" class="wp-block-list">
+<li>Pipe Output to a Text File:</li>
 </ol>
 
 
 
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 timeliner &gt; timeline.txt  </code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="407" src="/wp-content/uploads/2024/12/vol-cridex-1024x407.png" alt="" class="wp-image-8877" srcset="/wp-content/uploads/2024/12/vol-cridex-1024x407.png 1024w, /wp-content/uploads/2024/12/vol-cridex-300x119.png 300w, /wp-content/uploads/2024/12/vol-cridex-768x305.png 768w, /wp-content/uploads/2024/12/vol-cridex.png 1271w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>Investigation: Clipboard Hooking</strong></h3>
+
+
+
 <ul class="wp-block-list">
-<li>Identified Threats
+<li>The <code>wndscan</code> plugin in Volatility is utilized to scan for <strong>window objects</strong> in memory.</li>
+
+
+
+<li>This functionality is particularly useful for identifying both <strong>visible</strong> and <strong>hidden windows</strong> created by processes, which may include:
 <ul class="wp-block-list">
-<li>Summary of potential threats uncovered during the investigation</li>
+<li><strong>Malware-related activity</strong></li>
+
+
+
+<li><strong>Suspicious behavior</strong></li>
 </ul>
 </li>
-
-
-
-<li>Attribution and Source Verification
-<ul class="wp-block-list">
-<li>Methods for verifying the credibility and origin of collected data</li>
-</ul>
-</li>
-
-
-
-<li>Risk Assessment
-<ul class="wp-block-list">
-<li>Evaluating the potential impact and likelihood of identified threats</li>
-</ul>
-</li>
 </ul>
 
 
 
-<ol start="4" class="wp-block-list">
-<li>Reporting and Recommendations &#8211; Carie</li>
+<ol class="wp-block-list">
+<li>Normal Use:</li>
 </ol>
 
 
 
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 wndscan  </code></pre>
+
+
+
+<ol start="2" class="wp-block-list">
+<li>Pipe Output to a Text File:</li>
+</ol>
+
+
+
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 wndscan &gt; wnd.txt  </code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="543" src="/wp-content/uploads/2024/12/vol-cridex2-1024x543.png" alt="" class="wp-image-8878" srcset="/wp-content/uploads/2024/12/vol-cridex2-1024x543.png 1024w, /wp-content/uploads/2024/12/vol-cridex2-300x159.png 300w, /wp-content/uploads/2024/12/vol-cridex2-768x407.png 768w, /wp-content/uploads/2024/12/vol-cridex2.png 1270w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>Checking for Files: <code>filescan</code> Plugin</strong></h3>
+
+
+
 <ul class="wp-block-list">
-<li>Reporting Findings
+<li>The <code>filescan</code> plugin in Volatility is used to identify <strong>file objects</strong> in memory that may not have been mapped to disk.</li>
+
+
+
+<li>This is particularly useful for detecting <strong>hidden</strong> or <strong>injected files</strong> that could be used by malware.</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 filescan  </code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="376" src="/wp-content/uploads/2024/12/vol-cridex3-1024x376.png" alt="" class="wp-image-8879" srcset="/wp-content/uploads/2024/12/vol-cridex3-1024x376.png 1024w, /wp-content/uploads/2024/12/vol-cridex3-300x110.png 300w, /wp-content/uploads/2024/12/vol-cridex3-768x282.png 768w, /wp-content/uploads/2024/12/vol-cridex3.png 1275w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="wp-block-paragraph">Note : regarding to your time . we can use | findstr in windows or | grep in Linux to search for specific file on this</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="361" src="/wp-content/uploads/2024/12/vol-cridex4-1024x361.png" alt="" class="wp-image-8880" srcset="/wp-content/uploads/2024/12/vol-cridex4-1024x361.png 1024w, /wp-content/uploads/2024/12/vol-cridex4-300x106.png 300w, /wp-content/uploads/2024/12/vol-cridex4-768x271.png 768w, /wp-content/uploads/2024/12/vol-cridex4.png 1275w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>Checking for Malware: <code>malfind</code> Plugin</strong></h3>
+
+
+
 <ul class="wp-block-list">
-<li>Best practices for compiling and presenting the investigation results</li>
+<li>The <code>malfind</code> plugin in Volatility is a powerful tool for identifying <strong>potential malware</strong> within a memory dump.</li>
+
+
+
+<li>It scans for <strong>injected code</strong> or <strong>anomalous memory sections</strong> that are typically associated with malware.</li>
 </ul>
-</li>
 
 
 
-<li>Mitigation Strategies
+<pre class="wp-block-code"><code>vol.exe -f cridex.vmem --profile=WinXPSP3x86 malfind  </code></pre>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="838" src="/wp-content/uploads/2024/12/reader-sl2-1024x838.png" alt="" class="wp-image-8881" srcset="/wp-content/uploads/2024/12/reader-sl2-1024x838.png 1024w, /wp-content/uploads/2024/12/reader-sl2-300x246.png 300w, /wp-content/uploads/2024/12/reader-sl2-768x629.png 768w, /wp-content/uploads/2024/12/reader-sl2.png 1190w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3 class="wp-block-heading">C. Memory Artifact Reconstruction</h3>
+
+
+
 <ul class="wp-block-list">
-<li>Recommended actions to address and mitigate identified threats</li>
+<li><strong>Registry Hive Recovery</strong>: Extracting and analyzing registry hives from memory to uncover configuration changes or malware persistence mechanisms.</li>
+
+
+
+<li><strong>Network Connection Tracking</strong>: Identifying live or historical network connections to analyze potential data exfiltration or communication with command-and-control (C2) servers.</li>
+
+
+
+<li><strong>Authentication Session Forensics</strong>: Investigating authentication tokens, session IDs, and user credential usage stored in memory.</li>
+
+
+
+<li><strong>Cached Credentials Examination</strong>: Analyzing cached credentials to detect potential credential harvesting or misuse.</li>
 </ul>
-</li>
 
 
 
-<li>Future Monitoring
+<h2 class="wp-block-heading">Specialized Memory Forensics Domains</h2>
+
+
+
+<h3 class="wp-block-heading">A. Rootkit and Stealth Malware Detection</h3>
+
+
+
 <ul class="wp-block-list">
-<li>Establishing ongoing monitoring processes to prevent future issues</li>
+<li><strong>Kernel-mode Rootkit Identification</strong>: Uncovering rootkits that operate at the kernel level by analyzing kernel memory and system structures.</li>
+
+
+
+<li><strong>Hooking Mechanism Detection</strong>: Detecting modifications to system call tables, inline hooks, or API hijacking techniques used by malware.</li>
+
+
+
+<li><strong>Memory-based Rootkit Analysis</strong>: Analyzing memory structures to identify hidden drivers, kernel modules, or other malicious artifacts.</li>
+
+
+
+<li><strong>Anti-forensic Technique Identification</strong>: Spotting attempts by malware to evade detection, such as memory wiping or data encryption.</li>
 </ul>
-</li>
+
+
+
+<h3 class="wp-block-heading">B. Tools and Ecosystem</h3>
+
+
+
+<h4 class="wp-block-heading">A. Complementary Memory Forensics Tools</h4>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Rekall Framework</strong><strong>: An alternative to Volatility with similar capabilities, focusing on live memory analysis and performance optimization.</strong></li>
+
+
+
+<li><strong>FTK Imager</strong><strong>: A tool for creating and analyzing forensic images, including memory dumps.</strong></li>
+
+
+
+<li><strong>WindowsSCOPE</strong><strong>: A commercial solution offering visualization and detailed memory analysis capabilities.</strong></li>
+
+
+
+<li><strong>Memory Analysis Script Collections</strong><strong>: Scripts designed to automate repetitive tasks in memory analysis, streamlining the forensic workflow.</strong></li>
 </ul>
+
+
+
+<h2 class="wp-block-heading">Enhanced Cellebrite Memory Acquisition</h2>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Category</strong></th><th><strong>Action</strong></th><th><strong>Steps</strong></th><th><strong>Real-World Example</strong></th><th><strong>Notes</strong></th></tr></thead><tbody><tr><td><strong>Tool</strong></td><td>Cellebrite UFED</td><td>Use Cellebrite UFED Touch 2 or UFED 4PC to start the extraction.</td><td>Extract data from an iPhone 12 with iOS 15 during a criminal investigation.</td><td>Ensure compatibility with device OS version.</td></tr><tr><td><strong>Device Compatibility</strong></td><td>Supported Devices</td><td>Check supported devices and OS versions on Cellebrite&#8217;s website or tool interface.</td><td>Verified that Android 11 on a Samsung Galaxy S21 is supported.</td><td>Regularly update the Cellebrite tool for new devices.</td></tr><tr><td><strong>Physical Extraction</strong></td><td>Full Physical Extraction</td><td>&#8211; Connect device to UFED.<br>&#8211; Select &#8220;Physical Extraction&#8221; mode.<br>&#8211; Authenticate access (if needed).</td><td>Extracted complete memory image from an unencrypted iPhone SE (2020).</td><td>Ideal for older devices or unlocked ones.</td></tr><tr><td><strong>Logical Extraction</strong></td><td>Logical Extraction</td><td>&#8211; Connect device.<br>&#8211; Select &#8220;Logical Extraction&#8221;.<br>&#8211; Acquire app and file system data.</td><td>Retrieved WhatsApp chat logs from a locked Android device.</td><td>Requires device to be unlocked or user-provided credentials.</td></tr><tr><td><strong>File System Dump</strong></td><td>File System Extraction</td><td>&#8211; Enable developer options.<br>&#8211; Use Cellebrite’s file system dump capabilities.</td><td>Extracted app data and system logs from an Android Pixel 5.</td><td>Works without complete access to physical memory.</td></tr><tr><td><strong>Jailbroken iPhone</strong></td><td>Memory Forensics on Jailbroken Device</td><td>&#8211; Jailbreak device (if legally permitted).<br>&#8211; Perform a deep memory dump using Cellebrite.</td><td>Extracted memory from a jailbroken iPhone 8 during a corporate espionage investigation.</td><td>Jailbreaking may void warranties and must comply with laws.</td></tr><tr><td><strong>Encryption Handling</strong></td><td>Decrypt Encrypted Memory</td><td>&#8211; Use Cellebrite Advanced Services (CAS) or passcode unlock feature.</td><td>Bypassed encryption on an iPhone 11 Pro to retrieve encrypted iMessages.</td><td>Requires legal authority to decrypt data.</td></tr><tr><td><strong>Android Dump</strong></td><td>Memory Dump via ADB</td><td>&#8211; Enable USB debugging.<br>&#8211; Use Cellebrite’s ADB-based memory dump for extraction.</td><td>Extracted app artifacts from a Huawei device running Android 10.</td><td>USB debugging must be enabled on the target device.</td></tr><tr><td><strong>Artifact Analysis</strong></td><td>Analyze Extracted Data</td><td>&#8211; Use Cellebrite Physical Analyzer for parsed memory artifacts.<br>&#8211; Examine RAM content for evidence.</td><td>Identified malicious apps running in RAM on a compromised Samsung Galaxy Note 20.</td><td>Provides visual timelines and correlations.</td></tr><tr><td><strong>App Data</strong></td><td>App-Specific Memory Data</td><td>&#8211; Use Cellebrite’s App Analysis feature.<br>&#8211; Analyze apps like WhatsApp, Signal, and Telegram for chat memory data.</td><td>Retrieved deleted Signal messages from an iPhone XR during a fraud case.</td><td>Support varies for apps with strong encryption.</td></tr><tr><td><strong>Cloud Sync Data</strong></td><td>Cloud Extraction</td><td>&#8211; Use login credentials to retrieve synced data from iCloud/Google Drive.</td><td>Accessed iCloud backups to analyze photos and documents synced from an iPhone.</td><td>Requires user credentials or court-ordered access.</td></tr><tr><td><strong>Challenges</strong></td><td>Overcoming Locks</td><td>&#8211; Use Cellebrite&#8217;s advanced passcode bypass or CAS for locked devices.</td><td>Successfully bypassed the passcode of a Samsung Galaxy device for evidence retrieval.</td><td>Limited by encryption strength and device models.</td></tr><tr><td><strong>Report Generation</strong></td><td>Export Analysis Results</td><td>&#8211; Generate forensic reports in PDF, Excel, or HTML formats from Cellebrite’s interface.</td><td>Created an HTML report of extracted Snapchat conversations for a law enforcement investigation.</td><td>Maintain chain-of-custody procedures.</td></tr></tbody></table></figure>
+
+
+
+<h2 class="wp-block-heading">Enhanced FTK Imager Memory Acquisition</h2>
+
+
+
+<h3 class="wp-block-heading"><strong>Memory Capture</strong></h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Action</strong></th><th><strong>Steps/Commands</strong></th><th><strong>Notes</strong></th></tr></thead><tbody><tr><td><strong>Live Memory</strong></td><td>1. Navigate to <code>File &gt; Capture Memory</code><br>2. Select the destination<br>3. Specify the filename</td><td>CPU usage may spike during capture.</td></tr><tr><td><strong>Pagefile</strong></td><td>1. Go to <code>File &gt; Add Evidence Item</code><br>2. Select <code>Physical Drive</code><br>3. Locate and select <code>pagefile.sys</code></td><td>Typically located at <code>%SystemRoot%\pagefile.sys</code>.</td></tr><tr><td><strong>Hibernation File</strong></td><td>1. Go to <code>File &gt; Add Evidence Item</code><br>2. Select <code>Physical Drive</code><br>3. Locate and select <code>hiberfil.sys</code></td><td>Found at <code>%SystemRoot%\hiberfil.sys</code>.</td></tr></tbody></table></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h3 class="wp-block-heading"><strong>Evidence Acquisition</strong></h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Action</strong></th><th><strong>Steps/Commands</strong></th><th><strong>Notes</strong></th></tr></thead><tbody><tr><td><strong>Physical Memory</strong></td><td>1. Select the source device<br>2. Navigate to <code>Create Image &gt; Memory</code></td><td>Outputs a <code>.mem</code> file for analysis.</td></tr><tr><td><strong>Memory Image Verification</strong></td><td>1. Go to <code>Tools &gt; Verify Drive/Image</code><br>2. Select the source<br>3. Compare the hash (MD5/SHA1)</td><td>Ensures data integrity.</td></tr><tr><td><strong>Write Blocking</strong></td><td>Enable &#8220;Write Block&#8221; option before capture.</td><td>Prevents source modification.</td></tr></tbody></table></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h3 class="wp-block-heading"><strong>Analysis Features</strong></h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Feature</strong></th><th><strong>Steps/Commands</strong></th><th><strong>Notes</strong></th></tr></thead><tbody><tr><td><strong>File Recovery</strong></td><td>1. In the Evidence Tree, explore the content<br>2. Right-click and select <code>Export Files</code></td><td>Preserves metadata during export.</td></tr><tr><td><strong>String Search</strong></td><td>1. Navigate to <code>Tools &gt; Text Search</code><br>2. Enter keywords</td><td>Supports regular expressions (regex).</td></tr><tr><td><strong>Hex View</strong></td><td>1. Select a file or sector<br>2. Go to <code>View &gt; Hex</code></td><td>Displays raw data in hexadecimal format.</td></tr></tbody></table></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h3 class="wp-block-heading"><strong>Memory Artifacts</strong></h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Artifact</strong></th><th><strong>Steps/Commands</strong></th><th><strong>Notes</strong></th></tr></thead><tbody><tr><td><strong>Process List</strong></td><td>Navigate to <code>View &gt; Program List</code></td><td>Displays active running processes.</td></tr><tr><td><strong>Network Connections</strong></td><td>Navigate to <code>Tools &gt; Network Status</code></td><td>Shows active network connections.</td></tr><tr><td><strong>Registry Hives</strong></td><td>Navigate to <code>\Windows\System32\config</code></td><td>Extracts system configuration settings.</td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading"><strong>Export Options</strong></h3>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Format</strong></th><th><strong>Menu Path</strong></th><th><strong>Use Case</strong></th></tr></thead><tbody><tr><td><strong>RAW (dd)</strong></td><td><code>Export &gt; RAW</code></td><td>Universal compatibility across tools.</td></tr><tr><td><strong>E01</strong></td><td><code>Export &gt; E01</code></td><td>EnCase forensic container format.</td></tr><tr><td><strong>AFF4</strong></td><td><code>Export &gt; AFF4</code></td><td>Advanced forensic format for scalability.</td></tr></tbody></table></figure>
+
+
+
+<h2 class="wp-block-heading">Enhanced Volatile Memory Acquisition</h2>
+
+
+
+<h3 class="wp-block-heading">Real-time Memory Streaming</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Implement continuous memory capture techniques that allow for real-time streaming of volatile memory</li>
+
+
+
+<li>Develop mechanisms to detect and capture memory changes as they occur</li>
+
+
+
+<li>Use memory diffing to identify significant changes between captures</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Hardware-Assisted Acquisition</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Leverage Intel Processor Trace (PT) for detailed execution tracking</li>
+
+
+
+<li>Implement Direct Memory Access (DMA) acquisition techniques</li>
+
+
+
+<li>Utilize modern CPU features like AMD&#8217;s Secure Memory Encryption (SME) for trusted acquisition</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Modern Memory Acquisition Tools</h3>
+
+
+
+<p class="wp-block-paragraph">LiME (Linux Memory Extractor)</p>
+
+
+
+<pre class="wp-block-code"><code># Install LiME on Linux
+git clone https://github.com/504ensicsLabs/LiME
+cd LiME/src
+make
+
+# Capture memory
+sudo insmod lime-&lt;version&gt;.ko "path=/tmp/memory.lime format=lime"</code></pre>
+
+
+
+<p class="wp-block-paragraph">WinPMEM (Windows)</p>
+
+
+
+<pre class="wp-block-code"><code># Capture full memory dump
+winpmem_mini_x64_rc2.exe memory.raw
+
+# Capture with compression
+winpmem_mini_x64_rc2.exe -c memory.raw</code></pre>
+
+
+
+<h2 class="wp-block-heading">Advanced Analysis Techniques</h2>
+
+
+
+<h3 class="wp-block-heading">Machine Learning Integration</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Deploy supervised learning models to detect anomalous process behaviors</li>
+
+
+
+<li>Implement clustering algorithms to identify groups of related malicious activities</li>
+
+
+
+<li>Use deep learning for pattern recognition in memory structures</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">TensorFlow Implementation</p>
+
+
+
+<pre class="wp-block-code"><code>import tensorflow as tf
+
+class MemoryAnomalyDetector:
+    def __init__(self):
+        self.model = tf.keras.Sequential(&#91;
+            tf.keras.layers.Dense(128, activation='relu'),
+            tf.keras.layers.Dropout(0.2),
+            tf.keras.layers.Dense(64, activation='relu'),
+            tf.keras.layers.Dense(1, activation='sigmoid')
+        ])
+
+    def train(self, memory_features, labels):
+        self.model.compile(optimizer='adam',
+                          loss='binary_crossentropy',
+                          metrics=&#91;'accuracy'])
+
+        return self.model.fit(memory_features, labels,
+                            epochs=10,
+                            validation_split=0.2)</code></pre>
+
+
+
+<h2 class="wp-block-heading">Container and Cloud Memory Analysis</h2>
+
+
+
+<h3 class="wp-block-heading">Container Memory Forensics</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Develop specialized tools for analyzing container runtime memory</li>
+
+
+
+<li>Implement techniques for correlating container memory with host system memory</li>
+
+
+
+<li>Create methods for analyzing container escape attempts</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Docker Memory Analysis</p>
+
+
+
+<pre class="wp-block-code"><code># Capture Docker container memory
+docker-forensics -c container_id -o output_dir
+
+# Analysis script
+python3 analyze_container_memory.py output_dir/container_memory.raw</code></pre>
+
+
+
+<pre class="wp-block-code"><code># Container memory analysis implementation
+class DockerMemoryAnalyzer:
+    def __init__(self, memory_dump):
+        self.memory_dump = memory_dump
+
+    def analyze_container_escape(self):
+        # Check for privileged operations
+        privileged_ops = self._scan_privileged_operations()
+
+        # Check for mounted sensitive paths
+        mount_violations = self._check_mount_violations()
+
+        # Check for capability abuse
+        capability_abuse = self._detect_capability_abuse()
+
+        return {
+            'privileged_ops': privileged_ops,
+            'mount_violations': mount_violations,
+            'capability_abuse': capability_abuse
+        }</code></pre>
+
+
+
+<h3 class="wp-block-heading">Cloud-Native Memory Analysis</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Implement techniques for analyzing memory across distributed systems</li>
+
+
+
+<li>Develop tools for analyzing serverless function memory states</li>
+
+
+
+<li>Create methods for correlating memory artifacts across cloud services</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Advanced Malware Detection</h2>
+
+
+
+<h3 class="wp-block-heading">Polymorphic Malware Detection</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Implement behavior-based detection methods</li>
+
+
+
+<li>Develop techniques for identifying code mutation patterns in memory</li>
+
+
+
+<li>Create methods for tracking malware evolution across memory snapshots</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Advanced Rootkit Detection</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Implement kernel integrity verification mechanisms</li>
+
+
+
+<li>Develop methods for detecting advanced hooking techniques</li>
+
+
+
+<li>Create tools for identifying sophisticated privilege escalation attempts</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Volatility 3 with Custom Plugins</h3>
+
+
+
+<pre class="wp-block-code"><code># Custom plugin for encrypted process detection
+import yara
+from volatility3.framework import interfaces
+
+class EncryptedProcessDetector(interfaces.plugins.PluginInterface):
+    _required_framework_version = (2, 0, 0)
+
+    def run(self):
+        # Load YARA rules for encryption detection
+        rules = yara.compile(source='''
+            rule EncryptionIndicators {
+                strings:
+                    $aes = {67 74 71 6E 28 73 76 71}
+                    $rsa = {82 65 78 61 2D 70 75 62}
+                condition:
+                    any of them
+            }
+        ''')
+
+        # Scan process memory
+        for proc in self.context.processes:
+            matches = rules.match(data=proc.get_process_memory())
+            if matches:
+                yield (0, (proc.UniqueProcessId, 
+                          proc.ImageFileName.cast("string"), 
+                          "Encryption Detected"))</code></pre>
+
+
+
+<h2 class="wp-block-heading">Memory Forensics Automation</h2>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th>Layer</th><th>Purpose</th><th>Tools</th></tr></thead><tbody><tr><td><strong>1. Acquisition</strong></td><td>Memory Capture</td><td>&#8211; LiME (Linux)<br>&#8211; WinPmem<br>&#8211; DumpIt<br>&#8211; FTK Imager</td></tr><tr><td><strong>2. Initial Triage</strong></td><td>Quick Analysis</td><td>&#8211; Volatility3<br>&#8211; Rekall<br>&#8211; bulk_extractor</td></tr><tr><td><strong>3. AI Detection</strong></td><td>Pattern Recognition</td><td>&#8211; TensorFlow<br>&#8211; scikit-learn<br>&#8211; YARA</td></tr><tr><td><strong>4. Process Analysis</strong></td><td>Deep Inspection</td><td>&#8211; Volatility Plugins<br>&#8211; Custom Scripts<br>&#8211; ProcessHacker</td></tr><tr><td><strong>5. Network Analysis</strong></td><td>Connection Review</td><td>&#8211; NetworkMiner<br>&#8211; Wireshark<br>&#8211; Volatility netscan</td></tr><tr><td><strong>6. Malware Scanning</strong></td><td>Threat Detection</td><td>&#8211; ClamAV<br>&#8211; YARA Rules<br>&#8211; VirusTotal API</td></tr><tr><td><strong>7. Memory Mapping</strong></td><td>Structure Analysis</td><td>&#8211; VolShell<br>&#8211; WinDbg<br>&#8211; GDB</td></tr><tr><td><strong>8. Artifact Extraction</strong></td><td>Data Recovery</td><td>&#8211; Photorec<br>&#8211; Foremost<br>&#8211; Volatility DumpFiles</td></tr><tr><td><strong>9. Timeline Analysis</strong></td><td>Event Correlation</td><td>&#8211; log2timeline<br>&#8211; Plaso<br>&#8211; Timesketch</td></tr><tr><td><strong>10. Reporting</strong></td><td>Documentation</td><td>&#8211; ElasticSearch<br>&#8211; Kibana<br>&#8211; Custom Templates</td></tr><tr><td><strong>11. Continuous Monitoring</strong></td><td>Real-time Analysis</td><td>&#8211; Sysmon<br>&#8211; OSQuery<br>&#8211; EDR Solutions</td></tr><tr><td><strong>12. Response</strong></td><td>Automated Actions</td><td>&#8211; Ansible<br>&#8211; Custom Scripts<br>&#8211; SOAR Platforms</td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading">Automated Analysis Pipeline</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Implement automated triage systems for memory dumps</li>
+
+
+
+<li>Develop intelligent filtering mechanisms for relevant artifacts</li>
+
+
+
+<li>Create automated reporting systems</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Continuous Monitoring</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Implement real-time memory monitoring systems</li>
+
+
+
+<li>Develop automated alert mechanisms for suspicious memory activities</li>
+
+
+
+<li>Create systems for continuous baseline comparison</li>
+</ul>
+
+
+
+<pre class="wp-block-code"><code>class MemoryForensicsPipeline:
+    def __init__(self):
+        self.volatility = VolatilityInterface()
+        self.yara_scanner = YaraScanner()
+        self.ml_detector = MemoryAnomalyDetector()
+
+    def analyze_memory_dump(self, dump_path):
+        # Stage 1: Initial triage
+        profile = self.volatility.identify_profile(dump_path)
+        processes = self.volatility.get_processes(dump_path, profile)
+
+        # Stage 2: Deep analysis
+        suspicious_processes = &#91;]
+        for process in processes:
+            score = self._analyze_process(process)
+            if score &gt; THRESHOLD:
+                suspicious_processes.append(process)
+
+        # Stage 3: Advanced detection
+        malware_detection = self.yara_scanner.scan(dump_path)
+        anomaly_detection = self.ml_detector.analyze(dump_path)
+
+        # Stage 4: Report generation
+        return self._generate_report(
+            suspicious_processes,
+            malware_detection,
+            anomaly_detection
+        )
+
+    def _analyze_process(self, process):
+        return {
+            'pid': process.pid,
+            'name': process.name,
+            'memory_regions': self._analyze_memory_regions(process),
+            'network_connections': self._analyze_network(process),
+            'handles': self._analyze_handles(process),
+            'threads': self._analyze_threads(process)
+        }</code></pre>
 
 
 
@@ -2221,9 +2869,9 @@ https://doxbin.net/upload/PeterKleissnerIntelx
 
 
 
-<figure class="wp-block-embed"><div class="wp-block-embed__wrapper">
-https://www.linkedin.com/in/sashwin-0x
-</div></figure>
+<ul class="wp-block-list">
+<li>Diyar Saadi</li>
+</ul>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -2241,27 +2889,27 @@ https://www.linkedin.com/in/sashwin-0x
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2379,11 +3027,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2406,59 +3054,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>

