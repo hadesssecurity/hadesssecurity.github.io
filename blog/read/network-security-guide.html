@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+/*═══ RESET & BASE ═══*/
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#facc15;--gold-dim:rgba(250,204,21,0.1);--gold-border:rgba(250,204,21,0.2);
+  --bg:#050507;--surface:rgba(255,255,255,0.03);--surface-hover:rgba(255,255,255,0.06);
+  --border:rgba(255,255,255,0.06);--border-hover:rgba(250,204,21,0.25);
+  --text:#e5e7eb;--text-dim:#9ca3af;--text-muted:#6b7280;
+  --green:#22c55e;--green-dim:rgba(34,197,94,0.3);
+  --radius:16px;--radius-sm:10px;--radius-full:100px;
+  --max-w:1320px;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/*═══ NAVIGATION ═══*/
+.mag-nav{position:sticky;top:0;z-index:200;background:rgba(5,5,7,0.65);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--border)}
+.mag-nav-top{max-width:var(--max-w);margin:0 auto;padding:10px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.03)}
+.mag-nav-top-left{display:flex;align-items:center;gap:20px}
+.mag-nav-top-left span{font-size:11px;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase}
+.mag-nav-top-right{display:flex;align-items:center;gap:16px}
+.mag-nav-top-right a{font-size:12px;color:var(--text-muted);transition:color 0.2s}
+.mag-nav-top-right a:hover{color:var(--gold)}
+.mag-social{display:flex;align-items:center;gap:10px;margin-left:8px}
+.mag-social a{width:26px;height:26px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.2s}
+.mag-social a:hover{background:var(--gold-border);transform:scale(1.1)}
+.mag-social a svg{width:12px;height:12px}
+.mag-nav-main{max-width:var(--max-w);margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mag-brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.mag-brand img{width:38px;height:38px;object-fit:contain}
+.mag-brand-text{display:flex;flex-direction:column}
+.mag-brand-name{font-family:var(--font-display);font-size:26px;font-weight:900;color:var(--gold);text-shadow:0 0 30px rgba(250,204,21,0.4);line-height:1}
+.mag-brand-tag{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:2px;margin-top:2px}
+.mag-links{display:flex;align-items:center;gap:4px}
+.mag-links a{padding:8px 16px;border-radius:var(--radius-full);font-size:13px;font-weight:500;color:var(--text-dim);transition:all 0.25s;position:relative}
+.mag-links a:hover{color:var(--gold);background:var(--gold-dim)}
+.mag-links a.active{color:var(--gold);background:var(--gold-dim);font-weight:600}
+.mag-links a.active::after{content:'';position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:var(--gold);border-radius:1px}
+.mag-search-btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-full);padding:8px 16px;display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:13px;cursor:pointer;transition:all 0.2s;font-family:var(--font)}
+.mag-search-btn:hover{border-color:var(--gold-border);color:var(--gold)}
+.mag-search-btn svg{width:14px;height:14px}
+.mag-search-btn kbd{font-size:10px;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-family:var(--font)}
+.mag-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:10px 24px;border-radius:var(--radius-sm);font-weight:700;font-size:13px;transition:all 0.25s;box-shadow:0 0 20px rgba(250,204,21,0.15);flex-shrink:0}
+.mag-cta:hover{transform:translateY(-1px);box-shadow:0 4px 30px rgba(250,204,21,0.3)}
+.mag-cta svg{width:15px;height:15px}
+.mag-hamburger{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:8px}
+.mag-hamburger svg{width:24px;height:24px}
+
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;inset:0;z-index:300;background:rgba(5,5,7,0.97);backdrop-filter:blur(20px);padding:80px 32px 32px;flex-direction:column;gap:8px;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:16px 0;font-size:18px;font-weight:600;color:var(--text);border-bottom:1px solid var(--border);transition:color 0.2s}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--text);cursor:pointer;padding:8px}
+.mobile-close svg{width:28px;height:28px}
+
+/*═══ SHARED COMPONENTS ═══*/
+.section-divider{max-width:var(--max-w);margin:0 auto;padding:48px 32px 0}
+.section-divider-line{height:1px;background:linear-gradient(90deg,transparent,var(--border),rgba(250,204,21,0.15),var(--border),transparent)}
+
+/* Filter pills */
+.filters{max-width:var(--max-w);margin:0 auto;padding:20px 32px 8px;display:flex;flex-wrap:wrap;gap:6px}
+.filter-pill{padding:7px 16px;border-radius:var(--radius-full);font-size:12px;font-weight:500;border:1px solid var(--border);color:var(--text-muted);background:var(--surface);transition:all 0.25s;cursor:pointer}
+.filter-pill:hover{border-color:var(--gold-border);color:var(--gold);background:var(--gold-dim)}
+.filter-pill.active{background:var(--gold);color:#000;border-color:var(--gold);font-weight:700}
+
+/* Post cards — shared grid cards */
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:all 0.35s cubic-bezier(0.4,0,0.2,1)}
+.post-card:hover{border-color:var(--border-hover);transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,0.35),0 0 0 1px var(--border-hover)}
+.card-img-wrap{position:relative;overflow:hidden;height:200px;background:var(--surface)}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.post-card:hover .card-img-wrap img{transform:scale(1.08)}
+.card-img-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,7,0.6) 0%,transparent 50%)}
+.card-cat{position:absolute;top:14px;left:14px;background:rgba(5,5,7,0.7);backdrop-filter:blur(8px);border:1px solid var(--gold-border);color:var(--gold);padding:4px 12px;border-radius:var(--radius-full);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.card-reading{position:absolute;top:14px;right:14px;background:rgba(5,5,7,0.7);backdrop-filter:blur(8px);color:var(--text-dim);padding:4px 10px;border-radius:var(--radius-full);font-size:11px;display:flex;align-items:center;gap:4px}
+.card-reading svg{width:11px;height:11px}
+.card-img-placeholder{height:200px;background:linear-gradient(135deg,rgba(250,204,21,0.06),rgba(245,158,11,0.02));display:flex;align-items:center;justify-content:center;position:relative}
+.card-img-placeholder svg{width:44px;height:44px;color:var(--gold);opacity:0.15}
+.card-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.card-date{font-size:11px;color:var(--text-muted);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.card-date svg{width:12px;height:12px;opacity:0.5}
+.card-title{font-size:17px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:8px;transition:color 0.3s;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.post-card:hover .card-title{color:var(--gold)}
+.card-excerpt{font-size:13px;color:var(--text-dim);line-height:1.65;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.card-author{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--text-muted)}
+.card-author-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#f59e0b);display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:10px}
+.card-arrow{width:30px;height:30px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s}
+.post-card:hover .card-arrow{background:var(--gold);color:#000;transform:translateX(2px)}
+.card-arrow svg{width:13px;height:13px}
+
+/* Pagination */
+.pagination{max-width:var(--max-w);margin:0 auto;padding:0 32px 80px;display:flex;justify-content:center;align-items:center;gap:6px}
+.pg-btn{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;padding:0 14px;border-radius:var(--radius-sm);font-size:14px;font-weight:500;border:1px solid var(--border);color:var(--text-muted);background:var(--surface);transition:all 0.2s}
+.pg-btn:hover{border-color:var(--gold-border);color:var(--gold)}
+.pg-btn.active{background:var(--gold);color:#000;border-color:var(--gold);font-weight:700}
+.pg-btn.disabled{opacity:0.25;pointer-events:none}
+
+/* Empty state */
+.empty{text-align:center;padding:100px 32px}
+.empty h2{font-family:var(--font-display);font-size:28px;color:#fff;margin-bottom:8px}
+.empty p{color:var(--text-muted);font-size:16px}
+
+/*═══ RESPONSIVE ═══*/
+@media(max-width:1024px){
+  .post-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .mag-nav-top{display:none}
+  .mag-links,.mag-search-btn{display:none}
+  .mag-hamburger{display:block}
+  .mag-nav-main{padding:14px 20px}
+  .post-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .card-img-wrap,.card-img-placeholder{height:180px}
+}
+</style>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- This site is optimized with the Yoast SEO plugin v28.2 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Network Security Fundamentals: Complete Guide — HADESS Magazine</title>
+	<meta name="description" content="Master network security fundamentals — firewalls, IDS/IPS, segmentation, and monitoring — with practical skills for defending modern networks." />
+	<link rel="canonical" href="https://hadesssecurity.github.io/blog/read/network-security-guide" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Network Security Fundamentals: Complete Guide — HADESS Magazine" />
+	<meta property="og:description" content="Master network security fundamentals — firewalls, IDS/IPS, segmentation, and monitoring — with practical skills for defending modern networks." />
+	<meta property="og:url" content="https://hadesssecurity.github.io/blog/read/network-security-guide" />
+	<meta property="og:site_name" content="HADESS" />
+	<meta property="article:published_time" content="2026-02-28T14:47:53+00:00" />
+	<meta property="article:modified_time" content="2026-04-06T18:26:32+00:00" />
+	<meta property="og:image" content="https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-network-security-guide.png" />
+	<meta property="og:image:width" content="2400" />
+	<meta property="og:image:height" content="1260" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="author" content="hadess" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="hadess" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="12 minutes" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="cf-frontend-style-inline-css">
+@font-face {
+	font-family: 'barlow-thinitalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-ThinItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-thin';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-Thin.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-semibolditalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-SemiBoldItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-semibold';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-SemiBold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-regular';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-mediumitalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-medium';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-lightitalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-LightItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-light';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-italic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-Italic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-extralightitalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-ExtraLightItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-extralight';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-extrabold';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-extarbolditalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-ExtraBoldItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-bolditalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-bold';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-blackitalic';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-BlackItalic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'barlow-black';
+	font-style: normal;
+	font-weight: 100;
+	font-display: auto;
+	src: url('/wp-content/uploads/2022/05/Barlow-Black.ttf') format('truetype');
+}
+/*# sourceURL=cf-frontend-style-inline-css */
+</style>
+<link rel='stylesheet' id='bdt-uikit-css' href='/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.15.1' media='all' />
+<link rel='stylesheet' id='ep-helper-css' href='/wp-content/plugins/bdthemes-element-pack/assets/css/ep-helper.css?ver=6.15.4' media='all' />
+<link rel='stylesheet' id='anwp-pg-styles-css' href='/wp-content/plugins/anwp-post-grid-for-elementor/public/css/styles.min.css?ver=1.3.3' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='/wp-includes/css/dist/block-library/style.min.css?ver=7.0.4' media='all' />
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='nta-css-popup-css' href='/wp-content/plugins/wp-whatsapp/assets/dist/css/style.css?ver=3.8.2' media='all' />
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-icon svg){width: 24px;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='bootstrap.cs-css' href='/wp-content/plugins/download-pdf-after-submit-form/include/../css/formstyle.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='essential-grid-plugin-settings-css' href='/wp-content/plugins/essential-grid/public/assets/css/settings.css?ver=3.0.11' media='all' />
+<link rel='stylesheet' id='tp-fontello-css' href='/wp-content/plugins/essential-grid/public/assets/font/fontello/css/fontello.css?ver=3.0.11' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='/wp-includes/css/dashicons.min.css?ver=7.0.4' media='all' />
+<link rel='stylesheet' id='rmp-menu-styles-css' href='/wp-content/uploads/rmp-menu/css/rmp-menu.css?ver=14.55.51' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.2.23' media='all' />
+<style id="rs-plugin-settings-inline-css">
+#rs-demo-id {}
+/*# sourceURL=rs-plugin-settings-inline-css */
+</style>
+<link rel='stylesheet' id='megamenu-css' href='/wp-content/uploads/maxmegamenu/style.css?ver=b7e860' media='all' />
+<link rel='stylesheet' id='slick-css' href='/wp-content/plugins/happy-elementor-addons/assets/vendor/slick/slick.css?ver=3.21.1' media='all' />
+<noscript><link rel='stylesheet' id='slick-css' href='/wp-content/plugins/happy-elementor-addons/assets/vendor/slick/slick.css?ver=3.21.1' media='all' />
+</noscript><link rel='stylesheet' id='newsmatic-typo-fonts-css' href='/wp-content/fonts/30bb74f63240c7b75616f6b49dac7b6c.css' media='print' onload="this.media='all'" />
+<noscript><link rel='stylesheet' id='newsmatic-typo-fonts-css' href='/wp-content/fonts/30bb74f63240c7b75616f6b49dac7b6c.css' media='print' />
+</noscript><link rel='stylesheet' id='pscrollbar-css' href='/wp-content/plugins/quadmenu/assets/frontend/pscrollbar/perfect-scrollbar.min.css?ver=3.3.6' media='all' />
+<link rel='stylesheet' id='owlcarousel-css' href='/wp-content/plugins/quadmenu/assets/frontend/owlcarousel/owl.carousel.min.css?ver=3.3.6' media='all' />
+<link rel='stylesheet' id='quadmenu-normalize-css' href='/wp-content/plugins/quadmenu/assets/frontend/css/quadmenu-normalize.css?ver=3.3.6' media='all' />
+<link rel='stylesheet' id='quadmenu-widgets-css' href='/wp-content/uploads/newsmatic/quadmenu-widgets.css?ver=1753895708' media='all' />
+<link rel='stylesheet' id='quadmenu-css' href='/wp-content/plugins/quadmenu/build/frontend/style.css?ver=3.3.6' media='all' />
+<link rel='stylesheet' id='quadmenu-locations-css' href='/wp-content/uploads/newsmatic/quadmenu-locations.css?ver=1753895708' media='all' />
+<script id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="nekit-main-frontend-data-source-js-extra">
+var frontendDataSource = {"_wpnonce":"0d9aabc3b0","ajaxUrl":"/wp-admin/admin-ajax.php","preloader":"none","preloaderExitAnimation":"none","isElementorPreview":""};
+//# sourceURL=nekit-main-frontend-data-source-js-extra
+</script>
+<script id="nekit-main-frontend-data-source-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/js/frontend-script-data.js?ver=1.0.0"></script>
+<script id="dlm-public-js-extra">
+var dlmVars = {"logStatus":"enabled","jsErrorLogging":{"status":"","url":"/wp-admin/admin-ajax.php","nonce":"94b79deb70","action":"log_js_errors"}};
+//# sourceURL=dlm-public-js-extra
+</script>
+<script id="dlm-public-js" src="/wp-content/plugins/debug-log-manager/assets/js/public.js?ver=2.5.2"></script>
+<script id="tp-tools-js" src="/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.2.23"></script>
+<script id="revmin-js" src="/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.2.23"></script>
+<script id="dom-purify-js" src="/wp-content/plugins/happy-elementor-addons/assets/vendor/dom-purify/purify.min.js?ver=3.1.6"></script>
+<!-- start Simple Custom CSS and JS -->
+<script>
+!function (t, e, n) { t.yektanetAnalyticsObject = n, t[n] = t[n] || function () { t[n].q.push(arguments) }, t[n].q = t[n].q || []; var a = new Date, r = a.getFullYear().toString() + "0" + a.getMonth() + "0" + a.getDate() + "0" + a.getHours(), c = e.getElementsByTagName("script")[0], s = e.createElement("script"); s.id = "ua-script-ao1PBEUM"; s.dataset.analyticsobject = n; s.async = 1; s.type = "text/javascript"; s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/ao1PBEUM/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c) }(window, document, "yektanet");
+
+</script>
+<!-- end Simple Custom CSS and JS -->
+<!-- start Simple Custom CSS and JS -->
+<script>
+/*jQuery( document ).ready(function( $ ){
+	var mywindow = $(window);
+	setScrolledToBody(mywindow.scrollTop());
+	mywindow.scroll(function() {
+		setScrolledToBody(mywindow.scrollTop());
+	});
+	$( ".main-menu .jet-mega-menu-item" ).hover(
+		function() {
+			setHoverToTopHeader(true);
+		},
+		function() {
+			setHoverToTopHeader(false);
+		}
+	);
+	
+	function setScrolledToBody(pos) {
+		if (pos > 0) {
+			$('body').addClass('scrolled');
+		}
+		else{
+			$('body').removeClass('scrolled');		
+		}
+	}
+	
+	function setHoverToTopHeader(mainMenuIsHover) {
+		if (mainMenuIsHover) {
+			$('.top-header').addClass('hover');
+		}
+		else{
+			$('.top-header').removeClass('hover');
+		}
+	}
+});
+*/</script>
+<!-- end Simple Custom CSS and JS -->
+<!-- start Simple Custom CSS and JS -->
+<script>
+jQuery( document ).ready(function( $ ){
+$( document ).on('submit_success', '#efa_form_hide', function(){
+$submitted_form = $( this );
+$submitted_form.hide();
+$('#efa-form-success-message').show(); // this is the sucess message that I created.
+});
+});</script>
+<!-- end Simple Custom CSS and JS -->
+<!-- start Simple Custom CSS and JS -->
+<style>
+.customModalDpbsp_classic {
+    color: black !important;
+    font-size: 15px !important;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+
+#wrap {
+margin: 0px 0px 10px 50px;
+    position: relative;
+    padding: 0;
+    position: relative;
+}
+
+input[type="text"] {
+   
+height: 60px;
+  font-size: 24px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 3px;
+  padding-right: 60px;
+  width: 0px;
+  position: relative;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+
+input[type="text"]:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+input[type="text"]:focus {
+  width: 700px;
+  z-index: 1;
+  border-bottom: 1px solid #BBB;
+  cursor: text;
+}
+input[type="submit"] {
+  height: 67px;
+  width: 63px;
+  display: inline-block;
+  color:red;
+  float: right;
+  background: url(/wp-content/uploads/2025/07/search-logo.png) center center no-repeat;
+  text-indent: -10000px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+
+/*! CSS Used from: https://landkit.goodthemes.co/assets/fonts/Feather/feather.css */
+.fe{font-family:'Feather'!important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.fe-x:before{content:"\ea02";}
+/*! CSS Used from: https://landkit.goodthemes.co/assets/css/theme.min.css */
+
+.btn{display:inline-block;font-weight:600;color:#161c2d;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.8125rem 1.25rem;font-size:1.0625rem;line-height:1.6;border-radius:.375rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;}
+@media (prefers-reduced-motion:reduce){
+.btn{transition:none;}
+}
+.btn:hover{color:#161c2d;text-decoration:none;}
+.btn:focus{outline:0;box-shadow:none;}
+.btn:disabled{opacity:.65;box-shadow:none;}
+.btn-primary{color:#fff;background-color:#335eea;border-color:#335eea;box-shadow:none;}
+.btn-primary:hover{color:#fff;background-color:#1746e0;border-color:#1643d4;}
+.btn-primary:focus{box-shadow:none,0 0 0 0 rgba(82,118,237,.5);}
+.btn-primary:disabled{color:#fff;background-color:#335eea;border-color:#335eea;}
+.btn-sm{padding:.5625rem 1rem;font-size:1.0625rem;line-height:1.3;border-radius:.375rem;}
+.collapse:not(.show){display:none;}
+.dropdown,.dropright{position:relative;}
+.dropdown-toggle{white-space:nowrap;}
+.dropdown-toggle::after{display:inline-block;margin-left:.255em;vertical-align:.255em;content:"";border-top:.3em solid;border-right:.3em solid transparent;border-bottom:0;border-left:.3em solid transparent;}
+.dropdown-toggle:empty::after{margin-left:0;}
+.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:14rem;padding:1.625rem 0;margin:0 0 0;font-size:.9375rem;color:#161c2d;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:0 solid rgba(22,28,45,.15);border-radius:.375rem;box-shadow:0 .5rem 1.5rem rgba(22,28,45,.1);}
+.dropright .dropdown-menu{top:0;right:auto;left:100%;margin-top:0;margin-left:0;}
+.dropright .dropdown-toggle::after{display:inline-block;margin-left:.255em;vertical-align:.255em;content:"";border-top:.3em solid transparent;border-right:0;border-bottom:.3em solid transparent;border-left:.3em solid;}
+.dropright .dropdown-toggle:empty::after{margin-left:0;}
+.dropright .dropdown-toggle::after{vertical-align:0;}
+.dropdown-item{display:block;width:100%;padding:0 1.75rem;clear:both;font-weight:400;color:#506690;text-align:inherit;white-space:nowrap;background-color:transparent;border:0;}
+.dropdown-item:focus,.dropdown-item:hover{color:#335eea;text-decoration:none;background-color:none;}
+.dropdown-item:active{color:#335eea;text-decoration:none;background-color:none;}
+.dropdown-item:disabled{color:#869ab8;pointer-events:none;background-color:transparent;}
+.dropdown-header{display:block;padding:1.625rem 1.75rem;margin-bottom:0;font-size:.9375rem;color:#335eea;white-space:nowrap;}
+.nav-link{display:block;padding:.5rem 1rem;}
+.nav-link:focus,.nav-link:hover{text-decoration:none;}
+.navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:1.25rem 20px;}
+.navbar>.container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;}
+.navbar-brand{display:inline-block;padding-top:.15rem;padding-bottom:.15rem;margin-right:20px;font-size:1.5rem;line-height:inherit;white-space:nowrap;}
+.navbar-brand:focus,.navbar-brand:hover{text-decoration:none;}
+.navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none;}
+.navbar-nav .nav-link{padding-right:0;padding-left:0;}
+.navbar-nav .dropdown-menu{position:static;float:none;}
+.navbar-collapse{flex-basis:100%;flex-grow:1;align-items:center;}
+.navbar-toggler{padding:.25rem .75rem;font-size:1.1875rem;line-height:1;background-color:transparent;border:1px solid transparent;border-radius:.375rem;}
+.navbar-toggler:focus,.navbar-toggler:hover{text-decoration:none;}
+.navbar-toggler-icon{display:inline-block;width:1.5em;height:1.5em;vertical-align:middle;content:"";background:no-repeat center center;background-size:100% 100%;}
+@media (max-width:991.98px){
+.navbar-expand-lg>.container{padding-right:0;padding-left:0;}
+}
+@media (min-width:992px){
+.navbar-expand-lg{flex-flow:row nowrap;justify-content:flex-start;}
+.navbar-expand-lg .navbar-nav{flex-direction:row;}
+.navbar-expand-lg .navbar-nav .dropdown-menu{position:absolute;}
+.navbar-expand-lg .navbar-nav .nav-link{padding-right:1.5rem;padding-left:1.5rem;}
+.navbar-expand-lg>.container{flex-wrap:nowrap;}
+.navbar-expand-lg .navbar-collapse{display:flex!important;flex-basis:auto;}
+.navbar-expand-lg .navbar-toggler{display:none;}
+}
+.navbar-light .navbar-brand{color:#335eea;}
+.navbar-light .navbar-brand:focus,.navbar-light .navbar-brand:hover{color:#335eea;}
+.navbar-light .navbar-nav .nav-link{color:#FFFFFF;}
+.navbar-light .navbar-nav .nav-link:focus,.navbar-light .navbar-nav .nav-link:hover{color:#335eea;}
+.navbar-light .navbar-toggler{color:#506690;border-color:transparent;}
+.navbar-light .navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23506690' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+.badge{display:inline-block;padding:.25rem .75rem;font-size:75%;font-weight:600;line-height:1;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.375rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;}
+@media (prefers-reduced-motion:reduce){
+.badge{transition:none;}
+}
+.badge:empty{display:none;}
+.badge-pill{padding-right:.75rem;padding-left:.75rem;border-radius:10rem;}
+.list-group{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;}
+.list-group-item{position:relative;display:block;padding:1.5rem 2rem;margin-bottom:-1px;background-color:#fff;border:1px solid #f1f4f8;}
+.list-group-item:first-child{border-top-left-radius:.375rem;border-top-right-radius:.375rem;}
+.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:.375rem;border-bottom-left-radius:.375rem;}
+.list-group-item:disabled{color:#869ab8;pointer-events:none;background-color:#fff;}
+.list-group-flush .list-group-item{border-right:0;border-left:0;border-radius:0;}
+.list-group-flush .list-group-item:last-child{margin-bottom:-1px;}
+.list-group-flush:first-child .list-group-item:first-child{border-top:0;}
+.list-group-flush:last-child .list-group-item:last-child{margin-bottom:0;border-bottom:0;}
+.bg-white{background-color:#121600 !important;}
+.mb-0{margin-bottom:0!important;}
+.ml-4{margin-left:1rem!important;}
+.mb-5{margin-bottom:1.5rem!important;}
+.p-0{padding:0!important;}
+.ml-auto{margin-left:auto!important;}
+@media (min-width:992px){
+.mb-lg-0{margin-bottom:0!important;}
+}
+.text-uppercase{text-transform:uppercase!important;}
+.font-weight-bold{font-weight:600!important;}
+.text-white{color:#fff!important;}
+.text-primary{color:#335eea!important;}
+@media print{
+*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
+a:not(.btn){text-decoration:underline;}
+img{page-break-inside:avoid;}
+p{orphans:3;widows:3;}
+.container{min-width:992px!important;}
+.navbar{display:none;}
+.badge{border:1px solid #161c2d;}
+}
+.badge-primary-soft{background-color:rgba(51,94,234,.1);color:#335eea;}
+.btn:not([class*=btn-outline]){border-color:transparent!important;}
+.btn-white{background-color:#fff;color:#335eea;}
+.btn-white:focus,.btn-white:hover{background-color:#fff;color:#1c4ce8;}
+.dropdown-menu{padding-left:1.75rem;padding-right:1.75rem;}
+.dropdown-item{width:auto;min-width:100%;margin-left:-1.75rem;margin-right:-1.75rem;}
+.dropdown-item:focus,.dropdown-item:hover{outline:0;}
+.dropdown-item+.dropdown-item{margin-top:.45rem;}
+.dropdown-link{color:inherit;}
+.dropdown-link:hover{text-decoration:inherit;}
+.dropdown-link:focus,.dropdown-link:hover{outline:0;}
+.dropdown-header{margin-left:-1.75rem;margin-right:-1.75rem;padding-top:0;padding-bottom:.5rem;font-size:.75rem;font-weight:600;line-height:1.55;text-transform:uppercase;letter-spacing:.08em;}
+.dropdown-toggle::after{font-family:Feather;vertical-align:middle;border:none!important;content:"\e92e";}
+.dropright>.dropdown-toggle::after{content:"\e930";}
+.dropdown-menu-md{min-width:22rem;}
+.dropdown-menu-lg{min-width:28rem;}
+.dropdown-menu-xl{min-width:42rem;}
+.dropdown-menu-lg,.dropdown-menu-xl{padding:2.375rem 2.5rem;}
+.dropdown-menu-lg .dropdown-header,.dropdown-menu-lg .dropdown-item,.dropdown-menu-xl .dropdown-header,.dropdown-menu-xl .dropdown-item{margin-left:-2.5rem;margin-right:-2.5rem;padding-left:2.5rem;padding-right:2.5rem;}
+.dropright>.dropdown-menu{top:-1.625rem;}
+.container{position:relative;z-index:1;}
+.list-group-flush .list-group-item{padding-left:0;padding-right:0;}
+.list-group-flush .list-group-item:first-child{padding-top:0!important;}
+.list-group-flush .list-group-item:last-child{padding-bottom:0!important;}
+.navbar{transition:all .2s ease-in-out;transition-property:background-color,color;z-index:1030;}
+.navbar>.container{padding-left:0;padding-right:0;}
+@media (min-width:1200px){
+.navbar>.container{padding-left:20px;padding-right:20px;}
+}
+.navbar-brand{font-weight:600;}
+.navbar-brand-img{max-height:2.4rem;width:auto;}
+@media (max-width:991.98px){
+.navbar-btn{width:100%;padding:.8125rem 1.25rem;border-top-left-radius:0;border-top-right-radius:0;font-size:1.0625rem;}
+}
+.navbar-nav .nav-link{font-weight:600;}
+.navbar-nav .nav-link:focus,.navbar-nav .nav-link:hover{outline:0;}
+@media (max-width:991.98px){
+.navbar-collapse{position:fixed;top:1rem;right:1rem;left:1rem;height:auto!important;max-height:calc(100vh - 2rem);background-color:#fff;border-radius:.375rem;box-shadow:0 1.5rem 4rem rgba(22,28,45,.15);overflow-y:scroll;-webkit-overflow-scrolling:touch;}
+.navbar-collapse{transition:all .2s ease-in-out;transition-property:opacity,transform;transform-origin:top right;}
+}
+.navbar-collapse .navbar-toggler{position:absolute;top:1rem;right:1rem;z-index:1;}
+@media (min-width:992px){
+.navbar-collapse .navbar-toggler{display:none;}
+}
+@media (max-width:991.98px){
+.navbar-nav .nav-item{padding:1.5rem;}
+.navbar-nav .nav-item+.nav-item{border-top:1px solid #f1f4f8;}
+}
+@media (max-width:991.98px){
+.navbar-nav .nav-link{padding-top:0;padding-bottom:0;}
+}
+.navbar-nav .dropdown-menu{box-shadow:none;}
+@media (max-width:991.98px){
+.navbar-nav .dropdown-menu{min-width:0;padding:0;}
+}
+@media (min-width:992px){
+.navbar-nav .dropdown-menu{box-shadow:0 1.5rem 4rem rgba(22,28,45,.15);}
+}
+.navbar-nav .dropdown>.dropdown-menu{display:block!important;}
+@media (max-width:991.98px){
+.navbar-nav .dropright>.dropdown-menu{padding-top:1rem;padding-bottom:1rem;padding-left:.5rem;}
+}
+@media (min-width:992px){
+.navbar-nav .dropright>.dropdown-menu{display:block!important;}
+}
+@media (max-width:991.98px){
+.navbar-nav .dropdown-header,.navbar-nav .dropdown-item{margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
+}
+.navbar-nav .dropdown>.dropdown-toggle::after{display:none;}
+@media (max-width:991.98px){
+.navbar-nav .dropdown>.dropdown-toggle{margin-bottom:1.5rem;pointer-events:none;}
+}
+.navbar-nav .dropright>.dropdown-toggle{display:flex;}
+.navbar-nav .dropright>.dropdown-toggle::after{margin-left:auto;}
+@media (max-width:991.98px){
+.navbar-nav .dropright>.dropdown-toggle::after{content:"\e92e";}
+}
+.navbar-nav .dropdown-img-left{height:100%;display:none;flex-direction:column;justify-content:center;align-items:center;padding:1.625rem 1.75rem;background:no-repeat center center/cover;border-top-left-radius:.375rem;border-bottom-left-radius:.375rem;}
+@media (min-width:992px){
+.navbar-nav .dropdown-img-left{display:flex;}
+}
+.navbar-nav .dropdown-img-left::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(51,94,234,.8);border-radius:inherit;}
+.navbar-nav .dropdown-img-left *{position:relative;}
+@media (min-width:992px){
+.navbar-nav .dropdown-menu-xl .dropdown-img-left{padding:2.375rem 2.5rem;}
+}
+@media (min-width:992px){
+.navbar-nav .dropdown-body{padding:1.625rem 1.75rem;}
+}
+@media (min-width:992px){
+.navbar-nav .dropdown-menu-xl .dropdown-body{padding:2.375rem 2.5rem;}
+}
+.navbar-nav .dropdown-menu .list-group-item{display:flex;align-items:center;padding-top:1rem;padding-bottom:1rem;color:inherit;}
+.navbar-nav .dropdown-menu .list-group-item:hover{text-decoration:none;}
+@media (min-width:992px){
+.navbar-nav .dropdown-menu{z-index:1030;transition:all .2s ease-in-out;transition-property:opacity,visibility,transform;transform-origin:top center;visibility:hidden;opacity:0;}
+.navbar-nav .dropdown>.dropdown-menu{left:50%;transform:translate3d(-50%,10px,0);}
+.navbar-nav .dropright>.dropdown-menu{transform:translate3d(0,10px,0);}
+.navbar-nav .dropdown:hover>.dropdown-menu,.navbar-nav .dropright:hover>.dropdown-menu{visibility:visible;opacity:1;}
+.navbar-nav .dropdown:hover>.dropdown-menu{transform:translate3d(-50%,0,0);}
+.navbar-nav .dropright:hover>.dropdown-menu{transform:translate3d(0,0,0);}
+}
+h4{letter-spacing:-.01em;}
+h4{line-height:1.45;}
+@media (max-width:991.98px){
+	.navbar{
+		display:none !important;
+	}
+h4{font-size:1.0625rem;}
+}
+h6{line-height:1.55;}
+h6.text-uppercase{letter-spacing:.08em;}
+.lift{transition:box-shadow .25s ease,transform .25s ease;}
+.lift:focus,.lift:hover{box-shadow:0 1rem 2.5rem rgba(22,28,45,.1),0 .5rem 1rem -.75rem rgba(22,28,45,.1)!important;transform:translate3d(0,-3px,0);}
+.shadow-dark{box-shadow:0 .5rem 1.5rem rgba(22,28,45,.15)!important;}
+.font-size-sm{font-size:.9375rem!important;}
+.text-gray-700{color:#506690!important;}
+.icon>svg{width:3rem;height:3rem;}
+.icon[class*=text-]>svg [fill]:not([fill=none]){fill:currentColor!important;}
+.icon-sm>svg{width:2.25rem;height:2.25rem;}
+/*! CSS Used fontfaces */
+@font-face{font-family:'Feather';src:url('https://landkit.goodthemes.co/assets/fonts/Feather/fonts/Feather.ttf?sdxovp') format('truetype'),     url('https://landkit.goodthemes.co/assets/fonts/Feather/fonts/Feather.woff?sdxovp') format('woff'),     url('https://landkit.goodthemes.co/assets/fonts/Feather/fonts/Feather.svg?sdxovp#Feather') format('svg');font-weight:normal;font-style:normal;}
+
+
+/* footer */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.pg-footer {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.footer {
+    background-color: #000000;
+    color: #fff;
+}
+.footer-wave-svg {
+    background-color: transparent;
+    display: block;
+    height: 30px;
+    position: relative;
+    top: -1px;
+    width: 100%;
+}
+.footer-wave-path {
+    fill: #000000;
+}
+
+.footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px 450px;
+    position: relative;
+}
+
+.footer-content-column {
+    box-sizing: border-box;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    color: #fff;
+}
+
+.footer-content-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-logo-link {
+    display: inline-block;
+}
+.footer-menu {
+    margin-top: 30px;
+}
+
+.footer-menu-name {
+    color: #fffff2;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    line-height: 18px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+.footer-menu-list {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding-left: 0;
+}
+.footer-menu-list li {
+    margin-top: 5px;
+}
+
+.footer-call-to-action-description {
+    color: #fffff2;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.footer-call-to-action-button:hover {
+    background-color: #fffff2;
+    color: #00bef0;
+}
+.button:last-of-type {
+    margin-right: 0;
+}
+.footer-call-to-action-button {
+    background-color: #027b9a;
+    border-radius: 21px;
+    color: #fffff2;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    line-height: 18px;
+    padding: 12px 30px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color .2s;
+    cursor: pointer;
+    position: relative;
+}
+.footer-call-to-action {
+    margin-top: 30px;
+}
+.footer-call-to-action-title {
+    color: #fffff2;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    line-height: 18px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+.footer-call-to-action-link-wrapper {
+    margin-bottom: 0;
+    margin-top: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.footer-call-to-action-link-wrapper a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+.footer-social-links {
+    bottom: 0;
+    height: 54px;
+    position: absolute;
+    right: 0;
+    width: 236px;
+}
+
+.footer-social-amoeba-svg {
+    height: 54px;
+    left: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 236px;
+}
+
+.footer-social-amoeba-path {
+    fill: #1e1f1f;
+}
+
+.footer-social-link.linkedin {
+    height: 26px;
+    left: 3px;
+    top: 11px;
+    width: 26px;
+}
+
+.footer-social-link {
+    display: block;
+    padding: 10px;
+    position: absolute;
+}
+
+.hidden-link-text {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    top: 50%;
+}
+
+.footer-social-icon-svg {
+    display: block;
+}
+
+.footer-social-icon-path {
+    fill: #fffff2;
+    transition: fill .2s;
+}
+
+.footer-social-link.twitter {
+    height: 28px;
+    left: 62px;
+    top: 3px;
+    width: 28px;
+}
+
+.footer-social-link.youtube {
+    height: 24px;
+    left: 123px;
+    top: 12px;
+    width: 24px;
+}
+
+.footer-social-link.github {
+    height: 34px;
+    left: 172px;
+    top: 7px;
+    width: 34px;
+}
+
+.footer-copyright {
+    background-color: #3c3a3294;
+    color: #fff;
+    padding: 15px 30px;
+  text-align: center;
+}
+
+.footer-copyright-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.footer-copyright-text {
+  color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.footer-copyright-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* Media Query For different screens */
+@media (min-width:320px) and (max-width:479px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+	.navbar{
+		display:none !important;
+	}
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px 1050px;
+    position: relative;
+  }
+}
+@media (min-width:480px) and (max-width:599px)  { /* smartphones, Android phones, landscape iPhone */
+  .navbar{
+		display:none !important;
+	}
+	.footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px 1050px;
+    position: relative;
+  }
+}
+@media (min-width:600px) and (max-width: 800px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  .navbar{
+		display:none !important;
+	}
+	.footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px 1050px;
+    position: relative;
+  }
+}
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */
+
+}
+
+
+
+
+@media (min-width: 760px) {
+  .footer-content {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 450px;
+      position: relative;
+  }
+
+  .footer-wave-svg {
+      height: 50px;
+  }
+
+  .footer-content-column {
+      width: 24.99%;
+  }
+}
+@media (min-width: 568px) {
+  /* .footer-content-column {
+      width: 49.99%;
+  } */
+}
+
+
+
+/*body.search .top-header,
+body.archive .top-header{
+	background: #1b1b1b;
+}
+body.search .site-content,
+body.archive .site-content{
+	margin-top: 85px;
+}
+body.search.scrolled .top-header,
+body.search .top-header.hover,
+body.archive.scrolled .top-header,
+body.archive .top-header.hover{
+	background: white;
+}
+
+@media(max-width: 1024px){
+	body.search .site-content,
+	body.archive .site-content{
+		margin-top: 36px;
+	}
+}
+*/</style>
+<!-- end Simple Custom CSS and JS -->
+<!-- start Simple Custom CSS and JS -->
+<style>
+/*.jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-mega-container__inner{
+	padding: 0;
+}
+.jet-mega-menu.jet-mega-menu--layout-horizontal .jet-mega-menu-mega-container{
+	min-width: unset;
+}
+.top-header.hover .main-menu .jet-mega-menu-item--hover .jet-mega-menu-item__label{
+	color: var(--jmm-top-hover-item-title-color, inherit);
+}
+*/</style>
+<!-- end Simple Custom CSS and JS -->
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ2Q6RFG4E"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-XZ2Q6RFG4E');
+		</script>
+
+	<style type="text/css">
+                    .ctl-bullets-container {
+                display: block;
+                position: fixed;
+                right: 0;
+                height: 100%;
+                z-index: 1049;
+                font-weight: normal;
+                height: 70vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                margin: 15vh auto;
+            }</style>
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to automatic -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var dataLayer_content = {"pagePostType":"post","pagePostType2":"single-post","pageCategory":["skills-certifications"],"pageAttributes":["certifications","ciso","cissp","cloud-security","comptia-security","cybersecurity","digital-forensics","grc","incident-response","oscp","penetration-testing","salary","soc-analyst","united-kingdom","zero-trust"],"pagePostAuthor":"hadess"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script data-cfasync="false" data-pagespeed-no-defer>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KMCNWHF4');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="generator" content="Elementor 4.2.2; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+					<style type="text/css">
+							.site-title {
+					position: absolute;
+					clip: rect(1px, 1px, 1px, 1px);
+					}
+									.site-description {
+						position: absolute;
+						clip: rect(1px, 1px, 1px, 1px);
+					}
+						</style>
+		<meta name="generator" content="Powered by Slider Revolution 6.2.23 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<script>
+	!function (t, e, n) { t.yektanetAnalyticsObject = n, t[n] = t[n] || function () { t[n].q.push(arguments) }, t[n].q = t[n].q || []; var a = new Date, r = a.getFullYear().toString() + "0" + a.getMonth() + "0" + a.getDate() + "0" + a.getHours(), c = e.getElementsByTagName("script")[0], s = e.createElement("script"); s.id = "ua-script-ao1PBEUM"; s.dataset.analyticsobject = n; s.async = 1; s.type = "text/javascript"; s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/ao1PBEUM/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c) }(window, document, "yektanet");
+
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7N8B2VMDQG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7N8B2VMDQG');
+</script><link rel="icon" href="/wp-content/uploads/2022/06/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="/wp-content/uploads/2022/06/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="/wp-content/uploads/2022/06/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://hadesssecurity.github.io/wp-content/uploads/2022/06/cropped-favicon-270x270.png" />
+<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+<style id="wp-custom-css">
+.elementor-section.elementor-section-boxed>.elementor-container{
+	max-width: none !important;
+}
+
+.site-header.layout--default .menu-section {
+    display:  none!important;
+}
+
+.site-header.layout--default .site-branding-section {
+    display:  none!important;
+}
+@media (min-width: 1400px) {
+    .newsmatic-container {
+        max-width: none;
+    }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://hadesssecurity.github.io/blog/read/network-security-guide#article","headline":"Network Security Fundamentals: Complete Guide — HADESS Magazine","description":"Master network security fundamentals — firewalls, IDS/IPS, segmentation, and monitoring — with practical skills for defending modern networks.","url":"https://hadesssecurity.github.io/blog/read/network-security-guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://hadesssecurity.github.io/blog/read/network-security-guide"},"datePublished":"February 28, 2026","author":{"@type":"Organization","name":"hadess"},"publisher":{"@type":"Organization","name":"HADESS","url":"https://hadesssecurity.github.io","logo":{"@type":"ImageObject","url":"https://career.hadess.io/logo-white.png"}},"image":{"@type":"ImageObject","url":"https://hadesssecurity.github.io/wp-content/uploads/2026/02/hadess-network-security-guide.png"}}]}</script>
+<!-- Force our dark theme; hide ALL default WP theme output -->
+<style>
+html,body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font)!important}
+/* Hide EVERYTHING injected by WP theme/plugins at body level except our wrapper */
+body>*:not(#hadess-mag):not(script):not(style):not(link):not(noscript):not(.email-modal-overlay){display:none!important}
+#hadess-mag{display:block!important}
+/* Also catch common WP theme selectors in case they're nested */
+#masthead,#site-header,.site-header,#colophon,#site-footer,.site-footer,
+.wp-site-blocks>header,.wp-site-blocks>footer,#site-navigation,
+.main-navigation,.primary-menu-container,.elementor-location-header,
+.elementor-location-footer,#wpadminbar,.nj-whatsapp,
+.whatsapp-popup,.nj-whatsapp-btn{display:none!important}
+.page-blog,.page-single,.page-search{background:var(--bg)!important;color:var(--text)!important}
+/* Elementor content dark theme overrides */
+.elementor-widget-container{color:var(--text-dim)}
+.elementor-widget-container h1,.elementor-widget-container h2,
+.elementor-widget-container h3,.elementor-widget-container h4{color:#fff}
+.elementor-widget-container a{color:var(--gold)}
+</style>
+</head>
+<body class="page-single">
+			<button type="button"  aria-controls="rmp-container-9038" aria-label="Menu Trigger" id="rmp_menu_trigger-9038"  class="rmp_menu_trigger rmp-menu-trigger-boring">
+								<span class="rmp-trigger-box">
+									<span class="responsive-menu-pro-inner"></span>
+								</span>
+					</button>
+						<div id="rmp-container-9038" class="rmp-container rmp-container rmp-slide-left">
+							<div id="rmp-menu-title-9038" class="rmp-menu-title">
+									<a href="/" target="_self" class="rmp-menu-title-link" id="rmp-menu-title-link">
+										<span>HADESS</span>					</a>
+							</div>
+						<div id="rmp-menu-additional-content-9038" class="rmp-menu-additional-content">
+					Cyber Security Magic				</div>
+			<div id="rmp-menu-wrap-9038" class="rmp-menu-wrap"><ul id="rmp-menu-9038" class="rmp-menu" role="menubar" aria-label="Main"><li id="rmp-menu-item-8918" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a  href="/"  class="rmp-menu-item-link"  role="menuitem"  >Home</a></li><li id="rmp-menu-item-6917" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a  href="/"  class="rmp-menu-item-link"  role="menuitem"  >Resources</a></li><li id="rmp-menu-item-6918" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  role="menuitem"  >Reports</a></li><li id="rmp-menu-item-6919" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  role="menuitem"  >Solutions</a></li><li id="rmp-menu-item-6920" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  role="menuitem"  >About Us</a></li></ul></div>			<div id="rmp-search-box-9038" class="rmp-search-box">
+					<form action="/blog/search/" class="rmp-search-form" role="search">
+						<input type="search" name="q" title="Search" placeholder="Search" class="rmp-search-box">
+					</form>
+				</div>
+						</div>
+			
+<!-- GTM Container placement set to automatic -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMCNWHF4" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><div id="hadess-mag">
+
+<!-- Navigation -->
+<nav class="mag-nav">
+  <div class="mag-nav-top">
+    <div class="mag-nav-top-left">
+      <span>Friday, October 2, 2026</span>
+    </div>
+    <div class="mag-nav-top-right">
+      <a href="mailto:career@hadess.io">Contact</a>
+      <a href="https://career.hadess.io/privacy">Privacy</a>
+      <a href="https://career.hadess.io/terms">Terms</a>
+      <div class="mag-social">
+        <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="mailto:career@hadess.io" aria-label="Email"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="mag-nav-main">
+    <a href="/" class="mag-brand">
+      <img src="/wp-content/uploads/2022/06/logo-white.png" alt="HADESS">
+      <div class="mag-brand-text">
+        <span class="mag-brand-name">HADESS</span>
+        <span class="mag-brand-tag">Cybersecurity Magazine</span>
+      </div>
+    </a>
+    <div class="mag-links">
+      <a href="/blog" >Latest</a>
+              <a href="/blog?cat=1">Case Study</a>
+              <a href="/blog?cat=104">Skills &amp; Certifications</a>
+              <a href="/blog?cat=76">Career Guide</a>
+              <a href="/blog?cat=23">White Paper</a>
+            <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+    </div>
+    <a href="/blog/search" class="mag-search-btn">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" stroke-linecap="round"/></svg>
+      Search...
+      <kbd>/</kbd>
+    </a>
+    <a href="https://career.hadess.io/login" class="mag-cta">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Launch Career Platform
+    </a>
+    <button class="mag-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+  </button>
+  <a href="/blog">Latest Articles</a>
+      <a href="/blog?cat=1">Case Study</a>
+      <a href="/blog?cat=104">Skills &amp; Certifications</a>
+      <a href="/blog?cat=76">Career Guide</a>
+      <a href="/blog?cat=23">White Paper</a>
+    <a href="/blog/search">Search</a>
+  <a href="https://career.hadess.io/games/">Hack &amp; Learn</a>
+  <a href="https://career.hadess.io/login" style="color:var(--gold)">Launch Career Platform</a>
+</div>
+
+<!-- ═══ PAGE-SPECIFIC STYLES ═══ -->
+<style>
+/*── Back link ──*/
+.back-to-blog{max-width:var(--max-w);margin:0 auto;padding:20px 32px 0}
+.back-to-blog a{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text-muted);transition:all 0.25s;padding:8px 16px;border-radius:var(--radius-full);border:1px solid transparent}
+.back-to-blog a:hover{color:var(--gold);border-color:var(--gold-border);background:var(--gold-dim)}
+.back-to-blog a svg{width:14px;height:14px;transition:transform 0.2s}
+.back-to-blog a:hover svg{transform:translateX(-3px)}
+
+/*── Hero ──*/
+.article-hero{position:relative;width:100%;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;margin-bottom:48px}
+.article-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.article-hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,7,0.95) 0%,rgba(5,5,7,0.6) 40%,rgba(5,5,7,0.3) 100%);z-index:1}
+.article-hero-no-img{background:linear-gradient(135deg,rgba(250,204,21,0.06),rgba(245,158,11,0.02),rgba(5,5,7,1))}
+.article-hero-content{position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;width:100%;padding:80px 32px 56px}
+.article-cat-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(250,204,21,0.12);border:1px solid var(--gold-border);color:var(--gold);padding:6px 16px;border-radius:var(--radius-full);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:20px;backdrop-filter:blur(8px)}
+.article-cat-badge svg{width:12px;height:12px}
+.article-hero h1{font-family:var(--font-display);font-size:44px;font-weight:800;color:#fff;line-height:1.2;max-width:800px;margin-bottom:24px}
+.article-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.article-meta-author{display:flex;align-items:center;gap:10px}
+.article-meta-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#f59e0b);display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:14px;flex-shrink:0;overflow:hidden}
+.article-meta-avatar img{width:100%;height:100%;object-fit:cover}
+.article-meta-name{font-size:14px;font-weight:600;color:#fff}
+.article-meta-sep{width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
+.article-meta-date,.article-meta-reading{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-dim)}
+.article-meta-date svg,.article-meta-reading svg{width:14px;height:14px;opacity:0.6}
+
+/*── Share buttons ──*/
+.article-share{display:flex;align-items:center;gap:8px;margin-top:24px}
+.article-share span{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;margin-right:4px}
+.share-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-dim);transition:all 0.25s;cursor:pointer}
+.share-btn:hover{border-color:var(--gold-border);color:var(--gold);background:var(--gold-dim);transform:translateY(-2px)}
+.share-btn svg{width:16px;height:16px}
+.share-btn.copied{border-color:var(--green);color:var(--green);background:rgba(34,197,94,0.1)}
+
+/*── Article body ──*/
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:0 32px}
+.article-content-col{max-width:720px;margin:0 auto;padding-bottom:64px}
+
+/*── Article typography ──*/
+.article-content p{font-size:17px;line-height:1.8;color:var(--text-dim);margin-bottom:24px}
+.article-content h2{font-family:var(--font-display);font-size:28px;font-weight:700;color:#fff;margin:48px 0 16px;line-height:1.3}
+.article-content h3{font-size:22px;font-weight:600;color:#fff;margin:36px 0 12px;line-height:1.35}
+.article-content h4{font-size:18px;font-weight:600;color:#e5e7eb;margin:28px 0 10px;line-height:1.4}
+.article-content a{color:var(--gold);text-decoration:none;transition:all 0.2s;border-bottom:1px solid transparent}
+.article-content a:hover{border-bottom-color:var(--gold)}
+.article-content blockquote{border-left:3px solid var(--gold);padding:16px 0 16px 20px;margin:32px 0;color:var(--text-dim);font-style:italic;font-size:17px;line-height:1.7;background:rgba(250,204,21,0.03);border-radius:0 8px 8px 0}
+.article-content blockquote p{margin-bottom:0;color:inherit}
+.article-content pre{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:20px 24px;overflow-x:auto;margin:24px 0;font-family:'JetBrains Mono','Fira Code',monospace;font-size:14px;line-height:1.7;color:var(--text)}
+.article-content code{background:rgba(255,255,255,0.05);padding:2px 8px;border-radius:4px;font-family:'JetBrains Mono','Fira Code',monospace;font-size:0.9em;color:var(--gold)}
+.article-content pre code{background:none;padding:0;border-radius:0;font-size:inherit;color:inherit}
+.article-content img{max-width:100%;height:auto;border-radius:12px;margin:24px 0}
+.article-content ul,.article-content ol{padding-left:24px;margin-bottom:24px;color:var(--text-dim)}
+.article-content ul li,.article-content ol li{font-size:17px;line-height:1.8;margin-bottom:8px}
+.article-content ul li::marker{color:var(--gold)}
+.article-content ol li::marker{color:var(--gold);font-weight:600}
+.article-content hr{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--border),rgba(250,204,21,0.15),var(--border),transparent);margin:48px 0}
+.article-content table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+.article-content table th{background:rgba(255,255,255,0.05);color:#fff;font-weight:600;padding:12px 16px;text-align:left;border-bottom:2px solid var(--gold-border)}
+.article-content table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-dim)}
+.article-content table tr:hover td{background:rgba(255,255,255,0.02)}
+.article-content figure{margin:32px 0}
+.article-content figcaption{text-align:center;font-size:13px;color:var(--text-muted);margin-top:10px;font-style:italic}
+
+/* WP specific content styles */
+.article-content .wp-block-image{margin:32px 0}
+.article-content .wp-block-image img{border-radius:12px}
+.article-content .wp-caption{margin:32px 0}
+.article-content .wp-caption-text{text-align:center;font-size:13px;color:var(--text-muted);margin-top:10px;font-style:italic}
+.article-content .aligncenter{display:block;margin-left:auto;margin-right:auto}
+.article-content .alignfull{width:100vw;max-width:100vw;margin-left:calc(-50vw + 50%)}
+.article-content .alignwide{margin-left:-60px;margin-right:-60px;max-width:calc(100% + 120px)}
+
+/* ─── Elementor content overrides (dark theme) ─── */
+.article-content .elementor-widget-container{color:var(--text-dim)!important}
+.article-content .elementor-widget-container p{font-size:17px;line-height:1.8;color:var(--text-dim)!important;margin-bottom:24px}
+.article-content .elementor-widget-container h1,
+.article-content .elementor-widget-container h2,
+.article-content .elementor-widget-container h3,
+.article-content .elementor-widget-container h4,
+.article-content .elementor-widget-container h5,
+.article-content .elementor-widget-container h6{color:#fff!important}
+.article-content .elementor-widget-container a{color:var(--gold)!important}
+.article-content .elementor-widget-container ul,
+.article-content .elementor-widget-container ol{color:var(--text-dim)!important}
+.article-content .elementor-widget-container li{color:var(--text-dim)!important;font-size:17px;line-height:1.8}
+.article-content .elementor-widget-container img{max-width:100%;height:auto;border-radius:12px}
+.article-content .elementor-widget-container blockquote{border-left:3px solid var(--gold);padding-left:20px;color:var(--text-dim)!important}
+.article-content .elementor-widget-container table td,
+.article-content .elementor-widget-container table th{color:var(--text-dim)!important;border-color:var(--border)!important}
+.article-content .elementor-widget-container table th{color:#fff!important}
+.article-content .elementor-section{background-color:transparent!important}
+.article-content .elementor-column{background-color:transparent!important}
+.article-content .elementor{color:var(--text-dim)}
+.article-content .elementor *:not(a):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(svg):not(path):not(img){background-color:transparent!important}
+/* Elementor editor inline color overrides — force readable text */
+.article-content [style*="color: #000"],
+.article-content [style*="color:#000"],
+.article-content [style*="color: black"],
+.article-content [style*="color:black"],
+.article-content [style*="color: rgb(0"]{color:var(--text-dim)!important}
+
+/*── Tags ──*/
+.article-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+.article-tags a{display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:var(--radius-full);font-size:12px;font-weight:500;color:var(--text-muted);background:var(--surface);border:1px solid var(--border);transition:all 0.25s}
+.article-tags a:hover{color:var(--gold);border-color:var(--gold-border);background:var(--gold-dim)}
+.article-tags a svg{width:12px;height:12px;opacity:0.5}
+
+/*── Author box ──*/
+.author-box{margin-top:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;gap:24px;align-items:flex-start;transition:border-color 0.3s}
+.author-box:hover{border-color:var(--gold-border)}
+.author-box-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#f59e0b);display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:24px;flex-shrink:0;overflow:hidden}
+.author-box-avatar img{width:100%;height:100%;object-fit:cover}
+.author-box-info{flex:1;min-width:0}
+.author-box-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.author-box-name{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+.author-box-bio{font-size:14px;color:var(--text-dim);line-height:1.7}
+.author-box-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:500;color:var(--gold);transition:gap 0.2s}
+.author-box-link:hover{gap:10px}
+.author-box-link svg{width:14px;height:14px}
+
+/*── Related posts ──*/
+.related-section{max-width:var(--max-w);margin:0 auto;padding:0 32px 80px}
+.related-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.related-header h2{font-family:var(--font-display);font-size:28px;font-weight:800;color:#fff}
+.related-header a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--gold);transition:gap 0.2s}
+.related-header a:hover{gap:10px}
+.related-header a svg{width:14px;height:14px}
+
+/*── Responsive ──*/
+@media(max-width:1024px){
+  .article-hero h1{font-size:36px}
+  .article-content .alignwide{margin-left:0;margin-right:0;max-width:100%}
+}
+@media(max-width:768px){
+  .article-hero{min-height:380px}
+  .article-hero-content{padding:60px 20px 40px}
+  .article-hero h1{font-size:28px}
+  .article-meta{gap:12px}
+  .article-wrap{padding:0 20px}
+  .author-box{flex-direction:column;align-items:center;text-align:center}
+  .related-section{padding:0 20px 60px}
+  .related-header{flex-direction:column;gap:12px;align-items:flex-start}
+}
+@media(max-width:480px){
+  .article-hero{min-height:320px}
+  .article-hero h1{font-size:24px}
+  .article-share{flex-wrap:wrap}
+}
+</style>
+
+<!-- ═══ BACK TO BLOG ═══ -->
+<div class="back-to-blog">
+  <a href="/blog">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Magazine
+  </a>
+</div>
+
+<!-- ═══ ARTICLE HERO ═══ -->
+<div class="article-hero">
+      <div class="article-hero-bg" style="background-image:url('/wp-content/uploads/2026/02/hadess-network-security-guide.png')"></div>
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-content">
+    <a href="/blog?cat=104" class="article-cat-badge">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Skills &amp; Certifications    </a>
+    <h1>Network Security Fundamentals: Complete Guide</h1>
+    <div class="article-meta">
+      <div class="article-meta-author">
+        <div class="article-meta-avatar">
+                      <img src="https://secure.gravatar.com/avatar/34bea988a8bf817b77554a8a768058aa93427b6e9e5c53a9fb4273ea554b12e5?s=80&#038;d=mm&#038;r=g" alt="hadess">
+                  </div>
+        <span class="article-meta-name">hadess</span>
+      </div>
+      <span class="article-meta-sep"></span>
+      <span class="article-meta-date">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        February 28, 2026      </span>
+      <span class="article-meta-sep"></span>
+      <span class="article-meta-reading">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        14 min read
+      </span>
+    </div>
+    <!-- Share buttons -->
+    <div class="article-share">
+      <span>Share</span>
+      <!-- Twitter / X -->
+      <a href="https://x.com/intent/tweet?url=https%3A%2F%2Fhadess.io%2Fblog%2Fread%2Fnetwork-security-guide&text=Network+Security+Fundamentals%3A+Complete+Guide" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on X">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fhadess.io%2Fblog%2Fread%2Fnetwork-security-guide" target="_blank" rel="noopener noreferrer" class="share-btn" title="Share on LinkedIn">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <!-- Copy link -->
+      <button class="share-btn" id="copyLinkBtn" title="Copy link" onclick="copyArticleLink()">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ARTICLE BODY ═══ -->
+<div class="article-wrap">
+  <div class="article-content-col">
+    <div class="article-content" data-pagefind-body data-pagefind-meta="image:/wp-content/uploads/2026/02/hadess-network-security-guide.png">
+      <blockquote>
+<p><strong>Part of the <a href="/blog/read/cybersecurity-skills-guide">Cybersecurity Skills Guide</a></strong> — This article is one deep-dive in our complete skills and certifications series.</p>
+</blockquote>
+<h1>CISSP Certification: Complete Requirements Guide</h1>
+<p><em>By HADESS Team | February 28, 2026 | Updated: February 28, 2026 | 12 min read</em></p>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#what-is-cissp">What Is CISSP?</a></li>
+<li><a href="#cissp-requirements-in-2026">CISSP Requirements in 2026</a></li>
+<li><a href="#the-eight-cissp-domains">The Eight CISSP Domains</a></li>
+<li><a href="#exam-format-and-structure">Exam Format and Structure</a></li>
+<li><a href="#experience-requirements-explained">Experience Requirements Explained</a></li>
+<li><a href="#study-strategy-how-to-prepare">Study Strategy: How to Prepare</a></li>
+<li><a href="#domain-1-security-and-risk-management">Domain 1: Security and Risk Management</a></li>
+<li><a href="#domain-2-asset-security">Domain 2: Asset Security</a></li>
+<li><a href="#domain-3-security-architecture-and-engineering">Domain 3: Security Architecture and Engineering</a></li>
+<li><a href="#domain-4-communication-and-network-security">Domain 4: Communication and Network Security</a></li>
+<li><a href="#domain-5-identity-and-access-management">Domain 5: Identity and Access Management</a></li>
+<li><a href="#domain-6-security-assessment-and-testing">Domain 6: Security Assessment and Testing</a></li>
+<li><a href="#domain-7-security-operations">Domain 7: Security Operations</a></li>
+<li><a href="#domain-8-software-development-security">Domain 8: Software Development Security</a></li>
+<li><a href="#cissp-vs-other-senior-certifications">CISSP vs. Other Senior Certifications</a></li>
+<li><a href="#career-impact-and-salary-data">Career Impact and Salary Data</a></li>
+<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+</ul>
+<h2>What Is CISSP?</h2>
+<p>The CISSP requirements 2026 remain the benchmark for senior cybersecurity professionals worldwide. The Certified Information Systems Security Professional (CISSP) certification, issued by <a href="https://www.isc2.org/certifications/cissp">ISC2</a>, validates deep knowledge across all domains of information security. It is not a hands-on technical certification — it is a management-level credential that demonstrates your ability to design, implement, and manage a security program.</p>
+<p>CISSP holders typically occupy roles like <a href="/blog/read/security-manager" title="Security Manager: Build and Lead Security Teams">Security Manager</a>, Security Director, Security Architect, CISO, and Senior Security Consultant. The certification signals to employers that you understand security at an organizational level, not just at the tool or technique level.</p>
+<p>With over 160,000 active holders globally, CISSP is the most widely recognized advanced security certification. It satisfies DoD Directive 8570/8140 requirements for Information Assurance Technical (IAT) Level III and Information Assurance Management (IAM) Level III positions.</p>
+<p>For an overview of how CISSP fits into the broader certification ecosystem, see our <a href="/blog/read/cybersecurity-skills-guide">cybersecurity skills guide</a>.</p>
+<h2>CISSP Requirements in 2026</h2>
+<p>To earn the full CISSP certification, you must satisfy three requirements:</p>
+<p><strong>1. Pass the exam</strong>: Score sufficiently on the CISSP Computerized Adaptive Test (CAT) or linear exam.</p>
+<p><strong>2. Professional experience</strong>: Demonstrate five years of cumulative, paid, full-time work experience in two or more of the eight CISSP domains. A four-year college degree or an approved credential (such as CompTIA Security+) substitutes for one year, reducing the requirement to four years.</p>
+<p><strong>3. Endorsement</strong>: After passing the exam, an active ISC2-certified professional must endorse your application, attesting that your experience claims are accurate. If you do not know an ISC2 member, ISC2 can act as your endorser.</p>
+<p><strong>The Associate path</strong>: If you pass the exam but lack the required experience, you become an Associate of ISC2. You have six years to accumulate the necessary experience and complete the endorsement process. Many professionals take this path — passing the exam while building experience.</p>
+<p><strong>Continuing Professional Education (CPE)</strong>: After certification, you must earn 40 CPE credits per year (120 over each three-year cycle) and pay an annual maintenance fee of $125.</p>
+<h2>The Eight CISSP Domains</h2>
+<p>The CISSP Common Body of Knowledge (CBK) covers eight domains. The 2024 exam outline (active through 2026) weights them as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Security and Risk Management</td>
+<td>16%</td>
+</tr>
+<tr>
+<td>2. Asset Security</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>3. Security Architecture and Engineering</td>
+<td>13%</td>
+</tr>
+<tr>
+<td>4. Communication and Network Security</td>
+<td>13%</td>
+</tr>
+<tr>
+<td>5. <a href="/blog/read/identity-access-management" title="Identity and Access Management: RBAC, ABAC, and Federation">Identity and Access Management</a> (IAM)</td>
+<td>13%</td>
+</tr>
+<tr>
+<td>6. Security Assessment and Testing</td>
+<td>12%</td>
+</tr>
+<tr>
+<td>7. Security Operations</td>
+<td>13%</td>
+</tr>
+<tr>
+<td>8. Software Development Security</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p>Domain 1 carries the highest weight at 16%. The remaining domains are relatively evenly distributed. This means you cannot afford to neglect any single domain — the exam tests breadth across all eight areas.</p>
+<h2>Exam Format and Structure</h2>
+<p>The CISSP exam uses Computerized Adaptive Testing (CAT) for English-language exams:</p>
+<ul>
+<li><strong>Question count</strong>: 125-175 questions (adaptive — the test ends when the algorithm has enough data to determine pass/fail)</li>
+<li><strong>Time limit</strong>: 4 hours</li>
+<li><strong>Question types</strong>: Multiple choice and advanced innovative items (drag-and-drop, hotspot, reorder)</li>
+<li><strong>Passing standard</strong>: 700 out of 1000 points</li>
+<li><strong>Languages</strong>: CAT available in English. Linear (250 questions, 6 hours) available in other languages</li>
+</ul>
+<p><strong>How the CAT works</strong>: The algorithm presents questions of varying difficulty. If you answer correctly, the next question is harder. If you answer incorrectly, the next question is easier. The test determines your proficiency level in each domain and ends when it has statistical confidence in its pass/fail determination. Most candidates finish between 100-150 questions.</p>
+<p><strong>What the exam tests</strong>: CISSP questions test your ability to apply security concepts to scenarios, not memorize facts. A typical question presents a situation and asks what you should do <em>first</em>, what is the <em>best</em> approach, or what <em>most effectively</em> addresses the requirement. The correct answer often depends on understanding security principles and organizational context, not technical specifics.</p>
+<p><strong>Exam cost</strong>: $749 USD. Scheduling through Pearson VUE.</p>
+<h2>Experience Requirements Explained</h2>
+<p>The five-year experience requirement is the most significant barrier to CISSP certification. Here is how it works in practice:</p>
+<p><strong>Qualifying experience</strong>: Full-time security work in at least two of the eight domains. This includes security analysis, architecture, consulting, engineering, management, and security-related research or instruction.</p>
+<p><strong>Adjacent roles that qualify</strong>: Systems administration with security responsibilities, network engineering with security architecture duties, software development with <a href="/blog/read/application-security-expert" title="Application Security Expert: Own Security Across the SDLC">application security</a> focus, risk management, compliance and audit, and IT management with security oversight.</p>
+<p><strong>What does not qualify</strong>: General IT support without security responsibilities, pure software development without security focus, and project management without security domain involvement.</p>
+<p><strong>Education and credential substitutions</strong> (one year maximum):</p>
+<ul>
+<li>Four-year college degree in any field (or regional equivalent)</li>
+<li>Master&#8217;s degree in information security</li>
+<li>CompTIA Security+, CCNA Security, Systems Security Certified Practitioner (SSCP), or other ISC2-approved credentials</li>
+</ul>
+<p><strong>Documentation</strong>: You must describe your experience in detail on the endorsement form, mapping it to specific CISSP domains. Be prepared to explain your responsibilities, the security decisions you made, and the scope of your work. ISC2 audits a percentage of applications.</p>
+<h2>Study Strategy: How to Prepare</h2>
+<p>CISSP preparation differs from technical certifications. The exam tests judgment and decision-making more than technical recall.</p>
+<p><strong>Recommended study timeline</strong>: 3-<a href="/blog/read/cyber-job-6-months" title="How to Get a Cybersecurity Job in 6 Months">6 months</a> at 10-15 hours per week.</p>
+<p><strong>Study materials</strong>:</p>
+<ul>
+<li><em>ISC2 CISSP Official Study Guide</em> (Sybex/Wiley) — the primary textbook</li>
+<li><em>ISC2 CISSP Official Practice Tests</em> — essential for exam readiness</li>
+<li><em>CISSP All-in-One Exam Guide</em> (Shon Harris/Fernando Maymi) — alternative full-coverage reference</li>
+<li><em>Destination CISSP</em> (Rob Witcher) — focused on exam strategy and understanding ISC2&#8217;s perspective</li>
+<li><em>Think Like a Manager</em> (Luke Ahmed) — specifically addresses the management mindset required</li>
+</ul>
+<p><strong>Study approach</strong>:</p>
+<p><strong>Phase 1 (Weeks 1-6)</strong>: Read through all eight domains systematically. Take notes on concepts you do not understand. Do not memorize — focus on understanding why each security control exists and when it applies.</p>
+<p><strong>Phase 2 (Weeks 7-10)</strong>: Practice questions. Complete 1,500-2,500 practice questions from multiple sources. Analyze every wrong answer — understand why the correct answer is correct and why your answer was wrong. Track your weakest domains.</p>
+<p><strong>Phase 3 (Weeks 11-12)</strong>: Focused review of weak domains. Take full-length practice exams under timed conditions. Score consistently above 80% before scheduling the real exam.</p>
+<p><strong>The ISC2 mindset</strong>: CISSP questions are written from the perspective of a security manager, not a technician. When choosing between a technical solution and a managerial/procedural solution, the procedural answer is often correct. When asked what to do &#8220;first,&#8221; think about life safety, then containment, then investigation. When two answers seem correct, choose the one that addresses the broadest risk.</p>
+<h2>Domain 1: Security and Risk Management</h2>
+<p>This is the largest domain (16%) and covers the governance, risk, and compliance foundation that the other seven domains build upon.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>Security governance principles and frameworks</li>
+<li>Compliance requirements (GDPR, HIPAA, PCI DSS, SOX)</li>
+<li>Legal and regulatory issues (privacy, intellectual property, import/export controls)</li>
+<li>Professional ethics (ISC2 Code of Ethics)</li>
+<li>Risk management concepts (identification, assessment, treatment, monitoring)</li>
+<li>Threat modeling methodologies (STRIDE, PASTA, DREAD)</li>
+<li>Business continuity planning and disaster recovery</li>
+<li>Personnel security (hiring practices, termination procedures, security awareness)</li>
+</ul>
+<p><strong>Study emphasis</strong>: Understand risk treatment options (accept, mitigate, transfer, avoid) and when each is appropriate. Know the difference between quantitative risk analysis (ALE, SLE, ARO) and qualitative risk analysis (risk matrices, Delphi technique). Be able to calculate ALE and explain what the result means to a business stakeholder.</p>
+<h2>Domain 2: Asset Security</h2>
+<p>This domain (10%) covers data classification, ownership, privacy, and retention.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>Data classification levels (government and commercial)</li>
+<li>Data ownership roles (owner, custodian, steward, processor, controller)</li>
+<li>Privacy principles and data protection</li>
+<li>Data retention, archival, and destruction policies</li>
+<li>Data states: at rest, in transit, in use</li>
+<li>Data handling requirements based on classification</li>
+<li>Data remanence and secure disposal methods</li>
+</ul>
+<h2>Domain 3: Security Architecture and Engineering</h2>
+<p>This domain (13%) covers security design principles and the engineering of secure systems.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>Security models (Bell-LaPadula, Biba, Clark-Wilson, Brewer-Nash)</li>
+<li>Security evaluation criteria (Common Criteria, TCSEC historical context)</li>
+<li>Secure design principles (defense in depth, least privilege, fail-safe defaults, separation of duties)</li>
+<li>Cryptography (symmetric, asymmetric, hashing, digital signatures, PKI, certificate management)</li>
+<li>Physical security controls</li>
+<li>Site and facility security design</li>
+</ul>
+<p><strong>Study emphasis</strong>: Cryptography is heavily tested. Understand the differences between AES, RSA, ECC, SHA-256, and when each is used. Know how PKI works end-to-end (certificate authorities, certificate lifecycle, revocation). Understand key management practices.</p>
+<p>For related technical depth, see our guide on <a href="/blog/read/network-security-guide">network security fundamentals</a>.</p>
+<h2>Domain 4: Communication and Network Security</h2>
+<p>This domain (13%) covers network architecture, protocols, and secure communication channels.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>OSI and TCP/IP models</li>
+<li>Network components (switches, routers, firewalls, proxies, load balancers)</li>
+<li>Secure communication protocols (TLS, IPsec, SSH)</li>
+<li>Network attacks (DDoS, spoofing, man-in-the-middle, session hijacking)</li>
+<li>Network segmentation and micro-segmentation</li>
+<li>Wireless security</li>
+<li>VPN technologies</li>
+<li>SDN and cloud networking</li>
+</ul>
+<h2>Domain 5: Identity and Access Management</h2>
+<p>This domain (13%) covers identification, authentication, authorization, and accountability.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>Authentication factors (knowledge, possession, inherence, location)</li>
+<li>Federated identity and SSO (SAML, OAuth, OIDC)</li>
+<li>Access control models (DAC, MAC, RBAC, ABAC)</li>
+<li><a href="/blog/read/privileged-access-management" title="Privileged Access Management: Securing High-Risk Accounts">Privileged access management</a></li>
+<li>Identity as a service (IDaaS)</li>
+<li>Session management</li>
+<li>Registration and identity proofing</li>
+</ul>
+<p>This domain connects directly to <a href="/blog/read/zero-trust-security">zero trust security</a> principles, which treat identity as the primary security boundary.</p>
+<h2>Domain 6: Security Assessment and Testing</h2>
+<p>This domain (12%) covers security testing methodologies, vulnerability assessment, and audit processes.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>Vulnerability assessment and management</li>
+<li>Penetration testing methodologies</li>
+<li>Log review and analysis</li>
+<li>Security audits (internal and external)</li>
+<li>SOC reports (SOC 1, SOC 2, SOC 3)</li>
+<li>Key Performance Indicators (KPIs) and Key Risk Indicators (KRIs)</li>
+<li>Code review and testing</li>
+<li>Disaster recovery testing</li>
+</ul>
+<p>For context on how offensive certifications complement CISSP, see our <a href="/blog/read/ceh-vs-oscp">CEH vs OSCP comparison</a>.</p>
+<h2>Domain 7: Security Operations</h2>
+<p>This domain (13%) covers incident management, forensics, business continuity, and physical security operations.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>Incident management lifecycle (detection, response, mitigation, reporting, recovery, remediation, lessons learned)</li>
+<li>Digital forensics procedures (evidence collection, chain of custody, analysis)</li>
+<li>Logging and monitoring requirements</li>
+<li>Change management and configuration management</li>
+<li>Patch and <a href="/blog/read/vulnerability-management" title="Vulnerability Management: Scanning, Prioritization, and Patching">vulnerability management</a></li>
+<li>Business continuity and disaster recovery operations</li>
+<li>Physical security operations</li>
+</ul>
+<h2>Domain 8: Software Development Security</h2>
+<p>This domain (10%) covers secure coding practices, development methodologies, and application security.</p>
+<p><strong>Key topics</strong>:</p>
+<ul>
+<li>Secure software development lifecycle (SSDLC)</li>
+<li>Development methodologies (Agile, DevOps, <a href="/blog/read/devsecops-engineer" title="DevSecOps Engineer: Build Security into Every Pipeline">DevSecOps</a>)</li>
+<li>Application security testing (SAST, DAST, IAST, SCA)</li>
+<li>Common software vulnerabilities (OWASP Top 10)</li>
+<li>Database security</li>
+<li>Secure coding guidelines</li>
+<li>Software supply chain security</li>
+</ul>
+<h2>CISSP vs. Other Senior Certifications</h2>
+<p><strong>CISSP vs. CISM (Certified Information Security Manager)</strong>: CISM is issued by ISACA and focuses specifically on security management and governance. CISSP covers broader technical ground across eight domains. CISM is preferred for roles focused on security program management. CISSP is preferred for roles requiring both technical breadth and management capability. Many senior professionals hold both.</p>
+<p><strong>CISSP vs. CCSP (Certified Cloud Security Professional)</strong>: CCSP is ISC2&#8217;s cloud-specific certification. CISSP covers cloud security at a high level within its domains, while CCSP goes deep into cloud architecture, security design, and operations. Consider CCSP as a complement to CISSP if you specialize in cloud security. See our <a href="/blog/read/cloud-security-skills">cloud security skills guide</a> for cloud certification details.</p>
+<p><strong>CISSP vs. CISA (Certified Information Systems Auditor)</strong>: CISA focuses on IT audit, risk assessment, and governance from an auditor&#8217;s perspective. CISSP covers security from a practitioner and manager&#8217;s perspective. CISA is the right choice if your career direction is IT audit or GRC. CISSP is the right choice if your career direction is security leadership.</p>
+<p><strong>CISSP vs. Security+ / CEH / OSCP</strong>: These are not equivalent comparisons — CISSP is a senior-level management certification, while the others are technical certifications at various levels. <a href="/blog/read/comptia-security-plus">CompTIA Security+</a> is an entry-level prerequisite. CEH and OSCP validate offensive security skills. CISSP comes later in a career, after you have accumulated experience across multiple security domains.</p>
+<h2>Career Impact and Salary Data</h2>
+<p>CISSP consistently appears in the top-paying cybersecurity certifications globally.</p>
+<p><strong>Salary data</strong> (U.S., 2026 estimates):</p>
+<ul>
+<li>CISSP holders (all levels): $120,000-$180,000</li>
+<li>Security Manager with CISSP: $130,000-$165,000</li>
+<li>Security Architect with CISSP: $150,000-$195,000</li>
+<li>CISO with CISSP: $180,000-$300,000+</li>
+</ul>
+<p><strong>Job market impact</strong>: CISSP appears in more cybersecurity job postings than any other certification. It is frequently listed as &#8220;required&#8221; or &#8220;preferred&#8221; for mid-senior roles. In government and defense contracting, it satisfies IAM Level III requirements.</p>
+<p><strong>When to earn CISSP</strong>: The optimal timing is after four to six years of security experience across multiple domains. Earning it too early means you pass the exam (possible with study) but lack the experience to use it effectively. Earning it at the right time confirms the expertise you have already developed and opens doors to senior positions.</p>
+<p>Use our <a href="https://career.hadess.io/certificate-roadmap">certificate roadmap tool</a> to map your path from current certifications to CISSP, including the intermediate credentials that build toward it.</p>
+<p><strong>Explore all cybersecurity skills:</strong> <a href="/blog/read/cybersecurity-skills-guide" title="Cybersecurity Skills for Beginners">Cybersecurity Skills for Beginners</a></p>
+<h2>Related Guides in This Series</h2>
+<ul>
+<li><a href="/blog/read/comptia-security-plus">CompTIA Security+ Study Guide 2026</a></li>
+<li><a href="/blog/read/ceh-vs-oscp">CEH vs OSCP: Which Certification First?</a></li>
+<li><a href="/blog/read/top-cyber-skills">Top 10 Cybersecurity Skills Employers Want</a></li>
+</ul>
+<h2>Take the Next Step</h2>
+<p><strong>Plan your CISSP path</strong> — Use our <a href="https://career.hadess.io/certificate-roadmap">Certificate Roadmap</a> to see the recommended progression from entry-level to CISSP based on your experience.<br />
+<strong>Identify your domain strengths</strong> — Take a <a href="https://career.hadess.io/assessment">skills assessment</a> to map your current knowledge across all eight CISSP domains.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>How hard is the CISSP exam?</h3>
+<p>CISSP is widely considered one of the most challenging cybersecurity certifications. The difficulty is not in the technical complexity — it is in the breadth of knowledge required and the scenario-based question format. Many questions have two or more seemingly correct answers, and you must choose the <em>best</em> answer based on ISC2&#8217;s security management perspective. Candidates with strong technical backgrounds often struggle initially because the exam rewards thinking like a security manager, not a security engineer. A pass rate around 50-60% on the first attempt is commonly reported.</p>
+<h3>Can I pass CISSP without five years of experience?</h3>
+<p>Yes. You can pass the exam and become an Associate of ISC2 while accumulating the required experience. Many professionals pass the exam with two to three years of experience and complete the full certification requirement over the following years. The exam tests knowledge and judgment, which can be developed through study and adjacent experience. However, candidates with less experience typically find the scenario-based questions harder because they lack the real-world context that the questions assume.</p>
+<h3>How long should I study for CISSP?</h3>
+<p>Three to six months of dedicated preparation at 10-15 hours per week is the most common recommendation. Factors that affect study time include your current experience across the eight domains, your familiarity with governance and risk management (domains many technical professionals find most challenging), and your comfort with the ISC2 question format. Complete at least 2,000 practice questions before scheduling the exam. If you consistently score above 80% on full-length practice tests, you are ready.</p>
+<p>&#8212; <em>HADESS Team consists of cybersecurity practitioners, hiring managers, and career strategists who have collectively spent 50+ years in the field.</em></p>
+    </div>
+
+    <!-- ═══ CAREER PLATFORM CTA ═══ -->
+    <div style="margin-top:48px;background:linear-gradient(135deg,rgba(250,204,21,0.06) 0%,rgba(245,158,11,0.04) 50%,rgba(0,0,0,0.3) 100%);border:1px solid rgba(250,204,21,0.15);border-radius:16px;overflow:hidden;position:relative">
+      <!-- Decorative top accent line -->
+      <div style="height:3px;background:linear-gradient(90deg,#facc15,#f59e0b,#facc15);opacity:0.8"></div>
+
+      <div style="padding:40px 36px;text-align:center">
+        <!-- Icon -->
+        <div style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:16px;background:rgba(250,204,21,0.1);border:1px solid rgba(250,204,21,0.2);margin-bottom:20px">
+          <svg width="30" height="30" fill="none" stroke="#facc15" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Headline -->
+        <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;color:#fff;margin:0 0 8px;line-height:1.3">
+          Ready to Accelerate Your Cybersecurity Career?
+        </h3>
+        <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:520px;margin:0 auto 28px">
+          Access structured learning paths, hands-on skill labs, and expert coaching — everything you need to land your next role.
+        </p>
+
+        <!-- Buttons -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
+          <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;font-family:var(--font);transition:all 0.25s;box-shadow:0 2px 16px rgba(250,204,21,0.15)" onmouseover="this.style.boxShadow='0 4px 28px rgba(250,204,21,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 16px rgba(250,204,21,0.15)';this.style.transform='none'">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Start Free
+          </a>
+          <a href="https://career.hadess.io/games/" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;font-family:var(--font);border:1px solid rgba(255,255,255,0.1);transition:all 0.25s" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(250,204,21,0.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.1)';this.style.transform='none'">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Hack &amp; Learn Games
+          </a>
+        </div>
+
+        <!-- Subtle trust line -->
+        <p style="font-size:12px;color:rgba(255,255,255,0.3);margin:20px 0 0;letter-spacing:0.3px">
+          100% free to start &middot; No credit card required &middot; 80+ skill modules
+        </p>
+      </div>
+    </div>
+
+    <!-- Tags -->
+        <div class="article-tags">
+              <a href="/blog?tag=certifications">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Certifications        </a>
+              <a href="/blog?tag=cloud-security">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Cloud Security        </a>
+              <a href="/blog?tag=comptia-security">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          CompTIA Security+        </a>
+              <a href="/blog?tag=cybersecurity">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Cybersecurity        </a>
+              <a href="/blog?tag=incident-response">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Incident Response        </a>
+              <a href="/blog?tag=penetration-testing">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Penetration Testing        </a>
+              <a href="/blog?tag=siem">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SIEM        </a>
+              <a href="/blog?tag=zero-trust">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Zero Trust        </a>
+          </div>
+    
+    <!-- Author box -->
+    <div class="author-box">
+      <div class="author-box-avatar">
+                  <img src="https://secure.gravatar.com/avatar/34bea988a8bf817b77554a8a768058aa93427b6e9e5c53a9fb4273ea554b12e5?s=80&#038;d=mm&#038;r=g" alt="hadess">
+              </div>
+      <div class="author-box-info">
+        <div class="author-box-label">Written by</div>
+        <div class="author-box-name">hadess</div>
+                <a href="/blog?author=1" class="author-box-link">
+          View all articles
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+      </div>
+</div>
+
+<!-- ═══ DIVIDER ═══ -->
+<div class="section-divider"><div class="section-divider-line"></div></div>
+
+<!-- ═══ RELATED POSTS ═══ -->
+<div style="padding-top:48px"></div>
+<div class="related-section">
+  <div class="related-header">
+    <h2>More in Skills &amp; Certifications</h2>
+    <a href="/blog?cat=104">
+      View all
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="post-grid">
+              <a href="/blog/read/zero-trust-network-access" class="post-card">
+            <div class="card-img-wrap">
+        <img src="/wp-content/uploads/2026/02/hadess-zero-trust-network-access-768x403.png" alt="Zero Trust Network Access: Identity-Centric Security Architecture" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <span class="card-cat">Skills &amp; Certifications</span>
+        <span class="card-reading"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>5 min</span>
+      </div>
+            <div class="card-body">
+        <div class="card-date"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Feb 28, 2026</div>
+        <h2 class="card-title">Zero Trust Network Access: Identity-Centric Security Architecture</h2>
+        <p class="card-excerpt">Zero Trust Network Access: Identity-Centric Security Architecture. Skills, career paths, and how to get started on the HADESS platform.</p>
+        <div class="card-footer">
+          <div class="card-author"><span class="card-author-av">H</span>hadess</div>
+          <span class="card-arrow"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+                  <a href="/blog/read/cybersecurity-skills-guide" class="post-card">
+            <div class="card-img-wrap">
+        <img src="/wp-content/uploads/2026/02/hadess-cybersecurity-skills-guide-768x403.png" alt="Cybersecurity Skills for Beginners" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <span class="card-cat">Skills &amp; Certifications</span>
+        <span class="card-reading"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>21 min</span>
+      </div>
+            <div class="card-body">
+        <div class="card-date"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Feb 28, 2026</div>
+        <h2 class="card-title">Cybersecurity Skills for Beginners</h2>
+        <p class="card-excerpt">Master cybersecurity skills for beginners with this 2026 guide covering technical, soft skills, certs, and study plans. Browse 80+ skills...</p>
+        <div class="card-footer">
+          <div class="card-author"><span class="card-author-av">H</span>hadess</div>
+          <span class="card-arrow"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+                  <a href="/blog/read/cissp-guide" class="post-card">
+            <div class="card-img-wrap">
+        <img src="/wp-content/uploads/2026/02/hadess-cissp-guide-768x403.png" alt="CISSP Certification: Complete Requirements Guide" loading="lazy">
+        <div class="card-img-overlay"></div>
+        <span class="card-cat">Skills &amp; Certifications</span>
+        <span class="card-reading"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>13 min</span>
+      </div>
+            <div class="card-body">
+        <div class="card-date"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Feb 28, 2026</div>
+        <h2 class="card-title">CISSP Certification: Complete Requirements Guide</h2>
+        <p class="card-excerpt">CISSP requirements 2026 — exam domains, experience prerequisites, study strategies, and career impact of the gold-standard security...</p>
+        <div class="card-footer">
+          <div class="card-author"><span class="card-author-av">H</span>hadess</div>
+          <span class="card-arrow"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+          </div>
+</div>
+
+<!-- ═══ COPY LINK SCRIPT ═══ -->
+<script>
+function copyArticleLink(){
+  var url='/blog/read/network-security-guide';
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(function(){showCopied()}).catch(function(){fallbackCopy(url)});
+  }else{fallbackCopy(url)}
+}
+function fallbackCopy(t){
+  var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';
+  document.body.appendChild(a);a.select();
+  try{document.execCommand('copy');showCopied()}catch(e){}
+  document.body.removeChild(a);
+}
+function showCopied(){
+  var b=document.getElementById('copyLinkBtn');
+  b.classList.add('copied');
+  b.innerHTML='<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  setTimeout(function(){
+    b.classList.remove('copied');
+    b.innerHTML='<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  },2000);
+}
+</script>
+
+
+
+<!-- CTA -->
+<div style="max-width:var(--max-w);margin:0 auto;padding:0 32px 80px">
+  <div style="background:linear-gradient(135deg,rgba(250,204,21,0.08),rgba(245,158,11,0.03));border:1px solid var(--gold-border);border-radius:20px;padding:60px;text-align:center;position:relative;overflow:hidden">
+    <div style="content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(250,204,21,0.1),transparent 70%);pointer-events:none"></div>
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:800;color:#fff;margin-bottom:12px">Ready to Accelerate Your Cybersecurity Career?</h2>
+    <p style="font-size:16px;color:var(--text-dim);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto">Structured paths, expert coaching, and hands-on skill development — all in one platform.</p>
+    <a href="https://career.hadess.io/login" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#facc15,#f59e0b);color:#000;padding:14px 36px;border-radius:10px;font-weight:700;font-size:16px;transition:all 0.25s;box-shadow:0 0 30px rgba(250,204,21,0.15)">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Launch Career Platform
+    </a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer style="position:relative;background:rgba(0,0,0,0.3);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border-top:1px solid rgba(255,255,255,0.05)">
+  <div style="max-width:var(--max-w);margin:0 auto;padding:64px 32px 32px">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px" class="ft-grid">
+      <!-- Brand -->
+      <div>
+        <a href="/" style="display:flex;align-items:center;gap:12px">
+          <img src="/wp-content/uploads/2022/06/logo-white.png" alt="HADESS" style="width:40px;height:40px;object-fit:contain">
+          <span style="font-size:24px;font-weight:800;color:var(--gold);text-shadow:0 0 10px rgba(250,204,21,0.8)">HADESS</span>
+        </a>
+        <p style="font-size:15px;color:#d1d5db;line-height:1.7;margin:20px 0">The cybersecurity career coaching platform. Master in-demand skills, connect with expert coaches, and follow structured career paths to reach your professional goals.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Deutschland, Berlin
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold);flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+            career@hadess.io
+          </div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <a href="https://www.linkedin.com/company/hadess-security/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://x.com/Hadess_security" target="_blank" rel="noopener noreferrer" aria-label="X" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://github.com/hadessCs" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="mailto:career@hadess.io" aria-label="Email" style="width:40px;height:40px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all 0.3s"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></a>
+        </div>
+      </div>
+      <!-- Platform -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Platform</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="https://career.hadess.io/skills-development" style="font-size:13px;color:var(--text-muted);transition:color 0.3s">Skills Development</a></li>
+          <li><a href="https://career.hadess.io/career-coaching" style="font-size:13px;color:var(--text-muted)">Career Coaching</a></li>
+          <li><a href="https://career.hadess.io/career-paths" style="font-size:13px;color:var(--text-muted)">Career Paths</a></li>
+          <li><a href="https://career.hadess.io/skills" style="font-size:13px;color:var(--text-muted)">Skills Explorer</a></li>
+          <li><a href="https://career.hadess.io/coach" style="font-size:13px;color:var(--text-muted)">Find a Coach</a></li>
+          <li><a href="https://career.hadess.io/roadmap-selector" style="font-size:13px;color:var(--text-muted)">Roadmap Selector</a></li>
+          <li><a href="https://career.hadess.io/salary-calculator" style="font-size:13px;color:var(--text-muted)">Salary Calculator</a></li>
+          <li><a href="https://career.hadess.io/tax-calculator" style="font-size:13px;color:var(--text-muted)">Tax Calculator</a></li>
+          <li><a href="https://career.hadess.io/knowledge-model" style="font-size:13px;color:var(--text-muted)">Knowledge Model</a></li>
+          <li><a href="https://career.hadess.io/pricing" style="font-size:13px;color:var(--text-muted)">Pricing</a></li>
+        </ul>
+      </div>
+      <!-- Resources -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Resources</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="https://career.hadess.io/knowledge-base" style="font-size:13px;color:var(--text-muted)">Knowledge Base</a></li>
+          <li><a href="https://career.hadess.io/case-studies" style="font-size:13px;color:var(--text-muted)">Case Studies</a></li>
+          <li><a href="/blog" style="font-size:13px;color:var(--text-muted)">Learning Materials</a></li>
+          <li><a href="https://career.hadess.io/certificate-roadmap" style="font-size:13px;color:var(--text-muted)">Certification Prep</a></li>
+          <li><a href="https://career.hadess.io/games/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Hack &amp; Learn</a></li>
+          <li><a href="https://discord.gg/4XR3wWn3wp" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">Community</a></li>
+        </ul>
+      </div>
+      <!-- Company + Legal -->
+      <div class="ft-col"><h3 style="font-size:15px;font-weight:600;color:#fff;margin-bottom:16px">Company</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--text-muted)">About HADESS</a></li>
+          <li><a href="https://career.hadess.io/mission" style="font-size:13px;color:var(--text-muted)">Our Mission</a></li>
+          <li><a href="mailto:career@hadess.io" style="font-size:13px;color:var(--text-muted)">Support</a></li>
+        </ul>
+        <h3 style="font-size:15px;font-weight:600;color:#fff;margin:28px 0 16px">Legal</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="https://career.hadess.io/terms" style="font-size:13px;color:var(--text-muted)">Terms of Service</a></li>
+          <li><a href="https://career.hadess.io/privacy" style="font-size:13px;color:var(--text-muted)">Privacy Policy</a></li>
+          <li><a href="https://career.hadess.io/cancellation-policy" style="font-size:13px;color:var(--text-muted)">Cancellation Policy</a></li>
+          <li><a href="https://career.hadess.io/cookie-policy" style="font-size:13px;color:var(--text-muted)">Cookie Policy</a></li>
+          <li><a href="https://career.hadess.io/imprint" style="font-size:13px;color:var(--text-muted)">Imprint</a></li>
+          <li><a href="https://career.hadess.io/dmca" style="font-size:13px;color:var(--text-muted)">DMCA Notice</a></li>
+          <li><a href="https://career.hadess.io/image-rights" style="font-size:13px;color:var(--text-muted)">Image Rights</a></li>
+          <li><a href="https://career.hadess.io/security" style="font-size:13px;color:var(--text-muted)">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1)"></div>
+  </div>
+  <!-- Bottom bar -->
+  <div style="border-top:1px solid rgba(255,255,255,0.05)">
+    <div style="max-width:var(--max-w);margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px" class="ft-bottom-inner">
+      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+        <span style="font-size:13px;color:var(--text-muted)">&copy; 2024&ndash;2026 HADESS by Hadess.io. All rights reserved.</span>
+        <div class="ft-lang" style="position:relative">
+          <button class="ft-lang-btn" type="button" style="display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--text-muted);font-size:13px;cursor:pointer;padding:6px 0;font-family:var(--font)">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <span id="langFlag">&#127482;&#127480;</span>
+            <span id="langName">English</span>
+            <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="ft-lang-dd" style="position:absolute;bottom:100%;left:0;width:180px;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);border:1px solid var(--gold-border);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.5);opacity:0;visibility:hidden;transform:translateY(8px);transition:all 0.2s;padding:8px;margin-bottom:8px">
+            <button class="sel" data-code="en" data-flag="&#127482;&#127480;" data-name="English" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;border:none;background:var(--gold-border);border-radius:8px;color:var(--gold);font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);text-align:left">&#127482;&#127480; English</button>
+            <button data-code="de" data-flag="&#127465;&#127466;" data-name="Deutsch" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;border:none;background:none;border-radius:8px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);text-align:left">&#127465;&#127466; Deutsch</button>
+            <button data-code="es" data-flag="&#127466;&#127480;" data-name="Espa&ntilde;ol" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;border:none;background:none;border-radius:8px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);text-align:left">&#127466;&#127480; Espa&ntilde;ol</button>
+            <button data-code="fr" data-flag="&#127467;&#127479;" data-name="Fran&ccedil;ais" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;border:none;background:none;border-radius:8px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);text-align:left">&#127467;&#127479; Fran&ccedil;ais</button>
+            <button data-code="hi" data-flag="&#127470;&#127475;" data-name="&#2361;&#2367;&#2306;&#2342;&#2368;" style="width:100%;display:flex;align-items:center;gap:10px;padding:10px 12px;border:none;background:none;border-radius:8px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);text-align:left">&#127470;&#127475; &#2361;&#2367;&#2306;&#2342;&#2368;</button>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:20px">
+        <a href="mailto:security@hadess.io" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);transition:color 0.3s">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Security First Platform
+        </a>
+        <span style="color:rgba(255,255,255,0.1)">|</span>
+        <a href="https://stats.uptimerobot.com/sOPXfjMtZg" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);transition:color 0.3s">
+          <span style="position:relative;display:flex;align-items:center;justify-content:center;width:12px;height:12px">
+            <span style="position:absolute;width:100%;height:100%;border-radius:50%;background:var(--green-dim);animation:sp 2s ease-in-out infinite"></span>
+            <span style="position:absolute;width:8px;height:8px;border-radius:50%;background:rgba(34,197,94,0.2);animation:sp 2s ease-in-out infinite 0.5s"></span>
+            <span style="position:relative;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px rgba(34,197,94,0.6)"></span>
+          </span>
+          All Systems Operational
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;inset:0;opacity:0.05;pointer-events:none;background-image:radial-gradient(circle at 50% 50%,rgba(250,204,21,0.1) 0%,transparent 50%);background-size:100px 100px"></div>
+</footer>
+
+<style>
+@keyframes sp{0%,100%{transform:scale(1);opacity:0.4}50%{transform:scale(2.2);opacity:0}}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px}
+.ft-lang:hover .ft-lang-dd{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
+.ft-col a:hover{color:var(--gold)!important;transform:translateX(4px)}
+@media(max-width:1024px){.ft-grid{grid-template-columns:1fr 1fr!important;gap:32px!important}}
+@media(max-width:768px){.ft-grid{grid-template-columns:1fr!important;gap:28px!important}.ft-bottom-inner{flex-direction:column!important;align-items:flex-start!important}}
+</style>
+
+<script>
+document.querySelectorAll('.ft-lang-dd button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var code=this.dataset.code,flag=this.dataset.flag,name=this.dataset.name;
+    document.getElementById('langFlag').innerHTML=flag;
+    document.getElementById('langName').textContent=name;
+    document.querySelectorAll('.ft-lang-dd button').forEach(function(b){b.style.background='none';b.style.color='#fff';b.classList.remove('sel')});
+    this.style.background='var(--gold-border)';this.style.color='var(--gold)';this.classList.add('sel');
+    localStorage.setItem('selectedLanguage',code);
+    if(code!=='en'){window.open('https://translate.google.com/translate?sl=en&tl='+code+'&u='+encodeURIComponent(window.location.href),'_blank')}
+  });
+});
+(function(){
+  var s=localStorage.getItem('selectedLanguage');
+  if(s){var b=document.querySelector('.ft-lang-dd button[data-code="'+s+'"]');
+  if(b){document.getElementById('langFlag').innerHTML=b.dataset.flag;document.getElementById('langName').textContent=b.dataset.name;
+  document.querySelectorAll('.ft-lang-dd button').forEach(function(x){x.style.background='none';x.style.color='#fff'});
+  b.style.background='var(--gold-border)';b.style.color='var(--gold)'}}
+})();
+</script>
+</div><!-- /#hadess-mag -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/newsmatic/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<script type="text/javascript">
+			var ajaxRevslider;
+			function rsCustomAjaxContentLoadingFunction() {
+				// CUSTOM AJAX CONTENT LOADING FUNCTION
+				ajaxRevslider = function(obj) {
+				
+					// obj.type : Post Type
+					// obj.id : ID of Content to Load
+					// obj.aspectratio : The Aspect Ratio of the Container / Media
+					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+					
+					var content	= '';
+					var data	= {
+						action:			'revslider_ajax_call_front',
+						client_action:	'get_slider_html',
+						token:			'35a2f47a4a',
+						type:			obj.type,
+						id:				obj.id,
+						aspectratio:	obj.aspectratio
+					};
+					
+					// SYNC AJAX REQUEST
+					jQuery.ajax({
+						type:		'post',
+						url:		'/wp-admin/admin-ajax.php',
+						dataType:	'json',
+						data:		data,
+						async:		false,
+						success:	function(ret, textStatus, XMLHttpRequest) {
+							if(ret.success == true)
+								content = ret.data;								
+						},
+						error:		function(e) {
+							console.log(e);
+						}
+					});
+					
+					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+					 return content;						 
+				};
+				
+				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+				var ajaxRemoveRevslider = function(obj) {
+					return jQuery(obj.selector + ' .rev_slider').revkill();
+				};
+
+
+				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION				
+				if (jQuery.fn.tpessential !== undefined) 					
+					if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') 
+						jQuery.fn.tpessential.defaults.ajaxTypes.push({type: 'revslider', func: ajaxRevslider, killfunc: ajaxRemoveRevslider, openAnimationSpeed: 0.3});   
+						// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
+						// func: the Function Name which is Called once the Item with the Post Type has been clicked
+						// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+						// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)					
+			}
+			
+			var rsCustomAjaxContent_Once = false
+			if (document.readyState === "loading") 
+				document.addEventListener('readystatechange',function(){
+					if ((document.readyState === "interactive" || document.readyState === "complete") && !rsCustomAjaxContent_Once) {
+						rsCustomAjaxContent_Once = true;
+						rsCustomAjaxContentLoadingFunction();
+					}
+				});
+			else {
+				rsCustomAjaxContent_Once = true;
+				rsCustomAjaxContentLoadingFunction();
+			}					
+		</script>
+		<div id="wa"></div>			<script>
+				;
+				(function($, w) {
+					'use strict';
+					let $window = $(w);
+
+					$(document).ready(function() {
+
+						let isEnable = "";
+						let isEnableLazyMove = "";
+						let speed = isEnableLazyMove ? '0.7' : '0.2';
+
+						if( !isEnable ) {
+							return;
+						}
+
+						if (typeof haCursor == 'undefined' || haCursor == null) {
+							initiateHaCursorObject(speed);
+						}
+
+						setTimeout(function() {
+							let targetCursor = $('.ha-cursor');
+							if (targetCursor) {
+								if (!isEnable) {
+									$('body').removeClass('hm-init-default-cursor-none');
+									$('.ha-cursor').addClass('ha-init-hide');
+								} else {
+									$('body').addClass('hm-init-default-cursor-none');
+									$('.ha-cursor').removeClass('ha-init-hide');
+								}
+							}
+						}, 500);
+
+					});
+
+				}(jQuery, window));
+			</script>
+		
+					<script>
+				( () => {
+					const lazyloadRunObserver = () => {
+						const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+						const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+							entries.forEach( ( entry ) => {
+								if ( entry.isIntersecting ) {
+									let lazyloadBackground = entry.target;
+									if( lazyloadBackground ) {
+										lazyloadBackground.classList.add( 'e-lazyloaded' );
+									}
+									lazyloadBackgroundObserver.unobserve( entry.target );
+								}
+							});
+						}, { rootMargin: '200px 0px 200px 0px' } );
+						lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+							lazyloadBackgroundObserver.observe( lazyloadBackground );
+						} );
+					};
+					const events = [
+						'DOMContentLoaded',
+						'elementor/lazyload/observe',
+					];
+					events.forEach( ( event ) => {
+						document.addEventListener( event, lazyloadRunObserver );
+					} );
+				} )();
+			</script>
+			<script id="nekit-swiper-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/swiper/swiper-bundle.min.js?ver=11.2.5"></script>
+<script data-wp-strategy="defer" defer id="slick-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/slick/slick.min.js?ver=1.8.0"></script>
+<script data-wp-strategy="defer" defer id="js-marquee-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/js-marquee/jquery.marquee.min.js?ver=1.0.0"></script>
+<script id="typed-js-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/typed-main/typed.umd.js?ver=3"></script>
+<script id="jquery-cookie-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/external/jquery-cookie/jquery-cookie.js?ver=1.4.1"></script>
+<script id="nekit-main-js-extra">
+var frontendData = {"_wpnonce":"0d9aabc3b0","ajaxUrl":"/wp-admin/admin-ajax.php"};
+//# sourceURL=nekit-main-js-extra
+</script>
+<script id="nekit-main-js" src="/wp-content/plugins/news-kit-elementor-addons/includes/assets/js/frontend-script.js?ver=1.0.0"></script>
+<script id="axiosjs-js" src="/wp-content/plugins/download-pdf-after-submit-form/include/../js/axios.min.js?ver=1.0.0"></script>
+<script id="rmp_menu_scripts-js-extra">
+var rmp_menu = {"ajaxURL":"/wp-admin/admin-ajax.php","wp_nonce":"cdfe82ca48","menu":[{"menu_theme":"Default","theme_type":"default","theme_location_menu":"0","submenu_submenu_arrow_width":"40","submenu_submenu_arrow_width_unit":"px","submenu_submenu_arrow_height":"39","submenu_submenu_arrow_height_unit":"px","submenu_arrow_position":"right","submenu_sub_arrow_background_colour":"","submenu_sub_arrow_background_hover_colour":"","submenu_sub_arrow_background_colour_active":"","submenu_sub_arrow_background_hover_colour_active":"","submenu_sub_arrow_border_width":"","submenu_sub_arrow_border_width_unit":"px","submenu_sub_arrow_border_colour":"#1d4354","submenu_sub_arrow_border_hover_colour":"#3f3f3f","submenu_sub_arrow_border_colour_active":"#1d4354","submenu_sub_arrow_border_hover_colour_active":"#3f3f3f","submenu_sub_arrow_shape_colour":"#fff","submenu_sub_arrow_shape_hover_colour":"#fff","submenu_sub_arrow_shape_colour_active":"#fff","submenu_sub_arrow_shape_hover_colour_active":"#fff","use_header_bar":"off","header_bar_items_order":{"logo":"off","title":"on","additional content":"off","menu":"on","search":"off"},"header_bar_title":"Responsive Menu","header_bar_html_content":"","header_bar_logo":"","header_bar_logo_link":"","header_bar_logo_width":"","header_bar_logo_width_unit":"%","header_bar_logo_height":"","header_bar_logo_height_unit":"px","header_bar_height":"80","header_bar_height_unit":"px","header_bar_padding":{"top":"0px","right":"5%","bottom":"0px","left":"5%"},"header_bar_font":"","header_bar_font_size":"14","header_bar_font_size_unit":"px","header_bar_text_color":"#ffffff","header_bar_background_color":"#1d4354","header_bar_breakpoint":"8000","header_bar_position_type":"fixed","header_bar_adjust_page":"on","header_bar_scroll_enable":"off","header_bar_scroll_background_color":"#36bdf6","mobile_breakpoint":"600","tablet_breakpoint":"1024","transition_speed":"0.5","sub_menu_speed":"0.2","show_menu_on_page_load":"off","menu_disable_scrolling":"off","menu_overlay":"off","menu_overlay_colour":"rgba(0,0,0,0.7)","desktop_menu_width":"","desktop_menu_width_unit":"%","desktop_menu_positioning":"absolute","desktop_menu_side":"left","desktop_menu_to_hide":"","use_current_theme_location":"off","mega_menu":{"225":"off","227":"off","229":"off","228":"off","226":"off"},"desktop_submenu_open_animation":"none","desktop_submenu_open_animation_speed":"100ms","desktop_submenu_open_on_click":"off","desktop_menu_hide_and_show":"off","menu_name":"Main","menu_to_use":"70","different_menu_for_mobile":"off","menu_to_use_in_mobile":"main-menu","use_mobile_menu":"on","use_tablet_menu":"on","use_desktop_menu":"off","menu_display_on":"all-pages","menu_to_hide":"","submenu_descriptions_on":"off","custom_walker":"","menu_background_colour":"","menu_depth":"5","smooth_scroll_on":"off","smooth_scroll_speed":"500","menu_font_icons":{"id":["225"],"icon":[""]},"menu_links_height":"40","menu_links_height_unit":"px","menu_links_line_height":"40","menu_links_line_height_unit":"px","menu_depth_0":"5","menu_depth_0_unit":"%","menu_font_size":"15","menu_font_size_unit":"px","menu_font":"","menu_font_weight":"normal","menu_text_alignment":"left","menu_text_letter_spacing":"","menu_word_wrap":"off","menu_link_colour":"#fff","menu_link_hover_colour":"#fff","menu_current_link_colour":"#fff","menu_current_link_hover_colour":"#fff","menu_item_background_colour":"","menu_item_background_hover_colour":"","menu_current_item_background_colour":"#6fda44","menu_current_item_background_hover_colour":"","menu_border_width":"","menu_border_width_unit":"px","menu_item_border_colour":"#1d4354","menu_item_border_colour_hover":"#1d4354","menu_current_item_border_colour":"#1d4354","menu_current_item_border_hover_colour":"#3f3f3f","submenu_links_height":"40","submenu_links_height_unit":"px","submenu_links_line_height":"40","submenu_links_line_height_unit":"px","menu_depth_side":"left","menu_depth_1":"10","menu_depth_1_unit":"%","menu_depth_2":"15","menu_depth_2_unit":"%","menu_depth_3":"20","menu_depth_3_unit":"%","menu_depth_4":"25","menu_depth_4_unit":"%","submenu_item_background_colour":"","submenu_item_background_hover_colour":"","submenu_current_item_background_colour":"","submenu_current_item_background_hover_colour":"","submenu_border_width":"","submenu_border_width_unit":"px","submenu_item_border_colour":"#1d4354","submenu_item_border_colour_hover":"#1d4354","submenu_current_item_border_colour":"#1d4354","submenu_current_item_border_hover_colour":"#3f3f3f","submenu_font_size":"13","submenu_font_size_unit":"px","submenu_font":"","submenu_font_weight":"normal","submenu_text_letter_spacing":"","submenu_text_alignment":"left","submenu_link_colour":"#fff","submenu_link_hover_colour":"#fff","submenu_current_link_colour":"#fff","submenu_current_link_hover_colour":"#fff","inactive_arrow_shape":"\u25bc","active_arrow_shape":"\u25b2","inactive_arrow_font_icon":"","active_arrow_font_icon":"","inactive_arrow_image":"","active_arrow_image":"","submenu_arrow_width":"40","submenu_arrow_width_unit":"px","submenu_arrow_height":"39","submenu_arrow_height_unit":"px","arrow_position":"right","menu_sub_arrow_shape_colour":"#fff","menu_sub_arrow_shape_hover_colour":"#fff","menu_sub_arrow_shape_colour_active":"#fff","menu_sub_arrow_shape_hover_colour_active":"#fff","menu_sub_arrow_border_width":"","menu_sub_arrow_border_width_unit":"px","menu_sub_arrow_border_colour":"#1d4354","menu_sub_arrow_border_hover_colour":"#3f3f3f","menu_sub_arrow_border_colour_active":"#1d4354","menu_sub_arrow_border_hover_colour_active":"#3f3f3f","menu_sub_arrow_background_colour":"","menu_sub_arrow_background_hover_colour":"","menu_sub_arrow_background_colour_active":"rgba(33,33,33,0.01)","menu_sub_arrow_background_hover_colour_active":"","fade_submenus":"off","fade_submenus_side":"left","fade_submenus_delay":"100","fade_submenus_speed":"500","use_slide_effect":"off","slide_effect_back_to_text":"Back","accordion_animation":"off","auto_expand_all_submenus":"off","auto_expand_current_submenus":"off","menu_item_click_to_trigger_submenu":"off","button_width":"55","button_width_unit":"px","button_height":"55","button_height_unit":"px","button_background_colour":"#1d4354","button_background_colour_hover":"#1d4354","button_background_colour_active":"#6fda44","toggle_button_border_radius":"5","button_transparent_background":"off","button_left_or_right":"right","button_position_type":"fixed","button_distance_from_side":"5","button_distance_from_side_unit":"%","button_top":"15","button_top_unit":"px","button_push_with_animation":"off","button_click_animation":"boring","button_line_margin":"10","button_line_margin_unit":"px","button_line_width":"25","button_line_width_unit":"px","button_line_height":"3","button_line_height_unit":"px","button_line_colour":"#fff","button_line_colour_hover":"#fff","button_line_colour_active":"#fff","button_font_icon":"","button_font_icon_when_clicked":"","button_image":"","button_image_when_clicked":"","button_title":"","button_title_open":"","button_title_position":"left","menu_container_columns":"","button_font":"","button_font_size":"14","button_font_size_unit":"px","button_title_line_height":"13","button_title_line_height_unit":"px","button_text_colour":"#fff","button_trigger_type_click":"on","button_trigger_type_hover":"off","button_click_trigger":"","items_order":{"title":"on","additional content":"on","menu":"on","search":"on","social-icons":""},"menu_title":"HADESS","menu_title_link":"/","menu_title_link_location":"_self","menu_title_image":"","menu_title_font_icon":"","menu_title_section_padding":{"top":"10%","right":"5%","bottom":"0%","left":"5%"},"menu_title_background_colour":"","menu_title_background_hover_colour":"","menu_title_font_size":"25","menu_title_font_size_unit":"px","menu_title_alignment":"center","menu_title_font_weight":"400","menu_title_font_family":"","menu_title_colour":"#ffffff","menu_title_hover_colour":"#fff","menu_title_image_width":"","menu_title_image_width_unit":"%","menu_title_image_height":"","menu_title_image_height_unit":"px","menu_additional_content":"Cyber Security Magic","menu_additional_section_padding":{"top":"0%","right":"5%","bottom":"10%","left":"5%"},"menu_additional_content_font_size":"16","menu_additional_content_font_size_unit":"px","menu_additional_content_alignment":"center","menu_additional_content_colour":"#f4db4b","menu_social_icons":[],"menu_social_icons_size":"24","menu_social_icons_size_unit":"px","menu_social_icons_layout":"horizontal","menu_social_icons_alignment":"center","menu_social_icons_gap":"10","menu_social_icons_gap_unit":"px","menu_social_icons_section_padding":{"top":"0%","right":"0%","bottom":"0%","left":"0%"},"menu_search_box_text":"Search","menu_search_box_code":"","menu_search_section_padding":{"top":"5%","right":"5%","bottom":"5%","left":"5%"},"menu_search_box_height":"45","menu_search_box_height_unit":"px","menu_search_box_border_radius":"30","menu_search_box_text_colour":"#1d4354","menu_search_box_background_colour":"#ffffff","menu_search_box_placeholder_colour":"#1d4354","menu_search_box_border_colour":"","menu_section_padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"menu_width":"75","menu_width_unit":"%","menu_maximum_width":"350","menu_maximum_width_unit":"px","menu_minimum_width":"320","menu_minimum_width_unit":"px","menu_auto_height":"off","menu_container_padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"menu_container_background_colour":"#1d4354","menu_background_image":"","animation_type":"slide","menu_appear_from":"left","animation_speed":"0.5","page_wrapper":"body","menu_close_on_body_click":"off","menu_close_on_scroll":"off","menu_close_on_link_click":"off","enable_touch_gestures":"off","hamburger_position_selector":"","menu_id":9038,"active_toggle_contents":"\u25b2","inactive_toggle_contents":"\u25bc"}]};
+//# sourceURL=rmp_menu_scripts-js-extra
+</script>
+<script id="rmp_menu_scripts-js" src="/wp-content/plugins/responsive-menu/v4.0.0/assets/js/rmp-menu.min.js?ver=4.7.2"></script>
+<script id="wp-dom-ready-js" src="/wp-includes/js/dist/dom-ready.min.js?ver=a06281ae5cf5500e9317"></script>
+<script id="starter-templates-zip-preview-js-extra">
+var starter_templates_zip_preview = {"AstColorPaletteVarPrefix":"--ast-global-","AstEleColorPaletteVarPrefix":"--ast-global-"};
+//# sourceURL=starter-templates-zip-preview-js-extra
+</script>
+<script id="starter-templates-zip-preview-js" src="/wp-content/plugins/astra-sites/inc/lib/onboarding/assets/dist/template-preview/main.js?ver=09382f635556bec359b3"></script>
+<script id="nta-wa-libs-js" src="/wp-content/plugins/wp-whatsapp/assets/dist/js/njt-whatsapp.js?ver=3.8.2"></script>
+<script id="nta-js-global-js-extra">
+var njt_wa_global = {"ajax_url":"/wp-admin/admin-ajax.php","nonce":"cdfe82ca48","defaultAvatarSVG":"\u003Csvg width=\"48px\" height=\"48px\" class=\"nta-whatsapp-default-avatar\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n            viewBox=\"0 0 512 512\" style=\"enable-background:new 0 0 512 512;\" xml:space=\"preserve\"\u003E\n            \u003Cpath style=\"fill:#EDEDED;\" d=\"M0,512l35.31-128C12.359,344.276,0,300.138,0,254.234C0,114.759,114.759,0,255.117,0\n            S512,114.759,512,254.234S395.476,512,255.117,512c-44.138,0-86.51-14.124-124.469-35.31L0,512z\"/\u003E\n            \u003Cpath style=\"fill:#55CD6C;\" d=\"M137.71,430.786l7.945,4.414c32.662,20.303,70.621,32.662,110.345,32.662\n            c115.641,0,211.862-96.221,211.862-213.628S371.641,44.138,255.117,44.138S44.138,137.71,44.138,254.234\n            c0,40.607,11.476,80.331,32.662,113.876l5.297,7.945l-20.303,74.152L137.71,430.786z\"/\u003E\n            \u003Cpath style=\"fill:#FEFEFE;\" d=\"M187.145,135.945l-16.772-0.883c-5.297,0-10.593,1.766-14.124,5.297\n            c-7.945,7.062-21.186,20.303-24.717,37.959c-6.179,26.483,3.531,58.262,26.483,90.041s67.09,82.979,144.772,105.048\n            c24.717,7.062,44.138,2.648,60.028-7.062c12.359-7.945,20.303-20.303,22.952-33.545l2.648-12.359\n            c0.883-3.531-0.883-7.945-4.414-9.71l-55.614-25.6c-3.531-1.766-7.945-0.883-10.593,2.648l-22.069,28.248\n            c-1.766,1.766-4.414,2.648-7.062,1.766c-15.007-5.297-65.324-26.483-92.69-79.448c-0.883-2.648-0.883-5.297,0.883-7.062\n            l21.186-23.834c1.766-2.648,2.648-6.179,1.766-8.828l-25.6-57.379C193.324,138.593,190.676,135.945,187.145,135.945\"/\u003E\n        \u003C/svg\u003E","defaultAvatarUrl":"/wp-content/plugins/wp-whatsapp/assets/img/whatsapp_logo.svg","timezone":"Atlantic/Azores","i18n":{"online":"Online","offline":"Offline"},"urlSettings":{"onDesktop":"api","onMobile":"api","openInNewTab":"ON"}};
+//# sourceURL=nta-js-global-js-extra
+</script>
+<script id="nta-js-global-js" src="/wp-content/plugins/wp-whatsapp/assets/js/whatsapp-button.js?ver=3.8.2"></script>
+<script async data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="/wp-includes/js/comment-reply.min.js?ver=7.0.4"></script>
+<script id="pscrollbar-js" src="/wp-content/plugins/quadmenu/assets/frontend/pscrollbar/perfect-scrollbar.jquery.min.js?ver=3.3.6"></script>
+<script id="owlcarousel-js" src="/wp-content/plugins/quadmenu/assets/frontend/owlcarousel/owl.carousel.min.js?ver=3.3.6"></script>
+<script id="hoverIntent-js" src="/wp-includes/js/hoverIntent.min.js?ver=1.10.2"></script>
+<script id="quadmenu-js-extra">
+var quadmenu = {"ajaxurl":"/wp-admin/admin-ajax.php","gutter":"30"};
+//# sourceURL=quadmenu-js-extra
+</script>
+<script id="quadmenu-js" src="/wp-content/plugins/quadmenu/build/frontend/index.js?ver=35f2750471b2a007e61e"></script>
+<script id="happy-reading-progress-bar-js" src="/wp-content/plugins/happy-elementor-addons/assets/js/extension-reading-progress-bar.min.js?ver=3.21.1"></script>
+<script id="megamenu-js" src="/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=3.10.6"></script>
+<script id="nta-js-popup-js-extra">
+var njt_wa = {"gdprStatus":"","accounts":[{"accountId":440,"accountName":"","avatar":"","number":"+49123456789","title":"Support Team","predefinedText":"","willBeBackText":"I will be back in [njwa_time_work]","dayOffsText":"I will be back soon","isAlwaysAvailable":"ON","daysOfWeekWorking":{"sunday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"monday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"tuesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"wednesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"thursday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"friday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"saturday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]}}}],"options":{"display":{"displayCondition":"showAllPage","includePages":["2","9","199","302","413","959","2004","2253","3431"],"excludePages":[],"includePosts":[],"showOnDesktop":"ON","showOnMobile":"ON","time_symbols":"h:m"},"styles":{"title":"Start a Conversation","responseText":"","description":"\u003Cstrong\u003EWe Respectfully Answer Your Questions As Soon As Possible!\u003C/strong\u003E","backgroundColor":"#b3c130","textColor":"#000000","titleSize":18,"accountNameSize":14,"descriptionTextSize":12,"regularTextSize":11,"scrollHeight":"500","isShowScroll":"OFF","isShowResponseText":"OFF","btnLabel":"\u003Cstrong\u003ESupport\u003C/strong\u003E","btnLabelWidth":"70","btnPosition":"right","btnLeftDistance":"30","btnRightDistance":"10","btnBottomDistance":"20","isShowBtnLabel":"OFF","isShowGDPR":"OFF","gdprContent":"Please accept our \u003Ca href=\"https://ninjateam.org/privacy-policy/\"\u003Eprivacy policy\u003C/a\u003E first to start a conversation.","isShowPoweredBy":"ON"},"analytics":{"enabledGoogle":"OFF","enabledFacebook":"OFF","enabledGoogleGA4":"OFF"}}};
+//# sourceURL=nta-js-popup-js-extra
+</script>
+<script id="nta-js-popup-js" src="/wp-content/plugins/wp-whatsapp/assets/js/whatsapp-popup.js?ver=3.8.2"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/wp-includes/js/wp-emoji-release.min.js?ver=7.0.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;left: -100%;" height="0" width="0"><symbol id="icon-anwp-pg-calendar" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M13 2h-1v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H6v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H2c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 12H2V5h11v9zM5 3H4V1h1v2zm6 0h-1V1h1v2zM6 7H5V6h1v1zm2 0H7V6h1v1zm2 0H9V6h1v1zm2 0h-1V6h1v1zM4 9H3V8h1v1zm2 0H5V8h1v1zm2 0H7V8h1v1zm2 0H9V8h1v1zm2 0h-1V8h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1zm2 0h-1v-1h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1z"/></symbol><symbol id="icon-anwp-pg-chevron-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol><symbol id="icon-anwp-pg-chevron-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol><symbol id="icon-anwp-pg-clock" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 011.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"/></symbol><symbol id="icon-anwp-pg-comment-discussion" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 1H6c-.55 0-1 .45-1 1v2H1c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h1v3l3-3h4c.55 0 1-.45 1-1V9h1l3 3V9h1c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zM9 11H4.5L3 12.5V11H1V5h4v3c0 .55.45 1 1 1h3v2zm6-3h-2v1.5L11.5 8H6V2h9v6z"/></symbol><symbol id="icon-anwp-pg-device-camera" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 3H7c0-.55-.45-1-1-1H2c-.55 0-1 .45-1 1-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM6 5H2V4h4v1zm4.5 7C8.56 12 7 10.44 7 8.5S8.56 5 10.5 5 14 6.56 14 8.5 12.44 12 10.5 12zM13 8.5c0 1.38-1.13 2.5-2.5 2.5S8 9.87 8 8.5 9.13 6 10.5 6 13 7.13 13 8.5z"/></symbol><symbol id="icon-anwp-pg-eye" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></symbol><symbol id="icon-anwp-pg-pencil" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M17.263 2.177a1.75 1.75 0 012.474 0l2.586 2.586a1.75 1.75 0 010 2.474L19.53 10.03l-.012.013L8.69 20.378a1.75 1.75 0 01-.699.409l-5.523 1.68a.75.75 0 01-.935-.935l1.673-5.5a1.75 1.75 0 01.466-.756L14.476 4.963l2.787-2.786zm-2.275 4.371l-10.28 9.813a.25.25 0 00-.067.108l-1.264 4.154 4.177-1.271a.25.25 0 00.1-.059l10.273-9.806-2.94-2.939zM19 8.44l2.263-2.262a.25.25 0 000-.354l-2.586-2.586a.25.25 0 00-.354 0L16.061 5.5 19 8.44z"/></symbol><symbol id="icon-anwp-pg-person" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z"/></symbol><symbol id="icon-anwp-pg-play" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M14 8A7 7 0 110 8a7 7 0 0114 0zm-8.223 3.482l4.599-3.066a.5.5 0 000-.832L5.777 4.518A.5.5 0 005 4.934v6.132a.5.5 0 00.777.416z"/></symbol><symbol id="icon-anwp-pg-tag" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7.685 1.72a2.49 2.49 0 00-1.76-.726H3.48A2.5 2.5 0 00.994 3.48v2.456c0 .656.269 1.292.726 1.76l6.024 6.024a.99.99 0 001.402 0l4.563-4.563a.99.99 0 000-1.402L7.685 1.72zM2.366 7.048a1.54 1.54 0 01-.467-1.123V3.48c0-.874.716-1.58 1.58-1.58h2.456c.418 0 .825.159 1.123.467l6.104 6.094-4.702 4.702-6.094-6.114zm.626-4.066h1.989v1.989H2.982V2.982h.01z"/></symbol><symbol id="icon-anwp-pg-trash" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M16 1.75V3h5.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H8V1.75C8 .784 8.784 0 9.75 0h4.5C15.216 0 16 .784 16 1.75zm-6.5 0a.25.25 0 01.25-.25h4.5a.25.25 0 01.25.25V3h-5V1.75z"/><path d="M4.997 6.178a.75.75 0 10-1.493.144L4.916 20.92a1.75 1.75 0 001.742 1.58h10.684a1.75 1.75 0 001.742-1.581l1.413-14.597a.75.75 0 00-1.494-.144l-1.412 14.596a.25.25 0 01-.249.226H6.658a.25.25 0 01-.249-.226L4.997 6.178z"/><path d="M9.206 7.501a.75.75 0 01.793.705l.5 8.5A.75.75 0 119 16.794l-.5-8.5a.75.75 0 01.705-.793zm6.293.793A.75.75 0 1014 8.206l-.5 8.5a.75.75 0 001.498.088l.5-8.5z"/></symbol></svg></body>
+</html>

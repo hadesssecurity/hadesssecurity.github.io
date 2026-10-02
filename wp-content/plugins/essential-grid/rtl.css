@@ -1,0 +1,73 @@
+div#eg-create-settings-menu li, label.eg-tooltip-wrap.tooltipstered, #eg-wrap .eg-postbox h3 span, p#eg-fullscreen-container-wrap label, p#eg-pagination-wrap label, p.load-more-wrap.load-more-hide-wrap label, p.load-more-wrap label, .eg-cs-tbc p label, div#eg-external-drag-wrap, .eg-lc-vertical-menu ul, li.selected-el-setting.eg-source-li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active, li.eg-hide-on-special.eg-hide-on-blank-element.ui-state-default.ui-corner-top, li.ui-state-default.ui-corner-top, li.ui-state-default.ui-corner-top, li.eg-hide-on-special.eg-hide-on-blank-element.ui-state-default.ui-corner-top {
+  float: right;
+}
+
+div#eg-create-settings-menu ul {
+  margin-right: 20px
+}
+
+.esg-grid .mainul li.eg-washington-wrapper {
+  right: 10px
+}
+
+.save-wrap-settings {
+  right: 9px
+}
+
+.eg-cs-tbc p span {
+  margin-right: auto !important;
+}
+
+#eg-wrap input[type=radio] {
+  margin-left: auto;
+}
+
+.eg-navigation-cons-wrapper.eg-tooltip-wrap.eg-navigation-default-wrap.ui-sortable.tooltipstered, div#eg-el-font.esg-el-settings-container.active-esc p, .esg-lc-settings-container.active-esc div, div#eg-el-font.esg-el-settings-container.active-esc label, div#eg-el-font-hover.esg-el-settings-container.active-esc label {
+  text-align: center;
+}
+
+div#eg-navigations-drag-wrap, li.selected-submenu-setting.eg-tooltip-wrap.tooltipstered, li.eg-tooltip-wrap.tooltipstered, label.eg-tooltip-wrap.tooltipstered, .add-link-to-wrapper label, div#eg-source-element-drops.eg-hide-on-special.eg-hide-on-blank-element label, div#eg-el-font.esg-el-settings-container.active-esc label, div#eg-el-font-hover.esg-el-settings-container.active-esc label, div#eg-element-hide.ui-tabs-panel.ui-widget-content.ui-corner-bottom label, div#eg-element-animation.ui-tabs-panel.ui-widget-content.ui-corner-bottom label, div#eg-element-link.ui-tabs-panel.ui-widget-content.ui-corner-bottom label {
+  float: right !important;
+}
+
+div.eg-cs-tbc.eg-codemirror-border div label {
+  float: inherit;
+}
+
+div#eg-lc-layout.esg-lc-settings-container.active-esc {
+  padding-left: 60px
+}
+
+div#eg-lc-cover.esg-lc-settings-container.active-esc {
+  width: 500px;
+  padding-left: 65px
+}
+
+label.eg-cover-setter.eg-tooltip-wrap.tooltipstered, label.eg-cover-setter, label.eg-group-setter.eg-tooltip-wrap.tooltipstered, div#eg-show-ratio p label.eg-group-setter {
+  float: inherit !important;
+  width: 150px !important;
+}
+
+div#eg-lc-content-shadow.esg-lc-settings-container.active-esc {
+  padding-left: 0px
+}
+
+.drop-to-stylechange {
+  bottom: -100px
+}
+
+p#dz-delete.eg-delete-wrapper {
+  float: left
+}
+
+div#tp-validation-box, div.title_line.nobgnopd , div#eg-newsletter-wrapper, div.revpurple , div.essential-grid-revolution-update-list, a#esg-library-open.button-primary.revblue {display: none}
+.esg-staytog {
+	float: left;
+}
+label {
+  margin-left: 10px !important;
+  }
+    }
+  .eg-pbox.esg-box label {
+    margin-right: 60px !important;
+  }
