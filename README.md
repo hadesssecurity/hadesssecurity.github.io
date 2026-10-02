@@ -1,7 +1,7 @@
 # HADESS — Cybersecurity Magazine
 
 Static export of the hadess.io WordPress site, served by GitHub Pages at
-https://hadesssecurity.github.io
+https://hadess.io
 
 - Generated from a full backup (2026-09-14); not edited by hand.
 - Search is Pagefind (`/pagefind/`), built at export time.

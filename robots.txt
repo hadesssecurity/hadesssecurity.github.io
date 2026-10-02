@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hadesssecurity.github.io/sitemap.xml
+Sitemap: https://hadess.io/sitemap.xml
